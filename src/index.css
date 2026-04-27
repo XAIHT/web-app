@@ -1,0 +1,429 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-base: #0a0a0a;
+    --color-surface: #111111;
+    --color-surface-alt: #1a1a1a;
+    --color-border: #222222;
+    --color-border-subtle: #1a1a1a;
+    --color-text-primary: #f0f0f0;
+    --color-text-secondary: #888888;
+    --color-text-muted: #555555;
+    --color-accent: #c9a96e;
+    --color-accent-secondary: #7a9e8e;
+    --color-code-bg: #0d0d0d;
+    --color-foreground: #e0e0e0;
+    --color-dim: #999999;
+    --color-subtle: #555555;
+    --color-muted: #333333;
+    --color-link: #d4a574;
+    --color-success: #7dac5a;
+    --color-danger: #c45a5a;
+    --color-warning: #e0af68;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: #0a0a0a;
+    color: #f0f0f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #f0f0f0;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+}
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+
+/* ── ASCII Section ── */
+.ascii-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ascii-pre {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7px;
+  line-height: 7px;
+  letter-spacing: 0;
+  margin: 0;
+  padding: 0;
+  color: transparent;
+  white-space: pre;
+  overflow: hidden;
+}
+
+.ascii-pre span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  text-align: center;
+}
+
+.ascii-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15vh;
+  background: linear-gradient(to bottom, transparent, #0a0a0a);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── NASA Banner ── */
+.nasa-banner-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #0b0d17 0%, #000000 70%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nasa-banner-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.nasa-star {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+  animation-name: star-twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.nasa-banner-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.nasa-banner-track {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.nasa-banner-text {
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.2),
+    0 0 60px rgba(100, 180, 255, 0.15),
+    0 0 100px rgba(100, 180, 255, 0.08);
+  background: linear-gradient(180deg, #ffffff 0%, #c0d6f0 40%, #8ab4f8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.nasa-banner-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  opacity: 0.3;
+}
+
+/* ── Liquid Glass ── */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(6px) saturate(140%);
+  -webkit-backdrop-filter: blur(6px) saturate(140%);
+  border: none;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.15) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.5) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.25;
+}
+.liquid-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse 90% 40% at 50% 0%, rgba(255,255,255,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 35% at 65% 10%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* ── Page Stack ── */
+.page-stack-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.page-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  will-change: transform;
+}
+
+.page-layer:not(:first-child) {
+  transform: translateY(100vh);
+}
+
+/* ── Cards ── */
+.xaiht-card {
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.xaiht-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* ── Buttons ── */
+.xaiht-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.xaiht-btn-filled {
+  background: var(--color-accent);
+  color: #0a0a0a;
+}
+
+.xaiht-btn-filled:hover {
+  filter: brightness(1.1);
+}
+
+.xaiht-btn-outline {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.xaiht-btn-outline:hover {
+  background: rgba(201, 169, 110, 0.1);
+}
+
+/* ── Nav ── */
+.nav-link {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #888888;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* ── Section label ── */
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Section entrance animations ── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ── Markdown ── */
+.md-body h1 { font-size: 1.5em; font-weight: 600; margin: 1em 0 0.4em; color: #e0e0e0; }
+.md-body h2 { font-size: 1.2em; font-weight: 600; margin: 0.8em 0 0.3em; color: #e0e0e0; }
+.md-body h3 { font-size: 1.05em; font-weight: 600; margin: 0.6em 0 0.2em; color: #e0e0e0; }
+.md-body p { margin: 0.5em 0; line-height: 1.7; color: #bbb; }
+.md-body code {
+  background: rgba(255,255,255,0.06);
+  padding: 0.12em 0.4em;
+  border-radius: 3px;
+  font-size: 0.88em;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.md-body pre {
+  background: rgba(255,255,255,0.03);
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.md-body pre code { background: none; padding: 0; }
+.md-body ul, .md-body ol { padding-left: 1.5em; margin: 0.4em 0; }
+.md-body li { margin: 0.2em 0; line-height: 1.7; color: #bbb; }
+.md-body a { color: #c9a96e; text-decoration: none; }
+.md-body a:hover { text-decoration: underline; }
+.md-body blockquote {
+  border-left: 2px solid rgba(201,169,110,0.4);
+  padding-left: 1em;
+  color: #777;
+  margin: 0.5em 0;
+}
+.md-body strong { color: #e0e0e0; font-weight: 600; }
+.md-body hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 1.5em 0; }
+.md-body table { border-collapse: collapse; width: 100%; margin: 0.6em 0; }
+.md-body th, .md-body td { border: 1px solid rgba(255,255,255,0.06); padding: 0.4em 0.7em; text-align: left; color: #bbb; }
+.md-body th { background: rgba(255,255,255,0.03); font-weight: 600; color: #ddd; }
+
+/* ── Pipeline connector ── */
+.pipeline-connector {
+  position: relative;
+  height: 2px;
+  background: #222222;
+  flex: 1;
+}
+
+.pipeline-connector::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #c9a96e;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .ascii-pre {
+    font-size: 5px;
+    line-height: 5px;
+  }
+  .ascii-pre span {
+    width: 5px;
+    height: 5px;
+  }
+  .nasa-banner-text {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    letter-spacing: 0.08em;
+  }
+}
