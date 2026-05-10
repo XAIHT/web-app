@@ -56,10 +56,15 @@ pipeline {
 
     stage('Deploy: restart on VM') {
       steps {
-        sshagent(credentials: ['xaiht-vm-deployer-ssh']) {
+        withCredentials([sshUserPrivateKey(
+          credentialsId: 'xaiht-vm-deployer-ssh',
+          keyFileVariable: 'SSH_KEY'
+        )]) {
           sh '''
             set -eu
-            ssh -o StrictHostKeyChecking=accept-new -o BatchMode=yes \
+            ssh -i "$SSH_KEY" \
+              -o StrictHostKeyChecking=accept-new \
+              -o BatchMode=yes \
               "${VM_USER}@${VM_HOST}" \
               "sudo systemctl restart xaiht-app && sleep 5 && sudo systemctl status xaiht-app --no-pager | head -n 20"
           '''
