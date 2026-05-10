@@ -144,3 +144,6 @@ vite.config.ts.timestamp-*
 
 # Claude Code worktrees (parallel agent checkouts — never commit)
 .claude/worktrees/
+
+# Lock files
+package-lock.json
