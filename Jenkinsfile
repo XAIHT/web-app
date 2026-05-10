@@ -9,11 +9,12 @@ pipeline {
   }
 
   environment {
-    GCP_PROJECT = 'xaiht-492820'
-    REGION      = 'us-central1'
-    IMAGE_REPO  = 'us-central1-docker.pkg.dev/xaiht-492820/xaiht-images/xaiht-app'
-    VM_HOST     = '136.116.194.179'
-    VM_USER     = 'jenkins-deployer'
+    GCP_PROJECT     = 'xaiht-492820'
+    REGION          = 'us-central1'
+    IMAGE_REPO      = 'us-central1-docker.pkg.dev/xaiht-492820/xaiht-images/xaiht-app'
+    VM_HOST         = '136.116.194.179'
+    VM_USER         = 'jenkins-deployer'
+    DOCKER_BUILDKIT = '1'
   }
 
   stages {
