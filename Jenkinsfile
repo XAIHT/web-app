@@ -65,8 +65,24 @@ pipeline {
             ssh -i "$SSH_KEY" \
               -o StrictHostKeyChecking=accept-new \
               -o BatchMode=yes \
-              "${VM_USER}@${VM_HOST}" \
-              "sudo systemctl restart xaiht-app && sleep 5 && sudo systemctl status xaiht-app --no-pager | head -n 20"
+              "${VM_USER}@${VM_HOST}" '
+                set -u
+                echo "Triggering restart..."
+                sudo systemctl restart xaiht-app || echo "  restart returned non-zero (slow docker pull); continuing to poll"
+                echo "Polling systemctl is-active (up to 3 minutes)..."
+                for i in $(seq 1 36); do
+                  state=$(systemctl is-active xaiht-app || true)
+                  echo "  attempt $i: $state"
+                  if [ "$state" = "active" ]; then
+                    sudo systemctl status xaiht-app --no-pager | head -n 20
+                    exit 0
+                  fi
+                  sleep 5
+                done
+                echo "Service did not reach active state in 3 minutes"
+                sudo systemctl status xaiht-app --no-pager | head -n 30
+                exit 1
+              '
           '''
         }
       }
