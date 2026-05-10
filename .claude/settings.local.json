@@ -29,7 +29,10 @@
       "Bash(npm install *)",
       "Bash(docker build *)",
       "Bash(git push *)",
-      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('offline:', d['offline']\\)\")"
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('offline:', d['offline']\\)\")",
+      "Bash(git -C /c/Development/XAIHT/web-app branch -D claude/cranky-shannon-9e7164 claude/youthful-solomon-3eee56)",
+      "Bash(git -C /c/Development/XAIHT/web-app branch)",
+      "Bash(git -C /c/Development/XAIHT/web-app branch -r)"
     ]
   }
 }
