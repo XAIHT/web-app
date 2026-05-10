@@ -2,7 +2,34 @@
   "permissions": {
     "allow": [
       "Bash(gcloud compute ssh xaiht-vm *)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Bash(docker version *)",
+      "Bash(mkdir -p /c/Development/jenkins-docker/casc /c/Development/jenkins-docker/keys)",
+      "Read(//c/Development/**)",
+      "Bash(ssh-keygen -t ed25519 -f /c/Development/jenkins-docker/keys/jenkins_agent -N \"\" -C \"jenkins-controller-to-agent\")",
+      "Bash(docker compose *)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('offline:', d['offline']\\); print\\('numExecutors:', d['numExecutors']\\); print\\('temporarilyOffline:', d['temporarilyOffline']\\); print\\('offlineCauseReason:', d.get\\('offlineCauseReason'\\)\\)\")",
+      "Bash(git -C /c/Development/XAIHT/web-app remote -v)",
+      "Bash(git -C /c/Development/XAIHT/web-app branch --show-current)",
+      "Bash(gcloud config *)",
+      "Bash(gcloud auth *)",
+      "Bash(gcloud iam *)",
+      "Bash(gcloud projects *)",
+      "Bash(ssh-keygen -t ed25519 -f /c/Development/jenkins-docker/keys/vm_deploy -N \"\" -C \"jenkins-deployer@xaiht-vm\")",
+      "Bash(gcloud compute *)",
+      "Bash(ssh -i /c/Development/jenkins-docker/keys/vm_deploy -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/c/Development/jenkins-docker/keys/known_hosts jenkins-deployer@136.116.194.179 'whoami; sudo -n -l | grep xaiht-app')",
+      "Bash(docker exec *)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('agent_offline:', d['offline'], 'executors:', d['numExecutors']\\)\")",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('job:', d['name'], '| buildable:', d['buildable']\\)\")",
+      "Bash(git fetch *)",
+      "Bash(git rev-list *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git ls-tree *)",
+      "Bash(npm install *)",
+      "Bash(docker build *)",
+      "Bash(git push *)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('offline:', d['offline']\\)\")"
     ]
   }
 }
