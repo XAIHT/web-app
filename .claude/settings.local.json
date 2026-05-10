@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gcloud compute ssh xaiht-vm *)",
+      "Bash(curl *)"
+    ]
+  }
+}
