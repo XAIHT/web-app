@@ -67,7 +67,7 @@ function OverviewSection() {
             className="reveal-item font-extrabold mb-6"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 0.95 }}
           >
-            Tlamatini — The AI Agentic Knowledge of a Developer
+            Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             A sophisticated, locally-run AI developer assistant featuring an advanced
