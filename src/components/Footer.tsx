@@ -12,10 +12,10 @@ export default function Footer() {
             color: '#f0f0f0',
           }}
         >
-          Start Building with Tlamatini
+          Run Tlamatini on Your Own Machine
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Locally-run, privacy-first AI developer assistant with ancient wisdom and future technology.
+          Hybrid RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, and 60 workflow agents in one local developer assistant.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a
@@ -24,7 +24,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="xaiht-btn xaiht-btn-filled"
           >
-            Get Started
+            View Source
           </a>
           <Link to="/tlamatini" className="xaiht-btn xaiht-btn-outline">
             Documentation
@@ -62,7 +62,7 @@ export default function Footer() {
           </a>
         </div>
         <span className="font-mono text-[11px] text-[#555]">
-          Built with Django + Ollama
+          Built with Django Channels + Ollama
         </span>
       </div>
     </footer>

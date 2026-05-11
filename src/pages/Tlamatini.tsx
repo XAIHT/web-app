@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          El Saber Cosmico del Desarrollo
+          Local-First AI Developer Assistant
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-          A sophisticated, locally-run AI developer assistant featuring an advanced RAG system,
-          multi-turn orchestration, real-time web interface, and visual agentic workflow designer.
+          Hybrid RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation,
+          and a 60-agent workflow designer packaged for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -96,18 +96,17 @@ function TlamatiniOverview() {
             className="reveal-item font-bold mb-6"
             style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
           >
-            The One Who Knows Things
+            One Who Knows, One Who Can Act
           </h2>
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> — from the Nahuatl "tlamatini" meaning
-            "the one who knows things" — is a powerful, locally-deployed AI assistant built with Django.
-            It provides a real-time, web-based interface for interacting with Large Language Models,
-            designed as a comprehensive developer assistant.
+            <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." It is a
+            Django/Channels app you run on your own machine, combining code-aware retrieval,
+            tool execution, external coding-agent delegation, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The system leverages a highly advanced, custom-built Retrieval-Augmented Generation (RAG)
-            pipeline with detailed source-code analysis, metadata extraction, architectural role
-            classification, and hybrid retrieval combining FAISS vector search with BM25 keyword matching.
+            The current documentation describes hybrid FAISS + BM25 retrieval, a 256-iteration
+            Multi-Turn operator loop, 12 ACPX/Skill tools, 60 workflow agents, and a backend
+            Flow Compiler that validates and writes portable .flw workflows.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -158,23 +157,23 @@ function TlamatiniFeatures() {
 
   const features = [
     {
-      title: 'Real-Time Chat Interface',
-      description: 'WebSocket-based communication via Django Channels for instant responses. Syntax-highlighted code rendering with line numbers, canvas area for viewing and editing generated code, session persistence across reconnections.',
+      title: 'Multi-Turn Chat Operator',
+      description: 'Django Channels WebSocket chat with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. The operator loop can call tools, observe results, and continue for up to 256 iterations.',
       image: '/images/feature-chat.jpg',
     },
     {
-      title: 'Advanced RAG System',
-      description: 'Dynamic context loading from local files or directories. Code-aware analysis parsing classes, functions, imports. Hybrid retrieval with FAISS + BM25 via Reciprocal Rank Fusion. Memory-insufficient context fallback.',
+      title: 'Hybrid RAG System',
+      description: 'Directory, file, or canvas context is chunked, embedded, and retrieved through FAISS + BM25 with Reciprocal Rank Fusion, code-aware metadata, context budgeting, and an out-of-memory fallback.',
       image: '/images/artifact-rag.jpg',
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop agentic workflow creation with 57 pre-built agent types. Logic gates (AND/OR), conditional routing (Forker, Asker), real-time LED status indicators, undo/redo, save/load as .flw files.',
+      description: 'Drag-and-drop workflow creation with 60 agent types, .flw save/load, live Validate, Start-time compilation, Parametrizer mappings, Gatewayer ingress, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
-      title: 'Multi-Model LLM Support',
-      description: 'Ollama for local inference, Anthropic Claude for cloud API, Qwen for vision tasks. Configurable models for embedding, chat, image interpretation, and internet classification with bearer token authentication.',
+      title: 'ACPX External Delegation',
+      description: 'ACPX spawns external coding-agent CLIs such as Claude Code, Cursor, Codex, Gemini, and Qwen Code, captures NDJSON transcripts, relays answers, and exposes the flow as 12 native tools.',
       image: '/images/feature-agents.jpg',
     },
   ];
@@ -239,10 +238,11 @@ function TlamatiniInstallation() {
   }, []);
 
   const steps = [
-    { label: 'Clone', code: 'git clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini' },
-    { label: 'Setup Environment', code: 'python -m venv venv\nsource venv/bin/activate  # Linux/macOS\nvenv\\Scripts\\activate   # Windows' },
-    { label: 'Install Dependencies', code: 'pip install -r requirements.txt' },
-    { label: 'Initialize Database', code: 'python Tlamatini/manage.py migrate\npython Tlamatini/manage.py createsuperuser' },
+    { label: 'Install Ollama', code: '$env:OLLAMA_INSTALL_DIR = "$env:LOCALAPPDATA\\Programs\\Ollama"\nirm https://ollama.com/install.ps1 | iex' },
+    { label: 'Pull Default Models', code: 'ollama pull qwen3-embedding:8b\nollama pull glm-5:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud' },
+    { label: 'Clone Source', code: 'git clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini' },
+    { label: 'Setup Environment', code: 'python -m venv venv\nsource venv/bin/activate  # Linux/macOS\nvenv\\Scripts\\activate   # Windows\npip install -r requirements.txt' },
+    { label: 'Initialize Database', code: 'python Tlamatini/manage.py migrate\npython Tlamatini/manage.py createsuperuser\npython Tlamatini/manage.py collectstatic --noinput' },
     { label: 'Run Application', code: 'python Tlamatini/manage.py runserver --noreload' },
   ];
 
@@ -261,7 +261,7 @@ function TlamatiniInstallation() {
         Installation
       </h2>
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-        Get Tlamatini running in 5 minutes. Requires Python 3.12.10 (recommended) and Ollama for local LLM inference.
+        Run from source with Python 3.12.10 and Ollama, or ship a frozen Windows distribution with the documented installer pipeline.
       </p>
       <div className="space-y-4">
         {steps.map((step, i) => (
@@ -326,30 +326,27 @@ function TlamatiniAgents() {
         { name: 'ender', desc: 'Terminates agents, launches post-cleanup' },
         { name: 'stopper', desc: 'Pattern-based agent terminator' },
         { name: 'cleaner', desc: 'Post-termination cleanup' },
-        { name: 'flowbacker', desc: 'Session backup and cleanup' },
-        { name: 'barrier', desc: 'Synchronization barrier' },
+        { name: 'sleeper', desc: 'Waits duration_ms before continuing' },
+        { name: 'croner', desc: 'Scheduled HH:MM trigger' },
       ],
     },
     {
-      category: 'Monitoring',
+      category: 'Routing',
       color: '#7a9e8e',
       agents: [
-        { name: 'monitor_log', desc: 'LLM-based log file monitoring' },
-        { name: 'monitor_netstat', desc: 'Network connection monitoring' },
-        { name: 'flowhypervisor', desc: 'LLM anomaly detector' },
-        { name: 'summarizer', desc: 'Log monitoring with LLM detection' },
+        { name: 'raiser', desc: 'Event-driven downstream launcher' },
+        { name: 'forker', desc: 'Automatic A/B path router' },
+        { name: 'asker', desc: 'Interactive A/B browser choice' },
+        { name: 'counter', desc: 'Persistent threshold router' },
       ],
     },
     {
-      category: 'Notification',
-      color: '#c79e7a',
+      category: 'Logic',
+      color: '#9e9e9e',
       agents: [
-        { name: 'notifier', desc: 'LangGraph event notification' },
-        { name: 'emailer', desc: 'SMTP email sender' },
-        { name: 'recmailer', desc: 'IMAP email receiver + LLM' },
-        { name: 'whatsapper', desc: 'WhatsApp via TextMeBot' },
-        { name: 'telegramer', desc: 'Telegram message sender' },
-        { name: 'telegramrx', desc: 'Telegram receiver/monitor' },
+        { name: 'or', desc: 'Fires when either source completes' },
+        { name: 'and', desc: 'Fires when both sources complete' },
+        { name: 'barrier', desc: 'Generalized all-sources gate' },
       ],
     },
     {
@@ -357,24 +354,44 @@ function TlamatiniAgents() {
       color: '#8a9ec7',
       agents: [
         { name: 'executer', desc: 'Shell command execution' },
-        { name: 'pythonxer', desc: 'Python script execution' },
+        { name: 'pythonxer', desc: 'Inline Python with Ruff gating' },
+        { name: 'prompter', desc: 'LLM prompt to log' },
+        { name: 'summarizer', desc: 'LLM log polling and one-shot summaries' },
+        { name: 'crawler', desc: 'Raw web crawl and analysis' },
+        { name: 'googler', desc: 'Google search via Playwright' },
+        { name: 'apirer', desc: 'Structured HTTP request agent' },
+        { name: 'gitter', desc: 'Local Git operations' },
+        { name: 'ssher', desc: 'SSH remote commands' },
+        { name: 'scper', desc: 'SCP file transfer' },
+        { name: 'dockerer', desc: 'Docker command runner' },
+        { name: 'kuberneter', desc: 'Kubernetes command runner' },
+        { name: 'pser', desc: 'Semantic process finder' },
+        { name: 'jenkinser', desc: 'Jenkins pipeline trigger' },
         { name: 'sqler', desc: 'SQL Server query execution' },
         { name: 'mongoxer', desc: 'MongoDB script execution' },
-        { name: 'ssher', desc: 'SSH remote commands' },
-        { name: 'gitter', desc: 'Git operations' },
-        { name: 'dockerer', desc: 'Docker container management' },
-        { name: 'kuberneter', desc: 'Kubernetes command executor' },
+        { name: 'mover', desc: 'Move or copy files' },
+        { name: 'deleter', desc: 'Delete files with exclusions' },
+        { name: 'shoter', desc: 'Screenshot capture' },
+        { name: 'mouser', desc: 'Click, drag, scroll, locate images' },
+        { name: 'keyboarder', desc: 'Typing and hotkey chords' },
+        { name: 'file-creator', desc: 'Write file content' },
+        { name: 'file-interpreter', desc: 'Parse DOCX, PPTX, XLSX, PDF' },
+        { name: 'file-extractor', desc: 'Extract text from files' },
+        { name: 'image-interpreter', desc: 'Vision analysis of images' },
+        { name: 'j-decompiler', desc: 'JAR/WAR/CLASS decompilation' },
+        { name: 'telegramer', desc: 'Outbound Telegram message' },
+        { name: 'teletlamatini', desc: 'Telegram bridge to Tlamatini chat' },
+        { name: 'whatstlamatini', desc: 'WhatsApp bridge via Cloud API' },
+        { name: 'acpxer', desc: 'Visual external-CLI ACPX session' },
       ],
     },
     {
-      category: 'Logic',
-      color: '#9e9e9e',
+      category: 'Crypto',
+      color: '#c79e7a',
       agents: [
-        { name: 'and', desc: 'AND logic gate (latched)' },
-        { name: 'or', desc: 'OR logic gate' },
-        { name: 'forker', desc: 'Automatic A/B path router' },
-        { name: 'asker', desc: 'Interactive A/B path chooser' },
-        { name: 'counter', desc: 'Persistent counter with routing' },
+        { name: 'kyber-keygen', desc: 'CRYSTALS-Kyber key pair' },
+        { name: 'kyber-cipher', desc: 'Kyber encapsulation + AES encryption' },
+        { name: 'kyber-decipher', desc: 'Kyber decapsulation + AES decryption' },
       ],
     },
     {
@@ -382,11 +399,31 @@ function TlamatiniAgents() {
       color: '#b08cc7',
       agents: [
         { name: 'parametrizer', desc: 'Interconnection engine' },
+        { name: 'flowbacker', desc: 'Session backup and cleanup' },
         { name: 'gatewayer', desc: 'Inbound webhook gateway' },
+        { name: 'gateway-relayer', desc: 'Provider webhook bridge' },
         { name: 'node_manager', desc: 'Infrastructure registry' },
-        { name: 'googler', desc: 'Google search agent' },
-        { name: 'sleeper', desc: 'Delay execution' },
-        { name: 'croner', desc: 'Time-scheduled trigger' },
+      ],
+    },
+    {
+      category: 'Terminal / Monitoring',
+      color: '#7a9e8e',
+      agents: [
+        { name: 'monitor-log', desc: 'LLM-powered log monitor' },
+        { name: 'monitor-netstat', desc: 'LLM-powered port monitor' },
+        { name: 'emailer', desc: 'SMTP email sender' },
+        { name: 'recmailer', desc: 'IMAP receiver with LLM analysis' },
+        { name: 'notifier', desc: 'Browser notification and sound' },
+        { name: 'whatsapper', desc: 'WhatsApp via TextMeBot' },
+        { name: 'telegramrx', desc: 'Telegram receiver' },
+        { name: 'flowhypervisor', desc: 'LLM watchdog over running agents' },
+      ],
+    },
+    {
+      category: 'AI / Design',
+      color: '#c9a96e',
+      agents: [
+        { name: 'flowcreator', desc: 'LLM designs flows from objectives' },
       ],
     },
   ];
@@ -403,11 +440,12 @@ function TlamatiniAgents() {
           className="reveal-item font-bold mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          57 Pre-built Agent Types
+          60 Workflow-Agent Types
         </h2>
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          The Visual Agentic Workflow Designer provides 57 pre-built agent types organized into
-          control, monitoring, notification, action, logic, and utility categories.
+          The current catalog spans control, routing, logic, action, cryptography, utility,
+          terminal monitoring, and AI design agents, including TeleTlamatini, WhatsTlamatini,
+          ACPXer, and FlowCreator.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (
@@ -466,12 +504,12 @@ function TlamatiniTechStack() {
   }, []);
 
   const stack = [
-    { category: 'Backend', items: ['Python 3.12.10', 'Django 5.2.4', 'Django Channels 4.1', 'Daphne (ASGI)'] },
-    { category: 'AI / ML', items: ['LangChain 0.3.27', 'LangGraph 0.2.74', 'Ollama', 'FAISS', 'BM25'] },
-    { category: 'LLM APIs', items: ['Anthropic Claude', 'Ollama REST API', 'MCP 1.25.0'] },
-    { category: 'Database', items: ['SQLite (default)', 'Django ORM'] },
-    { category: 'Communication', items: ['WebSockets', 'gRPC (grpcio 1.76.0)'] },
-    { category: 'Frontend', items: ['HTML5', 'Bootstrap 5', 'JavaScript (modular)', 'jQuery', 'jQuery UI'] },
+    { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
+    { category: 'RAG', items: ['FAISS', 'BM25', 'Reciprocal Rank Fusion', 'Context budgeting'] },
+    { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
+    { category: 'Agent Runtime', items: ['LangChain tools', 'Multi-Turn executor', 'ACPX external CLIs', 'SkillHarness'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', '.flw save/load', 'Source and frozen modes'] },
+    { category: 'Interfaces', items: ['WebSockets', 'gRPC MCP file search', 'Bootstrap UI', 'Modular JavaScript'] },
   ];
 
   return (

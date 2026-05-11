@@ -59,21 +59,20 @@ function OverviewSection() {
       className="max-w-[1200px] mx-auto px-6"
       style={{ padding: 'clamp(80px, 10vh, 120px) 1.5rem' }}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)] gap-12 items-center">
         {/* Left Column */}
-        <div>
+        <div className="min-w-0">
           <span className="section-label reveal-item block mb-4">Overview</span>
           <h1
             className="reveal-item font-extrabold mb-6"
-            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 0.95 }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.12 }}
           >
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            A sophisticated, locally-run AI developer assistant featuring an advanced
-            Retrieval-Augmented Generation (RAG) system, a request-scoped Multi-Turn
-            orchestration layer, a real-time web interface, a visual agentic workflow
-            designer, and multi-model LLM support.
+            A locally deployed AI developer assistant with hybrid RAG over your source,
+            a Multi-Turn tool-calling loop, ACPX delegation to external coding-agent CLIs,
+            and a visual workflow designer with 60 drag-and-drop agent types.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -91,13 +90,13 @@ function OverviewSection() {
         </div>
 
         {/* Right Column - Stats Card */}
-        <div className="reveal-item">
+        <div className="reveal-item min-w-0">
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: 'Agents', value: '57' },
-                { label: 'Tools', value: '40+' },
-                { label: 'Models', value: 'Multi' },
+                { label: 'Agents', value: '60' },
+                { label: 'ACPX Tools', value: '12' },
+                { label: 'Max Turns', value: '256' },
                 { label: 'Runtime', value: 'Local' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -154,9 +153,9 @@ function VisionMissionSection() {
   const cards = [
     {
       title: 'Vision',
-      subtitle: 'Ancient Wisdom, Future Power',
+      subtitle: 'Human Control, Local Power',
       description:
-        'We envision a world where AI development is rooted completely under human knowledge and control, fused with cutting-edge technology to create something truly transformative. Tlamatini represents the convergence of human kowledege powered by AI in complete control of it, offering a powerful and intuitive tool for developers.',
+        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, inspectable workflows, and automation that can be saved, validated, and rerun.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -166,9 +165,9 @@ function VisionMissionSection() {
     },
     {
       title: 'Mission',
-      subtitle: 'Empowering Local-First AI',
+      subtitle: 'Make the Assistant a Doer',
       description:
-        'To provide developers with a powerful, privacy-preserving AI assistant that runs entirely on local infrastructure. We believe in giving users complete control over their data and models while delivering enterprise-grade capabilities for code analysis, automation, and intelligent workflow design.',
+        'The mission is to combine code-aware RAG, Multi-Turn tool orchestration, Exec Report audit tables, ACPX delegation, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -177,9 +176,9 @@ function VisionMissionSection() {
     },
     {
       title: 'Concept',
-      subtitle: 'El Saber Cosmico del Desarrollo',
+      subtitle: 'The One Who Knows',
       description:
-        'Tlamatini — "El que sabe cosas" (The one who knows things) — is our flagship project combining AI architectural patterns completely in control and knowledge of the user. It is the first manifestation of the XAIHT vision: a locally-deployable AI system that understands your codebase, automates your workflows, and respects your privacy and control.',
+        'Tlamatini means "one who knows." In practice, it is a Django/Channels app that reads your code, calls tools, spawns external coding agents, and compiles chat or canvas ideas into portable .flw workflows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
@@ -201,10 +200,10 @@ function VisionMissionSection() {
           className="reveal-item font-bold text-center mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          Vision, Mission & Concept
+          Vision, Mission, Concept
         </h2>
         <p className="reveal-item text-[#888] text-center mb-12 max-w-2xl mx-auto">
-          The foundation of XAIHT — where ancestral wisdom meets future technology.
+          XAIHT's flagship project: local-first automation, grounded code understanding, and developer-controlled AI execution.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card) => (
@@ -293,48 +292,49 @@ function ArchitectureSection() {
         {/* Layer 1 — Architecture Overview */}
         <div className="page-layer" style={{ background: '#0a0a0a' }}>
           <div className="flex flex-col justify-center min-h-screen px-6 py-20">
-            <div className="max-w-[1200px] mx-auto w-full">
+            <div className="max-w-[1200px] mx-auto w-full text-center">
               <span className="section-label block mb-4">Architecture</span>
               <h2
                 className="font-bold mb-6"
                 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
               >
-                Built for Local-First AI
+                Built as a Local AI Control Plane
               </h2>
-              <p className="text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                Tlamatini is built on a robust Django backend with WebSocket communication,
-                integrating multiple LLM backends for flexible, privacy-preserving AI operations.
+              <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
+                Tlamatini runs as a Django Channels application that connects the browser,
+                RAG pipeline, unified Multi-Turn agent, MCP services, and ACPX runtime through
+                one local operator surface.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="xaiht-card">
-                  <div className="mb-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
+                <div className="xaiht-card min-w-0">
+                  <div className="mb-3 flex justify-center">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
                       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f0f0f0' }}>
-                    WebSocket Communication
+                    Django Channels WebSocket
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    Real-time bidirectional messaging via Django Channels and Daphne ASGI server.
-                    Instant responses with streaming token output and session persistence across
-                    reconnections.
+                    Browser requests flow through Daphne ASGI into AgentConsumer, preserving chat
+                    state while forwarding toggles for Multi-Turn, Exec Report, ACPX, and internet
+                    context.
                   </p>
                 </div>
-                <div className="xaiht-card">
-                  <div className="mb-3">
+                <div className="xaiht-card min-w-0">
+                  <div className="mb-3 flex justify-center">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
                       <rect x="4" y="2" width="16" height="20" rx="2" />
                       <path d="M8 6h8M8 10h8M8 14h5" />
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f0f0f0' }}>
-                    LLM Backend
+                    LLM and ACPX Backends
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    Multi-model support including Ollama for local inference, Anthropic Claude
-                    for cloud API, and Qwen for vision tasks. Configurable per-task model selection
-                    with bearer token authentication.
+                    Ollama powers local models, Claude can handle cloud calls, Qwen covers vision,
+                    and ACPX can spawn external CLIs such as Claude Code, Cursor, Codex, Gemini,
+                    and Qwen Code.
                   </p>
                 </div>
               </div>
@@ -345,7 +345,7 @@ function ArchitectureSection() {
         {/* Layer 2 — RAG Pipeline */}
         <div className="page-layer" style={{ background: '#0d0d0d' }}>
           <div className="flex flex-col justify-center min-h-screen px-6 py-20">
-            <div className="max-w-[1200px] mx-auto w-full">
+            <div className="max-w-[1200px] mx-auto w-full text-center">
               <span className="section-label block mb-4">RAG System</span>
               <h2
                 className="font-bold mb-6"
@@ -353,21 +353,22 @@ function ArchitectureSection() {
               >
                 Advanced Retrieval-Augmented Generation
               </h2>
-              <p className="text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                A custom-built RAG pipeline that goes far beyond simple text retrieval —
-                with metadata extraction, architectural classification, and intelligent context budgeting.
+              <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
+                Hybrid retrieval combines FAISS vectors, BM25 keywords, Reciprocal Rank Fusion,
+                code-aware metadata, context budgeting, and an out-of-memory fallback that keeps
+                source access alive.
               </p>
               {/* Pipeline */}
-              <div className="flex items-stretch gap-0 flex-wrap lg:flex-nowrap">
+              <div className="flex items-stretch justify-center gap-0 gap-y-4 flex-wrap lg:flex-nowrap max-w-5xl mx-auto w-full">
                 {[
-                  { name: 'Document Loader', desc: 'Multi-format parsing with size reporting' },
-                  { name: 'Text Splitters', desc: 'Recursive chunking with overlap control' },
-                  { name: 'FAISS + BM25', desc: 'Hybrid semantic + keyword retrieval' },
-                  { name: 'Context Budget', desc: 'Intelligent token allocation' },
+                  { name: 'Load Context', desc: 'Files, folders, or current canvas' },
+                  { name: 'Chunk + Classify', desc: 'Recursive splits with code metadata' },
+                  { name: 'FAISS + BM25', desc: 'Hybrid retrieval with RRF fusion' },
+                  { name: 'Budget + Fallback', desc: '250K context cap with OOM fallback' },
                 ].map((node, i) => (
-                  <div key={node.name} className="flex items-center flex-1 min-w-[200px]">
+                  <div key={node.name} className="flex items-center flex-1 min-w-[200px] max-w-full">
                     <div
-                      className="flex-1 p-4 rounded-lg"
+                      className="flex-1 min-w-0 p-4 rounded-lg"
                       style={{
                         background: '#111',
                         borderTop: '2px solid #c9a96e',
@@ -392,7 +393,7 @@ function ArchitectureSection() {
         {/* Layer 3 — Multi-Turn Engine */}
         <div className="page-layer" style={{ background: '#0a0a0a' }}>
           <div className="flex flex-col justify-center min-h-screen px-6 py-20">
-            <div className="max-w-[1200px] mx-auto w-full">
+            <div className="max-w-[1200px] mx-auto w-full text-center">
               <span className="section-label block mb-4">Multi-Turn</span>
               <h2
                 className="font-bold mb-6"
@@ -400,44 +401,44 @@ function ArchitectureSection() {
               >
                 Request-Scoped Orchestration
               </h2>
-              <p className="text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                When Multi-Turn is enabled, the chat stack switches to a sophisticated
-                orchestration path with global planning, selective tool binding, and
-                headless runtime execution.
+              <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
+                When Multi-Turn is enabled, the chat becomes an operator: a planner selects
+                the relevant tools, the loop can run up to 256 iterations, and state-changing
+                work can be converted into a reusable flow.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
                 {[
                   {
                     title: 'Global Execution Planner',
-                    desc: 'Builds a request-scoped DAG with prefetch, execute, monitor, and answer nodes.',
+                    desc: 'Builds a request-scoped plan and binds at most 20 relevant tools by capability score.',
                     color: '#c9a96e',
                   },
                   {
                     title: 'Capability Selection',
-                    desc: 'Dynamic scoring and binding of only relevant tools, agents, and MCP contexts.',
+                    desc: 'Chooses from 36 wrapped chat-agent tools, ACPX tools, core tools, and MCP contexts.',
                     color: '#7a9e8e',
                   },
                   {
-                    title: 'Context Prefetch',
-                    desc: 'Selectively fetches system and file MCP contexts before tool execution.',
+                    title: 'Exec Report',
+                    desc: 'Appends per-agent operation tables for state-changing tool calls before chat history is saved.',
                     color: '#8a9ec7',
                   },
                   {
-                    title: 'Headless Runtime',
-                    desc: 'Background wrapped-agent launches with suppression of visible console popups.',
+                    title: 'Create Flow',
+                    desc: 'Successful Multi-Turn runs can download a .flw file normalized by the backend contract layer.',
                     color: '#c79e7a',
                   },
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="p-5 rounded-lg"
+                    className="p-5 rounded-lg min-w-0"
                     style={{
                       background: '#111',
                       border: '1px solid #222',
                     }}
                   >
                     <div
-                      className="w-2 h-2 rounded-full mb-3"
+                      className="w-2 h-2 rounded-full mb-3 mx-auto"
                       style={{ background: item.color }}
                     />
                     <h4 className="text-sm font-semibold mb-2" style={{ color: '#f0f0f0' }}>
@@ -486,12 +487,14 @@ function WorkflowSection() {
   }, []);
 
   const categories = [
-    { name: 'Control Agents', agents: 'Starter, Ender, Stopper, Cleaner', color: '#c9a96e' },
-    { name: 'Monitoring Agents', agents: 'Monitor Log, Monitor Netstat, FlowHypervisor', color: '#7a9e8e' },
-    { name: 'Notification Agents', agents: 'Notifier, Emailer, WhatsApp, Telegram', color: '#c79e7a' },
-    { name: 'Action Agents', agents: 'Executer, Pythonxer, SSher, Gitter, Dockerer', color: '#8a9ec7' },
-    { name: 'Logic Gates', agents: 'AND, OR, Forker, Asker, Counter', color: '#9e9e9e' },
-    { name: 'Utility Agents', agents: 'Parametrizer, Barrier, Gatewayer, Googler', color: '#c9a96e' },
+    { name: 'Control', agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
+    { name: 'Routing', agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
+    { name: 'Logic Gates', agents: 'OR, AND, Barrier', color: '#9e9e9e' },
+    { name: 'Action', agents: 'Executer, Pythonxer, Crawler, Googler, ACPXer, TeleTlamatini', color: '#8a9ec7' },
+    { name: 'Cryptography', agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher', color: '#c79e7a' },
+    { name: 'Utility', agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
+    { name: 'Terminal / Monitoring', agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, FlowHypervisor', color: '#7a9e8e' },
+    { name: 'AI / Design', agents: 'FlowCreator', color: '#b08cc7' },
   ];
 
   return (
@@ -509,14 +512,13 @@ function WorkflowSection() {
         Drag, Drop, Orchestrate
       </h2>
       <div className="reveal-item xaiht-card" style={{ padding: '3rem' }}>
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10">
           {/* Left */}
-          <div>
+          <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-              The Visual Agentic Workflow Designer lets you create automated workflows
-              using drag-and-drop agents. 57 pre-built agent types for diverse automation
-              tasks — from log monitoring to Docker management, from email notifications
-              to conditional routing.
+              The Visual Workflow Designer lets you drag 60 agent types onto a canvas,
+              wire them into .flw workflows, validate the live graph, and start it through
+              the same Flow Compiler used for chat-created flows.
             </p>
             <img
               src="/images/feature-workflow.jpg"
@@ -526,7 +528,7 @@ function WorkflowSection() {
             />
           </div>
           {/* Right - Categories */}
-          <div className="space-y-3">
+          <div className="space-y-3 min-w-0">
             {categories.map((cat) => (
               <div
                 key={cat.name}
@@ -537,11 +539,11 @@ function WorkflowSection() {
                   className="w-2 h-2 rounded-full mt-1.5 shrink-0"
                   style={{ background: cat.color }}
                 />
-                <div>
+                <div className="min-w-0">
                   <h4 className="text-sm font-semibold" style={{ color: '#f0f0f0' }}>
                     {cat.name}
                   </h4>
-                  <p className="font-mono text-[11px] text-[#888] mt-0.5">{cat.agents}</p>
+                  <p className="font-mono text-[11px] text-[#888] mt-0.5 break-words">{cat.agents}</p>
                 </div>
               </div>
             ))}
@@ -580,14 +582,14 @@ function ToolsSection() {
   }, []);
 
   const tools = [
-    { name: 'get_current_time', desc: 'Returns current datetime', type: 'Core', color: '#c9a96e' },
-    { name: 'execute_file', desc: 'Runs Python scripts in a new terminal', type: 'Core', color: '#c9a96e' },
-    { name: 'opus_analyze_image', desc: 'Image analysis with Claude', type: 'Data', color: '#8a9ec7' },
-    { name: 'chat_agent_executer', desc: 'Command execution agent', type: 'DevOps', color: '#7a9e8e' },
-    { name: 'chat_agent_gitter', desc: 'Git operations agent', type: 'DevOps', color: '#7a9e8e' },
-    { name: 'chat_agent_send_email', desc: 'Email notification agent', type: 'Notify', color: '#c79e7a' },
-    { name: 'chat_agent_notifier', desc: 'Event notification agent', type: 'Notify', color: '#c79e7a' },
-    { name: 'agent_parametrizer', desc: 'Interconnect engine for agent outputs', type: 'Utility', color: '#9e9e9e' },
+    { name: 'execute_command', desc: 'Shell command execution from the core tool surface', type: 'Core', color: '#c9a96e' },
+    { name: 'qwen_analyze_image', desc: 'Image analysis through Qwen via Ollama', type: 'Vision', color: '#8a9ec7' },
+    { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
+    { name: 'chat_agent_sleeper', desc: 'Canonical wait tool for autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
+    { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },
+    { name: 'acp_spawn', desc: 'Start an external coding-agent CLI session', type: 'ACPX', color: '#b08cc7' },
+    { name: 'acp_relay', desc: 'Relay one external agent response to another in a single call', type: 'ACPX', color: '#b08cc7' },
+    { name: 'invoke_skill', desc: 'Run registered SKILL.md packages through the SkillHarness', type: 'Skill', color: '#9e9e9e' },
   ];
 
   return (
@@ -602,7 +604,7 @@ function ToolsSection() {
           className="reveal-item font-bold mb-8"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          40+ Integrated Capabilities
+          Core, Wrapped, and ACPX Tooling
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {tools.map((tool) => (

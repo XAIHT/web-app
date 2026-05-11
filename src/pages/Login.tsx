@@ -28,10 +28,10 @@ export default function Login() {
             </span>
           </div>
           <h1 className="text-2xl font-bold mb-2" style={{ color: '#f0f0f0' }}>
-            Welcome
+            Welcome to XAIHT
           </h1>
           <p className="text-[#888] mb-8" style={{ fontSize: '0.9375rem' }}>
-            Sign in to access your XAIHT account and save preferences.
+            Sign in to access your XAIHT account and keep project preferences available across sessions.
           </p>
           <a
             href={Paths.oauthStart}
@@ -46,7 +46,7 @@ export default function Login() {
             Sign in with Google
           </a>
           <p className="text-[#555] mt-6 text-xs">
-            Authentication is handled securely via Google OAuth 2.0.
+            Authentication is handled via Google OAuth 2.0.
           </p>
         </div>
       </div>

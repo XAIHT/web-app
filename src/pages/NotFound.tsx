@@ -18,10 +18,10 @@ export default function NotFound() {
             404
           </h1>
           <p className="text-[#888] mb-8" style={{ fontSize: '1rem' }}>
-            The page you are looking for does not exist.
+            This XAIHT page is not available.
           </p>
           <Link to="/" className="xaiht-btn xaiht-btn-outline">
-            Back to Home
+            Back to XAIHT
           </Link>
         </div>
       </div>
