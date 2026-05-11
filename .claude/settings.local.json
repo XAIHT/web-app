@@ -32,7 +32,10 @@
       "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('offline:', d['offline']\\)\")",
       "Bash(git -C /c/Development/XAIHT/web-app branch -D claude/cranky-shannon-9e7164 claude/youthful-solomon-3eee56)",
       "Bash(git -C /c/Development/XAIHT/web-app branch)",
-      "Bash(git -C /c/Development/XAIHT/web-app branch -r)"
+      "Bash(git -C /c/Development/XAIHT/web-app branch -r)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force | Select-Object Name, @{Name='IsDir';Expression={$_.PSIsContainer}} | Format-Table -AutoSize)"
     ]
   }
 }
