@@ -1,10 +1,14 @@
 import { useEffect, useRef } from 'react';
 
 const PHRASES = [
+  'eXtended Artificial Intelligence Humanly Tempered',
+  '( XAIHT )',
   'Tlamatini',
   'Local-First AI',
   'Multi-Turn Operators',
   '60 Workflow Agents',
+  'ACPX-Enabled',
+  'Visual Workflows'
 ];
 
 const STAR_COUNT = 120;
