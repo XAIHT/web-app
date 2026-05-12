@@ -18,9 +18,11 @@ export const env = {
   googleClientId: required("GOOGLE_CLIENT_ID"),
   googleClientSecret: required("GOOGLE_CLIENT_SECRET"),
 
-  // Public origin used to build redirect_uri (must match what's registered in GCP).
-  // e.g. "https://xaiht.org". Falls back to the inbound request origin when empty.
-  publicBaseUrl: process.env.PUBLIC_BASE_URL ?? "",
+  // ── C-1 FIX: PUBLIC_BASE_URL is now required in production ──────────
+  // Previously this was optional and the OAuth redirect URI fell back to
+  // the inbound Host header, enabling Host Header Injection attacks.
+  // Now the app will refuse to start in production without it.
+  publicBaseUrl: required("PUBLIC_BASE_URL"),
 
   // Google "sub" of the account that should auto-promote to admin on first sign-in.
   // Find it by signing in once and looking at the row inserted in the users table,
