@@ -72,7 +72,7 @@ function OverviewSection() {
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             A locally deployed AI developer assistant with hybrid RAG over your source,
             a Multi-Turn tool-calling loop, ACPX delegation to external coding-agent CLIs,
-            and a visual workflow designer with 60 drag-and-drop agent types.
+            an in-app Config menu, a visual workflow designer with 60 drag-and-drop agent types, and GPU-aware context loading.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -96,8 +96,8 @@ function OverviewSection() {
               {[
                 { label: 'Agents', value: '60' },
                 { label: 'ACPX Tools', value: '12' },
-                { label: 'Max Turns', value: '256' },
-                { label: 'Runtime', value: 'Local' },
+                { label: 'Config', value: 'Live' },
+                { label: 'GPU Guard', value: 'Smart' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div
@@ -153,9 +153,9 @@ function VisionMissionSection() {
   const cards = [
     {
       title: 'Vision',
-      subtitle: 'Human Control, Local Power',
+      subtitle: 'Human Control, Tunable AI',
       description:
-        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, inspectable workflows, and automation that can be saved, validated, and rerun.',
+        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, live model settings, inspectable workflows, and automation that can be saved, validated, and rerun.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -167,7 +167,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, Multi-Turn tool orchestration, Exec Report audit tables, ACPX delegation, and visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, GPU-aware context loading, Multi-Turn orchestration, Exec Report audit tables, ACPX delegation, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -178,7 +178,7 @@ function VisionMissionSection() {
       title: 'Concept',
       subtitle: 'The One Who Knows',
       description:
-        'Tlamatini means "one who knows." In practice, it is a Django/Channels app that reads your code, calls tools, spawns external coding agents, and compiles chat or canvas ideas into portable .flw workflows.',
+        'Tlamatini means "one who knows." In practice, it reads your code, lets you tune models and endpoints from the UI, calls tools, spawns external coding agents, and compiles chat or canvas ideas into portable .flw workflows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
@@ -301,9 +301,8 @@ function ArchitectureSection() {
                 Built as a Local AI Control Plane
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                Tlamatini runs as a Django Channels application that connects the browser,
-                RAG pipeline, unified Multi-Turn agent, MCP services, and ACPX runtime through
-                one local operator surface.
+                Tlamatini connects the browser, code context, Config menu, Multi-Turn operator,
+                visual workflow compiler, and ACPX runtime through one local command surface.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
                 <div className="xaiht-card min-w-0">
@@ -313,12 +312,12 @@ function ArchitectureSection() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f0f0f0' }}>
-                    Django Channels WebSocket
+                    Chat, Config, and Context
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    Browser requests flow through Daphne ASGI into AgentConsumer, preserving chat
-                    state while forwarding toggles for Multi-Turn, Exec Report, ACPX, and internet
-                    context.
+                    The chat surface keeps Multi-Turn, Exec Report, ACPX, internet context,
+                    and the new Models / URLs Config dialogs close at hand without asking users
+                    to hunt through JSON.
                   </p>
                 </div>
                 <div className="xaiht-card min-w-0">
@@ -329,12 +328,12 @@ function ArchitectureSection() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f0f0f0' }}>
-                    LLM and ACPX Backends
+                    LLM, ACPX, and GPU Guard
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    Ollama powers local models, Claude can handle cloud calls, Qwen covers vision,
-                    and ACPX can spawn external CLIs such as Claude Code, Cursor, Codex, Gemini,
-                    and Qwen Code.
+                    Ollama, Claude, and Qwen cover the model surface, ACPX delegates to external
+                    coding CLIs, and GPU hosts get a pre-flight warning before heavy embedding
+                    loads can slow the machine down.
                   </p>
                 </div>
               </div>
@@ -355,16 +354,16 @@ function ArchitectureSection() {
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 Hybrid retrieval combines FAISS vectors, BM25 keywords, Reciprocal Rank Fusion,
-                code-aware metadata, context budgeting, and an out-of-memory fallback that keeps
-                source access alive.
+                code-aware metadata, a lighter default embedding model, GPU-aware pre-flight
+                warnings, and a fallback path that keeps source access alive.
               </p>
               {/* Pipeline */}
               <div className="flex items-stretch justify-center gap-0 gap-y-4 flex-wrap lg:flex-nowrap max-w-5xl mx-auto w-full">
                 {[
                   { name: 'Load Context', desc: 'Files, folders, or current canvas' },
-                  { name: 'Chunk + Classify', desc: 'Recursive splits with code metadata' },
+                  { name: 'Nomic Default', desc: 'Light embedding footprint by default' },
                   { name: 'FAISS + BM25', desc: 'Hybrid retrieval with RRF fusion' },
-                  { name: 'Budget + Fallback', desc: '250K context cap with OOM fallback' },
+                  { name: 'GPU Guard', desc: 'Warns before expensive embedding bursts' },
                 ].map((node, i) => (
                   <div key={node.name} className="flex items-center flex-1 min-w-[200px] max-w-full">
                     <div
@@ -403,19 +402,19 @@ function ArchitectureSection() {
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 When Multi-Turn is enabled, the chat becomes an operator: a planner selects
-                the relevant tools, the loop can run up to 256 iterations, and state-changing
-                work can be converted into a reusable flow.
+                the relevant tools, watches the results, and turns successful work into reusable
+                workflows.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
                 {[
                   {
                     title: 'Global Execution Planner',
-                    desc: 'Builds a request-scoped plan and binds at most 20 relevant tools by capability score.',
+                    desc: 'Builds a request-scoped plan and binds a focused set of relevant tools.',
                     color: '#c9a96e',
                   },
                   {
-                    title: 'Capability Selection',
-                    desc: 'Chooses from 36 wrapped chat-agent tools, ACPX tools, core tools, and MCP contexts.',
+                    title: 'Config-Aware Runtime',
+                    desc: 'Uses the active Models and URLs settings from the same config path in source and frozen builds.',
                     color: '#7a9e8e',
                   },
                   {
@@ -517,8 +516,8 @@ function WorkflowSection() {
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
               The Visual Workflow Designer lets you drag 60 agent types onto a canvas,
-              wire them into .flw workflows, validate the live graph, and start it through
-              the same Flow Compiler used for chat-created flows.
+              wire them into .flw workflows, validate the live graph, and run the same
+              contract-aware compiler that powers chat-created flows.
             </p>
             <img
               src="/images/feature-workflow.jpg"
@@ -582,13 +581,14 @@ function ToolsSection() {
   }, []);
 
   const tools = [
-    { name: 'execute_command', desc: 'Shell command execution from the core tool surface', type: 'Core', color: '#c9a96e' },
-    { name: 'qwen_analyze_image', desc: 'Image analysis through Qwen via Ollama', type: 'Vision', color: '#8a9ec7' },
+    { name: 'Config -> Models', desc: 'Tune model names from the chat UI with validation', type: 'Config', color: '#c9a96e' },
+    { name: 'Config -> URLs', desc: 'Edit endpoint values without hand-editing JSON', type: 'Config', color: '#c9a96e' },
+    { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads', type: 'RAG', color: '#8a9ec7' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
-    { name: 'chat_agent_sleeper', desc: 'Canonical wait tool for autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
+    { name: 'chat_agent_sleeper', desc: 'Wait primitive for smooth autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },
     { name: 'acp_spawn', desc: 'Start an external coding-agent CLI session', type: 'ACPX', color: '#b08cc7' },
-    { name: 'acp_relay', desc: 'Relay one external agent response to another in a single call', type: 'ACPX', color: '#b08cc7' },
+    { name: 'acp_relay', desc: 'Pass one external agent answer to another in a single call', type: 'ACPX', color: '#b08cc7' },
     { name: 'invoke_skill', desc: 'Run registered SKILL.md packages through the SkillHarness', type: 'Skill', color: '#9e9e9e' },
   ];
 
@@ -604,7 +604,7 @@ function ToolsSection() {
           className="reveal-item font-bold mb-8"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          Core, Wrapped, and ACPX Tooling
+          Tunable, Guarded, Agentic Tooling
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {tools.map((tool) => (

@@ -54,7 +54,7 @@ function TlamatiniHero() {
           Local-First AI Developer Assistant
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-          Hybrid RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation,
+          Hybrid RAG, live model configuration, Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
           and a 60-agent workflow designer packaged for source or frozen local runs.
         </p>
       </div>
@@ -100,13 +100,13 @@ function TlamatiniOverview() {
           </h2>
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." It is a
-            Django/Channels app you run on your own machine, combining code-aware retrieval,
-            tool execution, external coding-agent delegation, and a visual automation canvas.
+            local app you run on your own machine, combining code-aware retrieval,
+            live configuration, tool execution, external coding-agent delegation, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The current documentation describes hybrid FAISS + BM25 retrieval, a 256-iteration
-            Multi-Turn operator loop, 12 ACPX/Skill tools, 60 workflow agents, and a backend
-            Flow Compiler that validates and writes portable .flw workflows.
+            The current build adds a Config menu for Models and URLs, defaults to a lighter
+            embedding posture, warns GPU-enabled machines before expensive context loads, and
+            still delivers ACPX, 60 workflow agents, and portable .flw flows.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -116,7 +116,7 @@ function TlamatiniOverview() {
               className="xaiht-btn xaiht-btn-filled"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
               </svg>
               View Source
             </a>
@@ -158,12 +158,12 @@ function TlamatiniFeatures() {
   const features = [
     {
       title: 'Multi-Turn Chat Operator',
-      description: 'Django Channels WebSocket chat with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. The operator loop can call tools, observe results, and continue for up to 256 iterations.',
+      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. It can call tools, observe results, and convert successful work into repeatable flows.',
       image: '/images/feature-chat.jpg',
     },
     {
-      title: 'Hybrid RAG System',
-      description: 'Directory, file, or canvas context is chunked, embedded, and retrieved through FAISS + BM25 with Reciprocal Rank Fusion, code-aware metadata, context budgeting, and an out-of-memory fallback.',
+      title: 'Hybrid RAG with GPU Guard',
+      description: 'Directory, file, or canvas context is grounded through FAISS + BM25 retrieval. The lighter Nomic default and GPU pre-flight warning help context loading stay responsive on developer machines.',
       image: '/images/artifact-rag.jpg',
     },
     {
@@ -173,8 +173,18 @@ function TlamatiniFeatures() {
     },
     {
       title: 'ACPX External Delegation',
-      description: 'ACPX spawns external coding-agent CLIs such as Claude Code, Cursor, Codex, Gemini, and Qwen Code, captures NDJSON transcripts, relays answers, and exposes the flow as 12 native tools.',
+      description: 'ACPX delegates to external coding-agent CLIs such as Claude Code, Cursor, Codex, Gemini, and Qwen Code, then brings their answers back into Tlamatini as a native operator surface.',
       image: '/images/feature-agents.jpg',
+    },
+    {
+      title: 'In-App Config Menu',
+      description: 'The new Config dropdown exposes validated Models and URLs dialogs, so everyday runtime tuning happens directly from the chat UI instead of hidden configuration files.',
+      image: '/images/feature-chat.jpg',
+    },
+    {
+      title: 'Smoother Working Surface',
+      description: 'Restored context waits until it is truly ready, the chat/canvas divider feels steadier, and GPU warnings appear before heavy embedding work starts.',
+      image: '/images/feature-workflow.jpg',
     },
   ];
 
@@ -239,7 +249,7 @@ function TlamatiniInstallation() {
 
   const steps = [
     { label: 'Install Ollama', code: '$env:OLLAMA_INSTALL_DIR = "$env:LOCALAPPDATA\\Programs\\Ollama"\nirm https://ollama.com/install.ps1 | iex' },
-    { label: 'Pull Default Models', code: 'ollama pull qwen3-embedding:8b\nollama pull glm-5:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud' },
+    { label: 'Pull Default Models', code: 'ollama pull Nomic-Embed-Text:latest\nollama pull glm-5:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud' },
     { label: 'Clone Source', code: 'git clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini' },
     { label: 'Setup Environment', code: 'python -m venv venv\nsource venv/bin/activate  # Linux/macOS\nvenv\\Scripts\\activate   # Windows\npip install -r requirements.txt' },
     { label: 'Initialize Database', code: 'python Tlamatini/manage.py migrate\npython Tlamatini/manage.py createsuperuser\npython Tlamatini/manage.py collectstatic --noinput' },
@@ -261,7 +271,7 @@ function TlamatiniInstallation() {
         Installation
       </h2>
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-        Run from source with Python 3.12.10 and Ollama, or ship a frozen Windows distribution with the documented installer pipeline.
+        Run from source with Python 3.12.10 and Ollama, then tune common model and endpoint settings from Tlamatini's Config menu.
       </p>
       <div className="space-y-4">
         {steps.map((step, i) => (
@@ -443,9 +453,9 @@ function TlamatiniAgents() {
           60 Workflow-Agent Types
         </h2>
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          The current catalog spans control, routing, logic, action, cryptography, utility,
+          The catalog spans control, routing, logic, action, cryptography, utility,
           terminal monitoring, and AI design agents, including TeleTlamatini, WhatsTlamatini,
-          ACPXer, and FlowCreator.
+          ACPXer, FlowCreator, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (
@@ -505,11 +515,11 @@ function TlamatiniTechStack() {
 
   const stack = [
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
-    { category: 'RAG', items: ['FAISS', 'BM25', 'Reciprocal Rank Fusion', 'Context budgeting'] },
+    { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
     { category: 'Agent Runtime', items: ['LangChain tools', 'Multi-Turn executor', 'ACPX external CLIs', 'SkillHarness'] },
     { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', '.flw save/load', 'Source and frozen modes'] },
-    { category: 'Interfaces', items: ['WebSockets', 'gRPC MCP file search', 'Bootstrap UI', 'Modular JavaScript'] },
+    { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs dialog', 'WebSockets', 'MCP file search'] },
   ];
 
   return (

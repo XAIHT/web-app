@@ -4,7 +4,7 @@
 
 > A locally-deployed AI developer assistant: hybrid RAG (FAISS + BM25), Multi-Turn tool orchestration, ACPX delegation to external coding-agent CLIs (Claude Code, Cursor, Codex, Gemini, Qwen, …), and a visual workflow designer with **60 drag-and-drop agents**.
 >
-> Site: **<https://xaiht.org>** · One-minute teaser: **<https://youtu.be/a51miZ1JIe0>**
+> Site: **<https://xaiht.org>** · One-minute teaser of a complete Cybersec enhancement crated by Tlamatini!!!: **<https://www.youtube.com/watch?v=4MyRXBahHuU&t=41s>**
 >
 > Looking for the long-form, narrative version of this documentation? See [`BookOfTlamatini.md`](BookOfTlamatini.md).
 
@@ -20,9 +20,10 @@
   - [2.1. Prerequisites](#21-prerequisites)
   - [2.2. Install Ollama (no admin rights)](#22-install-ollama-no-admin-rights)
   - [2.3. Pull the default models](#23-pull-the-default-models)
-  - [2.4. Clone, install, migrate](#24-clone-install-migrate)
-  - [2.5. Run the server (not-frozen)](#25-run-the-server-not-frozen)
-  - [2.6. Log in for the first time](#26-log-in-for-the-first-time)
+  - [2.4. Cloud models require an Ollama Pro/Max plan](#24-cloud-models-require-an-ollama-promax-plan)
+  - [2.5. Clone, install, migrate](#25-clone-install-migrate)
+  - [2.6. Run the server (not-frozen)](#26-run-the-server-not-frozen)
+  - [2.7. Log in for the first time](#27-log-in-for-the-first-time)
 - [3. Using the Chat (`/agent/`)](#3-using-the-chat-agent)
   - [3.1. Chat layout in 30 seconds](#31-chat-layout-in-30-seconds)
   - [3.2. Setting code as context](#32-setting-code-as-context)
@@ -69,18 +70,26 @@
   - [8.3. Multi-Turn execution pipeline](#83-multi-turn-execution-pipeline)
   - [8.4. Agent contracts and the Flow Compiler](#84-agent-contracts-and-the-flow-compiler)
   - [8.5. Agent catalog (the 60 types, by family)](#85-agent-catalog-the-60-types-by-family)
-- [9. Troubleshooting](#9-troubleshooting)
-  - [9.1. Ollama / models](#91-ollama--models)
-  - [9.2. RAG / context](#92-rag--context)
-  - [9.3. Multi-Turn / planner](#93-multi-turn--planner)
-  - [9.4. Chat-created flows and ACP validation](#94-chat-created-flows-and-acp-validation)
-  - [9.5. ACPX / external CLIs](#95-acpx--external-clis)
-  - [9.6. Frozen build / installer](#96-frozen-build--installer)
-  - [9.7. Logs to consult first](#97-logs-to-consult-first)
-- [10. Contributing & License](#10-contributing--license)
-  - [10.1. Contributing](#101-contributing)
-  - [10.2. Acknowledgments](#102-acknowledgments)
-  - [10.3. License](#103-license)
+- [9. Embedding-Memory Pre-Flight Guard (GPU hosts)](#9-embedding-memory-pre-flight-guard-gpu-hosts)
+  - [9.1. Why this exists](#91-why-this-exists)
+  - [9.2. How the check fires (the hook point)](#92-how-the-check-fires-the-hook-point)
+  - [9.3. GPU detection and no-GPU behavior](#93-gpu-detection-and-no-gpu-behavior)
+  - [9.4. Three-tier VRAM prediction](#94-three-tier-vram-prediction)
+  - [9.5. The 80% threshold and the chat-bubble warning](#95-the-80-threshold-and-the-chat-bubble-warning)
+  - [9.6. Tuning, overrides, and what the guard does NOT do](#96-tuning-overrides-and-what-the-guard-does-not-do)
+  - [9.7. Test coverage](#97-test-coverage)
+- [10. Troubleshooting](#10-troubleshooting)
+  - [10.1. Ollama / models](#101-ollama--models)
+  - [10.2. RAG / context](#102-rag--context)
+  - [10.3. Multi-Turn / planner](#103-multi-turn--planner)
+  - [10.4. Chat-created flows and ACP validation](#104-chat-created-flows-and-acp-validation)
+  - [10.5. ACPX / external CLIs](#105-acpx--external-clis)
+  - [10.6. Frozen build / installer](#106-frozen-build--installer)
+  - [10.7. Logs to consult first](#107-logs-to-consult-first)
+- [11. Contributing & License](#11-contributing--license)
+  - [11.1. Contributing](#111-contributing)
+  - [11.2. Acknowledgments](#112-acknowledgments)
+  - [11.3. License](#113-license)
 
 ---
 
@@ -107,7 +116,9 @@ Everything runs locally. The whole app packages into a one-click Windows `.exe` 
 - [Loading a complete project and summarizing its source code](https://www.youtube.com/watch?v=Lrpbt_dPIXw)
 - [Installing OpenCV end-to-end in Multi-Turn](https://www.youtube.com/watch?v=bBlqbZVK-Wk)
 - [Uninstalling Poco — Exec Report and matching flow](https://www.youtube.com/watch?v=E5vi0q5FxXQ)
-- [Designing a flow with FlowCreator's help](https://www.youtube.com/watch?v=Tgoa7Tmoo0o)
+- [Implementing a FlowCreator-aided agentic flow](https://www.youtube.com/watch?v=3Pno6s4xVsE)
+- [A complete Cybersec enhancement with Tlamatini!!!](https://www.youtube.com/watch?v=4MyRXBahHuU&t=41s)
+
 
 ---
 
@@ -149,7 +160,7 @@ Tlamatini expects Ollama at `http://127.0.0.1:11434`.
 ### 2.3. Pull the default models
 
 ```powershell
-ollama pull qwen3-embedding:8b
+ollama pull Nomic-Embed-Text:latest
 ollama pull glm-5:cloud
 ollama pull qwen3.5:cloud
 ollama pull gpt-oss:120b-cloud
@@ -159,7 +170,7 @@ ollama pull llama3.2-vision:11b
 
 | Tag | Used for |
 |---|---|
-| `qwen3-embedding:8b` | RAG embeddings |
+| `Nomic-Embed-Text:latest` | RAG embeddings (default — small VRAM footprint, ~600 MB resident) |
 | `glm-5:cloud` | Default chat + Multi-Turn unified-agent + MCP file-search |
 | `qwen3.5:cloud` | Default vision (Image-Interpreter) |
 | `gpt-oss:120b-cloud` | Several workflow-agent templates (Monitor-Log, Notifier, Prompter, Summarizer, …) |
@@ -168,7 +179,27 @@ ollama pull llama3.2-vision:11b
 
 You can substitute any tag — just edit `Tlamatini/agent/config.json` (see [§7.1](#71-llm-and-unified-agent)) or the relevant agent's `config.yaml`.
 
-### 2.4. Clone, install, migrate
+> **Optional: swap to a higher-detail embedding model.** If your retrieval quality on dense, technical corpora is not good enough with the default, you can switch to `qwen3-embedding:8b` from the **Config → Models** menu inside the app (or by editing `embeding-model` in `config.json` and reconnecting). **Use with caution**: `qwen3-embedding:8b` is roughly **10× heavier in VRAM** than `Nomic-Embed-Text:latest` (~6.24 GB resident vs ~600 MB on a Q4_K_M quant) and will trip the embedding-memory pre-flight guard (see [§9](#9-embedding-memory-pre-flight-guard)) on 8 GB consumer GPUs. Pull it first with `ollama pull qwen3-embedding:8b`.
+
+### 2.4. Cloud models require an Ollama Pro/Max plan
+
+Four of the six default model tags in [§2.3](#23-pull-the-default-models) carry the `:cloud` suffix — `glm-5:cloud`, `qwen3.5:cloud`, `gpt-oss:120b-cloud`, and `qwen3.5:397b-cloud`. Those are **Ollama Cloud** models: they live on Ollama's servers, not on your machine, and `ollama pull` only registers a stub that proxies inference to the cloud. Reaching that cloud requires a logged-in Ollama account and a subscription tier that allows the workload you intend to run.
+
+The plan structure (prices are deliberately omitted from this README because they change — check **<https://ollama.com/pricing>** for the current numbers):
+
+![Ollama plan structure — Free / Pro / Max](OllamaPricing.png)
+
+| Plan | Cloud-model access | Why it matters for Tlamatini |
+|---|---|---|
+| **Free** | 1 cloud model concurrently, light usage. Local open-weights models are unlimited. | Enough to *try* a single cloud model for a one-shot chat. **Not enough** for Tlamatini's default config, which pins different cloud models for chat (`glm-5:cloud`), FlowCreator (`qwen3.5:397b-cloud`), several workflow agents (`gpt-oss:120b-cloud`), and vision (`qwen3.5:cloud`) — so a real Multi-Turn run typically needs 2–3 cloud models loaded at once. |
+| **Pro** | 3 concurrent cloud models, ~50× the Free monthly quota, access to the larger cloud-only models, ability to upload / share private models. | The realistic minimum for running Tlamatini out-of-the-box with its shipped cloud-model defaults — Multi-Turn + Exec Report + occasional Image-Interpreter calls. |
+| **Max** | 10 concurrent cloud models, ~5× the Pro quota, designed for sustained heavy agentic workloads. | Recommended for long-running ACPX relays, FlowHypervisor-supervised flows, and Croner-driven unattended runs that chain many cloud calls per hour. |
+
+**If you do not want to subscribe**, you can run Tlamatini entirely on local open-weights models. Edit `Tlamatini/agent/config.json` (`chained-model`, `unified_agent_model`, `mcp_file_search_model`, `flow_creator_model`, `image_interpreter_model`) and every agent `config.yaml` that names a `:cloud` tag, and swap them for a model you have pulled locally (for example, `llama3.1:8b`, `qwen2.5-coder:14b`, `mistral-nemo:12b`). Performance and quality will scale with your GPU/CPU — Multi-Turn and ACPX both work fine on a sufficiently large local model.
+
+**API keys are separate.** This subscription only governs `*:cloud` Ollama models. The ACPX runtime can additionally spawn external coding-agent CLIs that bring their own credentials (Anthropic API key for `claude`, OpenAI key for `codex`, Google key for `gemini`, etc.) — those are configured in `Tlamatini/agent/config.json` under `acpx.agents.<id>.env` and are unaffected by your Ollama plan. See [§5.6](#56-api-key-setup-the-easy-button) for the easy-button setup.
+
+### 2.5. Clone, install, migrate
 
 ```bash
 git clone https://github.com/XAIHT/Tlamatini.git
@@ -187,7 +218,7 @@ python Tlamatini/manage.py createsuperuser
 python Tlamatini/manage.py collectstatic --noinput
 ```
 
-### 2.5. Run the server (not-frozen)
+### 2.6. Run the server (not-frozen)
 
 ```bash
 python Tlamatini/manage.py runserver --noreload
@@ -197,7 +228,7 @@ python Tlamatini/manage.py runserver --noreload
 
 The console title becomes `Tlamatini` and stdout/stderr are tee'd into `Tlamatini/tlamatini.log` (truncated on every start). When debugging, `tlamatini.log` is the first thing to read.
 
-### 2.6. Log in for the first time
+### 2.7. Log in for the first time
 
 Open `http://127.0.0.1:8000/` and log in with the superuser you just created. Then:
 
@@ -215,7 +246,7 @@ Open `http://127.0.0.1:8000/` and log in with the superuser you just created. Th
 
 ```
 ┌───────────────────────────────────────────────────────────────────────┐
-│ Tlamatini  [Context ▼] [Open in… ▼] [MCPs ▼] [Tools ▼] [Agents ▼]    │ ← top nav
+│ Tlamatini  [Context ▼] [Open in… ▼] [MCPs ▼] [Tools ▼] [Agents ▼] [Config ▼] │ ← top nav
 ├───────────────────────────────────────────────────────────────────────┤
 │  Multi-Turn ☐   Exec Report ☐   ACPX ☐   internet ☐    Clear ⌫       │ ← four toggles
 ├───────────────────────────────────────────────────────────────────────┤
@@ -229,6 +260,8 @@ Open `http://127.0.0.1:8000/` and log in with the superuser you just created. Th
 
 The **four toolbar toggles** are independent. Tick whatever combination fits the task — each one is its own tutorial section below.
 
+Newer builds also expose a **Config** dropdown in the same navbar. `Config -> Models` edits the most common model-name fields, and `Config -> URLs` edits the Ollama / unified-agent / MCP endpoint values through validated dialogs instead of hand-editing JSON. The chat/canvas divider was also tightened so resizing the right-hand canvas feels more predictable during long editing sessions.
+
 ### 3.2. Setting code as context
 
 Click **Context** in the top nav:
@@ -241,6 +274,8 @@ Click **Context** in the top nav:
 | **Clear context** | Drops the loaded context. |
 
 A green banner at the top shows the current context path. If embedding runs out of memory, Tlamatini packs the source files as a fallback context — retrieval quality drops, access to your code does not.
+
+If you refresh the browser and Tlamatini restores a saved context automatically, the input now stays disabled until the contextual RAG chain has actually finished rebuilding. That closes the old "restored banner arrived before the context was really ready" race on the first load stage.
 
 ### 3.3. Tutorial: a one-shot question (no toggles)
 
@@ -453,6 +488,8 @@ Now ACP takes a fresh **snapshot of the canvas** before validation and start. Th
 
 The backend then compiles that snapshot into real pool `config.yaml` files using the Agent Contract Registry. In beginner terms: **the picture on the screen becomes the source of truth.**
 
+Another important nuance: if you opened an agent dialog and manually edited wiring-sensitive fields such as `source_agents` or an Ender kill list, those dialog edits now survive compilation. Canvas edges still contribute their live connections, but a deliberate dialog override is no longer silently discarded by Validate or Start.
+
 What happens when you click **✓ Validate**:
 
 1. Browser captures the live canvas.
@@ -479,6 +516,8 @@ This removes a whole class of "I swear I connected it correctly, why is it runni
 | **⏹ Stop** | Hard stop. Ender runs termination logic; reanimation files are cleared. |
 
 This is why long-running workflows (Crawler scraping 10k URLs, Parametrizer iterating segments) survive pauses.
+
+Stop is also safer in mixed flows now: the ACP cleanup path is better at terminating leftover session processes before the next run begins, so partially mixed ACP sessions are less likely to leave orphaned agents behind.
 
 ### 4.6. FlowHypervisor (watchdog)
 
@@ -763,7 +802,7 @@ For users, the takeaway is simpler: **a `.flw` saved in source mode should load 
 
 ```json
 {
-  "embeding-model": "qwen3-embedding:8b",
+  "embeding-model": "Nomic-Embed-Text:latest",
   "chained-model": "glm-5:cloud",
   "ollama_base_url": "http://127.0.0.1:11434",
   "ollama_token": "",
@@ -811,6 +850,8 @@ Key knobs: `chunk_size` (3000), `chunk_overlap` (800), `k_vector` / `k_bm25` (10
 - `internet_classifier_model`, `web_summarizer_model`, `web_context_max_chars` — internet toggle.
 - `image_interpreter_model`, `image_interpreter_base_url` — vision.
 - `history_summary_*`, `keep_last_turns` — chat-history compression.
+
+You no longer need to hand-edit all of those values. On `/agent/`, open `Config -> Models` or `Config -> URLs` to edit the most common runtime knobs in-place. The browser validates model strings / URLs / hosts / ports, the backend validates again, and `config_loader.save_config_updates()` atomically merges only the changed keys into the active `config.json`. The same loader path is used in source mode and frozen builds, so the chat UI and the executable stop drifting onto different config copies.
 
 ---
 
@@ -901,49 +942,215 @@ Per-agent details (config knobs, lifecycle, naming convention, log markers): see
 
 ---
 
-## 9. Troubleshooting
+## 9. Embedding-Memory Pre-Flight Guard (GPU hosts)
 
-### 9.1. Ollama / models
+When you click **Set directory as context** in the Context menu, Tlamatini walks the directory, splits each file into chunks, and pushes every chunk through Ollama's embedding API to build a FAISS index. On a laptop / consumer GPU a heavy embedding model can occupy 75–95% of total VRAM by itself — and once a chat model is also resident the combined footprint exceeds available memory and the daemon thrashes RAM↔VRAM swap on every embed batch. A 30-second context-load turns into a multi-hour stall.
+
+The **embedding-memory pre-flight guard** (`Tlamatini/agent/embedding_memory_guard.py`) catches this before the embed burst starts. It runs only when an NVIDIA GPU is detected; on CPU-only / AMD / Apple Silicon hosts it is a silent no-op and the legacy load path is unchanged.
+
+### 9.1. Why this exists
+
+The trigger case is the dev box this codebase is calibrated on: an **NVIDIA GeForce RTX 4070 Laptop GPU with 8 188 MiB** of VRAM. The previously-configured embedding model `qwen3-embedding:8b` (7.6 B parameters, Q4_K_M quantization) sits at **~6.24 GB resident** — 77.9% of total VRAM. Add the chat model and the daemon evicts something on every embed batch. The fix is either: switch to a smaller model (e.g. `nomic-embed-text:v1.5` at ~0.60 GB resident, 7% saturation) or accept the slow path knowingly. The guard surfaces the choice **before** the heavy work starts, so you can abort, swap the model in `config.json`, and restart Ollama — saving an hour of debugging "why is context loading frozen?".
+
+### 9.2. How the check fires (the hook point)
+
+The guard is wired into `agent/consumers.py::setup_contextual_rag_chain` at exactly one point: **after** the "loading context" banner is broadcast to the chat, **before** the heavy `asyncio.to_thread(setup_llm_with_context, …)` call that drives the embedding burst. The flow is:
+
+```
+WebSocket "set-directory-as-context"
+    ↓
+consumers.py:setup_contextual_rag_chain(path_only)
+    ↓
+broadcast MSG_AGENT_LOADING_CONTEXT chat bubble
+    ↓
+► embedding_memory_guard.check_embedding_memory_for_directory(...)
+    │
+    ├─► returns None (no GPU / under threshold / probe failed)
+    │       → proceed silently
+    │
+    └─► returns warning dict
+            → broadcast HTML warning chat bubble
+            → proceed anyway (informational, non-blocking)
+    ↓
+asyncio.to_thread(setup_llm_with_context, ...)
+    └─► OllamaEmbeddings + FAISS.from_documents(...)   ← VRAM burst
+```
+
+The check runs inside `asyncio.to_thread` so a slow `nvidia-smi` or cold `/api/show` call never blocks the Channels event loop. The whole block is wrapped in `try/except Exception` so any unhandled probe error prints a one-line `[EMBED-MEM] Pre-flight check skipped (fail-open)` to `tlamatini.log` and the load continues — **a diagnostic must never block the user**.
+
+### 9.3. GPU detection and no-GPU behavior
+
+The guard reuses the **already-cached** `nvidia-smi -L` probe from `agent/gpu_perf.py::_has_nvidia_gpu()` (introduced for the model-pinning hook). The probe runs at most once per process; subsequent calls hit the in-module cache. On CPU-only Linux/Windows, AMD GPUs, and Apple Silicon the probe returns `False` once at server start and **every subsequent call to the guard returns `None` immediately** — no subprocesses spawned, no HTTP calls made, no overhead.
+
+This is the **portability guarantee**: a fresh `git pull` on a no-GPU box behaves *exactly* as before the guard existed. The 28 dedicated no-GPU compatibility tests (see 9.7) lock the contract in place.
+
+### 9.4. Three-tier VRAM prediction
+
+When the GPU gate passes, the guard predicts the embedding model's resident VRAM in priority order:
+
+| Tier | Source | Trigger | Accuracy |
+|---|---|---|---|
+| **A** | `GET /api/ps` `size_vram` | Model already resident in Ollama | **Exact** — verbatim daemon value |
+| **B** | `POST /api/show` → `parameter_count × bits_per_weight × overhead` | Model pulled but unloaded | ±5% on calibrated models |
+| **C** | (any probe failure) | Ollama down, model not pulled, cloud model (`:cloud` suffix) | Returns `None` → fail-open |
+
+Tier B uses a standard llama.cpp / GGUF bits-per-weight table:
+
+| Quant | Bits/weight | Quant | Bits/weight |
+|---|---|---|---|
+| `F32` | 32.0 | `Q4_K_M` | 4.83 |
+| `F16` / `BF16` | 16.0 | `Q4_K_S` | 4.58 |
+| `Q8_0` | 8.5 | `Q4_0` | 4.55 |
+| `Q6_K` | 6.56 | `Q3_K_M` | 3.91 |
+| `Q5_K_M` | 5.69 | `Q2_K` | 2.96 |
+
+Unknown quants fall back to a conservative `5.0` bits/weight. The overhead multiplier accounts for KV cache + activation buffers + GGML allocator slack:
+
+- **`× 1.40`** for models with **≥ 1 B parameters** (large-model regime)
+- **`× 2.20`** for **sub-1 B** models (proportionally larger KV/buffer overhead)
+
+Calibration against live measurements on the RTX 4070 Laptop:
+
+| Model | Params × bits/8 (raw) | Predicted (× overhead) | Measured resident | Error |
+|---|---|---|---|---|
+| `qwen3-embedding:8b` (Q4_K_M) | 4.54 GB | **6.36 GB** (× 1.40) | 6.24 GB | +1.9% |
+| `Nomic-Embed-Text:latest` (F16) | 274 MB | **603 MB** (× 2.20) | 600 MB | +0.5% |
+
+Tier B also pulls the **embedding dimension** from `/api/show` via any architecture-prefixed `*.embedding_length` key (e.g. `qwen3.embedding_length=4096`, `nomic-bert.embedding_length=768`). Combined with a directory pre-scan that mirrors the exclusion rules of `agent/rag/factory.py::CustomTextLoader`, it reports a **projected FAISS-index RAM size** (`num_chunks × embedding_dim × 4` bytes, float32). This is RAM, not VRAM, but useful to surface on directories with hundreds of thousands of chunks.
+
+### 9.5. The 80% threshold and the chat-bubble warning
+
+The guard fires when **predicted_vram ≥ 0.80 × smallest-GPU total VRAM**. Why the smallest GPU (rather than the sum or the largest)? Because Ollama loads each model into a **single device** — using the max would silently under-report the constraint on heterogeneous multi-GPU rigs.
+
+When the threshold is crossed, the guard returns a structured dict the consumer renders as an HTML chat bubble. A real example from this dev box (artificially threshold-lowered to 70% so qwen3-embed:8b trips):
+
+```
+⚠️ Embedding-memory warning
+Embedding model qwen3-embedding:8b needs ~6,378 MiB of VRAM
+(currently resident in VRAM), which is 77.9% of the smallest
+GPU's total (8,188 MiB) — above the safety threshold of 70%.
+Projected FAISS vector store (RAM, not VRAM): ~28 MiB across
+1,847 chunks at dim 4096.
+Context loading will continue, but expect slow embedding
+throughput or RAM↔VRAM swap. To eliminate the pressure, switch
+embeding-model in config.json to a smaller model
+(e.g. nomic-embed-text:v1.5) and restart.
+```
+
+The message is **informational and non-blocking** — context loading proceeds. The user picks whether to wait it out, hit Cancel, or change models. The phrasing names the exact `config.json` key (`embeding-model`, with the spelling preserved from the existing codebase) and a concrete alternative.
+
+### 9.6. Tuning, overrides, and what the guard does NOT do
+
+| Knob | Where | Default | When to change |
+|---|---|---|---|
+| Trigger threshold | `check_embedding_memory_for_directory(..., threshold=)` | `0.80` | Pass `0.70` on smaller GPUs (6 GB cards) where 80% is already too tight. |
+| Large-model overhead | `_OVERHEAD_LARGE` constant | `1.40` | If a new model family proves the calibration off by > 10%, recalibrate against `/api/ps` and bump the constant. |
+| Small-model overhead | `_OVERHEAD_SMALL` constant | `2.20` | Same calibration story for sub-1B models. |
+| Bits/weight table | `_QUANT_BITS` dict | `Q4_K_M=4.83` (etc.) | Add new entries when a future GGUF quant ships. |
+
+What the guard **does NOT** do, by deliberate choice:
+
+- It does **not** abort context loading. The warning is informational. (If you want abort-on-warning behavior, wire a confirm/cancel WebSocket round-trip — the surface is described in `agent_page_init.js` near `set-dir-context`.)
+- It does **not** estimate the **chat** model's VRAM. Only the embedding model is checked, because that is the model the directory-load path forces into VRAM. The chat model is handled by `gpu_perf.pin_ollama_model` separately.
+- It does **not** persist warnings. Each context-load runs an independent check.
+- It does **not** call `nvidia-smi` on CPU-only hosts. Both gates (`_has_nvidia_gpu_cached` and the `_gpu_total_memory_bytes` query) short-circuit before any subprocess spawn.
+- It does **not** add new dependencies. `subprocess`, `urllib.request`, and `os.walk` are the only stdlib touchpoints — the same surface `agent/gpu_perf.py` already uses.
+
+### 9.7. Test coverage
+
+The guard ships with **49 automated tests** in `Tlamatini/agent/test_embedding_memory_guard.py`, split into seven `SimpleTestCase` classes:
+
+| Test class | Count | What it pins |
+|---|---|---|
+| `QuantTableTests` | 2 | Known quants resolve to standard bits/weight; unknown quants fall back to the conservative default. |
+| `PredictFromShowTests` | 3 | Tier-B prediction lands within calibrated bounds for both 7.6 B and 137 M reference models. |
+| `EmbeddingDimExtractionTests` | 2 | The dim key is found regardless of architecture prefix (`qwen3.`, `nomic-bert.`, future archs). |
+| `ChunkEstimatorTests` | 4 | Directory walk honors default + user omissions, respects `max_chunks_per_file`, and handles single-file mode. |
+| `GuardEntryPointTests` | 8 | All entry-point branches: no-GPU, cloud, threshold gate, Tier A `/api/ps`, Tier B `/api/show`, probe failure. |
+| `FormatMessageTests` | 2 | HTML renders the model name, percent, threshold, and chunk count. |
+| **`NoGpuCompatibilityTests`** | **28** | **Every no-GPU failure mode — see breakdown below.** |
+
+The `NoGpuCompatibilityTests` class is the portability proof. Its coverage matrix:
+
+| Failure mode | Tests |
+|---|---|
+| Module import on no-GPU host has no side effects | `test_module_imports_without_side_effects` |
+| `nvidia-smi` binary missing entirely | `test_run_cmd_returns_127_for_real_missing_binary`, `test_total_vram_returns_none_when_nvidia_smi_missing` |
+| `nvidia-smi` exists but driver unloaded | `test_total_vram_returns_none_when_driver_unloaded` |
+| `nvidia-smi` times out / crashes | `test_run_cmd_absorbs_timeout` / `..._permission_error` / `..._generic_oserror` |
+| `nvidia-smi` returns empty or garbage output | `test_total_vram_returns_none_on_empty_output` / `..._on_unparseable_output` |
+| Heterogeneous multi-GPU rig | `test_total_vram_picks_smallest_gpu_in_heterogeneous_rig` |
+| `gpu_perf` module missing / its probe raises | `test_has_nvidia_gpu_falls_back_when_gpu_perf_unimportable`, `test_has_nvidia_gpu_returns_false_when_gpu_perf_probe_raises` |
+| Ollama daemon offline (closed port) | `test_ollama_show_returns_none_against_closed_port`, `test_ollama_ps_returns_none_against_closed_port` |
+| Malformed Ollama URLs / empty args | `test_ollama_show_returns_none_for_garbage_url` |
+| Model not in `/api/ps` | `test_ollama_loaded_vram_returns_none_when_model_not_in_ps`, `..._when_ps_fails` |
+| Entry on a CPU-only host | `test_check_returns_none_on_cpu_only_host` |
+| GPU detected but `--query-gpu` fails | `test_check_returns_none_when_nvidia_smi_query_fails` |
+| GPU detected but Ollama offline | `test_check_returns_none_when_ollama_offline` |
+| Pathological 0 MiB GPU reading | `test_check_returns_none_when_gpu_zero_total` |
+| Empty `ollama_base_url` in config | `test_check_returns_none_for_empty_base_url` |
+| Deleted / nonexistent / empty path | 3× `test_chunk_estimator_*` + `test_check_with_nonexistent_path_does_not_crash` |
+| Unreadable file inside the walked tree | `test_chunk_estimator_with_unreadable_file_skips_it` |
+| Partial warning dict (missing optional keys) | `test_format_warning_message_handles_missing_optional_keys` |
+| **Live portability proof (real subprocess + real urllib)** | **`test_real_entry_point_call_never_raises`** |
+
+`test_real_entry_point_call_never_raises` is the CI gate: it makes the *actual* `subprocess.run(["nvidia-smi", ...])` and `urlopen("http://127.0.0.1:11434/...")` calls against whatever the runner offers, and asserts the return is **either** `None` **or** a well-formed warning dict — never an exception. The same test passes on this RTX 4070 dev box (returns `None` because qwen3-embed sits at 77.9%, under the 80% gate) and on a CPU-only CI image (returns `None` because the GPU gate fails fast).
+
+Run them yourself:
+
+```bash
+cd Tlamatini
+python manage.py test agent.test_embedding_memory_guard --verbosity=2
+# 49 tests in ~2.3 s, no DB setup, no GPU required.
+```
+
+---
+
+## 10. Troubleshooting
+
+### 10.1. Ollama / models
 
 - "connection refused" → `ollama serve` in a dedicated terminal. Check `ollama_base_url`.
 - Model not found → `ollama list` to see what's pulled. Pull the missing tag.
 - Remote Ollama → set `ollama_token` for bearer auth.
 
-### 9.2. RAG / context
+### 10.2. RAG / context
 
 - Set-Context shows no green banner → check file permissions, ensure files are text not binary.
-- "Out of memory" during embedding → fallback mode kicks in; retrieval quality drops, files still accessible. Switch to a smaller embedding model.
+- "Out of memory" during embedding → fallback mode kicks in; retrieval quality drops, files still accessible. Switch to a smaller embedding model. **See chapter 9 — the embedding-memory pre-flight guard now warns you about this *before* the embed burst starts on GPU hosts.**
 - Hit `max_doc_chars` → bump it.
+- Session says it was restored after a refresh, but the input stays disabled briefly → that is expected while the contextual RAG chain rebuilds. Wait for the ready state / spinner to clear before sending the next prompt.
 
-### 9.3. Multi-Turn / planner
+### 10.3. Multi-Turn / planner
 
 - Did you tick **Multi-Turn**? Is `enable_unified_agent: true`?
 - "Tool X is not available" → the planner did not bind X. Check `[Planner._select]` console lines, add matching keywords to your prompt, or raise `max_selected_tools`.
 - 100 iterations exhausted → likely a busy-poll loop. Use `chat_agent_sleeper` / `chat_agent_run_wait` instead.
 
-### 9.4. Chat-created flows and ACP validation
+### 10.4. Chat-created flows and ACP validation
 
 - **Create Flow downloads a `.flw`, but it looks simpler than the chat transcript.** That is normal. The file stores the flow structure, node config, connections, and artifacts. It does not store the entire conversation.
 - **Create Flow fails from the chat.** The browser first asks `/agent/flow_from_tool_calls/` to normalize the draft. If that endpoint fails, the frontend falls back to the older browser-only export so you do not lose the flow draft.
 - **A TeleTlamatini or WhatsTlamatini flow is missing passwords or tokens after export.** That is intentional. Known secret fields are redacted when the chat exports a flow. Re-enter secrets in the agent config before running the flow.
 - **Validate shows stale connections.** Validate now asks `/agent/compile_flow/` for a dry-run compile of the live canvas instead of trusting whatever is already in the pool. If the canvas still looks wrong, save the `.flw`, reload it, and check the browser console for a compile error.
 - **Start runs an older version of the flow.** Start now compiles the visible canvas in write mode before launching. If you still see old behavior, clear the pool from the ACP close/clear controls, load the `.flw` again, and run Validate once before Start.
+- **A value I set in an agent dialog disappears after Validate or Start.** Current builds preserve explicit dialog edits and merge canvas-derived wiring on top of them. If something still looks wrong, reopen the dialog, save once more, then run Validate and inspect the compile warnings.
 - **Parametrizer mappings disappear after reload.** Save the flow after creating mappings. New `.flw` files store mappings under `artifacts.parametrizerMappings`, and the loader restores them into each Parametrizer node.
 
-### 9.5. ACPX / external CLIs
+### 10.5. ACPX / external CLIs
 
 - `acp_doctor` says agent not resolvable → CLI not on `PATH`, or set `acpx.agents.<id>.command` to the absolute path.
 - Transcript only shows outbound prompts on Windows → your build is older than May 2026. Update — fix is `transport="oneshot-prompt"` for claude/gemini/cursor/qwen/codex.
 - API key not picked up → per-agent `acpx.agents.<id>.env` wins over exported shell vars; check both.
 - Session left running → always end with `acp_kill`. If a request times out, manually `acp_list_sessions` + `acp_kill`.
 
-### 9.6. Frozen build / installer
+### 10.6. Frozen build / installer
 
 - Wrong config used → place `config.json` next to the exe, or set `CONFIG_PATH`.
 - Missing templates → verify `agents/` exists in the install. Rebuild if `README.md`, `jd-cli/`, or template directories are missing.
 - Restrictive Group Policy blocks shortcuts → `CreateShortcut.ps1` falls back to user-scoped Desktop / Start Menu paths.
 
-### 9.7. Logs to consult first
+### 10.7. Logs to consult first
 
 | What | Where |
 |---|---|
@@ -959,9 +1166,9 @@ INFO loggers worth knowing: `agent.chat_agent_runtime`, `agent.tools`, `agent.mc
 
 ---
 
-## 10. Contributing & License
+## 11. Contributing & License
 
-### 10.1. Contributing
+### 11.1. Contributing
 
 1. Fork; create a feature branch.
 2. Follow PEP 8. Run `python -m ruff check` and `npm run lint` before pushing.
@@ -971,11 +1178,11 @@ INFO loggers worth knowing: `agent.chat_agent_runtime`, `agent.tools`, `agent.mc
 
 When adding a new agent, follow the 8-step checklist in `Tlamatini/.agents/workflows/create_new_agent.md` (backend script + view + migration + CSS gradient + 4 JS files + agentic_skill.md + README + lint).
 
-### 10.2. Acknowledgments
+### 11.2. Acknowledgments
 
 [Django](https://www.djangoproject.com/) · [LangChain](https://github.com/langchain-ai/langchain) · [LangGraph](https://github.com/langchain-ai/langgraph) · [Ollama](https://ollama.ai/) · [FAISS](https://github.com/facebookresearch/faiss) · [Anthropic](https://www.anthropic.com/) · [Bootstrap](https://getbootstrap.com/) · [TextMeBot](https://textmebot.com/) · [Ruff](https://github.com/astral-sh/ruff) · [PyAutoGUI](https://github.com/asweigart/pyautogui) · [JD-CLI](https://github.com/intoolswetrust/jd-cli)
 
-### 10.3. License
+### 11.3. License
 
 **GNU General Public License v3.0** — see [LICENSE](LICENSE).
 
