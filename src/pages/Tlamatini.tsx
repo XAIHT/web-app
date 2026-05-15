@@ -54,7 +54,7 @@ function TlamatiniHero() {
           Local-First AI Developer Assistant
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-          Hybrid RAG, live model configuration, Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
+          Hybrid RAG, live model configuration, safe DB backup and swap controls, Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
           and a 60-agent workflow designer packaged for source or frozen local runs.
         </p>
       </div>
@@ -101,11 +101,11 @@ function TlamatiniOverview() {
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." It is a
             local app you run on your own machine, combining code-aware retrieval,
-            live configuration, tool execution, external coding-agent delegation, and a visual automation canvas.
+            live configuration, database snapshot controls, tool execution, external coding-agent delegation, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The current build adds a Config menu for Models and URLs, defaults to a lighter
-            embedding posture, warns GPU-enabled machines before expensive context loads, and
+            The current build adds a Config menu for Models and URLs, a DB menu for live backups
+            and next-start database swaps, a lighter embedding posture, GPU warnings before expensive context loads, and
             still delivers ACPX, 60 workflow agents, and portable .flw flows.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
@@ -177,8 +177,8 @@ function TlamatiniFeatures() {
       image: '/images/feature-agents.jpg',
     },
     {
-      title: 'In-App Config Menu',
-      description: 'The new Config dropdown exposes validated Models and URLs dialogs, so everyday runtime tuning happens directly from the chat UI instead of hidden configuration files.',
+      title: 'Config and DB Menus',
+      description: 'Validated Models and URLs dialogs sit beside DB controls for live SQLite backups and staged Set DB swaps that take effect cleanly on the next Tlamatini start.',
       image: '/images/feature-chat.jpg',
     },
     {
@@ -271,7 +271,7 @@ function TlamatiniInstallation() {
         Installation
       </h2>
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-        Run from source with Python 3.12.10 and Ollama, then tune common model and endpoint settings from Tlamatini's Config menu.
+        Run from source with Python 3.12.10 and Ollama, then tune common model and endpoint settings from Tlamatini's Config menu and manage SQLite snapshots from the DB menu.
       </p>
       <div className="space-y-4">
         {steps.map((step, i) => (
@@ -519,7 +519,7 @@ function TlamatiniTechStack() {
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
     { category: 'Agent Runtime', items: ['LangChain tools', 'Multi-Turn executor', 'ACPX external CLIs', 'SkillHarness'] },
     { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', '.flw save/load', 'Source and frozen modes'] },
-    { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs dialog', 'WebSockets', 'MCP file search'] },
+    { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs dialog', 'DB Backup / Set DB menu', 'WebSockets', 'MCP file search'] },
   ];
 
   return (
