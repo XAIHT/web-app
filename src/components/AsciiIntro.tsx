@@ -5,7 +5,7 @@ const PHRASES = [
   '( XAIHT )',
   'Tlamatini',
   'Local-First AI',
-  'Multi-Turn Operators',
+  'Multi-Turn Operation',
   '60 Workflow Agents',
   'ACPX-Enabled',
   'Visual Workflows'
