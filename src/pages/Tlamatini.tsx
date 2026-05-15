@@ -55,7 +55,7 @@ function TlamatiniHero() {
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, live model configuration, safe DB backup and swap controls, Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
-          and a 60-agent workflow designer packaged for source or frozen local runs.
+          and a 60-agent workflow designer with versioned .flw flows for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -106,7 +106,7 @@ function TlamatiniOverview() {
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             The current build adds a Config menu for Models and URLs, a DB menu for live backups
             and next-start database swaps, a lighter embedding posture, GPU warnings before expensive context loads, and
-            still delivers ACPX, 60 workflow agents, and portable .flw flows.
+            versioned .flw files that keep workflow artifacts portable across sessions.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -168,7 +168,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 60 agent types, .flw save/load, live Validate, Start-time compilation, Parametrizer mappings, Gatewayer ingress, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 60 agent types, versioned .flw save/load, live Validate, Start-time compilation, Parametrizer mappings, Gatewayer ingress, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
@@ -182,8 +182,8 @@ function TlamatiniFeatures() {
       image: '/images/feature-chat.jpg',
     },
     {
-      title: 'Smoother Working Surface',
-      description: 'Restored context waits until it is truly ready, the chat/canvas divider feels steadier, and GPU warnings appear before heavy embedding work starts.',
+      title: 'Versioned Flow Portability',
+      description: 'Saved .flw files carry schemaVersion and artifacts, so Parametrizer mappings travel with the flow and reload cleanly in the next session.',
       image: '/images/feature-workflow.jpg',
     },
   ];
@@ -518,7 +518,7 @@ function TlamatiniTechStack() {
     { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
     { category: 'Agent Runtime', items: ['LangChain tools', 'Multi-Turn executor', 'ACPX external CLIs', 'SkillHarness'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', '.flw save/load', 'Source and frozen modes'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Versioned .flw schema', 'Portable artifacts', 'Source and frozen modes'] },
     { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs dialog', 'DB Backup / Set DB menu', 'WebSockets', 'MCP file search'] },
   ];
 
