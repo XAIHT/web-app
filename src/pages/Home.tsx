@@ -73,7 +73,7 @@ function OverviewSection() {
             A locally deployed AI developer assistant with hybrid RAG over your source,
             a Multi-Turn tool-calling loop, ACPX delegation to external coding-agent CLIs,
             in-app Config and DB menus, versioned .flw workflows with portable artifacts,
-            a visual workflow designer with 60 drag-and-drop agent types, and GPU-aware context loading.
+            a visual workflow designer with 61 drag-and-drop agent types, and GPU-aware context loading.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -95,7 +95,7 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: 'Agents', value: '60' },
+                { label: 'Agents', value: '61' },
                 { label: 'ACPX Tools', value: '12' },
                 { label: 'Flow Schema', value: 'v2' },
                 { label: 'GPU Guard', value: 'Smart' },
@@ -490,7 +490,7 @@ function WorkflowSection() {
     { name: 'Control', agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { name: 'Routing', agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { name: 'Logic Gates', agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { name: 'Action', agents: 'Executer, Pythonxer, Crawler, Googler, ACPXer, TeleTlamatini', color: '#8a9ec7' },
+    { name: 'Action', agents: 'Executer, Pythonxer, De-Compresser, Crawler, Googler, ACPXer, TeleTlamatini', color: '#8a9ec7' },
     { name: 'Cryptography', agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher', color: '#c79e7a' },
     { name: 'Utility', agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { name: 'Terminal / Monitoring', agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, FlowHypervisor', color: '#7a9e8e' },
@@ -516,7 +516,7 @@ function WorkflowSection() {
           {/* Left */}
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-              The Visual Workflow Designer lets you drag 60 agent types onto a canvas,
+              The Visual Workflow Designer lets you drag 61 agent types onto a canvas,
               wire them into versioned .flw workflows, preserve Parametrizer mappings as
               artifacts, validate the live graph, and run the same contract-aware compiler
               that powers chat-created flows.
@@ -588,6 +588,7 @@ function ToolsSection() {
     { name: 'DB -> Backup database', desc: 'Snapshot the live SQLite database to a directory you choose', type: 'DB', color: '#c79e7a' },
     { name: 'DB -> Set DB', desc: 'Stage a database for the next clean Tlamatini start-up', type: 'DB', color: '#c79e7a' },
     { name: '.flw schemaVersion', desc: 'Keeps saved workflows portable with versioned artifacts', type: 'Flow', color: '#9e9e9e' },
+    { name: 'De-Compresser', desc: 'Unpacks archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
     { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads', type: 'RAG', color: '#8a9ec7' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', desc: 'Wait primitive for smooth autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },

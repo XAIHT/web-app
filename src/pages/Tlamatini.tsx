@@ -55,7 +55,7 @@ function TlamatiniHero() {
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, live model configuration, safe DB backup and swap controls, Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
-          and a 60-agent workflow designer with versioned .flw flows for source or frozen local runs.
+          and a 61-agent workflow designer with versioned .flw flows for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -168,7 +168,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 60 agent types, versioned .flw save/load, live Validate, Start-time compilation, Parametrizer mappings, Gatewayer ingress, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 61 agent types, versioned .flw save/load, live Validate, Start-time compilation, De-Compresser archive handling, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
@@ -387,6 +387,7 @@ function TlamatiniAgents() {
         { name: 'file-creator', desc: 'Write file content' },
         { name: 'file-interpreter', desc: 'Parse DOCX, PPTX, XLSX, PDF' },
         { name: 'file-extractor', desc: 'Extract text from files' },
+        { name: 'de-compresser', desc: 'Unpack archives for downstream agents' },
         { name: 'image-interpreter', desc: 'Vision analysis of images' },
         { name: 'j-decompiler', desc: 'JAR/WAR/CLASS decompilation' },
         { name: 'telegramer', desc: 'Outbound Telegram message' },
@@ -450,12 +451,12 @@ function TlamatiniAgents() {
           className="reveal-item font-bold mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          60 Workflow-Agent Types
+          61 Workflow-Agent Types
         </h2>
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
           The catalog spans control, routing, logic, action, cryptography, utility,
           terminal monitoring, and AI design agents, including TeleTlamatini, WhatsTlamatini,
-          ACPXer, FlowCreator, and GPU-aware context safeguards around the RAG entry point.
+          ACPXer, De-Compresser, FlowCreator, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (

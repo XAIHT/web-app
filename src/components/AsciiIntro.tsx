@@ -6,7 +6,7 @@ const PHRASES = [
   'Tlamatini',
   'Local-First AI',
   'Multi-Turn Operation',
-  '60 Workflow Agents',
+  '61 Workflow Agents',
   'ACPX-Enabled',
   'Visual Workflows'
 ];
