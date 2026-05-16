@@ -70,9 +70,9 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            A locally deployed AI developer assistant with hybrid RAG over your source,
-            a Multi-Turn tool-calling loop, ACPX delegation to external coding-agent CLIs,
-            in-app Config and DB menus, versioned .flw workflows with portable artifacts,
+            Tlamatini v1.1.1 is a locally deployed AI developer assistant with hybrid RAG over your source,
+            a 256-turn Multi-Turn tool-calling loop, ACPX delegation to external coding-agent CLIs,
+            in-app Config and DB menus, reusable .flw workflows,
             a visual workflow designer with 61 drag-and-drop agent types, and GPU-aware context loading.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
@@ -96,8 +96,8 @@ function OverviewSection() {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { label: 'Agents', value: '61' },
-                { label: 'ACPX Tools', value: '12' },
-                { label: 'Flow Schema', value: 'v2' },
+                { label: 'Max Turns', value: '256' },
+                { label: 'Version', value: 'v1.1.1' },
                 { label: 'GPU Guard', value: 'Smart' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -168,7 +168,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, GPU-aware context loading, Multi-Turn orchestration, Exec Report audit tables, ACPX delegation, and versioned visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, GPU-aware context loading, 256-turn Multi-Turn orchestration, Exec Report audit tables, ACPX delegation, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -179,7 +179,7 @@ function VisionMissionSection() {
       title: 'Concept',
       subtitle: 'The One Who Knows',
       description:
-        'Tlamatini means "one who knows." In practice, it reads your code, lets you tune models, endpoints, and database snapshots from the UI, calls tools, spawns external coding agents, and compiles chat or canvas ideas into versioned .flw workflows.',
+        'Tlamatini means "one who knows." In practice, it reads your code, lets you tune models, endpoints, and database snapshots from the UI, calls tools, spawns external coding agents, and compiles chat or canvas ideas into reusable .flw workflows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
@@ -303,7 +303,7 @@ function ArchitectureSection() {
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 Tlamatini connects the browser, code context, Config and DB menus, Multi-Turn operator,
-                versioned flow compiler, and ACPX runtime through one local command surface.
+                Flow Compiler, and ACPX runtime through one local command surface.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
                 <div className="xaiht-card min-w-0">
@@ -517,8 +517,8 @@ function WorkflowSection() {
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
               The Visual Workflow Designer lets you drag 61 agent types onto a canvas,
-              wire them into versioned .flw workflows, preserve Parametrizer mappings as
-              artifacts, validate the live graph, and run the same contract-aware compiler
+              wire them into reusable .flw workflows, preserve Parametrizer mappings,
+              validate the live graph, and run the same contract-aware compiler
               that powers chat-created flows.
             </p>
             <img
@@ -587,7 +587,7 @@ function ToolsSection() {
     { name: 'Config -> URLs', desc: 'Edit endpoint values without hand-editing JSON', type: 'Config', color: '#c9a96e' },
     { name: 'DB -> Backup database', desc: 'Snapshot the live SQLite database to a directory you choose', type: 'DB', color: '#c79e7a' },
     { name: 'DB -> Set DB', desc: 'Stage a database for the next clean Tlamatini start-up', type: 'DB', color: '#c79e7a' },
-    { name: '.flw schemaVersion', desc: 'Keeps saved workflows portable with versioned artifacts', type: 'Flow', color: '#9e9e9e' },
+    { name: 'Reusable .flw', desc: 'Save workflows so they can be loaded and run again', type: 'Flow', color: '#9e9e9e' },
     { name: 'De-Compresser', desc: 'Unpacks archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
     { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads', type: 'RAG', color: '#8a9ec7' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },

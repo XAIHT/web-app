@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant
+          Local-First AI Developer Assistant v1.1.1
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-          Hybrid RAG, live model configuration, safe DB backup and swap controls, Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
-          and a 61-agent workflow designer with versioned .flw flows for source or frozen local runs.
+          Hybrid RAG, live model configuration, safe DB backup and swap controls, 256-turn Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
+          and a 61-agent workflow designer with reusable .flw flows for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -104,9 +104,9 @@ function TlamatiniOverview() {
             live configuration, database snapshot controls, tool execution, external coding-agent delegation, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The current build adds a Config menu for Models and URLs, a DB menu for live backups
+            The v1.1.1 build adds a Config menu for Models and URLs, a DB menu for live backups
             and next-start database swaps, a lighter embedding posture, GPU warnings before expensive context loads, and
-            versioned .flw files that keep workflow artifacts portable across sessions.
+            saved .flw files that keep workflow runs portable across sessions.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -158,7 +158,7 @@ function TlamatiniFeatures() {
   const features = [
     {
       title: 'Multi-Turn Chat Operator',
-      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. It can call tools, observe results, and convert successful work into repeatable flows.',
+      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. It can call tools for up to 256 turns, observe results, and convert successful work into repeatable flows.',
       image: '/images/feature-chat.jpg',
     },
     {
@@ -168,7 +168,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 61 agent types, versioned .flw save/load, live Validate, Start-time compilation, De-Compresser archive handling, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 61 agent types, .flw save/load, live Validate, Start-time compilation, De-Compresser archive handling, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
@@ -182,8 +182,8 @@ function TlamatiniFeatures() {
       image: '/images/feature-chat.jpg',
     },
     {
-      title: 'Versioned Flow Portability',
-      description: 'Saved .flw files carry schemaVersion and artifacts, so Parametrizer mappings travel with the flow and reload cleanly in the next session.',
+      title: 'Workflow Portability',
+      description: 'Saved .flw files keep Parametrizer mappings with the flow, so work can reload cleanly in the next session.',
       image: '/images/feature-workflow.jpg',
     },
   ];
@@ -518,8 +518,8 @@ function TlamatiniTechStack() {
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
     { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
-    { category: 'Agent Runtime', items: ['LangChain tools', 'Multi-Turn executor', 'ACPX external CLIs', 'SkillHarness'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Versioned .flw schema', 'Portable artifacts', 'Source and frozen modes'] },
+    { category: 'Agent Runtime', items: ['LangChain tools', '256-turn Multi-Turn executor', 'ACPX external CLIs', 'SkillHarness'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Portable artifacts', 'Source and frozen modes'] },
     { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs dialog', 'DB Backup / Set DB menu', 'WebSockets', 'MCP file search'] },
   ];
 
