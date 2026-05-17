@@ -15,7 +15,7 @@ export default function Footer() {
           Run Tlamatini on Your Own Machine
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Tlamatini v1.1.1 brings Hybrid RAG, live Config and DB controls, 256-turn Multi-Turn orchestration, GPU-aware context loading, ACPX delegation, and 61 workflow agents to one local developer assistant.
+          Tlamatini v1.2.0 brings Unreal Engine-enabled project assistance, Hybrid RAG, live Config and DB controls, 256-turn Multi-Turn orchestration, GPU-aware context loading, ACPX delegation, and 61 workflow agents to one local developer assistant.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a

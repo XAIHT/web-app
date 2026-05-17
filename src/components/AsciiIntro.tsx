@@ -3,8 +3,9 @@ import { useEffect, useRef } from 'react';
 const PHRASES = [
   'eXtended Artificial Intelligence Humanly Tempered',
   '( XAIHT )',
-  'Tlamatini v1.1.1',
+  'Tlamatini v1.2.0',
   'Local-First AI',
+  'Unreal Engine Enabled',
   'Multi-Turn Operation',
   '61 Workflow Agents',
   'ACPX-Enabled',

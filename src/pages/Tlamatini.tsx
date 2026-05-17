@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.1.1
+          Local-First AI Developer Assistant v1.2.0
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-          Hybrid RAG, live model configuration, safe DB backup and swap controls, 256-turn Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation,
-          and a 61-agent workflow designer with reusable .flw flows for source or frozen local runs.
+          Hybrid RAG, Unreal Engine-enabled project assistance, live model configuration, safe DB backup and swap controls, 256-turn Multi-Turn tool orchestration,
+          GPU-aware context loading, ACPX delegation, and a 61-agent workflow designer with reusable .flw flows for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -101,12 +101,12 @@ function TlamatiniOverview() {
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." It is a
             local app you run on your own machine, combining code-aware retrieval,
-            live configuration, database snapshot controls, tool execution, external coding-agent delegation, and a visual automation canvas.
+            live configuration, database snapshot controls, tool execution, external coding-agent delegation, Unreal Engine-enabled project work, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.1.1 build adds a Config menu for Models and URLs, a DB menu for live backups
-            and next-start database swaps, a lighter embedding posture, GPU warnings before expensive context loads, and
-            saved .flw files that keep workflow runs portable across sessions.
+            The v1.2.0 build makes Tlamatini Unreal Engine Enabled while keeping the Config menu for Models and URLs,
+            the DB menu for live backups and next-start database swaps, a lighter embedding posture,
+            GPU warnings before expensive context loads, and saved .flw files that keep workflow runs portable across sessions.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -157,6 +157,11 @@ function TlamatiniFeatures() {
 
   const features = [
     {
+      title: 'Unreal Engine Enabled',
+      description: 'Tlamatini brings local RAG, 256-turn action, external-agent delegation, and reusable workflow automation into Unreal Engine project work.',
+      image: '/images/feature-workflow.jpg',
+    },
+    {
       title: 'Multi-Turn Chat Operator',
       description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. It can call tools for up to 256 turns, observe results, and convert successful work into repeatable flows.',
       image: '/images/feature-chat.jpg',
@@ -180,11 +185,6 @@ function TlamatiniFeatures() {
       title: 'Config and DB Menus',
       description: 'Validated Models and URLs dialogs sit beside DB controls for live SQLite backups and staged Set DB swaps that take effect cleanly on the next Tlamatini start.',
       image: '/images/feature-chat.jpg',
-    },
-    {
-      title: 'Workflow Portability',
-      description: 'Saved .flw files keep Parametrizer mappings with the flow, so work can reload cleanly in the next session.',
-      image: '/images/feature-workflow.jpg',
     },
   ];
 
@@ -456,7 +456,7 @@ function TlamatiniAgents() {
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
           The catalog spans control, routing, logic, action, cryptography, utility,
           terminal monitoring, and AI design agents, including TeleTlamatini, WhatsTlamatini,
-          ACPXer, De-Compresser, FlowCreator, and GPU-aware context safeguards around the RAG entry point.
+          ACPXer, De-Compresser, FlowCreator, Unreal Engine-enabled project assistance, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (
@@ -519,7 +519,7 @@ function TlamatiniTechStack() {
     { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
     { category: 'Agent Runtime', items: ['LangChain tools', '256-turn Multi-Turn executor', 'ACPX external CLIs', 'SkillHarness'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Portable artifacts', 'Source and frozen modes'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
     { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs dialog', 'DB Backup / Set DB menu', 'WebSockets', 'MCP file search'] },
   ];
 

@@ -256,8 +256,15 @@
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
   overflow-y: auto;
   will-change: transform;
+}
+
+.page-layer > * {
+  width: 100%;
 }
 
 .page-layer:not(:first-child) {
