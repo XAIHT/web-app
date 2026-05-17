@@ -2,7 +2,7 @@
 
 ![Project Logo](Tlamatini.jpg)
 
-> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, a visual workflow designer, 60 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
+> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, an Unreal MCP client for driving Unreal Engine 5 from chat or canvas, a visual workflow designer, 62 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
 >
 > Visit our site at **https://xaiht.org**, or get a one-minute taste of Tlamatini on YouTube: **https://youtu.be/a51miZ1JIe0**.
 
@@ -15,13 +15,14 @@ Tlamatini does a lot. This README is organized so you can stop reading at the de
 - **Part I — Getting Tlamatini Running**: prerequisites, Ollama, **Ollama Pro/Max subscription for the default `:cloud` models**, install, first login. *Read this once.*
 - **Part II — Using the Chat**: the four toolbar checkboxes (Multi-Turn, Exec Report, ACPX, internet) walked through one by one. *This is the dummy-friendly heart of the book.*
 - **Part III — The Visual Workflow Designer**: drag-and-drop flows, FlowCreator, FlowHypervisor, Parametrizer, Gatewayer.
-- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 60 workflow agents.
+- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 62 workflow agents.
 - **Part V — The Tool Surface**: every LLM-facing tool the chat can call, organized by family.
 - **Part VI — Inside Tlamatini**: architecture, RAG, the embedding-memory pre-flight guard, Multi-Turn pipeline, ACPX runtime mechanics. *For the curious.*
 - **Part VII — Configuration Reference**: every `config.json` knob.
 - **Part VIII — Deploying & Packaging**: build, installer, frozen mode.
 - **Part IX — The Command Deck**: WebSocket protocol, HTTP endpoints.
 - **Part X — Survival Guide**: troubleshooting, `tlamatini.log`, common issues.
+- **Bonus chapter §57** — Driving Unreal Engine 5 from Tlamatini (the Unrealer agent + Unreal MCP plugin). Read this if you build games or simulations in UE5 and want a chat / canvas surface for the editor.
 - **Appendix A** — Keyboarder key reference.
 - **Appendix B** — Glossary.
 - **Appendix C** — Full changelog (preserved verbatim).
@@ -52,7 +53,7 @@ The four things Tlamatini gives you that a plain ChatGPT-style box does not:
 1. **A real RAG pipeline** that reads your project files, classifies their architectural roles, and grounds answers in your real source code.
 2. **Multi-Turn mode** that turns the chat into a tool operator: the LLM can run shell commands, hit APIs, send emails, take screenshots, type into windows, query SQL — and chain those steps to finish the job.
 3. **ACPX** that lets the LLM delegate sub-tasks to external coding-agent CLIs you already have installed (Claude Code, Cursor, Codex, Gemini CLI, Qwen Code, and more).
-4. **A visual workflow designer** where you drag 60 different agent types onto a canvas, wire them up, and run the result as an unattended `.flw` workflow. Save, Validate, and Start all funnel the canvas through a backend **Flow Compiler** (`agent/services/flow_compiler.py`) that consults a single Agent Contract registry — so a flow that runs in source mode runs identically in a frozen `.exe` install.
+4. **A visual workflow designer** where you drag 62 different agent types onto a canvas (including the new **Unrealer** for driving Unreal Engine 5 — see bonus chapter §57), wire them up, and run the result as an unattended `.flw` workflow. Save, Validate, and Start all funnel the canvas through a backend **Flow Compiler** (`agent/services/flow_compiler.py`) that consults a single Agent Contract registry — so a flow that runs in source mode runs identically in a frozen `.exe` install.
 
 Everything is local. No cloud lock-in (though cloud LLMs are an option). The whole app packages into a standalone Windows `.exe` if you want to ship it.
 
@@ -697,6 +698,67 @@ The DB menu is intentionally small — three primitives (backup, stage, archive)
 
 ---
 
+## 17.5. The ACPX-Skills menu — admining the skill catalog
+
+Tlamatini ships with 21 markdown skill packages under `Tlamatini/agent/skills_pkg/`. Each one is a small playbook the LLM can run: `acp-router` picks the right external coding-agent CLI for an intent, `summarize` compresses text to a target word count, `setup-new-acpx-key` walks the user through plugging in a new API key, `skill-creator` bootstraps a brand-new SKILL.md, the `tlamatini_*` family audits and refactors Tlamatini's own codebase, and a handful of integration stubs (`github`, `gmail`, `notion`, `slack`, `jira`, `todoist`, `trello`, `weather`) reach out to third-party services through their REST APIs. They run inside a sandbox called the **SkillHarness**: budgets cap iterations, wall-clock, and tokens; declared filesystem / shell / network / db permissions gate side effects; declared inputs and outputs are validated on the way in and the way out.
+
+Before May 2026, the only way to interact with this catalog was through the LLM itself. You'd type "list the skills you have" and the chat would call `list_skills` and read out the rows; you'd type "use the summarize skill to compress this" and the chat would call `invoke_skill('summarize', '{...}')` and surface the result. Catalog hygiene — knowing exactly what was installed, picking which skills the planner was allowed to surface, reloading the registry after editing a SKILL.md on disk — all of it had to be routed through the model. That worked but it felt wrong: a piece of catalog admin that belongs to the person at the keyboard kept asking permission from the model.
+
+The **ACPX-Skills** dropdown closes that gap. It lives between **Agents** and **Config** in the chat navbar and has four entries:
+
+### `ACPX-Skills → Browse Skills`
+
+Opens a two-pane modal: a search-filterable list on the left with one row per skill (a small green dot for enabled, a small grey dot for disabled, the skill's name, and a runtime tag — `IN-PROCESS` or `ACPX`), and a detail pane on the right that fills in when you click a row. The detail pane is read-only and pulled fresh from the registry on every click — it shows the description, the runtime (and the `acpx_agent` if `runtime: acpx`), the budget triple (`12 iter · 180 s · 30000 tokens` style), the trigger keywords the planner uses to score the skill against a prompt, the `requires_tools` and `requires_mcps` arrays (so you can immediately see if a skill depends on something you've disabled), the inputs and outputs (with required-field markers and per-field types), the on-disk path to the SKILL.md, the first sixteen characters of its body SHA-256, and finally the full markdown body of the skill in a scrollable pre block. A search box at the top of the dialog filters the list as you type — matching against name + description + keywords. The list shows `N / 21` so you always know how much was hidden by your search. There's also a small note at the right when the registry has orphan DB rows — skills the database thinks exist but whose SKILL.md was deleted on disk; Diagnostics gives you the full list.
+
+Use Browse when (a) you've just authored a new SKILL.md and you want to confirm it parsed correctly, (b) you want to know exactly what permissions a third-party integration skill is asking for before you enable it, (c) you're debugging a failing `invoke_skill` and you want to look at the body the LLM was supposed to follow.
+
+### `ACPX-Skills → Configure Skills`
+
+A checkbox grid, one row per skill, that mirrors the **MCPs** and **Agents** dialogs you already know. Each row is `[ ] skill-name — description`. Toggle a checkbox off, click **Continue**, and a couple of things happen simultaneously: the `Skill.enabled` column flips to `false` in the database, and the change broadcasts over the same WebSocket channel the existing MCPs/Tools/Agents toggles ride — the payload is encoded as `name=description=true|false,...` exactly the way `set-mcps` / `set-tools` / `set-agents` encode their payloads. The backend's new `set-skills` handler in `consumers.AgentConsumer.receive` parses the payload and calls `save_skill(name, enabled)` for each row.
+
+After the toggle lands, two consequences arrive immediately for the next request:
+
+- The LLM's `list_skills` tool filters disabled rows out of its returned array — disabled skills become invisible to enumeration, so the planner won't surface them.
+- The LLM's `invoke_skill('<disabled-skill>', '{...}')` returns `{"ok": false, "code": "SKILL_DISABLED"}` instead of running.
+
+Toggling the row back to enabled restores both behaviors. This is the right knob when you want to hide an unfinished skill from the planner, when you don't have the API key for an integration skill (no point letting the LLM keep trying `notion` without `NOTION_TOKEN`), or when you're running a demo and you want a minimal tool surface so the model doesn't waste turns picking obscure options.
+
+### `ACPX-Skills → Diagnostics`
+
+A cross-check report that catches the kind of drift you'd otherwise only discover at runtime. It has four sections; each is collapsed when clean (green ✓) and expanded with a red ⚠ count when something's wrong:
+
+- **Missing tool dependencies** — for each skill whose `requires_tools` lists a Tool you've currently disabled in the **Tools** dialog. A disabled tool means the skill would fail at runtime; Diagnostics surfaces it before the LLM tries.
+- **Missing MCP dependencies** — same idea against disabled `Mcp` rows.
+- **Unknown ACPX agents** — for `runtime: acpx` skills, flags any `acpx_agent` value that isn't in the live `AcpAgent` table (typo, removed CLI, etc).
+- **Orphan DB rows** — `Skill` rows whose SKILL.md file no longer exists on disk; typically a sign that someone deleted a skill directory without running Reload.
+
+A header strip at the top gives you the counts at a glance: how many skills are on disk, how many DB rows exist, how many Tools/MCPs/ACPX agents are tracked. The endpoint is `GET /agent/skills/_/diagnostics/` — pure read, no writes.
+
+### `ACPX-Skills → Reload Registry`
+
+A single-click action that re-runs the registry boot pipeline: rescan `agent/skills_pkg/`, refresh every `Skill` DB row's metadata cache (description, runtime, acpx_agent, frontmatter_json, body_sha256), prune any DB row whose SKILL.md is gone. The user-toggled `enabled` field is preserved. A toast confirms the new count.
+
+Use Reload after authoring a new SKILL.md or editing an existing one. No server restart needed.
+
+### The line the database deliberately does not cross
+
+The `Skill` model itself was older than this dropdown — it was added back in migration `0071_acpx_skills.py` with a richer shape than the `Tool` / `Mcp` / `Agent` toggle rows: it has `name`, `description`, `runtime`, `acpx_agent`, `enabled`, `frontmatter_json`, `body_sha256`, `last_loaded_at`. Building this admin UI on top of it required a small but deliberate decision: the dropdown **only** ever writes the `enabled` boolean. Every other column is owned by `agent/acpx/service.py::boot_skills()` and is overwritten on every reload from the SKILL.md on disk. The cached `frontmatter_json` and `body_sha256` are present because earlier work needed them for fast lookups; the admin UI ignores them and reads fresh from the registry instead, so the disk stays the only source of truth for permissions, budgets, and body.
+
+This matters because the obvious alternative — "let the user override a skill's `max_seconds` from the browser" — is a trap. The next backup would silently archive that override, the next `git pull` would not show it in `git diff`, and a user on a different machine would have no way to know why their identical SKILL.md behaved differently. Editing the SKILL.md and clicking Reload keeps every behavioural change visible in a file and a commit. The DB stays at "enumeration plus enable/disable", exactly the way the Mcps and Agents dialogs constrain themselves.
+
+### Where to look in the code
+
+- `agent/views.py` — `list_skills_view`, `skill_detail_view`, `reload_skills_view`, `skills_diagnostics_view`.
+- `agent/urls.py` — `/agent/skills/`, `/agent/skills/<name>/`, `/agent/skills/_/reload/`, `/agent/skills/_/diagnostics/`.
+- `agent/consumers.py` — `skill_establishment`, `get_all_skills`, `save_skill`, the new `set-skills` branch, the establishment loops in both the session-restore and rebuild paths.
+- `agent/acpx/tools.py` — `_disabled_skill_names()` plus the gating clauses in `list_skills` and `invoke_skill`. Fails OPEN on DB exception by design.
+- `agent/templates/agent/agent_page.html` — the dropdown, the three dialog containers, the asset includes.
+- `agent/static/agent/js/skills_dialog.js` — all four dialogs (Configure / Browse / Diagnostics / Reload) in one module.
+- `agent/static/agent/css/skills_dialog.css` — styling.
+- Coverage: 14 tests across `SkillsAdminEndpointTests`, `SkillsToolSurfaceGatingTests`, `SkillsNavbarTemplateContractTests`.
+
+---
+
 # Part III — The Visual Workflow Designer
 
 ## 18. Why drag-and-drop flows
@@ -933,7 +995,7 @@ Gatewayer logs stable markers (`GATEWAY_EVENT_ACCEPTED`, `GATEWAY_EVENT_QUEUED`,
 
 # Part IV — The Tlamatini Bestiary
 
-A compact reference for all 60 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above.
+A compact reference for all 62 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above; **Unrealer** gets a full bonus chapter at §57.
 
 > **Naming reminder.** The `agentDescription` (set by each migration) is the single source of truth. CSS classmap key, sidebar visual, and connection-handler name all derive from it.
 
@@ -992,10 +1054,12 @@ A compact reference for all 60 workflow-agent types. Spotlight chapters for **Pa
 | **File-Interpreter / File-Extractor** | Document parsing (DOCX, PPTX, XLSX, PDF, …); raw text extraction with strings-fallback for unknowns. |
 | **Image-Interpreter** | LLM vision analysis of images. |
 | **J-Decompiler** | JAR/WAR/CLASS decompilation via bundled `jd-cli`. |
+| **De-Compresser** | Deterministic archive worker (compress OR decompress). Inferred direction: `input` ext or `output` ext picks the operation. Supports `.gz`, `.zip`, `.7z`, `.tar.gz`/`.gz.tar`. Password from `DE_COMPRESSER_PWD` env var when `passwordless=false`. |
 | **Telegramer** | Outbound Telegram message. |
 | **TeleTlamatini** | Long-running Telegram bridge that exposes the full Multi-Turn + Exec Report Tlamatini chat to authorized Telegram users. |
 | **WhatsTlamatini** | WhatsApp counterpart of TeleTlamatini, via Meta's WhatsApp Cloud API. |
 | **ACPXer** | Visual canvas counterpart of the 12 LLM-facing ACPX tools. One node = one external-CLI session lifecycle. |
+| **Unrealer** | Drives Unreal Engine 5 via the Unreal MCP plugin's TCP socket protocol (`127.0.0.1:55557` by default — plugin must already be running inside an UE5 editor instance). One node sends one JSON command (`{"type": <verb>, "params": {...}}`) and captures the engine's response into an `INI_SECTION_UNREALER<<<` block. Full 28-command surface across editor / blueprint / node / project / umg categories. (See bonus chapter §57.) |
 
 ## Cryptography (post-quantum)
 
@@ -1699,7 +1763,70 @@ python build_installer.py
 
 Requires `pkg.zip` and `Uninstaller.exe` from steps 1 and 2. Builds `install.py` with `--onedir --windowed` and a splash screen, copies `pkg.zip` and `Uninstaller.exe` into `dist/Installer/`, and assembles `dist/Tlamatini_Release/` with SHA-256 verification.
 
-## 48. What the installer does
+## 48. Versioning
+
+Tlamatini follows [Semantic Versioning 2.0.0](https://semver.org/) — `MAJOR.MINOR.PATCH` — but the **single source of truth is a git tag**, not a number sitting in any source file. You never hand-edit a version anywhere. You tag, then you build, and the three build scripts in §47 each bake the resolved value into the artefact they produce.
+
+### What the three numbers mean
+
+- **MAJOR** bumps when something that already shipped breaks for the user: the `.flw` file schema changes, an Agent Contract is removed, an LLM tool is renamed, a public endpoint URL changes. The first `2.0.0` is the first release where loading an old `.flw` might not just work.
+- **MINOR** bumps when you add a backward-compatible feature: a new agent (ACPXer was a minor bump), a new toolbar checkbox, a new SKILL package, a new HTTP endpoint, a new optional field on an existing API.
+- **PATCH** bumps for backward-compatible fixes: the conjunction-parser fix, the exec-report ordering fix, the ACPX `oneshot-prompt` capture fix — anything that closes a regression without changing surface.
+
+Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1`, `2.0.0-rc.1`. They sort **before** the final release, so `2.0.0-rc.2` < `2.0.0` for the Windows installer registry and for Python tooling alike.
+
+### Cutting a release in five commands
+
+```powershell
+git status                                          # clean tree, on main
+git tag -a v1.3.0 -m "Release 1.3.0: <one-liner>"   # annotated tag
+git push origin v1.3.0
+python build.py
+python build_uninstaller.py
+python build_installer.py
+```
+
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.3.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+
+### Where the version shows up in a running install
+
+The build computes the version once and bakes it into four surfaces:
+
+- **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
+- **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
+- **Release folder name** — `dist/Tlamatini_Release_v1.3.0/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.3.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.3.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+
+If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
+
+### What happens if you don't tag
+
+The build never fails for "no version" — and the version surface is always a clean SemVer like `1.1.1`. The resolver returns the **bare base tag** reachable from HEAD; distance / commit / dirty state are deliberately stripped from the displayed version:
+
+| Situation | Version baked in |
+|---|---|
+| Tag exists, HEAD exactly on `v1.2.0` | `1.2.0` |
+| Tag exists, HEAD 17 commits past, clean tree | `1.2.0` |
+| Tag exists, HEAD 17 commits past, uncommitted edits | `1.2.0` |
+| No tags at all | `0.0.0` |
+| Not a git repo (e.g. download zip) | `0.0.0+unknown` |
+
+No `.devN`, no `+gSHA`, no `.dirty` ever appears in the version string. Distance from the tag and dirty state are git concerns and live in `git status` / `git describe --long --dirty`, not in the user-facing version.
+
+### Overriding the resolver
+
+There are four sources of the version, in precedence order:
+
+1. `--version X.Y.Z` on the build script's command line (highest).
+2. `$env:TLAMATINI_VERSION` exported in the shell.
+3. `git describe --tags --abbrev=0 --match 'v[0-9]*'` against the working tree — the bare base tag, no distance/dirty suffix (the normal path).
+4. The sentinel `0.0.0+unknown` (lowest — only fires when there is no git at all).
+
+`build.py` exports `$env:TLAMATINI_VERSION` after it resolves, so `build_installer.py` and `build_uninstaller.py` in the same shell see exactly the same value — the three artefacts cannot disagree. Even on an untagged commit, the git-derived dev version stays consistent across all three.
+
+The full contract — including the recovery path for a mis-tagged release, the runtime resolver internals, the file-by-file integration map, and the FAQ — lives in [`VERSIONING.md`](VERSIONING.md) at the repo root.
+
+## 49. What the installer does
 
 When an end user runs `Installer.exe`:
 
@@ -1712,14 +1839,14 @@ When an end user runs `Installer.exe`:
 7. Registers `.flw` extension to open with Tlamatini.
 8. Cleans the PyInstaller bundle path from helper subprocess environments so PowerShell helpers and Explorer restarts don't stall.
 
-## 49. What the uninstaller does
+## 50. What the uninstaller does
 
 1. Removes shortcuts (with Explorer restart for immediate effect).
 2. Unregisters the `.flw` association and clears cached shell state.
 3. Deletes all application files **except** `<install_path>/Tlamatini/agents/*` (preserves user-created agents).
 4. Removes the install directory if empty.
 
-## 50. Frozen-mode behavior
+## 51. Frozen-mode behavior
 
 The Multi-Turn implementation carries frozen-build awareness in supporting runtime code:
 
@@ -1733,7 +1860,7 @@ The Multi-Turn implementation carries frozen-build awareness in supporting runti
 
 # Part IX — The Command Deck (API + WebSocket)
 
-## 51. WebSocket protocol
+## 52. WebSocket protocol
 
 Endpoint: `ws://<host>/ws/agent/`.
 
@@ -1784,7 +1911,7 @@ Optional toggles. `multi_turn_enabled=false` falls back to legacy one-shot.
 
 A successful Multi-Turn message also carries `tool_calls_log`, `multi_turn_used`, `answer_success` for the Create Flow gate.
 
-## 52. HTTP endpoints
+## 53. HTTP endpoints
 
 The backend currently exposes 103 routes. Highlights:
 
@@ -1881,7 +2008,7 @@ Plus the Parametrizer-specific pair:
 
 # Part X — Survival Guide (Troubleshooting)
 
-## 53. Common issues
+## 54. Common issues
 
 ### Ollama connection failed
 
@@ -1947,7 +2074,7 @@ If transcripts only show outbound prompts and no inbound responses, your build i
 - Read the Forker/Asker log for pattern-matching diagnostics.
 - Asker only: did the browser dialog appear? Check console errors.
 
-## 54. Debug mode
+## 55. Debug mode
 
 ```json
 {
@@ -1972,7 +2099,7 @@ INFO-level loggers configured in `tlamatini/settings.py`:
 
 All log lines are prefixed with timestamp and logger name (e.g. `2026-04-13 12:28:39 [agent.tools] INFO …`).
 
-## 55. Log locations
+## 56. Log locations
 
 | What | Where |
 |---|---|
@@ -1983,7 +2110,193 @@ All log lines are prefixed with timestamp and logger name (e.g. `2026-04-13 12:2
 
 ---
 
-# Appendix A — Keyboarder Supported Keys
+# Bonus Chapter — § 57. The Day Tlamatini Learned to Drive Unreal Engine
+
+> *A bonus chapter, in the spirit of the book — narrative first, reference second. Read this if you want to understand not just **how** Tlamatini talks to Unreal Engine 5, but **why** the conversation looks the way it does, and how to make it bullet-proof on your own box. If you only need the dry reference, the matching coverage lives in **README §6** and in the agent's own `agents_descriptions.md` entry.*
+
+## 57.1. The shape of the problem
+
+For most of the work Tlamatini does, the universe is plain text. Files have lines, lines have characters, the LLM produces a string, a tool consumes a string, and the world rearranges itself. Even the visual workflow designer is, at the end of the day, a YAML file the engine reads and obeys.
+
+Unreal Engine is not like that. Unreal Engine is a **running editor process** holding a hierarchy of in-memory objects — actors, components, blueprints, widgets, level streaming volumes — and it does not want you to reach in from outside. It wants you to drive it through its own UI: click here, drag this into the level, type this transform, press Compile. That is fine if you are a human at a desk. It is a problem if you want a chat agent to *do* something — anything — in the editor without you needing to take your hands off the keyboard.
+
+The **Unreal MCP** project, hosted at `https://github.com/chongdashu/unreal-mcp` (MIT-licensed, UE5.5+), solves that problem from the engine side. It is a small C++ plugin that you drop into your project's `Plugins/UnrealMCP/` folder, enable from `Edit → Plugins`, and forget. From the moment the editor opens, the plugin starts listening on `127.0.0.1:55557` for **JSON commands over a TCP socket**. The wire shape is brutally simple — one command per connection, going in as `{"type": "<verb>", "params": {...}}`, coming back as `{"status": "ok"|"error", "result": {...}, "error": "..."}`. That is the whole API. There is no SDK. There is no authentication. There is just a socket, and a script that knows the right verbs.
+
+The Tlamatini side is even simpler. The **Unrealer** agent (`agent/agents/unrealer/unrealer.py`, the 62nd entry in the catalog) is a pool subprocess that opens that socket, sends one command, captures one response, writes it as an `INI_SECTION_UNREALER<<<` block to its own log, triggers any downstream agents, and exits. The plugin does the heavy lifting; Tlamatini does the orchestration. It is, structurally, the smallest agent in the whole catalog — about 120 lines of business logic on top of the standard pool-agent boilerplate — and it gives you the entire 28-command surface of the Unreal MCP plugin.
+
+## 57.2. Where the plugin lives (the MCP git location, repeated for emphasis)
+
+You install the plugin once, per Unreal project. The canonical reference implementation is:
+
+- **Repository**: `https://github.com/chongdashu/unreal-mcp`
+- **License**: MIT
+- **Supported Unreal Engine versions**: 5.5 and newer
+- **Plugin folder name (inside your project)**: `Plugins/UnrealMCP/`
+- **Default in-engine TCP port**: `55557` on `127.0.0.1`
+
+Two community forks ship the same wire protocol on the same port and work with Tlamatini's Unrealer with no client-side changes:
+
+- `https://github.com/CrispyW0nton/Unreal-MCP-Ghost`
+- `https://github.com/gingerol/vhcilab-unreal-engine-mcp`
+
+You are also welcome to fork the plugin and add your own command verbs. Tlamatini's Unrealer does not maintain a client-side allow-list of verbs — it forwards whatever `command` + `params` pair you give it, verbatim. If your fork understands a new verb like `spawn_one_thousand_grass_blades`, your fork will get a call for `spawn_one_thousand_grass_blades`, and Tlamatini will pass the response back into the conversation the same way it does for any other verb. The decoupling is intentional, and it is the entire reason Tlamatini does not need to track the plugin's version.
+
+## 57.3. Wiring up your UE5 project
+
+There is no shortcut, but there are no surprises either:
+
+1. **Clone the plugin** from your chosen upstream (or download the ZIP and unzip it).
+2. **Drop the `UnrealMCP` folder** into your project's `Plugins/` directory so the path ends `<YourProject>/Plugins/UnrealMCP/UnrealMCP.uplugin`. If you do not have a `Plugins` directory in your project root, create one — UE5 expects exactly that name.
+3. **Open the project in the UE5 editor.** Because the plugin is C++, the editor will offer to rebuild it for your engine version. Accept. If the project is Blueprint-only and you have never built a C++ project before, the editor will first nudge you to install Visual Studio Build Tools (Windows) or the Xcode command-line tools (macOS). This is a one-time set-up.
+4. **Enable the plugin** via `Edit → Plugins`, search "UnrealMCP", tick **Enabled**, restart the editor when prompted.
+5. **Confirm the listener** by opening `Window → Developer Tools → Output Log` and watching for a line such as `LogTemp: UnrealMCP listening on 127.0.0.1:55557`. That line is the *single* green light you need. Without it, every Unrealer call from Tlamatini will return `Failed to connect to Unreal at 127.0.0.1:55557` — which is the right error message, but not the one you want to chase if you can avoid it.
+
+> A subtlety worth knowing: **you do not need to press Play (PIE)** to drive the editor through Unreal MCP. The plugin operates at editor level — spawning actors, building blueprints, compiling them — and that work happens against the open project, not the running game. Some UMG operations like `add_widget_to_viewport` queue the widget for the next PIE session, so if you are testing a HUD widget you will need to press Play to actually see it. That is an Unreal MCP behaviour, not a Tlamatini one.
+
+## 57.4. The thirty-second conceptual model
+
+```
+┌─────────────────────────────────────────┐
+│ You (in the Tlamatini chat)             │
+└────────────┬────────────────────────────┘
+             │ "Run Unreal command with command='spawn_actor' …"
+             ▼
+┌─────────────────────────────────────────┐
+│ Tlamatini Multi-Turn LLM                │
+│   → chat_agent_unrealer (one call)      │
+└────────────┬────────────────────────────┘
+             │ writes config.yaml, spawns child process
+             ▼
+┌─────────────────────────────────────────┐
+│ unrealer.py (pool subprocess, ~120 LOC) │
+│   opens socket → 127.0.0.1:55557        │
+│   sends {"type":"spawn_actor", …}        │
+│   reads JSON until complete             │
+│   logs INI_SECTION_UNREALER<<<          │
+└────────────┬────────────────────────────┘
+             │ TCP/JSON
+             ▼
+┌─────────────────────────────────────────┐
+│ UnrealMCP plugin (inside UE5 editor)    │
+│   schedules work on the game thread     │
+│   returns {"status":"ok", "result":…}   │
+└─────────────────────────────────────────┘
+```
+
+The diagram is not lying for the sake of clarity — that **is** the whole pipeline. There is no middle service to start, no daemon to register, no broker to authenticate against. The plugin listens, the agent calls, the answer comes back.
+
+## 57.5. The 28-command surface, organised the way a builder thinks
+
+The wrapped tool `chat_agent_unrealer` and the canvas **Unrealer** node both forward whatever verb you pick, but the upstream plugin's catalog naturally splits into five reasoning units:
+
+- **Reading the level (editor reads).** `get_actors_in_level`, `find_actors_by_name`, `get_actor_properties`. These are the safe, side-effect-free probes you sprinkle through any flow to give the LLM enough context to make decisions ("the level already has a `MyCube`; do I need to spawn another?").
+- **Modifying the level (editor writes).** `spawn_actor`, `spawn_blueprint_actor`, `delete_actor`, `set_actor_transform`, `set_actor_property`. The bread-and-butter of any procedural-content flow.
+- **Authoring Blueprints (blueprint).** `create_blueprint`, `add_component_to_blueprint`, `set_static_mesh_properties`, `set_component_property`, `set_physics_properties`, `compile_blueprint`, `set_blueprint_property`. You can scaffold an entire new Actor class from chat — give it a static-mesh component, configure its physics, compile it — and then spawn instances of it back into the level in the same conversation.
+- **Wiring Blueprint event graphs (node).** `add_blueprint_event_node`, `add_blueprint_input_action_node`, `add_blueprint_function_node`, `connect_blueprint_nodes`, `add_blueprint_variable`, `add_blueprint_get_self_component_reference`, `add_blueprint_self_reference`. This is the niche that ties Tlamatini to *gameplay* engineering and not just level-decoration tooling.
+- **Project input + UMG widgets (project, umg).** `create_input_mapping`, `create_umg_widget_blueprint`, `add_text_block_to_widget`, `add_button_to_widget`, `bind_widget_event`, `add_widget_to_viewport`, `set_text_block_binding`. A complete HUD pipeline in seven verbs.
+
+If you forget which verb does what, ask Tlamatini. The agent's `purpose` string in `chat_agent_registry.py` carries the full taxonomy, so the LLM has it in its tool-description prompt at all times.
+
+## 57.6. The smallest possible "hello, Unreal" you can run today
+
+Once UE5 is open with the plugin enabled and Tlamatini is running:
+
+1. Open the chat at `http://127.0.0.1:8000/agent/`.
+2. Tick **Multi-Turn**. Tick **Exec Report** too — you will want the run table.
+3. Send: `"Run Unreal command with command='get_actors_in_level'."`
+
+A few seconds later you should see:
+
+- The chat LLM picked `chat_agent_unrealer` from the planner.
+- The wrapped runtime spawned `unrealer_001_<id>` under `agent/agents/pools/_chat_runs_/`.
+- The agent's log contains the outbound JSON and the inbound JSON.
+- The chat answer carries a one-line summary ("Level contains N actors: …") followed by the per-step **Unrealer Operations** table.
+
+If that round-trip works, the rest of the 28-command surface is just paperwork. If it does not, jump to §57.10 (troubleshooting).
+
+## 57.7. The full demo (built in, no setup beyond the plugin)
+
+Tlamatini ships with a seeded demo prompt — `idPrompt=32`, *Unreal MCP End-to-End Editor Drive* — that puts every command category through its paces in a single Multi-Turn run. It:
+
+1. Sanity-probes the connection (`get_actors_in_level`).
+2. Spawns a bare `StaticMeshActor` named `TlamatiniProbe_Cube` (`spawn_actor`).
+3. Verifies the spawn (`find_actors_by_name`).
+4. Scaffolds a brand-new Blueprint Actor (`create_blueprint`) called `BP_TlamatiniProbe`.
+5. Gives it a `StaticMeshComponent` (`add_component_to_blueprint`).
+6. Compiles it (`compile_blueprint`).
+7. Spawns a `BP_TlamatiniProbe` instance (`spawn_blueprint_actor`) called `TlamatiniProbe_Spawned`.
+8. Builds a UMG HUD widget called `WBP_TlamatiniProbeHUD` (`create_umg_widget_blueprint` → `add_text_block_to_widget` → `add_button_to_widget` → `add_widget_to_viewport`).
+9. Renders the whole run as an HTML report table at the bottom of the answer.
+10. Closes with a banner — ✅ FULLY OPERATIONAL, ⚠️ PARTIALLY OPERATIONAL, or ❌ UNREACHABLE — that mirrors the verdict the row-by-row table already gave you.
+
+After the demo finishes, your project will have three new artifacts in it (one actor, one Blueprint, one widget). They are intentionally left in place so you can poke at them in the editor; delete them via the Content Browser when you are done.
+
+If you have never run an Unreal MCP demo before, this is the **one** prompt to start with. It also doubles as a regression test — any change to the plugin, to Unrealer, to the contract registry, or to the wrapped-tool registration that breaks this prompt will be immediately visible in the final per-step table.
+
+## 57.8. Chaining Unreal calls on the visual canvas
+
+For long unattended flows that should run from a `.flw` or a Croner schedule, the **Unrealer** node on the canvas is the right surface. One node executes one command; you chain several together with **Parametrizer** nodes between them to copy a JSON field from one Unreal response into the next Unreal call's params.
+
+The canonical "scaffold a Blueprint and spawn an instance of it" canvas flow looks like this:
+
+```
+Starter
+  → Unrealer (command: create_blueprint, params.name=BP_X, params.parent_class=Actor)
+    → Parametrizer
+      → Unrealer (command: add_component_to_blueprint, params.blueprint_name=BP_X, …)
+        → Parametrizer
+          → Unrealer (command: compile_blueprint, params.blueprint_name=BP_X)
+            → Parametrizer
+              → Unrealer (command: spawn_blueprint_actor, params.blueprint_name=BP_X, …)
+                → Ender
+```
+
+The Parametrizer between each leg gives you a place to copy `response_body.result.name` (or any other JSON field the previous step returned) into the next step's `params`. Tlamatini's Agent Contract registry knows about Unrealer's six source fields — `host`, `port`, `command`, `status`, `error`, `response_body` — so the Parametrizer dialog will offer them in its dropdown when you wire the connection.
+
+If you want a branching flow — "if `compile_blueprint` failed, fire a Notifier instead of continuing" — drop a Raiser between the Unrealer and the next Parametrizer and have it watch for `status: error` in the log. That is exactly the pattern any non-Unreal agent uses; nothing about Unrealer is special there.
+
+## 57.9. The bullet-proof checklist (copy this to a sticky note)
+
+Before you start any Tlamatini-driven Unreal session:
+
+| Check | How |
+|---|---|
+| UE5 5.5+ open with a project loaded | `File → Open Project → <yours>`, leave the editor focused — not minimised to the tray |
+| Plugin enabled | `Edit → Plugins → UnrealMCP = Enabled`, editor restarted since you enabled it |
+| Listener bound | UE5 Output Log shows `UnrealMCP listening on 127.0.0.1:55557` |
+| Port not blocked | PowerShell: `Test-NetConnection -ComputerName 127.0.0.1 -Port 55557` → `TcpTestSucceeded: True` |
+| Tlamatini server up | `python Tlamatini/manage.py runserver --noreload` shows the startup banner |
+| **Multi-Turn** ticked | The toolbar checkbox left of **Exec Report** |
+| Tool enabled | Tools dialog shows `Chat-Agent-Unrealer` ticked (it ships ticked by default after migration `0086`) |
+
+Then run the seeded **Unreal MCP End-to-End Editor Drive** demo (Prompts dropdown → idPrompt 32) as your smoke test. If the demo's final banner is ✅, everything from the wire up to the LLM's understanding is healthy and you can move on to your real work.
+
+## 57.10. When it goes wrong (and what each failure actually means)
+
+Tlamatini's Unrealer agent is designed never to raise into the caller — every failure mode turns into a `status: error` row in the response and, if the call was driven from chat, a clean error message in the Multi-Turn loop instead of a crashed conversation. Reading those messages with a clear head is half the battle.
+
+- **`Failed to connect to Unreal at 127.0.0.1:55557`.** The plugin's listener is not bound. Either UE5 is not running, the plugin is disabled, the plugin failed to rebuild for your current engine version, or — rarely — you have a second editor instance also bound to the same port. Open UE5's Output Log and find the `UnrealMCP listening on …` line; that is your ground truth.
+- **`Timeout receiving Unreal response`.** UE5's game thread is busy. Most often this happens during `compile_blueprint` on a non-trivial graph. Widen `read_timeout` in the canvas node's `config.yaml` or in the wrapped-tool call. Do not lower `connect_timeout` to compensate; the two are independent.
+- **`status: error` from a Blueprint command, no obvious reason.** Check the capitalisation of `parent_class` and similar string params — UE5 type names are case-sensitive and the plugin will not auto-resolve `actor` → `Actor`.
+- **The widget appears in the Content Browser but never shows up in the game.** `add_widget_to_viewport` queues the widget at editor level; you still need to press **Play** in the editor to enter PIE and see it. This is an Unreal MCP plugin design choice, not a Tlamatini bug.
+- **An actor spawn silently no-ops.** Most often: you spawned inside another object's collision volume. Raise `params.location` to `[0, 0, 150]` (or any sufficiently free patch of world space) and retry.
+- **Output Log shows a backtrace from the plugin, not a JSON response.** That is an upstream plugin bug. Reproduce it with the canonical Unreal MCP Python client (the upstream repo ships one in its `Python/` folder), report it upstream, and in the meantime work around it from the Tlamatini side by avoiding that verb.
+
+For the full debugging trail: pool-agent log lives at `<pool>/unrealer_<n>/unrealer_<n>.log`; chat-wrapped runs land under `agent/agents/pools/_chat_runs_/unrealer_<seq>_<id>/unrealer_<seq>_<id>.log`. Both contain the outbound JSON command and the inbound Unreal response verbatim. When you file a bug report — to us, or to the upstream plugin maintainers — paste those two lines, and the conversation gets a lot shorter.
+
+## 57.11. Why this matters
+
+A drag-and-drop workflow designer that can issue real, structured commands to a real, running Unreal Engine 5 editor is not the kind of bridge a small project usually ships. Tlamatini gets to ship it cheaply for three reasons that are worth naming explicitly, because each is the result of a design choice we made on other parts of the system long before Unreal entered the picture.
+
+1. **The pool-subprocess model.** Every workflow agent in Tlamatini already runs as its own short-lived Python interpreter, talking to the engine over plain text logs and `INI_SECTION_<TYPE><<<` blocks. The Unreal MCP plugin's TCP/JSON protocol slotted into that model without any new runtime — the Unrealer agent is just a pool subprocess that happens to open a socket instead of running `git log` or sending an email.
+2. **The Agent Contract registry.** Every agent's connection-field shape, parametrizer source fields, and `secret_paths` are declared once in `agent/services/agent_contracts.py`. Adding Unrealer was a single contract entry — and from that one entry the Flow Compiler, the canvas wiring, the Parametrizer dialog, the `.flw` save/load redaction, and the Validate dry-run all "just worked".
+3. **The wrapped chat-agent runtime.** Adding `chat_agent_unrealer` was one entry in `chat_agent_registry.py` plus two migrations (one for the Agent row, one for the Tool row). The wrapped runtime did the rest — sequencing, isolation, log capture, deduplication, exec-report integration, Parametrizer-compatibility, the lot.
+
+In other words: when a future engine — Unity, Godot, Blender, Houdini — exposes an equivalent MCP-style socket, **the cost of supporting it from Tlamatini is one new pool agent file, one contract entry, and two migrations**. The hard work is already done. That is the architectural payoff of the past year of refactoring, and Unreal MCP is the first place outside the existing 60-agent catalog where the cheque cashes for a brand-new domain.
+
+Welcome to driving Unreal Engine 5 from chat. Mind the collision volumes.
+
+---
 
 The **Keyboarder** agent simulates human keyboard input through the `input_sequence` field.
 
@@ -2039,6 +2352,7 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 | **Googler** | Google search via Playwright. |
 | **Image-Interpreter** | LLM vision agent for image analysis. |
 | **J-Decompiler** | Java JAR/WAR decompiler using bundled `jd-cli`. |
+| **De-Compresser** | Deterministic short-running compression / decompression agent (`.gz` / `.zip` / `.7z` / `.tar.gz` / `.gz.tar`). |
 | **jd-cli** | Java Decompiler CLI tool bundled with the application. |
 | **Jenkinser** | CI/CD pipeline trigger agent. |
 | **Keyboarder** | Deterministic PyAutoGUI-based keyboard automation. |
@@ -2049,6 +2363,8 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 | **MCP** | Model Context Protocol — standard for tool/context communication. |
 | **Mouser** | PyAutoGUI-based pointer movement agent. |
 | **NodeManager** | Long-running infrastructure registry that probes nodes. |
+| **Unreal MCP** | Open-source UE5 plugin (`https://github.com/chongdashu/unreal-mcp`, MIT, UE5.5+) that listens on `127.0.0.1:55557` for JSON commands and dispatches them onto the editor's game thread. Tlamatini is a client of this plugin — it does not embed it. |
+| **Unrealer** | Tlamatini agent that drives Unreal Engine 5 through the Unreal MCP plugin's TCP/JSON protocol. Available both as a wrapped Multi-Turn tool (`chat_agent_unrealer`) and as a visual canvas node. The 62nd entry in the agent catalog. |
 | **Notifier** | LangGraph-based browser-notification agent. |
 | **output_agents** | Config field used by Ender, Stopper, Cleaner for downstream canvas wiring (vs `target_agents` for "agents to start"). |
 | **Parametrizer** | Strict single-lane queue that maps source-agent log segments into target-agent config.yaml. |
@@ -2073,6 +2389,14 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 # Appendix C — Changelog
 
 ### Recent Updates
+
+- **ACPX-Skills Admin Menu — Browse / Configure / Diagnostics / Reload — 2026-05-17** — The chat navbar gained a fourth dropdown — **ACPX-Skills** — sitting between **Agents** and **Config**, and with it Tlamatini finally has an operator-grade surface for the 21 SKILL.md packages it ships. Until now the only way to see what skills existed, decide which ones the LLM should actually be allowed to call, or reload the catalog after editing a SKILL.md on disk was to ask the LLM itself — `list_skills`, then `invoke_skill`, both gated behind the ACPX toolbar checkbox and behind whatever the planner felt like surfacing on that particular turn. That worked, but it required the LLM to be the eyes and hands for a piece of catalog hygiene that belongs to the person sitting at the keyboard. So the dropdown was built to mirror the existing Mcps / Tools / Agents pattern as closely as possible: one entry for browsing (the **Browse Skills** modal — a left-pane list of every skill with a green-dot / red-dot enabled indicator and a search box, and a right-pane detail view that pulls the full SKILL.md body, frontmatter, requires, inputs/outputs, permissions, and budgets fresh from the registry on every click), one entry for toggling (the **Configure Skills** modal — the same checkbox-grid idiom the Mcps and Agents dialogs already use, sending its result over the same WebSocket channel as `set-mcps` / `set-agents` / `set-tools` with the payload encoded as `name=description=true/false,...`, decoded by a new `set-skills` branch in `consumers.AgentConsumer.receive` and written to `Skill.enabled` via `save_skill(name, enabled)`), one entry for cross-checking (the **Diagnostics** modal — a four-section report that flags every skill whose `requires_tools` references a Tool you've disabled, every skill whose `requires_mcps` references an MCP you've disabled, every `runtime: acpx` skill whose `acpx_agent` isn't in the `AcpAgent` registry, and every orphan `Skill` row whose SKILL.md was deleted from disk without a Reload), and one entry for the dev loop (the **Reload Registry** button — a single POST to `/agent/skills/_/reload/` that re-runs `agent/acpx/service.py::boot_skills()` so an edited SKILL.md shows up immediately, no server restart). The Configure-dialog toggle has real teeth: when `Skill.enabled = False`, the tool-surface gating in `agent/acpx/tools.py::_disabled_skill_names()` (called from both `list_skills` and `invoke_skill`) filters the row out of enumeration and rejects invocation with a `{"ok": false, "code": "SKILL_DISABLED"}` envelope — and it fails OPEN on any DB exception so a broken admin layer can never silently hide skills from the LLM, which is the opposite of the failure mode that would worry me. The single biggest design decision was deliberate restraint on the database: the `Skill` model already existed from migration `0071_acpx_skills.py` and had a richer schema than the `Tool` / `Mcp` / `Agent` toggle rows (cached `frontmatter_json`, `body_sha256`, `last_loaded_at`, `runtime`, `acpx_agent`), but the admin UI *only* ever writes the `enabled` boolean — the cached fields are owned by `boot_skills()` and refreshed from the on-disk SKILL.md on every reload, so the disk stays the only source of truth for permissions, budgets, and body. The user's stated rule is "DB only for enumeration and enable/disable like MCPs/Agents", and the implementation honors it: if you want to change a skill's network policy or its iteration cap, you edit the SKILL.md and click Reload, not a database row that the next backup would silently archive. Skills key on `Skill.name` directly (the SKILL.md frontmatter `name`, already unique) — there is no `skill-N` ID-prefix shim like the `mcp-N` / `tool-N` / `agent-N` pattern uses, because there was no reason to introduce one. Files touched: `agent/views.py` (`list_skills_view`, `skill_detail_view`, `reload_skills_view`, `skills_diagnostics_view`), `agent/urls.py` (4 routes under `/agent/skills/`), `agent/consumers.py` (`skill_establishment`, `get_all_skills`, `save_skill`, `set-skills` handler, establishment loops in both the session-restore path and the rebuild path), `agent/acpx/tools.py` (`_disabled_skill_names` helper + gating in `list_skills` and `invoke_skill`), `agent/templates/agent/agent_page.html` (navbar dropdown + 3 dialog containers + asset includes for `skills_dialog.js` and `skills_dialog.css`), `agent/static/agent/js/skills_dialog.js` (the four jQuery-UI dialogs — full implementation in ~360 lines, mirrors the existing tools_dialog.js pattern), `agent/static/agent/js/agent_page_init.js` (`OpenSkillsConfigureDialog`, `OpenSkillsBrowseDialog`, `OpenSkillsDiagnosticsDialog`, `ReloadSkillRegistry` entry points), `agent/static/agent/js/agent_page_chat.js` (`type: 'skill'` system-message handler that hydrates the module-level `skills = []` cache), `agent/static/agent/js/agent_page_state.js` (the `let skills = []` declaration alongside `tools` and `agents`), `agent/static/agent/css/skills_dialog.css` (styling), `eslint.config.mjs` (11 new globals — `skills`, `computeCheckboxGridLayout`, and the `OpenSkills*Dialog` / `preRender` / `render` / `open` / `reload` family — so the new JS lints clean with zero errors), and a full update pass across the documentation surface (`README.md` §3.11, `CLAUDE.md` Skills bullet, `docs/claude/{architecture,acpx,frontend,gotchas,INDEX,mcp-tools}.md`, and this Book entry). Coverage: 14 new tests in three classes — `SkillsAdminEndpointTests` (7 — list / detail / 404 / reload / get-rejection / diagnostics shape), `SkillsToolSurfaceGatingTests` (3 — list filters disabled, invoke rejects with SKILL_DISABLED, invoke unknown returns UNKNOWN_SKILL), `SkillsNavbarTemplateContractTests` (4 — pins the dropdown HTML so a careless template edit doesn't silently drop the menu). All 14 pass; the full agent-tests run shows the same 5 pre-existing failures it had before (multi-turn / parametrizer / acpx-config / prompt-validation) and zero new regressions. The narrative companion lives in Book §17.5; the reference companion lives in README §3.11 and `docs/claude/acpx.md`.
+
+- **Unreal MCP Integration — Driving Unreal Engine 5 from Tlamatini — 2026-05-16** — Tlamatini grew a 62nd agent — **Unrealer** — and with it a brand-new MCP surface: the canonical open-source **Unreal MCP** plugin (`https://github.com/chongdashu/unreal-mcp`, MIT, UE5.5+) that runs inside an Unreal Engine 5 editor instance and accepts one JSON command per TCP connection on `127.0.0.1:55557`. Tlamatini is the *client* — `agent/agents/unrealer/unrealer.py` is a self-contained pool subprocess (no `agent.*` imports, mirrors the upstream `UnrealConnection` adapter inline in ~80 lines) that opens a fresh TCP socket per turn, sends `{"type": <command>, "params": {...}}`, captures the engine's JSON response, normalizes Unity-style `{"success": false}` into the registry's `{"status": "error"}` shape, and emits the whole exchange as one atomic `INI_SECTION_UNREALER<<<` block so Parametrizer can wire it into downstream agents. Two surfaces ship in lock-step: the wrapped Multi-Turn tool **`chat_agent_unrealer`** (`chat_agent_registry.py::ChatWrappedAgentSpec(key="unrealer", …)`, with the full 28-command surface documented in the tool `purpose` string so the LLM understands its taxonomy without extra prompting) and the visual **Unrealer** canvas node (one node = one command, chainable through Parametrizer into multi-step flows like *create_blueprint → compile_blueprint → spawn_blueprint_actor*). Three migrations land together: `0085_add_unrealer` (the Agent row), `0086_add_chat_agent_unrealer_tool` (the Tool row), and `0087_add_unrealer_demo_prompt` (a seeded end-to-end demo prompt at `idPrompt=32` that exercises every command category — editor sanity probe, actor spawn, Blueprint scaffold-compile-instance, UMG widget build, and a per-step HTML report table — in one guided Multi-Turn run). Exec Report integration: `chat_agent_unrealer` is registered in `_EXEC_REPORT_TOOLS` under `agent_key="unrealer"` so every call shows up as one row in a dedicated **List of Unrealer Operations** table at the bottom of the answer. Parametrizer source fields registered in `agent/services/agent_contracts.py`: `host`, `port`, `command`, `status`, `error`, `response_body`. Full coverage: README §6 (the new reference chapter) and Book bonus §57 (the narrative companion). Supports the full 28-command Unreal MCP surface across five categories (8 editor verbs, 7 blueprint verbs, 7 node-graph verbs, 1 project verb, 6 UMG verbs) — and because the wrapped tool forwards `command` + `params` verbatim, any fork that adds a new verb (`https://github.com/CrispyW0nton/Unreal-MCP-Ghost`, `https://github.com/gingerol/vhcilab-unreal-engine-mcp`, or your own) works with no client-side changes.
+
+- **The Orphan Reaper — Quietly Closing the `conhost.exe` Loose End — 2026-05-16** — For most of Tlamatini's life, anyone who ran a long Multi-Turn session on Windows could end up staring at the Task Manager and counting little ghosts. Each ghost wore Tlamatini's icon — a yellow-and-black mask of *one who knows* — and each ghost was, in plain process-table terms, a `conhost.exe`: the console-host companion Windows insists on attaching to every command-line child. When the console child finished and its parent died before the operating system reaped the pair, the conhost lingered. The icon was inherited from whichever EXE had originally spawned the console; the EXE in our case was Tlamatini.exe; the inheritance was loyal; the user's reasonable conclusion was that Tlamatini was leaking processes — or, more darkly, that something had taken up residence and refused to leave. Neither was true, but the truth did not help the appearances. This release closes the gap on both sides at once. A new module — `Tlamatini/agent/orphan_reaper.py` — installs a three-tier broom that sweeps after every Multi-Turn tool call that may have spawned a child (Tier 1, silent and cheap, after each `execute_command`, `chat_agent_*`, `acp_*`, and a short list of allies), again after each final answer is delivered to the chat (Tier 2, with the wider agent-pool scan, running in a thread so the user never feels the pause), and one last time as Tlamatini.exe itself bows out (Tier 3, registered on the same `atexit` / SIGINT / SIGBREAK path that already tidied up the pools directory). Each tier escalates `terminate → wait → kill` on every candidate it finds, and each tier promises — in code and in spirit — to never raise an exception back into the chat path: a cleanup that crashes a conversation is worse than the orphans it tries to evict. When the reaper truly cannot kill something, the user does not have to discover the survivor on their own. A second chat bubble appears beneath the answer, in the same voice the rest of the application uses, listing each surviving `name` and `PID` so the user can finish the job from Task Manager themselves — informed, never blamed. And on the prevention side, the spawn sites were rewritten. `views.py`'s Starter, Ender, FlowCreator, and Restart paths now launch their Python children with `CREATE_NEW_PROCESS_GROUP | CREATE_NO_WINDOW | DETACHED_PROCESS` and stdio piped to `DEVNULL`; the ACPX runtime grew a `_kill_process_tree()` helper that walks past the top-level CLI wrapper and ends the `node.exe` helpers underneath it; and every pool-agent script (Ender first, the other fifty-odd siblings in lockstep) installs a top-of-module `subprocess.Popen.__init__` monkey-patch that quietly adds `CREATE_NO_WINDOW` to any descendant `Popen` whose caller forgot to ask for it. The seatbelt is now fastened by default. As a result, the orphan survivor list — the second chat bubble Tlamatini's reaper is prepared to send — should almost always be empty, which is exactly the point: most users will never know any of this happened, and that is the loudest a piece of plumbing should ever be allowed to speak. Documented in Book §17 of intent and the new README §10 of record; commit `dcd1613` carries the full diff.
+
+- **Added De-Compresser Agent — 2026-05-15** — A new short-running deterministic action agent that COMPRESSES or DECOMPRESSES an archive (61st agent in the catalog). Direction is inferred from the file extensions: if `input` ends in `.gz`, `.7z`, `.zip`, `.tar.gz`, or `.gz.tar` the agent extracts into the `output` directory; if `output` ends in those extensions the agent packs `input` (a file OR a directory) into `output`. Per-format engines: `.gz` uses the stdlib `gzip` module; `.zip` uses the stdlib `zipfile` module; `.7z` uses the `7z` CLI when available (LZMA / LZMA2 + `-mhe=on` AES-encrypted headers) and falls back to `py7zr`; `.tar.gz` / `.gz.tar` decompresses through a temp `.tar` then untars (and routes through `7z` when a password is supplied since stdlib tar/gz has no native encryption). Password handling: pass `passwordless=true` to skip, or `passwordless=false` and the agent reads the password from the OS env var `DE_COMPRESSER_PWD` (a missing env var fails fast to the end-stage). The end-stage ALWAYS starts every agent in `target_agents`, even on failure, so a Raiser on a downstream Parametrizer can branch on the `success=true|false` field of the emitted `INI_SECTION_DE_COMPRESSER<<<` block. Files involved: `agent/agents/de_compresser/{de_compresser.py, config.yaml}` (the agent itself), `agent/views.py::update_de_compresser_connection_view` + `agent/urls.py` (canvas wiring), `agent/migrations/0083_add_de_compresser.py` (Agent row) + `0084_add_chat_agent_de_compresser_tool.py` (Tool row for the Multi-Turn wrapper), `agent/chat_agent_registry.py` (`ChatWrappedAgentSpec(key="de_compresser", ...)`), `agent/mcp_agent.py::_EXEC_REPORT_TOOLS` (registered under `agent_key="decompresser"`), `agent/static/agent/css/agentic_control_panel.css` (Vault-Unsealed gradient — slate-indigo → archival-bronze → sealing-wax-red → spring-mint, intentionally distinct from every other 4-color gradient in the file), `agent/static/agent/css/agent_page.css` (Exec Report caption + cmd-border accent + dark-header membership), `agent/static/agent/js/{acp-agent-connectors.js, acp-canvas-core.js, acp-canvas-undo.js, acp-file-io.js, agent_page_chat.js}` (full canvas wiring + Flow-Generator mapping for `chat_agent_de_compresser`), `agents_descriptions.md` (sidebar tooltip + canvas Description dialog), `agent/agents/flowcreator/agentic_skill.md` (FlowCreator AI catalog entry #54b), `agent/agents/flowhypervisor/monitoring-prompt.pmt` (watchdog knows the new startup banner and the Parametrizer-section it emits), `README.md` + `docs/claude/agents.md`. The agent is fully accessible through Multi-Turn via `chat_agent_de_compresser` (security_hints cover "compress", "decompress", "unzip", "extract archive", "zip up", "pack folder", "tar gz", "7z").
 
 - **DB menu — Backup database + Set DB + start-up swap-in — 2026-05-14** — A new top-of-page **DB** dropdown adds two safe, GUI-first database operations and a third invisible one. **Backup database** (`DB → Backup database`, commit `47df564`) opens a dialog with a live-validated target-directory input (`GET /agent/check_backup_directory/`) that `shutil.copy2`s the live `db.sqlite3` to a directory of your choice via `POST /agent/backup_db/`, keeping the live database untouched. **Set DB** (`DB → Set DB`, the new entry) does the harder direction: a live-validated file-path input (`GET /agent/check_set_db_file/` — checks existence, basename, and the `SQLite format 3\x00` magic header) stages your pick into `<base>/DB/ToLoad/db.sqlite3` via `POST /agent/set_db/`, and a yellow ⚠ warning dialog tells you the file will be loaded on the next session (or restart now for immediate effect). The invisible third leg is `Tlamatini/manage.py::_apply_pending_db_swap` — a function that runs BEFORE Django is imported, detects frozen vs source mode, and (only when `DB/ToLoad/db.sqlite3` is present) (1) creates `DB/Older/<YYYY-MM-DD_HHMMSS>/`, (2) `shutil.move`s the current live `db.sqlite3` into that timestamped archive, (3) `shutil.move`s `DB/ToLoad/db.sqlite3` on top of the live path, then returns and lets Django open the freshly-promoted database. Both legs use `shutil.move` (not copy), so a re-launch with empty `ToLoad/` is automatically a no-op — no "stuck flag" to clear. Pre-Django timing is the entire safety story: a simple **Reconnect** from the navbar does NOT trigger the swap-in, because the swap window is only open before the Django process opens its SQLite connection pool. The deployment-aware path resolution mirrors Django's own `BASE_DIR / 'db.sqlite3'` — `_MEIPASS/db.sqlite3` under PyInstaller (the bundle-internal location Django actually opens), `<manage.py dir>/db.sqlite3` in source mode — while the user-facing `DB/` tree always lives next to the executable (frozen) or next to `manage.py` (source), where the user can actually browse to it in Explorer. `build.py` extends its `empty_dirs` tuple with `"DB/ToLoad"` and `"DB/Older"` so frozen installs ship with both directories on day one; `Tlamatini/Tlamatini/DB/{ToLoad,Older}/README.md` are checked into the repo as the "git keepers" that prevent the empty directories from being lost in source mode. The Older archive is never auto-pruned — it's the only built-in rollback path (copy a `db.sqlite3` from `Older/<timestamp>/` back into `ToLoad/`, restart, and the swap-in promotes it while archiving the *current* live database under a fresh timestamp). Failure-mode contract: a corrupt / locked / mismatched ToLoad file logs `--- [DB SWAP] Skipped due to error: …` to `tlamatini.log` and lets Tlamatini start normally with the previous database — a bad ToLoad pick must never lock you out of your own data. Files involved: `Tlamatini/manage.py` (swap-in), `Tlamatini/agent/views.py::{_resolve_db_sqlite_path, check_backup_directory_view, backup_db_view, _resolve_db_to_load_directory, _file_looks_like_sqlite, check_set_db_file_view, set_db_view}`, `Tlamatini/agent/urls.py` (four new routes), `Tlamatini/agent/templates/agent/agent_page.html` (DB dropdown + two dialog containers + warning panel), `Tlamatini/agent/static/agent/css/agent_page.css` (`backup-db-status`, `set-db-status`, `set-db-warning-icon` rules), `Tlamatini/agent/static/agent/js/agent_page_state.js` (DOM refs), `Tlamatini/agent/static/agent/js/agent_page_dialogs.js` (`makeBackupCancelButtons` / `makeSetCancelButtons` factories, three `preRender*` / `render*` pairs), `Tlamatini/agent/static/agent/js/agent_page_init.js` (`OpenBackupDbDialog`, `OpenSetDbDialog`, `_saveBackupDb`, `_saveSetDb`, debounced validators), `eslint.config.mjs` (15 new global declarations), and `build.py` (empty-dir extension). Documented end-to-end in Book chapter §17 and README §3.10.
 
