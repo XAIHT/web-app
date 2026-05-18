@@ -51,7 +51,7 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.3.0
+          Local-First AI Developer Assistant v1.3.1
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, Unreal Engine-enabled project assistance, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
@@ -104,7 +104,7 @@ function TlamatiniOverview() {
             live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, external coding-agent delegation, Unreal Engine-enabled project work, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.3.0 build makes Tlamatini Unreal Engine Enabled and adds the ACPX-Skills menu for Browse Skills,
+            The v1.3.1 build makes Tlamatini Unreal Engine Enabled and adds the ACPX-Skills menu for Browse Skills,
             Configure Skills, Diagnostics, and Reload Registry, while keeping Config, DB, GPU warnings,
             and saved .flw files close to the operator.
           </p>
