@@ -70,11 +70,11 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.3.2 is a locally deployed, Unreal Engine-enabled AI developer assistant
+            Tlamatini v1.4.0 is a locally deployed, Unreal Engine-enabled AI developer assistant
             with hybrid RAG over your source, a 256-turn Multi-Turn tool-calling loop,
-            ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 21 skill packages,
-            in-app Config and DB menus, reusable .flw workflows, 62 drag-and-drop agent types,
-            and GPU-aware context loading.
+            ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 23 skill packages,
+            in-app Config and DB menus, reusable .flw workflows, 64 drag-and-drop agent types,
+            Reviewer and Analyzer gates, and GPU-aware context loading.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -96,9 +96,9 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: 'Agents', value: '62' },
-                { label: 'Skills', value: '21' },
-                { label: 'Version', value: 'v1.3.2' },
+                { label: 'Agents', value: '64' },
+                { label: 'Skills', value: '23' },
+                { label: 'Version', value: 'v1.4.0' },
                 { label: 'Unreal Engine', value: 'Enabled' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -157,7 +157,7 @@ function VisionMissionSection() {
       title: 'Vision',
       subtitle: 'Human Control, Tunable AI',
       description:
-        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, and automation that can be saved, validated, and rerun.',
+        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, review and analysis gates, and automation that can be saved, validated, and rerun.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -169,7 +169,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, GPU-aware context loading, 256-turn Multi-Turn orchestration, Exec Report audit tables, ACPX delegation, skill-catalog administration, and visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, GPU-aware context loading, 256-turn Multi-Turn orchestration, Exec Report audit tables, ACPX delegation, skill-catalog administration, Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -180,7 +180,7 @@ function VisionMissionSection() {
       title: 'Concept',
       subtitle: 'The One Who Knows',
       description:
-        'Tlamatini means "one who knows." In practice, it reads your code and Unreal Engine projects, lets you tune models, endpoints, database snapshots, and skills from the UI, calls tools, spawns external coding agents, and compiles chat or canvas ideas into reusable .flw workflows.',
+        'Tlamatini means "one who knows." In practice, it reads your code and Unreal Engine projects, lets you tune models, endpoints, database snapshots, and skills from the UI, reviews diffs, scans for risk, spawns external coding agents, and compiles chat or canvas ideas into reusable .flw workflows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
@@ -417,7 +417,7 @@ function ArchitectureSection() {
                   },
                   {
                     title: 'ACPX-Skills Admin',
-                    desc: 'Browse, configure, diagnose, and reload the 21-skill catalog without asking the LLM to be the control panel.',
+                    desc: 'Browse, configure, diagnose, and reload the 23-skill catalog without asking the LLM to be the control panel.',
                     color: '#7a9e8e',
                   },
                   {
@@ -492,7 +492,7 @@ function WorkflowSection() {
     { name: 'Control', agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { name: 'Routing', agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { name: 'Logic Gates', agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer', color: '#8a9ec7' },
+    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer', color: '#8a9ec7' },
     { name: 'Cryptography', agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { name: 'Utility', agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { name: 'Terminal / Monitoring', agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
@@ -518,10 +518,10 @@ function WorkflowSection() {
           {/* Left */}
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-              The Visual Workflow Designer lets you drag 62 agent types onto a canvas,
+              The Visual Workflow Designer lets you drag 64 agent types onto a canvas,
               wire them into reusable .flw workflows, preserve Parametrizer mappings,
-              validate the live graph, and bring repeatable agentic automation to
-              Unreal Engine-enabled project work.
+              validate the live graph, review diffs, scan for security findings, and bring
+              repeatable agentic automation to Unreal Engine-enabled project work.
             </p>
             <img
               src="/images/feature-workflow.jpg"
@@ -589,12 +589,14 @@ function ToolsSection() {
     { name: 'Config -> URLs', desc: 'Edit endpoint values without hand-editing JSON', type: 'Config', color: '#c9a96e' },
     { name: 'DB -> Backup database', desc: 'Snapshot the live SQLite database to a directory you choose', type: 'DB', color: '#c79e7a' },
     { name: 'DB -> Set DB', desc: 'Stage a database for the next clean Tlamatini start-up', type: 'DB', color: '#c79e7a' },
-    { name: 'ACPX-Skills -> Browse', desc: 'Inspect skill bodies, permissions, inputs, outputs, and budgets before use', type: 'Skills', color: '#b08cc7' },
+    { name: 'ACPX-Skills -> Browse', desc: 'Inspect all 23 skill bodies, permissions, inputs, outputs, and budgets before use', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Configure', desc: 'Enable or hide skills from the planner with the same feel as Tools and MCPs', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Diagnostics', desc: 'Catch missing tools, MCPs, ACPX agents, and orphan skill rows before runtime', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Reload Registry', desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills', color: '#b08cc7' },
     { name: 'Unreal Engine', desc: 'Bring Tlamatini into game-dev project assistance', type: 'Game Dev', color: '#8a9ec7' },
     { name: 'Reusable .flw', desc: 'Save workflows so they can be loaded and run again', type: 'Flow', color: '#9e9e9e' },
+    { name: 'Reviewer', desc: 'Reviews git diffs with an APPROVE, REQUEST_CHANGES, or COMMENT verdict', type: 'Canvas Agent', color: '#7a9e8e' },
+    { name: 'Analyzer', desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent', color: '#c79e7a' },
     { name: 'De-Compresser', desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
     { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads', type: 'RAG', color: '#8a9ec7' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
@@ -602,7 +604,7 @@ function ToolsSection() {
     { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },
     { name: 'acp_spawn', desc: 'Start an external coding-agent CLI session', type: 'ACPX', color: '#b08cc7' },
     { name: 'acp_relay', desc: 'Pass one external agent answer to another in a single call', type: 'ACPX', color: '#b08cc7' },
-    { name: 'invoke_skill', desc: 'Run enabled SKILL.md packages through the SkillHarness', type: 'Skill', color: '#9e9e9e' },
+    { name: 'invoke_skill', desc: 'Run enabled SKILL.md packages through the SkillHarness, including code-review and security-audit', type: 'Skill', color: '#9e9e9e' },
   ];
 
   return (

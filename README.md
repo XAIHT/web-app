@@ -1,12 +1,33 @@
-# Tlamatini
+<p align="center">
+  <img src="Tlamatini.jpg" alt="Tlamatini Logo" width="180" height="180" />
+</p>
 
-![Project Logo](Tlamatini.jpg)
+<h1 align="center">Tlamatini</h1>
 
-> A locally-deployed AI developer assistant: hybrid RAG (FAISS + BM25), Multi-Turn tool orchestration, ACPX delegation to external coding-agent CLIs (Claude Code, Cursor, Codex, Gemini, Qwen, …), and a visual workflow designer with **61 drag-and-drop agents**.
->
-> Site: **<https://xaiht.org>** · One-minute teaser of a complete Cybersec enhancement crafted by Tlamatini!!!: **<https://www.youtube.com/watch?v=4MyRXBahHuU&t=41s>**
->
-> Looking for the long-form, narrative version of this documentation? See [`BookOfTlamatini.md`](BookOfTlamatini.md).
+<p align="center"><em>"one who knows" — a locally-deployed AI developer assistant</em></p>
+
+<p align="center">
+  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.4.0"><img src="https://img.shields.io/badge/VERSION-v1.4.0-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.4.0" /></a>
+  <a href="https://www.python.org/downloads/release/python-31210/"><img src="https://img.shields.io/badge/PYTHON-3.12.10-3776AB?style=for-the-badge&labelColor=2D2D2D&logo=python&logoColor=white" alt="Python 3.12.10" /></a>
+  <a href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/DJANGO-5.2.4-092E20?style=for-the-badge&labelColor=2D2D2D&logo=django&logoColor=white" alt="Django 5.2.4" /></a>
+  <a href="#7-building-a-frozen-distribution"><img src="https://img.shields.io/badge/PLATFORM-WIN%2010%20%7C%2011-0078D6?style=for-the-badge&labelColor=2D2D2D&logo=windows&logoColor=white" alt="Platform Windows 10 | 11" /></a>
+  <a href="#95-agent-catalog-the-64-types-by-family"><img src="https://img.shields.io/badge/AGENTS-64-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="64 Agents" /></a>
+  <a href="#5-acpx--external-coding-agent-clis-as-tools"><img src="https://img.shields.io/badge/ACPX-12%20TOOLS-FF8C00?style=for-the-badge&labelColor=2D2D2D" alt="ACPX 12 Tools" /></a>
+  <a href="#10-embedding-memory-pre-flight-guard-gpu-hosts"><img src="https://img.shields.io/badge/RAG-FAISS%20%2B%20BM25-009688?style=for-the-badge&labelColor=2D2D2D" alt="Hybrid RAG" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-GPLV3-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="License GPLv3" /></a>
+</p>
+
+**Tlamatini** (Nahuatl for *"one who knows"*) is a locally-deployed AI developer assistant that pairs a hybrid [RAG pipeline](#82-rag) (FAISS + BM25, metadata extraction, context budgeting) with a [Multi-Turn](#35-tutorial-the-multi-turn-toggle) tool-orchestration layer, [ACPX](#5-acpx--external-coding-agent-clis-as-tools) delegation to external coding-agent CLIs ([Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview), [Cursor](https://cursor.com), [Codex](https://github.com/openai/codex), [Gemini](https://github.com/google-gemini/gemini-cli), [Qwen](https://github.com/QwenLM/qwen-code), …), and a [visual workflow designer](#4-visual-workflow-designer-agentic_control_panel) with **64 drag-and-drop agents**.
+
+> **Local-first by default**: the full RAG pipeline, the Multi-Turn execution loop, and every workflow agent run on your machine — embeddings and chat are driven by your local [Ollama](https://ollama.com/) install. Cloud LLMs (Claude API, Ollama Pro/Max) and ACPX delegation to cloud CLIs are opt-in per-request, never the default. Sensitive code never leaves the box unless you explicitly route it out.
+
+<p align="center">
+  <a href="https://xaiht.org"><strong>🌐 Website</strong></a> &nbsp;·&nbsp;
+  <a href="https://www.youtube.com/watch?v=4MyRXBahHuU&t=41s"><strong>▶️ One-minute teaser</strong></a> &nbsp;·&nbsp;
+  <a href="BookOfTlamatini.md"><strong>📖 Long-form docs</strong></a> &nbsp;·&nbsp;
+  <a href="VERSIONING.md"><strong>🏷️ Versioning</strong></a> &nbsp;·&nbsp;
+  <a href="#13-demo-videos"><strong>🎬 More demos</strong></a>
+</p>
 
 ---
 
@@ -82,7 +103,7 @@
   - [9.2. The five layers](#92-the-five-layers)
   - [9.3. Multi-Turn execution pipeline](#93-multi-turn-execution-pipeline)
   - [9.4. Agent contracts and the Flow Compiler](#94-agent-contracts-and-the-flow-compiler)
-  - [9.5. Agent catalog (the 62 types, by family)](#95-agent-catalog-the-62-types-by-family)
+  - [9.5. Agent catalog (the 64 types, by family)](#95-agent-catalog-the-64-types-by-family)
 - [10. Embedding-Memory Pre-Flight Guard (GPU hosts)](#10-embedding-memory-pre-flight-guard-gpu-hosts)
   - [10.1. Why this exists](#101-why-this-exists)
   - [10.2. How the check fires (the hook point)](#102-how-the-check-fires-the-hook-point)
@@ -121,7 +142,7 @@
 
 ### 1.1. What Tlamatini is
 
-**Tlamatini** (Nahuatl for *"one who knows"*) is a Django/Channels app you run on your own machine. It packages a hybrid RAG pipeline, a Multi-Turn tool-calling LLM loop, an ACPX runtime that spawns external coding-agent CLIs as child processes, an **Unreal MCP** client that drives Unreal Engine 5 from chat or canvas, and a drag-and-drop workflow designer with 62 agent types — into one local install. Backends: **Ollama** (local), **Anthropic Claude** (cloud), **Qwen vision** (Ollama).
+**Tlamatini** (Nahuatl for *"one who knows"*) is a Django/Channels app you run on your own machine. It packages a hybrid RAG pipeline, a Multi-Turn tool-calling LLM loop, an ACPX runtime that spawns external coding-agent CLIs as child processes, an **Unreal MCP** client that drives Unreal Engine 5 from chat or canvas, and a drag-and-drop workflow designer with 64 agent types — into one local install. Backends: **Ollama** (local), **Anthropic Claude** (cloud), **Qwen vision** (Ollama).
 
 License: **GPL-3.0** · Repo: <https://github.com/XAIHT/Tlamatini.git> · Platform tested: Windows 11 (cross-platform for source mode).
 
@@ -323,7 +344,7 @@ Tlamatini classifies the prompt with a small LLM call ("does this need the web?"
 
 This is the big one. Multi-Turn turns Tlamatini from *answerer* into **operator**:
 
-- The planner picks the relevant subset of 36+ wrapped chat-agent tools, the 12 ACPX tools, and the core Python tools (default cap: 20 tools per request).
+- The planner picks the relevant subset of 39 wrapped chat-agent tools, the 12 ACPX tools, and the core Python tools (default cap: 20 tools per request).
 - The unified-agent loop runs **up to 100 iterations** — call tool, see result, decide next, chain.
 - Wrapped sub-agents run in headless background runtimes (no console pop-ups).
 
@@ -520,13 +541,13 @@ Both directories must exist on day one (the swap-in opens them with `os.makedirs
 
 ### 3.11. The **ACPX-Skills** menu — Browse, Configure, Diagnostics, Reload
 
-Tlamatini ships with **21 skills** — markdown SKILL.md packages under `agent/skills_pkg/` that the LLM can invoke through `invoke_skill('<name>', '{...args...}')`. They cover everything from the canonical `acp-router` (pick the right external CLI for an intent) and `summarize` (compress text faithfully) to `setup-new-acpx-key`, `skill-creator`, the `tlamatini_*` audit/lint/refactor helpers, and integration stubs for GitHub / Notion / Slack / Gmail / Jira / Todoist / Trello / Weather.
+Tlamatini ships with **23 skills** — markdown SKILL.md packages under `agent/skills_pkg/` that the LLM can invoke through `invoke_skill('<name>', '{...args...}')`. They cover everything from the canonical `acp-router` (pick the right external CLI for an intent) and `summarize` (compress text faithfully) to `setup-new-acpx-key`, `skill-creator`, `code-review` (senior-engineer git-diff review with an APPROVE/REQUEST_CHANGES verdict) and `security-audit` (multi-scanner SAST/secret/dependency sweep), the `tlamatini_*` audit/lint/refactor helpers, and integration stubs for GitHub / Notion / Slack / Gmail / Jira / Todoist / Trello / Weather.
 
 Before 2026-05-17 the only way to interact with them was through the LLM (`list_skills` to enumerate, `invoke_skill` to run). The **ACPX-Skills** navbar dropdown — added next to **Agents** and **Config** in the chat toolbar — gives you an operator-grade admin surface that does NOT require the LLM. Four entries:
 
 #### `ACPX-Skills -> Browse Skills`
 
-Opens a two-pane modal: a left-side list of all 21 skills (with a green/red dot for enabled / disabled and a runtime tag) and a right-side detail pane that shows the selected skill's full identity — description, runtime (in-process / acpx), `acpx_agent` if any, budgets (max_iterations · max_seconds · max_tokens), trigger keywords, `requires_tools` and `requires_mcps`, inputs and outputs (with required-field markers), and the full markdown body. A search box at the top filters by name or description as you type. Pure read — nothing is written back.
+Opens a two-pane modal: a left-side list of all 23 skills (with a green/red dot for enabled / disabled and a runtime tag) and a right-side detail pane that shows the selected skill's full identity — description, runtime (in-process / acpx), `acpx_agent` if any, budgets (max_iterations · max_seconds · max_tokens), trigger keywords, `requires_tools` and `requires_mcps`, inputs and outputs (with required-field markers), and the full markdown body. A search box at the top filters by name or description as you type. Pure read — nothing is written back.
 
 Backed by `GET /agent/skills/` (list payload) and `GET /agent/skills/<name>/` (deep detail). Use it when you want to know what a skill *actually does* before you ask the LLM to call it, or when you've just authored a new SKILL.md and want to confirm it parsed correctly.
 
@@ -715,7 +736,7 @@ multi-line body content (becomes 'response_body')
 >>>END_SECTION_<AGENT_TYPE>
 ```
 
-17 source agents support this format: Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen/Cipher/DeCipher, Gatewayer, Gateway-Relayer, Googler, **ACPXer**.
+22 source agents support this format: Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen/Cipher/DeCipher, Gatewayer, Gateway-Relayer, Googler, **ACPXer**, Shoter, Mouser, **Unrealer**, **Reviewer**, **Analyzer**.
 
 Canonical example:
 
@@ -797,7 +818,7 @@ All return JSON envelopes. Failures: `{"ok": false, "reason": "...", "code": "..
 | `invoke_skill(skill_name, args_json)` | Run a `SKILL.md` package inside `SkillHarness`. |
 | `list_skills(filter_keywords)` | List registered skills. |
 
-21 seed skills live under `agent/skills_pkg/` (acp-router, summarize, setup-new-acpx-key, skill-creator, 8× tlamatini-* maintenance helpers, plus OpenClaw-format ports for github / gmail / slack / jira / notion / todoist / trello / weather).
+23 seed skills live under `agent/skills_pkg/` (acp-router, summarize, setup-new-acpx-key, skill-creator, code-review, security-audit, 8× tlamatini-* maintenance helpers, plus OpenClaw-format ports for github / gmail / slack / jira / notion / todoist / trello / weather).
 
 ### 5.4. Tutorial: spawn-and-go (single agent)
 
@@ -1045,7 +1066,7 @@ pkg.zip          Uninstaller.exe        dist/Tlamatini_Release/
 python build.py
 ```
 
-Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md` and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 60 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
+Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md` and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 64 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
 
 `build.py` is strict: missing `README.md`, missing `jd-cli/`, or missing `jd-cli.bat` causes a non-zero exit.
 
@@ -1245,14 +1266,14 @@ The compiler does a few quiet but important safety jobs:
 
 This is the Pareto improvement: a small shared backend layer makes both major features safer. Chat-created flows and ACP-created flows now speak the same format before they touch the runtime.
 
-### 9.5. Agent catalog (the 62 types, by family)
+### 9.5. Agent catalog (the 64 types, by family)
 
 | Family | Members |
 |---|---|
 | **Control** | Starter, Ender, Stopper, Cleaner, Sleeper, Croner |
 | **Routing** | Raiser, Forker, Asker, Counter |
 | **Logic gates** | OR, AND, Barrier |
-| **Action** | Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, **Unrealer** |
+| **Action** | Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, **Unrealer**, **Reviewer**, **Analyzer** |
 | **Cryptography** | Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber post-quantum) |
 | **Utility** | Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager |
 | **Terminal / monitoring** | Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor |
@@ -1551,22 +1572,22 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 ### 13.2. Cutting a release
 
 ```powershell
-git tag -a v1.3.0 -m "Release 1.3.0: <one-line summary>"
-git push origin v1.3.0
+git tag -a v1.3.2 -m "Release 1.3.2: <one-line summary>"
+git push origin v1.3.2
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.3.0/`.
+All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.3.2/`.
 
 ### 13.3. Where you can see the running version
 
 | Surface | Example |
 |---|---|
-| About dialog | `Tlamatini v1.3.0` |
-| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.3.0` |
-| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.3.0","commit":"abc1234", …}` |
+| About dialog | `Tlamatini v1.3.2` |
+| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.3.2` |
+| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.3.2","commit":"abc1234", …}` |
 | Win32 properties on `Tlamatini.exe` / `Installer.exe` / `Uninstaller.exe` | Right-click → Properties → Details → ProductVersion |
 
 All four are computed from the same `Tlamatini/agent/_version.py` that `build.py` writes (gitignored, regenerated on every build).
@@ -1590,8 +1611,8 @@ No `.devN`, no `+gSHA`, no `.dirty` ever appears in the version string — those
 | # | Source | Use case |
 |---|---|---|
 | 1 (highest) | `python build.py --version 2.0.0-rc.1` | Local RC build before tagging |
-| 2 | `$env:TLAMATINI_VERSION = "1.3.0"; python build.py` | CI pipelines |
-| 3 | `git tag -a v1.3.0 …` (then build) | The normal release path |
+| 2 | `$env:TLAMATINI_VERSION = "1.3.2"; python build.py` | CI pipelines |
+| 3 | `git tag -a v1.3.2 …` (then build) | The normal release path |
 | 4 (lowest) | _(none — sentinel `0.0.0+unknown`)_ | Running from a download zip with no git |
 
 `build.py` exports `$env:TLAMATINI_VERSION` after resolving, so `build_installer.py` and `build_uninstaller.py` in the same shell see the same value — the three artefacts cannot disagree.
