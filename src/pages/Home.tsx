@@ -70,7 +70,7 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.3.1 is a locally deployed, Unreal Engine-enabled AI developer assistant
+            Tlamatini v1.3.2 is a locally deployed, Unreal Engine-enabled AI developer assistant
             with hybrid RAG over your source, a 256-turn Multi-Turn tool-calling loop,
             ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 21 skill packages,
             in-app Config and DB menus, reusable .flw workflows, 62 drag-and-drop agent types,
@@ -98,7 +98,7 @@ function OverviewSection() {
               {[
                 { label: 'Agents', value: '62' },
                 { label: 'Skills', value: '21' },
-                { label: 'Version', value: 'v1.3.1' },
+                { label: 'Version', value: 'v1.3.2' },
                 { label: 'Unreal Engine', value: 'Enabled' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
