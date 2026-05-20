@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.4.0
+          Local-First AI Developer Assistant v1.4.1
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, Unreal Engine-enabled project assistance, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          256-turn Multi-Turn tool orchestration, GPU-aware context loading, ACPX delegation, and a 64-agent workflow designer with Reviewer and Analyzer gates for source or frozen local runs.
+          256-turn Multi-Turn tool orchestration, GPU-aware context loading, opt-in ACPX delegation, and a 64-agent workflow designer with commit-aware Reviewer and Analyzer gates for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -101,11 +101,11 @@ function TlamatiniOverview() {
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." It is a
             local app you run on your own machine, combining code-aware retrieval,
-            live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, external coding-agent delegation, Unreal Engine-enabled project work, code review, security analysis, and a visual automation canvas.
+            live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, commit-aware code review, security analysis, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.4.0 build adds Reviewer and Analyzer, grows the catalog to 64 agents and 23 skills,
-            and keeps Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
+            The v1.4.1 build sharpens Reviewer so it understands uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
+            while keeping 64 agents, 23 skills, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -172,12 +172,12 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 64 agent types, .flw save/load, live Validate, Start-time compilation, De-Compresser archive handling, Unrealer, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 64 agent types, .flw save/load, live Validate, Start-time compilation, De-Compresser archive handling, Unrealer, commit-aware Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
       title: 'ACPX External Delegation',
-      description: 'ACPX delegates to external coding-agent CLIs while ACPX-Skills gives the operator Browse, Configure, Diagnostics, and Reload controls for 23 SKILL.md packages, including code-review and security-audit.',
+      description: 'ACPX delegates to external coding-agent CLIs when you choose, while ACPX-Skills gives the operator Browse, Configure, Diagnostics, and Reload controls for 23 SKILL.md packages, including commit-aware code-review and security-audit.',
       image: '/images/feature-agents.jpg',
     },
     {
@@ -394,7 +394,7 @@ function TlamatiniAgents() {
         { name: 'whatstlamatini', desc: 'WhatsApp bridge via Cloud API' },
         { name: 'acpxer', desc: 'Visual ACPX session lifecycle' },
         { name: 'unrealer', desc: 'Unreal Engine MCP bridge with 28 commands' },
-        { name: 'reviewer', desc: 'Git diff review with a routable verdict' },
+        { name: 'reviewer', desc: 'Commit-state-aware diff review verdict' },
         { name: 'analyzer', desc: 'Static-analysis and security findings gate' },
       ],
     },
@@ -458,7 +458,7 @@ function TlamatiniAgents() {
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
           The catalog spans control, routing, logic, action, cryptography, utility,
           terminal monitoring, and AI design agents, including TeleTlamatini, WhatsTlamatini,
-          ACPXer, Unrealer, Reviewer, Analyzer, De-Compresser, FlowCreator, 23 ACPX-Skills packages, and GPU-aware context safeguards around the RAG entry point.
+          ACPXer, Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, FlowCreator, 23 ACPX-Skills packages, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (
@@ -521,7 +521,7 @@ function TlamatiniTechStack() {
     { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
     { category: 'Agent Runtime', items: ['LangChain tools', '256-turn Multi-Turn executor', 'ACPX external CLIs', '23 SKILL.md packages'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Reviewer / Analyzer gates', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Commit-aware Reviewer / Analyzer gates', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
     { category: 'Interfaces', items: ['Config Models dialog', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
   ];
 
