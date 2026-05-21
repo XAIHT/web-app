@@ -70,8 +70,8 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.4.2 is a locally deployed, Unreal Engine-enabled AI developer assistant
-            with hybrid RAG over your source, a 256-turn Multi-Turn tool-calling loop,
+            Tlamatini v1.5.0 is a locally deployed, Unreal Engine-enabled AI developer assistant
+            with hybrid RAG over your source, a 72-tool, 256-turn Multi-Turn loop,
             opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 23 skill packages,
             in-app Config and DB menus, reusable .flw workflows, 65 drag-and-drop agent types,
             Playwrighter real-browser automation, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and local-first defaults.
@@ -98,7 +98,7 @@ function OverviewSection() {
               {[
                 { label: 'Agents', value: '65' },
                 { label: 'Skills', value: '23' },
-                { label: 'Version', value: 'v1.4.2' },
+                { label: 'Version', value: 'v1.5.0' },
                 { label: 'Unreal Engine', value: 'Enabled' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -169,7 +169,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, tunable embedding depth, GPU-aware context loading, 256-turn Multi-Turn orchestration, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, tunable embedding depth, GPU-aware context loading, 72-tool Multi-Turn orchestration, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -335,7 +335,7 @@ function ArchitectureSection() {
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
                     Ollama, Claude, and Qwen cover the model surface, ACPX delegates to external
-                    coding CLIs only when selected, SkillHarness runs markdown playbooks, and GPU hosts get a pre-flight warning before heavy embedding
+                    coding CLIs only when selected, Playwrighter drives real browser flows, SkillHarness runs markdown playbooks, and GPU hosts get a pre-flight warning before heavy embedding
                     loads can slow the machine down.
                   </p>
                 </div>
@@ -600,6 +600,7 @@ function ToolsSection() {
     { name: 'Analyzer', desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent', color: '#c79e7a' },
     { name: 'De-Compresser', desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
     { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads', type: 'RAG', color: '#8a9ec7' },
+    { name: '72 Multi-Turn tools', desc: 'A broad action surface combining core tools, wrapped agents, ACPX, and skills', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', desc: 'Wait primitive for smooth autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },

@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.4.2
+          Local-First AI Developer Assistant v1.5.0
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, Unreal Engine-enabled project assistance, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          256-turn Multi-Turn tool orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 65-agent workflow designer with Playwrighter, commit-aware Reviewer, and Analyzer gates for source or frozen local runs.
+          72-tool, 256-turn Multi-Turn orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 65-agent workflow designer with Playwrighter, commit-aware Reviewer, and Analyzer gates for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -104,7 +104,7 @@ function TlamatiniOverview() {
             live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, commit-aware code review, security analysis, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.4.2 build adds Playwrighter for deterministic real-browser automation and sharpens Reviewer so it understands uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
+            The v1.5.0 build adds Playwrighter for deterministic real-browser automation and sharpens Reviewer so it understands uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
             while keeping 65 agents, 23 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
@@ -162,7 +162,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Multi-Turn Chat Operator',
-      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. It can call tools for up to 256 turns, observe results, and convert successful work into repeatable flows.',
+      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. It can choose from 72 tools for up to 256 turns, observe results, and convert successful work into repeatable flows.',
       image: '/images/feature-chat.jpg',
     },
     {
@@ -521,7 +521,7 @@ function TlamatiniTechStack() {
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
     { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
-    { category: 'Agent Runtime', items: ['LangChain tools', '256-turn Multi-Turn executor', 'ACPX external CLIs', 'Playwrighter browser automation', '23 SKILL.md packages'] },
+    { category: 'Agent Runtime', items: ['72 Multi-Turn tools', '256-turn executor', 'ACPX external CLIs', 'Playwrighter browser automation', '23 SKILL.md packages'] },
     { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Playwrighter browser flows', 'Commit-aware Reviewer / Analyzer gates', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
     { category: 'Interfaces', items: ['Config Models dialog', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
   ];
