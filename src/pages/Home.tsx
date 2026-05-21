@@ -70,11 +70,11 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.4.1 is a locally deployed, Unreal Engine-enabled AI developer assistant
+            Tlamatini v1.4.2 is a locally deployed, Unreal Engine-enabled AI developer assistant
             with hybrid RAG over your source, a 256-turn Multi-Turn tool-calling loop,
             opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 23 skill packages,
             in-app Config and DB menus, reusable .flw workflows, 64 drag-and-drop agent types,
-            commit-aware Reviewer and Analyzer gates, GPU-aware context loading, and local-first defaults.
+            commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and local-first defaults.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -98,7 +98,7 @@ function OverviewSection() {
               {[
                 { label: 'Agents', value: '64' },
                 { label: 'Skills', value: '23' },
-                { label: 'Version', value: 'v1.4.1' },
+                { label: 'Version', value: 'v1.4.2' },
                 { label: 'Unreal Engine', value: 'Enabled' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -157,7 +157,7 @@ function VisionMissionSection() {
       title: 'Vision',
       subtitle: 'Human Control, Tunable AI',
       description:
-        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, opt-in external routes, review and analysis gates, and automation that can be saved, validated, and rerun.',
+        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, high-detail retrieval when selected, opt-in external routes, review and analysis gates, and automation that can be saved, validated, and rerun.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -169,7 +169,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, GPU-aware context loading, 256-turn Multi-Turn orchestration, Exec Report audit tables, ACPX delegation, skill-catalog administration, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, tunable embedding depth, GPU-aware context loading, 256-turn Multi-Turn orchestration, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -358,13 +358,13 @@ function ArchitectureSection() {
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 Hybrid retrieval combines FAISS vectors, BM25 keywords, Reciprocal Rank Fusion,
                 code-aware metadata for source and Unreal Engine projects, a lighter default
-                embedding model, GPU-aware pre-flight warnings, and a fallback path that keeps source access alive.
+                embedding model, high-detail embedding opt-in, GPU-aware pre-flight warnings, and a fallback path that keeps source access alive.
               </p>
               {/* Pipeline */}
               <div className="flex items-stretch justify-center gap-0 gap-y-4 flex-wrap lg:flex-nowrap max-w-5xl mx-auto w-full">
                 {[
                   { name: 'Load Context', desc: 'Files, folders, or current canvas' },
-                  { name: 'Nomic Default', desc: 'Light embedding footprint by default' },
+                  { name: 'Nomic Default', desc: 'Light default with high-detail opt-in' },
                   { name: 'FAISS + BM25', desc: 'Hybrid retrieval with RRF fusion' },
                   { name: 'GPU Guard', desc: 'Warns before expensive embedding bursts' },
                 ].map((node, i) => (

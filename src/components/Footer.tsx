@@ -15,7 +15,7 @@ export default function Footer() {
           Run Tlamatini on Your Own Machine
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Tlamatini v1.4.1 brings Unreal Engine-enabled project assistance, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 256-turn Multi-Turn orchestration, GPU-aware context loading, opt-in ACPX delegation, 23 skills, and 64 workflow agents with commit-aware Reviewer and Analyzer gates to one local developer assistant.
+          Tlamatini v1.4.2 brings Unreal Engine-enabled project assistance, Hybrid RAG with high-detail embedding opt-in, live Config, DB, and ACPX-Skills controls, 256-turn Multi-Turn orchestration, GPU-aware context loading, opt-in ACPX delegation, 23 skills, and 64 workflow agents with commit-aware Reviewer and Analyzer gates to one local developer assistant.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a

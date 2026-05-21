@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.4.1
+          Local-First AI Developer Assistant v1.4.2
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, Unreal Engine-enabled project assistance, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          256-turn Multi-Turn tool orchestration, GPU-aware context loading, opt-in ACPX delegation, and a 64-agent workflow designer with commit-aware Reviewer and Analyzer gates for source or frozen local runs.
+          256-turn Multi-Turn tool orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 64-agent workflow designer with commit-aware Reviewer and Analyzer gates for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -104,8 +104,8 @@ function TlamatiniOverview() {
             live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, commit-aware code review, security analysis, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.4.1 build sharpens Reviewer so it understands uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
-            while keeping 64 agents, 23 skills, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
+            The v1.4.2 build sharpens Reviewer so it understands uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
+            while keeping 64 agents, 23 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -167,7 +167,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Hybrid RAG with GPU Guard',
-      description: 'Directory, file, or canvas context is grounded through FAISS + BM25 retrieval. The lighter Nomic default and GPU pre-flight warning help context loading stay responsive on developer machines.',
+      description: 'Directory, file, or canvas context is grounded through FAISS + BM25 retrieval. The lighter Nomic default stays responsive, while high-detail embeddings can be selected from Config with GPU pre-flight warnings.',
       image: '/images/artifact-rag.jpg',
     },
     {
@@ -247,12 +247,12 @@ function TlamatiniInstallation() {
   }, []);
 
   const steps = [
-    { label: 'Install Ollama', code: '$env:OLLAMA_INSTALL_DIR = "$env:LOCALAPPDATA\\Programs\\Ollama"\nirm https://ollama.com/install.ps1 | iex' },
-    { label: 'Pull Default Models', code: 'ollama pull Nomic-Embed-Text:latest\nollama pull glm-5:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud' },
-    { label: 'Clone Source', code: 'git clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini' },
+    { label: 'Install Ollama', code: 'irm https://ollama.com/install.ps1 |\n  iex\nollama --version' },
+    { label: 'Pull Default Models', code: 'ollama pull Nomic-Embed-Text:latest\nollama pull glm-5:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud\nollama pull qwen3.5:397b-cloud' },
+    { label: 'Clone Source', code: 'git clone --depth 1 `\nhttps://github.com/XAIHT/Tlamatini\ncd Tlamatini' },
     { label: 'Setup Environment', code: 'python -m venv venv\nsource venv/bin/activate  # Linux/macOS\nvenv\\Scripts\\activate   # Windows\npip install -r requirements.txt' },
-    { label: 'Initialize Database', code: 'python Tlamatini/manage.py migrate\npython Tlamatini/manage.py createsuperuser\npython Tlamatini/manage.py collectstatic --noinput' },
-    { label: 'Run Application', code: 'python Tlamatini/manage.py runserver --noreload' },
+    { label: 'Initialize Database', code: 'python Tlamatini/manage.py migrate\npython Tlamatini/manage.py `\n  createsuperuser\npython Tlamatini/manage.py `\n  collectstatic --noinput' },
+    { label: 'Run Application', code: 'python Tlamatini/manage.py `\n  runserver --noreload' },
   ];
 
   return (
@@ -518,7 +518,7 @@ function TlamatiniTechStack() {
 
   const stack = [
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
-    { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'GPU pre-flight warning'] },
+    { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
     { category: 'Agent Runtime', items: ['LangChain tools', '256-turn Multi-Turn executor', 'ACPX external CLIs', '23 SKILL.md packages'] },
     { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Commit-aware Reviewer / Analyzer gates', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
