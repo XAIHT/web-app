@@ -73,8 +73,8 @@ function OverviewSection() {
             Tlamatini v1.4.2 is a locally deployed, Unreal Engine-enabled AI developer assistant
             with hybrid RAG over your source, a 256-turn Multi-Turn tool-calling loop,
             opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 23 skill packages,
-            in-app Config and DB menus, reusable .flw workflows, 64 drag-and-drop agent types,
-            commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and local-first defaults.
+            in-app Config and DB menus, reusable .flw workflows, 65 drag-and-drop agent types,
+            Playwrighter real-browser automation, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and local-first defaults.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -96,7 +96,7 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: 'Agents', value: '64' },
+                { label: 'Agents', value: '65' },
                 { label: 'Skills', value: '23' },
                 { label: 'Version', value: 'v1.4.2' },
                 { label: 'Unreal Engine', value: 'Enabled' },
@@ -492,7 +492,7 @@ function WorkflowSection() {
     { name: 'Control', agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { name: 'Routing', agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { name: 'Logic Gates', agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer', color: '#8a9ec7' },
+    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer', color: '#8a9ec7' },
     { name: 'Cryptography', agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { name: 'Utility', agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { name: 'Terminal / Monitoring', agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
@@ -518,9 +518,9 @@ function WorkflowSection() {
           {/* Left */}
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-              The Visual Workflow Designer lets you drag 64 agent types onto a canvas,
+              The Visual Workflow Designer lets you drag 65 agent types onto a canvas,
               wire them into reusable .flw workflows, preserve Parametrizer mappings,
-              validate the live graph, review diffs, scan for security findings, and bring
+              validate the live graph, drive real browser flows, review diffs, scan for security findings, and bring
               repeatable agentic automation to Unreal Engine-enabled project work.
             </p>
             <img
@@ -594,6 +594,7 @@ function ToolsSection() {
     { name: 'ACPX-Skills -> Diagnostics', desc: 'Catch missing tools, MCPs, ACPX agents, and orphan skill rows before runtime', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Reload Registry', desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills', color: '#b08cc7' },
     { name: 'Unreal Engine', desc: 'Bring Tlamatini into game-dev project assistance', type: 'Game Dev', color: '#8a9ec7' },
+    { name: 'Playwrighter', desc: 'Drive a real browser through scripted logins, forms, assertions, screenshots, and downloads', type: 'Browser', color: '#8a9ec7' },
     { name: 'Reusable .flw', desc: 'Save workflows so they can be loaded and run again', type: 'Flow', color: '#9e9e9e' },
     { name: 'Reviewer', desc: 'Reviews diffs with commit-state awareness and an APPROVE, REQUEST_CHANGES, or COMMENT verdict', type: 'Canvas Agent', color: '#7a9e8e' },
     { name: 'Analyzer', desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent', color: '#c79e7a' },

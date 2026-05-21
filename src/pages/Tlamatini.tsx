@@ -55,7 +55,7 @@ function TlamatiniHero() {
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, Unreal Engine-enabled project assistance, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          256-turn Multi-Turn tool orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 64-agent workflow designer with commit-aware Reviewer and Analyzer gates for source or frozen local runs.
+          256-turn Multi-Turn tool orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 65-agent workflow designer with Playwrighter, commit-aware Reviewer, and Analyzer gates for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -104,8 +104,8 @@ function TlamatiniOverview() {
             live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, commit-aware code review, security analysis, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.4.2 build sharpens Reviewer so it understands uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
-            while keeping 64 agents, 23 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
+            The v1.4.2 build adds Playwrighter for deterministic real-browser automation and sharpens Reviewer so it understands uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
+            while keeping 65 agents, 23 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -172,7 +172,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 64 agent types, .flw save/load, live Validate, Start-time compilation, De-Compresser archive handling, Unrealer, commit-aware Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 65 agent types, .flw save/load, live Validate, Start-time compilation, Playwrighter browser flows, De-Compresser archive handling, Unrealer, commit-aware Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
@@ -368,6 +368,7 @@ function TlamatiniAgents() {
         { name: 'summarizer', desc: 'LLM log polling and one-shot summaries' },
         { name: 'crawler', desc: 'Raw web crawl and analysis' },
         { name: 'googler', desc: 'Google search via Playwright' },
+        { name: 'playwrighter', desc: 'Scripted browser flows with assertions' },
         { name: 'apirer', desc: 'Structured HTTP request agent' },
         { name: 'gitter', desc: 'Local Git operations' },
         { name: 'ssher', desc: 'SSH remote commands' },
@@ -453,11 +454,11 @@ function TlamatiniAgents() {
           className="reveal-item font-bold mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          64 Workflow-Agent Types
+          65 Workflow-Agent Types
         </h2>
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
           The catalog spans control, routing, logic, action, cryptography, utility,
-          terminal monitoring, and AI design agents, including TeleTlamatini, WhatsTlamatini,
+          terminal monitoring, and AI design agents, including Playwrighter, TeleTlamatini, WhatsTlamatini,
           ACPXer, Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, FlowCreator, 23 ACPX-Skills packages, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -520,8 +521,8 @@ function TlamatiniTechStack() {
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
     { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
-    { category: 'Agent Runtime', items: ['LangChain tools', '256-turn Multi-Turn executor', 'ACPX external CLIs', '23 SKILL.md packages'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Commit-aware Reviewer / Analyzer gates', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
+    { category: 'Agent Runtime', items: ['LangChain tools', '256-turn Multi-Turn executor', 'ACPX external CLIs', 'Playwrighter browser automation', '23 SKILL.md packages'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Playwrighter browser flows', 'Commit-aware Reviewer / Analyzer gates', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
     { category: 'Interfaces', items: ['Config Models dialog', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
   ];
 
