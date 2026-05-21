@@ -70,11 +70,11 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.5.0 is a locally deployed, Unreal Engine-enabled AI developer assistant
-            with hybrid RAG over your source, a 72-tool, 256-turn Multi-Turn loop,
+            Tlamatini v1.6.0 is a locally deployed, Unreal Engine-enabled AI developer assistant
+            with hybrid RAG over your source, a 73-tool, 256-turn Multi-Turn loop,
             opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 23 skill packages,
-            in-app Config and DB menus, reusable .flw workflows, 65 drag-and-drop agent types,
-            Playwrighter real-browser automation, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and local-first defaults.
+            in-app Config and DB menus, reusable .flw workflows, 66 drag-and-drop agent types,
+            Playwrighter real-browser automation, Windower desktop control, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and local-first defaults.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -96,9 +96,9 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: 'Agents', value: '65' },
+                { label: 'Agents', value: '66' },
                 { label: 'Skills', value: '23' },
-                { label: 'Version', value: 'v1.5.0' },
+                { label: 'Version', value: 'v1.6.0' },
                 { label: 'Unreal Engine', value: 'Enabled' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -169,7 +169,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, tunable embedding depth, GPU-aware context loading, 72-tool Multi-Turn orchestration, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, tunable embedding depth, GPU-aware context loading, 73-tool Multi-Turn orchestration, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -335,7 +335,7 @@ function ArchitectureSection() {
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
                     Ollama, Claude, and Qwen cover the model surface, ACPX delegates to external
-                    coding CLIs only when selected, Playwrighter drives real browser flows, SkillHarness runs markdown playbooks, and GPU hosts get a pre-flight warning before heavy embedding
+                    coding CLIs only when selected, Playwrighter drives real browser flows, Windower commands whole windows, SkillHarness runs markdown playbooks, and GPU hosts get a pre-flight warning before heavy embedding
                     loads can slow the machine down.
                   </p>
                 </div>
@@ -492,7 +492,7 @@ function WorkflowSection() {
     { name: 'Control', agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { name: 'Routing', agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { name: 'Logic Gates', agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer', color: '#8a9ec7' },
+    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer', color: '#8a9ec7' },
     { name: 'Cryptography', agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { name: 'Utility', agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { name: 'Terminal / Monitoring', agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
@@ -518,9 +518,9 @@ function WorkflowSection() {
           {/* Left */}
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-              The Visual Workflow Designer lets you drag 65 agent types onto a canvas,
+              The Visual Workflow Designer lets you drag 66 agent types onto a canvas,
               wire them into reusable .flw workflows, preserve Parametrizer mappings,
-              validate the live graph, drive real browser flows, review diffs, scan for security findings, and bring
+              validate the live graph, drive real browser flows, command desktop windows, review diffs, scan for security findings, and bring
               repeatable agentic automation to Unreal Engine-enabled project work.
             </p>
             <img
@@ -595,12 +595,13 @@ function ToolsSection() {
     { name: 'ACPX-Skills -> Reload Registry', desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills', color: '#b08cc7' },
     { name: 'Unreal Engine', desc: 'Bring Tlamatini into game-dev project assistance', type: 'Game Dev', color: '#8a9ec7' },
     { name: 'Playwrighter', desc: 'Drive a real browser through scripted logins, forms, assertions, screenshots, and downloads', type: 'Browser', color: '#8a9ec7' },
+    { name: 'Windower', desc: 'Focus, move, resize, tile, maximize, minimize, and close Windows app windows by title', type: 'Desktop', color: '#c79e7a' },
     { name: 'Reusable .flw', desc: 'Save workflows so they can be loaded and run again', type: 'Flow', color: '#9e9e9e' },
     { name: 'Reviewer', desc: 'Reviews diffs with commit-state awareness and an APPROVE, REQUEST_CHANGES, or COMMENT verdict', type: 'Canvas Agent', color: '#7a9e8e' },
     { name: 'Analyzer', desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent', color: '#c79e7a' },
     { name: 'De-Compresser', desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
     { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads', type: 'RAG', color: '#8a9ec7' },
-    { name: '72 Multi-Turn tools', desc: 'A broad action surface combining core tools, wrapped agents, ACPX, and skills', type: 'Runtime', color: '#7a9e8e' },
+    { name: '73 Multi-Turn tools', desc: 'A broad action surface combining core tools, wrapped agents, ACPX, and skills', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', desc: 'Wait primitive for smooth autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },
