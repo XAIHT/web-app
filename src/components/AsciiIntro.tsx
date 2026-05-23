@@ -3,19 +3,20 @@ import { useEffect, useRef } from 'react';
 const PHRASES = [
   'eXtended Artificial Intelligence Humanly Tempered',
   '( XAIHT )',
-  'Tlamatini v1.6.0',
+  'Tlamatini v1.7.0',
   'Local-First AI',
   'Unreal Engine Enabled',
   'Multi-Turn Operation',
   '73 Multi-Turn Tools',
-  '66 Workflow Agents',
+  '67 Workflow Agents',
+  'Kalier Kali Bridge',
   'Playwrighter Browser Automation',
   'Windower Desktop Control',
   'Commit-Aware Reviewer',
   'High-Detail Embedding Opt-In',
   'Reviewer + Analyzer',
   'ACPX-Skills Menu',
-  '23 Skill Packages',
+  '24 Skill Packages',
   'Visual Workflows'
 ];
 

@@ -2,7 +2,7 @@
 
 ![Project Logo](Tlamatini.jpg)
 
-> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, an Unreal MCP client for driving Unreal Engine 5 from chat or canvas, a visual workflow designer, 66 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
+> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, an Unreal MCP client for driving Unreal Engine 5 from chat or canvas, a visual workflow designer, 67 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
 >
 > Visit our site at **https://xaiht.org**, or get a one-minute taste of Tlamatini on YouTube: **https://youtu.be/a51miZ1JIe0**.
 
@@ -15,7 +15,7 @@ Tlamatini does a lot. This README is organized so you can stop reading at the de
 - **Part I — Getting Tlamatini Running**: prerequisites, Ollama, **Ollama Pro/Max subscription for the default `:cloud` models**, install, first login. *Read this once.*
 - **Part II — Using the Chat**: the four toolbar checkboxes (Multi-Turn, Exec Report, ACPX, internet) walked through one by one. *This is the dummy-friendly heart of the book.*
 - **Part III — The Visual Workflow Designer**: drag-and-drop flows, FlowCreator, FlowHypervisor, Parametrizer, Gatewayer.
-- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 66 workflow agents.
+- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 67 workflow agents.
 - **Part V — The Tool Surface**: every LLM-facing tool the chat can call, organized by family.
 - **Part VI — Inside Tlamatini**: architecture, RAG, the embedding-memory pre-flight guard, Multi-Turn pipeline, ACPX runtime mechanics. *For the curious.*
 - **Part VII — Configuration Reference**: every `config.json` knob.
@@ -899,7 +899,7 @@ Rules:
 
 24 agents emit Parametrizer-compatible sections:
 
-Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, Mouser, **Windower**, **Unrealer**, **Reviewer**, **Analyzer**.
+Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, Mouser, **Windower**, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**.
 
 ### How the visual mapping works
 
@@ -995,7 +995,7 @@ Gatewayer logs stable markers (`GATEWAY_EVENT_ACCEPTED`, `GATEWAY_EVENT_QUEUED`,
 
 # Part IV — The Tlamatini Bestiary
 
-A compact reference for all 66 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above; **Unrealer** gets a full bonus chapter at §57.
+A compact reference for all 67 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above; **Unrealer** gets a full bonus chapter at §57.
 
 > **Naming reminder.** The `agentDescription` (set by each migration) is the single source of truth. CSS classmap key, sidebar visual, and connection-handler name all derive from it.
 
@@ -1039,7 +1039,7 @@ A compact reference for all 66 workflow-agent types. Spotlight chapters for **Pa
 | **Summarizer** | LLM polls source logs for events; one-shot mode also accepts `input_text`. |
 | **Crawler** | Web crawl with raw-content capture and LLM analysis. |
 | **Googler** | Google search via Playwright + readable-text extraction. |
-| **Playwrighter** | Scripted interactive browser automation via Playwright (Chromium/Firefox/WebKit). Drives a REAL browser through an ordered list of declarative steps — `goto` / `click` / `fill` / `press` / `wait_for` / `extract_text` / `extract_attr` / `screenshot` / `assert_visible` / `assert_text` / `download` — for authenticated, JS-rendered, multi-step flows (logins, forms, wizards, SPA scraping, end-to-end UI checks) that Crawler (static fetch) and Googler (search) cannot do. Deterministic (no LLM). Emits an `INI_SECTION_PLAYWRIGHTER<<<` block (`start_url`, `final_url`, `status`, `steps_run`, `assert_result`, `response_body`) and always triggers `target_agents`. Canvas counterpart of the `chat_agent_playwrighter` Multi-Turn tool. |
+| **Playwrighter** | Scripted interactive browser automation via Playwright (Chromium/Firefox/WebKit). Drives a REAL browser through an ordered list of declarative steps — `goto` / `click` / `fill` / `press` / `wait_for` / `extract_text` / `extract_attr` / `screenshot` / `assert_visible` / `assert_text` / `download` — for authenticated, JS-rendered, multi-step flows (logins, forms, wizards, SPA scraping, end-to-end UI checks) that Crawler (static fetch) and Googler (search) cannot do. Deterministic (no LLM). Set `headless: false` to watch it drive and `hold_open_seconds: N` (alias `hold_open_ms`) to keep the browser visible N seconds after the last step before it closes. Emits an `INI_SECTION_PLAYWRIGHTER<<<` block (`start_url`, `final_url`, `status`, `steps_run`, `assert_result`, `response_body`) and always triggers `target_agents`. Canvas counterpart of the `chat_agent_playwrighter` Multi-Turn tool. |
 | **Apirer** | HTTP REST request with structured logging. |
 | **Gitter** | Git operations on a local repo. |
 | **Ssher / Scper** | SSH command execution / SCP file transfer. |
@@ -1052,6 +1052,7 @@ A compact reference for all 66 workflow-agent types. Spotlight chapters for **Pa
 | **Mouser** | Pointer movement, click, drag, scroll, click-at-window, locate-image. |
 | **Keyboarder** | Keyboard typing / hotkey chords (PyAutoGUI). |
 | **Windower** | Deterministic Win32 window manager (pywin32 + ctypes). Locates an application window by title (`match_mode` ∈ substring/exact/regex, plus `match_index` to disambiguate same-titled windows) and runs ONE window-lifecycle operation: `focus`, `minimize`, `maximize`, `restore`, `move`, `resize`, `move_resize`, `close`, `topmost` / `untopmost` (always-on-top), or `arrange` (snap/tile to left/right/top/bottom halves, four quadrants, center, or full) — or `list` every open window with its position, size, and state. The window member of the desktop-UI trio (Windower = the window, Mouser = clicks, Keyboarder = typing). Ports the window-management subset of Microsoft's Windows-MCP (incl. the AttachThreadInput cross-process focus-transfer dance). Emits an `INI_SECTION_WINDOWER<<<` block (`action`, `window_title`, `matched`, `match_count`, `state`, `left`, `top`, `width`, `height`, `response_body`) and always triggers `target_agents`. Canvas counterpart of the `chat_agent_windower` Multi-Turn tool. |
+| **Kalier** | Kali Linux offensive-security bridge to the **MCP-Kali-Server** (`server.py` Flask API; default `http://127.0.0.1:5000`; stdlib `urllib`, self-contained — no `requests`/`mcp` deps in the pool). `action` ∈ `command` / `nmap` / `gobuster` / `dirb` / `nikto` / `sqlmap` / `metasploit` / `hydra` / `john` / `wpscan` / `enum4linux` / `health`. Emits an `INI_SECTION_KALIER<<<` block (`action`, `endpoint`, `method`, `subject`, `return_code`, `success`, `timed_out`, `server_url`, `response_body`) and always triggers `target_agents` so a Forker can branch on `{success}`/`{return_code}`. Canvas counterpart of the `chat_agent_kalier` Multi-Turn tool. **Authorized targets only.** |
 | **File-Creator** | Write a file. |
 | **File-Interpreter / File-Extractor** | Document parsing (DOCX, PPTX, XLSX, PDF, …); raw text extraction with strings-fallback for unknowns. |
 | **Image-Interpreter** | LLM vision analysis of images. |
@@ -1176,7 +1177,7 @@ The ACPX/Skill surface. Every tool returns a JSON envelope. Failure envelopes ar
 | `invoke_skill(skill_name, args_json)` | Run a registered SKILL.md package inside the `SkillHarness`. |
 | `list_skills(filter_keywords)` | List every registered skill. |
 
-The 23 seed skills (`agent/skills_pkg/<name>/SKILL.md`) cover: `hello-world`, `skill-creator`, `acp-router`, `setup-new-acpx-key`, `summarize`, `weather`, `code-review` (senior-engineer git-diff review with a verdict), `security-audit` (multi-scanner SAST/secret/dependency sweep), `tlamatini-*` (8 maintenance skills: csrf-exempt-audit, exec-report-row-adder, allowed-hosts-tighten, planner-trace-replay, flow-from-objective, flw-doctor, new-acp-agent, static-version-bumper), and OpenClaw-format ports for `github`, `notion`, `jira`, `slack`, `gmail`, `todoist`, `trello`.
+The 24 seed skills (`agent/skills_pkg/<name>/SKILL.md`) cover: `hello-world`, `skill-creator`, `acp-router`, `setup-new-acpx-key`, `summarize`, `weather`, `code-review` (senior-engineer git-diff review with a verdict), `security-audit` (multi-scanner SAST/secret/dependency sweep), `kali-pentest` (authorized Kali Linux / MCP-Kali-Server assessment runbook driving the Kalier agent), `tlamatini-*` (8 maintenance skills: csrf-exempt-audit, exec-report-row-adder, allowed-hosts-tighten, planner-trace-replay, flow-from-objective, flw-doctor, new-acp-agent, static-version-bumper), and OpenClaw-format ports for `github`, `notion`, `jira`, `slack`, `gmail`, `todoist`, `trello`.
 
 ---
 
@@ -1786,14 +1787,14 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 
 ```powershell
 git status                                          # clean tree, on main
-git tag -a v1.6.0 -m "Release 1.6.0: <one-liner>"   # annotated tag
-git push origin v1.6.0
+git tag -a v1.7.0 -m "Release 1.7.0: <one-liner>"   # annotated tag
+git push origin v1.7.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.6.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.7.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
 
 ### Where the version shows up in a running install
 
@@ -1801,8 +1802,8 @@ The build computes the version once and bakes it into four surfaces:
 
 - **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
 - **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
-- **Release folder name** — `dist/Tlamatini_Release_v1.6.0/`.
-- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.6.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.6.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+- **Release folder name** — `dist/Tlamatini_Release_v1.7.0/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.7.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.7.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
 
 If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
 
@@ -2362,6 +2363,7 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 | **De-Compresser** | Deterministic short-running compression / decompression agent (`.gz` / `.zip` / `.7z` / `.tar.gz` / `.gz.tar`). |
 | **jd-cli** | Java Decompiler CLI tool bundled with the application. |
 | **Jenkinser** | CI/CD pipeline trigger agent. |
+| **Kalier** | Kali Linux / MCP-Kali-Server bridge agent for AI-assisted pentesting (nmap, gobuster, dirb, nikto, sqlmap, metasploit, hydra, john, wpscan, enum4linux, raw commands). |
 | **Keyboarder** | Deterministic PyAutoGUI-based keyboard automation. |
 | **Kyber-KeyGen / Cipher / DeCipher** | CRYSTALS-Kyber post-quantum encryption agents. |
 | **LangChain** | Framework for LLM applications. |
@@ -2375,7 +2377,7 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 | **Notifier** | LangGraph-based browser-notification agent. |
 | **output_agents** | Config field used by Ender, Stopper, Cleaner for downstream canvas wiring (vs `target_agents` for "agents to start"). |
 | **Parametrizer** | Strict single-lane queue that maps source-agent log segments into target-agent config.yaml. |
-| **Playwrighter** | Tlamatini agent that drives a REAL browser (Playwright — Chromium/Firefox/WebKit) through a scripted, interactive step list (goto/click/fill/wait_for/extract/assert/screenshot/download). Available both as the wrapped Multi-Turn tool `chat_agent_playwrighter` and as a visual canvas node. The 65th entry in the agent catalog. |
+| **Playwrighter** | Tlamatini agent that drives a REAL browser (Playwright — Chromium/Firefox/WebKit) through a scripted, interactive step list (goto/click/fill/wait_for/extract/assert/screenshot/download). Set `headless: false` to watch it and `hold_open_seconds: N` (alias `hold_open_ms`) to keep the browser visible N seconds after the last step before it closes. Available both as the wrapped Multi-Turn tool `chat_agent_playwrighter` and as a visual canvas node. The 65th entry in the agent catalog. |
 | **Pool** | Directory where deployed agent instances are stored. |
 | **Pser** | LLM-powered fuzzy process finder. |
 | **Pythonxer** | Inline-Python agent with Ruff lint + exit-code gating. |
@@ -2385,7 +2387,7 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 | **Recmailer** | LangGraph IMAP receiver with LLM keyword analysis. |
 | **RRF** | Reciprocal Rank Fusion — method for combining ranked lists. |
 | **Ruff** | Fast Python linter used by Pythonxer. |
-| **Skill** | Markdown-driven extension package — a directory under `agent/skills_pkg/<name>/` with a `SKILL.md` (YAML frontmatter + body). 23 seed skills ship. |
+| **Skill** | Markdown-driven extension package — a directory under `agent/skills_pkg/<name>/` with a `SKILL.md` (YAML frontmatter + body). 24 seed skills ship. |
 | **Stopper** | Single-threaded pattern-based agent terminator. |
 | **Summarizer** | LLM polls source logs for events. |
 | **Tlamatini** | Nahuatl for "one who knows" — and the name of this assistant. The LLM responds to it as a self-reference. |
@@ -2398,6 +2400,10 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 # Appendix C — Changelog
 
 ### Recent Updates
+
+- **Added Kalier Agent — The Kali Linux / MCP-Kali-Server Bridge — 2026-05-22** — The agent catalog grows to **67** with **Kalier**, Tlamatini's integration of the **MCP-Kali-Server** (`https://www.kali.org/tools/mcp-kali-server/`) for AI-assisted **penetration testing, recon, and CTF solving**. The upstream project ships two halves — `server.py` (a Flask HTTP API that runs ON the Kali box exposing `/api/command`, `/api/tools/{nmap,gobuster,dirb,nikto,sqlmap,metasploit,hydra,john,wpscan,enum4linux}`, and `/health`) and `client.py` (a thin FastMCP stdio bridge that just forwards to that API). Kalier talks **directly to the Flask API over HTTP using only the Python stdlib (`urllib`)** — exactly like Apirer — so it is fully self-contained, needs no `requests`/`mcp` packages in the agent-pool subprocess, and works identically in source and frozen builds (it does NOT import `agent.*` or the mcp-kali-server code, the same self-contained discipline as ACPXer/Windower). Point `server_url` at the running API server (default `http://127.0.0.1:5000`; for a remote Kali box tunnel it with `ssh -L 5000:localhost:5000 user@KALI_IP`). The `action` field selects ONE capability per run: `command` (any shell command on the Kali box), `nmap`, `gobuster`, `dirb`, `nikto`, `sqlmap`, `metasploit`, `hydra`, `john`, `wpscan`, `enum4linux`, or `health` (probe the server + which tools are installed). It captures the tool's stdout/stderr into one atomic `INI_SECTION_KALIER<<<` block (header `action`, `endpoint`, `method`, `subject`, `return_code`, `success`, `timed_out`, `server_url`; body = the tool output) and ALWAYS triggers `target_agents` (success OR failure) so a downstream Forker can branch on `{success}` / `{return_code}`. Two surfaces ship in lock-step, the same dual pattern as Playwrighter/Unrealer/Windower: the visual **Kalier** canvas node and the wrapped Multi-Turn tool **`chat_agent_kalier`** (the LLM passes the operation as a free-form key=value request; metasploit `options` may be passed as a JSON string). Wiring follows the established 8-step agent pattern: migrations `0097_add_kalier` (Agent row) + `0098_add_chat_agent_kalier_tool` (Tool row); `views.update_kalier_connection_view` + the `POST /update_kalier_connection/<agent_name>/` route; Parametrizer source fields registered in `agent/services/agent_contracts.py` (`_PARAMETRIZER_OUTPUT_FIELDS` + a builtin contract with `secret_paths=('password',)` so the hydra single-password is redacted from `.flw` exports) and `parametrizer.py` (`SECTION_AGENT_TYPES`); `_EXEC_REPORT_TOOLS` under `agent_key="kalier"` (state-changing — it runs live offensive tooling); planner capability hints in `capability_registry.py` so it out-scores generic `execute_command`/`apirer` on pentest prompts; the canvas gradient — deliberately the **only monochromatic ramp** in the whole 67-agent palette: a single-hue black→neon-green "matrix terminal" ramp (`#000000` → `#00471B` → `#00892A` → `#39FF14`). Because every other agent is a multi-hue gradient, a single-hue black→neon ramp is structurally unmistakable at a glance, the black-terminal/neon-green aesthetic is the canonical Kali offensive-security cliché, and the black base keeps it clear of both the mid-green agents (Starter/Whatsapper/Mongoxer/NodeManager) and the red+green agents (Mouser/J-Decompiler/FlowCreator); the four ACP JS files plus the `eslint.config.mjs`-style cross-file global; FlowCreator (`agentic_skill.md` #66) and FlowHypervisor (`monitoring-prompt.pmt` KALIER SPECIAL NOTES — a silent scan up to ~3 min is normal, `success:false`/`timed_out:true` is routable content not an error, only "Cannot reach MCP-Kali-Server" is a real fault). It is an Action agent (starts downstream). Wrapped chat-agent tools move to **42** and total Multi-Turn tools to **74** (20 core + 42 wrapped + 12 ACPX/Skill). The skill catalog also grows to **24** with a new `kali-pentest` SKILL.md — the chat-surface procedural runbook companion (authorized scoped assessment: health → nmap recon → service enumeration → confirm-then-exploit), the same agent+skill dual pattern as Reviewer→code-review and Analyzer→security-audit. **⚠️ Authorized use only** — Kalier is a thin transport to offensive-security tooling; the operator is responsible for ensuring every target is owned or explicitly in-scope. Verified end-to-end: ruff clean, ESLint 0 errors, both migrations applied, `manage.py check` clean, 19 targeted tests (Exec-Report + flow contracts) green, and the planner selects `chat_agent_kalier` on pentest prompts. Reference companions live in README §3.14 + §9.5, `agents_descriptions.md`, `docs/claude/agents.md`, and `agentic_skill.md` entry #66.
+
+- **Playwrighter "Hold the Browser Open" Knob — 2026-05-21** — Fixes a reported bug where Playwrighter closed the browser the *instant* the last step finished, so a user running the **BROWSER SPOTLIGHT** demo with "please wait 10 seconds before closing the browser so I can see it" never got to watch anything — the whole `headless=false` run flashed by in ~2 seconds. The root cause was that `run_browser_flow`'s `finally` block tore the browser down with no delay, and the only way to linger was for the LLM to *happen* to append a `{"action":"wait"}` step (it didn't, and depending on that is fragile). The fix adds a dedicated **`hold_open_seconds`** knob (with **`hold_open_ms`** as a finer-grained alias that wins when both are set) that the agent honors *after* the last step and *before* it closes the browser — on success **or** a mid-flow error, since a failed run is exactly when you want to look at the screen. It is honored regardless of `headless` (harmless when `headless=true`). Because the wrapped-tool config writer only accepts request keys that already exist in `config.yaml`, both fields were added to `agent/agents/playwrighter/config.yaml` (default `0` = close immediately); a new `_coerce_int` helper means a malformed value can never abort an otherwise-good run. Five surfaces move together so the capability is discoverable and reachable: the pool agent (`playwrighter.py`), the template `config.yaml`, the wrapped-tool `purpose` in `agent/chat_agent_registry.py` (which now tells the LLM to pass `hold_open_seconds=<N>` whenever you ask it to keep the browser open / wait before closing), the Create-Flow node mapping in `agent_page_chat.js`, and migration `0095`'s **BROWSER SPOTLIGHT** (#53) + **BROWSER WIZARD** demos (now `hold_open_seconds=10`). Six new tests land in `agent/test_playwrighter_agent.py` (60 total green); ruff + ESLint clean. Agent/skill counts unchanged (**66** / **23**) — this is a behavioural fix, not new capability. Note for existing frozen installs: the agent files were patched on disk so the linger works immediately, but the LLM only *automatically* maps natural-language "wait 10 seconds" → `hold_open_seconds` after a rebuild (the tool description + demo prompts are baked into the executable); until then, include `hold_open_seconds=10` explicitly in the request.
 
 - **Catalog-of-Prompts Demos & Full Test Suites for Windower + Playwrighter — 2026-05-21** — Two follow-ups that make the desktop/browser pair *demonstrable* and *regression-proof*. First, migration `0095_add_windower_playwrighter_demo_prompts.py` seeds **four new fancy demo prompts** into the Catalog of Prompts (the chat **Prompts** dropdown), two per agent — one basic, one medium — each designed so the agent *physically performs on screen* while the user watches: **51 WINDOW SPOTLIGHT** (Windower basic — launch Notepad, maximize it to the foreground, `list`, close) and **52 WINDOW CHOREOGRAPHY** (Windower medium — restore → arrange left half → right half → top-left quadrant → explicit `move_resize` → enumerate every window → close, one move per call so the window visibly dances around the screen); **53 BROWSER SPOTLIGHT** (Playwrighter basic — open `example.com` with `headless=false` so the real browser is visible, extract the heading, assert the link, full-page screenshot) and **54 BROWSER WIZARD** (Playwrighter medium — a multi-step Wikipedia search with `headless=false`: fill the search box → click → wait for the article → extract the title + first paragraph → assert → screenshot). Each prompt renders the agent's house-style HTML report (banner in the agent's own canvas gradient + an `exec-report-table` + a closing banner, all WCAG-contrast-safe per the Prime Directive) and reminds the user to tick **only the Multi-Turn checkbox** — NOT ACPX, because `chat_agent_windower` / `chat_agent_playwrighter` are standard wrapped Multi-Turn tools, not behind the ACPX/Skill surface (unlike the 0090 Reviewer/Analyzer *skill* demos). The four prompts **append** at slots 51-54 with no renumber, preserving the catalog's gap-free `prompt-1..54` contiguity contract (the dropdown breaks at the first missing slot); forward+reverse migration round-trips were verified clean. Second, two comprehensive automated test suites land: `agent/test_windower_agent.py` (**54 tests**) and `agent/test_playwrighter_agent.py` (**54 tests**), both following the established `test_de_compresser.py` pattern — the pool-agent module is loaded via `importlib.util.spec_from_file_location` with a cwd save/restore, and the Win32 API / a real browser are NEVER touched (Windower's `enum_windows` + `win32gui` are mocked; Playwrighter runs against a fake `playwright.sync_api` injected into `sys.modules`). They cover title-matching modes, arrange/tile geometry, the `AttachThreadInput` focus dance, every Windower action verb and every Playwrighter step verb, the `main()` end-stage contract (downstream always triggered + exactly one INI_SECTION block), and full registry/contract/migration integration. Verified: ruff clean, ESLint 0 errors, all 108 new tests green (162 with the related suites), no migration drift. Agent/skill counts unchanged (**66** / **23**) — this is demonstration + test hardening, not new capability.
 
