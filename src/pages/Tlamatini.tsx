@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.7.1
+          Local-First AI Developer Assistant v1.8.0
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-          Hybrid RAG, Unreal Engine-enabled project assistance, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          74-tool, 256-turn Multi-Turn orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 67-agent workflow designer with Kalier, Playwrighter, Windower, commit-aware Reviewer, and Analyzer gates for source or frozen local runs.
+          Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
+          74-tool, 4096-iteration Multi-Turn orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 67-agent workflow designer with Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, commit-aware Reviewer, and Analyzer gates for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -99,13 +99,13 @@ function TlamatiniOverview() {
             One Who Knows, One Who Can Act
           </h2>
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." It is a
+            <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." She is a
             local app you run on your own machine, combining code-aware retrieval,
-            live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, commit-aware code review, security analysis, and a visual automation canvas.
+            her own self-knowledge map, live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, commit-aware code review, security analysis, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.7.1 build makes Kalier a set-once Kali bridge through Config URLs, keeps Windower and Playwrighter close to the operator, and sharpens Reviewer around uncommitted work, staged diffs, and Tlamatini's managed secret placeholders,
-            while keeping 67 agents, 24 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
+            The v1.8.0 build lets her know who she is through Tlamatini.md, optionally ships her own source tree for self-modify builds, raises Multi-Turn to 4096 iterations, keeps loaded project context ahead of her private self-reference, and adds native nested-folder context picking,
+            while keeping 67 agents, 74 Multi-Turn tools, 24 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -157,22 +157,22 @@ function TlamatiniFeatures() {
   const features = [
     {
       title: 'Unreal Engine Enabled',
-      description: 'Tlamatini brings local RAG, 256-turn action, external-agent delegation, and reusable workflow automation into Unreal Engine project work.',
+      description: 'Tlamatini brings local RAG, 4096-iteration action, external-agent delegation, and reusable workflow automation into Unreal Engine project work, including the 53-command XAIHT Unreal MCP fork.',
       image: '/images/feature-workflow.jpg',
     },
     {
       title: 'Multi-Turn Chat Operator',
-      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. It can choose from 74 tools for up to 256 turns, observe results, and convert successful work into repeatable flows.',
+      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. She can choose from 74 tools across up to 4096 iterations, observe results, and convert successful work into repeatable flows.',
       image: '/images/feature-chat.jpg',
     },
     {
       title: 'Hybrid RAG with GPU Guard',
-      description: 'Directory, file, or canvas context is grounded through FAISS + BM25 retrieval. The lighter Nomic default stays responsive, while high-detail embeddings can be selected from Config with GPU pre-flight warnings.',
+      description: 'Directory, file, or canvas context is grounded through FAISS + BM25 retrieval. Native nested-folder picking reaches deep projects, loaded context outranks her self-knowledge, and high-detail embeddings stay guarded by GPU pre-flight warnings.',
       image: '/images/artifact-rag.jpg',
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 67 agent types, .flw save/load, live Validate, Start-time compilation, Kalier security-assessment runs with configured server defaults, Playwrighter browser flows, Windower desktop-window control, De-Compresser archive handling, Unrealer, commit-aware Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 67 agent types, .flw save/load, live Validate, Start-time compilation, Kalier security-assessment runs with configured server defaults, Playwrighter browser flows, Windower desktop-window control, De-Compresser archive handling, 53-command Unrealer flows, commit-aware Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
@@ -182,7 +182,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Config, DB, and ACPX-Skills Menus',
-      description: 'Validated Models, URLs, and Kali server settings, live SQLite backup / Set DB controls, and skill enablement diagnostics sit together as operator-grade controls.',
+      description: 'Validated Models, URLs, Kali server settings, native context picking, live SQLite backup / Set DB controls, and skill enablement diagnostics sit together as operator-grade controls.',
       image: '/images/feature-chat.jpg',
     },
   ];
@@ -270,7 +270,7 @@ function TlamatiniInstallation() {
         Installation
       </h2>
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-        Run from source with Python 3.12.10 and Ollama, then tune common model and endpoint settings from Tlamatini's Config menu and manage SQLite snapshots from the DB menu.
+        Run from source with Python 3.12.10 and Ollama, then tune common model and endpoint settings from Tlamatini's Config menu, load nested project folders through the native picker, and manage SQLite snapshots from the DB menu.
       </p>
       <div className="space-y-4">
         {steps.map((step, i) => (
@@ -395,7 +395,7 @@ function TlamatiniAgents() {
         { name: 'teletlamatini', desc: 'Telegram bridge to Tlamatini chat' },
         { name: 'whatstlamatini', desc: 'WhatsApp bridge via Cloud API' },
         { name: 'acpxer', desc: 'Visual ACPX session lifecycle' },
-        { name: 'unrealer', desc: 'Unreal Engine MCP bridge with 28 commands' },
+        { name: 'unrealer', desc: 'Unreal Engine MCP bridge with 53 commands' },
         { name: 'reviewer', desc: 'Commit-state-aware diff review verdict' },
         { name: 'analyzer', desc: 'Static-analysis and security findings gate' },
         { name: 'kalier', desc: 'Configured Kali Linux assessment bridge' },
@@ -461,7 +461,7 @@ function TlamatiniAgents() {
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
           The catalog spans control, routing, logic, action, cryptography, utility,
           terminal monitoring, and AI design agents, including Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini,
-          ACPXer, Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, FlowCreator, 24 ACPX-Skills packages, and GPU-aware context safeguards around the RAG entry point.
+          ACPXer, 53-command Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, FlowCreator, 24 ACPX-Skills packages, her self-knowledge map, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (
@@ -521,11 +521,11 @@ function TlamatiniTechStack() {
 
   const stack = [
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
-    { category: 'RAG', items: ['FAISS', 'BM25', 'Nomic embedding default', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
+    { category: 'RAG', items: ['FAISS', 'BM25', 'Native nested-folder picker', 'Loaded-context priority', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
-    { category: 'Agent Runtime', items: ['74 Multi-Turn tools', '256-turn executor', 'ACPX external CLIs', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '24 SKILL.md packages'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Kalier assessment pipelines', 'Playwrighter browser flows', 'Windower window control', 'Commit-aware Reviewer / Analyzer gates', 'Unreal Engine-enabled projects', 'Source and frozen modes'] },
-    { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs with Kali server', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
+    { category: 'Agent Runtime', items: ['74 Multi-Turn tools', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '24 SKILL.md packages'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Kalier assessment pipelines', 'Playwrighter browser flows', 'Windower window control', 'Commit-aware Reviewer / Analyzer gates', '53-command Unreal MCP', 'Source and frozen modes'] },
+    { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs with Kali server', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
   ];
 
   return (

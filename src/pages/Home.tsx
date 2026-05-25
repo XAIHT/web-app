@@ -70,11 +70,11 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.7.1 is a locally deployed, Unreal Engine-enabled AI developer assistant
-            with hybrid RAG over your source, a 74-tool, 256-turn Multi-Turn loop,
+            Tlamatini v1.8.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
+            with hybrid RAG over your source, a 74-tool, 4096-iteration Multi-Turn loop,
             opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 24 skill packages,
-            in-app Config and DB menus, reusable .flw workflows, 67 drag-and-drop agent types,
-            Kalier authorized Kali assessment workflows with one-time server configuration, Playwrighter real-browser automation, Windower desktop control, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and local-first defaults.
+            in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 67 drag-and-drop agent types,
+            Kalier authorized Kali assessment workflows with one-time server configuration, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -98,8 +98,8 @@ function OverviewSection() {
               {[
                 { label: 'Agents', value: '67' },
                 { label: 'Skills', value: '24' },
-                { label: 'Version', value: 'v1.7.1' },
-                { label: 'Unreal Engine', value: 'UE5' },
+                { label: 'Version', value: 'v1.8.0' },
+                { label: 'Iterations', value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div
@@ -157,7 +157,7 @@ function VisionMissionSection() {
       title: 'Vision',
       subtitle: 'Human Control, Tunable AI',
       description:
-        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, high-detail retrieval when selected, opt-in external routes, review and analysis gates, and automation that can be saved, validated, and rerun.',
+        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, high-detail retrieval when selected, opt-in external routes, review and analysis gates, and her own self-knowledge map.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -169,7 +169,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, Unreal Engine-enabled project assistance, tunable embedding depth, GPU-aware context loading, 74-tool Multi-Turn orchestration, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Kalier security-assessment runs with configured Kali routing, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, tunable embedding depth, GPU-aware context loading, 74-tool / 4096-iteration Multi-Turn orchestration, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Kalier security-assessment runs with configured Kali routing, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -180,7 +180,7 @@ function VisionMissionSection() {
       title: 'Concept',
       subtitle: 'The One Who Knows',
       description:
-        'Tlamatini means "one who knows." In practice, it reads your code and Unreal Engine projects, lets you tune models, endpoints, database snapshots, and skills from the UI, reviews diffs with working-tree awareness, scans for risk, spawns external coding agents only when you choose, and compiles chat or canvas ideas into reusable .flw workflows.',
+        'Tlamatini means "one who knows." In practice, she reads your code and Unreal Engine projects, protects loaded project context from being confused with her self-knowledge, lets you tune models, endpoints, database snapshots, and skills from the UI, reviews diffs with working-tree awareness, scans for risk, spawns external coding agents only when you choose, and compiles chat or canvas ideas into reusable .flw workflows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
@@ -303,8 +303,8 @@ function ArchitectureSection() {
                 Built as a Local AI Control Plane
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                Tlamatini connects the browser, code and Unreal Engine project context,
-                Config, DB, and ACPX-Skills menus, Multi-Turn operator, Flow Compiler, and ACPX runtime
+                Tlamatini connects the browser, native project context picker, self-knowledge map,
+                Config, DB, and ACPX-Skills menus, Multi-Turn operator, Flow Compiler, Unreal MCP, and ACPX runtime
                 through one local command surface.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
@@ -318,7 +318,7 @@ function ArchitectureSection() {
                     Chat, Config, DB, Skills, and Context
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    The chat surface keeps Multi-Turn, Exec Report, ACPX, internet context,
+                    The chat surface keeps Multi-Turn, Exec Report, ACPX, internet context, native nested-folder context,
                     Models / URLs Config dialogs, DB controls, and ACPX-Skills Browse / Configure / Diagnostics / Reload close at hand
                     without asking users to hunt through files.
                   </p>
@@ -335,7 +335,7 @@ function ArchitectureSection() {
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
                     Ollama, Claude, and Qwen cover the model surface, ACPX delegates to external
-                    coding CLIs only when selected, Kalier reaches the configured Kali server for authorized tooling, Playwrighter drives real browser flows, Windower commands whole windows, SkillHarness runs markdown playbooks, and GPU hosts get a pre-flight warning before heavy embedding
+                    coding CLIs only when selected, Kalier reaches the configured Kali server for authorized tooling, Playwrighter drives real browser flows, Windower commands whole windows, SkillHarness runs markdown playbooks, Tlamatini carries her self-knowledge into every chain, and GPU hosts get a pre-flight warning before heavy embedding
                     loads can slow the machine down.
                   </p>
                 </div>
@@ -358,15 +358,15 @@ function ArchitectureSection() {
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 Hybrid retrieval combines FAISS vectors, BM25 keywords, Reciprocal Rank Fusion,
                 code-aware metadata for source and Unreal Engine projects, a lighter default
-                embedding model, high-detail embedding opt-in, GPU-aware pre-flight warnings, and a fallback path that keeps source access alive.
+                embedding model, native nested-folder selection, loaded-context priority over her private self-knowledge, GPU-aware pre-flight warnings, and a fallback path that keeps source access alive.
               </p>
               {/* Pipeline */}
               <div className="flex items-stretch justify-center gap-0 gap-y-4 flex-wrap lg:flex-nowrap max-w-5xl mx-auto w-full">
                 {[
-                  { name: 'Load Context', desc: 'Files, folders, or current canvas' },
+                  { name: 'Load Context', desc: 'Native picker for nested folders' },
                   { name: 'Nomic Default', desc: 'Light default with high-detail opt-in' },
                   { name: 'FAISS + BM25', desc: 'Hybrid retrieval with RRF fusion' },
-                  { name: 'GPU Guard', desc: 'Warns before expensive embedding bursts' },
+                  { name: 'Context Priority', desc: 'Loaded projects outrank self-knowledge' },
                 ].map((node, i) => (
                   <div key={node.name} className="flex items-center flex-1 min-w-[200px] max-w-full">
                     <div
@@ -405,14 +405,14 @@ function ArchitectureSection() {
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 When Multi-Turn is enabled, the chat becomes an operator: a planner selects
-                the relevant tools, watches the results, and turns successful work into reusable
+                the relevant tools, watches the results across a 4096-iteration ceiling, and turns successful work into reusable
                 workflows.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
                 {[
                   {
                     title: 'Global Execution Planner',
-                    desc: 'Builds a request-scoped plan and binds a focused set of relevant tools.',
+                    desc: 'Builds a request-scoped plan and binds a focused set of relevant tools across long autonomous runs.',
                     color: '#c9a96e',
                   },
                   {
@@ -520,7 +520,7 @@ function WorkflowSection() {
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
               The Visual Workflow Designer lets you drag 67 agent types onto a canvas,
               wire them into reusable .flw workflows, preserve Parametrizer mappings,
-              validate the live graph, run authorized Kali assessments through a configured server, drive real browser flows, command desktop windows, review diffs, scan for security findings, and bring
+              validate the live graph, run authorized Kali assessments through a configured server, drive 53-command Unreal MCP projects, drive real browser flows, command desktop windows, review diffs, scan for security findings, and bring
               repeatable agentic automation to Unreal Engine-enabled project work.
             </p>
             <img
@@ -593,7 +593,7 @@ function ToolsSection() {
     { name: 'ACPX-Skills -> Configure', desc: 'Enable or hide skills from the planner with the same feel as Tools and MCPs', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Diagnostics', desc: 'Catch missing tools, MCPs, ACPX agents, and orphan skill rows before runtime', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Reload Registry', desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills', color: '#b08cc7' },
-    { name: 'Unreal Engine', desc: 'Bring Tlamatini into game-dev project assistance', type: 'Game Dev', color: '#8a9ec7' },
+    { name: 'Unreal Engine', desc: 'Drive the public XAIHT Unreal MCP fork with 53 editor commands across nine categories', type: 'Game Dev', color: '#8a9ec7' },
     { name: 'Playwrighter', desc: 'Drive a real browser through scripted logins, forms, assertions, screenshots, and downloads', type: 'Browser', color: '#8a9ec7' },
     { name: 'Windower', desc: 'Focus, move, resize, tile, maximize, minimize, and close Windows app windows by title', type: 'Desktop', color: '#c79e7a' },
     { name: 'Kalier', desc: 'Coordinate authorized Kali Linux recon through the configured MCP-Kali-Server URL', type: 'Security', color: '#c9a96e' },
@@ -601,8 +601,8 @@ function ToolsSection() {
     { name: 'Reviewer', desc: 'Reviews diffs with commit-state awareness and an APPROVE, REQUEST_CHANGES, or COMMENT verdict', type: 'Canvas Agent', color: '#7a9e8e' },
     { name: 'Analyzer', desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent', color: '#c79e7a' },
     { name: 'De-Compresser', desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
-    { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads', type: 'RAG', color: '#8a9ec7' },
-    { name: '74 Multi-Turn tools', desc: 'A broad action surface combining core tools, wrapped agents, ACPX, and skills', type: 'Runtime', color: '#7a9e8e' },
+    { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads and keeps context loading humane', type: 'RAG', color: '#8a9ec7' },
+    { name: '74 Multi-Turn tools', desc: 'A broad action surface with a 4096-iteration ceiling and a 256 tool-call hard stop', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', desc: 'Wait primitive for smooth autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },

@@ -7,14 +7,14 @@
 <p align="center"><em>"one who knows" — a locally-deployed AI developer assistant</em></p>
 
 <p align="center">
-  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.7.1"><img src="https://img.shields.io/badge/VERSION-v1.7.1-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.7.1" /></a>
+  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.8.0"><img src="https://img.shields.io/badge/VERSION-v1.8.0-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.8.0" /></a>
   <a href="https://www.python.org/downloads/release/python-31210/"><img src="https://img.shields.io/badge/PYTHON-3.12.10-3776AB?style=for-the-badge&labelColor=2D2D2D&logo=python&logoColor=white" alt="Python 3.12.10" /></a>
   <a href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/DJANGO-5.2.4-092E20?style=for-the-badge&labelColor=2D2D2D&logo=django&logoColor=white" alt="Django 5.2.4" /></a>
   <a href="#7-building-a-frozen-distribution"><img src="https://img.shields.io/badge/PLATFORM-WIN%2010%20%7C%2011-0078D6?style=for-the-badge&labelColor=2D2D2D&logo=windows&logoColor=white" alt="Platform Windows 10 | 11" /></a>
   <a href="#95-agent-catalog-the-67-types-by-family"><img src="https://img.shields.io/badge/AGENTS-67-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="67 Agents" /></a>
   <a href="#35-tutorial-the-multi-turn-toggle"><img src="https://img.shields.io/badge/TOOLS-74-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="74 Multi-Turn Tools" /></a>
   <a href="#5-acpx--external-coding-agent-clis-as-tools"><img src="https://img.shields.io/badge/ACPX-12%20TOOLS-FF8C00?style=for-the-badge&labelColor=2D2D2D" alt="ACPX 12 Tools" /></a>
-  <a href="#311-the-acpx-skills-menu--browse-configure-diagnostics-reload"><img src="https://img.shields.io/badge/SKILLS-23-DB2777?style=for-the-badge&labelColor=2D2D2D" alt="23 Skills" /></a>
+  <a href="#311-the-acpx-skills-menu--browse-configure-diagnostics-reload"><img src="https://img.shields.io/badge/SKILLS-24-DB2777?style=for-the-badge&labelColor=2D2D2D" alt="24 Skills" /></a>
   <a href="#10-embedding-memory-pre-flight-guard-gpu-hosts"><img src="https://img.shields.io/badge/RAG-FAISS%20%2B%20BM25-009688?style=for-the-badge&labelColor=2D2D2D" alt="Hybrid RAG" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-GPLV3-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="License GPLv3" /></a>
 </p>
@@ -82,9 +82,9 @@
   - [5.7. ACPXer — the visual canvas counterpart](#57-acpxer--the-visual-canvas-counterpart)
 - [6. Unreal MCP — Driving Unreal Engine 5 from Tlamatini](#6-unreal-mcp--driving-unreal-engine-5-from-tlamatini)
   - [6.1. What Unreal MCP is](#61-what-unreal-mcp-is)
-  - [6.2. Upstream plugin (the **MCP git location**)](#62-upstream-plugin-the-mcp-git-location)
+  - [6.2. The MCP plugin source (the **MCP git location**)](#62-the-mcp-plugin-source-the-mcp-git-location)
   - [6.3. Installing and enabling the plugin inside your UE5 project](#63-installing-and-enabling-the-plugin-inside-your-ue5-project)
-  - [6.4. The 28 commands across 5 categories](#64-the-28-commands-across-5-categories)
+  - [6.4. The command catalog (up to 53 commands across 9 categories)](#64-the-command-catalog-up-to-53-commands-across-9-categories)
   - [6.5. Using Unreal MCP from the chat (`chat_agent_unrealer`)](#65-using-unreal-mcp-from-the-chat-chat_agent_unrealer)
   - [6.6. Using Unreal MCP on the canvas (the visual **Unrealer** node)](#66-using-unreal-mcp-on-the-canvas-the-visual-unrealer-node)
   - [6.7. What the agent actually does, end-to-end](#67-what-the-agent-actually-does-end-to-end)
@@ -109,6 +109,7 @@
   - [9.3. Multi-Turn execution pipeline](#93-multi-turn-execution-pipeline)
   - [9.4. Agent contracts and the Flow Compiler](#94-agent-contracts-and-the-flow-compiler)
   - [9.5. Agent catalog (the 67 types, by family)](#95-agent-catalog-the-67-types-by-family)
+  - [9.6. Self-Knowledge & Self-Modification](#96-self-knowledge--self-modification)
 - [10. Embedding-Memory Pre-Flight Guard (GPU hosts)](#10-embedding-memory-pre-flight-guard-gpu-hosts)
   - [10.1. Why this exists](#101-why-this-exists)
   - [10.2. How the check fires (the hook point)](#102-how-the-check-fires-the-hook-point)
@@ -157,6 +158,7 @@ License: **GPL-3.0** · Repo: <https://github.com/XAIHT/Tlamatini.git> · Platfo
 2. **Multi-Turn mode** — the LLM becomes an *operator*: shell, Python, APIs, SQL, file ops, screenshots, keyboard/mouse automation, email, Telegram, WhatsApp — chained in one conversation.
 3. **ACPX** — delegate sub-tasks to external CLIs (`claude`, `cursor-agent`, `codex`, `gemini`, `qwen-code`, plus 8 more) and relay output between them.
 4. **Visual workflow designer** — design `.flw` flows once, run them unattended, schedule with Croner, watch them with FlowHypervisor.
+5. **Self-aware** — a first-person self-knowledge map (`Tlamatini.md`) is injected into the LLM's prompt on every chain, so Tlamatini can answer accurately about her own architecture, runtime modes, ports, and pages. Builds packaged with `--self-modify` ship her own source tree (`TlamatiniSourceCode/`) so she can read, inspect, and modify herself.
 
 Everything runs locally. The whole app packages into a one-click Windows `.exe` distribution (Part [§7](#7-building-a-frozen-distribution)).
 
@@ -325,6 +327,8 @@ Click **Context** in the top nav:
 | **Set canvas as context** | Use the code currently shown in the canvas (handy for iterative editing). |
 | **Clear context** | Drops the loaded context. |
 
+**Set directory as context** now loads a project at **any depth** under the app root. The old browser `showDirectoryPicker()` only exposed the leaf folder name, so deeply-nested projects could not be reached; it was replaced by a backend native Win32 folder picker (`views.pick_context_directory_view`, route `pick_context_directory/`) that returns the real absolute path. `path_guard.is_within_application_root()` then accepts the application root or any descendant of it, and `agent_page_init.js` falls back to manual path entry on non-Windows hosts.
+
 A green banner at the top shows the current context path. If embedding runs out of memory, Tlamatini packs the source files as a fallback context — retrieval quality drops, access to your code does not.
 
 If you refresh the browser and Tlamatini restores a saved context automatically, the input now stays disabled until the contextual RAG chain has actually finished rebuilding. That closes the old "restored banner arrived before the context was really ready" race on the first load stage.
@@ -350,7 +354,7 @@ Tlamatini classifies the prompt with a small LLM call ("does this need the web?"
 This is the big one. Multi-Turn turns Tlamatini from *answerer* into **operator**:
 
 - The planner picks the relevant subset of Tlamatini's **74 Multi-Turn tools** — 20 core Python tools (`execute_command`, `agent_starter`, `googler`, the image-analysis pair, the `chat_agent_run_*` lifecycle helpers, …), 42 wrapped chat-agent tools, and 12 ACPX/Skill tools — binding at most `max_selected_tools` per request (default cap: **20**).
-- The unified-agent loop runs **up to 100 iterations** — call tool, see result, decide next, chain.
+- The unified-agent loop runs **up to 4096 iterations** (the `unified_agent_max_iterations` default) — call tool, see result, decide next, chain.
 - Wrapped sub-agents run in headless background runtimes (no console pop-ups).
 
 **Try this:** tick **Multi-Turn**, send
@@ -363,7 +367,7 @@ Watch the chat. The LLM picks `chat_agent_shoter`, calls it with the right args,
 |---|---|
 | LLM says "Tool X is not available" | The planner did not bind it. Check `[Planner._select]` console lines; add matching keywords to your prompt or raise `max_selected_tools`. |
 | Same tool fired twice with identical args | Suppressed by the dedup guard — the second call returns "skipped — duplicate". |
-| 100 iterations exhausted | You probably hit a polling loop. Use `chat_agent_sleeper` instead of busy-polling. |
+| 4096 iterations exhausted | You probably hit a polling loop. Use `chat_agent_sleeper` instead of busy-polling. |
 
 Multi-Turn stacks with Set-Context: the LLM reasons over your code *and* runs tools on the result.
 
@@ -943,7 +947,7 @@ Three different LLMs argue back and forth, fully visual, fully unattended.
 
 ## 6. Unreal MCP — Driving Unreal Engine 5 from Tlamatini
 
-The **Unrealer** agent (#62 in the catalog) lets Tlamatini drive a live Unreal Engine 5 editor through the **Unreal MCP** plugin's TCP socket protocol. You spawn a `chat_agent_unrealer` call from Multi-Turn or drop an **Unrealer** node on the visual canvas; Tlamatini opens a TCP connection to `127.0.0.1:55557`, sends one JSON command (`{"type": <verb>, "params": {...}}`), captures the engine's JSON response into an `INI_SECTION_UNREALER<<<` block, and triggers downstream agents. The full 28-command surface of the upstream Unreal MCP plugin is exposed — actor manipulation, Blueprint creation and graph wiring, input mappings, and UMG widget building — without you ever leaving the chat or the canvas.
+The **Unrealer** agent (#62 in the catalog) lets Tlamatini drive a live Unreal Engine 5 editor through the **Unreal MCP** plugin's TCP socket protocol. You spawn a `chat_agent_unrealer` call from Multi-Turn or drop an **Unrealer** node on the visual canvas; Tlamatini opens a TCP connection to `127.0.0.1:55557`, sends one JSON command (`{"type": <verb>, "params": {...}}`), captures the engine's JSON response into an `INI_SECTION_UNREALER<<<` block, and triggers downstream agents. Because the agent forwards whatever `command` + `params` you give it, the catalog is exactly whatever your connected plugin build exposes — from the base 28-command upstream release up to the **53-command, nine-category extended surface** (actor manipulation incl. viewport screenshots, Blueprint creation and graph wiring, input mappings, UMG widget building, in-editor Python/console execution, level I/O, asset import, and material authoring) shipped by Tlamatini's own plugin fork, **[`XAIHT/XaihtUnrealEngineMCP`](https://github.com/XAIHT/XaihtUnrealEngineMCP.git)** (the Unreal Engine MCP modified specifically for this system — see §6.2) — without you ever leaving the chat or the canvas.
 
 ### 6.1. What Unreal MCP is
 
@@ -951,28 +955,38 @@ The **Unrealer** agent (#62 in the catalog) lets Tlamatini drive a live Unreal E
 
 **Tlamatini does not embed or compile the plugin.** It is a *client* of whatever UE5 instance the user has already started. The engine must be open, the plugin must be enabled, and its in-engine listener must be bound to `127.0.0.1:55557` (the default — configurable per-call via `host` / `port`). Tlamatini contributes the calling side: one wrapped Multi-Turn tool, one visual canvas node, one Agent Contract entry, one Exec Report row family, and one Parametrizer source mapping — all built around the same `UnrealConnection` adapter at `agent/agents/unrealer/unrealer.py`.
 
-### 6.2. Upstream plugin (the **MCP git location**)
+### 6.2. The MCP plugin source (the **MCP git location**)
 
-The canonical reference implementation Tlamatini's `UnrealConnection` adapter mirrors verbatim is:
+**Recommended — Tlamatini's own extended fork.** The plugin Tlamatini is built and tested against is the **Unreal Engine MCP modified specifically for this system**:
+
+- **Repository:** `https://github.com/XAIHT/XaihtUnrealEngineMCP.git`
+- **What it is:** the canonical `chongdashu/unreal-mcp` plugin forked and extended for Tlamatini. It ships the full **53-command, nine-category** surface this chapter documents — the base editor / blueprint / node / project / umg verbs **plus** the System / Level / Asset / Material families and the newer `take_screenshot` / `focus_viewport` / `set_pawn_properties` / `find_blueprint_nodes` verbs.
+- **Plugin folder name:** `UnrealMCP`
+- **Default plugin TCP port:** `55557` on `127.0.0.1`
+- **Supported UE versions:** Unreal Engine 5.5+
+
+It speaks the **identical wire protocol on the identical port** as every other build below, so it is a drop-in: Tlamatini's `UnrealConnection` adapter needs no client-side changes to use it. Install this one if you want the System / Level / Asset / Material families that the seeded demos `idPrompt 60/61/62` (§6.5) exercise.
+
+**Upstream base.** The XAIHT fork is built on the canonical reference implementation Tlamatini's `UnrealConnection` adapter mirrors verbatim:
 
 - **Repository:** `https://github.com/chongdashu/unreal-mcp`
 - **License:** MIT
 - **Supported UE versions:** Unreal Engine 5.5+
-- **Plugin folder name:** `UnrealMCP`
-- **Default plugin TCP port:** `55557`
 
-Two equivalent community forks ship the same wire protocol on the same port; either works with Tlamatini's Unrealer with **no client changes**:
+If you only ever need the base 28-command surface (editor / blueprint / node / project / umg), the upstream is enough on its own.
+
+**Equivalent community forks.** Two other forks ship the same wire protocol on the same port; either works with Tlamatini's Unrealer with **no client changes**:
 
 - `https://github.com/CrispyW0nton/Unreal-MCP-Ghost`
 - `https://github.com/gingerol/vhcilab-unreal-engine-mcp`
 
-Pick the upstream that matches your UE5 version and your team's licensing comfort. If you fork the plugin to add a new command verb, your fork is automatically usable from Tlamatini — there is no client-side allow-list of verbs (the wrapped tool forwards any `command` + `params` pair verbatim).
+Pick the build that matches your UE5 version and your team's licensing comfort. If you fork the plugin to add a new command verb, your fork is automatically usable from Tlamatini — there is no client-side allow-list of verbs (the wrapped tool forwards any `command` + `params` pair verbatim).
 
 ### 6.3. Installing and enabling the plugin inside your UE5 project
 
 The plugin is a per-project install (not engine-wide). Steps:
 
-1. **Clone or download** the upstream plugin (only the `MCPGameProject/Plugins/UnrealMCP` folder matters — different forks may name the folder slightly differently; rename to `UnrealMCP` if needed).
+1. **Clone or download** the plugin — the recommended [`XAIHT/XaihtUnrealEngineMCP`](https://github.com/XAIHT/XaihtUnrealEngineMCP.git) fork from §6.2, or any compatible build (only the `MCPGameProject/Plugins/UnrealMCP` folder matters — different forks may name the folder slightly differently; rename to `UnrealMCP` if needed).
 2. **Drop the folder** into your project's `Plugins/` directory so the final path is `<YourProject>/Plugins/UnrealMCP/UnrealMCP.uplugin`. Create the `Plugins/` folder at the project root if it does not exist.
 3. **Open the project in UE5.** The editor will detect the new plugin and offer to rebuild it for your engine version — accept. If you opened a Blueprint-only project, you will be prompted to install Visual Studio Build Tools / Xcode command-line tools first, since the plugin is C++.
 4. **Enable the plugin** via `Edit → Plugins → search "UnrealMCP" → tick Enabled`. Restart the editor.
@@ -980,19 +994,25 @@ The plugin is a per-project install (not engine-wide). Steps:
 
 > **You do not need to press Play (PIE).** The plugin listens at *editor* level — actor manipulation, Blueprint creation, widget construction, etc. all work against the open project even when PIE is stopped. Some UMG operations (`add_widget_to_viewport`) physically render only after the user enters PIE, but the build steps are queued correctly either way.
 
-### 6.4. The 28 commands across 5 categories
+### 6.4. The command catalog (up to 53 commands across 9 categories)
 
-The Unrealer agent forwards whatever `command` + `params` you pass it, so the exact catalog is whatever the upstream plugin exposes. As of the canonical chongdashu/unreal-mcp release, that is **28 commands across 5 categories**:
+The Unrealer agent forwards whatever `command` + `params` you pass it, so the exact catalog is whatever your connected plugin build exposes — there is **no client-side allow-list of verbs**. The canonical chongdashu/unreal-mcp release ships **28 commands across 5 categories** (rows marked `base` below); plugin builds that add the System / Level / Asset / Material command handlers — such as Tlamatini's own extended fork [`XAIHT/XaihtUnrealEngineMCP`](https://github.com/XAIHT/XaihtUnrealEngineMCP.git) (§6.2) — bring the total to **53 commands across 9 categories**:
 
-| Category | Commands |
-|---|---|
-| **editor** | `get_actors_in_level`, `find_actors_by_name`, `spawn_actor`, `delete_actor`, `set_actor_transform`, `get_actor_properties`, `set_actor_property`, `spawn_blueprint_actor` |
-| **blueprint** | `create_blueprint`, `add_component_to_blueprint`, `set_static_mesh_properties`, `set_component_property`, `set_physics_properties`, `compile_blueprint`, `set_blueprint_property` |
-| **node** | `add_blueprint_event_node`, `add_blueprint_input_action_node`, `add_blueprint_function_node`, `connect_blueprint_nodes`, `add_blueprint_variable`, `add_blueprint_get_self_component_reference`, `add_blueprint_self_reference` |
-| **project** | `create_input_mapping` |
-| **umg** | `create_umg_widget_blueprint`, `add_text_block_to_widget`, `add_button_to_widget`, `bind_widget_event`, `add_widget_to_viewport`, `set_text_block_binding` |
+| Category | Commands | Tier |
+|---|---|---|
+| **editor** | `get_actors_in_level`, `find_actors_by_name`, `spawn_actor`, `create_actor`, `delete_actor`, `set_actor_transform`, `get_actor_properties`, `set_actor_property`, `spawn_blueprint_actor`, `focus_viewport`, `take_screenshot` | base + `focus_viewport`/`take_screenshot` |
+| **blueprint** | `create_blueprint`, `add_component_to_blueprint`, `set_static_mesh_properties`, `set_component_property`, `set_physics_properties`, `compile_blueprint`, `set_blueprint_property`, `set_pawn_properties` | base + `set_pawn_properties` |
+| **node** | `add_blueprint_event_node`, `add_blueprint_input_action_node`, `add_blueprint_function_node`, `connect_blueprint_nodes`, `add_blueprint_variable`, `find_blueprint_nodes`, `add_blueprint_get_self_component_reference`, `add_blueprint_self_reference` | base + `find_blueprint_nodes` |
+| **project** | `create_input_mapping` | base |
+| **umg** | `create_umg_widget_blueprint`, `add_text_block_to_widget`, `add_button_to_widget`, `bind_widget_event`, `add_widget_to_viewport`, `set_text_block_binding` | base |
+| **system** | `execute_python`, `execute_console_command`, `get_class_info`, `list_assets` | extended |
+| **level** | `open_level`, `save_current_level`, `save_all`, `new_level`, `get_current_level` | extended |
+| **asset** | `import_asset`, `duplicate_asset`, `rename_asset`, `delete_asset`, `save_asset`, `create_folder` | extended |
+| **material** | `create_material`, `create_material_instance`, `set_material_parameter`, `assign_material` | extended |
 
-Param shapes vary per command (e.g. `spawn_actor` wants `name` + `type` + `location` + `rotation`; `create_blueprint` wants `name` + `parent_class`; `add_text_block_to_widget` wants `widget_name` + `text_block_name` + `text` + `position` + `size` + `font_size` + `color`). The Unrealer agent does not validate them — it forwards them as-is. The plugin will reply with `{"status": "error", "error": "<reason>"}` if a param is missing or malformed, and that error lands verbatim in the `INI_SECTION_UNREALER` block so Multi-Turn / Parametrizer can branch on it.
+`execute_python` is the **universal escape hatch** — it runs an arbitrary Python script inside the editor, so anything in UE5's `unreal` Python API (Niagara, Sequencer, landscape, audio, …) is reachable even when no dedicated verb exists. `take_screenshot` closes the observe→act loop: spawn or change something, then capture the viewport to verify it. Note that the plugin's **headless build/cook/test** tools (`build_project`, `run_automation_tests`, `run_macro`) are *not* part of this catalog — they shell out to `UnrealEditor-Cmd` as separate processes and are unreachable over the editor's TCP socket. Chain Unrealer nodes through a Parametrizer for the `run_macro` equivalent.
+
+Param shapes vary per command (e.g. `spawn_actor` wants `name` + `type` + `location` + `rotation`; `create_blueprint` wants `name` + `parent_class`; `set_material_parameter` wants `material` + `parameter` + `value`; `import_asset` wants `source_file` (a disk path) + `destination_path` (a `/Game` content path)). The Unrealer agent does not validate them — it forwards them as-is, after two defensive fixups: it normalizes `/Content/...` content paths to `/Game/...`, prunes unset placeholder params, and remaps `params.console_command` → the wire's `params.command` for `execute_console_command` (so the console line doesn't collide with the top-level `command:` selector). The plugin will reply with `{"status": "error", "error": "<reason>"}` if a param is missing or malformed, and that error lands verbatim in the `INI_SECTION_UNREALER` block so Multi-Turn / Parametrizer can branch on it.
 
 ### 6.5. Using Unreal MCP from the chat (`chat_agent_unrealer`)
 
@@ -1007,7 +1027,15 @@ The tool accepts the same overrides documented in `config.yaml`:
 - `host='10.0.0.5'` and `port=55557` to target a remote UE instance (rare; the plugin binds to loopback by default and you would need to change the bind address inside the plugin or tunnel it).
 - `connect_timeout=5` and `read_timeout=10` to widen the budgets for slow operations (e.g. `compile_blueprint` on a complex graph).
 
-**Built-in end-to-end demo prompt.** Migration `0087_add_unrealer_demo_prompt.py` seeds a one-click demo into the Prompts table (`idPrompt=32`). Open the chat, click the **Prompts** dropdown, pick *Unreal MCP End-to-End Editor Drive*, and Tlamatini will execute ten guided steps spanning every command category — sanity-probe (`get_actors_in_level`), spawn a `StaticMeshActor` (`spawn_actor`), verify it (`find_actors_by_name`), scaffold a Blueprint (`create_blueprint`), add a `StaticMeshComponent` (`add_component_to_blueprint`), compile (`compile_blueprint`), spawn an instance (`spawn_blueprint_actor`), build a UMG HUD widget (`create_umg_widget_blueprint` → `add_text_block_to_widget` → `add_button_to_widget` → `add_widget_to_viewport`) — and render the result as a per-step HTML report table at the bottom of the answer. Use it as your smoke test the first time you wire the plugin up.
+**Built-in demo prompts.** Migration `0087_add_unrealer_demo_prompt.py` seeds a one-click demo into the Prompts table (`idPrompt=25`). Open the chat, click the **Prompts** dropdown, pick *Unreal MCP End-to-End Editor Drive*, and Tlamatini will execute ten guided steps spanning the **base** command categories — sanity-probe (`get_actors_in_level`), spawn a `StaticMeshActor` (`spawn_actor`), verify it (`find_actors_by_name`), scaffold a Blueprint (`create_blueprint`), add a `StaticMeshComponent` (`add_component_to_blueprint`), compile (`compile_blueprint`), spawn an instance (`spawn_blueprint_actor`), build a UMG HUD widget (`create_umg_widget_blueprint` → `add_text_block_to_widget` → `add_button_to_widget` → `add_widget_to_viewport`) — and render the result as a per-step HTML report table at the bottom of the answer. Use it as your smoke test the first time you wire the plugin up.
+
+Migration `0100_add_unrealer_extended_demo_prompts.py` adds **three more demos that exercise the extended (System / Level / Asset / Material) surface** the base demo never touches, at basic → hard complexity:
+
+- **`idPrompt=60` — *Unreal Snapshot*** (basic): the observe→act loop — `get_current_level` → `spawn_actor` → `take_screenshot` (to `C:/Temp/unreal_snapshot.png`) → `save_current_level`.
+- **`idPrompt=61` — *Unreal Scene Forge*** (medium): content authoring — `list_assets` → `create_folder` → `create_material` → `create_material_instance` → `set_material_parameter` → `spawn_actor` → `assign_material` → `take_screenshot` → `save_all`. (It is honest that `set_material_parameter` on a freshly-created blank material may return `status: error` — that is expected and recorded, not aborted.)
+- **`idPrompt=62` — *Unreal Python & Introspection*** (hard): the System escape hatch — `execute_console_command` (via the agent's `params.console_command` remap) → `get_class_info` → `list_assets` → `execute_python` (a multi-line script passed as a triple-quoted `params.code`) → `take_screenshot`.
+
+All three drive `chat_agent_unrealer` exactly like the base demo (tick only **Multi-Turn**; ACPX not required) and require the same running editor + bound plugin listener.
 
 ### 6.6. Using Unreal MCP on the canvas (the visual **Unrealer** node)
 
@@ -1021,9 +1049,11 @@ params:
   name: ''
   type: ''
   location: []
-  # ... (placeholders for the most common commands; the agent forwards
-  #     whatever you put under params: verbatim, so add or remove keys
-  #     to match the command verb you picked)
+  # ... (the shipped config carries empty placeholders for every param across
+  #     all 9 categories — editor/blueprint/node/umg/system/level/asset/material
+  #     — so the Flow Compiler's dotted `params.X` overrides always resolve into
+  #     an existing YAML leaf. Unset placeholders are pruned before the command
+  #     is sent, so add/remove keys freely to match the verb you picked.)
 connect_timeout: 5
 read_timeout: 10
 source_agents: []
@@ -1076,7 +1106,7 @@ A short pre-flight you can copy into a sticky note before any session:
 | **Multi-Turn** ticked | The toolbar checkbox to the left of **Exec Report** |
 | Tool enabled | `Tools` dialog in chat shows `Chat-Agent-Unrealer` ticked (it ships ticked by default after migration `0086_add_chat_agent_unrealer_tool` runs) |
 
-Then run the seeded **Unreal MCP End-to-End Editor Drive** demo prompt (idPrompt 32) as your smoke test. A clean run leaves three artifacts in your project: actor `TlamatiniProbe_Cube`, Blueprint `BP_TlamatiniProbe` with one spawned instance `TlamatiniProbe_Spawned`, and widget `/Game/UI/WBP_TlamatiniProbeHUD`. Delete them via right-click in the Content Browser when you are done.
+Then run the seeded **Unreal MCP End-to-End Editor Drive** demo prompt (idPrompt 25) as your smoke test. A clean run leaves three artifacts in your project: actor `TlamatiniProbe_Cube`, Blueprint `BP_TlamatiniProbe` with one spawned instance `TlamatiniProbe_Spawned`, and widget `/Game/UI/WBP_TlamatiniProbeHUD`. Delete them via right-click in the Content Browser when you are done.
 
 ### 6.10. Troubleshooting Unreal MCP
 
@@ -1111,9 +1141,17 @@ pkg.zip          Uninstaller.exe        dist/Tlamatini_Release/
 python build.py
 ```
 
-Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md` and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 67 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
+Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md`, the self-knowledge map `Tlamatini.md`, and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 67 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
 
 `build.py` is strict: missing `README.md`, missing `jd-cli/`, or missing `jd-cli.bat` causes a non-zero exit.
+
+**Self-modify builds.** Add the `--self-modify` flag to ship Tlamatini's own source tree inside the distribution:
+
+```bash
+python build.py --self-modify
+```
+
+When the flag is present (`self_modify = "--self-modify" in sys.argv`), the build copies `Tlamatini/agent/TlamatiniSourceCode/` recursively to the install root next to the exe, so it resolves like `prompt.pmt` / `config.json` / `Tlamatini.md`, and Tlamatini can read, inspect, and modify her own code at runtime. Without the flag the directory is omitted entirely. The build prints `Self-modify build : YES` (or `no`) so you can confirm which kind of build you produced. See [§9.6](#96-self-knowledge--self-modification) for how the LLM uses it.
 
 ### 7.3. Step 2 — `build_uninstaller.py`
 
@@ -1198,12 +1236,12 @@ For users, the takeaway is simpler: **a `.flw` saved in source mode should load 
   "unified_agent_model": "glm-5:cloud",
   "unified_agent_base_url": "http://127.0.0.1:11434",
   "unified_agent_temperature": 0.0,
-  "unified_agent_max_iterations": 100,
+  "unified_agent_max_iterations": 4096,
   "chat_agent_limit_runs": 100
 }
 ```
 
-`unified_agent_max_iterations` caps the Multi-Turn tool loop (default 100). `enable_unified_agent` is the master switch for tool-calling.
+`unified_agent_max_iterations` caps the Multi-Turn tool loop (default 4096). `enable_unified_agent` is the master switch for tool-calling.
 
 ### 8.2. RAG
 
@@ -1275,7 +1313,7 @@ LLM Backends: Ollama | Claude API | Qwen vision     +     ACPX Runtime → exter
 Frontend (toggles) → WebSocket → AgentConsumer → ask_rag() (skips prompt-shape validator)
   → UnifiedAgentChain.invoke() → filter_acpx_tools(tools, acpx_enabled)
     → planner picks ≤20 tools (capability scoring + history-aware boost)
-      → MultiTurnToolAgentExecutor: 1..100 iterations of (LLM call → tool calls → ToolMessage)
+      → MultiTurnToolAgentExecutor: 1..4096 iterations of (LLM call → tool calls → ToolMessage)
         → Exec Report HTML appended (if exec_report_enabled, BEFORE save_message)
           → broadcast → frontend renders, shows Create Flow if all 4 gates pass
 ```
@@ -1325,6 +1363,16 @@ This is the Pareto improvement: a small shared backend layer makes both major fe
 | **AI / design** | FlowCreator |
 
 Per-agent details (config knobs, lifecycle, naming convention, log markers): see `BookOfTlamatini.md` Part IV — *The Tlamatini Bestiary*. To add a new agent, follow `Tlamatini/.agents/workflows/create_new_agent.md` (8-step checklist).
+
+### 9.6. Self-Knowledge & Self-Modification
+
+Tlamatini ships with a first-person **self-knowledge map** — `Tlamatini/agent/Tlamatini.md` — that the LLM reads as her own description of who and what she is: her two runtime modes (frozen vs source, and how to tell them apart), the ports she opens (`8000` for the web app, `8765` for the System-Metrics MCP, `50051` for the Files-Search MCP), her main pages, her tech stack, her full capability surface, and how she can improve herself. The audience is the LLM alone, so the file deliberately does **not** follow `prompt.pmt`'s HTML/contrast styling rules — it is a private self-reference, never rendered to users.
+
+The map is injected into the system prompt at prompt-build time. `prompt.pmt` carries a `<self_knowledge>{self_knowledge}</self_knowledge>` block, and `agent/rag/config.py` fills it in: `_load_self_knowledge_block()` reads `Tlamatini.md`, brace-escapes it (`{` → `{{`, `}` → `}}`) so its code snippets cannot collide with the f-string template variables, and **fails open** — a missing, empty, or unreadable file degrades to a short literal notice instead of raising. The substitution happens at the single prompt-load site in `load_config_and_prompt()`, so it covers **all four chains** (basic, history-aware, unified, prompt-only) without adding a new input variable. `Tlamatini.md` is resolved from the application directory exactly like `prompt.pmt` and `config.json` (the install root next to the `.exe` in frozen mode, `Tlamatini/agent/` in source mode), and `build.py` ships it both via `--add-data=…/Tlamatini.md;agent` and by copying it to the install root so frozen resolution next to the exe works. The identity rules in `prompt.pmt` point the LLM at `Tlamatini.md` whenever a prompt concerns who or what she is, her architecture / modes / ports / pages / internals, or improving herself.
+
+Self-modification is a **second, independent capability axis**. The optional directory `Tlamatini/agent/TlamatiniSourceCode/`, when present, contains Tlamatini's own source code so she can read, inspect, and modify herself — present means a *self-able-modify* build; absent means a *not-self-able-modify* build (orthogonal to frozen vs source). The tree is bundled **only** when `build.py` is invoked with the new `--self-modify` flag (see [§7.2](#72-step-1--buildpy)); without the flag it is omitted entirely. Because the directory is optional, `prompt.pmt` instructs the LLM to **always verify the directory's presence** (for example, a Multi-Turn directory listing) before claiming she can read or edit her own code; if it is absent she says so and falls back to the injected self-knowledge plus the docs.
+
+> When you load your own project as context (Context ▸ Set directory / Set file as context) and then ask a generic "summarize the project / the source code / the provided context" question, the **loaded context takes priority** over the always-injected self-knowledge — so Tlamatini summarizes *your* code, not herself. This is enforced by a `prompt.pmt` loaded-context-priority rule plus a deterministic scope header (`agent/rag/utils.py::prepend_loaded_context_scope()`) applied across all four chains.
 
 ---
 
@@ -1559,7 +1607,7 @@ The rendering helper is `orphan_reaper.format_survivors_message()`; it returns `
 
 - Did you tick **Multi-Turn**? Is `enable_unified_agent: true`?
 - "Tool X is not available" → the planner did not bind X. Check `[Planner._select]` console lines, add matching keywords to your prompt, or raise `max_selected_tools`.
-- 100 iterations exhausted → likely a busy-poll loop. Use `chat_agent_sleeper` / `chat_agent_run_wait` instead.
+- 4096 iterations exhausted → likely a busy-poll loop. Use `chat_agent_sleeper` / `chat_agent_run_wait` instead.
 
 ### 12.4. Chat-created flows and ACP validation
 
@@ -1617,22 +1665,22 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 ### 13.2. Cutting a release
 
 ```powershell
-git tag -a v1.7.1 -m "Release 1.7.1: <one-line summary>"
-git push origin v1.7.1
+git tag -a v1.8.0 -m "Release 1.8.0: <one-line summary>"
+git push origin v1.8.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.7.1/`.
+All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.8.0/`.
 
 ### 13.3. Where you can see the running version
 
 | Surface | Example |
 |---|---|
-| About dialog | `Tlamatini v1.7.1` |
-| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.7.1` |
-| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.7.1","commit":"abc1234", …}` |
+| About dialog | `Tlamatini v1.8.0` |
+| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.8.0` |
+| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.8.0","commit":"abc1234", …}` |
 | Win32 properties on `Tlamatini.exe` / `Installer.exe` / `Uninstaller.exe` | Right-click → Properties → Details → ProductVersion |
 
 All four are computed from the same `Tlamatini/agent/_version.py` that `build.py` writes (gitignored, regenerated on every build).
@@ -1656,8 +1704,8 @@ No `.devN`, no `+gSHA`, no `.dirty` ever appears in the version string — those
 | # | Source | Use case |
 |---|---|---|
 | 1 (highest) | `python build.py --version 2.0.0-rc.1` | Local RC build before tagging |
-| 2 | `$env:TLAMATINI_VERSION = "1.7.1"; python build.py` | CI pipelines |
-| 3 | `git tag -a v1.7.1 …` (then build) | The normal release path |
+| 2 | `$env:TLAMATINI_VERSION = "1.8.0"; python build.py` | CI pipelines |
+| 3 | `git tag -a v1.8.0 …` (then build) | The normal release path |
 | 4 (lowest) | _(none — sentinel `0.0.0+unknown`)_ | Running from a download zip with no git |
 
 `build.py` exports `$env:TLAMATINI_VERSION` after resolving, so `build_installer.py` and `build_uninstaller.py` in the same shell see the same value — the three artefacts cannot disagree.
