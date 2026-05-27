@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.8.0
+          Local-First AI Developer Assistant v1.9.0
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          74-tool, 4096-iteration Multi-Turn orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 67-agent workflow designer with Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, commit-aware Reviewer, and Analyzer gates for source or frozen local runs.
+          75-tool, 4096-iteration Multi-Turn orchestration, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 68-agent workflow designer with STM32er, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, commit-aware Reviewer, and Analyzer gates for source or frozen local runs.
         </p>
       </div>
     </section>
@@ -104,8 +104,8 @@ function TlamatiniOverview() {
             her own self-knowledge map, live configuration, database snapshot controls, ACPX-Skills catalog control, tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, commit-aware code review, security analysis, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.8.0 build lets her know who she is through Tlamatini.md, optionally ships her own source tree for self-modify builds, raises Multi-Turn to 4096 iterations, keeps loaded project context ahead of her private self-reference, and adds native nested-folder context picking,
-            while keeping 67 agents, 74 Multi-Turn tools, 24 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, and saved .flw files close to the operator.
+            The v1.9.0 build gives her STM32er, a critical-mission firmware bridge for ST-Microelectronics STM32F4x hardware that can scaffold, build, flash, observe, and reset through a zero-config MCP with fail-safe hardware preflight,
+            while keeping 68 agents, 75 Multi-Turn tools, 24 skills, high-detail embedding opt-in, Unreal Engine, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -161,8 +161,13 @@ function TlamatiniFeatures() {
       image: '/images/feature-workflow.jpg',
     },
     {
+      title: 'Critical-Mission STM32er',
+      description: 'STM32er lets Tlamatini scaffold, author, build, flash, and observe STM32F4x firmware with zero-config MCP bootstrap, STM32CubeIDE toolchains, ST-LINK validation, serial/SWD observation, and a fail-safe preflight before hardware-changing actions.',
+      image: '/images/feature-agents.jpg',
+    },
+    {
       title: 'Multi-Turn Chat Operator',
-      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. She can choose from 74 tools across up to 4096 iterations, observe results, and convert successful work into repeatable flows.',
+      description: 'A chat surface with independent toggles for Multi-Turn, Exec Report, ACPX, and internet context. She can choose from 75 tools across up to 4096 iterations, observe results, and convert successful work into repeatable flows.',
       image: '/images/feature-chat.jpg',
     },
     {
@@ -172,7 +177,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 67 agent types, .flw save/load, live Validate, Start-time compilation, Kalier security-assessment runs with configured server defaults, Playwrighter browser flows, Windower desktop-window control, De-Compresser archive handling, 53-command Unrealer flows, commit-aware Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 68 agent types, .flw save/load, live Validate, Start-time compilation, STM32er firmware pipelines, Kalier security-assessment runs with configured server defaults, Playwrighter browser flows, Windower desktop-window control, De-Compresser archive handling, 53-command Unrealer flows, commit-aware Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
@@ -182,7 +187,7 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Config, DB, and ACPX-Skills Menus',
-      description: 'Validated Models, URLs, Kali server settings, native context picking, live SQLite backup / Set DB controls, and skill enablement diagnostics sit together as operator-grade controls.',
+      description: 'Validated Models, URLs, Kali and STM32 MCP settings, native context picking, live SQLite backup / Set DB controls, and skill enablement diagnostics sit together as operator-grade controls.',
       image: '/images/feature-chat.jpg',
     },
   ];
@@ -396,6 +401,7 @@ function TlamatiniAgents() {
         { name: 'whatstlamatini', desc: 'WhatsApp bridge via Cloud API' },
         { name: 'acpxer', desc: 'Visual ACPX session lifecycle' },
         { name: 'unrealer', desc: 'Unreal Engine MCP bridge with 53 commands' },
+        { name: 'stm32er', desc: 'Critical-mission STM32F4x firmware bridge' },
         { name: 'reviewer', desc: 'Commit-state-aware diff review verdict' },
         { name: 'analyzer', desc: 'Static-analysis and security findings gate' },
         { name: 'kalier', desc: 'Configured Kali Linux assessment bridge' },
@@ -456,11 +462,11 @@ function TlamatiniAgents() {
           className="reveal-item font-bold mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          67 Workflow-Agent Types
+          68 Workflow-Agent Types
         </h2>
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
           The catalog spans control, routing, logic, action, cryptography, utility,
-          terminal monitoring, and AI design agents, including Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini,
+          terminal monitoring, and AI design agents, including STM32er, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini,
           ACPXer, 53-command Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, FlowCreator, 24 ACPX-Skills packages, her self-knowledge map, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -523,9 +529,9 @@ function TlamatiniTechStack() {
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
     { category: 'RAG', items: ['FAISS', 'BM25', 'Native nested-folder picker', 'Loaded-context priority', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
-    { category: 'Agent Runtime', items: ['74 Multi-Turn tools', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '24 SKILL.md packages'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'Kalier assessment pipelines', 'Playwrighter browser flows', 'Windower window control', 'Commit-aware Reviewer / Analyzer gates', '53-command Unreal MCP', 'Source and frozen modes'] },
-    { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs with Kali server', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
+    { category: 'Agent Runtime', items: ['75 Multi-Turn tools', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'STM32er firmware bridge', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '24 SKILL.md packages'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'STM32F4x build / flash / observe flows', 'Kalier assessment pipelines', 'Playwrighter browser flows', 'Windower window control', 'Commit-aware Reviewer / Analyzer gates', '53-command Unreal MCP', 'Source and frozen modes'] },
+    { category: 'Interfaces', items: ['Config Models dialog', 'Config URLs with Kali and STM32 MCP settings', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
   ];
 
   return (
