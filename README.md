@@ -1,10 +1,21 @@
 <p align="center">
-  <img src="Tlamatini.jpg" alt="Tlamatini Logo" width="180" height="180" />
+  <img src="Tlamatini.jpg" alt="Tlamatini" width="180" height="180" />
 </p>
 
 <h1 align="center">Tlamatini</h1>
 
-<p align="center"><em>"one who knows" — a locally-deployed AI developer assistant</em></p>
+<h3 align="center">A local-first AI developer assistant that goes beyond chat.</h3>
+
+<p align="center">
+Run it on your machine with <a href="https://ollama.com/">Ollama</a>. Your code never leaves your box.<br/>
+Hybrid RAG over your codebase · 75-tool multi-turn orchestration · 68 visual workflow agents · multi-agent delegation to Claude Code, Cursor, Codex, Gemini CLI
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=4MyRXBahHuU&t=41s"><strong>▶️ Watch the one-minute demo</strong></a> &nbsp;·&nbsp;
+  <a href="https://xaiht.org"><strong>🌐 Website</strong></a> &nbsp;·&nbsp;
+  <a href="#13-demo-videos"><strong>🎬 More demos</strong></a>
+</p>
 
 <p align="center">
   <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.9.0"><img src="https://img.shields.io/badge/VERSION-v1.9.0-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.9.0" /></a>
@@ -14,23 +25,25 @@
   <a href="#95-agent-catalog-the-68-types-by-family"><img src="https://img.shields.io/badge/AGENTS-68-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="68 Agents" /></a>
   <a href="#35-tutorial-the-multi-turn-toggle"><img src="https://img.shields.io/badge/TOOLS-75-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="75 Multi-Turn Tools" /></a>
   <a href="#5-acpx--external-coding-agent-clis-as-tools"><img src="https://img.shields.io/badge/ACPX-12%20TOOLS-FF8C00?style=for-the-badge&labelColor=2D2D2D" alt="ACPX 12 Tools" /></a>
-  <a href="#311-the-acpx-skills-menu--browse-configure-diagnostics-reload"><img src="https://img.shields.io/badge/SKILLS-24-DB2777?style=for-the-badge&labelColor=2D2D2D" alt="24 Skills" /></a>
+  <a href="#312-the-acpx-skills-menu--browse-configure-diagnostics-reload"><img src="https://img.shields.io/badge/SKILLS-24-DB2777?style=for-the-badge&labelColor=2D2D2D" alt="24 Skills" /></a>
   <a href="#10-embedding-memory-pre-flight-guard-gpu-hosts"><img src="https://img.shields.io/badge/RAG-FAISS%20%2B%20BM25-009688?style=for-the-badge&labelColor=2D2D2D" alt="Hybrid RAG" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-GPLV3-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="License GPLv3" /></a>
 </p>
 
-**Tlamatini** (Nahuatl for *"one who knows"*) is a locally-deployed AI developer assistant that pairs a hybrid [RAG pipeline](#82-rag) (FAISS + BM25, metadata extraction, context budgeting) with a [Multi-Turn](#35-tutorial-the-multi-turn-toggle) tool-orchestration layer, [ACPX](#5-acpx--external-coding-agent-clis-as-tools) delegation to external coding-agent CLIs ([Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview), [Cursor](https://cursor.com), [Codex](https://github.com/openai/codex), [Gemini](https://github.com/google-gemini/gemini-cli), [Qwen](https://github.com/QwenLM/qwen-code), …), and a [visual workflow designer](#4-visual-workflow-designer-agentic_control_panel) with **68 drag-and-drop agents**.
+### What it gives you that a plain chatbox doesn't
 
-> **Local-first by default**: the full RAG pipeline, the Multi-Turn execution loop, and every workflow agent run on your machine — embeddings and chat are driven by your local [Ollama](https://ollama.com/) install. Cloud LLMs (Claude API, Ollama Pro/Max) and ACPX delegation to cloud CLIs are opt-in per-request, never the default. Sensitive code never leaves the box unless you explicitly route it out.
+- **Real RAG over your code** — FAISS + BM25 hybrid retrieval with context budgeting. The model sees the *right* code, not random chunks.
+- **Multi-Turn mode** — the LLM becomes an operator: shell, Python, APIs, browser automation, screenshots, keyboard/mouse — all chained in one conversation.
+- **ACPX** — delegate sub-tasks to Claude Code, Cursor, Codex, Gemini CLI, Qwen, and relay output between them.
+- **Visual workflow designer** — drag and drop 68 agent types, wire them together, run flows unattended.
+- **Self-aware** — Tlamatini carries a knowledge map of her own architecture. `--self-modify` builds ship her source so she can inspect and modify herself.
+- **Local-first** — everything runs on your machine with [Ollama](https://ollama.com/). Cloud is opt-in, never default. Your code never leaves the box.
 
-> **Latest — v1.9.0 (2026-05-26): STM32er, zero-config firmware bridge.** A new **STM32er** agent (canvas node + Multi-Turn tool `chat_agent_stm32er`) brings the catalog to **68 agents**. It bridges the [STM32 Template Project MCP](https://github.com/XAIHT/STM32TemplateProjectMCP) to scaffold, build, flash, observe (serial / SWD), and reset STM32 firmware. **Zero-config auto-bootstrap** means the user only installs STM32CubeIDE + Tlamatini — STM32er downloads, installs, and validates the MCP server on first use. A **critical-mission safety preflight** validates the toolchain and a positively-confirmed connected ST-LINK probe before flashing, and **refuses** rather than producing or flashing mis-targeted firmware. Three new catalog demos ship in migration `0103` (STM32 GENESIS / BLINKY / HIL OBSERVATORY). See [§3.15](#315-tutorial-build-and-flash-stm32-firmware-from-chat-chat_agent_stm32er).
+> **Latest — v1.9.0 (2026-05-26): STM32er, zero-config firmware bridge.** A new **STM32er** agent brings the catalog to **68 agents**. It bridges the [STM32 Template Project MCP](https://github.com/XAIHT/STM32TemplateProjectMCP) to scaffold, build, flash, observe, and reset STM32 firmware — with zero-config auto-bootstrap and a critical-mission safety preflight that **refuses** to flash mis-targeted firmware. See [§3.16](#316-tutorial-build-and-flash-stm32-firmware-from-chat-chat_agent_stm32er).
 
 <p align="center">
-  <a href="https://xaiht.org"><strong>🌐 Website</strong></a> &nbsp;·&nbsp;
-  <a href="https://www.youtube.com/watch?v=4MyRXBahHuU&t=41s"><strong>▶️ One-minute teaser</strong></a> &nbsp;·&nbsp;
   <a href="BookOfTlamatini.md"><strong>📖 Long-form docs</strong></a> &nbsp;·&nbsp;
-  <a href="VERSIONING.md"><strong>🏷️ Versioning</strong></a> &nbsp;·&nbsp;
-  <a href="#13-demo-videos"><strong>🎬 More demos</strong></a>
+  <a href="VERSIONING.md"><strong>🏷️ Versioning</strong></a>
 </p>
 
 ---
@@ -57,14 +70,15 @@
   - [3.5. Tutorial: the **Multi-Turn** toggle](#35-tutorial-the-multi-turn-toggle)
   - [3.6. Tutorial: the **Exec Report** toggle](#36-tutorial-the-exec-report-toggle)
   - [3.7. Tutorial: the **ACPX** toggle](#37-tutorial-the-acpx-toggle)
-  - [3.8. From chat to flow: the **Create Flow** button](#38-from-chat-to-flow-the-create-flow-button)
-  - [3.9. Why Chat-created flows are safer now](#39-why-chat-created-flows-are-safer-now)
-  - [3.10. The **DB** menu — Backup, Set DB, and the start-up swap-in](#310-the-db-menu--backup-set-db-and-the-start-up-swap-in)
-  - [3.11. The **ACPX-Skills** menu — Browse, Configure, Diagnostics, Reload](#311-the-acpx-skills-menu--browse-configure-diagnostics-reload)
-  - [3.12. Tutorial: command a window from chat (`chat_agent_windower`)](#312-tutorial-command-a-window-from-chat-chat_agent_windower)
-  - [3.13. Tutorial: drive a browser from chat (`chat_agent_playwrighter`)](#313-tutorial-drive-a-browser-from-chat-chat_agent_playwrighter)
-  - [3.14. Tutorial: run Kali Linux tools from chat (`chat_agent_kalier`)](#314-tutorial-run-kali-linux-tools-from-chat-chat_agent_kalier)
-  - [3.15. Tutorial: build and flash STM32 firmware from chat (`chat_agent_stm32er`)](#315-tutorial-build-and-flash-stm32-firmware-from-chat-chat_agent_stm32er)
+  - [3.8. Tutorial: the **Ask Execs** toggle](#38-tutorial-the-ask-execs-toggle)
+  - [3.9. From chat to flow: the **Create Flow** button](#39-from-chat-to-flow-the-create-flow-button)
+  - [3.10. Why Chat-created flows are safer now](#310-why-chat-created-flows-are-safer-now)
+  - [3.11. The **DB** menu — Backup, Set DB, and the start-up swap-in](#311-the-db-menu--backup-set-db-and-the-start-up-swap-in)
+  - [3.12. The **ACPX-Skills** menu — Browse, Configure, Diagnostics, Reload](#312-the-acpx-skills-menu--browse-configure-diagnostics-reload)
+  - [3.13. Tutorial: command a window from chat (`chat_agent_windower`)](#313-tutorial-command-a-window-from-chat-chat_agent_windower)
+  - [3.14. Tutorial: drive a browser from chat (`chat_agent_playwrighter`)](#314-tutorial-drive-a-browser-from-chat-chat_agent_playwrighter)
+  - [3.15. Tutorial: run Kali Linux tools from chat (`chat_agent_kalier`)](#315-tutorial-run-kali-linux-tools-from-chat-chat_agent_kalier)
+  - [3.16. Tutorial: build and flash STM32 firmware from chat (`chat_agent_stm32er`)](#316-tutorial-build-and-flash-stm32-firmware-from-chat-chat_agent_stm32er)
 - [4. Visual Workflow Designer (`/agentic_control_panel/`)](#4-visual-workflow-designer-agentic_control_panel)
   - [4.1. Canvas anatomy](#41-canvas-anatomy)
   - [4.2. Tutorial: your first flow (3 agents)](#42-tutorial-your-first-flow-3-agents)
@@ -216,7 +230,7 @@ Tlamatini expects Ollama at `http://127.0.0.1:11434`.
 
 ```powershell
 ollama pull Nomic-Embed-Text:latest
-ollama pull glm-5:cloud
+ollama pull kimi-k2.6:cloud
 ollama pull qwen3.5:cloud
 ollama pull gpt-oss:120b-cloud
 ollama pull qwen3.5:397b-cloud
@@ -226,7 +240,7 @@ ollama pull llama3.2-vision:11b
 | Tag | Used for |
 |---|---|
 | `Nomic-Embed-Text:latest` | RAG embeddings (default — small VRAM footprint, ~600 MB resident) |
-| `glm-5:cloud` | Default chat + Multi-Turn unified-agent + MCP file-search |
+| `kimi-k2.6:cloud` | Default chat + Multi-Turn unified-agent + MCP file-search |
 | `qwen3.5:cloud` | Default vision (Image-Interpreter) |
 | `gpt-oss:120b-cloud` | Several workflow-agent templates (Monitor-Log, Notifier, Prompter, Summarizer, …) |
 | `qwen3.5:397b-cloud` | Default FlowCreator |
@@ -238,7 +252,7 @@ You can substitute any tag — just edit `Tlamatini/agent/config.json` (see [§8
 
 ### 2.4. Cloud models require an Ollama Pro/Max plan
 
-Four of the six default model tags in [§2.3](#23-pull-the-default-models) carry the `:cloud` suffix — `glm-5:cloud`, `qwen3.5:cloud`, `gpt-oss:120b-cloud`, and `qwen3.5:397b-cloud`. Those are **Ollama Cloud** models: they live on Ollama's servers, not on your machine, and `ollama pull` only registers a stub that proxies inference to the cloud. Reaching that cloud requires a logged-in Ollama account and a subscription tier that allows the workload you intend to run.
+Four of the six default model tags in [§2.3](#23-pull-the-default-models) carry the `:cloud` suffix — `kimi-k2.6:cloud`, `qwen3.5:cloud`, `gpt-oss:120b-cloud`, and `qwen3.5:397b-cloud`. Those are **Ollama Cloud** models: they live on Ollama's servers, not on your machine, and `ollama pull` only registers a stub that proxies inference to the cloud. Reaching that cloud requires a logged-in Ollama account and a subscription tier that allows the workload you intend to run.
 
 The plan structure (prices are deliberately omitted from this README because they change — check **<https://ollama.com/pricing>** for the current numbers):
 
@@ -246,7 +260,7 @@ The plan structure (prices are deliberately omitted from this README because the
 
 | Plan | Cloud-model access | Why it matters for Tlamatini |
 |---|---|---|
-| **Free** | 1 cloud model concurrently, light usage. Local open-weights models are unlimited. | Enough to *try* a single cloud model for a one-shot chat. **Not enough** for Tlamatini's default config, which pins different cloud models for chat (`glm-5:cloud`), FlowCreator (`qwen3.5:397b-cloud`), several workflow agents (`gpt-oss:120b-cloud`), and vision (`qwen3.5:cloud`) — so a real Multi-Turn run typically needs 2–3 cloud models loaded at once. |
+| **Free** | 1 cloud model concurrently, light usage. Local open-weights models are unlimited. | Enough to *try* a single cloud model for a one-shot chat. **Not enough** for Tlamatini's default config, which pins different cloud models for chat (`kimi-k2.6:cloud`), FlowCreator (`qwen3.5:397b-cloud`), several workflow agents (`gpt-oss:120b-cloud`), and vision (`qwen3.5:cloud`) — so a real Multi-Turn run typically needs 2–3 cloud models loaded at once. |
 | **Pro** | 3 concurrent cloud models, ~50× the Free monthly quota, access to the larger cloud-only models, ability to upload / share private models. | The realistic minimum for running Tlamatini out-of-the-box with its shipped cloud-model defaults — Multi-Turn + Exec Report + occasional Image-Interpreter calls. |
 | **Max** | 10 concurrent cloud models, ~5× the Pro quota, designed for sustained heavy agentic workloads. | Recommended for long-running ACPX relays, FlowHypervisor-supervised flows, and Croner-driven unattended runs that chain many cloud calls per hour. |
 
@@ -303,7 +317,7 @@ Open `http://127.0.0.1:8000/` and log in with the superuser you just created. Th
 ┌───────────────────────────────────────────────────────────────────────────────┐
 │ Tlamatini  [Context ▼] [Open in… ▼] [MCPs ▼] [Tools ▼] [Agents ▼] [Config ▼] [DB ▼] │ ← top nav
 ├───────────────────────────────────────────────────────────────────────────────┤
-│  Multi-Turn ☐   Exec Report ☐   ACPX ☐   internet ☐    Clear ⌫               │ ← four toggles
+│  Multi-Turn ☐  Exec Report ☐  ACPX ☐  Ask Execs ☐  internet ☐   Clear ⌫     │ ← five toggles
 ├───────────────────────────────────────────────────────────────────────────────┤
 │  ┌──── chat ────────────────┐   ┌──── code canvas ────────────────┐          │
 │  │  conversation history    │   │  syntax-highlighted, with copy  │          │
@@ -313,11 +327,11 @@ Open `http://127.0.0.1:8000/` and log in with the superuser you just created. Th
 └───────────────────────────────────────────────────────────────────────────────┘
 ```
 
-The **four toolbar toggles** are independent. Tick whatever combination fits the task — each one is its own tutorial section below.
+The **five toolbar toggles** are independent (except **Ask Execs**, which only activates while **Multi-Turn** is on). Tick whatever combination fits the task — each one is its own tutorial section below.
 
 Newer builds also expose a **Config** dropdown in the same navbar. `Config -> Models` edits the most common model-name fields, and `Config -> URLs` edits the Ollama / unified-agent / MCP endpoint values through validated dialogs instead of hand-editing JSON. The chat/canvas divider was also tightened so resizing the right-hand canvas feels more predictable during long editing sessions.
 
-The newest entry in that navbar is the **DB** dropdown: `DB -> Backup database` snapshots the live SQLite file to a directory you pick, and `DB -> Set DB` stages a `db.sqlite3` file of your choice for the **next session** — Tlamatini swaps it in before Django opens the database, archives the previous one under `DB/Older/<timestamp>/`, then continues normal start-up. Full walkthrough in [§3.10](#310-the-db-menu--backup-set-db-and-the-start-up-swap-in).
+The newest entry in that navbar is the **DB** dropdown: `DB -> Backup database` snapshots the live SQLite file to a directory you pick, and `DB -> Set DB` stages a `db.sqlite3` file of your choice for the **next session** — Tlamatini swaps it in before Django opens the database, archives the previous one under `DB/Older/<timestamp>/`, then continues normal start-up. Full walkthrough in [§3.11](#311-the-db-menu--backup-set-db-and-the-start-up-swap-in).
 
 ### 3.2. Setting code as context
 
@@ -425,7 +439,37 @@ You see: `acp_doctor` (always first) → `acp_spawn(agent_id="claude", task=…)
 
 ACPX deep dive in Part [§5](#5-acpx--external-coding-agent-clis-as-tools).
 
-### 3.8. From chat to flow: the **Create Flow** button
+### 3.8. Tutorial: the **Ask Execs** toggle
+
+**Ask Execs** puts a human in the loop *before* every action. It only activates while **Multi-Turn** is on — the checkbox stays disabled and greyed until you tick Multi-Turn — because the prompt lives inside the Multi-Turn tool loop. When unticked, Tlamatini behaves exactly like the legacy Multi-Turn flow.
+
+With **Ask Execs ticked**, before each state-changing **Tool / MCP / Agent** runs, the chain *pauses* and a modal dialog appears showing exactly what is about to happen:
+
+- the **Tlamatini Tool / MCP / Agent** that is going to execute (e.g. `Tool: Executer`, `Agent: SSHer`, `Skill: …`),
+- the underlying tool name,
+- the **parameters of execution** (read-only textarea),
+- the **program to be executed** (read-only textarea — the command / script / intent),
+- the **shell to be executed** (read-only textarea — `cmd.exe / PowerShell`, `Python interpreter`, `Remote SSH shell @ host`, …).
+
+Two choices:
+
+- **Proceed** → that tool runs and the chain continues as normal to the next step (which prompts again).
+- **Deny** → the **entire chain stops immediately**. No further tools run. You get back:
+  - the prose answer so far,
+  - the **Exec Report** tables of what *did* execute (only if **Exec Report** is also ticked),
+  - and — always — a **big red ⛔ "Execution interrupted" banner** naming the exact Tool/MCP/Agent you denied, plus its program/command, shell, and parameters.
+
+Read-only / polling tools (`chat_agent_run_status`, `chat_agent_run_log`, `get_current_time`, `window_present`, …) are **not** prompted — they only observe, they do not "execute".
+
+**Try this:** tick **Multi-Turn + Ask Execs** (and optionally **Exec Report**) and send:
+
+> "Delete every `*.tmp` file under `C:/Temp` and then list what's left."
+
+You'll get a permission dialog for the deletion step. Click **Deny** and the run halts with the red banner showing exactly the command you stopped; click **Proceed** and it carries on. This is the safety belt for destructive or sensitive operations — review each action before it touches your machine.
+
+> Implementation: the synchronous tool loop blocks on a browser round-trip via `agent/exec_permission.py` (`ExecPermissionBroker`). A denial fails safe; a missing browser never silently runs an unconfirmed tool. See [§9.3](#93-multi-turn-execution-pipeline).
+
+### 3.9. From chat to flow: the **Create Flow** button
 
 When a Multi-Turn run **succeeds** and used at least one state-changing tool, Tlamatini renders a **Create Flow** button on the message header. Click → download a `.flw` JSON file mirroring the exact tool sequence, laid out left-to-right, ready to load in the visual designer:
 
@@ -437,7 +481,7 @@ You can re-open it in `/agentic_control_panel/` and run it as an unattended work
 
 The button gates on four conditions: Multi-Turn was on, ≥1 mappable tool succeeded, an LLM-based classifier marked the answer SUCCESS (fails open on internal error), and the user is logged in.
 
-### 3.9. Why Chat-created flows are safer now
+### 3.10. Why Chat-created flows are safer now
 
 Older Chat-created `.flw` files were generated almost entirely in the browser. That worked for simple chains, but it meant the browser had to remember many backend facts:
 
@@ -460,7 +504,7 @@ What this means for you:
 
 If backend normalization is temporarily unavailable, the old browser generator remains as a fallback so the button does not become useless.
 
-### 3.10. The **DB** menu — Backup, Set DB, and the start-up swap-in
+### 3.11. The **DB** menu — Backup, Set DB, and the start-up swap-in
 
 The whole of Tlamatini — chat history, agents, Tool/MCP toggles, sessions, your user — lives in a single SQLite file. The **DB** dropdown gives you a safe, GUI-first way to handle that file: a read-only **Backup** path, a destructive-but-deferred **Set DB** path, and a built-in audit trail under `DB/Older/`.
 
@@ -551,7 +595,7 @@ Both directories must exist on day one (the swap-in opens them with `os.makedirs
 - **Source / dev mode**: `Tlamatini/Tlamatini/DB/{ToLoad,Older}/README.md` are checked into the repo. The README files are the "git keepers" — without them, git would silently drop the empty directories.
 - **Frozen mode**: `build.py` extends its `empty_dirs` tuple with `"DB/ToLoad"` and `"DB/Older"`. The PyInstaller post-build step creates both under `dist/manage/`, the `pkg.zip` packager preserves them via explicit zip entries, and end-users get the tree from the very first launch.
 
-### 3.11. The **ACPX-Skills** menu — Browse, Configure, Diagnostics, Reload
+### 3.12. The **ACPX-Skills** menu — Browse, Configure, Diagnostics, Reload
 
 Tlamatini ships with **24 skills** — markdown SKILL.md packages under `agent/skills_pkg/` that the LLM can invoke through `invoke_skill('<name>', '{...args...}')`. They cover everything from the canonical `acp-router` (pick the right external CLI for an intent) and `summarize` (compress text faithfully) to `setup-new-acpx-key`, `skill-creator`, `code-review` (senior-engineer git-diff review with an APPROVE/REQUEST_CHANGES verdict), `security-audit` (multi-scanner SAST/secret/dependency sweep) and `kali-pentest` (an authorized Kali Linux assessment runbook that drives the Kalier agent / MCP-Kali-Server), the `tlamatini_*` audit/lint/refactor helpers, and integration stubs for GitHub / Notion / Slack / Gmail / Jira / Todoist / Trello / Weather.
 
@@ -603,7 +647,7 @@ By design, the `Skill` DB table stays at "enumeration + enable/disable" only, ex
 - Frontend dialogs: `agent/static/agent/js/skills_dialog.js` (the Configure / Browse / Diagnostics / Reload dialogs) + `agent/static/agent/css/skills_dialog.css`.
 - Coverage: 14 tests in `agent/tests.py` (`SkillsAdminEndpointTests`, `SkillsToolSurfaceGatingTests`, `SkillsNavbarTemplateContractTests`).
 
-### 3.12. Tutorial: command a window from chat (`chat_agent_windower`)
+### 3.13. Tutorial: command a window from chat (`chat_agent_windower`)
 
 **Windower** is the desktop **window manager** of the chat surface — the third member of the desktop-UI trio: where **Mouser** clicks *inside* a window and **Keyboarder** types *into* one, Windower commands the **window itself**. It is implemented self-contained on the Win32 API (pywin32 `win32gui`/`win32con`/`win32process` + `ctypes`), porting the window-management subset of Microsoft's [Windows-MCP](https://github.com/CursorTouch/Windows-MCP) — including the cross-process `AttachThreadInput` focus-transfer dance that lets a background process reliably raise a foreground window. It is **Windows-only** and **state-changing**, so it appears in the Exec Report.
 
@@ -617,7 +661,7 @@ Tlamatini will launch the app (`chat_agent_executer`), confirm it is up (`chat_a
 
 Two ready-made showcases live in the chat **Prompts** dropdown (the Catalog of Prompts): **WINDOW SPOTLIGHT** (basic — maximize + list + close) and **WINDOW CHOREOGRAPHY** (medium — restore → tile left → tile right → top-left quadrant → move/resize → list → close, so a single window visibly dances around the screen). Pick one, send, and watch.
 
-### 3.13. Tutorial: drive a browser from chat (`chat_agent_playwrighter`)
+### 3.14. Tutorial: drive a browser from chat (`chat_agent_playwrighter`)
 
 **Playwrighter** drives a **real browser** (Playwright — Chromium / Firefox / WebKit) through a scripted, interactive, stateful flow. Where **Crawler** does a one-shot static fetch and the `googler` tool only searches, Playwrighter clicks, fills forms, waits for elements, extracts text/attributes, screenshots, asserts, and downloads — so it can log into a site, submit a multi-step form, click through a wizard, or scrape a JavaScript-rendered single-page-app behind a login. It needs Playwright installed (`pip install playwright && playwright install`); set **`headless=false`** to *watch* it drive, and **`hold_open_seconds=N`** (alias `hold_open_ms`) to keep the browser visible for N seconds *after* the last step *before* it closes — that's the "wait a few seconds before closing so I can see it" knob; just ask Tlamatini to wait and it passes it for you.
 
@@ -629,7 +673,7 @@ Tlamatini calls **`chat_agent_playwrighter`** with `start_url`, `headless='false
 
 Two ready-made showcases live in the **Prompts** dropdown: **BROWSER SPOTLIGHT** (basic — open `example.com` with a visible browser, extract the heading, assert the link, screenshot) and **BROWSER WIZARD** (medium — a visible multi-step Wikipedia search: fill → click → wait → extract → assert → screenshot). The canvas counterpart is the visual **Playwrighter** node (see §4 and §9.5); the YAML `steps` list is its authoring form.
 
-### 3.14. Tutorial: run Kali Linux tools from chat (`chat_agent_kalier`)
+### 3.15. Tutorial: run Kali Linux tools from chat (`chat_agent_kalier`)
 
 **Kalier** bridges Tlamatini to **Kali Linux** offensive-security tooling through the [MCP-Kali-Server](https://www.kali.org/tools/mcp-kali-server/). That project runs a small Flask **API server** (`server.py`) on the Kali box exposing `/api/command`, `/api/tools/<tool>` and `/health`; Kalier talks to it directly over HTTP (Python-stdlib `urllib`, no extra packages in the agent pool), so it is the canonical tool for **AI-assisted penetration testing, recon, and CTF solving**. It is **state-changing**, so it appears in the Exec Report.
 
@@ -643,7 +687,7 @@ Tlamatini calls **`chat_agent_kalier`** with `action='nmap'`, `target='10.0.0.5'
 
 On the canvas the same capability is the visual **Kalier** node (see §4 and §9.5): chain `Starter → Kalier (nmap) → Parametrizer → Kalier (gobuster) → Forker → Ender` to build a fully unattended, branch-on-result assessment pipeline. The visual node and the chat tool share the same MCP-Kali-Server contract.
 
-### 3.15. Tutorial: build and flash STM32 firmware from chat (`chat_agent_stm32er`)
+### 3.16. Tutorial: build and flash STM32 firmware from chat (`chat_agent_stm32er`)
 
 **STM32er** bridges Tlamatini to STM32 microcontroller firmware development through the [STM32 Template Project MCP](https://github.com/XAIHT/STM32TemplateProjectMCP) — a FastMCP server that exposes project scaffolding, build, flash, serial / SWD observation, and reset. It is **state-changing** (it compiles firmware and writes to hardware), so it appears in the Exec Report. The visual canvas counterpart is the **STM32er** node (see §4 and §9.5); both surfaces share the same MCP contract.
 
@@ -657,7 +701,9 @@ Tick **only the Multi-Turn** checkbox (STM32er is a normal Multi-Turn tool — n
 
 Tlamatini calls **`chat_agent_stm32er`** — bootstrapping the MCP if needed, running the safety preflight, then driving the build and flash. The `action` field selects one of **23 MCP tools** (project scaffold / build / flash / erase / reset / serial / SWD / observe / …), **2 composites** (`serial_session`, `live_monitor`), or **2 meta-actions** (`bootstrap`, `validate`). The tool captures an `INI_SECTION_STM32ER` block for the Exec Report and Parametrizer.
 
-On the canvas the same capability is the visual **STM32er** node: chain `Starter → STM32er (validate) → Forker → STM32er (build) → STM32er (flash) → STM32er (serial_session) → Ender` to build a fully unattended, validate-gated firmware pipeline. Three ready-made [catalog demos](#35-tutorial-the-multi-turn-toggle) ship in migration `0103`: **STM32 GENESIS** (bootstrap + validate + compile, no board needed), **STM32 BLINKY** (validate + build + flash), and **STM32 HIL OBSERVATORY** (a validate-gated real-hardware flash + serial + SWD + reset). The zero-config end-to-end path (download → build → flash → reset) is verified on a real **STM32F407G-DISC1**, with 122 automated tests in `agent/test_stm32er_agent.py`.
+On the canvas the same capability is the visual **STM32er** node: chain `Starter → STM32er (validate) → Forker → STM32er (build) → STM32er (flash) → STM32er (serial_session) → Ender` to build a fully unattended, validate-gated firmware pipeline. Three ready-made [catalog demos](#35-tutorial-the-multi-turn-toggle) ship in migration `0103`: **STM32 GENESIS** (bootstrap + validate + compile, no board needed), **STM32 BLINKY** (validate + build + flash), and **STM32 HIL OBSERVATORY** (a validate-gated real-hardware flash + SWD + serial + reset). The zero-config end-to-end path (download → build → flash → reset) is verified on a real **STM32F407G-DISC1**, with 122 automated tests in `agent/test_stm32er_agent.py`.
+
+> 📟 **Serial output on a Discovery board needs a wire — the VCP is not bridged to the MCU's UART.** This matters specifically for the **3rd STM32er demo, STM32 HIL OBSERVATORY**, whose `serial_session` step reads the firmware's `BOOT tlamatini hil count=…` banner. The on-board ST-LINK on the **STM32F4-Discovery family (including the STM32F407G-DISC1)** provides debug (SWD) but — **unlike ST *Nucleo* boards** — does **not** internally route its USB **Virtual COM Port** to any of the target STM32F407's USART pins. A firmware that prints over **USART2 (PA2 = TX, PA3 = RX)** therefore shows **nothing** on the ST-LINK VCP regardless of baud or timeout: on the PCB those bytes have nowhere to go. To actually read that stream you must **bridge the port yourself with an external USB-to-UART (USB-TTL) adapter** — cross-wire adapter **RX ← PA2**, adapter **TX → PA3**, **GND ↔ GND** — and point `serial_session` at *that adapter's* COM port (not the ST-LINK VCP). No wiring is needed for the demo's **primary** hardware proof: the `live_monitor` step samples the live `g_blink_count` counter from the running MCU over the **SWD debug channel**, so it works on a bare, unwired board — which is exactly why STM32er treats an **empty VCP read on a Discovery board as *expected*, not a failure**, and why the HIL demo proves the firmware is alive over SWD first and treats the serial banner as a bonus.
 
 ---
 
@@ -1246,13 +1292,13 @@ For users, the takeaway is simpler: **a `.flw` saved in source mode should load 
 ```json
 {
   "embeding-model": "Nomic-Embed-Text:latest",
-  "chained-model": "glm-5:cloud",
+  "chained-model": "kimi-k2.6:cloud",
   "ollama_base_url": "http://127.0.0.1:11434",
   "ollama_token": "",
   "ANTHROPIC_API_KEY": "<ANTHROPIC_API_KEY goes here>",
   "GEMINI_API_KEY": "<GEMINI_API_KEY goes here>",
   "enable_unified_agent": true,
-  "unified_agent_model": "glm-5:cloud",
+  "unified_agent_model": "kimi-k2.6:cloud",
   "unified_agent_base_url": "http://127.0.0.1:11434",
   "unified_agent_temperature": 0.0,
   "unified_agent_max_iterations": 4096,
@@ -1293,8 +1339,8 @@ Key knobs: `chunk_size` (3000), `chunk_overlap` (800), `k_vector` / `k_bm25` (10
 - `internet_classifier_model`, `web_summarizer_model`, `web_context_max_chars` — internet toggle.
 - `image_interpreter_model`, `image_interpreter_base_url` — vision.
 - `history_summary_*`, `keep_last_turns` — chat-history compression.
-- `kali_server_url` (`http://127.0.0.1:5000`) — the MCP-Kali-Server address auto-injected into `chat_agent_kalier` (see §3.14).
-- `stm32_mcp_server_script` (now `""` — empty triggers zero-config auto-bootstrap), `stm32_mcp_repo_url`, `stm32_mcp_install_dir` — the STM32 Template Project MCP for STM32er (see §3.15). Leave `stm32_mcp_server_script` empty and STM32er downloads, installs, and validates the server itself on first use.
+- `kali_server_url` (`http://127.0.0.1:5000`) — the MCP-Kali-Server address auto-injected into `chat_agent_kalier` (see §3.15).
+- `stm32_mcp_server_script` (now `""` — empty triggers zero-config auto-bootstrap), `stm32_mcp_repo_url`, `stm32_mcp_install_dir` — the STM32 Template Project MCP for STM32er (see §3.16). Leave `stm32_mcp_server_script` empty and STM32er downloads, installs, and validates the server itself on first use.
 
 You no longer need to hand-edit all of those values. On `/agent/`, open `Config -> Models` or `Config -> URLs` to edit the most common runtime knobs in-place. The browser validates model strings / URLs / hosts / ports, the backend validates again, and `config_loader.save_config_updates()` atomically merges only the changed keys into the active `config.json`. The same loader path is used in source mode and frozen builds, so the chat UI and the executable stop drifting onto different config copies.
 
@@ -1335,9 +1381,14 @@ Frontend (toggles) → WebSocket → AgentConsumer → ask_rag() (skips prompt-s
   → UnifiedAgentChain.invoke() → filter_acpx_tools(tools, acpx_enabled)
     → planner picks ≤20 tools (capability scoring + history-aware boost)
       → MultiTurnToolAgentExecutor: 1..4096 iterations of (LLM call → tool calls → ToolMessage)
+        → [if ask_execs_enabled] before each state-changing tool: BLOCK on a browser
+          Proceed/Deny prompt (ExecPermissionBroker); Deny halts the chain
         → Exec Report HTML appended (if exec_report_enabled, BEFORE save_message)
-          → broadcast → frontend renders, shows Create Flow if all 4 gates pass
+          → [if denied] red "Execution interrupted" banner appended (always)
+            → broadcast → frontend renders, shows Create Flow if all 4 gates pass
 ```
+
+**Ask Execs gate.** When the **Ask Execs** toggle is on (Multi-Turn-only), the executor pauses before every state-changing Tool/MCP/Agent and blocks on a Proceed/Deny dialog in the browser. The bridge is `agent/exec_permission.py::ExecPermissionBroker`: the synchronous executor thread emits an `exec_permission_request` frame onto the consumer's event loop and waits on a `threading.Event`; the browser's `exec-permission-response` resolves it. A **Deny halts the whole chain** and surfaces a red banner naming exactly what was denied; the round-trip is fail-safe (emit failure / cancel / disconnect all resolve to *deny*).
 
 ### 9.4. Agent contracts and the Flow Compiler
 

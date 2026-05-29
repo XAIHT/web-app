@@ -15,7 +15,7 @@ export default function Footer() {
           Run Tlamatini on Your Own Machine
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Tlamatini v1.9.0 brings STM32er for critical-mission STM32F4x firmware automation, her own self-knowledge map, optional self-modify builds, native nested-folder context, the 53-command Unreal MCP surface, Hybrid RAG with high-detail embedding opt-in, live Config, DB, and ACPX-Skills controls, 75-tool / 4096-iteration Multi-Turn orchestration, GPU-aware context loading, opt-in ACPX delegation, 24 skills, and 68 workflow agents to one local developer assistant.
+          Tlamatini v1.10.0 brings Ask Execs approval gates for Multi-Turn execution, STM32er for critical-mission STM32F4x firmware automation, her own self-knowledge map, optional self-modify builds, native nested-folder context, the 53-command Unreal MCP surface, Hybrid RAG with high-detail embedding opt-in, live Config, DB, and ACPX-Skills controls, 75-tool / 4096-iteration Multi-Turn orchestration, GPU-aware context loading, opt-in ACPX delegation, 24 skills, and 68 workflow agents to one local developer assistant.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a

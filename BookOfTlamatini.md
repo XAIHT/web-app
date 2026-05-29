@@ -2,7 +2,7 @@
 
 ![Project Logo](Tlamatini.jpg)
 
-> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, an Unreal MCP client for driving Unreal Engine 5 from chat or canvas, a visual workflow designer, 67 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
+> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, an Unreal MCP client for driving Unreal Engine 5 from chat or canvas, a visual workflow designer, 68 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
 >
 > Visit our site at **https://xaiht.org**, or get a one-minute taste of Tlamatini on YouTube: **https://youtu.be/a51miZ1JIe0**.
 
@@ -13,9 +13,9 @@
 Tlamatini does a lot. This README is organized so you can stop reading at the depth you need.
 
 - **Part I — Getting Tlamatini Running**: prerequisites, Ollama, **Ollama Pro/Max subscription for the default `:cloud` models**, install, first login. *Read this once.*
-- **Part II — Using the Chat**: the four toolbar checkboxes (Multi-Turn, Exec Report, ACPX, internet) walked through one by one. *This is the dummy-friendly heart of the book.*
+- **Part II — Using the Chat**: the five toolbar checkboxes (Multi-Turn, Exec Report, ACPX, Ask Execs, internet) walked through one by one. *This is the dummy-friendly heart of the book.*
 - **Part III — The Visual Workflow Designer**: drag-and-drop flows, FlowCreator, FlowHypervisor, Parametrizer, Gatewayer.
-- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 67 workflow agents.
+- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 68 workflow agents.
 - **Part V — The Tool Surface**: every LLM-facing tool the chat can call, organized by family.
 - **Part VI — Inside Tlamatini**: architecture, RAG, the embedding-memory pre-flight guard, Multi-Turn pipeline, ACPX runtime mechanics. *For the curious.*
 - **Part VII — Configuration Reference**: every `config.json` knob.
@@ -115,7 +115,7 @@ Tlamatini ships with default model names in `Tlamatini/agent/config.json` and se
 
 ```powershell
 ollama pull Nomic-Embed-Text:latest
-ollama pull glm-5:cloud
+ollama pull kimi-k2.6:cloud
 ollama pull qwen3.5:cloud
 ollama pull gpt-oss:120b-cloud
 ollama pull qwen3.5:397b-cloud
@@ -125,7 +125,7 @@ ollama pull llama3.2-vision:11b
 | Model tag | Used by |
 |---|---|
 | `Nomic-Embed-Text:latest` | RAG embedding model (default — light VRAM footprint, ~600 MB resident) |
-| `glm-5:cloud` | Default chat model + Multi-Turn unified-agent model + MCP file-search model |
+| `kimi-k2.6:cloud` | Default chat model + Multi-Turn unified-agent model + MCP file-search model |
 | `qwen3.5:cloud` | Default Image-Interpreter vision model |
 | `gpt-oss:120b-cloud` | Several workflow-agent templates (Monitor Log, Notifier, Prompter, Summarizer, Pser, Recmailer, Whatsapper, File-Interpreter, FlowHypervisor) |
 | `qwen3.5:397b-cloud` | Default FlowCreator model |
@@ -139,7 +139,7 @@ Some pulls are large and slow. Start them, walk away, come back.
 
 ## 5. Cloud models require an Ollama Pro/Max plan
 
-Four of the six default model tags in chapter §4 carry the `:cloud` suffix — `glm-5:cloud`, `qwen3.5:cloud`, `gpt-oss:120b-cloud`, and `qwen3.5:397b-cloud`. Those models are not actually running on your machine. They live on **Ollama Cloud**, and the `ollama pull <tag>:cloud` command only registers a thin stub on the local daemon that proxies inference requests to Ollama's servers. To make those proxied requests actually return something, three things have to be true: you have an Ollama account, you are signed in on the host that runs Tlamatini, and the account is on a subscription tier that allows the workload you are about to run.
+Four of the six default model tags in chapter §4 carry the `:cloud` suffix — `kimi-k2.6:cloud`, `qwen3.5:cloud`, `gpt-oss:120b-cloud`, and `qwen3.5:397b-cloud`. Those models are not actually running on your machine. They live on **Ollama Cloud**, and the `ollama pull <tag>:cloud` command only registers a thin stub on the local daemon that proxies inference requests to Ollama's servers. To make those proxied requests actually return something, three things have to be true: you have an Ollama account, you are signed in on the host that runs Tlamatini, and the account is on a subscription tier that allows the workload you are about to run.
 
 ### 5.1. The three tiers, in plain English
 
@@ -159,9 +159,9 @@ Tlamatini does not *require* Ollama Cloud. The cloud tags are convenience defaul
 
 | Config key | Default (cloud) | A reasonable local substitute |
 |---|---|---|
-| `chained-model` | `glm-5:cloud` | `qwen2.5-coder:14b` or `llama3.1:8b` |
-| `unified_agent_model` | `glm-5:cloud` | same as above |
-| `mcp_file_search_model` | `glm-5:cloud` | same as above |
+| `chained-model` | `kimi-k2.6:cloud` | `qwen2.5-coder:14b` or `llama3.1:8b` |
+| `unified_agent_model` | `kimi-k2.6:cloud` | same as above |
+| `mcp_file_search_model` | `kimi-k2.6:cloud` | same as above |
 | `flow_creator_model` | `qwen3.5:397b-cloud` | `qwen2.5:32b` or any large local model you can fit in VRAM |
 | `image_interpreter_model` | `qwen3.5:cloud` | `llama3.2-vision:11b` (already in chapter §4's pull list as the local fallback) |
 
@@ -175,7 +175,7 @@ The Ollama plan only governs `*:cloud` Ollama models. If you plan to use **ACPX*
 
 | Symptom | Likely cause | What to try |
 |---|---|---|
-| `ollama pull glm-5:cloud` succeeds but inference returns "unauthorized" / "401" | Not signed in to Ollama on this host. | Run `ollama signin` (or use the Ollama desktop app) and confirm `ollama whoami` prints your account. |
+| `ollama pull kimi-k2.6:cloud` succeeds but inference returns "unauthorized" / "401" | Not signed in to Ollama on this host. | Run `ollama signin` (or use the Ollama desktop app) and confirm `ollama whoami` prints your account. |
 | Inference returns "rate limit exceeded" / "429" right after a Multi-Turn step | Your plan's concurrent-model or monthly-usage cap is full. | Either upgrade the plan, drop concurrency by running fewer wrapped agents in parallel, or swap one of the cloud tags for a local model in `config.json`. |
 | Inference returns "model not available on this plan" | The tag you pulled is gated to a higher tier (Pro/Max only). | Check `ollama.com/pricing` for which models each tier covers, and pick a tag your plan includes — or upgrade. |
 | Tlamatini chat says "Ollama backend unreachable" | Local daemon is down, **not** a cloud problem. | `ollama serve` and `Invoke-WebRequest http://127.0.0.1:11434/api/tags -UseBasicParsing` per chapter §3.3. Cloud requests still go through the local daemon. |
@@ -255,7 +255,7 @@ Open `/agent/`. Here is what you are looking at:
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ Tlamatini  [Context ▼] [Open in… ▼] [MCPs ▼] [Tools ▼] [Agents ▼] [Config ▼] [Logout] │ ← Top navigation
 ├─────────────────────────────────────────────────────────────────────────────┤
-│  Multi-Turn ☐   Exec Report ☐   ACPX ☐   Add internet context ☐   Clear ⌫  │ ← Toolbar (the four checkboxes!)
+│ Multi-Turn ☐  Exec Report ☐  ACPX ☐  Ask Execs ☐  Add internet context ☐  │ ← Toolbar (the five checkboxes!)
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │   ┌─────────────────────────────────┐   ┌───────────────────────────────┐  │
@@ -271,7 +271,7 @@ Open `/agent/`. Here is what you are looking at:
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
-The four checkboxes in the toolbar are **the** thing to learn. Each one is explained in its own chapter below. They are independent — tick whatever combination fits your task.
+The five checkboxes in the toolbar are **the** thing to learn. Each one is explained in its own chapter below. They are independent — except **Ask Execs**, which only activates while **Multi-Turn** is ticked — so tick whatever combination fits your task.
 
 The navbar also has a **Config** dropdown now. It exposes two validated dialogs: **Models** for the main model-name fields and **URLs** for the Ollama / unified-agent / MCP endpoint values. That means the most common runtime settings can now be changed from the chat UI without manually editing `config.json`. The chat/canvas divider was also polished so width changes feel steadier while you work.
 
@@ -465,7 +465,7 @@ The full ACPX deep-dive is in **Part VI §46**. This chapter is just the toolbar
 
 Tick **ACPX** when:
 
-- You want a sub-task delegated to a *different* LLM than the one driving Tlamatini's chat. (Example: your chat runs glm-5, but you want Claude Code to do the actual refactor because it is better at long-context Python.)
+- You want a sub-task delegated to a *different* LLM than the one driving Tlamatini's chat. (Example: your chat runs kimi-k2.6, but you want Claude Code to do the actual refactor because it is better at long-context Python.)
 - You want a **multi-CLI relay** — Claude does the first pass, Gemini critiques, Cursor applies the fix.
 - You need a coding agent that can edit files in the *current working directory* without the wrapping ceremony of Multi-Turn.
 
@@ -518,7 +518,49 @@ You will see:
 | Session left running | Always end with `acp_kill`. The LLM is rule-instructed to do so, but if a request times out, manually call `acp_list_sessions` and `acp_kill`. |
 | API key not picked up | Order matters: per-agent `acpx.agents.<id>.env` wins over a shell-exported variable. Double-check both layers. |
 
-## 15. Combining the four toggles — worked examples
+## 14.5. The "Ask Execs" toggle (approve every step before it runs)
+
+**Ask Execs** is the human-in-the-loop safety belt. With it on, Tlamatini asks your permission *before* it runs each action in a Multi-Turn chain — and a single **Deny** stops the whole run.
+
+It is a **Multi-Turn-only modifier**: the checkbox is disabled and greyed until you tick **Multi-Turn**, because the permission prompt lives inside the Multi-Turn tool loop. Leave it unticked and Tlamatini behaves exactly like it always has.
+
+### What you see
+
+When **Ask Execs** is on, before each state-changing **Tool / MCP / Agent** the chain wants to run, it *pauses* and a modal dialog (same look-and-feel as every other Tlamatini dialog) shows you:
+
+- **Tlamatini Tool / MCP / Agent** — what is about to execute, e.g. `Tool: Executer`, `Agent: SSHer`, `MCP / ACPX agent: ACPx`, `Skill: summarize`.
+- **Underlying tool** — the raw tool name (`execute_command`, `chat_agent_ssher`, `acp_spawn`, …).
+- **Parameters of execution** — the full argument set (read-only).
+- **Program to be executed** — the command / script / intent text (read-only).
+- **Shell to be executed** — `cmd.exe / PowerShell (Windows)`, `Python interpreter`, `Remote SSH shell @ <host>`, `Kali Linux (MCP-Kali-Server)`, … (read-only).
+
+Two buttons:
+
+- **Proceed** (green) — run this step, then continue to the next one (which prompts again).
+- **Deny** (red) — **halt the entire chain immediately**. Nothing else runs.
+
+### What a Deny gives you back
+
+1. The prose answer up to that point.
+2. The **Exec Report** tables of the steps that *did* run — only if **Exec Report** is also ticked.
+3. **Always**, a big red **⛔ "Execution interrupted"** banner that names exactly the Tool/MCP/Agent you denied, plus its program/command, shell, and parameters — so you have an auditable record of where and why the run stopped.
+
+### What is NOT prompted
+
+Read-only / polling tools (`chat_agent_run_status`, `chat_agent_run_log`, `get_current_time`, `window_present`, …) only *observe*; they are not "executions", so they never trigger a prompt.
+
+### Step-by-step: your first Ask-Execs run
+
+1. Tick **Multi-Turn**, then **Ask Execs** (it only becomes clickable once Multi-Turn is on). Tick **Exec Report** too if you want the run table.
+2. Send: *"Delete every `*.tmp` file under `C:/Temp`, then list what's left."*
+3. A permission dialog appears for the deletion step, showing the exact command and shell.
+4. Click **Deny** → the run halts with the red banner naming the denied deletion. Click **Proceed** → it deletes and carries on to the listing step (which prompts again).
+
+This is the toggle to reach for whenever a request touches destructive or sensitive operations and you want to eyeball each action before it runs.
+
+> **Under the hood.** The Multi-Turn executor runs in a worker thread and *blocks* on a browser round-trip via `agent/exec_permission.py` (`ExecPermissionBroker`): it emits a permission request onto the WebSocket and waits on a `threading.Event` until your Proceed/Deny reply resolves it. The round-trip is **fail-safe** — if the browser disconnects, the request is cancelled, or the emit fails, the decision defaults to *Deny* so an unconfirmed action never runs. See chapter §35 (Multi-Turn pipeline).
+
+## 15. Combining the five toggles — worked examples
 
 ### Example A — "Set up a new ACPX agent_id from scratch"
 
@@ -995,7 +1037,7 @@ Gatewayer logs stable markers (`GATEWAY_EVENT_ACCEPTED`, `GATEWAY_EVENT_QUEUED`,
 
 # Part IV — The Tlamatini Bestiary
 
-A compact reference for all 67 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above; **Unrealer** gets a full bonus chapter at §57.
+A compact reference for all 68 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above; **Unrealer** gets a full bonus chapter at §57.
 
 > **Naming reminder.** The `agentDescription` (set by each migration) is the single source of truth. CSS classmap key, sidebar visual, and connection-handler name all derive from it.
 
@@ -1065,6 +1107,7 @@ A compact reference for all 67 workflow-agent types. Spotlight chapters for **Pa
 | **Unrealer** | Drives Unreal Engine 5 via the Unreal MCP plugin's TCP socket protocol (`127.0.0.1:55557` by default — plugin must already be running inside an UE5 editor instance). One node sends one JSON command (`{"type": <verb>, "params": {...}}`) and captures the engine's response into an `INI_SECTION_UNREALER<<<` block. Up to a 53-command surface across nine categories — editor / blueprint / node / project / umg plus system (in-editor `execute_python` + console), level, asset, and material. (See bonus chapter §57.) |
 | **Reviewer** | LLM-powered code reviewer. Resolves a `git diff` for `repo_path` (`diff_ref` like `HEAD~1` / `origin/main`, or empty = uncommitted working-tree + staged changes), sends it to an Ollama model with a senior-engineer prompt, and emits an `INI_SECTION_REVIEWER<<<` block whose first field is a `verdict` (`APPROVE` / `REQUEST_CHANGES` / `COMMENT`). Always triggers `target_agents`, so a downstream Forker can branch on `{verdict}`. Canvas counterpart of the `code-review` skill. |
 | **Analyzer** | Deterministic static-analysis / security scanner (no LLM). Runs whichever of `bandit` / `semgrep` / `ruff` / `eslint` / `gitleaks` / `pip-audit` are on PATH over `target_path`, aggregates findings, and emits an `INI_SECTION_ANALYZER<<<` block whose `status` is `clean` / `findings` / `error` and whose `total_findings` is routable. Always triggers `target_agents`, so a downstream Forker can gate on `{status}` / `{total_findings}`. Canvas counterpart of the `security-audit` skill. |
+| **STM32er** | STM32 firmware bridge to the **STM32 Template Project MCP** (`https://github.com/XAIHT/STM32TemplateProjectMCP`), driven through a self-contained inline MCP stdio JSON-RPC client (no `mcp` dependency in the pool). It scaffolds, builds, flashes, and observes STM32F407VG firmware. `action` ∈ the **23 MCP tools** + 2 composites (`serial_session`, `live_monitor`) + 2 meta (`bootstrap`, `validate`). **Zero-config auto-bootstrap**: with no on-disk `server_script` (the default is now empty), STM32er DOWNLOADS the MCP itself — a shallow `git clone`, falling back to the GitHub zip when git is absent — into `%LOCALAPPDATA%/Tlamatini/STM32TemplateProjectMCP`, pip-installs `mcp` + `pyserial` if missing, and validates the install, so the user only ever installs **STM32CubeIDE + Tlamatini** (`action: bootstrap`; config keys `auto_bootstrap` / `mcp_repo_url` / `mcp_ref` / `mcp_install_dir` / `auto_update` / `pip_install`). **Safety preflight** (critical-mission fail-safe): it validates the compiler / CubeIDE / make / programmer / ST-LINK driver + probe / device family before any compile or flash and REFUSES rather than mis-build or mis-flash — a compile needs no board, while flash / erase / reset / serial / SWD / `live_*` require a connected ST-LINK, and a cross-STM32F-family device is refused (`action: validate`; config keys `preflight`, `device`). The MCP template is still STM32F407VG-specific, so STM32er safely refuses other families (a multi-family fork is future work). Emits an `INI_SECTION_STM32ER<<<` block and always triggers `target_agents`. Canvas counterpart of the `chat_agent_stm32er` Multi-Turn tool. **Serial caveat:** on the STM32F4-Discovery family (incl. the STM32F407G-DISC1) the on-board ST-LINK does **not** bridge its USB Virtual COM Port to the MCU's USART pins (unlike *Nucleo* boards), so a `serial_session` read of the VCP returns nothing even while the firmware runs — to capture USART2 output (PA2 = TX / PA3 = RX) you must wire an external USB-TTL adapter; the SWD `live_monitor` proof needs no wiring. (See the demo nuance in the changelog.) |
 
 ## Cryptography (post-quantum)
 
@@ -1142,6 +1185,7 @@ Each wrapped tool launches an isolated, sequenced runtime copy of a workflow age
 | **Routing** | `chat_agent_asker` |
 | **Archives & decompilation** | `chat_agent_j_decompiler`, `chat_agent_de_compresser` |
 | **Game engines** | `chat_agent_unrealer` (drives an Unreal Engine 5 editor via the Unreal MCP plugin's TCP socket; canvas counterpart is the Unrealer workflow agent — see §57) |
+| **Embedded / firmware** | `chat_agent_stm32er` (scaffolds / builds / flashes / observes STM32F407VG firmware through the STM32 Template Project MCP — 23 MCP tools + `serial_session` / `live_monitor` composites + `bootstrap` / `validate` meta-actions; zero-config auto-bootstrap downloads the MCP itself, and a safety preflight refuses to compile or flash on a bad toolchain / missing ST-LINK / wrong device family; canvas counterpart is the STM32er workflow agent) |
 | **Web & browser** | `chat_agent_playwrighter` (drives a real browser through a scripted step list — login, forms, clicks, waits, extraction, screenshots, asserts, downloads; canvas counterpart is the Playwrighter workflow agent) |
 | **Crawling, monitoring, APIs, prompts, crypto** | `chat_agent_crawler`, `chat_agent_monitor_log`, `chat_agent_monitor_netstat`, `chat_agent_apirer`, `chat_agent_prompter`, `chat_agent_kyber_keygen`, `chat_agent_kyber_cipher`, `chat_agent_kyber_deciph` |
 
@@ -1368,7 +1412,8 @@ Below the toolbar checkbox, here is what really happens when you tick **Multi-Tu
 1. FRONTEND
    User types message + ticks Multi-Turn
    → WebSocket sends {message, multi_turn_enabled: true,
-                      exec_report_enabled: ?, acpx_enabled: ?}
+                      exec_report_enabled: ?, acpx_enabled: ?,
+                      ask_execs_enabled: ?}
                                 ↓
 2. WEBSOCKET CONSUMER (consumers.py)
    Saves to DB, broadcasts user message, queues LLM retrieval
@@ -1390,21 +1435,40 @@ Below the toolbar checkbox, here is what really happens when you tick **Multi-Tu
 6. MULTI-TURN TOOL LOOP
    for i in 1..unified_agent_max_iterations (default 4096):
      LLM call with bind_tools(selected_tools)
-     if tool_calls: execute each, append ToolMessage, continue
+     if tool_calls:
+       for each call (after dedup + quota):
+         if ask_execs_enabled and call is state-changing:
+           BLOCK on browser Proceed/Deny (ExecPermissionBroker)
+           if DENIED: record denial, HALT the whole chain
+         execute, append ToolMessage
+       continue
      if pure text: that's the final answer, exit loop
                                 ↓
 7. EXEC REPORT (if exec_report_enabled)
    Capture every state-changing tool call into _exec_report_entries
    Render <table class="exec-report-...">
    Append to llm_response BEFORE save_message (strict ordering)
+   If a tool was DENIED (Ask Execs): append the red "Execution
+   interrupted" banner (always, regardless of exec_report_enabled)
                                 ↓
 8. WEBSOCKET BROADCAST
    {message, tool_calls_log, multi_turn_used, answer_success}
                                 ↓
 9. FRONTEND
-   appendChatMessage() renders prose, then exec-report tables
+   appendChatMessage() renders prose, then exec-report tables / denial banner
    if all four gates pass → render "Create Flow" button
 ```
+
+### The Ask-Execs permission round-trip (step 6, expanded)
+
+The Multi-Turn executor is **synchronous** and runs in a worker thread (`sync_to_async(ask_rag, thread_sensitive=False)`), so it cannot `await` a WebSocket reply directly. `agent/exec_permission.py::ExecPermissionBroker` bridges the gap:
+
+1. The consumer registers one broker per request, keyed by user id, before invoking the chain (and tears it down in a `finally`).
+2. Before a state-changing tool runs, the executor calls `broker.request_permission(detail)`, which emits an `exec_permission_request` frame onto the consumer's event loop (`asyncio.run_coroutine_threadsafe`) and then **blocks on a `threading.Event`**.
+3. The browser shows the modal and replies with an `exec-permission-response` frame; the consumer routes it through `resolve_permission(user_id, request_id, decision)`, which sets the event and unblocks the executor.
+4. **Proceed** → the tool runs. **Deny** → `_exec_denied` is recorded and the executor returns immediately, halting the chain; the denial detail flows back through the chain → `interface.ask_rag` (`global_state['last_exec_report_denied']`) → the consumer → `response_parser` renders the red banner.
+
+The round-trip is **fail-safe**: an emit failure, a mid-flight Cancel, or a broker `close()` (e.g. the browser disconnected) all resolve to **Deny**, so an unconfirmed state-changing tool never runs. The wait loop polls `cancel_generation` on a short tick so a Cancel never deadlocks the worker thread. Read-only / polling tools are exempt from the prompt (they only observe).
 
 The capability-aware selector scores each tool with name match (+14 exact), alias / hint phrase match (+10–12), example-request token overlap (up to +3), description token overlap (up to +10), plus a +15 history-aware boost on short follow-ups (≤4 meaningful tokens). The cap is 20 tools per request by default — lowered from 50 after observing keyword inflation pulled in everything.
 
@@ -1509,13 +1573,13 @@ The main file is `Tlamatini/agent/config.json`.
 ```json
 {
   "embeding-model": "Nomic-Embed-Text:latest",
-  "chained-model": "glm-5:cloud",
+  "chained-model": "kimi-k2.6:cloud",
   "ollama_base_url": "http://127.0.0.1:11434",
   "ollama_token": "",
   "ANTHROPIC_API_KEY": "config you api key here by claude",
   "GEMINI_API_KEY": "config your api key here by gemini",
   "enable_unified_agent": true,
-  "unified_agent_model": "glm-5:cloud",
+  "unified_agent_model": "kimi-k2.6:cloud",
   "unified_agent_base_url": "http://127.0.0.1:11434",
   "unified_agent_temperature": 0.0,
   "unified_agent_max_iterations": 4096,
@@ -1788,14 +1852,14 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 
 ```powershell
 git status                                          # clean tree, on main
-git tag -a v1.8.0 -m "Release 1.8.0: <one-liner>"   # annotated tag
-git push origin v1.8.0
+git tag -a v1.9.0 -m "Release 1.9.0: <one-liner>"   # annotated tag
+git push origin v1.9.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.8.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.9.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
 
 ### Where the version shows up in a running install
 
@@ -1803,8 +1867,8 @@ The build computes the version once and bakes it into four surfaces:
 
 - **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
 - **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
-- **Release folder name** — `dist/Tlamatini_Release_v1.8.0/`.
-- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.8.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.8.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+- **Release folder name** — `dist/Tlamatini_Release_v1.9.0/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.9.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.9.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
 
 If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
 
@@ -2411,6 +2475,8 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 | **RRF** | Reciprocal Rank Fusion — method for combining ranked lists. |
 | **Ruff** | Fast Python linter used by Pythonxer. |
 | **Skill** | Markdown-driven extension package — a directory under `agent/skills_pkg/<name>/` with a `SKILL.md` (YAML frontmatter + body). 24 seed skills ship. |
+| **STM32er** | Tlamatini agent that scaffolds, builds, flashes, and observes STM32F407VG firmware through the STM32 Template Project MCP (`https://github.com/XAIHT/STM32TemplateProjectMCP`), via a self-contained inline MCP stdio JSON-RPC client. Zero-config auto-bootstrap downloads the MCP itself and a safety preflight refuses to build/flash on a bad toolchain or wrong device family. Available both as the wrapped Multi-Turn tool `chat_agent_stm32er` and as a visual canvas node. The 68th entry in the agent catalog. |
+| **STM32 Template Project MCP** | FastMCP stdio server (`https://github.com/XAIHT/STM32TemplateProjectMCP`) exposing 23 tools for STM32F407VG firmware scaffolding, build, flash, and serial observation. STM32er is a client of it — it does not embed it — and auto-downloads it on first use. |
 | **Stopper** | Single-threaded pattern-based agent terminator. |
 | **Summarizer** | LLM polls source logs for events. |
 | **Tlamatini** | Nahuatl for "one who knows" — and the name of this assistant. The LLM responds to it as a self-reference. |
@@ -2423,6 +2489,12 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 # Appendix C — Changelog
 
 ### Recent Updates
+
+- **Added the "Ask Execs" Toggle — Approve Every Multi-Turn Execution Before It Runs — 2026-05-29** — A fifth chat-toolbar checkbox, **Ask Execs**, sits between **ACPX** and **Add internet context** and turns Multi-Turn into a human-in-the-loop operator: when it is on, Tlamatini *pauses before every state-changing Tool / MCP / Agent* and shows a modal dialog (the same look-and-feel as every other Tlamatini dialog) naming exactly what is about to execute — the Tool/MCP/Agent and its kind, the underlying tool name, the **parameters of execution**, the **program to be executed**, and the **shell to be executed** — with **Proceed** (green) and **Deny** (red) buttons. **Proceed** runs that step and the chain continues (prompting again at the next step); **Deny** halts the *entire* chain immediately and the answer carries back the prose so far, the **Exec Report** tables of whatever already ran (only if Exec Report is also ticked), and — *always* — a big red **⛔ "Execution interrupted"** banner naming the exact Tool/MCP/Agent you denied plus its program, shell, and parameters. It is a **Multi-Turn-only modifier**: the checkbox is disabled and greyed until Multi-Turn is ticked, and every backend read gates it on `multi_turn_enabled` (exactly like Exec Report); unticked, behaviour is byte-for-byte the legacy Multi-Turn flow. Read-only / polling tools (`chat_agent_run_status`, `chat_agent_run_log`, `get_current_time`, `window_present`, …) are *not* prompted — they only observe. The hard part is architectural: the Multi-Turn executor is **synchronous** and runs in a worker thread, so it cannot `await` a browser reply. A new module **`agent/exec_permission.py`** (`ExecPermissionBroker` + a user-id-keyed registry) bridges the gap — the executor emits an `exec_permission_request` frame onto the consumer's event loop via `asyncio.run_coroutine_threadsafe` and **blocks on a `threading.Event`** until the browser's `exec-permission-response` (routed through `consumers.receive` → `resolve_permission`) sets it. The round-trip is **fail-safe**: an emit failure, a mid-flight Cancel, or a broker `close()` (browser disconnected) all resolve to **Deny**, so an unconfirmed action never runs, and the wait loop polls `cancel_generation` on a short tick so a Cancel never deadlocks the thread. The flag is threaded through the *same* `UnifiedAgentChain.invoke` payload-rebuild whitelist that once dropped `exec_report_enabled` — `ask_execs_enabled` **and** `conversation_user_id` (the executor finds its broker by user id) must stay in it — and the denial detail flows executor → both chains → `interface.ask_rag` (`global_state['last_exec_report_denied']`) → consumer → `services/response_parser` which appends the banner *after* the Exec Report tables but *before* `save_message` (so a chat reload restores it; the banner is independent of the Exec Report toggle). The gate is placed *after* dedup + quota in the tool loop, so skipped calls never prompt, and only already-executed tools land in the Exec Report (the denied one never ran). Surfaces moved in lock-step: `agent_page.html` (checkbox `#ask-execs-enabled` + the `#exec-permission-dialog-message` dialog), `agent_page_state.js` (`isAskExecsEnabled`/`persist`/`applyStored`/`syncAskExecsAvailability`, availability tied to Multi-Turn), `agent_page_init.js` (sends `ask_execs_enabled`, wires the checkbox, re-syncs on Multi-Turn change), `agent_page_dialogs.js` (`showExecPermissionDialog` — Proceed[green]/Deny[red], titlebar-X hidden + Esc off, close==Deny, idempotent decision), `agent_page_chat.js` (the `exec-permission-request` handler), `agent_page.css` (`.exec-denied-*` banner + `.exec-perm-*` dialog + `.toolbar-toggle-disabled`), and `eslint.config.mjs` globals. One gotcha worth knowing: both `exec-permission-response` frames include a `message` key because `consumers.receive` reads `text_data_json['message']` unconditionally before branching. Coverage: 20 new tests (`ExecPermissionBrokerTests`, `AskExecsExecutorGateTests`, `AskExecsHelperTests`, `AskExecsDenialBannerTests`, `AskExecsChainPropagationTests`) — ruff + ESLint clean (0 errors); source and frozen need no `build.py` change (everything is read at runtime). No new agents/tools/skills — counts unchanged; this is a chat-safety modifier, not new capability.
+
+- **STM32 HIL Observatory Demo — Honest About the Discovery Board's Unbridged Serial Port — 2026-05-27** — A live run of the third STM32er catalog demo, **#65 STM32 HIL OBSERVATORY**, on a real **STM32F407G-DISC1** surfaced a board-specific flaw in the demo *as written* — not a bug in the agent. The board flashed perfectly (the green LED blinked) and the firmware was provably running: the `live_monitor` step read the global `g_blink_count` climbing 30 → 31 → 32 straight out of the running MCU's RAM over **SWD**. But the demo had made the **serial Virtual-COM-Port boot-banner read a *primary* proof step**, and that read returns **zero bytes forever** on this board, because **the STM32F4-Discovery family's on-board ST-LINK does not internally bridge its USB Virtual COM Port to any of the target STM32F407's USART pins** — *unlike ST Nucleo boards, which wire VCP ↔ USART2 on PA2/PA3*. A firmware printing on USART2 has nowhere to send those bytes on the Discovery PCB. With no "an empty VCP read is expected here, do **not** retry" guidance, the model thrashed — about six `serial_session` retries with escalating timeouts (5/6/8/10/12 s, even injecting a newline), plus `serial_connect` / `serial_read` and a stray `reset`: 21 STM32er calls for what should have been ~9. The fix (migration **`0104_fix_stm32er_hil_serial_proof.py`**, a content-only rewrite of prompt #65 via `update_or_create`) makes the demo honest about the hardware: the **SWD `live_monitor` read is now the *primary*, authoritative hardware-in-the-loop proof** (it works on any ST-LINK board, no wiring), the **serial VCP read is demoted to a best-effort, board-aware, at-most-once bonus** (the prompt states the VCP-not-routed fact up front, calls an empty read *expected*, and forbids the retry/connect-read loop), and the **"✅ SILICON VERIFIED" verdict is re-keyed on build + flash + live-memory** so the demo reaches a clean success on a bare Discovery board. **To actually exercise the serial banner**, the user must **bridge the port themselves** with an external USB-to-UART (USB-TTL) adapter — cross-wire adapter **RX ← PA2 (USART2_TX)**, adapter **TX → PA3 (USART2_RX)**, **GND ↔ GND** — and aim `serial_session` at *that adapter's* COM port; on a Nucleo board the on-board VCP already carries it. Docs updated in lock-step (README §3 STM32er callout, this book's agent-catalog row); the running frozen install's `agent_prompt` row 65 was patched directly so the corrected prompt is live without a rebuild (prompts are read fresh from the DB on each catalog selection — no restart needed).
+
+- **Added STM32er Agent — Zero-Config STM32 Firmware Bridge with a Fail-Safe Preflight — v1.9.0, 2026-05-26** — The agent catalog grows to **68** with **STM32er**, Tlamatini's bridge to the **STM32 Template Project MCP** (`https://github.com/XAIHT/STM32TemplateProjectMCP`) — a FastMCP stdio server that scaffolds, builds, flashes, and observes STM32F407VG firmware. STM32er talks to it through a **self-contained inline MCP stdio JSON-RPC client** (no `mcp` dependency in the agent-pool subprocess, the same self-contained discipline as ACPXer / Windower / Kalier), so it works identically in source and frozen builds. Its `action` field selects ONE capability per run from the **23 MCP tools** plus two convenience composites (`serial_session`, `live_monitor`) and two meta-actions (`bootstrap`, `validate`). Two pillars make this agent special. First, **zero-config auto-bootstrap**: the on-disk `server_script` now defaults to *empty*, and when it is empty STM32er **downloads the MCP itself** — a shallow `git clone`, falling back to the GitHub zip when git isn't installed — into `%LOCALAPPDATA%/Tlamatini/STM32TemplateProjectMCP`, pip-installs `mcp` + `pyserial` if they're missing, and validates the result. The net effect is that a user installs **only STM32CubeIDE and Tlamatini** and everything else materializes on first use (new `action: bootstrap`; new `config.yaml` keys `auto_bootstrap` (default true) / `mcp_repo_url` / `mcp_ref` / `mcp_install_dir` / `auto_update` / `pip_install`; new `config.json` globals `stm32_mcp_server_script` (now `""`) / `stm32_mcp_repo_url` / `stm32_mcp_install_dir`). Second — and this is the part that matters for anyone flashing real silicon — a **safety preflight, the critical-mission fail-safe**: before any compile or flash, STM32er validates the compiler, CubeIDE, `make`, the programmer, the ST-LINK driver *and* a connected probe, and the device family, and it **REFUSES rather than mis-build or mis-flash**. The hardware requirement is conditional and honest about it: a *compile* needs no board at all, while *flash / erase / reset / serial / SWD / `live_*`* require a connected ST-LINK, and a cross-STM32F-family device is refused outright (new `action: validate`; new `config.yaml` keys `preflight` (default true) / `device`). The MCP template is still STM32F407VG-specific, so STM32er safely refuses other families — a multi-family fork is future work, deliberately scoped out rather than half-supported. It emits one atomic `INI_SECTION_STM32ER<<<` block and ALWAYS triggers `target_agents`, so a downstream Forker can branch on the result. Two surfaces ship in lock-step, the same dual pattern as Playwrighter / Unrealer / Windower / Kalier: the visual **STM32er** canvas node and the wrapped Multi-Turn tool **`chat_agent_stm32er`** (the LLM passes the operation as a free-form key=value request). Wiring follows the established 8-step agent pattern, with the Agent and Tool rows added via migrations `0101` / `0102`; `requirements.txt` now pins `pyserial==3.5` (`mcp==1.25.0` was already present). Three new seeded demo prompts via migration `0103` show the surface off across difficulty tiers — **63 STM32 GENESIS**, **64 STM32 BLINKY**, and **65 STM32 HIL OBSERVATORY** (the third a genuine real-hardware hardware-in-the-loop run). Coverage: 122 tests, and the whole thing was verified **zero-config end-to-end — download → build → flash → reset — on a real STM32F407G-DISC1**. Wrapped chat-agent count moves to **43**.
 
 - **Self-Knowledge & Self-Modification — Tlamatini Learns Who She Is and Can Read Her Own Source — 2026-05-25** — Tlamatini's-AutoBot turned the assistant's attention inward, in two cooperating moves committed back-to-back (`a927f5c` then `2aab751`) and authored by the bot itself. The first is a **self-knowledge map**: a new file `Tlamatini/agent/Tlamatini.md`, written in the first person, that tells the LLM exactly who and what she is — the two runtime modes (frozen next to the `.exe` vs. source under `Tlamatini/agent/`) and how to tell which one she is running in, the ports she opens (`8000` for the web app, `8765` for the System-Metrics MCP, `50051` for the Files-Search gRPC service), her main pages, her tech stack, the full sweep of her capability surface, and how she might go about improving herself. Its audience is the LLM alone — so, unlike everything else she emits, it deliberately does **not** follow `prompt.pmt`'s HTML / contrast styling rules; it is private self-reference, never rendered to a user. The map reaches the model through a new `<self_knowledge>{self_knowledge}</self_knowledge>` block in `prompt.pmt`, filled in at prompt-build time by `agent/rag/config.py`: the constants `SELF_KNOWLEDGE_FILENAME='Tlamatini.md'` and `SELF_KNOWLEDGE_PLACEHOLDER='{self_knowledge}'` anchor the contract, `_load_self_knowledge_block(application_path)` reads the file and brace-escapes it (`{`→`{{`, `}`→`}}`) so its embedded code snippets can't collide with the f-string template's own variables, and the whole thing **fails open** — a missing, empty, or unreadable file degrades to a short literal notice and never raises. The substitution happens once, at the single prompt-load site in `load_config_and_prompt()`, so every chain inherits it for free (basic, history-aware, unified, and prompt-only) with no new input variable threaded through the pipeline. The file resolves from the application directory exactly the way `prompt.pmt` and `config.json` already do — the install root beside the executable in frozen mode, `Tlamatini/agent/` in source mode — and `build.py` ships it both via `--add-data` *and* by copying it to the install root so frozen resolution next to the exe always finds it. The renumbered identity rules in `prompt.pmt` now tell her to consult it whenever a prompt concerns who or what she is, her architecture / modes / ports / pages / internals, or improving herself. The second move gives that last clause real teeth: a new **optional** directory `Tlamatini/agent/TlamatiniSourceCode/` that, when present, carries Tlamatini's own source tree so she can read, inspect, and modify herself. This is a *second capability axis*, independent of the frozen-vs-source one — present means a "self-able-modify" build, absent means "not-self-able-modify" — and it ships only when `build.py` is invoked with the new `--self-modify` flag, which copies the tree recursively to the install root (so it resolves like `prompt.pmt`); without the flag the directory is omitted entirely, and the build announces which way it went with a `Self-modify build : YES/no` line. `prompt.pmt` is explicit about the discipline here: she must **always verify the directory actually exists** — e.g. a quick Multi-Turn directory listing — before claiming she can read or edit her own code, and if it is absent she says so plainly and falls back to the injected self-knowledge block plus her docs. Riding along in the same window (commit `1f36217`) is a quieter but consequential bump: the Multi-Turn iteration ceiling, `unified_agent_max_iterations` and the matching executor defaults, was raised from **256 to 4096**, giving long autonomous flows far more room before they hit the turn limit. (One number that did *not* move: the separate 256 tool-quota hard-stop is a different cap and stays at 256.) No new agents, tools, or skills — counts hold at **67** agents / **42** wrapped chat-agents / **74** Multi-Turn tools / **24** skills; this release is about Tlamatini knowing herself and, when built for it, being able to reach in and change herself.
 

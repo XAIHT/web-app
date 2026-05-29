@@ -253,8 +253,9 @@
 .page-layer {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
   height: 100%;
   display: flex;
   justify-content: center;
