@@ -70,11 +70,11 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.10.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
+            Tlamatini v1.11.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
             with hybrid RAG over your source, a 75-tool, 4096-iteration Multi-Turn loop,
-            Ask Execs approval gates before state-changing tool execution, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 24 skill packages,
+            Ask Execs approval gates before state-changing tool execution, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 24 skill packages,
             in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 68 drag-and-drop agent types,
-            STM32er critical-mission firmware automation for ST-Microelectronics STM32F4x hardware, Kalier authorized Kali assessment workflows with one-time server configuration, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.
+            STM32er critical-mission firmware automation for ST-Microelectronics STM32F4x hardware, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -98,7 +98,7 @@ function OverviewSection() {
               {[
                 { label: 'Agents', value: '68' },
                 { label: 'Skills', value: '24' },
-                { label: 'Version', value: 'v1.10.0' },
+                { label: 'Version', value: 'v1.11.0' },
                 { label: 'Iterations', value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -157,7 +157,7 @@ function VisionMissionSection() {
       title: 'Vision',
       subtitle: 'Human Control, Tunable AI',
       description:
-        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, Ask Execs approvals before state-changing Multi-Turn work, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, STM32F4x firmware work with fail-safe preflight, high-detail retrieval when selected, opt-in external routes, review and analysis gates, and her own self-knowledge map.',
+        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, Ask Execs approvals, Windows uninstall registration for installed builds, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, STM32F4x firmware work with fail-safe preflight, strict Python execution gates, opt-in external routes, review and analysis gates, and her own self-knowledge map.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -169,7 +169,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, critical-mission STM32F4x firmware automation, tunable embedding depth, GPU-aware context loading, 75-tool / 4096-iteration Multi-Turn orchestration, Ask Execs proceed-or-deny checkpoints, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Kalier security-assessment runs with configured Kali routing, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows so developers can move from questions to repeatable machine actions.',
+        'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, critical-mission STM32F4x firmware automation, tunable embedding depth, GPU-aware context loading, 75-tool / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Pythonxer correctness gates, honest foreground execution, Windows 10|11 uninstall readiness, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -304,7 +304,7 @@ function ArchitectureSection() {
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 Tlamatini connects the browser, native project context picker, self-knowledge map,
-                Config, DB, and ACPX-Skills menus, Multi-Turn operator with Ask Execs approval gates, Flow Compiler, Unreal MCP, STM32 Template Project MCP, and ACPX runtime
+                Config, DB, and ACPX-Skills menus, Multi-Turn operator with Ask Execs approval gates, Windows installed-app registration, Flow Compiler, Unreal MCP, STM32 Template Project MCP, and ACPX runtime
                 through one local command surface.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
@@ -405,7 +405,7 @@ function ArchitectureSection() {
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 When Multi-Turn is enabled, the chat becomes an operator: a planner selects
-                the relevant tools, Ask Execs can pause state-changing calls for human approval, watches the results across a 4096-iteration ceiling, and turns successful work into reusable
+                the relevant tools, Ask Execs can pause state-changing calls for human approval, Pythonxer rejects broken scripts early, and successful work becomes reusable
                 workflows.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
@@ -593,6 +593,7 @@ function ToolsSection() {
     { name: 'ACPX-Skills -> Configure', desc: 'Enable or hide skills from the planner with the same feel as Tools and MCPs', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Diagnostics', desc: 'Catch missing tools, MCPs, ACPX agents, and orphan skill rows before runtime', type: 'Skills', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Reload Registry', desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills', color: '#b08cc7' },
+    { name: 'Windows uninstall registration', desc: 'Installed builds appear where Windows 10|11 users expect to remove applications', type: 'Installer', color: '#c79e7a' },
     { name: 'Ask Execs', desc: 'Prompt before each state-changing Multi-Turn Tool, MCP, Agent, or Skill call, then proceed or fail safe', type: 'Runtime', color: '#c9a96e' },
     { name: 'Unreal Engine', desc: 'Drive the public XAIHT Unreal MCP fork with 53 editor commands across nine categories', type: 'Game Dev', color: '#8a9ec7' },
     { name: 'STM32er', desc: 'Scaffold, build, flash, and observe STM32F4x firmware with zero-config MCP bootstrap and fail-safe hardware preflight', type: 'Embedded', color: '#7a9e8e' },
@@ -605,6 +606,8 @@ function ToolsSection() {
     { name: 'De-Compresser', desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
     { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads and keeps context loading humane', type: 'RAG', color: '#8a9ec7' },
     { name: '75 Multi-Turn tools', desc: 'A broad action surface with approval checkpoints, a 4096-iteration ceiling, and a 256 tool-call hard stop', type: 'Runtime', color: '#7a9e8e' },
+    { name: 'Pythonxer strict gate', desc: 'Compile and Ruff checks stop broken Python before execution while downstream flow control stays explicit', type: 'Runtime', color: '#7a9e8e' },
+    { name: 'execute_file foreground', desc: 'Visible script windows open only when requested, with compile checks before launch', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', desc: 'Wait primitive for smooth autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },

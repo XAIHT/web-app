@@ -1076,7 +1076,7 @@ A compact reference for all 68 workflow-agent types. Spotlight chapters for **Pa
 | Agent | Purpose |
 |---|---|
 | **Executer** | Shell command. |
-| **Pythonxer** | Inline Python with Ruff lint and exit-code gating. |
+| **Pythonxer** | Inline Python behind a strict `compile()` + blocking-Ruff gate (`ruff_blocking` default true); ALWAYS triggers downstream regardless of outcome (exit code drives only the LED + Multi-Turn retry loop). |
 | **Prompter** | LLM prompt → log. |
 | **Summarizer** | LLM polls source logs for events; one-shot mode also accepts `input_text`. |
 | **Crawler** | Web crawl with raw-content capture and LLM analysis. |
@@ -1135,7 +1135,7 @@ A compact reference for all 68 workflow-agent types. Spotlight chapters for **Pa
 | **Monitor-Netstat** | LLM-powered network port monitor. |
 | **Emailer** | SMTP email on pattern detection. |
 | **RecMailer** | IMAP receiver with LLM keyword analysis. |
-| **Notifier** | Browser notification + sound on pattern detection (LangGraph). |
+| **Notifier** | Browser popup + optional sound on pattern detection (LangGraph). |
 | **Whatsapper** | WhatsApp messages via TextMeBot. |
 | **TelegramRX** | Telegram message receiver. |
 | **FlowHypervisor** | LLM watchdog over running agents. (See §23.) |
@@ -1852,14 +1852,14 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 
 ```powershell
 git status                                          # clean tree, on main
-git tag -a v1.9.0 -m "Release 1.9.0: <one-liner>"   # annotated tag
-git push origin v1.9.0
+git tag -a v1.11.0 -m "Release 1.11.0: <one-liner>"   # annotated tag
+git push origin v1.11.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.9.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.11.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
 
 ### Where the version shows up in a running install
 
@@ -1867,8 +1867,8 @@ The build computes the version once and bakes it into four surfaces:
 
 - **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
 - **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
-- **Release folder name** — `dist/Tlamatini_Release_v1.9.0/`.
-- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.9.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.9.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+- **Release folder name** — `dist/Tlamatini_Release_v1.11.0/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.11.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.11.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
 
 If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
 
@@ -2461,13 +2461,13 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 | **NodeManager** | Long-running infrastructure registry that probes nodes. |
 | **Unreal MCP** | Open-source UE5 plugin (upstream `https://github.com/chongdashu/unreal-mcp`, MIT, UE5.5+) that listens on `127.0.0.1:55557` for JSON commands and dispatches them onto the editor's game thread. Tlamatini is a client of this plugin — it does not embed it. The build Tlamatini recommends and is tested against is its own extended fork, **`https://github.com/XAIHT/XaihtUnrealEngineMCP.git`** (the Unreal Engine MCP modified specifically for Tlamatini; ships the full 53-verb, nine-category surface). |
 | **Unrealer** | Tlamatini agent that drives Unreal Engine 5 through the Unreal MCP plugin's TCP/JSON protocol. Available both as a wrapped Multi-Turn tool (`chat_agent_unrealer`) and as a visual canvas node. The 62nd entry in the agent catalog. |
-| **Notifier** | LangGraph-based browser-notification agent. |
+| **Notifier** | LangGraph-based notification agent — in-browser popup + optional sound. |
 | **output_agents** | Config field used by Ender, Stopper, Cleaner for downstream canvas wiring (vs `target_agents` for "agents to start"). |
 | **Parametrizer** | Strict single-lane queue that maps source-agent log segments into target-agent config.yaml. |
 | **Playwrighter** | Tlamatini agent that drives a REAL browser (Playwright — Chromium/Firefox/WebKit) through a scripted, interactive step list (goto/click/fill/wait_for/extract/assert/screenshot/download). Set `headless: false` to watch it and `hold_open_seconds: N` (alias `hold_open_ms`) to keep the browser visible N seconds after the last step before it closes. Available both as the wrapped Multi-Turn tool `chat_agent_playwrighter` and as a visual canvas node. The 65th entry in the agent catalog. |
 | **Pool** | Directory where deployed agent instances are stored. |
 | **Pser** | LLM-powered fuzzy process finder. |
-| **Pythonxer** | Inline-Python agent with Ruff lint + exit-code gating. |
+| **Pythonxer** | Inline-Python agent behind a strict `compile()` + blocking-Ruff gate; ALWAYS triggers downstream regardless of outcome (exit code drives only the LED + Multi-Turn retry loop). |
 | **PyAutoGUI** | Python library for mouse/keyboard control, used by Mouser and Keyboarder. |
 | **RAG** | Retrieval-Augmented Generation. |
 | **Reanimation Offset** | Saved log-file position to handle restarts and rotation. |
@@ -2489,6 +2489,11 @@ The **Keyboarder** agent simulates human keyboard input through the `input_seque
 # Appendix C — Changelog
 
 ### Recent Updates
+
+
+- **Pythonxer — Strict Correctness Gate + It NEVER Dead-Ends a Flow — 2026-05-29** — Two deliberate behaviour changes to the **Pythonxer** agent, both at the user's emphatic request. **First, a strict pre-execution correctness gate.** Before Pythonxer runs a single line it now (a) `compile()`-parses the script — a script that doesn't even parse is *refused outright*, logged with the exact line/column/snippet, and never executed; then (b) validates with Ruff, and when `ruff_blocking` is true (the new default) **any** real Ruff finding *aborts execution* with `⛔ RUFF FAILED` and the `[Ruff]` findings written to the log. Previously Ruff ran but its result was discarded ("non-blocking"), so a broken script ran anyway. Ruff being absent or timing out *fails open* — the `compile()` syntax floor still protects you — and setting `ruff_blocking: false` restores the old advisory behaviour (findings logged, script still runs). **Second — and this is the part that changes flow design — Pythonxer now ALWAYS triggers its downstream/output agents, no matter what:** success, a gate refusal, *or* a runtime failure. The old "exit code 0 → start downstream, non-zero → skip" gating is *gone* for Pythonxer; the exit code (0/1) still drives the LED and the Multi-Turn fix-and-retry loop, but it no longer decides whether the next agent starts. Pythonxer never silently dead-ends a flow again — and because downstream always fires, **conditional branching must now be done by a downstream agent reading Pythonxer's result/log** (a Forker/Raiser on a marker the script printed), not by relying on Pythonxer to skip. Riding along: a failed *wrapped* Pythonxer run (`chat_agent_pythonxer`) now tells the Multi-Turn LLM to read the log, rewrite the script in full, and retry — fix → re-ruff → re-run until it passes — closing the loop end-to-end (the repetition breaker blocks identical re-sends, so only a *corrected* script proceeds). And `build.py` now hard-verifies `ruff --version` against **both** the build Python and the frozen-agent Python so the strict gate is guaranteed to have Ruff in frozen *and* source modes. The `agentic_skill.md` (FlowCreator's reference), `agents_descriptions.md`, `docs/claude/agents.md`, `KIMI.md`, and this book's catalog rows were all updated so the AI flow-designer no longer assumes downstream is skipped on failure. Frozen installs need a `python build.py` to pick this up.
+
+- **`execute_file` — The Window Opens Only When YOU Ask, and a Broken Script No Longer Reports "Success" — 2026-05-29** — A real, evidence-backed fix (diagnosed from `tlamatini.log`, not from theory) for a frustrating Multi-Turn behaviour: you'd ask Tlamatini to run a script "in a foreground window", no window would open, and she'd cheerfully report success anyway. The root cause was that Multi-Turn deliberately suppresses visible consoles (so background tool calls don't litter your desktop with windows), and `execute_file` had no way to opt back out — every launch silently went headless, and the result string said "executed successfully in a new terminal window" regardless. The fix puts the choice back in **your** hands: `execute_file` gains a `foreground` flag, and the tool's instructions tell the LLM to set it **only when you explicitly ask for a visible / foreground / forked window** — *if you say nothing, the script runs in the background with no window* (your stated rule). On top of that, before launching a `.py`/`.pyw` file Tlamatini now `compile()`-checks it: a script with a syntax error is **not launched** — instead she returns the exact error (line, column, snippet) and rewrites it, rather than firing a broken file into a window and calling it done. And the result text is now honest: "Launched … (confirms the launch, not that the script ran to completion)", never a false "executed successfully". The change is confined to `agent/tools.py` (two functions); `execute_command`'s analogous behaviour was intentionally left alone. Frozen installs need a `python build.py`.
 
 - **Added the "Ask Execs" Toggle — Approve Every Multi-Turn Execution Before It Runs — 2026-05-29** — A fifth chat-toolbar checkbox, **Ask Execs**, sits between **ACPX** and **Add internet context** and turns Multi-Turn into a human-in-the-loop operator: when it is on, Tlamatini *pauses before every state-changing Tool / MCP / Agent* and shows a modal dialog (the same look-and-feel as every other Tlamatini dialog) naming exactly what is about to execute — the Tool/MCP/Agent and its kind, the underlying tool name, the **parameters of execution**, the **program to be executed**, and the **shell to be executed** — with **Proceed** (green) and **Deny** (red) buttons. **Proceed** runs that step and the chain continues (prompting again at the next step); **Deny** halts the *entire* chain immediately and the answer carries back the prose so far, the **Exec Report** tables of whatever already ran (only if Exec Report is also ticked), and — *always* — a big red **⛔ "Execution interrupted"** banner naming the exact Tool/MCP/Agent you denied plus its program, shell, and parameters. It is a **Multi-Turn-only modifier**: the checkbox is disabled and greyed until Multi-Turn is ticked, and every backend read gates it on `multi_turn_enabled` (exactly like Exec Report); unticked, behaviour is byte-for-byte the legacy Multi-Turn flow. Read-only / polling tools (`chat_agent_run_status`, `chat_agent_run_log`, `get_current_time`, `window_present`, …) are *not* prompted — they only observe. The hard part is architectural: the Multi-Turn executor is **synchronous** and runs in a worker thread, so it cannot `await` a browser reply. A new module **`agent/exec_permission.py`** (`ExecPermissionBroker` + a user-id-keyed registry) bridges the gap — the executor emits an `exec_permission_request` frame onto the consumer's event loop via `asyncio.run_coroutine_threadsafe` and **blocks on a `threading.Event`** until the browser's `exec-permission-response` (routed through `consumers.receive` → `resolve_permission`) sets it. The round-trip is **fail-safe**: an emit failure, a mid-flight Cancel, or a broker `close()` (browser disconnected) all resolve to **Deny**, so an unconfirmed action never runs, and the wait loop polls `cancel_generation` on a short tick so a Cancel never deadlocks the thread. The flag is threaded through the *same* `UnifiedAgentChain.invoke` payload-rebuild whitelist that once dropped `exec_report_enabled` — `ask_execs_enabled` **and** `conversation_user_id` (the executor finds its broker by user id) must stay in it — and the denial detail flows executor → both chains → `interface.ask_rag` (`global_state['last_exec_report_denied']`) → consumer → `services/response_parser` which appends the banner *after* the Exec Report tables but *before* `save_message` (so a chat reload restores it; the banner is independent of the Exec Report toggle). The gate is placed *after* dedup + quota in the tool loop, so skipped calls never prompt, and only already-executed tools land in the Exec Report (the denied one never ran). Surfaces moved in lock-step: `agent_page.html` (checkbox `#ask-execs-enabled` + the `#exec-permission-dialog-message` dialog), `agent_page_state.js` (`isAskExecsEnabled`/`persist`/`applyStored`/`syncAskExecsAvailability`, availability tied to Multi-Turn), `agent_page_init.js` (sends `ask_execs_enabled`, wires the checkbox, re-syncs on Multi-Turn change), `agent_page_dialogs.js` (`showExecPermissionDialog` — Proceed[green]/Deny[red], titlebar-X hidden + Esc off, close==Deny, idempotent decision), `agent_page_chat.js` (the `exec-permission-request` handler), `agent_page.css` (`.exec-denied-*` banner + `.exec-perm-*` dialog + `.toolbar-toggle-disabled`), and `eslint.config.mjs` globals. One gotcha worth knowing: both `exec-permission-response` frames include a `message` key because `consumers.receive` reads `text_data_json['message']` unconditionally before branching. Coverage: 20 new tests (`ExecPermissionBrokerTests`, `AskExecsExecutorGateTests`, `AskExecsHelperTests`, `AskExecsDenialBannerTests`, `AskExecsChainPropagationTests`) — ruff + ESLint clean (0 errors); source and frozen need no `build.py` change (everything is read at runtime). No new agents/tools/skills — counts unchanged; this is a chat-safety modifier, not new capability.
 
