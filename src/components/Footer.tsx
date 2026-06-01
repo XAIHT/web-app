@@ -15,7 +15,7 @@ export default function Footer() {
           Run Tlamatini on Your Own Machine
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Tlamatini v1.11.0 brings Windows 10|11 installed-app registration for familiar uninstall paths, Ask Execs approval gates, stricter Pythonxer execution, STM32er firmware automation, her self-knowledge map, native nested-folder context, the 53-command Unreal MCP surface, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 75-tool Multi-Turn orchestration, GPU-aware context loading, 24 skills, and 68 workflow agents to one local developer assistant.
+          Tlamatini v1.12.0 adds ESP32er, a zero-config PlatformIO bridge for ESP32 firmware work, alongside Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, STM32er hardware automation, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 76-tool Multi-Turn orchestration, GPU-aware context loading, 24 skills, and 69 workflow agents.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a

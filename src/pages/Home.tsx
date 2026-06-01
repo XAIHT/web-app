@@ -70,11 +70,11 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.11.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
-            with hybrid RAG over your source, a 75-tool, 4096-iteration Multi-Turn loop,
+            Tlamatini v1.12.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
+            with hybrid RAG over your source, a 76-tool, 4096-iteration Multi-Turn loop,
             Ask Execs approval gates before state-changing tool execution, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 24 skill packages,
-            in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 68 drag-and-drop agent types,
-            STM32er critical-mission firmware automation for ST-Microelectronics STM32F4x hardware, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.
+            in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 69 drag-and-drop agent types,
+            STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -96,9 +96,9 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: 'Agents', value: '68' },
+                { label: 'Agents', value: '69' },
                 { label: 'Skills', value: '24' },
-                { label: 'Version', value: 'v1.11.0' },
+                { label: 'Version', value: 'v1.12.0' },
                 { label: 'Iterations', value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -157,7 +157,7 @@ function VisionMissionSection() {
       title: 'Vision',
       subtitle: 'Human Control, Tunable AI',
       description:
-        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, Ask Execs approvals, Windows uninstall registration for installed builds, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, STM32F4x firmware work with fail-safe preflight, strict Python execution gates, opt-in external routes, review and analysis gates, and her own self-knowledge map.',
+        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, Ask Execs approvals, Windows uninstall registration for installed builds, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, STM32F4x and ESP32 firmware paths with preflight checks, strict Python execution gates, opt-in external routes, review and analysis gates, and her own self-knowledge map.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -169,7 +169,7 @@ function VisionMissionSection() {
       title: 'Mission',
       subtitle: 'Make the Assistant a Doer',
       description:
-        'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, critical-mission STM32F4x firmware automation, tunable embedding depth, GPU-aware context loading, 75-tool / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Pythonxer correctness gates, honest foreground execution, Windows 10|11 uninstall readiness, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
+        'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, STM32F4x and ESP32 firmware automation, tunable embedding depth, GPU-aware context loading, 76-tool / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Pythonxer correctness gates, honest foreground execution, Windows 10|11 uninstall readiness, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -180,7 +180,7 @@ function VisionMissionSection() {
       title: 'Concept',
       subtitle: 'The One Who Knows',
       description:
-        'Tlamatini means "one who knows." In practice, she reads your code, Unreal Engine projects, and STM32 firmware goals, protects loaded project context from being confused with her self-knowledge, lets you tune models, endpoints, database snapshots, and skills from the UI, reviews diffs with working-tree awareness, scans for risk, spawns external coding agents only when you choose, and compiles chat or canvas ideas into reusable .flw workflows.',
+        'Tlamatini means "one who knows." In practice, she reads your code, Unreal Engine projects, STM32 firmware goals, and ESP32 PlatformIO projects, protects loaded project context from being confused with her self-knowledge, lets you tune models, endpoints, database snapshots, and skills from the UI, reviews diffs, scans for risk, and compiles chat or canvas ideas into reusable .flw workflows.',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
           <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
@@ -304,7 +304,7 @@ function ArchitectureSection() {
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
                 Tlamatini connects the browser, native project context picker, self-knowledge map,
-                Config, DB, and ACPX-Skills menus, Multi-Turn operator with Ask Execs approval gates, Windows installed-app registration, Flow Compiler, Unreal MCP, STM32 Template Project MCP, and ACPX runtime
+                Config, DB, and ACPX-Skills menus, Multi-Turn operator with Ask Execs approval gates, Windows installed-app registration, Flow Compiler, Unreal MCP, STM32 Template Project MCP, ESP32er PlatformIO automation, and ACPX runtime
                 through one local command surface.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
@@ -335,7 +335,7 @@ function ArchitectureSection() {
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
                     Ollama, Claude, and Qwen cover the model surface, ACPX delegates to external
-                    coding CLIs only when selected, STM32er bootstraps her firmware MCP and refuses unsafe hardware actions, Kalier reaches the configured Kali server for authorized tooling, Playwrighter drives real browser flows, Windower commands whole windows, SkillHarness runs markdown playbooks, Tlamatini carries her self-knowledge into every chain, and GPU hosts get a pre-flight warning before heavy embedding
+                    coding CLIs only when selected, STM32er guards ST-LINK firmware work, ESP32er drives PlatformIO builds and uploads, Kalier reaches the configured Kali server, Playwrighter drives real browser flows, Windower commands whole windows, SkillHarness runs markdown playbooks, Tlamatini carries her self-knowledge into every chain, and GPU hosts get a pre-flight warning before heavy embedding
                     loads can slow the machine down.
                   </p>
                 </div>
@@ -492,7 +492,7 @@ function WorkflowSection() {
     { name: 'Control', agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { name: 'Routing', agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { name: 'Logic Gates', agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer, Kalier, STM32er', color: '#8a9ec7' },
+    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer, Kalier, STM32er, ESP32er', color: '#8a9ec7' },
     { name: 'Cryptography', agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { name: 'Utility', agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { name: 'Terminal / Monitoring', agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
@@ -518,9 +518,9 @@ function WorkflowSection() {
           {/* Left */}
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-              The Visual Workflow Designer lets you drag 68 agent types onto a canvas,
+              The Visual Workflow Designer lets you drag 69 agent types onto a canvas,
               wire them into reusable .flw workflows, preserve Parametrizer mappings,
-              validate the live graph, build and flash STM32F4x firmware through a preflighted MCP bridge, run authorized Kali assessments through a configured server, drive 53-command Unreal MCP projects, drive real browser flows, command desktop windows, review diffs, scan for security findings, add human approval checkpoints, and bring
+              validate the live graph, build and flash STM32F4x firmware through a preflighted MCP bridge, build and upload ESP32 firmware through PlatformIO, run authorized Kali assessments through a configured server, drive 53-command Unreal MCP projects, drive real browser flows, command desktop windows, review diffs, scan for security findings, add human approval checkpoints, and bring
               repeatable agentic automation to Unreal Engine-enabled project work.
             </p>
             <img
@@ -586,7 +586,7 @@ function ToolsSection() {
 
   const tools = [
     { name: 'Config -> Models', desc: 'Tune model names from the chat UI with validation', type: 'Config', color: '#c9a96e' },
-    { name: 'Config -> URLs', desc: 'Edit endpoint values, including Kali and STM32 MCP defaults, without hand-editing JSON', type: 'Config', color: '#c9a96e' },
+    { name: 'Config -> URLs', desc: 'Edit endpoint values, including Kali, STM32 MCP, and ESP32 PlatformIO defaults, without hand-editing JSON', type: 'Config', color: '#c9a96e' },
     { name: 'DB -> Backup database', desc: 'Snapshot the live SQLite database to a directory you choose', type: 'DB', color: '#c79e7a' },
     { name: 'DB -> Set DB', desc: 'Stage a database for the next clean Tlamatini start-up', type: 'DB', color: '#c79e7a' },
     { name: 'ACPX-Skills -> Browse', desc: 'Inspect all 24 skill bodies, permissions, inputs, outputs, and budgets before use', type: 'Skills', color: '#b08cc7' },
@@ -597,6 +597,7 @@ function ToolsSection() {
     { name: 'Ask Execs', desc: 'Prompt before each state-changing Multi-Turn Tool, MCP, Agent, or Skill call, then proceed or fail safe', type: 'Runtime', color: '#c9a96e' },
     { name: 'Unreal Engine', desc: 'Drive the public XAIHT Unreal MCP fork with 53 editor commands across nine categories', type: 'Game Dev', color: '#8a9ec7' },
     { name: 'STM32er', desc: 'Scaffold, build, flash, and observe STM32F4x firmware with zero-config MCP bootstrap and fail-safe hardware preflight', type: 'Embedded', color: '#7a9e8e' },
+    { name: 'ESP32er', desc: 'Scaffold, build, upload, and monitor ESP32 firmware through zero-config PlatformIO Core automation', type: 'Embedded', color: '#7a9e8e' },
     { name: 'Playwrighter', desc: 'Drive a real browser through scripted logins, forms, assertions, screenshots, and downloads', type: 'Browser', color: '#8a9ec7' },
     { name: 'Windower', desc: 'Focus, move, resize, tile, maximize, minimize, and close Windows app windows by title', type: 'Desktop', color: '#c79e7a' },
     { name: 'Kalier', desc: 'Coordinate authorized Kali Linux recon through the configured MCP-Kali-Server URL', type: 'Security', color: '#c9a96e' },
@@ -605,7 +606,7 @@ function ToolsSection() {
     { name: 'Analyzer', desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent', color: '#c79e7a' },
     { name: 'De-Compresser', desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
     { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads and keeps context loading humane', type: 'RAG', color: '#8a9ec7' },
-    { name: '75 Multi-Turn tools', desc: 'A broad action surface with approval checkpoints, a 4096-iteration ceiling, and a 256 tool-call hard stop', type: 'Runtime', color: '#7a9e8e' },
+    { name: '76 Multi-Turn tools', desc: 'A broad action surface with approval checkpoints, a 4096-iteration ceiling, and a 256 tool-call hard stop', type: 'Runtime', color: '#7a9e8e' },
     { name: 'Pythonxer strict gate', desc: 'Compile and Ruff checks stop broken Python before execution while downstream flow control stays explicit', type: 'Runtime', color: '#7a9e8e' },
     { name: 'execute_file foreground', desc: 'Visible script windows open only when requested, with compile checks before launch', type: 'Runtime', color: '#7a9e8e' },
     { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
