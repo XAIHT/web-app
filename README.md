@@ -4,46 +4,91 @@
 
 <h1 align="center">Tlamatini</h1>
 
-<h3 align="center">A local-first AI developer assistant that goes beyond chat.</h3>
+<h3 align="center">She doesn't chat. She <em>does</em>.</h3>
 
 <p align="center">
-Run it on your machine with <a href="https://ollama.com/">Ollama</a>. Your code never leaves your box.<br/>
-Hybrid RAG over your codebase · 76-tool multi-turn orchestration · 69 visual workflow agents · multi-agent delegation to Claude Code, Cursor, Codex, Gemini CLI
+  <em>"One who knows" — in Nahuatl.</em><br/>
+  A local-first AI developer assistant that turns your laptop into a workshop where 74 agents collaborate to actually <strong>get things done</strong>.
 </p>
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=4MyRXBahHuU&t=41s"><strong>▶️ Watch the one-minute demo</strong></a> &nbsp;·&nbsp;
   <a href="https://xaiht.org"><strong>🌐 Website</strong></a> &nbsp;·&nbsp;
-  <a href="#13-demo-videos"><strong>🎬 More demos</strong></a>
+  <a href="#13-demo-videos"><strong>🎬 More demos</strong></a> &nbsp;·&nbsp;
+  <a href="#-quickstart-in-5-minutes"><strong>⚡ Quickstart</strong></a>
 </p>
 
+---
+
+### 🌟 What can you do with her? A few examples in plain English:
+
+> *"Read this whole codebase, find every endpoint that touches the user table, and write me a security report."*  
+> *"Open Chrome, log into our staging dashboard, screenshot the analytics page, email it to the team."*  
+> *"Build the STM32 firmware, flash it to the connected board, and watch the serial output for errors."*  
+> *"Spin up Claude Code, give it the refactor task, then hand the output to Cursor for testing."*  
+> *"Design a flow that runs every morning, scrapes our competitors' pricing, and posts the diff to Slack."*
+
+She can do all of that. Locally. With your own model. While your code stays on your machine.
+
+---
+
 <p align="center">
-  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.12.0"><img src="https://img.shields.io/badge/VERSION-v1.12.0-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.12.0" /></a>
+  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.15.0"><img src="https://img.shields.io/badge/VERSION-v1.15.0-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.15.0" /></a>
   <a href="https://www.python.org/downloads/release/python-31210/"><img src="https://img.shields.io/badge/PYTHON-3.12.10-3776AB?style=for-the-badge&labelColor=2D2D2D&logo=python&logoColor=white" alt="Python 3.12.10" /></a>
   <a href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/DJANGO-5.2.4-092E20?style=for-the-badge&labelColor=2D2D2D&logo=django&logoColor=white" alt="Django 5.2.4" /></a>
   <a href="#7-building-a-frozen-distribution"><img src="https://img.shields.io/badge/PLATFORM-WIN%2010%20%7C%2011-0078D6?style=for-the-badge&labelColor=2D2D2D&logo=windows&logoColor=white" alt="Platform Windows 10 | 11" /></a>
-  <a href="#95-agent-catalog-the-69-types-by-family"><img src="https://img.shields.io/badge/AGENTS-69-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="69 Agents" /></a>
-  <a href="#35-tutorial-the-multi-turn-toggle"><img src="https://img.shields.io/badge/TOOLS-75-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="75 Multi-Turn Tools" /></a>
+  <a href="#95-agent-catalog-the-72-types-by-family"><img src="https://img.shields.io/badge/AGENTS-72-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="72 Agents" /></a>
+  <a href="#35-tutorial-the-multi-turn-toggle"><img src="https://img.shields.io/badge/TOOLS-79-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="79 Multi-Turn Tools" /></a>
   <a href="#5-acpx--external-coding-agent-clis-as-tools"><img src="https://img.shields.io/badge/ACPX-12%20TOOLS-FF8C00?style=for-the-badge&labelColor=2D2D2D" alt="ACPX 12 Tools" /></a>
-  <a href="#312-the-acpx-skills-menu--browse-configure-diagnostics-reload"><img src="https://img.shields.io/badge/SKILLS-24-DB2777?style=for-the-badge&labelColor=2D2D2D" alt="24 Skills" /></a>
+  <a href="#312-the-acpx-skills-menu--browse-configure-diagnostics-reload"><img src="https://img.shields.io/badge/SKILLS-27-DB2777?style=for-the-badge&labelColor=2D2D2D" alt="27 Skills" /></a>
   <a href="#10-embedding-memory-pre-flight-guard-gpu-hosts"><img src="https://img.shields.io/badge/RAG-FAISS%20%2B%20BM25-009688?style=for-the-badge&labelColor=2D2D2D" alt="Hybrid RAG" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-GPLV3-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="License GPLv3" /></a>
 </p>
 
-### What it gives you that a plain chatbox doesn't
+### 🚀 What it gives you that a plain chatbox doesn't
 
-- **Real RAG over your code** — FAISS + BM25 hybrid retrieval with context budgeting. The model sees the *right* code, not random chunks.
-- **Multi-Turn mode** — the LLM becomes an operator: shell, Python, APIs, browser automation, screenshots, keyboard/mouse — all chained in one conversation.
-- **ACPX** — delegate sub-tasks to Claude Code, Cursor, Codex, Gemini CLI, Qwen, and relay output between them.
-- **Visual workflow designer** — drag and drop 69 agent types, wire them together, run flows unattended.
-- **Self-aware** — Tlamatini carries a knowledge map of her own architecture. `--self-modify` builds ship her source so she can inspect and modify herself.
-- **Local-first** — everything runs on your machine with [Ollama](https://ollama.com/). Cloud is opt-in, never default. Your code never leaves the box.
+| | |
+|---|---|
+| 🧠 **Real RAG over your code** | FAISS + BM25 hybrid retrieval with context budgeting. The model sees the *right* code, not random chunks. |
+| 🛠️ **Multi-Turn mode** | The LLM becomes an **operator**: shell, Python, APIs, browser automation, screenshots, keyboard/mouse — all chained in one conversation. |
+| 🤝 **ACPX** | Delegate sub-tasks to Claude Code, Cursor, Codex, Gemini CLI, Qwen — and relay output between them. One conductor, an orchestra of agents. |
+| 🎨 **Visual workflow designer** | Drag and drop 74 agent types, wire them together, run flows unattended. No code required to compose a pipeline. |
+| 🪞 **Self-aware** | Tlamatini carries a knowledge map of her own architecture. `--self-modify` builds ship her source so she can inspect and modify **herself**. |
+| 🔒 **Local-first** | Everything runs on your machine with [Ollama](https://ollama.com/). Cloud is opt-in, never default. Your code never leaves the box. |
 
-> **Latest — v1.12.0 (2026-05-30): Ask Execs, a human in the loop before every action.** The new **Ask Execs** toolbar toggle makes Multi-Turn pause before each state-changing Tool, MCP, or wrapped agent and block on a browser **Proceed / Deny** dialog — failing safe with a red `Execution interrupted` banner when you refuse a step. See [§3.8](#38-tutorial-the-ask-execs-toggle).
+### 💡 The thesis behind Tlamatini
+
+> A 20B-parameter local LLM, given the right tools, the right agents, and skills fine-tuned to your operating procedures, **outperforms a 200B cloud model with no tools — almost every time.**
+>
+> Parameter count isn't the bottleneck. **The toolbelt is.** Tlamatini is the toolbelt.
+
+### ⚡ Quickstart in 5 minutes
+
+```bash
+git clone https://github.com/XAIHT/Tlamatini.git
+cd Tlamatini && pip install -r requirements.txt
+python Tlamatini/manage.py migrate
+python Tlamatini/manage.py runserver --noreload
+# Open http://127.0.0.1:8000 and say hi
+```
+
+Full quickstart (with Ollama setup): [§2 below](#2-quickstart-source-mode).
+
+---
+
+<details>
+<summary><strong>📦 What's new in v1.15.0 (2026-06-04) — click to expand</strong></summary>
+
+> **VideoPlayer (74th agent type) — on-screen video PLAYBACK with audio.** **VideoPlayer** plays a video file (`.mp4`/`.mov`/`.mkv`/`.avi`/`.webm`) **with sound** on a chosen **display**, the on-screen sibling of AudioPlayer (speakers). It decodes + plays audio via **`ffpyplayer`** — whose pip wheel **bundles ffmpeg + SDL** so it ships entirely through `requirements.txt` and PyInstaller's `--collect-all` (no external ffmpeg, no runtime download) — and draws the window with the already-bundled **OpenCV**; if ffpyplayer is ever unavailable it degrades to silent OpenCV video. Knobs: `display_index` (which monitor), `volume_percent`, **`time_played`** (0 = whole video once; N>0 = exactly N seconds, TRUNCATING a longer file or LOOPING a shorter one with a final partial segment), `window_width`/`window_height`, `fullscreen`, and `keep_aspect` (letterbox vs stretch). Observational/output, so it stays out of the Exec Report; ships on both the canvas and as the wrapped Multi-Turn tool `chat_agent_videoplayer`, and emits an `INI_SECTION_VIDEOPLAYER` block (full played path + time played) for Parametrizer. The same **v1.15.0** release also added **AudioPlayer** — audio PLAYBACK completing the media-I/O family.
+>
+> **Also in v1.15.0 (2026-06-04): AudioPlayer (73rd agent type) — audio PLAYBACK completes the media-I/O family.** **AudioPlayer** plays an audio file through a system **output device (speakers / audio out)** via `soundfile` + `sounddevice` — the playback counterpart of **Recorder** (microphone-IN): together with **Shoter** (screen) and **Camcorder** (camera) they now cover screen / camera / microphone-in / speakers-out. It plays to the default output by default (or a chosen `device_index`/`device_name`), applies a software `volume_percent`, and honours **`time_played`** — 0 plays the whole file once, a positive value plays exactly that long, TRUNCATING a longer file or LOOPING a shorter one (with a streaming callback so a huge duration over a tiny file never allocates a giant buffer). Sample rate is read from the file by default (`sample_rate: 0`, correct pitch). Observational/output (it changes no persistent state), so it stays out of the Exec Report; ships on both the canvas and as the wrapped Multi-Turn tool `chat_agent_audioplayer`, and emits an `INI_SECTION_AUDIOPLAYER` block (full played path + time played) for Parametrizer. The previous release (**v1.14.0**) added the observational capture pair **Camcorder** (webcam) and **Recorder** (microphone).
+
+</details>
 
 <p align="center">
   <a href="BookOfTlamatini.md"><strong>📖 Long-form docs</strong></a> &nbsp;·&nbsp;
-  <a href="VERSIONING.md"><strong>🏷️ Versioning</strong></a>
+  <a href="VERSIONING.md"><strong>🏷️ Versioning</strong></a> &nbsp;·&nbsp;
+  <a href="#14-contributing--license"><strong>🤝 Contributing</strong></a>
 </p>
 
 ---
@@ -80,6 +125,7 @@ Hybrid RAG over your codebase · 76-tool multi-turn orchestration · 69 visual w
   - [3.15. Tutorial: run Kali Linux tools from chat (`chat_agent_kalier`)](#315-tutorial-run-kali-linux-tools-from-chat-chat_agent_kalier)
   - [3.16. Tutorial: build and flash STM32 firmware from chat (`chat_agent_stm32er`)](#316-tutorial-build-and-flash-stm32-firmware-from-chat-chat_agent_stm32er)
   - [3.17. Tutorial: build and upload ESP32 firmware from chat (`chat_agent_esp32er`)](#317-tutorial-build-and-upload-esp32-firmware-from-chat-chat_agent_esp32er)
+  - [3.18. Tutorial: build and upload Arduino firmware from chat (`chat_agent_arduiner`)](#318-tutorial-build-and-upload-arduino-firmware-from-chat-chat_agent_arduiner)
 - [4. Visual Workflow Designer (`/agentic_control_panel/`)](#4-visual-workflow-designer-agentic_control_panel)
   - [4.1. Canvas anatomy](#41-canvas-anatomy)
   - [4.2. Tutorial: your first flow (3 agents)](#42-tutorial-your-first-flow-3-agents)
@@ -126,7 +172,7 @@ Hybrid RAG over your codebase · 76-tool multi-turn orchestration · 69 visual w
   - [9.2. The five layers](#92-the-five-layers)
   - [9.3. Multi-Turn execution pipeline](#93-multi-turn-execution-pipeline)
   - [9.4. Agent contracts and the Flow Compiler](#94-agent-contracts-and-the-flow-compiler)
-  - [9.5. Agent catalog (the 69 types, by family)](#95-agent-catalog-the-69-types-by-family)
+  - [9.5. Agent catalog (the 74 types, by family)](#95-agent-catalog-the-74-types-by-family)
   - [9.6. Self-Knowledge & Self-Modification](#96-self-knowledge--self-modification)
 - [10. Embedding-Memory Pre-Flight Guard (GPU hosts)](#10-embedding-memory-pre-flight-guard-gpu-hosts)
   - [10.1. Why this exists](#101-why-this-exists)
@@ -166,7 +212,7 @@ Hybrid RAG over your codebase · 76-tool multi-turn orchestration · 69 visual w
 
 ### 1.1. What Tlamatini is
 
-**Tlamatini** (Nahuatl for *"one who knows"*) is a Django/Channels app you run on your own machine. It packages a hybrid RAG pipeline, a Multi-Turn tool-calling LLM loop, an ACPX runtime that spawns external coding-agent CLIs as child processes, an **Unreal MCP** client that drives Unreal Engine 5 from chat or canvas, and a drag-and-drop workflow designer with 69 agent types — into one local install. Backends: **Ollama** (local), **Anthropic Claude** (cloud), **Qwen vision** (Ollama).
+**Tlamatini** (Nahuatl for *"one who knows"*) is a Django/Channels app you run on your own machine. It packages a hybrid RAG pipeline, a Multi-Turn tool-calling LLM loop, an ACPX runtime that spawns external coding-agent CLIs as child processes, an **Unreal MCP** client that drives Unreal Engine 5 from chat or canvas, and a drag-and-drop workflow designer with 74 agent types — into one local install. Backends: **Ollama** (local), **Anthropic Claude** (cloud), **Qwen vision** (Ollama).
 
 License: **GPL-3.0** · Repo: <https://github.com/XAIHT/Tlamatini.git> · Platform tested: Windows 11 (cross-platform for source mode).
 
@@ -371,7 +417,7 @@ Tlamatini classifies the prompt with a small LLM call ("does this need the web?"
 
 This is the big one. Multi-Turn turns Tlamatini from *answerer* into **operator**:
 
-- The planner picks the relevant subset of Tlamatini's **75 Multi-Turn tools** — 20 core Python tools (`execute_command`, `agent_starter`, `googler`, the image-analysis pair, the `chat_agent_run_*` lifecycle helpers, …), 43 wrapped chat-agent tools, and 12 ACPX/Skill tools — binding at most `max_selected_tools` per request (default cap: **20**).
+- The planner picks the relevant subset of Tlamatini's **79 Multi-Turn tools** — 20 core Python tools (`execute_command`, `agent_starter`, `googler`, the image-analysis pair, the `chat_agent_run_*` lifecycle helpers, …), 47 wrapped chat-agent tools, and 12 ACPX/Skill tools — binding at most `max_selected_tools` per request (default cap: **20**).
 - The unified-agent loop runs **up to 4096 iterations** (the `unified_agent_max_iterations` default) — call tool, see result, decide next, chain.
 - Wrapped sub-agents run in headless background runtimes (no console pop-ups).
 
@@ -598,13 +644,13 @@ Both directories must exist on day one (the swap-in opens them with `os.makedirs
 
 ### 3.12. The **ACPX-Skills** menu — Browse, Configure, Diagnostics, Reload
 
-Tlamatini ships with **24 skills** — markdown SKILL.md packages under `agent/skills_pkg/` that the LLM can invoke through `invoke_skill('<name>', '{...args...}')`. They cover everything from the canonical `acp-router` (pick the right external CLI for an intent) and `summarize` (compress text faithfully) to `setup-new-acpx-key`, `skill-creator`, `code-review` (senior-engineer git-diff review with an APPROVE/REQUEST_CHANGES verdict), `security-audit` (multi-scanner SAST/secret/dependency sweep) and `kali-pentest` (an authorized Kali Linux assessment runbook that drives the Kalier agent / MCP-Kali-Server), the `tlamatini_*` audit/lint/refactor helpers, and integration stubs for GitHub / Notion / Slack / Gmail / Jira / Todoist / Trello / Weather.
+Tlamatini ships with **27 skills** — markdown SKILL.md packages under `agent/skills_pkg/` that the LLM can invoke through `invoke_skill('<name>', '{...args...}')`. They cover everything from the canonical `acp-router` (pick the right external CLI for an intent) and `summarize` (compress text faithfully) to `setup-new-acpx-key`, `skill-creator`, `flow-making` (turn a plain-language objective into a canvas-loadable `.flw` by driving the FlowCreator engine — supersedes the legacy `tlamatini-flow-from-objective`), `code-review` (senior-engineer git-diff review with an APPROVE/REQUEST_CHANGES verdict), `security-audit` (multi-scanner SAST/secret/dependency sweep) and `kali-pentest` (an authorized Kali Linux assessment runbook that drives the Kalier agent / MCP-Kali-Server), the `tlamatini_*` audit/lint/refactor helpers, and integration stubs for GitHub / Notion / Slack / Gmail / Jira / Todoist / Trello / Weather.
 
 Before 2026-05-17 the only way to interact with them was through the LLM (`list_skills` to enumerate, `invoke_skill` to run). The **ACPX-Skills** navbar dropdown — added next to **Agents** and **Config** in the chat toolbar — gives you an operator-grade admin surface that does NOT require the LLM. Four entries:
 
 #### `ACPX-Skills -> Browse Skills`
 
-Opens a two-pane modal: a left-side list of all 24 skills (with a green/red dot for enabled / disabled and a runtime tag) and a right-side detail pane that shows the selected skill's full identity — description, runtime (in-process / acpx), `acpx_agent` if any, budgets (max_iterations · max_seconds · max_tokens), trigger keywords, `requires_tools` and `requires_mcps`, inputs and outputs (with required-field markers), and the full markdown body. A search box at the top filters by name or description as you type. Pure read — nothing is written back.
+Opens a two-pane modal: a left-side list of all 27 skills (with a green/red dot for enabled / disabled and a runtime tag) and a right-side detail pane that shows the selected skill's full identity — description, runtime (in-process / acpx), `acpx_agent` if any, budgets (max_iterations · max_seconds · max_tokens), trigger keywords, `requires_tools` and `requires_mcps`, inputs and outputs (with required-field markers), and the full markdown body. A search box at the top filters by name or description as you type. Pure read — nothing is written back.
 
 Backed by `GET /agent/skills/` (list payload) and `GET /agent/skills/<name>/` (deep detail). Use it when you want to know what a skill *actually does* before you ask the LLM to call it, or when you've just authored a new SKILL.md and want to confirm it parsed correctly.
 
@@ -721,6 +767,24 @@ Tick **only the Multi-Turn** checkbox (ESP32er is a normal Multi-Turn tool — n
 Tlamatini calls **`chat_agent_esp32er`** — bootstrapping PlatformIO if needed, running the safety preflight, then driving `create_project` → `write_source` → `build` → `upload` → `monitor`. The `action` field selects the capability: environment/meta (`bootstrap`, `validate`, `system_info`, `boards`); project lifecycle (`create_project`, `write_source`, `read_source`, `list_sources`, `clean`); build & flash (`build`, `upload`, `build_and_upload`, `list_artifacts`); serial HIL (`device_list`, `monitor`, `monitor_session`); packages & QA (`pkg_install`, `pkg_list`, `pkg_update`, `check`, `test`). The tool captures an `INI_SECTION_ESP32ER` block for the Exec Report and Parametrizer. **Headless step-debug (`pio debug`) is a planned fast-follow** (it needs JTAG — an external probe or the built-in USB-JTAG on ESP32-S3/C3).
 
 On the canvas the same capability is the visual **ESP32er** node: chain `Starter → ESP32er (create_project) → Parametrizer → ESP32er (write_source) → ESP32er (build) → ESP32er (upload) → ESP32er (monitor) → Ender` to build a fully unattended firmware pipeline. The agent is implemented self-contained with the Python stdlib (`subprocess` + `urllib`), with automated tests in `agent/test_esp32er_agent.py`.
+
+### 3.18. Tutorial: build and upload Arduino firmware from chat (`chat_agent_arduiner`)
+
+**Arduiner** bridges Tlamatini to Arduino firmware development through the **[Arduino CLI](https://arduino.github.io/arduino-cli/)** — Arduino's official command-line tool for cores, libraries, compile, upload and serial monitor. It is the third microcontroller-firmware agent and the direct-CLI sibling of ESP32er: like PlatformIO's `pio` (and unlike STM32er's MCP server), `arduino-cli` is itself a complete CLI, so Arduiner invokes `arduino-cli` subcommands **directly** (no MCP server). It is **state-changing** (it compiles firmware and writes to hardware), so it appears in the Exec Report. The visual canvas counterpart is the **Arduiner** node (see §4 and §9.5).
+
+> **The microcontroller is selected by `fqbn`.** The board's Fully Qualified Board Name — e.g. `arduino:avr:uno`, `arduino:avr:mega2560`, `arduino:samd:mkr1000`, `esp32:esp32:esp32` — chooses the target chip; `port` + `baud` set the upload/monitor link.
+
+> **Zero-config auto-bootstrap — you only install the board USB driver + Tlamatini.** With no on-disk `arduino_cli_executable` configured (the default), Arduiner **downloads the `arduino-cli` binary itself** — the platform release archive from `downloads.arduino.cc`, unzipped into a per-user cache (`%LOCALAPPDATA%/Tlamatini/arduino-cli`) — then runs `config init` + `core update-index`, all on first use. (arduino-cli is a Go binary, so the bootstrap is a **binary download**, not a pip install.) **Auto-core-install:** unlike PlatformIO, arduino-cli does *not* auto-install platforms on compile, so before a build/upload Arduiner derives the FQBN's platform and, when it is missing, runs `core update-index` + `core install` (honoring `additional_urls` for third-party ESP32 / STM32 / RP2040 cores). A `bootstrap` action triggers the binary download explicitly; `auto_bootstrap` and `auto_core_install` (both default `true`) do it lazily.
+
+> ⚠️ **Safety preflight.** Before it builds or uploads anything, Arduiner runs a `validate` preflight: `arduino-cli` must be resolvable, a sketch (`.ino`) and an FQBN must exist, and for an **upload/monitor** a serial port must actually be connected (probed via `arduino-cli board list`). If the environment is wrong, Arduiner **refuses** rather than running a build/upload that cannot succeed. A malformed FQBN is a *warning*, not a refusal (arduino-cli is multi-vendor — no shared-linker-script risk like STM32 has).
+
+Tick **only the Multi-Turn** checkbox (Arduiner is a normal Multi-Turn tool — not behind the ACPX/Skill surface). Then ask, for example:
+
+> *"Create a blinky sketch for an Arduino Uno at C:/ino/blink, build it, and upload it to the connected board, then show me the serial output."*
+
+Tlamatini calls **`chat_agent_arduiner`** — bootstrapping the CLI and installing the FQBN's core if needed, running the safety preflight, then driving `create_project` → `write_source` → `build` → `upload` → `monitor`. The `action` field selects the capability: environment/meta (`bootstrap`, `validate`, `system_info`, `boards`, `device_list`); cores & libraries (`core_update_index`, `core_search`, `core_list`, `core_install`, `core_uninstall`, `lib_update_index`, `lib_search`, `lib_list`, `lib_install`); project lifecycle (`create_project`, `write_source`, `read_source`, `list_sources`); build & flash (`build`, `upload`, `build_and_upload`, `clean`, `list_artifacts`); serial HIL (`monitor`, `monitor_session`). `create_project` scaffolds from the bundled **ArduinoTemplateProject** (the Arduino analog of STM32er's STM32 Template Project and ESP32er's `pio` scaffold) and stamps the FQBN/port into the template's `sketch.yaml` profile. The tool captures an `INI_SECTION_ARDUINER` block for the Exec Report and Parametrizer.
+
+On the canvas the same capability is the visual **Arduiner** node: chain `Starter → Arduiner (create_project) → Parametrizer → Arduiner (write_source) → Arduiner (build) → Arduiner (upload) → Arduiner (monitor) → Ender` to build a fully unattended firmware pipeline. The agent is implemented self-contained with the Python stdlib (`subprocess` + `urllib` + `zipfile`/`tarfile`), with automated tests in `agent/test_arduiner_agent.py`. (Note: the first core install + compile downloads the board toolchain, so it is slow once.)
 
 ---
 
@@ -867,7 +931,7 @@ multi-line body content (becomes 'response_body')
 >>>END_SECTION_<AGENT_TYPE>
 ```
 
-25 source agents support this format: Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen/Cipher/DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, Mouser, **Windower**, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**.
+29 source agents support this format: Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen/Cipher/DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, **Windower**, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**.
 
 Canonical example:
 
@@ -949,7 +1013,7 @@ All return JSON envelopes. Failures: `{"ok": false, "reason": "...", "code": "..
 | `invoke_skill(skill_name, args_json)` | Run a `SKILL.md` package inside `SkillHarness`. |
 | `list_skills(filter_keywords)` | List registered skills. |
 
-24 seed skills live under `agent/skills_pkg/` (acp-router, summarize, setup-new-acpx-key, skill-creator, code-review, security-audit, kali-pentest, 8× tlamatini-* maintenance helpers, plus OpenClaw-format ports for github / gmail / slack / jira / notion / todoist / trello / weather).
+27 seed skills live under `agent/skills_pkg/` (acp-router, summarize, setup-new-acpx-key, skill-creator, flow-making, code-review, security-audit, kali-pentest, the create-new-agent / create-new-mcp authoring runbooks, hello-world, 8× tlamatini-* maintenance helpers incl. flow-from-objective → which now delegates to flow-making, plus OpenClaw-format ports for github / gmail / slack / jira / notion / todoist / trello / weather).
 
 ### 5.4. Tutorial: spawn-and-go (single agent)
 
@@ -1223,7 +1287,7 @@ pkg.zip          Uninstaller.exe        dist/Tlamatini_Release/
 python build.py
 ```
 
-Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md`, the self-knowledge map `Tlamatini.md`, and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 69 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
+Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md`, the self-knowledge map `Tlamatini.md`, and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 74 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
 
 `build.py` is strict: missing `README.md`, missing `jd-cli/`, or missing `jd-cli.bat` causes a non-zero exit.
 
@@ -1359,6 +1423,7 @@ Key knobs: `chunk_size` (3000), `chunk_overlap` (800), `k_vector` / `k_bm25` (10
 - `kali_server_url` (`http://127.0.0.1:5000`) — the MCP-Kali-Server address auto-injected into `chat_agent_kalier` (see §3.15).
 - `stm32_mcp_server_script` (now `""` — empty triggers zero-config auto-bootstrap), `stm32_mcp_repo_url`, `stm32_mcp_install_dir` — the STM32 Template Project MCP for STM32er (see §3.16). Leave `stm32_mcp_server_script` empty and STM32er downloads, installs, and validates the server itself on first use.
 - `pio_executable` (now `""` — empty triggers zero-config auto-bootstrap), `pio_core_dir` — PlatformIO Core for ESP32er (see §3.17). Leave `pio_executable` empty and ESP32er downloads, installs, and validates PlatformIO itself on first use.
+- `arduino_cli_executable` (now `""` — empty triggers zero-config auto-bootstrap), `arduino_cli_install_dir` — the Arduino CLI for Arduiner (see §3.18). Leave `arduino_cli_executable` empty and Arduiner downloads the `arduino-cli` binary, initializes it, and (when `auto_core_install` is on) installs the FQBN's core itself on first use.
 
 You no longer need to hand-edit all of those values. On `/agent/`, open `Config -> Models` or `Config -> URLs` to edit the most common runtime knobs in-place. The browser validates model strings / URLs / hosts / ports, the backend validates again, and `config_loader.save_config_updates()` atomically merges only the changed keys into the active `config.json`. The same loader path is used in source mode and frozen builds, so the chat UI and the executable stop drifting onto different config copies.
 
@@ -1390,7 +1455,7 @@ LLM Backends: Ollama | Claude API | Qwen vision     +     ACPX Runtime → exter
 | 2. Runtime MCP services | System-Metrics (WebSocket) + Files-Search (gRPC) daemons. | `agent/mcp_*` |
 | 3. Context fetcher chains | LCEL sidecars that inject system / files context. | `agent/chain_*_lcel.py` |
 | 4. Main answer chains | Basic / History-aware / Unified. `factory.py` monkey-patches `invoke()`. | `agent/rag/chains/` |
-| 5. Unified-agent tools | **74** synchronous `@tool` functions (20 core Python + 42 wrapped chat-agent + 12 ACPX/Skill). Active only in Multi-Turn. | `agent/tools.py` + `agent/chat_agent_registry.py` + `agent/acpx/` |
+| 5. Unified-agent tools | **79** synchronous `@tool` functions (20 core Python + 47 wrapped chat-agent + 12 ACPX/Skill). Active only in Multi-Turn. | `agent/tools.py` + `agent/chat_agent_registry.py` + `agent/acpx/` |
 
 ### 9.3. Multi-Turn execution pipeline
 
@@ -1439,14 +1504,14 @@ The compiler does a few quiet but important safety jobs:
 
 This is the Pareto improvement: a small shared backend layer makes both major features safer. Chat-created flows and ACP-created flows now speak the same format before they touch the runtime.
 
-### 9.5. Agent catalog (the 69 types, by family)
+### 9.5. Agent catalog (the 74 types, by family)
 
 | Family | Members |
 |---|---|
 | **Control** | Starter, Ender, Stopper, Cleaner, Sleeper, Croner |
 | **Routing** | Raiser, Forker, Asker, Counter |
 | **Logic gates** | OR, AND, Barrier |
-| **Action** | Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, **Playwrighter**, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Mouser, Keyboarder, **Windower**, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er** |
+| **Action** | Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, **Playwrighter**, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, Keyboarder, **Windower**, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **Arduiner** |
 | **Cryptography** | Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber post-quantum) |
 | **Utility** | Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager |
 | **Terminal / monitoring** | Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor |
@@ -1755,22 +1820,22 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 ### 13.2. Cutting a release
 
 ```powershell
-git tag -a v1.12.0 -m "Release 1.12.0: <one-line summary>"
-git push origin v1.12.0
+git tag -a v1.15.0 -m "Release 1.15.0: <one-line summary>"
+git push origin v1.15.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.12.0/`.
+All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.15.0/`.
 
 ### 13.3. Where you can see the running version
 
 | Surface | Example |
 |---|---|
-| About dialog | `Tlamatini v1.12.0` |
-| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.12.0` |
-| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.12.0","commit":"abc1234", …}` |
+| About dialog | `Tlamatini v1.15.0` |
+| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.15.0` |
+| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.15.0","commit":"abc1234", …}` |
 | Win32 properties on `Tlamatini.exe` / `Installer.exe` / `Uninstaller.exe` | Right-click → Properties → Details → ProductVersion |
 
 All four are computed from the same `Tlamatini/agent/_version.py` that `build.py` writes (gitignored, regenerated on every build).
@@ -1794,8 +1859,8 @@ No `.devN`, no `+gSHA`, no `.dirty` ever appears in the version string — those
 | # | Source | Use case |
 |---|---|---|
 | 1 (highest) | `python build.py --version 2.0.0-rc.1` | Local RC build before tagging |
-| 2 | `$env:TLAMATINI_VERSION = "1.12.0"; python build.py` | CI pipelines |
-| 3 | `git tag -a v1.12.0 …` (then build) | The normal release path |
+| 2 | `$env:TLAMATINI_VERSION = "1.15.0"; python build.py` | CI pipelines |
+| 3 | `git tag -a v1.15.0 …` (then build) | The normal release path |
 | 4 (lowest) | _(none — sentinel `0.0.0+unknown`)_ | Running from a download zip with no git |
 
 `build.py` exports `$env:TLAMATINI_VERSION` after resolving, so `build_installer.py` and `build_uninstaller.py` in the same shell see the same value — the three artefacts cannot disagree.

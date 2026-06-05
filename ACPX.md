@@ -5,6 +5,8 @@
 **Status:** Implementation landed locally, NOT committed. The user reviews and decides whether to commit.
 **Companion docs:** `CLAUDE.md`, `docs/claude/architecture.md`, `docs/claude/agents.md`, `docs/claude/multi-turn.md`, `TlamatiniVsOpenClaw.md`.
 
+> **Current-state banner (Tlamatini 1.15.0, 2026-06-04).** This file is the original ACPX/Skills design walkthrough; its per-section numbers are an intentional **historical Phase-1 snapshot** (5 ACPX `@tool`s, 20 seed skills, 14 agent_ids, 57 visual agents). The system has since grown — the authoritative current counts are: **74 visual agent types**, **81 Multi-Turn tools** (20 base + 49 wrapped `chat_agent_*` + 12 ACPX/Skill), **27 skills**, and a **12-tool LLM-facing ACPX/Skill surface** (`acp_doctor`, `list_acp_agents`, `acp_spawn`, `acp_send`, `acp_send_and_wait`, `acp_kill`, `acp_transcript`, `acp_session_status`, `acp_list_sessions`, `acp_relay`, `list_skills`, `invoke_skill`). The `DEFAULT_ACP_AGENTS` agent_id registry remains **14** entries (§3.5). For the live surface read `CLAUDE.md` and `docs/claude/acpx.md`, not the historical numbers below.
+
 ---
 
 ## 0. Read this first
@@ -345,6 +347,8 @@ Every harness loop tick calls `budget.tick_iteration()` which checks both iterat
 ---
 
 ## 5. The catalog (20 seed skills)
+
+> **Historical revision snapshot.** The numbers in this section (and the verification log below) reflect the original ACPX port. The catalog has since grown — **27 skills as of 2026-06-01** (added: `code-review`, `security-audit`, `kali-pentest`, `create-new-agent`, `create-new-mcp`, `tlamatini-flow-from-objective`, **`flow-making`**). See `CLAUDE.md` / `README.md` §3.12 for the current list; run `python agent/skills_pkg/_meta/lint.py` for the live count.
 
 | # | Skill name | Runtime | Purpose |
 |---|---|---|---|

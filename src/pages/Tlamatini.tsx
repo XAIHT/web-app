@@ -51,11 +51,11 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.12.0
+          Local-First AI Developer Assistant v1.15.0
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          76-tool, 4096-iteration Multi-Turn orchestration with Ask Execs approval gates, Windows 10|11 installed-app registration, strict Pythonxer execution, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 69-agent workflow designer with ESP32er, STM32er, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, Reviewer, and Analyzer.
+          79-tool, 4096-iteration Multi-Turn orchestration with Ask Execs approval gates, Windows 10|11 installed-app registration, strict Pythonxer execution, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 74-agent workflow designer with Arduiner, ESP32er, STM32er, the webcam, microphone, speaker, and on-screen video media family, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, Reviewer, and Analyzer.
         </p>
       </div>
     </section>
@@ -101,11 +101,11 @@ function TlamatiniOverview() {
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." She is a
             local app you run on your own machine, combining code-aware retrieval,
-            her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, STM32 and ESP32 firmware automation, commit-aware code review, security analysis, and a visual automation canvas.
+            her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, STM32, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.12.0 build adds ESP32er, so she can scaffold, build, upload, and monitor ESP32 firmware through PlatformIO Core with zero-config bootstrap and serial-port preflight.
-            She now carries 69 agents, 76 Multi-Turn tools, 24 skills, STM32er, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.
+            The v1.15.0 build completes a media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — and adds Arduiner, so she can scaffold, build, upload, and monitor Arduino, AVR, and SAMD firmware through the zero-config Arduino CLI alongside STM32er and ESP32er.
+            She now carries 74 agents, 79 Multi-Turn tools, 27 skills, three microcontroller bridges, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -171,8 +171,18 @@ function TlamatiniFeatures() {
       image: '/images/feature-agents.jpg',
     },
     {
+      title: 'Arduiner Arduino CLI Bridge',
+      description: 'Arduiner is the third microcontroller agent: it scaffolds, builds, uploads, and monitors Arduino, AVR, and SAMD firmware through the zero-config Arduino CLI, picks the board by FQBN, auto-installs the matching core, and runs a fail-safe preflight before touching hardware.',
+      image: '/images/feature-agents.jpg',
+    },
+    {
+      title: 'Webcam, Mic, and Media Playback',
+      description: 'A full media-I/O family rounds out the senses: Camcorder captures the webcam, Recorder captures the microphone, AudioPlayer plays sound through the speakers, and VideoPlayer plays video with audio on any display — the on-screen and audible companions to screen-capturing Shoter.',
+      image: '/images/feature-chat.jpg',
+    },
+    {
       title: 'Multi-Turn Chat Operator',
-      description: 'A chat surface with independent toggles for Multi-Turn, Ask Execs, Exec Report, ACPX, and internet context. She can choose from 76 tools, pause for approval, reject broken Python early, and turn successful work into repeatable flows.',
+      description: 'A chat surface with independent toggles for Multi-Turn, Ask Execs, Exec Report, ACPX, and internet context. She can choose from 79 tools, pause for approval, reject broken Python early, and turn successful work into repeatable flows.',
       image: '/images/feature-chat.jpg',
     },
     {
@@ -187,17 +197,17 @@ function TlamatiniFeatures() {
     },
     {
       title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 69 agent types, .flw save/load, live Validate, Start-time compilation, ESP32er PlatformIO flows, STM32er firmware pipelines, Kalier assessment runs, Playwrighter browser flows, Windower desktop-window control, strict Pythonxer paths, 53-command Unrealer flows, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
+      description: 'Drag-and-drop workflow creation with 74 agent types, .flw save/load, live Validate, Start-time compilation, ESP32er PlatformIO flows, STM32er firmware pipelines, Arduiner Arduino-CLI flows, webcam, microphone, speaker, and on-screen video media nodes, Kalier assessment runs, Playwrighter browser flows, Windower desktop-window control, strict Pythonxer paths, 53-command Unrealer flows, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
       image: '/images/feature-workflow.jpg',
     },
     {
       title: 'ACPX External Delegation',
-      description: 'ACPX delegates to external coding-agent CLIs when you choose, while ACPX-Skills gives the operator Browse, Configure, Diagnostics, and Reload controls for 24 SKILL.md packages, including commit-aware code-review, security-audit, and kali-pentest.',
+      description: 'ACPX delegates to external coding-agent CLIs when you choose, while ACPX-Skills gives the operator Browse, Configure, Diagnostics, and Reload controls for 27 SKILL.md packages, including commit-aware code-review, security-audit, and kali-pentest.',
       image: '/images/feature-agents.jpg',
     },
     {
       title: 'Config, DB, and ACPX-Skills Menus',
-      description: 'Validated Models, URLs, Kali, STM32 MCP, and ESP32 PlatformIO settings, native context picking, live SQLite backup / Set DB controls, and skill enablement diagnostics sit together as operator-grade controls.',
+      description: 'Validated Models, URLs, Kali, STM32 MCP, ESP32 PlatformIO, and Arduino CLI settings, native context picking, live SQLite backup / Set DB controls, and skill enablement diagnostics sit together as operator-grade controls.',
       image: '/images/feature-chat.jpg',
     },
   ];
@@ -285,7 +295,7 @@ function TlamatiniInstallation() {
         Installation
       </h2>
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-        Run from source with Python 3.12.10 and Ollama, or ship the frozen Windows build. Installed builds register with Windows 10|11 uninstall mechanisms, while Config, native context picking, DB snapshots, and ESP32er PlatformIO bootstrap stay available inside Tlamatini.
+        Run from source with Python 3.12.10 and Ollama, or ship the frozen Windows build. Installed builds register with Windows 10|11 uninstall mechanisms, while Config, native context picking, DB snapshots, and the zero-config ESP32er PlatformIO and Arduiner Arduino-CLI bootstraps stay available inside Tlamatini.
       </p>
       <div className="space-y-4">
         {steps.map((step, i) => (
@@ -397,6 +407,10 @@ function TlamatiniAgents() {
         { name: 'mover', desc: 'Move or copy files' },
         { name: 'deleter', desc: 'Delete files with exclusions' },
         { name: 'shoter', desc: 'Screenshot capture' },
+        { name: 'camcorder', desc: 'Webcam photo and video capture' },
+        { name: 'recorder', desc: 'Microphone audio capture to WAV' },
+        { name: 'audioplayer', desc: 'Audio playback to speakers' },
+        { name: 'videoplayer', desc: 'On-screen video playback with sound' },
         { name: 'mouser', desc: 'Click, drag, scroll, locate images' },
         { name: 'keyboarder', desc: 'Typing and hotkey chords' },
         { name: 'windower', desc: 'Focus, arrange, resize, and close windows' },
@@ -413,6 +427,7 @@ function TlamatiniAgents() {
         { name: 'unrealer', desc: 'Unreal Engine MCP bridge with 53 commands' },
         { name: 'stm32er', desc: 'Critical-mission STM32F4x firmware bridge' },
         { name: 'esp32er', desc: 'PlatformIO ESP32 firmware bridge' },
+        { name: 'arduiner', desc: 'Arduino CLI firmware bridge (AVR / SAMD)' },
         { name: 'reviewer', desc: 'Commit-state-aware diff review verdict' },
         { name: 'analyzer', desc: 'Static-analysis and security findings gate' },
         { name: 'kalier', desc: 'Configured Kali Linux assessment bridge' },
@@ -473,12 +488,12 @@ function TlamatiniAgents() {
           className="reveal-item font-bold mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          69 Workflow-Agent Types
+          74 Workflow-Agent Types
         </h2>
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
           The catalog spans control, routing, logic, action, cryptography, utility,
-          terminal monitoring, and AI design agents, including ESP32er, STM32er, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini,
-          ACPXer, 53-command Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, strict Pythonxer, FlowCreator, 24 ACPX-Skills packages, Ask Execs approval around state-changing Multi-Turn execution, her self-knowledge map, Windows installed-app polish, and GPU-aware context safeguards around the RAG entry point.
+          terminal monitoring, and AI design agents, including Arduiner, ESP32er, STM32er, the Camcorder, Recorder, AudioPlayer, and VideoPlayer media family, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini,
+          ACPXer, 53-command Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, strict Pythonxer, FlowCreator, 27 ACPX-Skills packages, Ask Execs approval around state-changing Multi-Turn execution, her self-knowledge map, Windows installed-app polish, and GPU-aware context safeguards around the RAG entry point.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (
@@ -540,9 +555,9 @@ function TlamatiniTechStack() {
     { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
     { category: 'RAG', items: ['FAISS', 'BM25', 'Native nested-folder picker', 'Loaded-context priority', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
     { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
-    { category: 'Agent Runtime', items: ['76 Multi-Turn tools', 'Ask Execs approval gate', 'Pythonxer strict gate', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'ESP32er PlatformIO bridge', 'STM32er firmware bridge', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '24 SKILL.md packages'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'ESP32 build / upload / monitor flows', 'STM32F4x build / flash / observe flows', 'Kalier assessment pipelines', 'Playwrighter browser flows', 'Windower window control', 'Commit-aware Reviewer / Analyzer gates', '53-command Unreal MCP', 'Source and frozen modes'] },
-    { category: 'Interfaces', items: ['Windows 10|11 uninstall registration', 'Config Models dialog', 'Config URLs with Kali, STM32 MCP, and ESP32 PlatformIO settings', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
+    { category: 'Agent Runtime', items: ['79 Multi-Turn tools', 'Ask Execs approval gate', 'Pythonxer strict gate', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'ESP32er PlatformIO bridge', 'STM32er firmware bridge', 'Arduiner Arduino-CLI bridge', 'Camcorder / Recorder capture', 'AudioPlayer / VideoPlayer playback', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '27 SKILL.md packages'] },
+    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'ESP32 build / upload / monitor flows', 'STM32F4x build / flash / observe flows', 'Arduino build / upload / monitor flows', 'Webcam / microphone capture nodes', 'Speaker / on-screen video playback nodes', 'Kalier assessment pipelines', 'Playwrighter browser flows', 'Windower window control', 'Commit-aware Reviewer / Analyzer gates', '53-command Unreal MCP', 'Source and frozen modes'] },
+    { category: 'Interfaces', items: ['Windows 10|11 uninstall registration', 'Config Models dialog', 'Config URLs with Kali, STM32 MCP, ESP32 PlatformIO, and Arduino CLI settings', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
   ];
 
   return (

@@ -15,7 +15,7 @@ export default function Footer() {
           Run Tlamatini on Your Own Machine
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Tlamatini v1.12.0 adds ESP32er, a zero-config PlatformIO bridge for ESP32 firmware work, alongside Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, STM32er hardware automation, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 76-tool Multi-Turn orchestration, GPU-aware context loading, 24 skills, and 69 workflow agents.
+          Tlamatini v1.15.0 adds a full media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — plus Arduiner, a zero-config Arduino-CLI firmware bridge that joins STM32er and ESP32er, alongside Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 79-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 74 workflow agents.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a
