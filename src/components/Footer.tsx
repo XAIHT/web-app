@@ -15,7 +15,7 @@ export default function Footer() {
           Run Tlamatini on Your Own Machine
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Tlamatini v1.15.0 adds a full media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — plus Arduiner, a zero-config Arduino-CLI firmware bridge that joins STM32er and ESP32er, alongside Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 79-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 74 workflow agents.
+          Tlamatini v1.17.0 makes installation bullet-proof — the one-click installer carries its own Python 3.12.10, plus Java, Git, and Playwright browsers, so you install only Ollama and the models. It rides on the recent media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — plus Arduiner, ESP32er, and STM32er firmware bridges, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 79-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 74 workflow agents.
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a

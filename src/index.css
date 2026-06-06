@@ -254,7 +254,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  /* Use the viewport width, not 100% of the GSAP-pinned wrapper: when the
+     window is resized while this section is pinned, the wrapper keeps the
+     stale pixel width GSAP measured at pin time, which would push the
+     centered content sideways. 100vw always tracks the current viewport,
+     and the wrapper's overflow:hidden clips any scrollbar-width sliver. */
+  width: 100vw;
+  max-width: 100vw;
   height: 100%;
   display: flex;
   justify-content: center;

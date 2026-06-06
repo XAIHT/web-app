@@ -70,9 +70,9 @@ function OverviewSection() {
             Tlamatini — The AI Agentic Knowledge of a Senior Developer
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.15.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
+            Tlamatini v1.17.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
             with hybrid RAG over your source, a 79-tool, 4096-iteration Multi-Turn loop,
-            Ask Execs approval gates before state-changing tool execution, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages,
+            Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages,
             in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 74 drag-and-drop agent types,
             STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.
           </p>
@@ -98,7 +98,7 @@ function OverviewSection() {
               {[
                 { label: 'Agents', value: '74' },
                 { label: 'Skills', value: '27' },
-                { label: 'Version', value: 'v1.15.0' },
+                { label: 'Version', value: 'v1.17.0' },
                 { label: 'Iterations', value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">

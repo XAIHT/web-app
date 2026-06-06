@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 const PHRASES = [
   'eXtended Artificial Intelligence Humanly Tempered',
   '( XAIHT )',
-  'Tlamatini v1.15.0',
+  'Tlamatini v1.17.0',
   'Local-First AI',
   '53 Unreal MCP Commands',
   'Multi-Turn Operation',
@@ -12,6 +12,7 @@ const PHRASES = [
   '74 Workflow Agents',
   'Ask Execs Approval Gate',
   'Windows 10|11 Installed App',
+  'Bullet-Proof Carried-Python Installer',
   '4096 Iteration Ceiling',
   'Unreal Engine MCP',
   'Zero-Config STM32 MCP',
