@@ -35,7 +35,8 @@
       "Bash(git -C /c/Development/XAIHT/web-app branch -r)",
       "Bash(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force)",
       "Bash(Select-Object Name, PSIsContainer)",
-      "PowerShell(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force | Select-Object Name, @{Name='IsDir';Expression={$_.PSIsContainer}} | Format-Table -AutoSize)"
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force | Select-Object Name, @{Name='IsDir';Expression={$_.PSIsContainer}} | Format-Table -AutoSize)",
+      "Bash(Format-Table -AutoSize)"
     ]
   }
 }
