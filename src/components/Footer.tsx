@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
+import { useT } from '@/i18n/context';
 
 export default function Footer() {
+  const t = useT();
   return (
     <footer style={{ background: '#111', borderTop: '1px solid #222' }}>
       {/* CTA Area */}
@@ -12,10 +14,10 @@ export default function Footer() {
             color: '#f0f0f0',
           }}
         >
-          Run Tlamatini on Your Own Machine
+          {t.footer.ctaTitle}
         </h2>
         <p className="text-[#888] mb-8 max-w-md mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          Tlamatini v1.17.0 makes installation bullet-proof — the one-click installer carries its own Python 3.12.10, plus Java, Git, and Playwright browsers, so you install only Ollama and the models. It rides on the recent media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — plus Arduiner, ESP32er, and STM32er firmware bridges, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 79-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 74 workflow agents.
+          {t.footer.ctaDesc}
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a
@@ -24,10 +26,10 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="xaiht-btn xaiht-btn-filled"
           >
-            View Source
+            {t.footer.viewSource}
           </a>
           <Link to="/tlamatini" className="xaiht-btn xaiht-btn-outline">
-            Documentation
+            {t.footer.documentation}
           </Link>
         </div>
       </div>
@@ -47,10 +49,10 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-sm text-[#888] hover:text-[#f0f0f0] transition-colors"
           >
-            GitHub
+            {t.footer.github}
           </a>
           <Link to="/tlamatini" className="text-sm text-[#888] hover:text-[#f0f0f0] transition-colors">
-            Documentation
+            {t.footer.documentation}
           </Link>
           <a
             href="https://github.com/XAIHT/Tlamatini/issues"
@@ -58,11 +60,11 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-sm text-[#888] hover:text-[#f0f0f0] transition-colors"
           >
-            Report Issue
+            {t.footer.reportIssue}
           </a>
         </div>
         <span className="font-mono text-[11px] text-[#555]">
-          Built with Django Channels + Ollama
+          {t.footer.builtWith}
         </span>
       </div>
     </footer>

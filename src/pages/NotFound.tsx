@@ -1,7 +1,9 @@
 import { Link } from 'react-router';
 import Navigation from '@/components/Navigation';
+import { useT } from '@/i18n/context';
 
 export default function NotFound() {
+  const t = useT();
   return (
     <div className="min-h-screen flex flex-col" style={{ background: '#0a0a0a' }}>
       <Navigation />
@@ -18,10 +20,10 @@ export default function NotFound() {
             404
           </h1>
           <p className="text-[#888] mb-8" style={{ fontSize: '1rem' }}>
-            This XAIHT page is not available.
+            {t.notFound.message}
           </p>
           <Link to="/" className="xaiht-btn xaiht-btn-outline">
-            Back to XAIHT
+            {t.notFound.back}
           </Link>
         </div>
       </div>

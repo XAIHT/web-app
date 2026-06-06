@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AsciiIntro from '@/components/AsciiIntro';
+import { useT } from '@/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,6 +30,8 @@ export default function Home() {
 
 function OverviewSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const o = t.home.overview;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -62,19 +65,15 @@ function OverviewSection() {
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,11fr)_minmax(0,9fr)] gap-12 items-center">
         {/* Left Column */}
         <div className="min-w-0">
-          <span className="section-label reveal-item block mb-4">Overview</span>
+          <span className="section-label reveal-item block mb-4">{o.label}</span>
           <h1
             className="reveal-item font-extrabold mb-6"
             style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.12 }}
           >
-            Tlamatini — The AI Agentic Knowledge of a Senior Developer
+            {o.title}
           </h1>
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            Tlamatini v1.17.0 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant
-            with hybrid RAG over your source, a 79-tool, 4096-iteration Multi-Turn loop,
-            Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages,
-            in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 74 drag-and-drop agent types,
-            STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.
+            {o.desc}
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -83,10 +82,10 @@ function OverviewSection() {
               rel="noopener noreferrer"
               className="xaiht-btn xaiht-btn-outline"
             >
-              View on GitHub
+              {o.viewGithub}
             </a>
             <Link to="/tlamatini" className="xaiht-btn xaiht-btn-filled">
-              Documentation
+              {o.documentation}
             </Link>
           </div>
         </div>
@@ -96,10 +95,10 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: 'Agents', value: '74' },
-                { label: 'Skills', value: '27' },
-                { label: 'Version', value: 'v1.17.0' },
-                { label: 'Iterations', value: '4096' },
+                { label: o.stats.agents, value: '74' },
+                { label: o.stats.skills, value: '27' },
+                { label: o.stats.version, value: 'v1.17.0' },
+                { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div
@@ -129,6 +128,8 @@ function OverviewSection() {
 
 function VisionMissionSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const v = t.home.vision;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -152,43 +153,27 @@ function VisionMissionSection() {
     };
   }, []);
 
-  const cards = [
-    {
-      title: 'Vision',
-      subtitle: 'Human Control, Tunable AI',
-      description:
-        'Tlamatini is built around the idea that developer AI should stay under the user\'s control: local context, explicit toggles, Ask Execs approvals, Windows uninstall registration for installed builds, live model settings, safe database handling, inspectable workflows, ACPX-Skills catalog control, Unreal Engine-aware work, STM32F4x, ESP32, and Arduino firmware paths with preflight checks, webcam, microphone, speaker, and on-screen video capture and playback, strict Python execution gates, opt-in external routes, review and analysis gates, and her own self-knowledge map.',
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Mission',
-      subtitle: 'Make the Assistant a Doer',
-      description:
-        'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, STM32F4x, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, tunable embedding depth, GPU-aware context loading, 79-tool / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Pythonxer correctness gates, honest foreground execution, Windows 10|11 uninstall readiness, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Concept',
-      subtitle: 'The One Who Knows',
-      description:
-        'Tlamatini means "one who knows." In practice, she reads your code, Unreal Engine projects, STM32 firmware goals, ESP32 PlatformIO projects, and Arduino sketches, can watch a webcam, hear a microphone, and play sound and video back, protects loaded project context from being confused with her self-knowledge, lets you tune models, endpoints, database snapshots, and skills from the UI, reviews diffs, scans for risk, and compiles chat or canvas ideas into reusable .flw workflows.',
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
-          <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
-          <path d="M12 16v-4M12 8h.01" />
-        </svg>
-      ),
-    },
+  const icons = [
+    (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+      </svg>
+    ),
+    (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+    (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
+        <path d="M12 16v-4M12 8h.01" />
+      </svg>
+    ),
   ];
+
+  const cards = v.cards.map((card, i) => ({ ...card, icon: icons[i] }));
 
   return (
     <section
@@ -197,15 +182,15 @@ function VisionMissionSection() {
       style={{ background: '#0d0d0d', padding: 'clamp(80px, 10vh, 120px) 0' }}
     >
       <div className="max-w-[1200px] mx-auto px-6">
-        <span className="section-label reveal-item block mb-4 text-center">XAIHT</span>
+        <span className="section-label reveal-item block mb-4 text-center">{v.label}</span>
         <h2
           className="reveal-item font-bold text-center mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          Vision, Mission, Concept
+          {v.title}
         </h2>
         <p className="reveal-item text-[#888] text-center mb-12 max-w-2xl mx-auto">
-          XAIHT's flagship project: local-first automation, grounded code understanding, and developer-controlled AI execution.
+          {v.desc}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card) => (
@@ -236,6 +221,9 @@ function VisionMissionSection() {
 function ArchitectureSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const stackRef = useRef<HTMLDivElement>(null);
+  const t = useT();
+  const a = t.home.architecture;
+  const multiTurnColors = ['#c9a96e', '#7a9e8e', '#8a9ec7', '#c79e7a'];
 
   useEffect(() => {
     const stackEl = stackRef.current;
@@ -295,17 +283,15 @@ function ArchitectureSection() {
         <div className="page-layer" style={{ background: '#0a0a0a' }}>
           <div className="flex flex-col justify-center items-center min-h-screen w-full px-6 py-20">
             <div className="max-w-[1200px] mx-auto w-full text-center">
-              <span className="section-label block mb-4">Architecture</span>
+              <span className="section-label block mb-4">{a.overview.label}</span>
               <h2
                 className="font-bold mb-6"
                 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
               >
-                Built as a Local AI Control Plane
+                {a.overview.title}
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                Tlamatini connects the browser, native project context picker, self-knowledge map,
-                Config, DB, and ACPX-Skills menus, Multi-Turn operator with Ask Execs approval gates, Windows installed-app registration, Flow Compiler, Unreal MCP, STM32 Template Project MCP, ESP32er PlatformIO automation, Arduiner Arduino-CLI automation, the webcam, microphone, speaker, and on-screen video media family, and ACPX runtime
-                through one local command surface.
+                {a.overview.desc}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
                 <div className="xaiht-card min-w-0">
@@ -315,12 +301,10 @@ function ArchitectureSection() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f0f0f0' }}>
-                    Chat, Config, DB, Skills, and Context
+                    {a.overview.card1.title}
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    The chat surface keeps Multi-Turn, Ask Execs, Exec Report, ACPX, internet context, native nested-folder context,
-                    Models / URLs Config dialogs, DB controls, and ACPX-Skills Browse / Configure / Diagnostics / Reload close at hand
-                    without asking users to hunt through files.
+                    {a.overview.card1.desc}
                   </p>
                 </div>
                 <div className="xaiht-card min-w-0">
@@ -331,12 +315,10 @@ function ArchitectureSection() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold mb-2" style={{ color: '#f0f0f0' }}>
-                    LLM, ACPX, Skills, and GPU Guard
+                    {a.overview.card2.title}
                   </h3>
                   <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-                    Ollama, Claude, and Qwen cover the model surface, ACPX delegates to external
-                    coding CLIs only when selected, STM32er guards ST-LINK firmware work, ESP32er drives PlatformIO builds and uploads, Arduiner drives Arduino-CLI builds and uploads, Kalier reaches the configured Kali server, Playwrighter drives real browser flows, Windower commands whole windows, the media family captures webcam, microphone, and screen and plays sound and video back, SkillHarness runs markdown playbooks, Tlamatini carries her self-knowledge into every chain, and GPU hosts get a pre-flight warning before heavy embedding
-                    loads can slow the machine down.
+                    {a.overview.card2.desc}
                   </p>
                 </div>
               </div>
@@ -348,26 +330,19 @@ function ArchitectureSection() {
         <div className="page-layer" style={{ background: '#0d0d0d' }}>
           <div className="flex flex-col justify-center items-center min-h-screen w-full px-6 py-20">
             <div className="max-w-[1200px] mx-auto w-full text-center">
-              <span className="section-label block mb-4">RAG System</span>
+              <span className="section-label block mb-4">{a.rag.label}</span>
               <h2
                 className="font-bold mb-6"
                 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
               >
-                Advanced Retrieval-Augmented Generation
+                {a.rag.title}
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                Hybrid retrieval combines FAISS vectors, BM25 keywords, Reciprocal Rank Fusion,
-                code-aware metadata for source and Unreal Engine projects, a lighter default
-                embedding model, native nested-folder selection, loaded-context priority over her private self-knowledge, GPU-aware pre-flight warnings, and a fallback path that keeps source access alive.
+                {a.rag.desc}
               </p>
               {/* Pipeline */}
               <div className="flex items-stretch justify-center gap-0 gap-y-4 flex-wrap lg:flex-nowrap max-w-5xl mx-auto w-full">
-                {[
-                  { name: 'Load Context', desc: 'Native picker for nested folders' },
-                  { name: 'Nomic Default', desc: 'Light default with high-detail opt-in' },
-                  { name: 'FAISS + BM25', desc: 'Hybrid retrieval with RRF fusion' },
-                  { name: 'Context Priority', desc: 'Loaded projects outrank self-knowledge' },
-                ].map((node, i) => (
+                {a.rag.nodes.map((node, i) => (
                   <div key={node.name} className="flex items-center flex-1 min-w-[200px] max-w-full">
                     <div
                       className="flex-1 min-w-0 p-4 rounded-lg"
@@ -396,41 +371,18 @@ function ArchitectureSection() {
         <div className="page-layer" style={{ background: '#0a0a0a' }}>
           <div className="flex flex-col justify-center items-center min-h-screen w-full px-6 py-20">
             <div className="max-w-[1200px] mx-auto w-full text-center">
-              <span className="section-label block mb-4">Multi-Turn</span>
+              <span className="section-label block mb-4">{a.multiTurn.label}</span>
               <h2
                 className="font-bold mb-6"
                 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
               >
-                Request-Scoped Orchestration
+                {a.multiTurn.title}
               </h2>
               <p className="text-[#888] mb-10 max-w-2xl mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-                When Multi-Turn is enabled, the chat becomes an operator: a planner selects
-                the relevant tools, Ask Execs can pause state-changing calls for human approval, Pythonxer rejects broken scripts early, and successful work becomes reusable
-                workflows.
+                {a.multiTurn.desc}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
-                {[
-                  {
-                    title: 'Global Execution Planner',
-                    desc: 'Builds a request-scoped plan and binds a focused set of relevant tools across long autonomous runs.',
-                    color: '#c9a96e',
-                  },
-                  {
-                    title: 'Ask Execs Gate',
-                    desc: 'Pauses before state-changing Tool, MCP, Agent, or Skill calls so the operator can proceed or deny.',
-                    color: '#7a9e8e',
-                  },
-                  {
-                    title: 'Exec Report',
-                    desc: 'Appends per-agent operation tables for state-changing tool calls before chat history is saved.',
-                    color: '#8a9ec7',
-                  },
-                  {
-                    title: 'Create Flow',
-                    desc: 'Successful Multi-Turn runs can download a .flw file normalized by the backend contract layer.',
-                    color: '#c79e7a',
-                  },
-                ].map((item) => (
+                {a.multiTurn.items.map((item, i) => (
                   <div
                     key={item.title}
                     className="p-5 rounded-lg min-w-0"
@@ -441,7 +393,7 @@ function ArchitectureSection() {
                   >
                     <div
                       className="w-2 h-2 rounded-full mb-3 mx-auto"
-                      style={{ background: item.color }}
+                      style={{ background: multiTurnColors[i] }}
                     />
                     <h4 className="text-sm font-semibold mb-2" style={{ color: '#f0f0f0' }}>
                       {item.title}
@@ -464,6 +416,8 @@ function ArchitectureSection() {
 
 function WorkflowSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const w = t.home.workflow;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -488,16 +442,17 @@ function WorkflowSection() {
     };
   }, []);
 
-  const categories = [
-    { name: 'Control', agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
-    { name: 'Routing', agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
-    { name: 'Logic Gates', agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { name: 'Action', agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Camcorder, Recorder, AudioPlayer, VideoPlayer, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer, Kalier, STM32er, ESP32er, Arduiner', color: '#8a9ec7' },
-    { name: 'Cryptography', agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
-    { name: 'Utility', agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
-    { name: 'Terminal / Monitoring', agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
-    { name: 'AI / Design', agents: 'FlowCreator', color: '#b08cc7' },
+  const categoryData = [
+    { agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
+    { agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
+    { agents: 'OR, AND, Barrier', color: '#9e9e9e' },
+    { agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Camcorder, Recorder, AudioPlayer, VideoPlayer, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer, Kalier, STM32er, ESP32er, Arduiner', color: '#8a9ec7' },
+    { agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
+    { agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
+    { agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
+    { agents: 'FlowCreator', color: '#b08cc7' },
   ];
+  const categories = categoryData.map((cat, i) => ({ ...cat, name: w.categories[i].name }));
 
   return (
     <section
@@ -506,22 +461,19 @@ function WorkflowSection() {
       className="max-w-[1200px] mx-auto px-6"
       style={{ padding: 'clamp(80px, 10vh, 120px) 1.5rem' }}
     >
-      <span className="section-label reveal-item block mb-4">Workflow Designer</span>
+      <span className="section-label reveal-item block mb-4">{w.label}</span>
       <h2
         className="reveal-item font-bold mb-8"
         style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
       >
-        Drag, Drop, Orchestrate
+        {w.title}
       </h2>
       <div className="reveal-item xaiht-card" style={{ padding: '3rem' }}>
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10">
           {/* Left */}
           <div className="min-w-0">
             <p className="text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-              The Visual Workflow Designer lets you drag 74 agent types onto a canvas,
-              wire them into reusable .flw workflows, preserve Parametrizer mappings,
-              validate the live graph, build and flash STM32F4x firmware through a preflighted MCP bridge, build and upload ESP32 firmware through PlatformIO, build and upload Arduino firmware through the Arduino CLI, capture webcam, microphone, and screen and play sound and video back, run authorized Kali assessments through a configured server, drive 53-command Unreal MCP projects, drive real browser flows, command desktop windows, review diffs, scan for security findings, add human approval checkpoints, and bring
-              repeatable agentic automation to Unreal Engine-enabled project work.
+              {w.desc}
             </p>
             <img
               src="/images/feature-workflow.jpg"
@@ -561,6 +513,7 @@ function WorkflowSection() {
 
 function ToolsSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -584,43 +537,44 @@ function ToolsSection() {
     };
   }, []);
 
-  const tools = [
-    { name: 'Config -> Models', desc: 'Tune model names from the chat UI with validation', type: 'Config', color: '#c9a96e' },
-    { name: 'Config -> URLs', desc: 'Edit endpoint values, including Kali, STM32 MCP, ESP32 PlatformIO, and Arduino CLI defaults, without hand-editing JSON', type: 'Config', color: '#c9a96e' },
-    { name: 'DB -> Backup database', desc: 'Snapshot the live SQLite database to a directory you choose', type: 'DB', color: '#c79e7a' },
-    { name: 'DB -> Set DB', desc: 'Stage a database for the next clean Tlamatini start-up', type: 'DB', color: '#c79e7a' },
-    { name: 'ACPX-Skills -> Browse', desc: 'Inspect all 27 skill bodies, permissions, inputs, outputs, and budgets before use', type: 'Skills', color: '#b08cc7' },
-    { name: 'ACPX-Skills -> Configure', desc: 'Enable or hide skills from the planner with the same feel as Tools and MCPs', type: 'Skills', color: '#b08cc7' },
-    { name: 'ACPX-Skills -> Diagnostics', desc: 'Catch missing tools, MCPs, ACPX agents, and orphan skill rows before runtime', type: 'Skills', color: '#b08cc7' },
-    { name: 'ACPX-Skills -> Reload Registry', desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills', color: '#b08cc7' },
-    { name: 'Windows uninstall registration', desc: 'Installed builds appear where Windows 10|11 users expect to remove applications', type: 'Installer', color: '#c79e7a' },
-    { name: 'Ask Execs', desc: 'Prompt before each state-changing Multi-Turn Tool, MCP, Agent, or Skill call, then proceed or fail safe', type: 'Runtime', color: '#c9a96e' },
-    { name: 'Unreal Engine', desc: 'Drive the public XAIHT Unreal MCP fork with 53 editor commands across nine categories', type: 'Game Dev', color: '#8a9ec7' },
-    { name: 'STM32er', desc: 'Scaffold, build, flash, and observe STM32F4x firmware with zero-config MCP bootstrap and fail-safe hardware preflight', type: 'Embedded', color: '#7a9e8e' },
-    { name: 'ESP32er', desc: 'Scaffold, build, upload, and monitor ESP32 firmware through zero-config PlatformIO Core automation', type: 'Embedded', color: '#7a9e8e' },
-    { name: 'Arduiner', desc: 'Scaffold, build, upload, and monitor Arduino, AVR, and SAMD firmware through zero-config Arduino-CLI automation, selected by FQBN', type: 'Embedded', color: '#7a9e8e' },
-    { name: 'Camcorder', desc: 'Capture a photo or a video segment from a system webcam, saved with a collision-proof name', type: 'Media', color: '#8a9ec7' },
-    { name: 'Recorder', desc: 'Record microphone audio to a WAV file with selectable device, sample rate, and software gain', type: 'Media', color: '#8a9ec7' },
-    { name: 'AudioPlayer', desc: 'Play an audio file through the speakers with a software volume and a play-for-N-seconds loop or truncate', type: 'Media', color: '#c79e7a' },
-    { name: 'VideoPlayer', desc: 'Play a video file with sound on a chosen display, with fullscreen, aspect, and play-for-N-seconds control', type: 'Media', color: '#c79e7a' },
-    { name: 'Playwrighter', desc: 'Drive a real browser through scripted logins, forms, assertions, screenshots, and downloads', type: 'Browser', color: '#8a9ec7' },
-    { name: 'Windower', desc: 'Focus, move, resize, tile, maximize, minimize, and close Windows app windows by title', type: 'Desktop', color: '#c79e7a' },
-    { name: 'Kalier', desc: 'Coordinate authorized Kali Linux recon through the configured MCP-Kali-Server URL', type: 'Security', color: '#c9a96e' },
-    { name: 'Reusable .flw', desc: 'Save workflows so they can be loaded and run again', type: 'Flow', color: '#9e9e9e' },
-    { name: 'Reviewer', desc: 'Reviews diffs with commit-state awareness and an APPROVE, REQUEST_CHANGES, or COMMENT verdict', type: 'Canvas Agent', color: '#7a9e8e' },
-    { name: 'Analyzer', desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent', color: '#c79e7a' },
-    { name: 'De-Compresser', desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action', color: '#8a9ec7' },
-    { name: 'embedding_guard', desc: 'Warns GPU hosts before heavy context embedding loads and keeps context loading humane', type: 'RAG', color: '#8a9ec7' },
-    { name: '79 Multi-Turn tools', desc: 'A broad action surface with approval checkpoints, a 4096-iteration ceiling, and a 256 tool-call hard stop', type: 'Runtime', color: '#7a9e8e' },
-    { name: 'Pythonxer strict gate', desc: 'Compile and Ruff checks stop broken Python before execution while downstream flow control stays explicit', type: 'Runtime', color: '#7a9e8e' },
-    { name: 'execute_file foreground', desc: 'Visible script windows open only when requested, with compile checks before launch', type: 'Runtime', color: '#7a9e8e' },
-    { name: 'chat_agent_executer', desc: 'Wrapped workflow agent for shell operations', type: 'Runtime', color: '#7a9e8e' },
-    { name: 'chat_agent_sleeper', desc: 'Wait primitive for smooth autonomous Multi-Turn flows', type: 'Runtime', color: '#7a9e8e' },
-    { name: 'chat_agent_mouser', desc: 'Desktop pointer automation with click, drag, and scroll', type: 'Desktop', color: '#c79e7a' },
-    { name: 'acp_spawn', desc: 'Start an external coding-agent CLI session', type: 'ACPX', color: '#b08cc7' },
-    { name: 'acp_relay', desc: 'Pass one external agent answer to another in a single call', type: 'ACPX', color: '#b08cc7' },
-    { name: 'invoke_skill', desc: 'Run enabled SKILL.md packages through the SkillHarness, including commit-aware code-review and security-audit', type: 'Skill', color: '#9e9e9e' },
+  const toolData = [
+    { name: 'Config -> Models', color: '#c9a96e' },
+    { name: 'Config -> URLs', color: '#c9a96e' },
+    { name: 'DB -> Backup database', color: '#c79e7a' },
+    { name: 'DB -> Set DB', color: '#c79e7a' },
+    { name: 'ACPX-Skills -> Browse', color: '#b08cc7' },
+    { name: 'ACPX-Skills -> Configure', color: '#b08cc7' },
+    { name: 'ACPX-Skills -> Diagnostics', color: '#b08cc7' },
+    { name: 'ACPX-Skills -> Reload Registry', color: '#b08cc7' },
+    { name: 'Windows uninstall registration', color: '#c79e7a' },
+    { name: 'Ask Execs', color: '#c9a96e' },
+    { name: 'Unreal Engine', color: '#8a9ec7' },
+    { name: 'STM32er', color: '#7a9e8e' },
+    { name: 'ESP32er', color: '#7a9e8e' },
+    { name: 'Arduiner', color: '#7a9e8e' },
+    { name: 'Camcorder', color: '#8a9ec7' },
+    { name: 'Recorder', color: '#8a9ec7' },
+    { name: 'AudioPlayer', color: '#c79e7a' },
+    { name: 'VideoPlayer', color: '#c79e7a' },
+    { name: 'Playwrighter', color: '#8a9ec7' },
+    { name: 'Windower', color: '#c79e7a' },
+    { name: 'Kalier', color: '#c9a96e' },
+    { name: 'Reusable .flw', color: '#9e9e9e' },
+    { name: 'Reviewer', color: '#7a9e8e' },
+    { name: 'Analyzer', color: '#c79e7a' },
+    { name: 'De-Compresser', color: '#8a9ec7' },
+    { name: 'embedding_guard', color: '#8a9ec7' },
+    { name: '79 Multi-Turn tools', color: '#7a9e8e' },
+    { name: 'Pythonxer strict gate', color: '#7a9e8e' },
+    { name: 'execute_file foreground', color: '#7a9e8e' },
+    { name: 'chat_agent_executer', color: '#7a9e8e' },
+    { name: 'chat_agent_sleeper', color: '#7a9e8e' },
+    { name: 'chat_agent_mouser', color: '#c79e7a' },
+    { name: 'acp_spawn', color: '#b08cc7' },
+    { name: 'acp_relay', color: '#b08cc7' },
+    { name: 'invoke_skill', color: '#9e9e9e' },
   ];
+  const tools = toolData.map((tool, i) => ({ ...tool, ...t.home.tools.items[i] }));
 
   return (
     <section
@@ -629,12 +583,12 @@ function ToolsSection() {
       style={{ background: '#0d0d0d', padding: 'clamp(80px, 10vh, 120px) 0' }}
     >
       <div className="max-w-[1200px] mx-auto px-6">
-        <span className="section-label reveal-item block mb-4">Tools</span>
+        <span className="section-label reveal-item block mb-4">{t.home.tools.label}</span>
         <h2
           className="reveal-item font-bold mb-8"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          Tunable, Guarded, Agentic Tooling
+          {t.home.tools.title}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {tools.map((tool) => (

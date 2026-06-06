@@ -1,36 +1,5 @@
 import { useEffect, useRef } from 'react';
-
-const PHRASES = [
-  'eXtended Artificial Intelligence Humanly Tempered',
-  '( XAIHT )',
-  'Tlamatini v1.17.0',
-  'Local-First AI',
-  '53 Unreal MCP Commands',
-  'Multi-Turn Operation',
-  '79 Multi-Turn Tools',
-  '27 Skill Packages',
-  '74 Workflow Agents',
-  'Ask Execs Approval Gate',
-  'Windows 10|11 Installed App',
-  'Bullet-Proof Carried-Python Installer',
-  '4096 Iteration Ceiling',
-  'Unreal Engine MCP',
-  'Zero-Config STM32 MCP',
-  'STM32F4x Firmware Automation',
-  'ESP32er PlatformIO Bridge',
-  'Arduiner Arduino CLI Bridge',
-  'Webcam + Microphone Capture',
-  'On-Screen Video Playback',
-  'Self-Modifiable Builds',
-  'Native Context Picker',
-  'Kalier Configured Kali Bridge',
-  'Playwrighter Browser Automation',
-  'Windower Desktop Control',
-  'Commit-Aware Reviewer',
-  'High-Detail Embedding',
-  'Reviewer + Analyzer',
-  'Visual Workflows'
-];
+import { useT } from '@/i18n/context';
 
 const STAR_COUNT = 120;
 
@@ -46,6 +15,8 @@ function createStars() {
 }
 
 export default function AsciiIntro() {
+  const t = useT();
+  const phrases = t.ascii.phrases;
   const trackRef = useRef<HTMLDivElement>(null);
   const phraseIndexRef = useRef(0);
   const posXRef = useRef(0);
@@ -59,12 +30,14 @@ export default function AsciiIntro() {
     const textEl = track.firstElementChild as HTMLDivElement;
     if (!textEl) return;
 
-    // Start off-screen to the right
+    // Restart the marquee from the right whenever the language (and thus the
+    // phrase list) changes.
+    phraseIndexRef.current = 0;
     posXRef.current = window.innerWidth;
     const SPEED = 3;
 
     function render() {
-      const phrase = PHRASES[phraseIndexRef.current];
+      const phrase = phrases[phraseIndexRef.current];
       textEl.textContent = phrase;
 
       let posX = posXRef.current;
@@ -75,7 +48,7 @@ export default function AsciiIntro() {
 
       // Reset when fully off-screen left
       if (posX < -textWidth) {
-        phraseIndexRef.current = (phraseIndexRef.current + 1) % PHRASES.length;
+        phraseIndexRef.current = (phraseIndexRef.current + 1) % phrases.length;
         posXRef.current = window.innerWidth;
       }
 
@@ -96,7 +69,7 @@ export default function AsciiIntro() {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [phrases]);
 
   const stars = starsRef.current;
 

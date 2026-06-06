@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { useT } from '@/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,6 +25,8 @@ export default function Tlamatini() {
 /* ─────────────────── Hero ─────────────────── */
 
 function TlamatiniHero() {
+  const t = useT();
+  const h = t.tlamatini.hero;
   return (
     <section
       className="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
@@ -42,7 +45,7 @@ function TlamatiniHero() {
       />
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-20">
         <span className="section-label block mb-4" style={{ color: '#c9a96e' }}>
-          XAIHT / Projects
+          {h.label}
         </span>
         <h1
           className="font-extrabold mb-4"
@@ -51,11 +54,10 @@ function TlamatiniHero() {
           TLAMATINI
         </h1>
         <p className="text-xl text-[#888] mb-2 font-light">
-          Local-First AI Developer Assistant v1.17.0
+          {h.subtitle}
         </p>
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
-          Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration,
-          79-tool, 4096-iteration Multi-Turn orchestration with Ask Execs approval gates, Windows 10|11 installed-app registration, strict Pythonxer execution, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 74-agent workflow designer with Arduiner, ESP32er, STM32er, the webcam, microphone, speaker, and on-screen video media family, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, Reviewer, and Analyzer.
+          {h.desc}
         </p>
       </div>
     </section>
@@ -66,6 +68,8 @@ function TlamatiniHero() {
 
 function TlamatiniOverview() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const o = t.tlamatini.overview;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -91,21 +95,18 @@ function TlamatiniOverview() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span className="section-label reveal-item block mb-4">Project Overview</span>
+          <span className="section-label reveal-item block mb-4">{o.label}</span>
           <h2
             className="reveal-item font-bold mb-6"
             style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
           >
-            One Who Knows, One Who Can Act
+            {o.title}
           </h2>
           <p className="reveal-item text-[#888] mb-4" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            <strong style={{ color: '#f0f0f0' }}>Tlamatini</strong> means "one who knows." She is a
-            local app you run on your own machine, combining code-aware retrieval,
-            her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, STM32, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.
+            <strong style={{ color: '#f0f0f0' }}>{o.p1Strong}</strong>{o.p1Rest}
           </p>
           <p className="reveal-item text-[#888] mb-6" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-            The v1.17.0 build makes getting started bullet-proof: the one-click installer now carries its own self-contained Python 3.12.10 — along with Java, Git, and the Playwright browsers — so an end user installs only Ollama and the models, with nothing else to set up. The recent media-I/O family still rounds out her senses — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — alongside Arduiner, ESP32er, and STM32er firmware automation.
-            She carries 74 agents, 79 Multi-Turn tools, 27 skills, three microcontroller bridges, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.
+            {o.p2}
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
@@ -117,7 +118,7 @@ function TlamatiniOverview() {
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
               </svg>
-              View Source
+              {o.viewSource}
             </a>
           </div>
         </div>
@@ -138,6 +139,8 @@ function TlamatiniOverview() {
 
 function TlamatiniFeatures() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const f = t.tlamatini.features;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -154,63 +157,20 @@ function TlamatiniFeatures() {
     };
   }, []);
 
-  const features = [
-    {
-      title: 'Unreal Engine Enabled',
-      description: 'Tlamatini brings local RAG, 4096-iteration action, external-agent delegation, and reusable workflow automation into Unreal Engine project work, including the 53-command XAIHT Unreal MCP fork.',
-      image: '/images/feature-workflow.jpg',
-    },
-    {
-      title: 'Critical-Mission STM32er',
-      description: 'STM32er lets Tlamatini scaffold, author, build, flash, and observe STM32F4x firmware with zero-config MCP bootstrap, STM32CubeIDE toolchains, ST-LINK validation, serial/SWD observation, and a fail-safe preflight before hardware-changing actions.',
-      image: '/images/feature-agents.jpg',
-    },
-    {
-      title: 'ESP32er PlatformIO Bridge',
-      description: 'ESP32er lets Tlamatini scaffold, build, upload, and monitor ESP32 or ESP8266 firmware through PlatformIO Core, with first-run bootstrap, board and serial checks, and no IDE required.',
-      image: '/images/feature-agents.jpg',
-    },
-    {
-      title: 'Arduiner Arduino CLI Bridge',
-      description: 'Arduiner is the third microcontroller agent: it scaffolds, builds, uploads, and monitors Arduino, AVR, and SAMD firmware through the zero-config Arduino CLI, picks the board by FQBN, auto-installs the matching core, and runs a fail-safe preflight before touching hardware.',
-      image: '/images/feature-agents.jpg',
-    },
-    {
-      title: 'Webcam, Mic, and Media Playback',
-      description: 'A full media-I/O family rounds out the senses: Camcorder captures the webcam, Recorder captures the microphone, AudioPlayer plays sound through the speakers, and VideoPlayer plays video with audio on any display — the on-screen and audible companions to screen-capturing Shoter.',
-      image: '/images/feature-chat.jpg',
-    },
-    {
-      title: 'Multi-Turn Chat Operator',
-      description: 'A chat surface with independent toggles for Multi-Turn, Ask Execs, Exec Report, ACPX, and internet context. She can choose from 79 tools, pause for approval, reject broken Python early, and turn successful work into repeatable flows.',
-      image: '/images/feature-chat.jpg',
-    },
-    {
-      title: 'Windows Installed-App Polish',
-      description: 'Packaged builds register as installed Windows 10|11 applications, so users can remove Tlamatini through the familiar system uninstall experience instead of hunting for a folder.',
-      image: '/images/feature-chat.jpg',
-    },
-    {
-      title: 'Hybrid RAG with GPU Guard',
-      description: 'Directory, file, or canvas context is grounded through FAISS + BM25 retrieval. Native nested-folder picking reaches deep projects, loaded context outranks her self-knowledge, and high-detail embeddings stay guarded by GPU pre-flight warnings.',
-      image: '/images/artifact-rag.jpg',
-    },
-    {
-      title: 'Visual Workflow Designer',
-      description: 'Drag-and-drop workflow creation with 74 agent types, .flw save/load, live Validate, Start-time compilation, ESP32er PlatformIO flows, STM32er firmware pipelines, Arduiner Arduino-CLI flows, webcam, microphone, speaker, and on-screen video media nodes, Kalier assessment runs, Playwrighter browser flows, Windower desktop-window control, strict Pythonxer paths, 53-command Unrealer flows, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
-      image: '/images/feature-workflow.jpg',
-    },
-    {
-      title: 'ACPX External Delegation',
-      description: 'ACPX delegates to external coding-agent CLIs when you choose, while ACPX-Skills gives the operator Browse, Configure, Diagnostics, and Reload controls for 27 SKILL.md packages, including commit-aware code-review, security-audit, and kali-pentest.',
-      image: '/images/feature-agents.jpg',
-    },
-    {
-      title: 'Config, DB, and ACPX-Skills Menus',
-      description: 'Validated Models, URLs, Kali, STM32 MCP, ESP32 PlatformIO, and Arduino CLI settings, native context picking, live SQLite backup / Set DB controls, and skill enablement diagnostics sit together as operator-grade controls.',
-      image: '/images/feature-chat.jpg',
-    },
+  const featureImages = [
+    '/images/feature-workflow.jpg',
+    '/images/feature-agents.jpg',
+    '/images/feature-agents.jpg',
+    '/images/feature-agents.jpg',
+    '/images/feature-chat.jpg',
+    '/images/feature-chat.jpg',
+    '/images/feature-chat.jpg',
+    '/images/artifact-rag.jpg',
+    '/images/feature-workflow.jpg',
+    '/images/feature-agents.jpg',
+    '/images/feature-chat.jpg',
   ];
+  const features = f.items.map((item, i) => ({ ...item, image: featureImages[i] }));
 
   return (
     <section
@@ -219,12 +179,12 @@ function TlamatiniFeatures() {
       style={{ background: '#0d0d0d', padding: 'clamp(80px, 10vh, 120px) 0' }}
     >
       <div className="max-w-[1200px] mx-auto px-6">
-        <span className="section-label reveal-item block mb-4">Key Features</span>
+        <span className="section-label reveal-item block mb-4">{f.label}</span>
         <h2
           className="reveal-item font-bold mb-10"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          Capabilities at a Glance
+          {f.title}
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {features.map((feature) => (
@@ -255,6 +215,8 @@ function TlamatiniFeatures() {
 
 function TlamatiniInstallation() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const inst = t.tlamatini.installation;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -271,14 +233,15 @@ function TlamatiniInstallation() {
     };
   }, []);
 
-  const steps = [
-    { label: 'Install Ollama', code: 'irm https://ollama.com/install.ps1 |\n  iex\nollama --version' },
-    { label: 'Pull Default Models', code: 'ollama pull Nomic-Embed-Text:latest\nollama pull glm-5.1:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud\nollama pull qwen3.5:397b-cloud' },
-    { label: 'Clone Source', code: 'git clone --depth 1 `\nhttps://github.com/XAIHT/Tlamatini\ncd Tlamatini' },
-    { label: 'Setup Environment', code: 'python -m venv venv\nsource venv/bin/activate  # Linux/macOS\nvenv\\Scripts\\activate   # Windows\npip install -r requirements.txt' },
-    { label: 'Initialize Database', code: 'python Tlamatini/manage.py migrate\npython Tlamatini/manage.py `\n  createsuperuser\npython Tlamatini/manage.py `\n  collectstatic --noinput' },
-    { label: 'Run Application', code: 'python Tlamatini/manage.py `\n  runserver --noreload' },
+  const stepCode = [
+    'irm https://ollama.com/install.ps1 |\n  iex\nollama --version',
+    'ollama pull Nomic-Embed-Text:latest\nollama pull glm-5.1:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud\nollama pull qwen3.5:397b-cloud',
+    'git clone --depth 1 `\nhttps://github.com/XAIHT/Tlamatini\ncd Tlamatini',
+    'python -m venv venv\nsource venv/bin/activate  # Linux/macOS\nvenv\\Scripts\\activate   # Windows\npip install -r requirements.txt',
+    'python Tlamatini/manage.py migrate\npython Tlamatini/manage.py `\n  createsuperuser\npython Tlamatini/manage.py `\n  collectstatic --noinput',
+    'python Tlamatini/manage.py `\n  runserver --noreload',
   ];
+  const steps = inst.steps.map((step, i) => ({ ...step, code: stepCode[i] }));
 
   return (
     <section
@@ -287,15 +250,15 @@ function TlamatiniInstallation() {
       className="max-w-[1200px] mx-auto px-6"
       style={{ padding: 'clamp(80px, 10vh, 120px) 1.5rem' }}
     >
-      <span className="section-label reveal-item block mb-4">Quick Start</span>
+      <span className="section-label reveal-item block mb-4">{inst.label}</span>
       <h2
         className="reveal-item font-bold mb-8"
         style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
       >
-        Installation
+        {inst.title}
       </h2>
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-        The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models. Prefer source? Run from a clone with Python 3.12.10 and Ollama using the steps below. Either way, installed builds register with Windows 10|11 uninstall mechanisms, while Config, native context picking, DB snapshots, and the zero-config ESP32er PlatformIO and Arduiner Arduino-CLI bootstraps stay available inside Tlamatini.
+        {inst.desc}
       </p>
       <div className="space-y-4">
         {steps.map((step, i) => (
@@ -335,6 +298,8 @@ function TlamatiniInstallation() {
 
 function TlamatiniAgents() {
   const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const ag = t.tlamatini.agents;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -351,130 +316,37 @@ function TlamatiniAgents() {
     };
   }, []);
 
-  const agentGroups = [
+  const agentGroupData = [
+    { color: '#c9a96e', names: ['starter', 'ender', 'stopper', 'cleaner', 'sleeper', 'croner'] },
+    { color: '#7a9e8e', names: ['raiser', 'forker', 'asker', 'counter'] },
+    { color: '#9e9e9e', names: ['or', 'and', 'barrier'] },
     {
-      category: 'Control',
-      color: '#c9a96e',
-      agents: [
-        { name: 'starter', desc: 'Initiates workflow execution' },
-        { name: 'ender', desc: 'Terminates agents, launches post-cleanup' },
-        { name: 'stopper', desc: 'Pattern-based agent terminator' },
-        { name: 'cleaner', desc: 'Post-termination cleanup' },
-        { name: 'sleeper', desc: 'Waits duration_ms before continuing' },
-        { name: 'croner', desc: 'Scheduled HH:MM trigger' },
-      ],
-    },
-    {
-      category: 'Routing',
-      color: '#7a9e8e',
-      agents: [
-        { name: 'raiser', desc: 'Event-driven downstream launcher' },
-        { name: 'forker', desc: 'Automatic A/B path router' },
-        { name: 'asker', desc: 'Interactive A/B browser choice' },
-        { name: 'counter', desc: 'Persistent threshold router' },
-      ],
-    },
-    {
-      category: 'Logic Gates',
-      color: '#9e9e9e',
-      agents: [
-        { name: 'or', desc: 'Fires when either source completes' },
-        { name: 'and', desc: 'Fires when both sources complete' },
-        { name: 'barrier', desc: 'Generalized all-sources gate' },
-      ],
-    },
-    {
-      category: 'Action',
       color: '#8a9ec7',
-      agents: [
-        { name: 'executer', desc: 'Shell command execution' },
-        { name: 'pythonxer', desc: 'Inline Python with compile and Ruff gating' },
-        { name: 'prompter', desc: 'LLM prompt to log' },
-        { name: 'summarizer', desc: 'LLM log polling and one-shot summaries' },
-        { name: 'crawler', desc: 'Raw web crawl and analysis' },
-        { name: 'googler', desc: 'Google search via Playwright' },
-        { name: 'playwrighter', desc: 'Scripted browser flows with assertions' },
-        { name: 'apirer', desc: 'Structured HTTP request agent' },
-        { name: 'gitter', desc: 'Local Git operations' },
-        { name: 'ssher', desc: 'SSH remote commands' },
-        { name: 'scper', desc: 'SCP file transfer' },
-        { name: 'dockerer', desc: 'Docker command runner' },
-        { name: 'kuberneter', desc: 'Kubernetes command runner' },
-        { name: 'pser', desc: 'Semantic process finder' },
-        { name: 'jenkinser', desc: 'Jenkins pipeline trigger' },
-        { name: 'sqler', desc: 'SQL Server query execution' },
-        { name: 'mongoxer', desc: 'MongoDB script execution' },
-        { name: 'mover', desc: 'Move or copy files' },
-        { name: 'deleter', desc: 'Delete files with exclusions' },
-        { name: 'shoter', desc: 'Screenshot capture' },
-        { name: 'camcorder', desc: 'Webcam photo and video capture' },
-        { name: 'recorder', desc: 'Microphone audio capture to WAV' },
-        { name: 'audioplayer', desc: 'Audio playback to speakers' },
-        { name: 'videoplayer', desc: 'On-screen video playback with sound' },
-        { name: 'mouser', desc: 'Click, drag, scroll, locate images' },
-        { name: 'keyboarder', desc: 'Typing and hotkey chords' },
-        { name: 'windower', desc: 'Focus, arrange, resize, and close windows' },
-        { name: 'file-creator', desc: 'Write file content' },
-        { name: 'file-interpreter', desc: 'Parse DOCX, PPTX, XLSX, PDF' },
-        { name: 'file-extractor', desc: 'Raw text extraction with fallback' },
-        { name: 'de-compresser', desc: 'Compress or decompress archives' },
-        { name: 'image-interpreter', desc: 'Vision analysis of images' },
-        { name: 'j-decompiler', desc: 'JAR/WAR/CLASS decompilation' },
-        { name: 'telegramer', desc: 'Outbound Telegram message' },
-        { name: 'teletlamatini', desc: 'Telegram bridge to Tlamatini chat' },
-        { name: 'whatstlamatini', desc: 'WhatsApp bridge via Cloud API' },
-        { name: 'acpxer', desc: 'Visual ACPX session lifecycle' },
-        { name: 'unrealer', desc: 'Unreal Engine MCP bridge with 53 commands' },
-        { name: 'stm32er', desc: 'Critical-mission STM32F4x firmware bridge' },
-        { name: 'esp32er', desc: 'PlatformIO ESP32 firmware bridge' },
-        { name: 'arduiner', desc: 'Arduino CLI firmware bridge (AVR / SAMD)' },
-        { name: 'reviewer', desc: 'Commit-state-aware diff review verdict' },
-        { name: 'analyzer', desc: 'Static-analysis and security findings gate' },
-        { name: 'kalier', desc: 'Configured Kali Linux assessment bridge' },
+      names: [
+        'executer', 'pythonxer', 'prompter', 'summarizer', 'crawler', 'googler',
+        'playwrighter', 'apirer', 'gitter', 'ssher', 'scper', 'dockerer',
+        'kuberneter', 'pser', 'jenkinser', 'sqler', 'mongoxer', 'mover',
+        'deleter', 'shoter', 'camcorder', 'recorder', 'audioplayer', 'videoplayer',
+        'mouser', 'keyboarder', 'windower', 'file-creator', 'file-interpreter',
+        'file-extractor', 'de-compresser', 'image-interpreter', 'j-decompiler',
+        'telegramer', 'teletlamatini', 'whatstlamatini', 'acpxer', 'unrealer',
+        'stm32er', 'esp32er', 'arduiner', 'reviewer', 'analyzer', 'kalier',
       ],
     },
+    { color: '#c79e7a', names: ['kyber-keygen', 'kyber-cipher', 'kyber-decipher'] },
+    { color: '#b08cc7', names: ['parametrizer', 'flowbacker', 'gatewayer', 'gateway-relayer', 'node-manager'] },
     {
-      category: 'Cryptography',
-      color: '#c79e7a',
-      agents: [
-        { name: 'kyber-keygen', desc: 'CRYSTALS-Kyber key pair' },
-        { name: 'kyber-cipher', desc: 'Kyber encapsulation + AES encryption' },
-        { name: 'kyber-decipher', desc: 'Kyber decapsulation + AES decryption' },
-      ],
-    },
-    {
-      category: 'Utility',
-      color: '#b08cc7',
-      agents: [
-        { name: 'parametrizer', desc: 'Maps source logs into target config' },
-        { name: 'flowbacker', desc: 'Backs up session logs and configs' },
-        { name: 'gatewayer', desc: 'Inbound webhook and folder-drop ingress' },
-        { name: 'gateway-relayer', desc: 'Provider webhook bridge' },
-        { name: 'node-manager', desc: 'Live infrastructure registry' },
-      ],
-    },
-    {
-      category: 'Terminal / Monitoring',
       color: '#7a9e8e',
-      agents: [
-        { name: 'monitor-log', desc: 'LLM-powered log monitor' },
-        { name: 'monitor-netstat', desc: 'LLM-powered port monitor' },
-        { name: 'emailer', desc: 'SMTP email sender' },
-        { name: 'recmailer', desc: 'IMAP receiver with LLM analysis' },
-        { name: 'notifier', desc: 'Browser notification and sound' },
-        { name: 'whatsapper', desc: 'WhatsApp via TextMeBot' },
-        { name: 'telegramrx', desc: 'Telegram receiver' },
-        { name: 'flowhypervisor', desc: 'LLM watchdog over running agents' },
-      ],
+      names: ['monitor-log', 'monitor-netstat', 'emailer', 'recmailer', 'notifier', 'whatsapper', 'telegramrx', 'flowhypervisor'],
     },
-    {
-      category: 'AI / Design',
-      color: '#c9a96e',
-      agents: [
-        { name: 'flowcreator', desc: 'LLM designs flows from objectives' },
-      ],
-    },
+    { color: '#c9a96e', names: ['flowcreator'] },
   ];
+
+  const agentGroups = agentGroupData.map((group, gi) => ({
+    category: ag.groups[gi].category,
+    color: group.color,
+    agents: group.names.map((name, ai) => ({ name, desc: ag.groups[gi].agents[ai].desc })),
+  }));
 
   return (
     <section
@@ -483,17 +355,15 @@ function TlamatiniAgents() {
       style={{ background: '#0d0d0d', padding: 'clamp(80px, 10vh, 120px) 0' }}
     >
       <div className="max-w-[1200px] mx-auto px-6">
-        <span className="section-label reveal-item block mb-4">Agent Ecosystem</span>
+        <span className="section-label reveal-item block mb-4">{ag.label}</span>
         <h2
           className="reveal-item font-bold mb-4"
           style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
         >
-          74 Workflow-Agent Types
+          {ag.title}
         </h2>
         <p className="reveal-item text-[#888] mb-10 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
-          The catalog spans control, routing, logic, action, cryptography, utility,
-          terminal monitoring, and AI design agents, including Arduiner, ESP32er, STM32er, the Camcorder, Recorder, AudioPlayer, and VideoPlayer media family, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini,
-          ACPXer, 53-command Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, strict Pythonxer, FlowCreator, 27 ACPX-Skills packages, Ask Execs approval around state-changing Multi-Turn execution, her self-knowledge map, Windows installed-app polish, and GPU-aware context safeguards around the RAG entry point.
+          {ag.desc}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {agentGroups.map((group) => (
@@ -501,7 +371,7 @@ function TlamatiniAgents() {
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-2 h-2 rounded-full" style={{ background: group.color }} />
                 <h3 className="text-sm font-semibold" style={{ color: '#f0f0f0' }}>
-                  {group.category} Agents
+                  {group.category} {ag.groupLabel}
                 </h3>
               </div>
               <div className="space-y-2">
@@ -535,6 +405,7 @@ function TlamatiniAgents() {
 
 function TlamatiniTechStack() {
   const sectionRef = useRef<HTMLElement>(null);
+  const tech = useT().tlamatini.techStack;
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -551,14 +422,7 @@ function TlamatiniTechStack() {
     };
   }, []);
 
-  const stack = [
-    { category: 'Backend', items: ['Python 3.12.10', 'Django', 'Django Channels', 'Daphne ASGI'] },
-    { category: 'RAG', items: ['FAISS', 'BM25', 'Native nested-folder picker', 'Loaded-context priority', 'High-detail embedding opt-in', 'GPU pre-flight warning'] },
-    { category: 'LLM Backends', items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'] },
-    { category: 'Agent Runtime', items: ['79 Multi-Turn tools', 'Ask Execs approval gate', 'Pythonxer strict gate', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'ESP32er PlatformIO bridge', 'STM32er firmware bridge', 'Arduiner Arduino-CLI bridge', 'Camcorder / Recorder capture', 'AudioPlayer / VideoPlayer playback', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '27 SKILL.md packages'] },
-    { category: 'Workflow Runtime', items: ['Flow Compiler', 'Agent Contract registry', 'Reusable .flw workflows', 'ESP32 build / upload / monitor flows', 'STM32F4x build / flash / observe flows', 'Arduino build / upload / monitor flows', 'Webcam / microphone capture nodes', 'Speaker / on-screen video playback nodes', 'Kalier assessment pipelines', 'Playwrighter browser flows', 'Windower window control', 'Commit-aware Reviewer / Analyzer gates', '53-command Unreal MCP', 'Source and frozen modes'] },
-    { category: 'Interfaces', items: ['Windows 10|11 uninstall registration', 'Config Models dialog', 'Config URLs with Kali, STM32 MCP, ESP32 PlatformIO, and Arduino CLI settings', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'] },
-  ];
+  const stack = tech.groups;
 
   return (
     <section
@@ -566,12 +430,12 @@ function TlamatiniTechStack() {
       className="max-w-[1200px] mx-auto px-6"
       style={{ padding: 'clamp(80px, 10vh, 120px) 1.5rem' }}
     >
-      <span className="section-label reveal-item block mb-4">Technology</span>
+      <span className="section-label reveal-item block mb-4">{tech.label}</span>
       <h2
         className="reveal-item font-bold mb-8"
         style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)' }}
       >
-        Technology Stack
+        {tech.title}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {stack.map((group) => (
