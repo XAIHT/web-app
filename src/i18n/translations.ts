@@ -38,7 +38,7 @@ const en = {
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
       'Tlamatini v1.17.2',
-      'Local-First AI',
+      'Self-Hosted AI',
       '53 Unreal MCP Commands',
       'Multi-Turn Operation',
       '79 Multi-Turn Tools',
@@ -71,7 +71,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.17.2 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant with hybrid RAG over your source, a 79-tool, 4096-iteration Multi-Turn loop, Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages, in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 74 drag-and-drop agent types, STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.',
+      desc: 'Tlamatini v1.17.2 is a self-hosted, cloud-capable, self-aware, Unreal Engine-enabled AI developer assistant with hybrid RAG over your source, a 79-tool, 4096-iteration Multi-Turn loop, Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages, in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 74 drag-and-drop agent types, STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -84,7 +84,7 @@ const en = {
     vision: {
       label: 'XAIHT',
       title: 'Vision, Mission, Concept',
-      desc: "XAIHT's flagship project: local-first automation, grounded code understanding, and developer-controlled AI execution.",
+      desc: "XAIHT's flagship project: self-hosted, cloud-capable automation, grounded code understanding, and developer-controlled AI execution.",
       cards: [
         {
           title: 'Vision',
@@ -109,15 +109,15 @@ const en = {
     architecture: {
       overview: {
         label: 'Architecture',
-        title: 'Built as a Local AI Control Plane',
-        desc: 'Tlamatini connects the browser, native project context picker, self-knowledge map, Config, DB, and ACPX-Skills menus, Multi-Turn operator with Ask Execs approval gates, Windows installed-app registration, Flow Compiler, Unreal MCP, STM32 Template Project MCP, ESP32er PlatformIO automation, Arduiner Arduino-CLI automation, the webcam, microphone, speaker, and on-screen video media family, and ACPX runtime through one local command surface.',
+        title: 'Built as a Self-Hosted AI Control Plane',
+        desc: 'Tlamatini connects the browser, native project context picker, self-knowledge map, Config, DB, and ACPX-Skills menus, Multi-Turn operator with Ask Execs approval gates, Windows installed-app registration, Flow Compiler, Unreal MCP, STM32 Template Project MCP, ESP32er PlatformIO automation, Arduiner Arduino-CLI automation, the webcam, microphone, speaker, and on-screen video media family, and ACPX runtime through one self-hosted command surface.',
         card1: {
           title: 'Chat, Config, DB, Skills, and Context',
           desc: 'The chat surface keeps Multi-Turn, Ask Execs, Exec Report, ACPX, internet context, native nested-folder context, Models / URLs Config dialogs, DB controls, and ACPX-Skills Browse / Configure / Diagnostics / Reload close at hand without asking users to hunt through files.',
         },
         card2: {
           title: 'LLM, ACPX, Skills, and GPU Guard',
-          desc: 'Ollama, Claude, and Qwen cover the model surface, ACPX delegates to external coding CLIs only when selected, STM32er guards ST-LINK firmware work, ESP32er drives PlatformIO builds and uploads, Arduiner drives Arduino-CLI builds and uploads, Kalier reaches the configured Kali server, Playwrighter drives real browser flows, Windower commands whole windows, the media family captures webcam, microphone, and screen and plays sound and video back, SkillHarness runs markdown playbooks, Tlamatini carries her self-knowledge into every chain, and GPU hosts get a pre-flight warning before heavy embedding loads can slow the machine down.',
+          desc: 'Ollama (local models or Ollama Cloud, the shipped default), Claude, and Qwen cover the model surface, ACPX delegates to external coding CLIs only when selected, STM32er guards ST-LINK firmware work, ESP32er drives PlatformIO builds and uploads, Arduiner drives Arduino-CLI builds and uploads, Kalier reaches the configured Kali server, Playwrighter drives real browser flows, Windower commands whole windows, the media family captures webcam, microphone, and screen and plays sound and video back, SkillHarness runs markdown playbooks, Tlamatini carries her self-knowledge into every chain, and GPU hosts get a pre-flight warning before heavy embedding loads can slow the machine down.',
         },
       },
       rag: {
@@ -238,14 +238,14 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Local-First AI Developer Assistant v1.17.2',
+      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.17.2',
       desc: 'Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration, 79-tool, 4096-iteration Multi-Turn orchestration with Ask Execs approval gates, Windows 10|11 installed-app registration, strict Pythonxer execution, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 74-agent workflow designer with Arduiner, ESP32er, STM32er, the webcam, microphone, speaker, and on-screen video media family, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, Reviewer, and Analyzer.',
     },
     overview: {
       label: 'Project Overview',
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
-      p1Rest: ' means "one who knows." She is a local app you run on your own machine, combining code-aware retrieval, her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, STM32, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.',
+      p1Rest: ' means "one who knows." She is a self-hosted app you run on your own machine, with the LLM your choice of local Ollama, Ollama Cloud (the shipped default), or a cloud API like Anthropic Claude, combining code-aware retrieval, her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, STM32, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.',
       p2: 'The v1.17.2 build makes getting started bullet-proof: the one-click installer now carries its own self-contained Python 3.12.10 — along with Java, Git, and the Playwright browsers — so an end user installs only Ollama and the models, with nothing else to set up. The recent media-I/O family still rounds out her senses — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — alongside Arduiner, ESP32er, and STM32er firmware automation. She carries 74 agents, 79 Multi-Turn tools, 27 skills, three microcontroller bridges, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
       viewSource: 'View Source',
     },
@@ -446,7 +446,7 @@ const en = {
         },
         {
           category: 'LLM Backends',
-          items: ['Ollama', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'],
+          items: ['Ollama Cloud (shipped default)', 'Ollama local models', 'Anthropic Claude API', 'Qwen vision', 'Configurable model tags'],
         },
         {
           category: 'Agent Runtime',
@@ -491,7 +491,7 @@ const es: Translations = {
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
       'Tlamatini v1.17.2',
-      'IA Local Primero',
+      'IA Autoalojada',
       '53 Comandos Unreal MCP',
       'Operación Multi-Turn',
       '79 Herramientas Multi-Turn',
@@ -524,7 +524,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.17.2 es un asistente de desarrollo con IA desplegado localmente, autoconsciente y habilitado para Unreal Engine, con RAG híbrido sobre tu código fuente, un bucle Multi-Turn de 79 herramientas y 4096 iteraciones, compuertas de aprobación Ask Execs antes de ejecutar herramientas que cambian el estado, un instalador a prueba de balas de un solo clic que lleva su propio Python 3.12.10 para que los usuarios finales instalen únicamente Ollama y los modelos, registro como aplicación instalada en Windows 10|11 para rutas de desinstalación familiares, delegación opcional ACPX a CLIs de agentes de programación externos, el menú ACPX-Skills para 27 paquetes de skills, menús Config y DB integrados, carga nativa de contexto de carpetas anidadas, flujos de trabajo .flw reutilizables, 74 tipos de agentes para arrastrar y soltar, automatización de firmware de misión crítica STM32er, flujos de compilación / carga / monitoreo de firmware PlatformIO ESP32er, flujos de compilación / carga / monitoreo de firmware Arduino-CLI Arduiner, una familia completa de E/S multimedia para captura y reproducción de webcam, micrófono, altavoz y video en pantalla, flujos de evaluación Kali autorizados Kalier, la superficie de 53 comandos Unreal MCP, automatización de navegador real Playwrighter, control de escritorio Windower, estrictas compuertas de corrección Pythonxer, ejecución de archivos verificada por compilación, compuertas Reviewer y Analyzer conscientes del commit, opción de embedding de alto detalle, carga de contexto consciente de la GPU y su propio mapa de autoconocimiento.',
+      desc: 'Tlamatini v1.17.2 es un asistente de desarrollo con IA autoalojado y con capacidad en la nube, autoconsciente y habilitado para Unreal Engine, con RAG híbrido sobre tu código fuente, un bucle Multi-Turn de 79 herramientas y 4096 iteraciones, compuertas de aprobación Ask Execs antes de ejecutar herramientas que cambian el estado, un instalador a prueba de balas de un solo clic que lleva su propio Python 3.12.10 para que los usuarios finales instalen únicamente Ollama y los modelos, registro como aplicación instalada en Windows 10|11 para rutas de desinstalación familiares, delegación opcional ACPX a CLIs de agentes de programación externos, el menú ACPX-Skills para 27 paquetes de skills, menús Config y DB integrados, carga nativa de contexto de carpetas anidadas, flujos de trabajo .flw reutilizables, 74 tipos de agentes para arrastrar y soltar, automatización de firmware de misión crítica STM32er, flujos de compilación / carga / monitoreo de firmware PlatformIO ESP32er, flujos de compilación / carga / monitoreo de firmware Arduino-CLI Arduiner, una familia completa de E/S multimedia para captura y reproducción de webcam, micrófono, altavoz y video en pantalla, flujos de evaluación Kali autorizados Kalier, la superficie de 53 comandos Unreal MCP, automatización de navegador real Playwrighter, control de escritorio Windower, estrictas compuertas de corrección Pythonxer, ejecución de archivos verificada por compilación, compuertas Reviewer y Analyzer conscientes del commit, opción de embedding de alto detalle, carga de contexto consciente de la GPU y su propio mapa de autoconocimiento.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -537,7 +537,7 @@ const es: Translations = {
     vision: {
       label: 'XAIHT',
       title: 'Visión, Misión, Concepto',
-      desc: 'El proyecto insignia de XAIHT: automatización local primero, comprensión de código fundamentada y ejecución de IA controlada por el desarrollador.',
+      desc: 'El proyecto insignia de XAIHT: automatización autoalojada y con capacidad en la nube, comprensión de código fundamentada y ejecución de IA controlada por el desarrollador.',
       cards: [
         {
           title: 'Visión',
@@ -562,15 +562,15 @@ const es: Translations = {
     architecture: {
       overview: {
         label: 'Arquitectura',
-        title: 'Construida como un Plano de Control de IA Local',
-        desc: 'Tlamatini conecta el navegador, el selector nativo de contexto de proyectos, el mapa de autoconocimiento, los menús Config, DB y ACPX-Skills, el operador Multi-Turn con compuertas de aprobación Ask Execs, el registro como aplicación instalada en Windows, el Flow Compiler, Unreal MCP, el STM32 Template Project MCP, la automatización PlatformIO ESP32er, la automatización Arduino-CLI Arduiner, la familia multimedia de webcam, micrófono, altavoz y video en pantalla, y el entorno de ejecución ACPX a través de una sola superficie de comandos local.',
+        title: 'Construida como un Plano de Control de IA Autoalojada',
+        desc: 'Tlamatini conecta el navegador, el selector nativo de contexto de proyectos, el mapa de autoconocimiento, los menús Config, DB y ACPX-Skills, el operador Multi-Turn con compuertas de aprobación Ask Execs, el registro como aplicación instalada en Windows, el Flow Compiler, Unreal MCP, el STM32 Template Project MCP, la automatización PlatformIO ESP32er, la automatización Arduino-CLI Arduiner, la familia multimedia de webcam, micrófono, altavoz y video en pantalla, y el entorno de ejecución ACPX a través de una sola superficie de comandos autoalojada.',
         card1: {
           title: 'Chat, Config, DB, Skills y Contexto',
           desc: 'La superficie de chat mantiene a mano Multi-Turn, Ask Execs, Exec Report, ACPX, contexto de internet, contexto nativo de carpetas anidadas, los diálogos Config de Modelos / URLs, los controles de DB y el ACPX-Skills Browse / Configure / Diagnostics / Reload, sin pedir a los usuarios que busquen entre archivos.',
         },
         card2: {
           title: 'LLM, ACPX, Skills y Guardia de GPU',
-          desc: 'Ollama, Claude y Qwen cubren la superficie de modelos, ACPX delega en CLIs de programación externas solo cuando se selecciona, STM32er protege el trabajo de firmware ST-LINK, ESP32er impulsa compilaciones y cargas de PlatformIO, Arduiner impulsa compilaciones y cargas de Arduino-CLI, Kalier alcanza el servidor Kali configurado, Playwrighter impulsa flujos de navegador reales, Windower comanda ventanas completas, la familia multimedia captura webcam, micrófono y pantalla y reproduce sonido y video, SkillHarness ejecuta playbooks en markdown, Tlamatini lleva su autoconocimiento a cada cadena, y los hosts con GPU reciben una advertencia previa antes de que las cargas pesadas de embedding ralenticen la máquina.',
+          desc: 'Ollama (modelos locales u Ollama Cloud, el predeterminado de fábrica), Claude y Qwen cubren la superficie de modelos, ACPX delega en CLIs de programación externas solo cuando se selecciona, STM32er protege el trabajo de firmware ST-LINK, ESP32er impulsa compilaciones y cargas de PlatformIO, Arduiner impulsa compilaciones y cargas de Arduino-CLI, Kalier alcanza el servidor Kali configurado, Playwrighter impulsa flujos de navegador reales, Windower comanda ventanas completas, la familia multimedia captura webcam, micrófono y pantalla y reproduce sonido y video, SkillHarness ejecuta playbooks en markdown, Tlamatini lleva su autoconocimiento a cada cadena, y los hosts con GPU reciben una advertencia previa antes de que las cargas pesadas de embedding ralenticen la máquina.',
         },
       },
       rag: {
@@ -691,14 +691,14 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Local Primero v1.17.2',
+      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.17.2',
       desc: 'RAG híbrido, autoconocimiento, compilaciones auto-modificables opcionales, contexto nativo de carpetas anidadas, configuración de modelos en vivo, controles seguros de respaldo e intercambio de DB, administración del catálogo ACPX-Skills, orquestación Multi-Turn de 79 herramientas y 4096 iteraciones con compuertas de aprobación Ask Execs, registro como aplicación instalada en Windows 10|11, ejecución estricta Pythonxer, carga de contexto consciente de la GPU, opción de embedding de alto detalle, delegación opcional ACPX y un diseñador de flujos de 74 agentes con Arduiner, ESP32er, STM32er, la familia multimedia de webcam, micrófono, altavoz y video en pantalla, Kalier, la superficie de 53 comandos Unreal MCP, Playwrighter, Windower, Reviewer y Analyzer.',
     },
     overview: {
       label: 'Resumen del Proyecto',
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
-      p1Rest: ' significa «la que sabe». Es una aplicación local que ejecutas en tu propia máquina, combinando recuperación consciente del código, su propio mapa de autoconocimiento, configuración en vivo, controles de instantáneas de base de datos, pulido como aplicación instalada en Windows, control del catálogo ACPX-Skills, ejecución protegida de herramientas, delegación opcional a agentes de programación externos, trabajo de proyectos habilitado para Unreal Engine, automatización de firmware STM32, ESP32 y Arduino, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, revisión de código consciente del commit, análisis de seguridad y un lienzo de automatización visual.',
+      p1Rest: ' significa «la que sabe». Es una aplicación autoalojada que ejecutas en tu propia máquina, con el LLM a tu elección entre Ollama local, Ollama Cloud (el predeterminado de fábrica) o una API en la nube como Anthropic Claude, combinando recuperación consciente del código, su propio mapa de autoconocimiento, configuración en vivo, controles de instantáneas de base de datos, pulido como aplicación instalada en Windows, control del catálogo ACPX-Skills, ejecución protegida de herramientas, delegación opcional a agentes de programación externos, trabajo de proyectos habilitado para Unreal Engine, automatización de firmware STM32, ESP32 y Arduino, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, revisión de código consciente del commit, análisis de seguridad y un lienzo de automatización visual.',
       p2: 'La compilación v1.17.2 hace que comenzar sea a prueba de balas: el instalador de un solo clic ahora lleva su propio Python 3.12.10 autocontenido —junto con Java, Git y los navegadores de Playwright— para que el usuario final instale únicamente Ollama y los modelos, sin nada más que configurar. La reciente familia de E/S multimedia sigue completando sus sentidos —captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer—, junto con la automatización de firmware Arduiner, ESP32er y STM32er. Lleva 74 agentes, 79 herramientas Multi-Turn, 27 skills, tres puentes de microcontroladores, soporte de Unreal Engine, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw guardados al alcance del operador.',
       viewSource: 'Ver Código Fuente',
     },
@@ -899,7 +899,7 @@ const es: Translations = {
         },
         {
           category: 'Backends de LLM',
-          items: ['Ollama', 'API de Anthropic Claude', 'Visión Qwen', 'Etiquetas de modelo configurables'],
+          items: ['Ollama Cloud (predeterminado de fábrica)', 'Modelos locales de Ollama', 'API de Anthropic Claude', 'Visión Qwen', 'Etiquetas de modelo configurables'],
         },
         {
           category: 'Entorno de Agentes',
