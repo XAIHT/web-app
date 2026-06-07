@@ -36,7 +36,8 @@
       "Bash(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force)",
       "Bash(Select-Object Name, PSIsContainer)",
       "PowerShell(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force | Select-Object Name, @{Name='IsDir';Expression={$_.PSIsContainer}} | Format-Table -AutoSize)",
-      "Bash(Format-Table -AutoSize)"
+      "Bash(Format-Table -AutoSize)",
+      "Bash(cd *)"
     ]
   }
 }
