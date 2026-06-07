@@ -99,7 +99,7 @@ Prefer the production path? Jump to [§7 Build &amp; Deploy](#7-build--deploy).
 
 > **Latest — `Implementing the Spanish/English version!`** The whole site became bilingual: every label moved into a type-safe `src/i18n/translations.ts` dictionary with `en` and `es` keys, fronted by a `LanguageProvider` and a header `LanguageSwitch`. TypeScript enforces parity between the two languages so a missing translation is a compile error, not a runtime blank.
 >
-> **Before that — versioned alongside the Tlamatini app.** The site tracks the product it advertises: the `/tlamatini` page mirrors the current release (v1.17.1 at time of writing — 74 agent types, 27 skills, hybrid RAG, ACPX, Unreal MCP) and its install walkthrough. Bumping the app version means refreshing the marketing copy here.
+> **Before that — versioned alongside the Tlamatini app.** The site tracks the product it advertises: the `/tlamatini` page mirrors the current release (v1.17.2 at time of writing — 74 agent types, 27 skills, hybrid RAG, ACPX, Unreal MCP) and its install walkthrough. Bumping the app version means refreshing the marketing copy here.
 
 </details>
 

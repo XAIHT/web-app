@@ -37,7 +37,7 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.17.1',
+      'Tlamatini v1.17.2',
       'Local-First AI',
       '53 Unreal MCP Commands',
       'Multi-Turn Operation',
@@ -71,7 +71,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.17.1 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant with hybrid RAG over your source, a 79-tool, 4096-iteration Multi-Turn loop, Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages, in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 74 drag-and-drop agent types, STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.',
+      desc: 'Tlamatini v1.17.2 is a locally deployed, self-aware, Unreal Engine-enabled AI developer assistant with hybrid RAG over your source, a 79-tool, 4096-iteration Multi-Turn loop, Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages, in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 74 drag-and-drop agent types, STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -215,7 +215,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.17.1 makes installation bullet-proof — the one-click installer carries its own Python 3.12.10, plus Java, Git, and Playwright browsers, so you install only Ollama and the models. It rides on the recent media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — plus Arduiner, ESP32er, and STM32er firmware bridges, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 79-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 74 workflow agents.',
+    ctaDesc: 'Tlamatini v1.17.2 makes installation bullet-proof — the one-click installer carries its own Python 3.12.10, plus Java, Git, and Playwright browsers, so you install only Ollama and the models. It rides on the recent media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — plus Arduiner, ESP32er, and STM32er firmware bridges, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 79-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 74 workflow agents.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -238,7 +238,7 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Local-First AI Developer Assistant v1.17.1',
+      subtitle: 'Local-First AI Developer Assistant v1.17.2',
       desc: 'Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration, 79-tool, 4096-iteration Multi-Turn orchestration with Ask Execs approval gates, Windows 10|11 installed-app registration, strict Pythonxer execution, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 74-agent workflow designer with Arduiner, ESP32er, STM32er, the webcam, microphone, speaker, and on-screen video media family, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, Reviewer, and Analyzer.',
     },
     overview: {
@@ -246,7 +246,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She is a local app you run on your own machine, combining code-aware retrieval, her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, STM32, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.',
-      p2: 'The v1.17.1 build makes getting started bullet-proof: the one-click installer now carries its own self-contained Python 3.12.10 — along with Java, Git, and the Playwright browsers — so an end user installs only Ollama and the models, with nothing else to set up. The recent media-I/O family still rounds out her senses — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — alongside Arduiner, ESP32er, and STM32er firmware automation. She carries 74 agents, 79 Multi-Turn tools, 27 skills, three microcontroller bridges, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
+      p2: 'The v1.17.2 build makes getting started bullet-proof: the one-click installer now carries its own self-contained Python 3.12.10 — along with Java, Git, and the Playwright browsers — so an end user installs only Ollama and the models, with nothing else to set up. The recent media-I/O family still rounds out her senses — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — alongside Arduiner, ESP32er, and STM32er firmware automation. She carries 74 agents, 79 Multi-Turn tools, 27 skills, three microcontroller bridges, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
       viewSource: 'View Source',
     },
     features: {
@@ -302,7 +302,7 @@ const en = {
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.17.1 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Either way, installed builds register with Windows 10|11 uninstall mechanisms, while Config, native context picking, DB snapshots, and the zero-config ESP32er PlatformIO and Arduiner Arduino-CLI bootstraps stay available inside Tlamatini.',
+      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.17.2 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Either way, installed builds register with Windows 10|11 uninstall mechanisms, while Config, native context picking, DB snapshots, and the zero-config ESP32er PlatformIO and Arduiner Arduino-CLI bootstraps stay available inside Tlamatini.',
       steps: [
         { label: 'Install Ollama' },
         { label: 'Pull Default Models' },
@@ -490,7 +490,7 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.17.1',
+      'Tlamatini v1.17.2',
       'IA Local Primero',
       '53 Comandos Unreal MCP',
       'Operación Multi-Turn',
@@ -524,7 +524,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.17.1 es un asistente de desarrollo con IA desplegado localmente, autoconsciente y habilitado para Unreal Engine, con RAG híbrido sobre tu código fuente, un bucle Multi-Turn de 79 herramientas y 4096 iteraciones, compuertas de aprobación Ask Execs antes de ejecutar herramientas que cambian el estado, un instalador a prueba de balas de un solo clic que lleva su propio Python 3.12.10 para que los usuarios finales instalen únicamente Ollama y los modelos, registro como aplicación instalada en Windows 10|11 para rutas de desinstalación familiares, delegación opcional ACPX a CLIs de agentes de programación externos, el menú ACPX-Skills para 27 paquetes de skills, menús Config y DB integrados, carga nativa de contexto de carpetas anidadas, flujos de trabajo .flw reutilizables, 74 tipos de agentes para arrastrar y soltar, automatización de firmware de misión crítica STM32er, flujos de compilación / carga / monitoreo de firmware PlatformIO ESP32er, flujos de compilación / carga / monitoreo de firmware Arduino-CLI Arduiner, una familia completa de E/S multimedia para captura y reproducción de webcam, micrófono, altavoz y video en pantalla, flujos de evaluación Kali autorizados Kalier, la superficie de 53 comandos Unreal MCP, automatización de navegador real Playwrighter, control de escritorio Windower, estrictas compuertas de corrección Pythonxer, ejecución de archivos verificada por compilación, compuertas Reviewer y Analyzer conscientes del commit, opción de embedding de alto detalle, carga de contexto consciente de la GPU y su propio mapa de autoconocimiento.',
+      desc: 'Tlamatini v1.17.2 es un asistente de desarrollo con IA desplegado localmente, autoconsciente y habilitado para Unreal Engine, con RAG híbrido sobre tu código fuente, un bucle Multi-Turn de 79 herramientas y 4096 iteraciones, compuertas de aprobación Ask Execs antes de ejecutar herramientas que cambian el estado, un instalador a prueba de balas de un solo clic que lleva su propio Python 3.12.10 para que los usuarios finales instalen únicamente Ollama y los modelos, registro como aplicación instalada en Windows 10|11 para rutas de desinstalación familiares, delegación opcional ACPX a CLIs de agentes de programación externos, el menú ACPX-Skills para 27 paquetes de skills, menús Config y DB integrados, carga nativa de contexto de carpetas anidadas, flujos de trabajo .flw reutilizables, 74 tipos de agentes para arrastrar y soltar, automatización de firmware de misión crítica STM32er, flujos de compilación / carga / monitoreo de firmware PlatformIO ESP32er, flujos de compilación / carga / monitoreo de firmware Arduino-CLI Arduiner, una familia completa de E/S multimedia para captura y reproducción de webcam, micrófono, altavoz y video en pantalla, flujos de evaluación Kali autorizados Kalier, la superficie de 53 comandos Unreal MCP, automatización de navegador real Playwrighter, control de escritorio Windower, estrictas compuertas de corrección Pythonxer, ejecución de archivos verificada por compilación, compuertas Reviewer y Analyzer conscientes del commit, opción de embedding de alto detalle, carga de contexto consciente de la GPU y su propio mapa de autoconocimiento.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -668,7 +668,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.17.1 hace que la instalación sea a prueba de balas: el instalador de un solo clic lleva su propio Python 3.12.10, además de Java, Git y los navegadores de Playwright, así que solo instalas Ollama y los modelos. Se apoya en la reciente familia de E/S multimedia —captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer—, además de los puentes de firmware Arduiner, ESP32er y STM32er, registro como aplicación instalada en Windows 10|11, compuertas de aprobación Ask Execs, ejecución estricta Pythonxer, RAG híbrido, controles en vivo de Config, DB y ACPX-Skills, orquestación Multi-Turn de 79 herramientas, carga de contexto consciente de la GPU, 27 skills y 74 agentes de flujo.',
+    ctaDesc: 'Tlamatini v1.17.2 hace que la instalación sea a prueba de balas: el instalador de un solo clic lleva su propio Python 3.12.10, además de Java, Git y los navegadores de Playwright, así que solo instalas Ollama y los modelos. Se apoya en la reciente familia de E/S multimedia —captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer—, además de los puentes de firmware Arduiner, ESP32er y STM32er, registro como aplicación instalada en Windows 10|11, compuertas de aprobación Ask Execs, ejecución estricta Pythonxer, RAG híbrido, controles en vivo de Config, DB y ACPX-Skills, orquestación Multi-Turn de 79 herramientas, carga de contexto consciente de la GPU, 27 skills y 74 agentes de flujo.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -691,7 +691,7 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Local Primero v1.17.1',
+      subtitle: 'Asistente de Desarrollo con IA, Local Primero v1.17.2',
       desc: 'RAG híbrido, autoconocimiento, compilaciones auto-modificables opcionales, contexto nativo de carpetas anidadas, configuración de modelos en vivo, controles seguros de respaldo e intercambio de DB, administración del catálogo ACPX-Skills, orquestación Multi-Turn de 79 herramientas y 4096 iteraciones con compuertas de aprobación Ask Execs, registro como aplicación instalada en Windows 10|11, ejecución estricta Pythonxer, carga de contexto consciente de la GPU, opción de embedding de alto detalle, delegación opcional ACPX y un diseñador de flujos de 74 agentes con Arduiner, ESP32er, STM32er, la familia multimedia de webcam, micrófono, altavoz y video en pantalla, Kalier, la superficie de 53 comandos Unreal MCP, Playwrighter, Windower, Reviewer y Analyzer.',
     },
     overview: {
@@ -699,7 +699,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Es una aplicación local que ejecutas en tu propia máquina, combinando recuperación consciente del código, su propio mapa de autoconocimiento, configuración en vivo, controles de instantáneas de base de datos, pulido como aplicación instalada en Windows, control del catálogo ACPX-Skills, ejecución protegida de herramientas, delegación opcional a agentes de programación externos, trabajo de proyectos habilitado para Unreal Engine, automatización de firmware STM32, ESP32 y Arduino, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, revisión de código consciente del commit, análisis de seguridad y un lienzo de automatización visual.',
-      p2: 'La compilación v1.17.1 hace que comenzar sea a prueba de balas: el instalador de un solo clic ahora lleva su propio Python 3.12.10 autocontenido —junto con Java, Git y los navegadores de Playwright— para que el usuario final instale únicamente Ollama y los modelos, sin nada más que configurar. La reciente familia de E/S multimedia sigue completando sus sentidos —captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer—, junto con la automatización de firmware Arduiner, ESP32er y STM32er. Lleva 74 agentes, 79 herramientas Multi-Turn, 27 skills, tres puentes de microcontroladores, soporte de Unreal Engine, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw guardados al alcance del operador.',
+      p2: 'La compilación v1.17.2 hace que comenzar sea a prueba de balas: el instalador de un solo clic ahora lleva su propio Python 3.12.10 autocontenido —junto con Java, Git y los navegadores de Playwright— para que el usuario final instale únicamente Ollama y los modelos, sin nada más que configurar. La reciente familia de E/S multimedia sigue completando sus sentidos —captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer—, junto con la automatización de firmware Arduiner, ESP32er y STM32er. Lleva 74 agentes, 79 herramientas Multi-Turn, 27 skills, tres puentes de microcontroladores, soporte de Unreal Engine, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw guardados al alcance del operador.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -755,7 +755,7 @@ const es: Translations = {
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'El instalador de un solo clic es a prueba de balas: lleva su propio Python 3.12.10, Java, Git y los navegadores de Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan y ejecutan la versión v1.17.1 a continuación. ¿Prefieres el código fuente? Clona el repositorio y ejecútalo desde Python 3.12.10. De cualquier forma, las compilaciones instaladas se registran con los mecanismos de desinstalación de Windows 10|11, mientras que Config, la selección nativa de contexto, las instantáneas de DB y los arranques sin configuración de PlatformIO ESP32er y Arduino-CLI Arduiner permanecen disponibles dentro de Tlamatini.',
+      desc: 'El instalador de un solo clic es a prueba de balas: lleva su propio Python 3.12.10, Java, Git y los navegadores de Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan y ejecutan la versión v1.17.2 a continuación. ¿Prefieres el código fuente? Clona el repositorio y ejecútalo desde Python 3.12.10. De cualquier forma, las compilaciones instaladas se registran con los mecanismos de desinstalación de Windows 10|11, mientras que Config, la selección nativa de contexto, las instantáneas de DB y los arranques sin configuración de PlatformIO ESP32er y Arduino-CLI Arduiner permanecen disponibles dentro de Tlamatini.',
       steps: [
         { label: 'Instalar Ollama' },
         { label: 'Descargar Modelos por Defecto' },
