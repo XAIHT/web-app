@@ -8,7 +8,7 @@
 
 <p align="center">
   <em>"One who knows" — in Nahuatl.</em><br/>
-  A self-hosted AI developer assistant that turns your PC into a workshop where 74 agents collaborate to actually <strong>get things done</strong>.
+  A self-hosted AI developer assistant that turns your PC into a workshop where 76 agents collaborate to actually <strong>get things done</strong>.
 </p>
 
 <p align="center">
@@ -33,12 +33,12 @@ She can do all of that — self-hosted on your own machine, powered by the model
 ---
 
 <p align="center">
-  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.17.2"><img src="https://img.shields.io/badge/VERSION-v1.17.2-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.17.2" /></a>
+  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.19.3"><img src="https://img.shields.io/badge/VERSION-v1.19.3-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version v1.19.3" /></a>
   <a href="https://www.python.org/downloads/release/python-31210/"><img src="https://img.shields.io/badge/PYTHON-3.12.10-3776AB?style=for-the-badge&labelColor=2D2D2D&logo=python&logoColor=white" alt="Python 3.12.10" /></a>
   <a href="https://www.djangoproject.com/"><img src="https://img.shields.io/badge/DJANGO-5.2.4-092E20?style=for-the-badge&labelColor=2D2D2D&logo=django&logoColor=white" alt="Django 5.2.4" /></a>
   <a href="#7-building-a-frozen-distribution"><img src="https://img.shields.io/badge/PLATFORM-WIN%2010%20%7C%2011-0078D6?style=for-the-badge&labelColor=2D2D2D&logo=windows&logoColor=white" alt="Platform Windows 10 | 11" /></a>
-  <a href="#95-agent-catalog-the-72-types-by-family"><img src="https://img.shields.io/badge/AGENTS-72-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="72 Agents" /></a>
-  <a href="#35-tutorial-the-multi-turn-toggle"><img src="https://img.shields.io/badge/TOOLS-79-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="79 Multi-Turn Tools" /></a>
+  <a href="#95-agent-catalog-the-76-types-by-family"><img src="https://img.shields.io/badge/AGENTS-76-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="76 Agents" /></a>
+  <a href="#35-tutorial-the-multi-turn-toggle"><img src="https://img.shields.io/badge/TOOLS-83-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="83 Multi-Turn Tools" /></a>
   <a href="#5-acpx--external-coding-agent-clis-as-tools"><img src="https://img.shields.io/badge/ACPX-12%20TOOLS-FF8C00?style=for-the-badge&labelColor=2D2D2D" alt="ACPX 12 Tools" /></a>
   <a href="#312-the-acpx-skills-menu--browse-configure-diagnostics-reload"><img src="https://img.shields.io/badge/SKILLS-27-DB2777?style=for-the-badge&labelColor=2D2D2D" alt="27 Skills" /></a>
   <a href="#10-embedding-memory-pre-flight-guard-gpu-hosts"><img src="https://img.shields.io/badge/RAG-FAISS%20%2B%20BM25-009688?style=for-the-badge&labelColor=2D2D2D" alt="Hybrid RAG" /></a>
@@ -52,9 +52,9 @@ She can do all of that — self-hosted on your own machine, powered by the model
 | 🧠 **Real RAG over your code** | FAISS + BM25 hybrid retrieval with context budgeting. The model sees the *right* code, not random chunks. |
 | 🛠️ **Multi-Turn mode** | The LLM becomes an **operator**: shell, Python, APIs, browser automation, screenshots, keyboard/mouse — all chained in one conversation. |
 | 🤝 **ACPX** | Delegate sub-tasks to Claude Code, Cursor, Codex, Gemini CLI, Qwen — and relay output between them. One conductor, an orchestra of agents. |
-| 🎨 **Visual workflow designer** | Drag and drop 74 agent types, wire them together, run flows unattended. No code required to compose a pipeline. |
+| 🎨 **Visual workflow designer** | Drag and drop 76 agent types, wire them together, run flows unattended. No code required to compose a pipeline. |
 | 🪞 **Self-aware** | Tlamatini carries a knowledge map of her own architecture. `--self-modify` builds ship her source so she can inspect and modify **herself**. |
-| 🔒 **Self-hosted** | The app, hybrid RAG, and all 74 agents run on your machine. The LLM is your choice — fully-local [Ollama](https://ollama.com/) models, Ollama Cloud (the shipped default), or cloud APIs like Anthropic Claude. With a cloud model, your prompts and code context are sent to that provider. |
+| 🔒 **Self-hosted** | The app, hybrid RAG, and all 76 agents run on your machine. The LLM is your choice — fully-local [Ollama](https://ollama.com/) models, Ollama Cloud (the shipped default), or cloud APIs like Anthropic Claude. With a cloud model, your prompts and code context are sent to that provider. |
 
 ### 💡 The thesis behind Tlamatini
 
@@ -85,7 +85,7 @@ ollama pull kimi-k2.6:cloud
 ollama pull Nomic-Embed-Text:latest
 ```
 
-**3 · Install Tlamatini from the release ZIP** — download **[Tlamatini v1.17.2](https://github.com/XAIHT/Tlamatini/releases/tag/v1.17.2)**, then:
+**3 · Install Tlamatini from the release ZIP** — download **[Tlamatini v1.19.3](https://github.com/XAIHT/Tlamatini/releases/tag/v1.19.3)**, then:
 
 ```text
 1. Unzip the release archive anywhere (no admin rights needed).
@@ -101,9 +101,28 @@ Prefer running from a cloned repo instead of the ZIP? Use the full [§2 Quicksta
 ---
 
 <details>
+<summary><strong>📦 What's new in v1.19.3 (2026-06-10) — click to expand</strong></summary>
+
+> **Patch releases v1.19.1 → v1.19.3 (2026-06-09 → 2026-06-10)** are stability fixes on top of the v1.19.0 audio/voice wave below: **Talker** now chunks long input by sentence so it can speak for hours instead of cutting off near the single-generation token cap, and the media agents (**Recorder / Camcorder / Whisperer / Shoter**) now default their output to the application **`Temp`** directory rather than the user's Music/Pictures/Documents folders (an explicit `output_dir` is still honored).
+>
+> ---
+>
+> **Zero-latency microphone "REC" indicator for the audio agents (v1.19.0).** Whisperer's self-contained mic path **and** the **Recorder** agent now pop a live on-screen **REC light** the instant recording begins — a blinking red dot plus a real-time VU bar driven by the actual microphone samples — so you can *see* that the mic is open and capturing. The indicator is fed by a callback `InputStream`: it turns **ON at the first audio block** (~20 ms after the stream opens, comfortably under a 50 ms latency budget) and turns **OFF the moment the stream stops**, with no polling. Because pool agents run detached with no console of their own, the agent `AllocConsole()`s / reveals its own window and paints the REC light to `CONOUT$`, so the indicator shows up even for a headless wrapped run.
+>
+> **Whisperer default `record_seconds` 5 → 30.** The mic-capture default is longer so a quick "transcribe what I say" run actually gives you time to speak a sentence before it stops.
+>
+> **CPU-only / CUDA-free build contract, locked by tests.** A new build-test class **`NoGpuCudaFreeContractTests`** proves the build and runtime are **CPU-only and free of any hard CUDA requirement** — the torch CPU wheel is used, `nvidia*` GPU wheels are pruned from the bundle, and faster-whisper / ctranslate2 fall back to CPU — so **both audio agents (Whisperer, Recorder) run on a machine with no GPU**. (Whisperer still auto-detects an NVIDIA GPU and uses it when present; the contract only guarantees it never *needs* one.)
+
+</details>
+
+<details>
 <summary><strong>📦 What's new in v1.17.0 (2026-06-05) — click to expand</strong></summary>
 
 > **Bullet-proof installation — the installer now carries its own Python.** v1.17.0 re-engineers the install process so it can't be tripped by the host machine's Python: the installer ships a **self-contained Python 3.12.10** (with every pool-agent dependency already installed) into `<install_dir>\python\`, and **all** pool agents now run on that carried interpreter unconditionally — immune to a missing, wrong-version, or PATH-shadowed system Python and to a stale `PYTHON_HOME`. An end user installs **only Ollama + the models**; there is no separate Python install. `build.py` bundles and version-pins the carried interpreter (`bundle_carried_python` + a hard `CARRIED_PYTHON_VERSION = 3.12.10` preflight), and every agent's Python resolver now prefers `<install_dir>\python` first. This release also lands an **improvement to the prompting chain** plus assorted install-flow and README fixes.
+>
+> **NEW (v1.18.0, 2026-06-08) — Whisperer, speech-to-text / voice recognition (76th agent type).** **Whisperer** turns SPOKEN AUDIO into a STRING of text — the speech-to-text sibling of **Talker** (text-to-speech). It is **100% self-sufficient for the microphone**: it opens, configures (channels/sample-rate/gain) and records the mic ITSELF (no Recorder needed), or transcribes a given audio FILE. Transcription runs **faster-whisper LOCALLY by default** — it **auto-detects an NVIDIA GPU (CUDA) and ALWAYS falls back to CPU** on a machine without one (and auto-retries on CPU if the GPU path fails) — or a **cloud Whisper API** (Groq/OpenAI). NOTE: **Ollama cannot do speech-to-text** (it has no audio input), so recognition is always done by the ASR engine; an optional Ollama pass only tidies the FINISHED transcript's punctuation. Observational, so it stays out of the Exec Report; ships on both the canvas and as the wrapped Multi-Turn tool `chat_agent_whisperer`, and emits an `INI_SECTION_WHISPERER` block (the transcript text is the body) for Parametrizer. Local transcription needs `faster-whisper` (absent + no cloud key → `status: engine_unavailable`, not a crash).
+>
+> **Recently (v1.17.2, 2026-06-07) — Talker, text-to-speech via Ollama (75th agent type).** **Talker** SPEAKS `input_text` aloud through the speakers by driving an **Ollama** connection that runs a neural TTS model (default **`Orpheus-3b-FT`**) — the voice-synthesis sibling of the media family (AudioPlayer plays an existing file; Talker GENERATES speech from text). It is **FEMALE-ONLY by design** (Tlamatini is female; a male voice is FORBIDDEN BY DESIGN, with no override — asking for one makes Talker close its execution entirely and report "male voice is forbidden by design — NOW CLOSING.. BYE", never substituting). It exposes the model's **full parameter surface**: the permitted FEMALE **voices** (tara [default]/leah/jess/mia/zoe), a `female`-only `gender` shortcut, 8 **emotive tags** (`<laugh>`/`<sigh>`/…), a `language` hint, the Ollama connection (`ollama_url`/`ollama_token`/`model`), and generation knobs (`temperature`/`top_p`/`top_k`/`min_p`/`repetition_penalty`/`max_tokens`/`seed`). The model streams audio TOKENS that are decoded to a 24 kHz WAV by the **SNAC** codec, saved and played (`device_index`/`volume_percent`/`sample_rate`). Observational/output, so it stays out of the Exec Report; ships on both the canvas and as the wrapped Multi-Turn tool `chat_agent_talker`, and emits an `INI_SECTION_TALKER` block for Parametrizer. NOTE: rendering audible audio needs `snac` + `torch` installed (`pip install snac torch`); without them Talker saves the audio tokens and reports `status: tokens_only`.
 >
 > **Recently (v1.15.0, 2026-06-04) — the media-playback pair VideoPlayer + AudioPlayer.** **VideoPlayer (74th agent type) — on-screen video PLAYBACK with audio.** **VideoPlayer** plays a video file (`.mp4`/`.mov`/`.mkv`/`.avi`/`.webm`) **with sound** on a chosen **display**, the on-screen sibling of AudioPlayer (speakers). It decodes + plays audio via **`ffpyplayer`** — whose pip wheel **bundles ffmpeg + SDL** so it ships entirely through `requirements.txt` and PyInstaller's `--collect-all` (no external ffmpeg, no runtime download) — and draws the window with the already-bundled **OpenCV**; if ffpyplayer is ever unavailable it degrades to silent OpenCV video. Knobs: `display_index` (which monitor), `volume_percent`, **`time_played`** (0 = whole video once; N>0 = exactly N seconds, TRUNCATING a longer file or LOOPING a shorter one with a final partial segment), `window_width`/`window_height`, `fullscreen`, and `keep_aspect` (letterbox vs stretch). Observational/output, so it stays out of the Exec Report; ships on both the canvas and as the wrapped Multi-Turn tool `chat_agent_videoplayer`, and emits an `INI_SECTION_VIDEOPLAYER` block (full played path + time played) for Parametrizer. The same **v1.15.0** release also added **AudioPlayer** — audio PLAYBACK completing the media-I/O family.
 >
@@ -198,7 +217,7 @@ Prefer running from a cloned repo instead of the ZIP? Use the full [§2 Quicksta
   - [9.2. The five layers](#92-the-five-layers)
   - [9.3. Multi-Turn execution pipeline](#93-multi-turn-execution-pipeline)
   - [9.4. Agent contracts and the Flow Compiler](#94-agent-contracts-and-the-flow-compiler)
-  - [9.5. Agent catalog (the 74 types, by family)](#95-agent-catalog-the-74-types-by-family)
+  - [9.5. Agent catalog (the 76 types, by family)](#95-agent-catalog-the-76-types-by-family)
   - [9.6. Self-Knowledge & Self-Modification](#96-self-knowledge--self-modification)
 - [10. Embedding-Memory Pre-Flight Guard (GPU hosts)](#10-embedding-memory-pre-flight-guard-gpu-hosts)
   - [10.1. Why this exists](#101-why-this-exists)
@@ -238,7 +257,7 @@ Prefer running from a cloned repo instead of the ZIP? Use the full [§2 Quicksta
 
 ### 1.1. What Tlamatini is
 
-**Tlamatini** (Nahuatl for *"one who knows"*) is a Django/Channels app you run on your own machine. It packages a hybrid RAG pipeline, a Multi-Turn tool-calling LLM loop, an ACPX runtime that spawns external coding-agent CLIs as child processes, an **Unreal MCP** client that drives Unreal Engine 5 from chat or canvas, and a drag-and-drop workflow designer with 74 agent types — into one self-hosted install. The app and RAG run locally; the LLM backend is configurable: **Ollama** (local models *or* Ollama Cloud — the shipped default uses Ollama Cloud `:cloud` tags), **Anthropic Claude** (cloud), **Qwen vision** (Ollama).
+**Tlamatini** (Nahuatl for *"one who knows"*) is a Django/Channels app you run on your own machine. It packages a hybrid RAG pipeline, a Multi-Turn tool-calling LLM loop, an ACPX runtime that spawns external coding-agent CLIs as child processes, an **Unreal MCP** client that drives Unreal Engine 5 from chat or canvas, and a drag-and-drop workflow designer with 76 agent types — into one self-hosted install. The app and RAG run locally; the LLM backend is configurable: **Ollama** (local models *or* Ollama Cloud — the shipped default uses Ollama Cloud `:cloud` tags), **Anthropic Claude** (cloud), **Qwen vision** (Ollama).
 
 License: **GPL-3.0** · Repo: <https://github.com/XAIHT/Tlamatini.git> · Platform tested: Windows 11 (cross-platform for source mode).
 
@@ -959,7 +978,7 @@ multi-line body content (becomes 'response_body')
 >>>END_SECTION_<AGENT_TYPE>
 ```
 
-33 source agents support this format: Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen/Cipher/DeCipher, Gatewayer, Gateway-Relayer, **De-Compresser**, Googler, **Playwrighter**, **ACPXer**, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, **Windower**, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **Arduiner**.
+35 source agents support this format: Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen/Cipher/DeCipher, Gatewayer, Gateway-Relayer, **De-Compresser**, Googler, **Playwrighter**, **ACPXer**, Shoter, **Camcorder**, **Recorder**, **Whisperer**, **AudioPlayer**, **VideoPlayer**, **Talker**, Mouser, **Windower**, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **Arduiner**.
 
 Canonical example:
 
@@ -1315,7 +1334,7 @@ pkg.zip          Uninstaller.exe        dist/Tlamatini_Release/
 python build.py
 ```
 
-Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md`, the self-knowledge map `Tlamatini.md`, and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 74 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
+Installs deps, runs `collectstatic`, executes PyInstaller, copies required payloads (including `README.md`, the self-knowledge map `Tlamatini.md`, and bundled `jd-cli/`), runs migrations, creates the default user (`user`/`changeme`), renames the exe to `Tlamatini.exe`, copies all 76 agent templates, bundles support scripts (`register_flw.ps1`, `CreateShortcut.ps1`, `Tlamatini.ps1`, `Tlamatini.ico`), and zips it all into **`pkg.zip`**.
 
 `build.py` is strict: missing `README.md`, missing `jd-cli/`, or missing `jd-cli.bat` causes a non-zero exit.
 
@@ -1532,14 +1551,14 @@ The compiler does a few quiet but important safety jobs:
 
 This is the Pareto improvement: a small shared backend layer makes both major features safer. Chat-created flows and ACP-created flows now speak the same format before they touch the runtime.
 
-### 9.5. Agent catalog (the 74 types, by family)
+### 9.5. Agent catalog (the 76 types, by family)
 
 | Family | Members |
 |---|---|
 | **Control** | Starter, Ender, Stopper, Cleaner, Sleeper, Croner |
 | **Routing** | Raiser, Forker, Asker, Counter |
 | **Logic gates** | OR, AND, Barrier |
-| **Action** | Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, **Playwrighter**, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, Keyboarder, **Windower**, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **Arduiner** |
+| **Action** | Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, **Playwrighter**, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, **Camcorder**, **Recorder**, **Whisperer**, **AudioPlayer**, **VideoPlayer**, **Talker**, Mouser, Keyboarder, **Windower**, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **Arduiner** |
 | **Cryptography** | Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber post-quantum) |
 | **Utility** | Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager |
 | **Terminal / monitoring** | Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor |
@@ -1848,22 +1867,22 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 ### 13.2. Cutting a release
 
 ```powershell
-git tag -a v1.17.0 -m "Release 1.17.0: <one-line summary>"
-git push origin v1.17.0
+git tag -a v1.19.3 -m "Release 1.19.3: <one-line summary>"
+git push origin v1.19.3
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.17.0/`.
+All three build scripts pick the tag up from `git describe --tags` automatically. The artefact lands in `dist/Tlamatini_Release_v1.19.3/`.
 
 ### 13.3. Where you can see the running version
 
 | Surface | Example |
 |---|---|
-| About dialog | `Tlamatini v1.17.0` |
-| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.17.0` |
-| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.17.0","commit":"abc1234", …}` |
+| About dialog | `Tlamatini v1.19.3` |
+| Startup banner (console + `tlamatini.log`) | `--- [VERSION] Tlamatini 1.19.3` |
+| HTTP endpoint (open, usable as a health-check) | `GET /agent/version/` → `{"version":"1.19.3","commit":"abc1234", …}` |
 | Win32 properties on `Tlamatini.exe` / `Installer.exe` / `Uninstaller.exe` | Right-click → Properties → Details → ProductVersion |
 
 All four are computed from the same `Tlamatini/agent/_version.py` that `build.py` writes (gitignored, regenerated on every build).
@@ -1887,8 +1906,8 @@ No `.devN`, no `+gSHA`, no `.dirty` ever appears in the version string — those
 | # | Source | Use case |
 |---|---|---|
 | 1 (highest) | `python build.py --version 2.0.0-rc.1` | Local RC build before tagging |
-| 2 | `$env:TLAMATINI_VERSION = "1.17.0"; python build.py` | CI pipelines |
-| 3 | `git tag -a v1.17.0 …` (then build) | The normal release path |
+| 2 | `$env:TLAMATINI_VERSION = "1.19.3"; python build.py` | CI pipelines |
+| 3 | `git tag -a v1.19.3 …` (then build) | The normal release path |
 | 4 (lowest) | _(none — sentinel `0.0.0+unknown`)_ | Running from a download zip with no git |
 
 `build.py` exports `$env:TLAMATINI_VERSION` after resolving, so `build_installer.py` and `build_uninstaller.py` in the same shell see the same value — the three artefacts cannot disagree.

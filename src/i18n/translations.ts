@@ -37,13 +37,13 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.17.2',
+      'Tlamatini v1.19.3',
       'Self-Hosted AI',
       '53 Unreal MCP Commands',
       'Multi-Turn Operation',
-      '79 Multi-Turn Tools',
+      '83 Multi-Turn Tools',
       '27 Skill Packages',
-      '74 Workflow Agents',
+      '76 Workflow Agents',
       'Ask Execs Approval Gate',
       'Windows 10|11 Installed App',
       'Bullet-Proof Carried-Python Installer',
@@ -55,6 +55,8 @@ const en = {
       'Arduiner Arduino CLI Bridge',
       'Webcam + Microphone Capture',
       'On-Screen Video Playback',
+      'Talker Text-to-Speech',
+      'Whisperer Speech-to-Text',
       'Self-Modifiable Builds',
       'Native Context Picker',
       'Kalier Configured Kali Bridge',
@@ -71,7 +73,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.17.2 is a self-hosted, cloud-capable, self-aware, Unreal Engine-enabled AI developer assistant with hybrid RAG over your source, a 79-tool, 4096-iteration Multi-Turn loop, Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages, in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 74 drag-and-drop agent types, STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.',
+      desc: 'Tlamatini v1.19.3 is a self-hosted, cloud-capable, self-aware, Unreal Engine-enabled AI developer assistant with hybrid RAG over your source, an 83-tool, 4096-iteration Multi-Turn loop, Ask Execs approval gates before state-changing tool execution, a bullet-proof one-click installer that carries its own Python 3.12.10 so end users install only Ollama and the models, Windows 10|11 installed-app registration for familiar uninstall paths, opt-in ACPX delegation to external coding-agent CLIs, the ACPX-Skills menu for 27 skill packages, in-app Config and DB menus, native nested-folder context loading, reusable .flw workflows, 76 drag-and-drop agent types, STM32er critical-mission firmware automation, ESP32er PlatformIO firmware build / upload / monitor flows, Arduiner Arduino-CLI firmware build / upload / monitor flows, a full media-I/O family for webcam, microphone, speaker, and on-screen video capture and playback, Talker female-voice text-to-speech and Whisperer speech-to-text, Kalier authorized Kali assessment workflows, the 53-command Unreal MCP surface, Playwrighter real-browser automation, Windower desktop control, strict Pythonxer correctness gates, compile-checked file execution, commit-aware Reviewer and Analyzer gates, high-detail embedding opt-in, GPU-aware context loading, and her own self-knowledge map.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -96,7 +98,7 @@ const en = {
           title: 'Mission',
           subtitle: 'Make the Assistant a Doer',
           description:
-            'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, STM32F4x, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, tunable embedding depth, GPU-aware context loading, 79-tool / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Pythonxer correctness gates, honest foreground execution, Windows 10|11 uninstall readiness, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
+            'The mission is to combine code-aware RAG, native nested-folder context loading, Unreal Engine-enabled project assistance, STM32F4x, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, tunable embedding depth, GPU-aware context loading, 83-tool / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Pythonxer correctness gates, honest foreground execution, Windows 10|11 uninstall readiness, Exec Report audit tables, opt-in ACPX delegation, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
         },
         {
           title: 'Concept',
@@ -158,7 +160,7 @@ const en = {
     workflow: {
       label: 'Workflow Designer',
       title: 'Drag, Drop, Orchestrate',
-      desc: 'The Visual Workflow Designer lets you drag 74 agent types onto a canvas, wire them into reusable .flw workflows, preserve Parametrizer mappings, validate the live graph, build and flash STM32F4x firmware through a preflighted MCP bridge, build and upload ESP32 firmware through PlatformIO, build and upload Arduino firmware through the Arduino CLI, capture webcam, microphone, and screen and play sound and video back, run authorized Kali assessments through a configured server, drive 53-command Unreal MCP projects, drive real browser flows, command desktop windows, review diffs, scan for security findings, add human approval checkpoints, and bring repeatable agentic automation to Unreal Engine-enabled project work.',
+      desc: 'The Visual Workflow Designer lets you drag 76 agent types onto a canvas, wire them into reusable .flw workflows, preserve Parametrizer mappings, validate the live graph, build and flash STM32F4x firmware through a preflighted MCP bridge, build and upload ESP32 firmware through PlatformIO, build and upload Arduino firmware through the Arduino CLI, capture webcam, microphone, and screen and play sound and video back, speak text aloud with Talker and transcribe speech with Whisperer, run authorized Kali assessments through a configured server, drive 53-command Unreal MCP projects, drive real browser flows, command desktop windows, review diffs, scan for security findings, add human approval checkpoints, and bring repeatable agentic automation to Unreal Engine-enabled project work.',
       categories: [
         { name: 'Control' },
         { name: 'Routing' },
@@ -190,8 +192,10 @@ const en = {
         { desc: 'Scaffold, build, upload, and monitor Arduino, AVR, and SAMD firmware through zero-config Arduino-CLI automation, selected by FQBN', type: 'Embedded' },
         { desc: 'Capture a photo or a video segment from a system webcam, saved with a collision-proof name', type: 'Media' },
         { desc: 'Record microphone audio to a WAV file with selectable device, sample rate, and software gain', type: 'Media' },
+        { desc: 'Transcribe speech to text from the microphone or an audio file with local faster-whisper or a cloud API', type: 'Media' },
         { desc: 'Play an audio file through the speakers with a software volume and a play-for-N-seconds loop or truncate', type: 'Media' },
         { desc: 'Play a video file with sound on a chosen display, with fullscreen, aspect, and play-for-N-seconds control', type: 'Media' },
+        { desc: 'Speak text aloud in a female voice via an Ollama TTS model decoded with the SNAC codec', type: 'Media' },
         { desc: 'Drive a real browser through scripted logins, forms, assertions, screenshots, and downloads', type: 'Browser' },
         { desc: 'Focus, move, resize, tile, maximize, minimize, and close Windows app windows by title', type: 'Desktop' },
         { desc: 'Coordinate authorized Kali Linux recon through the configured MCP-Kali-Server URL', type: 'Security' },
@@ -215,7 +219,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.17.2 makes installation bullet-proof — the one-click installer carries its own Python 3.12.10, plus Java, Git, and Playwright browsers, so you install only Ollama and the models. It rides on the recent media-I/O family — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — plus Arduiner, ESP32er, and STM32er firmware bridges, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 79-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 74 workflow agents.',
+    ctaDesc: 'Tlamatini v1.19.3 gives her a full voice — the new Talker text-to-speech and Whisperer speech-to-text agents — on top of the media-I/O family of Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound. The one-click installer still carries its own Python 3.12.10, plus Java, Git, and Playwright browsers, so you install only Ollama and the models — plus Arduiner, ESP32er, and STM32er firmware bridges, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 83-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 76 workflow agents.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -238,15 +242,15 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.17.2',
-      desc: 'Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration, 79-tool, 4096-iteration Multi-Turn orchestration with Ask Execs approval gates, Windows 10|11 installed-app registration, strict Pythonxer execution, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 74-agent workflow designer with Arduiner, ESP32er, STM32er, the webcam, microphone, speaker, and on-screen video media family, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, Reviewer, and Analyzer.',
+      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.19.3',
+      desc: 'Hybrid RAG, self-knowledge, optional self-modify builds, native nested-folder context, live model configuration, safe DB backup and swap controls, ACPX-Skills catalog administration, 83-tool, 4096-iteration Multi-Turn orchestration with Ask Execs approval gates, Windows 10|11 installed-app registration, strict Pythonxer execution, GPU-aware context loading, high-detail embedding opt-in, opt-in ACPX delegation, and a 76-agent workflow designer with Arduiner, ESP32er, STM32er, the webcam, microphone, speaker, on-screen video, Talker text-to-speech, and Whisperer speech-to-text media family, Kalier, the 53-command Unreal MCP surface, Playwrighter, Windower, Reviewer, and Analyzer.',
     },
     overview: {
       label: 'Project Overview',
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She is a self-hosted app you run on your own machine, with the LLM your choice of local Ollama, Ollama Cloud (the shipped default), or a cloud API like Anthropic Claude, combining code-aware retrieval, her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, Unreal Engine-enabled project work, STM32, ESP32, and Arduino firmware automation, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.',
-      p2: 'The v1.17.2 build makes getting started bullet-proof: the one-click installer now carries its own self-contained Python 3.12.10 — along with Java, Git, and the Playwright browsers — so an end user installs only Ollama and the models, with nothing else to set up. The recent media-I/O family still rounds out her senses — Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound — alongside Arduiner, ESP32er, and STM32er firmware automation. She carries 74 agents, 79 Multi-Turn tools, 27 skills, three microcontroller bridges, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
+      p2: 'The v1.19.3 build gives Tlamatini a full voice: the new Talker agent speaks text aloud in a female voice via Ollama + SNAC, and the new Whisperer agent transcribes speech back into text with local faster-whisper — joining the existing media-I/O family of Camcorder webcam capture, Recorder microphone capture, AudioPlayer speaker playback, and VideoPlayer on-screen video with sound, alongside Arduiner, ESP32er, and STM32er firmware automation. The one-click installer still carries its own self-contained Python 3.12.10 — along with Java, Git, and the Playwright browsers — so an end user installs only Ollama and the models. She now carries 76 agents, 83 Multi-Turn tools, 27 skills, three microcontroller bridges, Unreal Engine support, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
       viewSource: 'View Source',
     },
     features: {
@@ -270,12 +274,12 @@ const en = {
           description: 'Arduiner is the third microcontroller agent: it scaffolds, builds, uploads, and monitors Arduino, AVR, and SAMD firmware through the zero-config Arduino CLI, picks the board by FQBN, auto-installs the matching core, and runs a fail-safe preflight before touching hardware.',
         },
         {
-          title: 'Webcam, Mic, and Media Playback',
-          description: 'A full media-I/O family rounds out the senses: Camcorder captures the webcam, Recorder captures the microphone, AudioPlayer plays sound through the speakers, and VideoPlayer plays video with audio on any display — the on-screen and audible companions to screen-capturing Shoter.',
+          title: 'Webcam, Mic, Voice, and Media Playback',
+          description: 'A full media-I/O family rounds out the senses: Camcorder captures the webcam, Recorder captures the microphone, AudioPlayer plays sound through the speakers, VideoPlayer plays video with audio on any display, Talker speaks text aloud in a female voice via Ollama, and Whisperer transcribes speech back into text — the on-screen, audible, and spoken companions to screen-capturing Shoter.',
         },
         {
           title: 'Multi-Turn Chat Operator',
-          description: 'A chat surface with independent toggles for Multi-Turn, Ask Execs, Exec Report, ACPX, and internet context. She can choose from 79 tools, pause for approval, reject broken Python early, and turn successful work into repeatable flows.',
+          description: 'A chat surface with independent toggles for Multi-Turn, Ask Execs, Exec Report, ACPX, and internet context. She can choose from 83 tools, pause for approval, reject broken Python early, and turn successful work into repeatable flows.',
         },
         {
           title: 'Windows Installed-App Polish',
@@ -287,7 +291,7 @@ const en = {
         },
         {
           title: 'Visual Workflow Designer',
-          description: 'Drag-and-drop workflow creation with 74 agent types, .flw save/load, live Validate, Start-time compilation, ESP32er PlatformIO flows, STM32er firmware pipelines, Arduiner Arduino-CLI flows, webcam, microphone, speaker, and on-screen video media nodes, Kalier assessment runs, Playwrighter browser flows, Windower desktop-window control, strict Pythonxer paths, 53-command Unrealer flows, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
+          description: 'Drag-and-drop workflow creation with 76 agent types, .flw save/load, live Validate, Start-time compilation, ESP32er PlatformIO flows, STM32er firmware pipelines, Arduiner Arduino-CLI flows, webcam, microphone, speaker, on-screen video, text-to-speech Talker, and speech-to-text Whisperer media nodes, Kalier assessment runs, Playwrighter browser flows, Windower desktop-window control, strict Pythonxer paths, 53-command Unrealer flows, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
         },
         {
           title: 'ACPX External Delegation',
@@ -302,7 +306,7 @@ const en = {
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.17.2 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Either way, installed builds register with Windows 10|11 uninstall mechanisms, while Config, native context picking, DB snapshots, and the zero-config ESP32er PlatformIO and Arduiner Arduino-CLI bootstraps stay available inside Tlamatini.',
+      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.19.3 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Either way, installed builds register with Windows 10|11 uninstall mechanisms, while Config, native context picking, DB snapshots, and the zero-config ESP32er PlatformIO and Arduiner Arduino-CLI bootstraps stay available inside Tlamatini.',
       steps: [
         { label: 'Install Ollama' },
         { label: 'Pull Default Models' },
@@ -314,8 +318,8 @@ const en = {
     },
     agents: {
       label: 'Agent Ecosystem',
-      title: '74 Workflow-Agent Types',
-      desc: 'The catalog spans control, routing, logic, action, cryptography, utility, terminal monitoring, and AI design agents, including Arduiner, ESP32er, STM32er, the Camcorder, Recorder, AudioPlayer, and VideoPlayer media family, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, 53-command Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, strict Pythonxer, FlowCreator, 27 ACPX-Skills packages, Ask Execs approval around state-changing Multi-Turn execution, her self-knowledge map, Windows installed-app polish, and GPU-aware context safeguards around the RAG entry point.',
+      title: '76 Workflow-Agent Types',
+      desc: 'The catalog spans control, routing, logic, action, cryptography, utility, terminal monitoring, and AI design agents, including Arduiner, ESP32er, STM32er, the Camcorder, Recorder, Whisperer, AudioPlayer, VideoPlayer, and Talker media family, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, 53-command Unrealer, commit-aware Reviewer, Analyzer, De-Compresser, strict Pythonxer, FlowCreator, 27 ACPX-Skills packages, Ask Execs approval around state-changing Multi-Turn execution, her self-knowledge map, Windows installed-app polish, and GPU-aware context safeguards around the RAG entry point.',
       groupLabel: 'Agents',
       groups: [
         {
@@ -371,8 +375,10 @@ const en = {
             { desc: 'Screenshot capture' },
             { desc: 'Webcam photo and video capture' },
             { desc: 'Microphone audio capture to WAV' },
+            { desc: 'Speech-to-text mic and file transcription' },
             { desc: 'Audio playback to speakers' },
             { desc: 'On-screen video playback with sound' },
+            { desc: 'Female-voice text-to-speech via Ollama' },
             { desc: 'Click, drag, scroll, locate images' },
             { desc: 'Typing and hotkey chords' },
             { desc: 'Focus, arrange, resize, and close windows' },
@@ -450,7 +456,7 @@ const en = {
         },
         {
           category: 'Agent Runtime',
-          items: ['79 Multi-Turn tools', 'Ask Execs approval gate', 'Pythonxer strict gate', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'ESP32er PlatformIO bridge', 'STM32er firmware bridge', 'Arduiner Arduino-CLI bridge', 'Camcorder / Recorder capture', 'AudioPlayer / VideoPlayer playback', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '27 SKILL.md packages'],
+          items: ['83 Multi-Turn tools', 'Ask Execs approval gate', 'Pythonxer strict gate', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'ESP32er PlatformIO bridge', 'STM32er firmware bridge', 'Arduiner Arduino-CLI bridge', 'Camcorder / Recorder capture', 'AudioPlayer / VideoPlayer playback', 'Talker text-to-speech / Whisperer speech-to-text', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '27 SKILL.md packages'],
         },
         {
           category: 'Workflow Runtime',
@@ -490,13 +496,13 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.17.2',
+      'Tlamatini v1.19.3',
       'IA Autoalojada',
       '53 Comandos Unreal MCP',
       'Operación Multi-Turn',
-      '79 Herramientas Multi-Turn',
+      '83 Herramientas Multi-Turn',
       '27 Paquetes de Skills',
-      '74 Agentes de Flujo',
+      '76 Agentes de Flujo',
       'Compuerta de Aprobación Ask Execs',
       'App Instalada en Windows 10|11',
       'Instalador a Prueba de Balas con Python Integrado',
@@ -508,6 +514,8 @@ const es: Translations = {
       'Puente Arduino CLI Arduiner',
       'Captura de Webcam + Micrófono',
       'Reproducción de Video en Pantalla',
+      'Talker Texto-a-Voz',
+      'Whisperer Voz-a-Texto',
       'Compilaciones Auto-Modificables',
       'Selector de Contexto Nativo',
       'Puente Kali Configurado Kalier',
@@ -524,7 +532,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.17.2 es un asistente de desarrollo con IA autoalojado y con capacidad en la nube, autoconsciente y habilitado para Unreal Engine, con RAG híbrido sobre tu código fuente, un bucle Multi-Turn de 79 herramientas y 4096 iteraciones, compuertas de aprobación Ask Execs antes de ejecutar herramientas que cambian el estado, un instalador a prueba de balas de un solo clic que lleva su propio Python 3.12.10 para que los usuarios finales instalen únicamente Ollama y los modelos, registro como aplicación instalada en Windows 10|11 para rutas de desinstalación familiares, delegación opcional ACPX a CLIs de agentes de programación externos, el menú ACPX-Skills para 27 paquetes de skills, menús Config y DB integrados, carga nativa de contexto de carpetas anidadas, flujos de trabajo .flw reutilizables, 74 tipos de agentes para arrastrar y soltar, automatización de firmware de misión crítica STM32er, flujos de compilación / carga / monitoreo de firmware PlatformIO ESP32er, flujos de compilación / carga / monitoreo de firmware Arduino-CLI Arduiner, una familia completa de E/S multimedia para captura y reproducción de webcam, micrófono, altavoz y video en pantalla, flujos de evaluación Kali autorizados Kalier, la superficie de 53 comandos Unreal MCP, automatización de navegador real Playwrighter, control de escritorio Windower, estrictas compuertas de corrección Pythonxer, ejecución de archivos verificada por compilación, compuertas Reviewer y Analyzer conscientes del commit, opción de embedding de alto detalle, carga de contexto consciente de la GPU y su propio mapa de autoconocimiento.',
+      desc: 'Tlamatini v1.19.3 es un asistente de desarrollo con IA autoalojado y con capacidad en la nube, autoconsciente y habilitado para Unreal Engine, con RAG híbrido sobre tu código fuente, un bucle Multi-Turn de 83 herramientas y 4096 iteraciones, compuertas de aprobación Ask Execs antes de ejecutar herramientas que cambian el estado, un instalador a prueba de balas de un solo clic que lleva su propio Python 3.12.10 para que los usuarios finales instalen únicamente Ollama y los modelos, registro como aplicación instalada en Windows 10|11 para rutas de desinstalación familiares, delegación opcional ACPX a CLIs de agentes de programación externos, el menú ACPX-Skills para 27 paquetes de skills, menús Config y DB integrados, carga nativa de contexto de carpetas anidadas, flujos de trabajo .flw reutilizables, 76 tipos de agentes para arrastrar y soltar, automatización de firmware de misión crítica STM32er, flujos de compilación / carga / monitoreo de firmware PlatformIO ESP32er, flujos de compilación / carga / monitoreo de firmware Arduino-CLI Arduiner, una familia completa de E/S multimedia para captura y reproducción de webcam, micrófono, altavoz y video en pantalla, texto-a-voz de voz femenina Talker y reconocimiento de voz Whisperer, flujos de evaluación Kali autorizados Kalier, la superficie de 53 comandos Unreal MCP, automatización de navegador real Playwrighter, control de escritorio Windower, estrictas compuertas de corrección Pythonxer, ejecución de archivos verificada por compilación, compuertas Reviewer y Analyzer conscientes del commit, opción de embedding de alto detalle, carga de contexto consciente de la GPU y su propio mapa de autoconocimiento.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -549,7 +557,7 @@ const es: Translations = {
           title: 'Misión',
           subtitle: 'Convertir al Asistente en un Hacedor',
           description:
-            'La misión es combinar RAG consciente del código, carga nativa de contexto de carpetas anidadas, asistencia de proyectos habilitada para Unreal Engine, automatización de firmware STM32F4x, ESP32 y Arduino, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, profundidad de embedding ajustable, carga de contexto consciente de la GPU, orquestación Multi-Turn de 79 herramientas / 4096 iteraciones, puntos de control Ask Execs, compuertas de corrección Pythonxer, ejecución honesta en primer plano, preparación para la desinstalación en Windows 10|11, tablas de auditoría Exec Report, delegación opcional ACPX, administración del catálogo de skills, control de escritorio Windower, compuertas de calidad Reviewer y Analyzer conscientes del commit, y flujos visuales.',
+            'La misión es combinar RAG consciente del código, carga nativa de contexto de carpetas anidadas, asistencia de proyectos habilitada para Unreal Engine, automatización de firmware STM32F4x, ESP32 y Arduino, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, profundidad de embedding ajustable, carga de contexto consciente de la GPU, orquestación Multi-Turn de 83 herramientas / 4096 iteraciones, puntos de control Ask Execs, compuertas de corrección Pythonxer, ejecución honesta en primer plano, preparación para la desinstalación en Windows 10|11, tablas de auditoría Exec Report, delegación opcional ACPX, administración del catálogo de skills, control de escritorio Windower, compuertas de calidad Reviewer y Analyzer conscientes del commit, y flujos visuales.',
         },
         {
           title: 'Concepto',
@@ -611,7 +619,7 @@ const es: Translations = {
     workflow: {
       label: 'Diseñador de Flujos',
       title: 'Arrastra, Suelta, Orquesta',
-      desc: 'El Diseñador Visual de Flujos te permite arrastrar 74 tipos de agentes a un lienzo, conectarlos en flujos de trabajo .flw reutilizables, preservar los mapeos de Parametrizer, validar el grafo en vivo, compilar y flashear firmware STM32F4x a través de un puente MCP con verificación previa, compilar y cargar firmware ESP32 mediante PlatformIO, compilar y cargar firmware Arduino mediante el Arduino CLI, capturar webcam, micrófono y pantalla y reproducir sonido y video, ejecutar evaluaciones Kali autorizadas a través de un servidor configurado, impulsar proyectos Unreal MCP de 53 comandos, impulsar flujos de navegador reales, comandar ventanas de escritorio, revisar diffs, buscar hallazgos de seguridad, agregar puntos de control de aprobación humana y llevar automatización agéntica repetible al trabajo de proyectos habilitados para Unreal Engine.',
+      desc: 'El Diseñador Visual de Flujos te permite arrastrar 76 tipos de agentes a un lienzo, conectarlos en flujos de trabajo .flw reutilizables, preservar los mapeos de Parametrizer, validar el grafo en vivo, compilar y flashear firmware STM32F4x a través de un puente MCP con verificación previa, compilar y cargar firmware ESP32 mediante PlatformIO, compilar y cargar firmware Arduino mediante el Arduino CLI, capturar webcam, micrófono y pantalla y reproducir sonido y video, hablar texto en voz alta con Talker y transcribir el habla con Whisperer, ejecutar evaluaciones Kali autorizadas a través de un servidor configurado, impulsar proyectos Unreal MCP de 53 comandos, impulsar flujos de navegador reales, comandar ventanas de escritorio, revisar diffs, buscar hallazgos de seguridad, agregar puntos de control de aprobación humana y llevar automatización agéntica repetible al trabajo de proyectos habilitados para Unreal Engine.',
       categories: [
         { name: 'Control' },
         { name: 'Enrutamiento' },
@@ -643,8 +651,10 @@ const es: Translations = {
         { desc: 'Genera, compila, carga y monitorea firmware Arduino, AVR y SAMD mediante automatización Arduino-CLI sin configuración, seleccionado por FQBN', type: 'Embebido' },
         { desc: 'Captura una foto o un segmento de video desde una webcam del sistema, guardado con un nombre a prueba de colisiones', type: 'Multimedia' },
         { desc: 'Graba audio del micrófono en un archivo WAV con dispositivo, frecuencia de muestreo y ganancia por software seleccionables', type: 'Multimedia' },
+        { desc: 'Transcribe voz a texto desde el micrófono o un archivo de audio con faster-whisper local o una API en la nube', type: 'Multimedia' },
         { desc: 'Reproduce un archivo de audio por los altavoces con volumen por software y un bucle o recorte de reproducción de N segundos', type: 'Multimedia' },
         { desc: 'Reproduce un archivo de video con sonido en una pantalla elegida, con control de pantalla completa, relación de aspecto y reproducción de N segundos', type: 'Multimedia' },
+        { desc: 'Habla el texto en voz alta con voz femenina mediante un modelo TTS de Ollama decodificado con el códec SNAC', type: 'Multimedia' },
         { desc: 'Impulsa un navegador real a través de inicios de sesión, formularios, aserciones, capturas de pantalla y descargas con scripts', type: 'Navegador' },
         { desc: 'Enfoca, mueve, redimensiona, ordena, maximiza, minimiza y cierra ventanas de apps de Windows por título', type: 'Escritorio' },
         { desc: 'Coordina reconocimiento autorizado de Kali Linux mediante la URL configurada de MCP-Kali-Server', type: 'Seguridad' },
@@ -668,7 +678,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.17.2 hace que la instalación sea a prueba de balas: el instalador de un solo clic lleva su propio Python 3.12.10, además de Java, Git y los navegadores de Playwright, así que solo instalas Ollama y los modelos. Se apoya en la reciente familia de E/S multimedia —captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer—, además de los puentes de firmware Arduiner, ESP32er y STM32er, registro como aplicación instalada en Windows 10|11, compuertas de aprobación Ask Execs, ejecución estricta Pythonxer, RAG híbrido, controles en vivo de Config, DB y ACPX-Skills, orquestación Multi-Turn de 79 herramientas, carga de contexto consciente de la GPU, 27 skills y 74 agentes de flujo.',
+    ctaDesc: 'Tlamatini v1.19.3 le da una voz completa —los nuevos agentes de texto-a-voz Talker y de reconocimiento de voz Whisperer— sobre la familia de E/S multimedia de captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer. El instalador de un solo clic sigue llevando su propio Python 3.12.10, además de Java, Git y los navegadores de Playwright, así que solo instalas Ollama y los modelos —además de los puentes de firmware Arduiner, ESP32er y STM32er, registro como aplicación instalada en Windows 10|11, compuertas de aprobación Ask Execs, ejecución estricta Pythonxer, RAG híbrido, controles en vivo de Config, DB y ACPX-Skills, orquestación Multi-Turn de 83 herramientas, carga de contexto consciente de la GPU, 27 skills y 76 agentes de flujo.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -691,15 +701,15 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.17.2',
-      desc: 'RAG híbrido, autoconocimiento, compilaciones auto-modificables opcionales, contexto nativo de carpetas anidadas, configuración de modelos en vivo, controles seguros de respaldo e intercambio de DB, administración del catálogo ACPX-Skills, orquestación Multi-Turn de 79 herramientas y 4096 iteraciones con compuertas de aprobación Ask Execs, registro como aplicación instalada en Windows 10|11, ejecución estricta Pythonxer, carga de contexto consciente de la GPU, opción de embedding de alto detalle, delegación opcional ACPX y un diseñador de flujos de 74 agentes con Arduiner, ESP32er, STM32er, la familia multimedia de webcam, micrófono, altavoz y video en pantalla, Kalier, la superficie de 53 comandos Unreal MCP, Playwrighter, Windower, Reviewer y Analyzer.',
+      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.19.3',
+      desc: 'RAG híbrido, autoconocimiento, compilaciones auto-modificables opcionales, contexto nativo de carpetas anidadas, configuración de modelos en vivo, controles seguros de respaldo e intercambio de DB, administración del catálogo ACPX-Skills, orquestación Multi-Turn de 83 herramientas y 4096 iteraciones con compuertas de aprobación Ask Execs, registro como aplicación instalada en Windows 10|11, ejecución estricta Pythonxer, carga de contexto consciente de la GPU, opción de embedding de alto detalle, delegación opcional ACPX y un diseñador de flujos de 76 agentes con Arduiner, ESP32er, STM32er, la familia multimedia de webcam, micrófono, altavoz, video en pantalla, texto-a-voz Talker y reconocimiento de voz Whisperer, Kalier, la superficie de 53 comandos Unreal MCP, Playwrighter, Windower, Reviewer y Analyzer.',
     },
     overview: {
       label: 'Resumen del Proyecto',
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Es una aplicación autoalojada que ejecutas en tu propia máquina, con el LLM a tu elección entre Ollama local, Ollama Cloud (el predeterminado de fábrica) o una API en la nube como Anthropic Claude, combinando recuperación consciente del código, su propio mapa de autoconocimiento, configuración en vivo, controles de instantáneas de base de datos, pulido como aplicación instalada en Windows, control del catálogo ACPX-Skills, ejecución protegida de herramientas, delegación opcional a agentes de programación externos, trabajo de proyectos habilitado para Unreal Engine, automatización de firmware STM32, ESP32 y Arduino, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, revisión de código consciente del commit, análisis de seguridad y un lienzo de automatización visual.',
-      p2: 'La compilación v1.17.2 hace que comenzar sea a prueba de balas: el instalador de un solo clic ahora lleva su propio Python 3.12.10 autocontenido —junto con Java, Git y los navegadores de Playwright— para que el usuario final instale únicamente Ollama y los modelos, sin nada más que configurar. La reciente familia de E/S multimedia sigue completando sus sentidos —captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer—, junto con la automatización de firmware Arduiner, ESP32er y STM32er. Lleva 74 agentes, 79 herramientas Multi-Turn, 27 skills, tres puentes de microcontroladores, soporte de Unreal Engine, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw guardados al alcance del operador.',
+      p2: 'La compilación v1.19.3 le da a Tlamatini una voz completa: el nuevo agente Talker habla el texto en voz alta con voz femenina mediante Ollama + SNAC, y el nuevo agente Whisperer transcribe el habla de vuelta a texto con faster-whisper local —uniéndose a la familia de E/S multimedia existente de captura de webcam Camcorder, captura de micrófono Recorder, reproducción por altavoz AudioPlayer y video en pantalla con sonido VideoPlayer, junto con la automatización de firmware Arduiner, ESP32er y STM32er. El instalador de un solo clic sigue llevando su propio Python 3.12.10 autocontenido —junto con Java, Git y los navegadores de Playwright— para que el usuario final instale únicamente Ollama y los modelos. Ahora lleva 76 agentes, 83 herramientas Multi-Turn, 27 skills, tres puentes de microcontroladores, soporte de Unreal Engine, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw guardados al alcance del operador.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -723,12 +733,12 @@ const es: Translations = {
           description: 'Arduiner es el tercer agente de microcontroladores: genera, compila, carga y monitorea firmware Arduino, AVR y SAMD mediante el Arduino CLI sin configuración, elige la placa por FQBN, instala automáticamente el core correspondiente y ejecuta una verificación previa a prueba de fallos antes de tocar el hardware.',
         },
         {
-          title: 'Webcam, Micrófono y Reproducción Multimedia',
-          description: 'Una familia completa de E/S multimedia completa los sentidos: Camcorder captura la webcam, Recorder captura el micrófono, AudioPlayer reproduce sonido por los altavoces y VideoPlayer reproduce video con audio en cualquier pantalla, los compañeros en pantalla y audibles del Shoter que captura la pantalla.',
+          title: 'Webcam, Micrófono, Voz y Reproducción Multimedia',
+          description: 'Una familia completa de E/S multimedia completa los sentidos: Camcorder captura la webcam, Recorder captura el micrófono, AudioPlayer reproduce sonido por los altavoces, VideoPlayer reproduce video con audio en cualquier pantalla, Talker habla el texto en voz alta con voz femenina mediante Ollama y Whisperer transcribe el habla de vuelta a texto, los compañeros en pantalla, audibles y hablados del Shoter que captura la pantalla.',
         },
         {
           title: 'Operador de Chat Multi-Turn',
-          description: 'Una superficie de chat con interruptores independientes para Multi-Turn, Ask Execs, Exec Report, ACPX y contexto de internet. Puede elegir entre 79 herramientas, pausar para aprobación, rechazar pronto el Python defectuoso y convertir el trabajo exitoso en flujos repetibles.',
+          description: 'Una superficie de chat con interruptores independientes para Multi-Turn, Ask Execs, Exec Report, ACPX y contexto de internet. Puede elegir entre 83 herramientas, pausar para aprobación, rechazar pronto el Python defectuoso y convertir el trabajo exitoso en flujos repetibles.',
         },
         {
           title: 'Pulido como Aplicación Instalada en Windows',
@@ -740,7 +750,7 @@ const es: Translations = {
         },
         {
           title: 'Diseñador Visual de Flujos',
-          description: 'Creación de flujos de trabajo de arrastrar y soltar con 74 tipos de agentes, guardar/cargar .flw, Validate en vivo, compilación al inicio, flujos PlatformIO ESP32er, pipelines de firmware STM32er, flujos Arduino-CLI Arduiner, nodos multimedia de webcam, micrófono, altavoz y video en pantalla, ejecuciones de evaluación Kalier, flujos de navegador Playwrighter, control de ventanas de escritorio Windower, rutas estrictas Pythonxer, flujos Unrealer de 53 comandos, Reviewer, Analyzer, FlowCreator y FlowHypervisor.',
+          description: 'Creación de flujos de trabajo de arrastrar y soltar con 76 tipos de agentes, guardar/cargar .flw, Validate en vivo, compilación al inicio, flujos PlatformIO ESP32er, pipelines de firmware STM32er, flujos Arduino-CLI Arduiner, nodos multimedia de webcam, micrófono, altavoz, video en pantalla, texto-a-voz Talker y reconocimiento de voz Whisperer, ejecuciones de evaluación Kalier, flujos de navegador Playwrighter, control de ventanas de escritorio Windower, rutas estrictas Pythonxer, flujos Unrealer de 53 comandos, Reviewer, Analyzer, FlowCreator y FlowHypervisor.',
         },
         {
           title: 'Delegación Externa ACPX',
@@ -755,7 +765,7 @@ const es: Translations = {
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'El instalador de un solo clic es a prueba de balas: lleva su propio Python 3.12.10, Java, Git y los navegadores de Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan y ejecutan la versión v1.17.2 a continuación. ¿Prefieres el código fuente? Clona el repositorio y ejecútalo desde Python 3.12.10. De cualquier forma, las compilaciones instaladas se registran con los mecanismos de desinstalación de Windows 10|11, mientras que Config, la selección nativa de contexto, las instantáneas de DB y los arranques sin configuración de PlatformIO ESP32er y Arduino-CLI Arduiner permanecen disponibles dentro de Tlamatini.',
+      desc: 'El instalador de un solo clic es a prueba de balas: lleva su propio Python 3.12.10, Java, Git y los navegadores de Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan y ejecutan la versión v1.19.3 a continuación. ¿Prefieres el código fuente? Clona el repositorio y ejecútalo desde Python 3.12.10. De cualquier forma, las compilaciones instaladas se registran con los mecanismos de desinstalación de Windows 10|11, mientras que Config, la selección nativa de contexto, las instantáneas de DB y los arranques sin configuración de PlatformIO ESP32er y Arduino-CLI Arduiner permanecen disponibles dentro de Tlamatini.',
       steps: [
         { label: 'Instalar Ollama' },
         { label: 'Descargar Modelos por Defecto' },
@@ -767,8 +777,8 @@ const es: Translations = {
     },
     agents: {
       label: 'Ecosistema de Agentes',
-      title: '74 Tipos de Agentes de Flujo',
-      desc: 'El catálogo abarca agentes de control, enrutamiento, lógica, acción, criptografía, utilidad, monitoreo de terminal y diseño de IA, incluidos Arduiner, ESP32er, STM32er, la familia multimedia Camcorder, Recorder, AudioPlayer y VideoPlayer, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer de 53 comandos, Reviewer consciente del commit, Analyzer, De-Compresser, Pythonxer estricto, FlowCreator, 27 paquetes ACPX-Skills, aprobación Ask Execs en torno a la ejecución Multi-Turn que cambia el estado, su mapa de autoconocimiento, pulido como aplicación instalada en Windows y salvaguardas de contexto conscientes de la GPU en torno al punto de entrada del RAG.',
+      title: '76 Tipos de Agentes de Flujo',
+      desc: 'El catálogo abarca agentes de control, enrutamiento, lógica, acción, criptografía, utilidad, monitoreo de terminal y diseño de IA, incluidos Arduiner, ESP32er, STM32er, la familia multimedia Camcorder, Recorder, Whisperer, AudioPlayer, VideoPlayer y Talker, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer de 53 comandos, Reviewer consciente del commit, Analyzer, De-Compresser, Pythonxer estricto, FlowCreator, 27 paquetes ACPX-Skills, aprobación Ask Execs en torno a la ejecución Multi-Turn que cambia el estado, su mapa de autoconocimiento, pulido como aplicación instalada en Windows y salvaguardas de contexto conscientes de la GPU en torno al punto de entrada del RAG.',
       groupLabel: 'Agentes',
       groups: [
         {
@@ -824,8 +834,10 @@ const es: Translations = {
             { desc: 'Captura de pantalla' },
             { desc: 'Captura de foto y video de webcam' },
             { desc: 'Captura de audio de micrófono a WAV' },
+            { desc: 'Transcripción de voz a texto desde micrófono o archivo' },
             { desc: 'Reproducción de audio por altavoces' },
             { desc: 'Reproducción de video en pantalla con sonido' },
+            { desc: 'Texto-a-voz con voz femenina mediante Ollama' },
             { desc: 'Clic, arrastre, desplazamiento, localizar imágenes' },
             { desc: 'Escritura y combinaciones de teclas rápidas' },
             { desc: 'Enfocar, organizar, redimensionar y cerrar ventanas' },
@@ -903,7 +915,7 @@ const es: Translations = {
         },
         {
           category: 'Entorno de Agentes',
-          items: ['79 herramientas Multi-Turn', 'Compuerta de aprobación Ask Execs', 'Compuerta estricta Pythonxer', 'Ejecutor de 4096 iteraciones', 'Tope estricto de 256 llamadas a herramientas', 'CLIs externas ACPX', 'Puente PlatformIO ESP32er', 'Puente de firmware STM32er', 'Puente Arduino-CLI Arduiner', 'Captura Camcorder / Recorder', 'Reproducción AudioPlayer / VideoPlayer', 'Puente Kali configurado Kalier', 'Automatización de navegador Playwrighter', 'Control de escritorio Windower', '27 paquetes SKILL.md'],
+          items: ['83 herramientas Multi-Turn', 'Compuerta de aprobación Ask Execs', 'Compuerta estricta Pythonxer', 'Ejecutor de 4096 iteraciones', 'Tope estricto de 256 llamadas a herramientas', 'CLIs externas ACPX', 'Puente PlatformIO ESP32er', 'Puente de firmware STM32er', 'Puente Arduino-CLI Arduiner', 'Captura Camcorder / Recorder', 'Reproducción AudioPlayer / VideoPlayer', 'Texto-a-voz Talker / reconocimiento de voz Whisperer', 'Puente Kali configurado Kalier', 'Automatización de navegador Playwrighter', 'Control de escritorio Windower', '27 paquetes SKILL.md'],
         },
         {
           category: 'Entorno de Flujos',
