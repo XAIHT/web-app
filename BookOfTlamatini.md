@@ -207,7 +207,7 @@ When the migrations finish and you have a superuser, run the server (chapter 7).
 
 ### Path B — Pre-built one-click installer (end users)
 
-Download the latest release ZIP — **[Tlamatini v1.19.3](https://github.com/XAIHT/Tlamatini/releases/tag/v1.19.3)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
+Download the latest release ZIP — **[Tlamatini v1.19.5](https://github.com/XAIHT/Tlamatini/releases/tag/v1.19.5)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
 
 1. Open the unzipped folder.
 2. Double-click **`Installer.exe`**.
@@ -1860,14 +1860,14 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 
 ```powershell
 git status                                          # clean tree, on main
-git tag -a v1.19.3 -m "Release 1.19.3: <one-liner>"   # annotated tag
-git push origin v1.19.3
+git tag -a v1.19.5 -m "Release 1.19.5: <one-liner>"   # annotated tag
+git push origin v1.19.5
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.19.3/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.19.5/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
 
 ### Where the version shows up in a running install
 
@@ -1875,8 +1875,8 @@ The build computes the version once and bakes it into four surfaces:
 
 - **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
 - **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
-- **Release folder name** — `dist/Tlamatini_Release_v1.19.3/`.
-- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.19.3` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.19.3","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+- **Release folder name** — `dist/Tlamatini_Release_v1.19.5/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.19.5` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.19.5","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
 
 If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
 
@@ -2654,6 +2654,8 @@ produces `firmware.bin` + `firmware.elf`).
 # Appendix C — Changelog
 
 ### Recent Updates
+
+- **The Self-Modify Snapshot Grows Teeth — `copy_source_assets.py` Generates a Complete, Rebuildable Source Tree — 2026-06-12** — The `--self-modify` build flag used to copy a static, nearly-empty placeholder tree; now it builds the real thing. A new auxiliary script at the repo root, **`copy_source_assets.py`**, is invoked by `build.py --self-modify` to **generate the `TlamatiniSourceCode/` snapshot fresh from the live repository** straight into the distribution — a complete mirror of everything a rebuild needs: every `.py`, `.js`, `.css`, `.html`, `.yaml` and `.pmt`, all five PowerShell helpers, the entire build pipeline (`build.py`, `build_installer.py`, `build_uninstaller.py`, `versioning.py`, `install.py`, `uninstall.py`, `pyinstaller_hooks/`), all 76 agent templates, the SKILL.md packages, the docs, the tests — plus the *small* binaries a rebuild genuinely requires (`.ico` icons, `.wav` sounds, the spinner `.svg`). What it deliberately leaves out is just as important: the heavy media (`.pdf`, `.pptx`, the `agent/images` gallery and demo videos — about 44 MB), `jd-cli.jar` (already sitting at the install root), regenerable state (`staticfiles/`, pools, caches, logs, databases), and **every secret** — `data.keys` is excluded outright and the API keys in `config.json` / agent `config.yaml` files are scrubbed to the familiar `<KEY goes here>` placeholders. The snapshot self-documents: a `_SOURCE_SNAPSHOT_MANIFEST.json` records counts, sizes and the restore list, and a `_REBUILD_INSTRUCTIONS.md` spells out the full take → modify → integrate → **regenerate-`Tlamatini.exe`** runbook — copy the two omitted binaries and the live keys back from the install root, `pip install -r requirements.txt`, `collectstatic`, then `python build.py --self-modify` (which regenerates the *next* snapshot in turn, so the loop closes). A self-able-modify Tlamatini can now follow those instructions end-to-end and rebuild herself when a user asks her to change her own functionality. The first live generation: **685 files, 9.84 MB, zero errors, zero leaked keys**. If snapshot generation ever fails, the build falls back to the legacy static-tree copy rather than aborting.
 
 - **Zero-Latency Microphone "REC" Indicator + a CPU-Only/CUDA-Free Build Proof — v1.19.0, 2026-06-08** — Recording audio is no longer a black box. **Whisperer**'s mic-record path *and* the **Recorder** agent now pop a live console **"REC" light** the instant they start listening — a blinking red dot beside a colored VU bar fed by the *real* audio samples — driven by a callback `InputStream`: the light turns **ON at the first real audio block** (~20 ms, comfortably under a 50 ms budget) and **OFF the instant the stream stops**, so you can see at a glance that the microphone is actually capturing. Because pool agents are spawned **detached with no console**, the agent now `AllocConsole()`s (or reveals) its own window and paints the indicator to `CONOUT$` rather than silently recording into the void. Riding along, **Whisperer's default `record_seconds` changed from 5 to 30**, so an off-the-cuff "transcribe what I say" run captures a useful clip without the user having to bump the knob. The release also adds a build-test class **`NoGpuCudaFreeContractTests`** that *proves* the build is **CPU-only / CUDA-free** and that both audio agents run on a machine with no GPU: it verifies the torch CPU wheel is the one bundled, that the `nvidia*` wheels are pruned, and that faster-whisper / CTranslate2 take their CPU fallback path. No new agents — the catalog holds at **76**; this is a usability + verification release for the two audio agents.
 

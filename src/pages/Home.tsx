@@ -97,7 +97,7 @@ function OverviewSection() {
               {[
                 { label: o.stats.agents, value: '76' },
                 { label: o.stats.skills, value: '27' },
-                { label: o.stats.version, value: 'v1.19.3' },
+                { label: o.stats.version, value: 'v1.19.5' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -568,7 +568,7 @@ function ToolsSection() {
     { name: 'embedding_guard', color: '#8a9ec7' },
     { name: '83 Multi-Turn tools', color: '#7a9e8e' },
     { name: 'Pythonxer strict gate', color: '#7a9e8e' },
-    { name: 'execute_file foreground', color: '#7a9e8e' },
+    { name: 'File-Creator persistence', color: '#7a9e8e' },
     { name: 'chat_agent_executer', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', color: '#c79e7a' },
