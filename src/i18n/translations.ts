@@ -37,7 +37,7 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.20.0',
+      'Tlamatini v1.20.1',
       'Self-Hosted AI',
       '53 Unreal Engine Control Commands',
       'Multi-Turn Operation',
@@ -78,7 +78,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.20.0 is the local-first AI operator for serious builders: she knows your codebase, controls Unreal Engine, controls Blender, handles STM32 and ESP32 firmware work, speaks with Talker, listens and understands audio with Whisperer, and turns chat or canvas intent into guarded, reusable action. Under the surface she brings hybrid RAG, 83 Multi-Turn tools, 4096-iteration orchestration, Ask Execs approvals, a complete build-time source snapshot, self-update, Config and DB menus, ACPX-Skills, GPU-aware context loading, and 77 drag-and-drop workflow agents.',
+      desc: 'Tlamatini v1.20.1 is the local-first AI operator for serious builders: she knows your codebase, controls Unreal Engine, controls Blender, handles STM32 and ESP32 firmware work, speaks with Talker, listens and understands audio with Whisperer, and turns chat or canvas intent into guarded, reusable action. Under the surface she brings hybrid RAG, 83 Multi-Turn tools, 4096-iteration orchestration, Ask Execs approvals, a complete build-time source snapshot, self-update, Config and DB menus, ACPX-Skills, GPU-aware context loading, and 77 drag-and-drop workflow agents.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -225,7 +225,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.20.0 adds Blenderer and self-update: she can control Unreal Engine through the 53-command XAIHT Unreal MCP fork, control Blender through the official MCP add-on, run critical STM32er firmware workflows, run ESP32er PlatformIO workflows, speak aloud with Talker, listen and understand audio with Whisperer, check her latest GitHub release from About, stage a new build, preserve your config, database, and content, and relaunch through the updater. She still brings self-modify source snapshots, File-Creator persistence, the full media-I/O family, Arduiner, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 83-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 77 workflow agents.',
+    ctaDesc: 'Tlamatini v1.20.1 adds Blenderer and self-update: she can control Unreal Engine through the 53-command XAIHT Unreal MCP fork, control Blender through the official MCP add-on, run critical STM32er firmware workflows, run ESP32er PlatformIO workflows, speak aloud with Talker, listen and understand audio with Whisperer, check her latest GitHub release from About, stage a new build, preserve your config, database, and content, and relaunch through the updater. She still brings self-modify source snapshots, File-Creator persistence, the full media-I/O family, Arduiner, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, live Config, DB, and ACPX-Skills controls, 83-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 77 workflow agents.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -248,7 +248,7 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.20.0',
+      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.20.1',
       desc: 'A local-first AI operator that knows your project and can act: she controls Unreal Engine, controls Blender, runs STM32er and ESP32er firmware workflows, speaks with Talker, listens and understands audio with Whisperer, and turns guarded Multi-Turn work into reusable .flw automation. Hybrid RAG, complete build-time source snapshots, native context, live Config and DB controls, ACPX-Skills, 83 tools, 4096 iterations, Ask Execs approvals, GPU-aware context loading, and 77 workflow agents stay under your command.',
     },
     overview: {
@@ -256,7 +256,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She is a self-hosted app you run on your own machine, with the LLM your choice of local Ollama, Ollama Cloud (the shipped default), or a cloud API like Anthropic Claude, combining code-aware retrieval, her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, direct Unreal Engine control, direct Blender scene control, STM32, ESP32, and Arduino firmware automation, Talker speech, Whisperer listening and audio understanding, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.',
-      p2: 'The v1.20.0 build gives her a new creative arm and a cleaner upgrade path: Unrealer lets her control Unreal Engine through the 53-command XAIHT Unreal MCP fork, Blenderer lets her control Blender through the official MCP add-on, Talker lets her speak, Whisperer lets her listen and understand audio, and About -> Check for updates can find the latest GitHub release, stage the new build, preserve your config, database, and content, and relaunch through the updater. She still carries 77 agents, 83 Multi-Turn tools, 27 skills, source-snapshot self-modification, File-Creator persistence, three microcontroller bridges, a full media-I/O family, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
+      p2: 'The v1.20.1 build gives her a new creative arm and a cleaner upgrade path: Unrealer lets her control Unreal Engine through the 53-command XAIHT Unreal MCP fork, Blenderer lets her control Blender through the official MCP add-on, Talker lets her speak, Whisperer lets her listen and understand audio, and About -> Check for updates can find the latest GitHub release, stage the new build, preserve your config, database, and content, and relaunch through the updater. She still carries 77 agents, 83 Multi-Turn tools, 27 skills, source-snapshot self-modification, File-Creator persistence, three microcontroller bridges, a full media-I/O family, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
       viewSource: 'View Source',
     },
     features: {
@@ -312,7 +312,7 @@ const en = {
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.20.0 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Self-modify builds can also generate a complete rebuildable source snapshot at build time. Installed builds register with Windows 10|11 uninstall mechanisms and can check About -> Check for updates to stage a newer release while preserving config, database, content, and one agents backup.',
+      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.20.1 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Self-modify builds can also generate a complete rebuildable source snapshot at build time. Installed builds register with Windows 10|11 uninstall mechanisms and can check About -> Check for updates to stage a newer release while preserving config, database, content, and one agents backup.',
       steps: [
         { label: 'Install Ollama' },
         { label: 'Pull Default Models' },
@@ -503,7 +503,7 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.20.0',
+      'Tlamatini v1.20.1',
       'IA Autoalojada',
       '53 Comandos de Control Unreal Engine',
       'Operación Multi-Turn',
@@ -544,7 +544,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.20.0 es la operadora de IA local-first para builders serios: conoce tu código, controla Unreal Engine, controla Blender, maneja firmware STM32 y ESP32, habla con Talker, escucha y entiende audio con Whisperer, y convierte intención de chat o lienzo en acción protegida y reutilizable. Debajo trae RAG híbrido, 83 herramientas Multi-Turn, orquestación de 4096 iteraciones, aprobaciones Ask Execs, snapshot completo de código durante el build, auto-actualización, menús Config y DB, ACPX-Skills, carga de contexto consciente de GPU y 77 agentes de flujo.',
+      desc: 'Tlamatini v1.20.1 es la operadora de IA local-first para builders serios: conoce tu código, controla Unreal Engine, controla Blender, maneja firmware STM32 y ESP32, habla con Talker, escucha y entiende audio con Whisperer, y convierte intención de chat o lienzo en acción protegida y reutilizable. Debajo trae RAG híbrido, 83 herramientas Multi-Turn, orquestación de 4096 iteraciones, aprobaciones Ask Execs, snapshot completo de código durante el build, auto-actualización, menús Config y DB, ACPX-Skills, carga de contexto consciente de GPU y 77 agentes de flujo.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -691,7 +691,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.20.0 suma Blenderer y auto-actualización: puede controlar Unreal Engine mediante el fork XAIHT de Unreal MCP de 53 comandos, controlar Blender mediante el add-on oficial MCP, ejecutar flujos críticos de firmware STM32er, ejecutar flujos PlatformIO ESP32er, hablar en voz alta con Talker, escuchar y entender audio con Whisperer, revisar su última release en GitHub desde About, preparar la nueva build, preservar tu configuración, base de datos y contenido, y relanzarse con el actualizador. Ella conserva snapshots self-modify, File-Creator persistente, la familia multimedia completa, Arduiner, registro como app instalada Windows 10|11, Ask Execs, Pythonxer estricto, RAG híbrido, Config, DB, ACPX-Skills, 83 herramientas Multi-Turn, carga de contexto consciente de GPU, 27 skills y 77 agentes.',
+    ctaDesc: 'Tlamatini v1.20.1 suma Blenderer y auto-actualización: puede controlar Unreal Engine mediante el fork XAIHT de Unreal MCP de 53 comandos, controlar Blender mediante el add-on oficial MCP, ejecutar flujos críticos de firmware STM32er, ejecutar flujos PlatformIO ESP32er, hablar en voz alta con Talker, escuchar y entender audio con Whisperer, revisar su última release en GitHub desde About, preparar la nueva build, preservar tu configuración, base de datos y contenido, y relanzarse con el actualizador. Ella conserva snapshots self-modify, File-Creator persistente, la familia multimedia completa, Arduiner, registro como app instalada Windows 10|11, Ask Execs, Pythonxer estricto, RAG híbrido, Config, DB, ACPX-Skills, 83 herramientas Multi-Turn, carga de contexto consciente de GPU, 27 skills y 77 agentes.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -714,7 +714,7 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.20.0',
+      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.20.1',
       desc: 'Una operadora de IA local-first que conoce tu proyecto y puede actuar: controla Unreal Engine, controla Blender, ejecuta flujos de firmware STM32er y ESP32er, habla con Talker, escucha y entiende audio con Whisperer, y convierte trabajo Multi-Turn protegido en automatización .flw reutilizable. RAG híbrido, snapshots completos de código durante el build, contexto nativo, controles Config y DB, ACPX-Skills, 83 herramientas, 4096 iteraciones, aprobaciones Ask Execs, carga de contexto consciente de GPU y 77 agentes permanecen bajo tu mando.',
     },
     overview: {
@@ -722,7 +722,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Es una aplicación autoalojada que ejecutas en tu propia máquina, con el LLM a tu elección entre Ollama local, Ollama Cloud (el predeterminado de fábrica) o una API en la nube como Anthropic Claude, combinando recuperación consciente del código, su propio mapa de autoconocimiento, configuración en vivo, controles de instantáneas de base de datos, pulido como aplicación instalada en Windows, control del catálogo ACPX-Skills, ejecución protegida de herramientas, delegación opcional a agentes de programación externos, control directo de Unreal Engine, control directo de escenas Blender, automatización de firmware STM32, ESP32 y Arduino, habla con Talker, escucha y entiende audio con Whisperer, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, revisión de código consciente del commit, análisis de seguridad y un lienzo de automatización visual.',
-      p2: 'La compilación v1.20.0 le da un nuevo brazo creativo y una ruta de actualización más limpia: Unrealer le permite controlar Unreal Engine mediante el fork XAIHT de Unreal MCP de 53 comandos, Blenderer le permite controlar Blender mediante el add-on oficial MCP, Talker le permite hablar, Whisperer le permite escuchar y entender audio, y About -> Check for updates puede encontrar la última release de GitHub, preparar la nueva build, preservar tu configuración, base de datos y contenido, y relanzarla con el actualizador. Ella conserva 77 agentes, 83 herramientas Multi-Turn, 27 skills, auto-modificación con snapshot de código, File-Creator persistente, tres puentes de microcontroladores, familia multimedia completa, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw al alcance del operador.',
+      p2: 'La compilación v1.20.1 le da un nuevo brazo creativo y una ruta de actualización más limpia: Unrealer le permite controlar Unreal Engine mediante el fork XAIHT de Unreal MCP de 53 comandos, Blenderer le permite controlar Blender mediante el add-on oficial MCP, Talker le permite hablar, Whisperer le permite escuchar y entender audio, y About -> Check for updates puede encontrar la última release de GitHub, preparar la nueva build, preservar tu configuración, base de datos y contenido, y relanzarla con el actualizador. Ella conserva 77 agentes, 83 herramientas Multi-Turn, 27 skills, auto-modificación con snapshot de código, File-Creator persistente, tres puentes de microcontroladores, familia multimedia completa, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw al alcance del operador.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -778,7 +778,7 @@ const es: Translations = {
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'El instalador de un solo clic lleva Python 3.12.10, Java, Git y Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan la versión v1.20.0. ¿Prefieres fuente? Clona el repo y ejecútalo desde Python 3.12.10. Las builds self-modify también pueden generar durante el build un snapshot reconstruible del código fuente. Las builds instaladas se registran en Windows 10|11 y pueden revisar About -> Check for updates para preparar una release nueva preservando config, base de datos, contenido y un backup de agentes.',
+      desc: 'El instalador de un solo clic lleva Python 3.12.10, Java, Git y Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan la versión v1.20.1. ¿Prefieres fuente? Clona el repo y ejecútalo desde Python 3.12.10. Las builds self-modify también pueden generar durante el build un snapshot reconstruible del código fuente. Las builds instaladas se registran en Windows 10|11 y pueden revisar About -> Check for updates para preparar una release nueva preservando config, base de datos, contenido y un backup de agentes.',
       steps: [
         { label: 'Instalar Ollama' },
         { label: 'Descargar Modelos por Defecto' },
