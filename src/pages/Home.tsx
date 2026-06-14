@@ -95,9 +95,9 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '76' },
+                { label: o.stats.agents, value: '77' },
                 { label: o.stats.skills, value: '27' },
-                { label: o.stats.version, value: 'v1.19.5' },
+                { label: o.stats.version, value: 'v1.20.0' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -446,7 +446,7 @@ function WorkflowSection() {
     { agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { agents: 'Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Camcorder, Recorder, AudioPlayer, VideoPlayer, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Unrealer, Reviewer, Analyzer, Kalier, STM32er, ESP32er, Arduiner', color: '#8a9ec7' },
+    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Camcorder, Recorder, AudioPlayer, VideoPlayer, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Arduiner, Reviewer, Analyzer, Kalier', color: '#8a9ec7' },
     { agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
@@ -548,16 +548,17 @@ function ToolsSection() {
     { name: 'ACPX-Skills -> Reload Registry', color: '#b08cc7' },
     { name: 'Windows uninstall registration', color: '#c79e7a' },
     { name: 'Ask Execs', color: '#c9a96e' },
-    { name: 'Unreal Engine', color: '#8a9ec7' },
+    { name: 'Controls Unreal Engine', color: '#8a9ec7' },
+    { name: 'Controls Blender', color: '#8a9ec7' },
     { name: 'STM32er', color: '#7a9e8e' },
     { name: 'ESP32er', color: '#7a9e8e' },
     { name: 'Arduiner', color: '#7a9e8e' },
     { name: 'Camcorder', color: '#8a9ec7' },
     { name: 'Recorder', color: '#8a9ec7' },
-    { name: 'Whisperer', color: '#8a9ec7' },
+    { name: 'Whisperer Listens', color: '#8a9ec7' },
     { name: 'AudioPlayer', color: '#c79e7a' },
     { name: 'VideoPlayer', color: '#c79e7a' },
-    { name: 'Talker', color: '#c79e7a' },
+    { name: 'Talker Speaks', color: '#c79e7a' },
     { name: 'Playwrighter', color: '#8a9ec7' },
     { name: 'Windower', color: '#c79e7a' },
     { name: 'Kalier', color: '#c9a96e' },

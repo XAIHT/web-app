@@ -23,6 +23,7 @@ Tlamatini does a lot. This README is organized so you can stop reading at the de
 - **Part IX — The Command Deck**: WebSocket protocol, HTTP endpoints.
 - **Part X — Survival Guide**: troubleshooting, `tlamatini.log`, common issues.
 - **Bonus chapter §57** — Driving Unreal Engine 5 from Tlamatini (the Unrealer agent + Unreal MCP plugin). Read this if you build games or simulations in UE5 and want a chat / canvas surface for the editor.
+- **Bonus chapter §59** — Sculpting in Blender from Tlamatini (the Blenderer agent + the official Blender MCP add-on). Read this if you make 3D art / assets in Blender and want a chat / canvas surface for the editor — and to see why Blender's *code-execution* protocol differs from Unreal's verbs.
 - **Appendix A** — Keyboarder key reference.
 - **Appendix B** — Glossary.
 - **Appendix C** — Full changelog (preserved verbatim).
@@ -207,7 +208,7 @@ When the migrations finish and you have a superuser, run the server (chapter 7).
 
 ### Path B — Pre-built one-click installer (end users)
 
-Download the latest release ZIP — **[Tlamatini v1.19.5](https://github.com/XAIHT/Tlamatini/releases/tag/v1.19.5)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
+Download the latest release ZIP — **[Tlamatini v1.20.0](https://github.com/XAIHT/Tlamatini/releases/tag/v1.20.0)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
 
 1. Open the unzipped folder.
 2. Double-click **`Installer.exe`**.
@@ -941,7 +942,7 @@ Rules:
 
 32 agents emit Parametrizer-compatible sections:
 
-Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, **Windower**, **Unrealer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **Arduiner**.
+Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, **Windower**, **Unrealer**, **Blenderer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **Arduiner**.
 
 ### How the visual mapping works
 
@@ -1037,7 +1038,7 @@ Gatewayer logs stable markers (`GATEWAY_EVENT_ACCEPTED`, `GATEWAY_EVENT_QUEUED`,
 
 # Part IV — The Tlamatini Bestiary
 
-A compact reference for all 76 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above; **Unrealer** gets a full bonus chapter at §57.
+A compact reference for all 77 workflow-agent types. Spotlight chapters for **Parametrizer** (§25) and **Gatewayer** (§26) above; **Unrealer** gets a full bonus chapter at §57 and **Blenderer** at §59.
 
 > **Naming reminder.** The `agentDescription` (set by each migration) is the single source of truth. CSS classmap key, sidebar visual, and connection-handler name all derive from it.
 
@@ -1193,6 +1194,7 @@ Each wrapped tool launches an isolated, sequenced runtime copy of a workflow age
 | **Routing** | `chat_agent_asker` |
 | **Archives & decompilation** | `chat_agent_j_decompiler`, `chat_agent_de_compresser` |
 | **Game engines** | `chat_agent_unrealer` (drives an Unreal Engine 5 editor via the Unreal MCP plugin's TCP socket; canvas counterpart is the Unrealer workflow agent — see §57) |
+| **3D / DCC** | `chat_agent_blenderer` (drives Blender via the official Blender MCP add-on's TCP socket — a code-execution protocol with a rich action catalog; canvas counterpart is the Blenderer workflow agent — see §59) |
 | **Embedded / firmware** | `chat_agent_stm32er` (scaffolds / builds / flashes / observes STM32F407VG firmware through the STM32 Template Project MCP — 23 MCP tools + `serial_session` / `live_monitor` composites + `bootstrap` / `validate` meta-actions; zero-config auto-bootstrap downloads the MCP itself, and a safety preflight refuses to compile or flash on a bad toolchain / missing ST-LINK / wrong device family; canvas counterpart is the STM32er workflow agent), `chat_agent_esp32er` (ESP32 firmware via PlatformIO `pio` CLI directly — **no MCP server**; `scaffold_build_upload` collapses create→write→build→upload into one run; zero-config `get-platformio.py` bootstrap + serial-port preflight; canvas counterpart is the ESP32er workflow agent), `chat_agent_arduiner` (Arduino firmware via `arduino-cli` directly — **no MCP server**; MCU chosen by `fqbn`; zero-config arduino-cli binary bootstrap + auto-core-install; ships an ArduinoTemplateProject scaffold; canvas counterpart is the Arduiner workflow agent) |
 | **Web & browser** | `chat_agent_playwrighter` (drives a real browser through a scripted step list — login, forms, clicks, waits, extraction, screenshots, asserts, downloads; canvas counterpart is the Playwrighter workflow agent) |
 | **Crawling, monitoring, APIs, prompts, crypto** | `chat_agent_crawler`, `chat_agent_monitor_log`, `chat_agent_monitor_netstat`, `chat_agent_apirer`, `chat_agent_prompter`, `chat_agent_kyber_keygen`, `chat_agent_kyber_cipher`, `chat_agent_kyber_deciph` |
@@ -1860,14 +1862,14 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 
 ```powershell
 git status                                          # clean tree, on main
-git tag -a v1.19.5 -m "Release 1.19.5: <one-liner>"   # annotated tag
-git push origin v1.19.5
+git tag -a v1.20.0 -m "Release 1.20.0: <one-liner>"   # annotated tag
+git push origin v1.20.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.19.5/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.20.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
 
 ### Where the version shows up in a running install
 
@@ -1875,8 +1877,8 @@ The build computes the version once and bakes it into four surfaces:
 
 - **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
 - **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
-- **Release folder name** — `dist/Tlamatini_Release_v1.19.5/`.
-- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.19.5` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.19.5","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+- **Release folder name** — `dist/Tlamatini_Release_v1.20.0/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.20.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.20.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
 
 If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
 
@@ -2568,6 +2570,154 @@ Once pushed, the bundled GitHub Actions workflow (`.github/workflows/build.yml`)
 compiles the firmware on every push so the template never silently rots. The
 template has been verified to build clean with **PlatformIO Core 6.1.19** (it
 produces `firmware.bin` + `firmware.elf`).
+
+---
+
+# Bonus Chapter — § 59. The Day Tlamatini Learned to Sculpt in Blender
+
+> *A bonus chapter, narrative first, reference second. Read this if you make 3D art, motion graphics, or game assets in Blender and want a chat / canvas surface for the editor — driven by the **Blenderer** agent. The dry reference lives in **README §6.11** and in the agent's own `agents_descriptions.md` entry; this chapter is the "why it looks the way it does, and how to make it bullet-proof on your box".*
+
+## 59.1. The shape of the problem (and why Blender is *not* Unreal)
+
+Two chapters ago Tlamatini learned to drive Unreal Engine (§57). Blender is the same *kind* of problem — a **running editor process** holding a live graph of in-memory objects (meshes, materials, modifiers, collections, lights, cameras) that does not want to be poked from outside — but the **shape of the conversation is fundamentally different**, and that difference is the whole story of this chapter.
+
+Unreal MCP is a **verb** protocol: you send `{"type": "spawn_actor", "params": {...}}` and the plugin has a hand-written C++ handler for `spawn_actor`. The surface is a fixed menu of ~53 verbs.
+
+The **official Blender MCP add-on** (from blender.org) took the opposite design. Its socket speaks **one** primitive: *"here is some Python — run it inside Blender and give me back what the `result` variable holds."* The wire request is literally:
+
+```json
+{"type": "execute", "code": "import bpy\nresult = {'objects': len(bpy.data.objects)}", "strict_json": false}
+```
+
+followed by a single **NUL byte** (`\0`) as the frame delimiter, and Blender answers with another NUL-terminated JSON object:
+
+```json
+{"status": "ok", "result": {"objects": 3}, "stdout": "", "stderr": ""}
+```
+
+That is breathtakingly powerful — the "command surface" is the **entire Blender Python API**, every operator, every data block, every add-on — and slightly terrifying, because now *the caller* has to write correct `bpy` code for every single thing, and remember to assign a `result` dict, and hope it's JSON-serializable. A bare LLM client (which is what blender.org recommends) puts that whole burden on the model, every turn.
+
+Tlamatini's **Blenderer** agent splits the difference. It keeps the escape hatch — `execute_code` runs any Python you give it — but wraps the everyday operations (inspect the scene, make an object, colour it, render it) in a small **rich action catalog** of named commands that *generate* the correct, `result`-setting Python for you. You get verb-like ergonomics when you want them and the full API when you need it.
+
+## 59.2. Where Blender MCP lives (the add-on, not a Tlamatini fork)
+
+Unlike Unreal — where Tlamatini ships its own extended MCP fork — Blender's MCP is **official, first-party, and maintained by the Blender project**:
+
+- **Home / docs:** https://www.blender.org/lab/mcp-server/
+- **Source:** the `blender_mcp` repository on Blender's own Gitea (`projects.blender.org/lab/blender_mcp`). It has three parts: the **add-on** (the TCP socket server that runs *inside* Blender), the **`blmcp` MCP server** (a stdio↔socket bridge for generic MCP clients), and a bundled **`chat_client.py`** (a bare terminal chat).
+
+Here is the key architectural decision Tlamatini makes, and the reason Blenderer is a better experience than the stock setup: **Tlamatini talks to the add-on socket *directly* and ignores the `blmcp` bridge and the bundled chat client entirely.** Blenderer *is* the client. So you install exactly two things — **Blender** and **the add-on** — and skip `uv`, skip running a separate MCP-server process, skip the terminal chat. Everything you already love about Tlamatini (the canvas, Multi-Turn, the Exec Report, Parametrizer pipelines, the other 76 agents) then composes on top of Blender with zero extra plumbing.
+
+## 59.3. Installing and enabling the add-on
+
+1. Install the **Blender MCP add-on** in Blender (Edit → Preferences → Add-ons → Install, then tick it on), following the instructions on the blender.org page above.
+2. Turn on **Online access** in *Edit → Preferences → System*. The add-on refuses to open a socket while Blender is in fully-offline mode — this is the single most common "it won't connect" cause.
+3. In the add-on's preferences panel, set the **host** and **port** (defaults `localhost` / `9876`) and **start the server** (there's an optional auto-start toggle so it comes up with Blender).
+
+That's it. Blender is now listening on `localhost:9876`. Blenderer never launches Blender — it only connects to an already-running editor, exactly like Unrealer never launches UE5.
+
+## 59.4. The thirty-second conceptual model
+
+Hold these five facts and everything else follows:
+
+1. **One primitive.** Every Blenderer run becomes one `{"type":"execute","code":…,"strict_json":…}` message to `localhost:9876`, NUL-framed, and one NUL-framed JSON reply.
+2. **The code must set `result`.** Whatever you want back, assign it to a `result` dict. (Blenderer's baked verbs do this for you; in `execute_code` *you* do it.)
+3. **`strict_json` (default `false`).** When `true`, Blender errors if `result` isn't JSON-serializable. When `false` (the robust default), non-serializable values are `repr()`'d instead of failing — friendlier for exploration.
+4. **Blenderer is a generic, deterministic forwarder.** It does not run an LLM itself; it builds the code, sends it, captures the reply into an `INI_SECTION_BLENDERER` block, and **always** triggers `target_agents` (success *or* error) so a downstream Forker can branch on `{status}`.
+5. **Direct socket.** No `blmcp`, no external client. The same `agent_id`-free socket is used by both the chat tool (`chat_agent_blenderer`) and the canvas **Blenderer** node — they produce identical artefacts.
+
+## 59.5. The action catalog, organised the way a builder thinks
+
+`command` picks what Blenderer does. Three buckets:
+
+**Look (read-only — safe, no scene changes):**
+- `ping` — is Blender alive? Returns the Blender version + the active scene.
+- `scene_info` — scene name, frame range, render engine, and the object list.
+- `get_objects` — the full tree: every object (name/type/location/parent/visibility/dimensions), plus collections, meshes and materials.
+- `get_object_detail` (`params.object_name`) — one object in depth: transform, scale, dimensions, assigned materials, modifiers, vertex count.
+- `blendfile_summary` — datablock counts for the open `.blend` (objects, meshes, materials, textures, images, cameras, lights, collections, scenes).
+
+**Make (mutating):**
+- `create_object` — `params.type` ∈ cube / sphere / cylinder / cone / plane / monkey / torus, with `params.name` and `params.location` `[x,y,z]`.
+- `delete_object` (`params.object_name`).
+- `set_material` — attach (or reuse) a Principled-BSDF material on `params.object_name` and set its base colour to `params.color` `[r,g,b]` or `[r,g,b,a]`; name it with `params.material`.
+
+**Show (output to disk):**
+- `screenshot` (`params.output_path`) — a window grab via `bpy.ops.screen.screenshot`.
+- `render` (`params.output_path`) — a full still render via `bpy.ops.render.render(write_still=True)`.
+
+For both output verbs, **omit `params.output_path`** and Blenderer writes a collision-proof `.png` under Tlamatini's **Temp** directory (`<app>/Temp/TlamatiniBlenderer/…`), in line with the 2026-06 temp-directory policy.
+
+**Escape hatch:**
+- `execute_code` (`params.code`) — runs your Python verbatim. Anything the catalog doesn't cover (modifiers, geometry nodes, animation, UV, sculpt, compositor, import/export, add-on calls…) lives here. Set a `result` dict to return data.
+
+## 59.6. The smallest possible "hello, Blender"
+
+With **Multi-Turn** ticked, type:
+
+> Run Blender command with command='ping'
+
+Blenderer connects to `localhost:9876`, runs a tiny snippet, and you get back `status: ok` with something like `blender_version_string: "4.x.x"` and the active scene name. If instead you see a `status: error` whose message mentions *Online access* / *Cannot connect*, jump to §59.11 — it's almost always the add-on server not started or Online access off.
+
+## 59.7. The full demo — "BLENDER FORGE" (built in, no setup beyond the add-on)
+
+Tlamatini ships a Catalog-of-Prompts demo called **BLENDER FORGE** (open the prompts catalog, slot 75). Run it and Tlamatini will, end to end through `chat_agent_blenderer`:
+
+1. `ping` — confirm Blender is reachable (and bail gracefully to a banner if not).
+2. `create_object` — add a **monkey** (Suzanne) named `ForgeSuzanne` at `[0,0,2]`.
+3. `set_material` — give it a warm orange Principled base colour.
+4. `render` — render a still (defaulting under the Temp dir).
+5. Print a tidy HTML **Build Report** table — one row per call, every value taken verbatim from the `INI_SECTION_BLENDERER` blocks — and a closing **✅ FORGED** / **⚙️ BLENDER UNREACHABLE** banner.
+
+It is deliberately safe to run repeatedly: it adds one object and one material and renders a small image. If Blender isn't running, it degrades to the "unreachable" banner instead of failing — the same fail-soft contract every Blenderer flow honours.
+
+## 59.8. Chaining Blender calls on the visual canvas
+
+The chat tool is great for one-offs; the **canvas** is where unattended pipelines live. Drop the **Blenderer** node (it carries a distinctive blue→orange "Blender Forge" gradient so it's easy to spot next to the cobalt Unrealer), set its `command` + `params` in the node dialog, and wire it like any other agent.
+
+Because each Blenderer emits an `INI_SECTION_BLENDERER` block whose body is Blender's full JSON response, **Parametrizer** can copy one step's output into the next step's config. The canonical pattern:
+
+```
+Starter → Blenderer(create_object) → Parametrizer → Blenderer(set_material)
+        → Parametrizer → Blenderer(render) → Notifier → Ender
+```
+
+Each Parametrizer copies the previous Blenderer's `response_body` (or a specific JSON field, via the Parametrizer dialog's interconnection-mapping UI) into the next Blenderer's `params`. Put a **Forker** after a Blenderer and branch on the section's `status` (`ok` vs `error`) for per-step exception handling — e.g. abort to a Notifier if a render fails. A **Croner** in front turns the whole thing into a nightly automated render. **FlowCreator** knows the Blenderer entry (catalog #77) and can design these flows for you from a plain-English objective.
+
+## 59.9. `execute_code` — the universal escape hatch (and its one rule)
+
+When you outgrow the catalog, reach for `execute_code`. The **one rule**: your code must assign a `result` dict. Example — count polygons across the scene and report the heaviest object:
+
+> Run Blender command with command='execute_code' and params.code="import bpy; objs=[(o.name,len(o.data.polygons)) for o in bpy.data.objects if o.type=='MESH']; objs.sort(key=lambda x:-x[1]); result={'meshes':objs,'heaviest':objs[0] if objs else None}"
+
+Tips that save you grief:
+- Keep `strict_json` at `false` unless you specifically want the serialization guard — then a stray Blender object in `result` is `repr()`'d instead of erroring the whole call.
+- Anything you `print()` comes back in the response's `stdout`, captured in the section body — handy for progress without polluting `result`.
+- `execute_code` and `render` get **longer socket read-timeout floors** (300 s and 600 s respectively) because a heavy script or a cold-start render legitimately takes a while; Blenderer raises the timeout for you so a slow-but-valid run is never killed mid-flight.
+
+## 59.10. The bullet-proof checklist (copy this to a sticky note)
+
+1. Blender is **running**, the MCP add-on is **enabled**, **Online access** is **on**, and the add-on **server is started** (host/port match — default `localhost:9876`).
+2. For a remote Blender, pass `host='<ip>'` / `port=<n>` per call (or set them in the node dialog); only one Blender can bind a given port.
+3. Start every session with `ping` — if it isn't `ok`, fix the connection before anything else.
+4. Use the **read** verbs to ground yourself (`scene_info`, `get_objects`) before mutating.
+5. Let output verbs default their path to **Temp** unless you have a reason to choose one.
+6. In Multi-Turn, the agent is gated by the **Ask Execs** toggle like any state-changer — tick it if you want a Proceed/Deny prompt before each Blender mutation.
+7. The agent **always** fires `target_agents`; branch on `{status}` with a Forker rather than assuming success.
+
+## 59.11. When it goes wrong (and what each failure actually means)
+
+- **`status: error` … "Cannot connect to Blender at localhost:9876" / ConnectionRefusedError.** Blender isn't running, the add-on isn't enabled, **Online access is off**, or the add-on server wasn't started. This is the #1 cause — walk §59.3 again.
+- **"did not reply within Ns" on a fast read verb.** Blender's main thread is busy or parked on a **modal dialog / blocking operator** (a popup waiting for a human, a long bake). Dismiss the dialog in Blender, or split the work; for genuinely long work raise `read_timeout`.
+- **A render/`execute_code` "times out" anyway.** Rare — the per-command floors are generous — but a cold GPU/CYCLES first-frame compile or an enormous scene can exceed even those. Raise `read_timeout` for that node.
+- **"Unknown command".** You wired a `command` that isn't in the catalog. Use `execute_code` for anything the catalog doesn't name — it reaches the whole API.
+- **Your `execute_code` "succeeded" but `result` is empty.** You forgot to assign `result`. Blender defaults it to `{}` when your script doesn't set it; anything you `print()` is still in `stdout`.
+
+For the full trail: the pool-agent log is `<pool>/blenderer_<n>/blenderer_<n>.log`; chat-wrapped runs land under `agent/agents/pools/_chat_runs_/blenderer_<seq>_<id>/…log`. Both contain the exact Python sent and Blender's verbatim reply.
+
+## 59.12. Why this matters
+
+blender.org's own recommendation is to point a generic MCP client (Claude Desktop, or their bundled terminal `chat_client.py`) at the `blmcp` bridge and chat with it. That works — and it's a flat, single-window, you-versus-one-model experience. Tlamatini takes the *same* official add-on and gives it a body: a visual canvas where a dozen Blender steps wire into a render pipeline, a Multi-Turn operator loop that does the modelling for you, an Exec Report that shows every command and its verdict, Parametrizer chains that pass a created object's name into the next step's material, a FlowHypervisor watching for stalls, and 76 sibling agents so a Blender render can be the *middle* of a workflow that started with a web crawl and ends with a Telegram message. Same engine underneath; an order of magnitude more leverage on top. That is the point of Blenderer.
 
 ---
 

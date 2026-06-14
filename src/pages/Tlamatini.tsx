@@ -236,7 +236,7 @@ function TlamatiniInstallation() {
   const stepCode = [
     '$env:OLLAMA_INSTALL_DIR =\n  "$env:LOCALAPPDATA\\Programs\\Ollama"\nirm https://ollama.com/install.ps1 | iex\nollama serve   # leave running in its own window',
     'ollama pull Nomic-Embed-Text:latest\nollama pull kimi-k2.6:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud\nollama pull qwen3.5:397b-cloud\nollama pull glm-5.1:cloud',
-    '# Download Tlamatini v1.19.5 from GitHub\nhttps://github.com/XAIHT/Tlamatini/releases/tag/v1.19.5',
+    '# Download Tlamatini v1.20.0 from GitHub\nhttps://github.com/XAIHT/Tlamatini/releases/tag/v1.20.0',
     '# Unzip the archive anywhere (no admin rights)\nInstaller.exe   # pick install dir -> finish\n# Bundled Python 3.12.10, Java, Git, and\n# Playwright browsers are carried in.',
     '# Launch Tlamatini from the desktop /\n# Start-Menu shortcut.',
     '# Open in your browser, then say hi:\nhttp://127.0.0.1:8000\n# Log in:  user / changeme',
@@ -323,14 +323,15 @@ function TlamatiniAgents() {
     {
       color: '#8a9ec7',
       names: [
+        'unrealer', 'blenderer', 'stm32er', 'esp32er',
         'executer', 'pythonxer', 'prompter', 'summarizer', 'crawler', 'googler',
         'playwrighter', 'apirer', 'gitter', 'ssher', 'scper', 'dockerer',
         'kuberneter', 'pser', 'jenkinser', 'sqler', 'mongoxer', 'mover',
         'deleter', 'shoter', 'camcorder', 'recorder', 'whisperer', 'audioplayer',
         'videoplayer', 'talker', 'mouser', 'keyboarder', 'windower', 'file-creator', 'file-interpreter',
         'file-extractor', 'de-compresser', 'image-interpreter', 'j-decompiler',
-        'telegramer', 'teletlamatini', 'whatstlamatini', 'acpxer', 'unrealer',
-        'stm32er', 'esp32er', 'arduiner', 'reviewer', 'analyzer', 'kalier',
+        'telegramer', 'teletlamatini', 'whatstlamatini', 'acpxer',
+        'arduiner', 'reviewer', 'analyzer', 'kalier',
       ],
     },
     { color: '#c79e7a', names: ['kyber-keygen', 'kyber-cipher', 'kyber-decipher'] },
