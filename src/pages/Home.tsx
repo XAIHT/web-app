@@ -95,9 +95,9 @@ function OverviewSection() {
           <div className="xaiht-card">
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '77' },
+                { label: o.stats.agents, value: '81' },
                 { label: o.stats.skills, value: '27' },
-                { label: o.stats.version, value: 'v1.20.1' },
+                { label: o.stats.version, value: 'v1.24.0' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -446,7 +446,7 @@ function WorkflowSection() {
     { agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Camcorder, Recorder, AudioPlayer, VideoPlayer, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Arduiner, Reviewer, Analyzer, Kalier', color: '#8a9ec7' },
+    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Talker, Whisperer, Arduiner, Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Globber, Grepper, Editor, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Camcorder, Recorder, AudioPlayer, VideoPlayer, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Reviewer, Analyzer, Kalier', color: '#8a9ec7' },
     { agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
@@ -552,6 +552,7 @@ function ToolsSection() {
     { name: 'Controls Blender', color: '#8a9ec7' },
     { name: 'STM32er', color: '#7a9e8e' },
     { name: 'ESP32er', color: '#7a9e8e' },
+    { name: 'ESPHomer', color: '#7a9e8e' },
     { name: 'Arduiner', color: '#7a9e8e' },
     { name: 'Camcorder', color: '#8a9ec7' },
     { name: 'Recorder', color: '#8a9ec7' },
@@ -567,14 +568,16 @@ function ToolsSection() {
     { name: 'Analyzer', color: '#c79e7a' },
     { name: 'De-Compresser', color: '#8a9ec7' },
     { name: 'embedding_guard', color: '#8a9ec7' },
-    { name: '83 Multi-Turn tools', color: '#7a9e8e' },
+    { name: '88 Multi-Turn tools', color: '#7a9e8e' },
     { name: 'Pythonxer strict gate', color: '#7a9e8e' },
     { name: 'File-Creator persistence', color: '#7a9e8e' },
+    { name: 'Globber / Grepper / Editor', color: '#7a9e8e' },
     { name: 'chat_agent_executer', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', color: '#c79e7a' },
     { name: 'acp_spawn', color: '#b08cc7' },
     { name: 'acp_relay', color: '#b08cc7' },
+    { name: 'Claude Code uses Tlamatini tools', color: '#b08cc7' },
     { name: 'invoke_skill', color: '#9e9e9e' },
   ];
   const tools = toolData.map((tool, i) => ({ ...tool, ...t.home.tools.items[i] }));
