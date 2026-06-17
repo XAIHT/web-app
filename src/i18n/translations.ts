@@ -37,13 +37,13 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.24.0',
+      'Tlamatini v1.26.0',
       'Self-Hosted AI',
       '53 Unreal Engine Control Commands',
       'Multi-Turn Operation',
-      '88 Multi-Turn Tools',
+      'Full-Surface Multi-Turn',
       '27 Skill Packages',
-      '81 Workflow Agents',
+      '82 Workflow Agents',
       'Ask Execs Approval Gate',
       'Windows 10|11 Installed App',
       'Bullet-Proof Carried-Python Installer',
@@ -60,6 +60,9 @@ const en = {
       'Tlamatini Speaks with Talker',
       'Tlamatini Listens with Whisperer',
       'Tlamatini Understands Audio',
+      'External MCPs From JSON',
+      'MCP Doctor Diagnoses Servers',
+      'Step-by-Step Setup Guidance',
       'Claude Code Uses Tlamatini Tools',
       'Globber + Grepper + Editor',
       'Self-Modifiable + Self-Updating Builds',
@@ -81,7 +84,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.24.0 is the local-first AI operator for serious builders: she knows your codebase, controls Unreal Engine, controls Blender, handles STM32, ESP32, Arduino, and ESPHome smart-home device work, speaks with Talker, listens and understands audio with Whisperer, and turns chat or canvas intent into guarded, reusable action. Her newest surface lets Claude Code and other external agents drive Tlamatini tools through MCP, while she brings hybrid RAG, 88 Multi-Turn tools, 4096-iteration orchestration, Ask Execs approvals, build-time source snapshots, self-update, Config and DB menus, ACPX-Skills, GPU-aware context loading, and 81 drag-and-drop workflow agents.',
+      desc: 'Tlamatini v1.26.0 is the local-first AI operator for serious builders: she knows your codebase, controls Unreal Engine, controls Blender, handles STM32, ESP32, Arduino, and ESPHome smart-home device work, speaks with Talker, listens and understands audio with Whisperer, and turns chat or canvas intent into guarded, reusable action. Her newest surface connects to external MCP servers from JSON, adds MCP Doctor for safe onboarding, keeps Claude Code and other agents close to her tools, and brings hybrid RAG, full-surface Multi-Turn, 4096-iteration orchestration, Ask Execs approvals, Step-by-Step setup guidance, source snapshots, self-update, Config, DB, ACPX-Skills, GPU-aware context loading, and 82 workflow agents.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -100,19 +103,19 @@ const en = {
           title: 'Vision',
           subtitle: 'Human Control, Tunable AI',
           description:
-            "Tlamatini is built around the idea that developer AI should stay under the user's control: local context, explicit toggles, Ask Execs approvals, Windows uninstall registration and self-update for installed builds, live model and API-key settings, safe database handling, inspectable workflows, optional build-time TlamatiniSourceCode snapshots, ACPX-Skills catalog control, direct Unreal Engine and Blender control, STM32F4x, ESP32, ESPHome, and Arduino device paths with preflight checks, Talker speech, Whisperer audio understanding, strict Python and file-creation gates, opt-in external routes, external MCP access for Claude Code, review and analysis gates, and her own self-knowledge map.",
+            "Tlamatini is built around the idea that developer AI should stay under the user's control: local context, explicit toggles, Ask Execs approvals, Step-by-Step setup guidance, Windows uninstall registration and self-update for installed builds, live model and API-key settings, safe database handling, inspectable workflows, optional build-time TlamatiniSourceCode snapshots, ACPX-Skills catalog control, direct Unreal Engine and Blender control, STM32F4x, ESP32, ESPHome, and Arduino device paths with preflight checks, Talker speech, Whisperer audio understanding, strict Python and file-creation gates, external MCPs activated from JSON, MCP Doctor diagnostics, Claude Code access to her tools, review and analysis gates, and her own self-knowledge map.",
         },
         {
           title: 'Mission',
           subtitle: 'Make the Assistant a Doer',
           description:
-            'The mission is to combine code-aware RAG, native nested-folder context loading, direct Unreal Engine and Blender project control, STM32F4x, ESP32, ESPHome smart-home, and Arduino automation, media capture and playback, tunable embedding depth, GPU-aware context loading, 88-tool / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Pythonxer correctness gates, byte-complete File-Creator persistence, Globber / Grepper / Editor file intelligence, honest foreground execution, Windows 10|11 uninstall and update readiness, Exec Report audit tables, opt-in ACPX delegation, Claude Code access to Tlamatini tools, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
+            'The mission is to combine code-aware RAG, native nested-folder context loading, direct Unreal Engine and Blender project control, STM32F4x, ESP32, ESPHome smart-home, and Arduino automation, media capture and playback, tunable embedding depth, GPU-aware context loading, full-surface / 4096-iteration Multi-Turn orchestration, Ask Execs checkpoints, Step-by-Step external-MCP setup, MCP Doctor diagnostics, Pythonxer correctness gates, byte-complete File-Creator persistence, Globber / Grepper / Editor file intelligence, honest foreground execution, Windows 10|11 uninstall and update readiness, Exec Report audit tables, opt-in ACPX delegation, Claude Code access to Tlamatini tools, skill-catalog administration, Windower desktop control, commit-aware Reviewer and Analyzer quality gates, and visual flows.',
         },
         {
           title: 'Concept',
           subtitle: 'The One Who Knows',
           description:
-            'Tlamatini means "one who knows." In practice, she reads your code, controls Unreal Engine projects, controls Blender scenes, understands STM32 firmware goals, ESP32 PlatformIO projects, ESPHome YAML smart-home devices, and Arduino sketches, can watch a webcam, listen through Whisperer, understand audio, speak back with Talker, and play sound and video, protects loaded project context from being confused with her self-knowledge, lets you tune models, API keys, endpoints, database snapshots, and skills from the UI, exposes her tools to external agents such as Claude Code through MCP, can ship with a complete rebuildable source snapshot generated at build time, can check GitHub releases for her own update, and compiles chat or canvas ideas into reusable .flw workflows.',
+            'Tlamatini means "one who knows." In practice, she reads your code, controls Unreal Engine projects, controls Blender scenes, understands STM32 firmware goals, ESP32 PlatformIO projects, ESPHome YAML smart-home devices, and Arduino sketches, can watch a webcam, listen through Whisperer, understand audio, speak back with Talker, and play sound and video, protects loaded project context from being confused with her self-knowledge, lets you tune models, API keys, endpoints, database snapshots, skills, and external MCPs from the UI, diagnoses MCP setup with MCP Doctor before connecting, exposes her tools to external agents such as Claude Code, can ship with a complete rebuildable source snapshot generated at build time, can check GitHub releases for her own update, and compiles chat or canvas ideas into reusable .flw workflows.',
         },
       ],
     },
@@ -120,14 +123,14 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Tlamatini connects the browser, native project context picker, self-knowledge map, Config, DB, and ACPX-Skills menus, API-Keys Wizard, About self-update, Multi-Turn operator with Ask Execs approval gates, Windows installed-app registration, Flow Compiler, build-time source-snapshot self-modification, Unrealer control for Unreal Engine, Blenderer control for Blender, STM32 Template Project MCP, ESP32er PlatformIO automation, ESPHomer ESPHome device automation, Arduiner Arduino-CLI automation, Talker and Whisperer voice I/O, Claude Code access to Tlamatini tools through MCP, and ACPX runtime through one self-hosted command surface.',
+        desc: 'Tlamatini connects the browser, native project context picker, self-knowledge map, Config, DB, ACPX-Skills, and External MCPs menus, API-Keys Wizard, About self-update, Multi-Turn operator with Ask Execs and Step-by-Step gates, Windows installed-app registration, Flow Compiler, build-time source-snapshot self-modification, Unrealer control for Unreal Engine, Blenderer control for Blender, STM32 Template Project MCP, ESP32er PlatformIO automation, ESPHomer ESPHome device automation, Arduiner Arduino-CLI automation, Talker and Whisperer voice I/O, MCP Doctor diagnostics, Claude Code access to Tlamatini tools, and ACPX runtime through one self-hosted command surface.',
         card1: {
-          title: 'Chat, Config, DB, Skills, and Context',
-          desc: 'The chat surface keeps Multi-Turn, Ask Execs, Exec Report, ACPX, internet context, native nested-folder context, Models / URLs / API-Keys Config dialogs, DB controls, and ACPX-Skills Browse / Configure / Diagnostics / Reload close at hand without asking users to hunt through files.',
+          title: 'Chat, Config, DB, Skills, MCPs, and Context',
+          desc: 'The chat surface keeps Multi-Turn, Ask Execs, Step-by-Step, Exec Report, ACPX, internet context, native nested-folder context, Models / URLs / API-Keys Config dialogs, DB controls, ACPX-Skills, and External MCPs close at hand without asking users to hunt through files.',
         },
         card2: {
-          title: 'LLM, ACPX, Skills, and GPU Guard',
-          desc: 'Unrealer controls Unreal Engine, Blenderer controls Blender, STM32er guards ST-LINK firmware work, ESP32er drives PlatformIO, ESPHomer builds ESPHome smart-home devices from YAML, Arduiner drives Arduino-CLI, Talker lets Tlamatini speak, Whisperer lets her listen and understand audio, and Globber / Grepper / Editor give her a precise file-discovery, search, and surgical-edit trio. ACPX delegates to external coding CLIs when selected, and Tlamatini can expose her tools to Claude Code through MCP while GPU hosts get a pre-flight warning before heavy embedding loads.',
+          title: 'LLM, External MCPs, ACPX, Skills, and GPU Guard',
+          desc: 'Unrealer controls Unreal Engine, Blenderer controls Blender, STM32er guards ST-LINK firmware work, ESP32er drives PlatformIO, ESPHomer builds ESPHome devices, Arduiner drives Arduino-CLI, Talker lets Tlamatini speak, Whisperer lets her listen and understand audio, and MCP Doctor checks external MCPs before activation. ACPX and Claude Code can meet her enabled tool surface while GPU hosts get a pre-flight warning before heavy embedding loads.',
         },
       },
       rag: {
@@ -143,12 +146,12 @@ const en = {
       },
       multiTurn: {
         label: 'Multi-Turn',
-        title: 'Request-Scoped Orchestration',
-        desc: 'When Multi-Turn is enabled, the chat becomes an operator: a planner selects the relevant tools, Ask Execs can pause state-changing calls for human approval, Pythonxer rejects broken scripts early, and successful work becomes reusable workflows.',
+        title: 'Full-Surface Orchestration',
+        desc: 'When Multi-Turn is enabled, the chat becomes an operator with her enabled tool, agent, skill, and external-MCP surface available. Ask Execs can pause state-changing calls, Step-by-Step can guide setup one confirmation at a time, Pythonxer rejects broken scripts early, and successful work becomes reusable workflows.',
         items: [
           {
-            title: 'Global Execution Planner',
-            desc: 'Builds a request-scoped plan and binds a focused set of relevant tools across long autonomous runs.',
+            title: 'Full Enabled Surface',
+            desc: 'Keeps the enabled Tools, MCPs, Agents, Skills, and active external-MCP tools available so Tlamatini does not lose the right instrument mid-task.',
           },
           {
             title: 'Ask Execs Gate',
@@ -168,7 +171,7 @@ const en = {
     workflow: {
       label: 'Workflow Designer',
       title: 'Drag, Drop, Orchestrate',
-      desc: 'The Visual Workflow Designer lets you drag 81 agent types onto a canvas, wire reusable .flw workflows, preserve Parametrizer mappings, validate the live graph, control Unreal Engine through 53-command Unrealer workflows, control Blender scenes through Blenderer render pipelines, build and flash STM32F4x firmware through STM32er, build and upload ESP32 firmware through ESP32er, create ESPHome smart-home devices through ESPHomer, let Tlamatini speak with Talker, listen and understand audio with Whisperer, build and upload Arduino firmware, discover / grep / edit files precisely, capture webcam, microphone, and screen, play sound and video back, write symbol-heavy files through hardened File-Creator persistence, run authorized Kali assessments, command browsers and desktop windows, review diffs, scan for security findings, add approval checkpoints, and bring repeatable automation to creative and engineering work.',
+      desc: 'The Visual Workflow Designer lets you drag 82 agent types onto a canvas, wire reusable .flw workflows, preserve Parametrizer mappings, validate the live graph, control Unreal Engine through 53-command Unrealer workflows, control Blender scenes through Blenderer render pipelines, build and flash STM32F4x firmware through STM32er, build and upload ESP32 firmware through ESP32er, create ESPHome smart-home devices through ESPHomer, diagnose external MCPs with MCP Doctor, let Tlamatini speak with Talker, listen and understand audio with Whisperer, build and upload Arduino firmware, discover / grep / edit files precisely, capture webcam, microphone, and screen, play sound and video back, write symbol-heavy files through hardened File-Creator persistence, run authorized Kali assessments, command browsers and desktop windows, review diffs, scan for security findings, add approval checkpoints, and bring repeatable automation to creative and engineering work.',
       categories: [
         { name: 'Control' },
         { name: 'Routing' },
@@ -192,6 +195,8 @@ const en = {
         { desc: 'Enable or hide skills from the planner with the same feel as Tools and MCPs', type: 'Skills' },
         { desc: 'Catch missing tools, MCPs, ACPX agents, and orphan skill rows before runtime', type: 'Skills' },
         { desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills' },
+        { desc: 'Activate up to 5 external MCP servers from a searchable JSON catalog and let Multi-Turn call their tools', type: 'MCP' },
+        { desc: 'Run MCP Doctor before activation to detect transport, runtime, PATH, secrets, blockers, and the next setup step', type: 'MCP' },
         { desc: 'Installed builds appear where Windows 10|11 users expect to remove applications and can check About for staged self-updates', type: 'Installer' },
         { desc: 'Prompt before each state-changing Multi-Turn Tool, MCP, Agent, or Skill call, then proceed or fail safe', type: 'Runtime' },
         { desc: 'Control Unreal Engine through the 53-command XAIHT Unreal MCP fork', type: 'Game Dev' },
@@ -214,7 +219,7 @@ const en = {
         { desc: 'Runs deterministic static-analysis, secret, and dependency scans as a workflow gate', type: 'Canvas Agent' },
         { desc: 'Compresses or decompresses archives so downstream agents can work with the contents', type: 'Action' },
         { desc: 'Warns GPU hosts before heavy context embedding loads and keeps context loading humane', type: 'RAG' },
-        { desc: 'A broad action surface with approval checkpoints, a 4096-iteration ceiling, and a 256 tool-call hard stop', type: 'Runtime' },
+        { desc: 'Full-surface Multi-Turn keeps enabled tools, agents, skills, and active external MCPs available with a 4096-iteration ceiling and 256 tool-call hard stop', type: 'Runtime' },
         { desc: 'Compile and Ruff checks stop broken Python before execution while downstream flow control stays explicit', type: 'Runtime' },
         { desc: 'File-Creator persists long source, prompt, and config files byte-complete, including quotes, semicolons, and symbols', type: 'Action' },
         { desc: 'Globber, Grepper, and Editor let Tlamatini discover files, search content, and apply surgical exact-string edits without noisy shell detours', type: 'Action' },
@@ -231,7 +236,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.24.0 expands her reach: she controls Unreal Engine, controls Blender, runs critical STM32er firmware workflows, runs ESP32er PlatformIO workflows, builds ESPHome smart-home devices with ESPHomer, speaks aloud with Talker, listens and understands audio with Whisperer, and lets Claude Code use her tools through MCP. She still brings self-update, self-modify source snapshots, File-Creator persistence, Globber / Grepper / Editor precision, Arduiner, Windows 10|11 installed-app registration, Ask Execs approval gates, strict Pythonxer execution, Hybrid RAG, Config, DB, and ACPX-Skills controls, 88-tool Multi-Turn orchestration, GPU-aware context loading, 27 skills, and 81 workflow agents.',
+    ctaDesc: 'Tlamatini v1.26.0 expands her reach: she controls Unreal Engine, controls Blender, runs critical STM32er firmware workflows, runs ESP32er PlatformIO workflows, builds ESPHome devices with ESPHomer, speaks aloud with Talker, listens and understands audio with Whisperer, connects to external MCPs from JSON, and uses MCP Doctor to diagnose them before activation. She still brings self-update, self-modify source snapshots, File-Creator persistence, Globber / Grepper / Editor precision, Arduiner, Windows 10|11 installed-app registration, Ask Execs and Step-by-Step gates, strict Pythonxer execution, Hybrid RAG, Config, DB, ACPX-Skills, full-surface Multi-Turn, GPU-aware context loading, 27 skills, and 82 workflow agents.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -254,21 +259,25 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.24.0',
-      desc: 'A local-first AI operator that knows your project and can act: she controls Unreal Engine, controls Blender, runs STM32er, ESP32er, ESPHomer, and Arduiner device workflows, speaks with Talker, listens and understands audio with Whisperer, and turns guarded Multi-Turn work into reusable .flw automation. Hybrid RAG, complete build-time source snapshots, native context, live Config and DB controls, ACPX-Skills, 88 tools, 4096 iterations, Ask Execs approvals, GPU-aware context loading, Claude Code access through MCP, and 81 workflow agents stay under your command.',
+      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.26.0',
+      desc: 'A local-first AI operator that knows your project and can act: she controls Unreal Engine, controls Blender, runs STM32er, ESP32er, ESPHomer, and Arduiner device workflows, speaks with Talker, listens and understands audio with Whisperer, connects to external MCPs from JSON, diagnoses them with MCP Doctor, and turns guarded Multi-Turn work into reusable .flw automation. Hybrid RAG, source snapshots, native context, Config, DB, ACPX-Skills, External MCPs, full-surface Multi-Turn, 4096 iterations, Ask Execs, Step-by-Step, GPU-aware context loading, Claude Code access, and 82 workflow agents stay under your command.',
     },
     overview: {
       label: 'Project Overview',
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She is a self-hosted app you run on your own machine, with the LLM your choice of local Ollama, Ollama Cloud (the shipped default), or a cloud API like Anthropic Claude, combining code-aware retrieval, her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, direct Unreal Engine control, direct Blender scene control, STM32, ESP32, ESPHome, and Arduino automation, Talker speech, Whisperer listening and audio understanding, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.',
-      p2: 'The v1.24.0 build gives her a new device arm and a stronger external-agent story: ESPHomer builds ESPHome smart-home devices from simple YAML, Globber / Grepper / Editor add precise file discovery, search, and surgical edits, and Claude Code can now use Tlamatini agents and tools through MCP. She still carries 81 agents, 88 Multi-Turn tools, 27 skills, source-snapshot self-modification, File-Creator persistence, Unrealer, Blenderer, STM32er, ESP32er, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
+      p2: 'The v1.26.0 build opens the walls: External MCPs let Tlamatini activate up to five outside MCP servers from a searchable JSON catalog, bind their tools into Multi-Turn as `ext__server__tool`, and manage them with status, reconnect, doctor, list, call, import, set-active, and wait controls. MCP Doctor joins the canvas and chat as the safe triage agent for transport, runtime, PATH, secrets, blockers, and the exact next setup step. She still carries 82 agents, full-surface Multi-Turn, 27 skills, source-snapshot self-modification, File-Creator persistence, Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
       viewSource: 'View Source',
     },
     features: {
       label: 'Key Features',
       title: 'Capabilities at a Glance',
       items: [
+        {
+          title: 'External MCPs and MCP Doctor',
+          description: 'Tlamatini can connect to any external MCP server declared in JSON, across stdio, streamable HTTP, SSE, and WebSocket, with up to five active at once. MCP Doctor checks a server before connection, names the blocker, and turns setup into a Step-by-Step conversation instead of a blind guess.',
+        },
         {
           title: 'Controls Unreal Engine and Blender',
           description: 'Tlamatini brings local RAG, 4096-iteration action, external-agent delegation, and reusable workflow automation into creative-engine work: she controls Unreal Engine through the 53-command XAIHT Unreal MCP fork and controls Blender through the official MCP add-on with scene, object, material, screenshot, and render actions.',
@@ -291,7 +300,7 @@ const en = {
         },
         {
           title: 'Multi-Turn Chat Operator',
-          description: 'A chat surface with independent toggles for Multi-Turn, Ask Execs, Exec Report, ACPX, and internet context. She can choose from 88 tools, pause for approval, reject broken Python early, and turn successful work into repeatable flows.',
+          description: 'A chat surface with independent toggles for Multi-Turn, Ask Execs, Step-by-Step, Exec Report, ACPX, and internet context. She carries the full enabled surface, pauses for approval, rejects broken Python early, and turns successful work into repeatable flows.',
         },
         {
           title: 'Installer and Source Snapshot',
@@ -303,7 +312,7 @@ const en = {
         },
         {
           title: 'Visual Workflow Designer',
-          description: 'Drag-and-drop workflow creation with 81 agent types, .flw save/load, live Validate, Start-time compilation, 53-command Unrealer-controlled Unreal Engine flows, Blenderer-controlled render pipelines, STM32er firmware pipelines, ESP32er PlatformIO flows, ESPHomer smart-home flows, Talker speech nodes, Whisperer listening and audio-understanding nodes, Arduiner Arduino-CLI flows, Globber / Grepper / Editor file flows, webcam, microphone, speaker, on-screen video, Kalier assessment runs, Playwrighter browser flows, Windower desktop-window control, strict Pythonxer paths, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
+          description: 'Drag-and-drop workflow creation with 82 agent types, .flw save/load, live Validate, Start-time compilation, 53-command Unrealer-controlled Unreal Engine flows, Blenderer-controlled render pipelines, STM32er firmware pipelines, ESP32er PlatformIO flows, ESPHomer smart-home flows, MCP Doctor diagnostics, Talker speech nodes, Whisperer listening and audio-understanding nodes, Arduiner Arduino-CLI flows, Globber / Grepper / Editor file flows, webcam, microphone, speaker, on-screen video, Kalier assessment runs, Playwrighter browser flows, Windower desktop-window control, strict Pythonxer paths, Reviewer, Analyzer, FlowCreator, and FlowHypervisor.',
         },
         {
           title: 'ACPX External Delegation',
@@ -318,7 +327,7 @@ const en = {
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.24.0 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Self-modify builds can also generate a complete rebuildable source snapshot at build time. Installed builds register with Windows 10|11 uninstall mechanisms and can check About -> Check for updates to stage a newer release while preserving config, database, content, and one agents backup.',
+      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.26.0 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Self-modify builds can also generate a complete rebuildable source snapshot at build time. Installed builds register with Windows 10|11 uninstall mechanisms and can check About -> Check for updates to stage a newer release while preserving config, database, content, and one agents backup.',
       steps: [
         { label: 'Install Ollama' },
         { label: 'Pull Default Models' },
@@ -330,8 +339,8 @@ const en = {
     },
     agents: {
       label: 'Agent Ecosystem',
-      title: '81 Workflow-Agent Types',
-      desc: 'The catalog spans control, routing, logic, action, cryptography, utility, terminal monitoring, and AI design agents, led by 53-command Unrealer for controlling Unreal Engine, Blenderer for controlling Blender, critical-mission STM32er, ESP32er PlatformIO automation, ESPHomer smart-home device automation, Talker so Tlamatini can speak, and Whisperer so she can listen and understand audio. Then come Arduiner, Globber, Grepper, Editor, the media family, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, Reviewer, Analyzer, De-Compresser, strict Pythonxer, FlowCreator, 27 ACPX-Skills packages, Ask Execs approval, self-knowledge, Windows installed-app polish, self-update, and GPU-aware context safeguards.',
+      title: '82 Workflow-Agent Types',
+      desc: 'The catalog spans control, routing, logic, action, cryptography, utility, terminal monitoring, and AI design agents, led by 53-command Unrealer for controlling Unreal Engine, Blenderer for controlling Blender, critical-mission STM32er, ESP32er PlatformIO automation, ESPHomer smart-home device automation, MCP Doctor for external-MCP onboarding, Talker so Tlamatini can speak, and Whisperer so she can listen and understand audio. Then come Arduiner, Globber, Grepper, Editor, the media family, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, Reviewer, Analyzer, De-Compresser, strict Pythonxer, FlowCreator, 27 ACPX-Skills packages, Ask Execs, Step-by-Step, self-knowledge, Windows installed-app polish, self-update, and GPU-aware context safeguards.',
       groupLabel: 'Agents',
       groups: [
         {
@@ -434,6 +443,7 @@ const en = {
             { desc: 'Inbound webhook and folder-drop ingress' },
             { desc: 'Provider webhook bridge' },
             { desc: 'Live infrastructure registry' },
+            { desc: 'External MCP setup diagnostic and onboarding report' },
           ],
         },
         {
@@ -473,7 +483,7 @@ const en = {
         },
         {
           category: 'Agent Runtime',
-          items: ['Unrealer controls Unreal Engine', 'Blenderer controls Blender', 'STM32er firmware bridge', 'ESP32er PlatformIO bridge', 'ESPHomer ESPHome YAML devices', 'Talker lets Tlamatini speak', 'Whisperer lets Tlamatini listen and understand audio', '88 Multi-Turn tools', 'Ask Execs approval gate', 'Pythonxer strict gate', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'Claude Code uses Tlamatini tools via MCP', 'Globber / Grepper / Editor file trio', 'Arduiner Arduino-CLI bridge', 'Camcorder / Recorder capture', 'AudioPlayer / VideoPlayer playback', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '27 SKILL.md packages'],
+          items: ['Unrealer controls Unreal Engine', 'Blenderer controls Blender', 'STM32er firmware bridge', 'ESP32er PlatformIO bridge', 'ESPHomer ESPHome YAML devices', 'External MCPs from JSON', 'MCP Doctor diagnostics', 'Talker lets Tlamatini speak', 'Whisperer lets Tlamatini listen and understand audio', 'Full-surface Multi-Turn', 'Ask Execs approval gate', 'Step-by-Step setup guidance', 'Pythonxer strict gate', '4096-iteration executor', '256 tool-call hard stop', 'ACPX external CLIs', 'Claude Code uses Tlamatini tools via MCP', 'Globber / Grepper / Editor file trio', 'Arduiner Arduino-CLI bridge', 'Camcorder / Recorder capture', 'AudioPlayer / VideoPlayer playback', 'Kalier configured Kali bridge', 'Playwrighter browser automation', 'Windower desktop control', '27 SKILL.md packages'],
         },
         {
           category: 'Workflow Runtime',
@@ -481,7 +491,7 @@ const en = {
         },
         {
           category: 'Interfaces',
-          items: ['Windows 10|11 uninstall registration', 'About Check for updates', 'Config Models dialog', 'Config URLs and API-Keys Wizard', 'Config endpoints for Kali, STM32 MCP, ESP32 PlatformIO, ESPHome, and Arduino CLI', 'MCP exposure for external agents', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'],
+          items: ['Windows 10|11 uninstall registration', 'About Check for updates', 'Config Models dialog', 'Config URLs and API-Keys Wizard', 'External MCPs catalog with JSON import', 'Config endpoints for Kali, STM32 MCP, ESP32 PlatformIO, ESPHome, and Arduino CLI', 'MCP exposure for external agents', 'Native context picker', 'DB Backup / Set DB menu', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'],
         },
       ],
     },
@@ -513,13 +523,13 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.24.0',
+      'Tlamatini v1.26.0',
       'IA Autoalojada',
       '53 Comandos de Control Unreal Engine',
       'Operación Multi-Turn',
-      '88 Herramientas Multi-Turn',
+      'Multi-Turn de Superficie Completa',
       '27 Paquetes de Skills',
-      '81 Agentes de Flujo',
+      '82 Agentes de Flujo',
       'Compuerta de Aprobación Ask Execs',
       'App Instalada en Windows 10|11',
       'Instalador a Prueba de Balas con Python Integrado',
@@ -536,6 +546,9 @@ const es: Translations = {
       'Tlamatini Habla con Talker',
       'Tlamatini Escucha con Whisperer',
       'Tlamatini Entiende Audio',
+      'MCPs Externos Desde JSON',
+      'MCP Doctor Diagnostica Servidores',
+      'Guía Step-by-Step de Configuración',
       'Claude Code Usa las Herramientas de Tlamatini',
       'Globber + Grepper + Editor',
       'Builds Auto-Modificables y Auto-Actualizables',
@@ -557,7 +570,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.24.0 es la operadora de IA local-first para builders serios: conoce tu código, controla Unreal Engine, controla Blender, maneja STM32, ESP32, Arduino y dispositivos ESPHome smart-home, habla con Talker, escucha y entiende audio con Whisperer, y convierte intención de chat o lienzo en acción protegida y reutilizable. Su superficie nueva deja que Claude Code y otros agentes externos usen herramientas de Tlamatini mediante MCP, mientras conserva RAG híbrido, 88 herramientas Multi-Turn, 4096 iteraciones, Ask Execs, snapshots de código en build, auto-actualización, menús Config y DB, ACPX-Skills, guardia de GPU y 81 agentes de flujo.',
+      desc: 'Tlamatini v1.26.0 es la operadora de IA local-first para builders serios: conoce tu código, controla Unreal Engine, controla Blender, maneja STM32, ESP32, Arduino y dispositivos ESPHome smart-home, habla con Talker, escucha y entiende audio con Whisperer, y convierte intención de chat o lienzo en acción protegida y reutilizable. Su superficie nueva conecta servidores MCP externos desde JSON, agrega MCP Doctor para onboarding seguro, mantiene Claude Code y otros agentes cerca de sus herramientas, y conserva RAG híbrido, Multi-Turn de superficie completa, 4096 iteraciones, Ask Execs, guía Step-by-Step, snapshots de código, auto-actualización, Config, DB, ACPX-Skills, guardia de GPU y 82 agentes de flujo.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -576,19 +589,19 @@ const es: Translations = {
           title: 'Visión',
           subtitle: 'Control Humano, IA Ajustable',
           description:
-            'Tlamatini se construye en torno a la idea de que la IA para desarrolladores debe permanecer bajo el control del usuario: contexto local, interruptores explícitos, aprobaciones Ask Execs, registro de desinstalación y auto-actualización en Windows para compilaciones instaladas, ajustes de modelos y API keys en vivo, manejo seguro de la base de datos, flujos inspeccionables, snapshots TlamatiniSourceCode generados durante el build cuando se habilita self-modify, control ACPX-Skills, control directo de Unreal Engine y Blender, firmware STM32F4x, ESP32, ESPHome y Arduino con verificaciones previas, Talker para hablar, Whisperer para entender audio, compuertas estrictas de Python y creación de archivos, rutas externas opcionales, acceso MCP para Claude Code, revisión y análisis, y su propio mapa de autoconocimiento.',
+            'Tlamatini se construye en torno a la idea de que la IA para desarrolladores debe permanecer bajo el control del usuario: contexto local, interruptores explícitos, aprobaciones Ask Execs, guía Step-by-Step, registro de desinstalación y auto-actualización en Windows, ajustes de modelos y API keys en vivo, manejo seguro de base de datos, flujos inspeccionables, snapshots TlamatiniSourceCode durante el build, control ACPX-Skills, control directo de Unreal Engine y Blender, firmware STM32F4x, ESP32, ESPHome y Arduino con verificaciones previas, Talker para hablar, Whisperer para entender audio, compuertas estrictas de Python y archivos, MCPs externos activados desde JSON, diagnósticos MCP Doctor, acceso de Claude Code a sus herramientas, revisión y análisis, y su propio mapa de autoconocimiento.',
         },
         {
           title: 'Misión',
           subtitle: 'Convertir al Asistente en un Hacedor',
           description:
-            'La misión es combinar RAG consciente del código, carga nativa de contexto de carpetas anidadas, control directo de proyectos Unreal Engine y Blender, automatización STM32F4x, ESP32, ESPHome smart-home y Arduino, captura y reproducción multimedia, embedding ajustable, carga de contexto consciente de la GPU, orquestación Multi-Turn de 88 herramientas / 4096 iteraciones, puntos Ask Execs, compuertas Pythonxer, persistencia byte a byte de File-Creator, inteligencia de archivos Globber / Grepper / Editor, ejecución honesta en primer plano, desinstalación y actualización Windows 10|11, tablas Exec Report, delegación ACPX, acceso de Claude Code a las herramientas de Tlamatini, administración de skills, control Windower, compuertas Reviewer y Analyzer, y flujos visuales.',
+            'La misión es combinar RAG consciente del código, carga nativa de contexto de carpetas anidadas, control directo de proyectos Unreal Engine y Blender, automatización STM32F4x, ESP32, ESPHome smart-home y Arduino, captura y reproducción multimedia, embedding ajustable, carga de contexto consciente de la GPU, orquestación Multi-Turn de superficie completa / 4096 iteraciones, puntos Ask Execs, configuración Step-by-Step de MCPs externos, diagnósticos MCP Doctor, compuertas Pythonxer, persistencia File-Creator, inteligencia Globber / Grepper / Editor, ejecución honesta, desinstalación y actualización Windows 10|11, Exec Report, delegación ACPX, acceso de Claude Code a herramientas de Tlamatini, administración de skills, control Windower, compuertas Reviewer y Analyzer, y flujos visuales.',
         },
         {
           title: 'Concepto',
           subtitle: 'La Que Sabe',
           description:
-            'Tlamatini significa «la que sabe». En la práctica, lee tu código, controla proyectos Unreal Engine, controla escenas Blender, entiende objetivos STM32, proyectos PlatformIO ESP32, dispositivos ESPHome YAML y sketches Arduino, puede observar una webcam, escuchar mediante Whisperer, entender audio, hablar de vuelta con Talker y reproducir sonido y video, protege el contexto cargado, te permite ajustar modelos, API keys, endpoints, instantáneas de base de datos y skills desde la interfaz, expone sus herramientas a agentes externos como Claude Code mediante MCP, puede traer un snapshot completo y reconstruible de su propio código generado durante el build, puede revisar GitHub para su propia actualización y compila ideas del chat o del lienzo en flujos .flw reutilizables.',
+            'Tlamatini significa «la que sabe». En la práctica, lee tu código, controla proyectos Unreal Engine, controla escenas Blender, entiende objetivos STM32, proyectos PlatformIO ESP32, dispositivos ESPHome YAML y sketches Arduino, puede observar una webcam, escuchar mediante Whisperer, entender audio, hablar de vuelta con Talker y reproducir sonido y video, protege el contexto cargado, te permite ajustar modelos, API keys, endpoints, base de datos, skills y MCPs externos desde la interfaz, diagnostica MCPs con MCP Doctor antes de conectarlos, expone sus herramientas a agentes externos como Claude Code, puede traer un snapshot reconstruible de su código, revisar GitHub para actualizarse y compilar ideas en flujos .flw reutilizables.',
         },
       ],
     },
@@ -596,14 +609,14 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Tlamatini conecta el navegador, selector nativo de contexto, autoconocimiento, menús Config, DB y ACPX-Skills, Wizard de API-Keys, auto-actualización desde About, operador Multi-Turn con Ask Execs, registro como app instalada, Flow Compiler, auto-modificación con snapshot de código generado durante el build, control Unrealer para Unreal Engine, control Blenderer para Blender, STM32 Template Project MCP, automatización ESP32er PlatformIO, automatización ESPHomer para ESPHome, Arduiner Arduino-CLI, Talker y Whisperer para voz/audio, acceso de Claude Code a herramientas de Tlamatini mediante MCP, y ACPX en una sola superficie autoalojada.',
+        desc: 'Tlamatini conecta el navegador, selector nativo de contexto, autoconocimiento, menús Config, DB, ACPX-Skills y External MCPs, Wizard de API-Keys, auto-actualización desde About, operador Multi-Turn con Ask Execs y Step-by-Step, registro como app instalada, Flow Compiler, auto-modificación con snapshot de código, control Unrealer para Unreal Engine, control Blenderer para Blender, STM32 Template Project MCP, ESP32er PlatformIO, ESPHomer para ESPHome, Arduiner Arduino-CLI, Talker y Whisperer para voz/audio, diagnósticos MCP Doctor, acceso de Claude Code a herramientas de Tlamatini, y ACPX en una sola superficie autoalojada.',
         card1: {
-          title: 'Chat, Config, DB, Skills y Contexto',
-          desc: 'La superficie de chat mantiene a mano Multi-Turn, Ask Execs, Exec Report, ACPX, contexto de internet, contexto nativo, los diálogos Config de Modelos / URLs / API-Keys, controles DB y ACPX-Skills Browse / Configure / Diagnostics / Reload, sin pedir a los usuarios que busquen entre archivos.',
+          title: 'Chat, Config, DB, Skills, MCPs y Contexto',
+          desc: 'La superficie de chat mantiene a mano Multi-Turn, Ask Execs, Step-by-Step, Exec Report, ACPX, contexto de internet, contexto nativo, los diálogos Config, controles DB, ACPX-Skills y External MCPs, sin pedir a los usuarios que busquen entre archivos.',
         },
         card2: {
-          title: 'LLM, ACPX, Skills y Guardia de GPU',
-          desc: 'Unrealer controla Unreal Engine, Blenderer controla Blender, STM32er protege firmware ST-LINK, ESP32er impulsa PlatformIO, ESPHomer construye dispositivos ESPHome desde YAML, Arduiner impulsa Arduino-CLI, Talker permite que Tlamatini hable, Whisperer permite que escuche y entienda audio, y Globber / Grepper / Editor le dan descubrimiento, búsqueda y edición quirúrgica de archivos. ACPX delega en CLIs externas cuando se elige, y Tlamatini puede exponer sus herramientas a Claude Code mediante MCP mientras la guardia de GPU avisa antes de cargas pesadas.',
+          title: 'LLM, MCPs Externos, ACPX, Skills y Guardia GPU',
+          desc: 'Unrealer controla Unreal Engine, Blenderer controla Blender, STM32er protege firmware ST-LINK, ESP32er impulsa PlatformIO, ESPHomer crea dispositivos ESPHome, Arduiner impulsa Arduino-CLI, Talker permite que Tlamatini hable, Whisperer permite que escuche y entienda audio, y MCP Doctor revisa MCPs externos antes de activarlos. ACPX y Claude Code pueden encontrarse con su superficie habilitada mientras la guardia GPU avisa antes de cargas pesadas.',
         },
       },
       rag: {
@@ -619,12 +632,12 @@ const es: Translations = {
       },
       multiTurn: {
         label: 'Multi-Turn',
-        title: 'Orquestación con Alcance por Petición',
-        desc: 'Cuando Multi-Turn está habilitado, el chat se convierte en un operador: un planificador selecciona las herramientas relevantes, Ask Execs puede pausar las llamadas que cambian el estado para aprobación humana, Pythonxer rechaza pronto los scripts defectuosos y el trabajo exitoso se convierte en flujos de trabajo reutilizables.',
+        title: 'Orquestación de Superficie Completa',
+        desc: 'Cuando Multi-Turn está activo, el chat se vuelve operador con su superficie habilitada de herramientas, agentes, skills y MCPs externos disponible. Ask Execs puede pausar cambios, Step-by-Step guía configuración una confirmación a la vez, Pythonxer rechaza scripts rotos y el trabajo exitoso se vuelve flujo reutilizable.',
         items: [
           {
-            title: 'Planificador de Ejecución Global',
-            desc: 'Construye un plan con alcance por petición y vincula un conjunto enfocado de herramientas relevantes a lo largo de ejecuciones autónomas prolongadas.',
+            title: 'Superficie Habilitada Completa',
+            desc: 'Mantiene disponibles Tools, MCPs, Agents, Skills y MCPs externos activos para que Tlamatini no pierda el instrumento correcto a mitad de tarea.',
           },
           {
             title: 'Compuerta Ask Execs',
@@ -644,7 +657,7 @@ const es: Translations = {
     workflow: {
       label: 'Diseñador de Flujos',
       title: 'Arrastra, Suelta, Orquesta',
-      desc: 'El Diseñador Visual de Flujos te permite arrastrar 81 agentes a un lienzo, conectar flujos .flw reutilizables, preservar mapeos de Parametrizer, validar el grafo, controlar Unreal Engine mediante flujos Unrealer de 53 comandos, controlar escenas Blender mediante pipelines Blenderer, compilar y flashear STM32F4x mediante STM32er, compilar y cargar ESP32 mediante ESP32er, crear dispositivos ESPHome smart-home mediante ESPHomer, hacer que Tlamatini hable con Talker, escuche y entienda audio con Whisperer, compilar y cargar Arduino, descubrir / buscar / editar archivos con precisión, capturar webcam, micrófono y pantalla, reproducir sonido y video, escribir archivos con símbolos mediante File-Creator persistente, ejecutar evaluaciones Kali autorizadas, comandar navegadores y ventanas, revisar diffs, buscar riesgos, agregar aprobaciones y llevar automatización repetible al trabajo creativo y de ingeniería.',
+      desc: 'El Diseñador Visual de Flujos te permite arrastrar 82 agentes a un lienzo, conectar flujos .flw reutilizables, preservar mapeos de Parametrizer, validar el grafo, controlar Unreal Engine mediante Unrealer, controlar escenas Blender mediante Blenderer, compilar y flashear STM32F4x mediante STM32er, cargar ESP32 mediante ESP32er, crear dispositivos ESPHome mediante ESPHomer, diagnosticar MCPs externos con MCP Doctor, hacer que Tlamatini hable con Talker, escuche y entienda audio con Whisperer, compilar Arduino, descubrir / buscar / editar archivos, capturar webcam, micrófono y pantalla, reproducir sonido y video, escribir archivos con File-Creator, ejecutar Kali autorizado, comandar navegadores y ventanas, revisar diffs, buscar riesgos, agregar aprobaciones y llevar automatización repetible al trabajo creativo y de ingeniería.',
       categories: [
         { name: 'Control' },
         { name: 'Enrutamiento' },
@@ -668,6 +681,8 @@ const es: Translations = {
         { desc: 'Habilita u oculta skills del planificador con la misma sensación que Tools y MCPs', type: 'Skills' },
         { desc: 'Detecta herramientas, MCPs, agentes ACPX faltantes y filas de skills huérfanas antes del tiempo de ejecución', type: 'Skills' },
         { desc: 'Vuelve a escanear los paquetes SKILL.md sin reiniciar Tlamatini', type: 'Skills' },
+        { desc: 'Activa hasta 5 servidores MCP externos desde un catálogo JSON buscable y deja que Multi-Turn llame sus herramientas', type: 'MCP' },
+        { desc: 'Ejecuta MCP Doctor antes de activar para detectar transporte, runtime, PATH, secretos, bloqueos y el siguiente paso', type: 'MCP' },
         { desc: 'Las compilaciones instaladas aparecen donde los usuarios de Windows 10|11 esperan eliminar aplicaciones y pueden revisar About para auto-actualizarse', type: 'Instalador' },
         { desc: 'Pregunta antes de cada llamada Multi-Turn a Tool, MCP, Agent o Skill que cambia el estado, y luego continúa o falla de forma segura', type: 'Runtime' },
         { desc: 'Controla Unreal Engine mediante el fork XAIHT de Unreal MCP de 53 comandos', type: 'Game Dev' },
@@ -690,7 +705,7 @@ const es: Translations = {
         { desc: 'Ejecuta análisis estático determinista, escaneos de secretos y de dependencias como una compuerta del flujo', type: 'Agente de Lienzo' },
         { desc: 'Comprime o descomprime archivos para que los agentes posteriores puedan trabajar con el contenido', type: 'Acción' },
         { desc: 'Advierte a los hosts con GPU antes de cargas pesadas de embedding de contexto y mantiene humana la carga de contexto', type: 'RAG' },
-        { desc: 'Una amplia superficie de acción con puntos de control de aprobación, un techo de 4096 iteraciones y un tope estricto de 256 llamadas a herramientas', type: 'Runtime' },
+        { desc: 'Multi-Turn de superficie completa mantiene herramientas, agentes, skills y MCPs externos activos con techo de 4096 iteraciones y tope de 256 llamadas', type: 'Runtime' },
         { desc: 'Las verificaciones de compilación y Ruff detienen el Python defectuoso antes de la ejecución, mientras el control de flujo posterior se mantiene explícito', type: 'Runtime' },
         { desc: 'File-Creator persiste archivos largos de código, prompts y configuración byte a byte, incluidas comillas, punto y coma y símbolos', type: 'Acción' },
         { desc: 'Globber, Grepper y Editor permiten a Tlamatini descubrir archivos, buscar contenido y aplicar ediciones exactas sin rodeos ruidosos por shell', type: 'Acción' },
@@ -707,7 +722,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.24.0 amplía su alcance: controla Unreal Engine, controla Blender, ejecuta flujos críticos STM32er, ejecuta flujos ESP32er PlatformIO, crea dispositivos ESPHome smart-home con ESPHomer, habla en voz alta con Talker, escucha y entiende audio con Whisperer, y permite que Claude Code use sus herramientas mediante MCP. Ella conserva auto-actualización, snapshots self-modify, File-Creator persistente, precisión Globber / Grepper / Editor, Arduiner, registro como app instalada Windows 10|11, Ask Execs, Pythonxer estricto, RAG híbrido, Config, DB, ACPX-Skills, orquestación Multi-Turn de 88 herramientas, guardia de GPU, 27 skills y 81 agentes.',
+    ctaDesc: 'Tlamatini v1.26.0 amplía su alcance: controla Unreal Engine, controla Blender, ejecuta flujos críticos STM32er, ejecuta flujos ESP32er PlatformIO, crea dispositivos ESPHome con ESPHomer, habla con Talker, escucha y entiende audio con Whisperer, conecta MCPs externos desde JSON y usa MCP Doctor para diagnosticarlos antes de activarlos. Ella conserva auto-actualización, snapshots self-modify, File-Creator persistente, precisión Globber / Grepper / Editor, Arduiner, registro Windows 10|11, Ask Execs y Step-by-Step, Pythonxer estricto, RAG híbrido, Config, DB, ACPX-Skills, Multi-Turn de superficie completa, guardia GPU, 27 skills y 82 agentes.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -730,21 +745,25 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.24.0',
-      desc: 'Una operadora de IA local-first que conoce tu proyecto y puede actuar: controla Unreal Engine, controla Blender, ejecuta flujos de dispositivo STM32er, ESP32er, ESPHomer y Arduiner, habla con Talker, escucha y entiende audio con Whisperer, y convierte trabajo Multi-Turn protegido en automatización .flw reutilizable. RAG híbrido, snapshots completos de código durante el build, contexto nativo, controles Config y DB, ACPX-Skills, 88 herramientas, 4096 iteraciones, Ask Execs, guardia de GPU, acceso de Claude Code mediante MCP y 81 agentes permanecen bajo tu mando.',
+      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.26.0',
+      desc: 'Una operadora de IA local-first que conoce tu proyecto y puede actuar: controla Unreal Engine, controla Blender, ejecuta flujos de dispositivo STM32er, ESP32er, ESPHomer y Arduiner, habla con Talker, escucha y entiende audio con Whisperer, conecta MCPs externos desde JSON, los diagnostica con MCP Doctor y convierte trabajo Multi-Turn protegido en automatización .flw reutilizable. RAG híbrido, snapshots de código, contexto nativo, Config, DB, ACPX-Skills, External MCPs, Multi-Turn de superficie completa, 4096 iteraciones, Ask Execs, Step-by-Step, guardia GPU, acceso de Claude Code y 82 agentes permanecen bajo tu mando.',
     },
     overview: {
       label: 'Resumen del Proyecto',
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Es una aplicación autoalojada que ejecutas en tu propia máquina, con el LLM a tu elección entre Ollama local, Ollama Cloud (el predeterminado de fábrica) o una API en la nube como Anthropic Claude, combinando recuperación consciente del código, su propio mapa de autoconocimiento, configuración en vivo, controles de instantáneas de base de datos, pulido como aplicación instalada en Windows, control del catálogo ACPX-Skills, ejecución protegida de herramientas, delegación opcional a agentes de programación externos, control directo de Unreal Engine, control directo de escenas Blender, automatización STM32, ESP32, ESPHome y Arduino, habla con Talker, escucha y entiende audio con Whisperer, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, revisión de código consciente del commit, análisis de seguridad y un lienzo de automatización visual.',
-      p2: 'La compilación v1.24.0 le da un nuevo brazo de dispositivos y una historia más fuerte para agentes externos: ESPHomer crea dispositivos ESPHome smart-home desde YAML simple, Globber / Grepper / Editor agregan descubrimiento, búsqueda y edición quirúrgica de archivos, y Claude Code ahora puede usar agentes y herramientas de Tlamatini mediante MCP. Ella conserva 81 agentes, 88 herramientas Multi-Turn, 27 skills, auto-modificación con snapshot de código, File-Creator persistente, Unrealer, Blenderer, STM32er, ESP32er, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, advertencias de GPU, autoconocimiento y archivos .flw al alcance del operador.',
+      p2: 'La compilación v1.26.0 abre los muros: External MCPs permite que Tlamatini active hasta cinco servidores MCP externos desde un catálogo JSON buscable, vincule sus herramientas en Multi-Turn como `ext__server__tool`, y los gestione con status, reconnect, doctor, list, call, import, set-active y wait. MCP Doctor entra al lienzo y al chat como el agente de diagnóstico para transporte, runtime, PATH, secretos, bloqueos y el siguiente paso exacto. Ella conserva 82 agentes, Multi-Turn de superficie completa, 27 skills, snapshot self-modify, File-Creator persistente, Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, advertencias GPU, autoconocimiento y archivos .flw cerca del operador.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
       label: 'Características Clave',
       title: 'Capacidades de un Vistazo',
       items: [
+        {
+          title: 'MCPs Externos y MCP Doctor',
+          description: 'Tlamatini puede conectarse a cualquier servidor MCP externo declarado en JSON, mediante stdio, streamable HTTP, SSE o WebSocket, con hasta cinco activos a la vez. MCP Doctor revisa el servidor antes de conectarlo, nombra el bloqueo y convierte la configuración en una conversación Step-by-Step.',
+        },
         {
           title: 'Controla Unreal Engine y Blender',
           description: 'Tlamatini lleva RAG local, acción de 4096 iteraciones, delegación a agentes externos y automatización reutilizable al trabajo con motores creativos: controla Unreal Engine mediante el fork XAIHT de Unreal MCP de 53 comandos y controla Blender mediante el add-on oficial MCP con acciones de escena, objeto, material, screenshot y render.',
@@ -767,7 +786,7 @@ const es: Translations = {
         },
         {
           title: 'Operador de Chat Multi-Turn',
-          description: 'Una superficie de chat con interruptores independientes para Multi-Turn, Ask Execs, Exec Report, ACPX y contexto de internet. Puede elegir entre 88 herramientas, pausar para aprobación, rechazar pronto el Python defectuoso y convertir el trabajo exitoso en flujos repetibles.',
+          description: 'Una superficie de chat con interruptores independientes para Multi-Turn, Ask Execs, Step-by-Step, Exec Report, ACPX y contexto de internet. Ella carga la superficie habilitada completa, pausa para aprobación, rechaza pronto el Python defectuoso y convierte el trabajo exitoso en flujos repetibles.',
         },
         {
           title: 'Instalador y Snapshot de Código Fuente',
@@ -779,7 +798,7 @@ const es: Translations = {
         },
         {
           title: 'Diseñador Visual de Flujos',
-          description: 'Creación de flujos de trabajo de arrastrar y soltar con 81 tipos de agentes, guardar/cargar .flw, Validate en vivo, compilación al inicio, flujos Unreal Engine controlados por Unrealer de 53 comandos, pipelines Blenderer, pipelines STM32er, flujos PlatformIO ESP32er, flujos ESPHomer smart-home, nodos Talker, nodos Whisperer, flujos Arduiner, flujos Globber / Grepper / Editor, webcam, micrófono, altavoz, video, Kalier, Playwrighter, Windower, Pythonxer, Reviewer, Analyzer, FlowCreator y FlowHypervisor.',
+          description: 'Creación de flujos de trabajo de arrastrar y soltar con 82 tipos de agentes, guardar/cargar .flw, Validate en vivo, compilación al inicio, flujos Unreal Engine controlados por Unrealer, pipelines Blenderer, pipelines STM32er, flujos PlatformIO ESP32er, flujos ESPHomer, diagnósticos MCP Doctor, nodos Talker, nodos Whisperer, flujos Arduiner, flujos Globber / Grepper / Editor, webcam, micrófono, altavoz, video, Kalier, Playwrighter, Windower, Pythonxer, Reviewer, Analyzer, FlowCreator y FlowHypervisor.',
         },
         {
           title: 'Delegación Externa ACPX',
@@ -794,7 +813,7 @@ const es: Translations = {
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'El instalador de un solo clic lleva Python 3.12.10, Java, Git y Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan la versión v1.24.0. ¿Prefieres fuente? Clona el repo y ejecútalo desde Python 3.12.10. Las builds self-modify también pueden generar durante el build un snapshot reconstruible del código fuente. Las builds instaladas se registran en Windows 10|11 y pueden revisar About -> Check for updates para preparar una release nueva preservando config, base de datos, contenido y un backup de agentes.',
+      desc: 'El instalador de un solo clic lleva Python 3.12.10, Java, Git y Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan la versión v1.26.0. ¿Prefieres fuente? Clona el repo y ejecútalo desde Python 3.12.10. Las builds self-modify también pueden generar durante el build un snapshot reconstruible del código fuente. Las builds instaladas se registran en Windows 10|11 y pueden revisar About -> Check for updates para preparar una release nueva preservando config, base de datos, contenido y un backup de agentes.',
       steps: [
         { label: 'Instalar Ollama' },
         { label: 'Descargar Modelos por Defecto' },
@@ -806,8 +825,8 @@ const es: Translations = {
     },
     agents: {
       label: 'Ecosistema de Agentes',
-      title: '81 Tipos de Agentes de Flujo',
-      desc: 'El catálogo abarca agentes de control, enrutamiento, lógica, acción, criptografía, utilidad, monitoreo de terminal y diseño de IA, liderado por Unrealer de 53 comandos para controlar Unreal Engine, Blenderer para controlar Blender, STM32er de misión crítica, automatización PlatformIO ESP32er, ESPHomer para dispositivos smart-home, Talker para que Tlamatini hable y Whisperer para que escuche y entienda audio. Luego vienen Arduiner, Globber, Grepper, Editor, la familia multimedia, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, Reviewer, Analyzer, De-Compresser, Pythonxer estricto, FlowCreator, 27 paquetes ACPX-Skills, Ask Execs, autoconocimiento, pulido Windows, auto-actualización y salvaguardas GPU.',
+      title: '82 Tipos de Agentes de Flujo',
+      desc: 'El catálogo abarca agentes de control, enrutamiento, lógica, acción, criptografía, utilidad, monitoreo de terminal y diseño de IA, liderado por Unrealer de 53 comandos para controlar Unreal Engine, Blenderer para controlar Blender, STM32er de misión crítica, ESP32er PlatformIO, ESPHomer smart-home, MCP Doctor para onboarding de MCPs externos, Talker para que Tlamatini hable y Whisperer para que escuche y entienda audio. Luego vienen Arduiner, Globber, Grepper, Editor, la familia multimedia, Kalier, Playwrighter, Windower, TeleTlamatini, WhatsTlamatini, ACPXer, Reviewer, Analyzer, De-Compresser, Pythonxer estricto, FlowCreator, 27 paquetes ACPX-Skills, Ask Execs, Step-by-Step, autoconocimiento, pulido Windows, auto-actualización y salvaguardas GPU.',
       groupLabel: 'Agentes',
       groups: [
         {
@@ -910,6 +929,7 @@ const es: Translations = {
             { desc: 'Ingreso por webhook entrante y carpeta de entrega' },
             { desc: 'Puente de webhooks de proveedores' },
             { desc: 'Registro de infraestructura en vivo' },
+            { desc: 'Diagnóstico y onboarding de configuración MCP externa' },
           ],
         },
         {
@@ -949,7 +969,7 @@ const es: Translations = {
         },
         {
           category: 'Entorno de Agentes',
-          items: ['Unrealer controla Unreal Engine', 'Blenderer controla Blender', 'Puente de firmware STM32er', 'Puente PlatformIO ESP32er', 'ESPHomer para dispositivos ESPHome YAML', 'Talker permite que Tlamatini hable', 'Whisperer permite que Tlamatini escuche y entienda audio', '88 herramientas Multi-Turn', 'Compuerta de aprobación Ask Execs', 'Compuerta estricta Pythonxer', 'Ejecutor de 4096 iteraciones', 'Tope estricto de 256 llamadas a herramientas', 'CLIs externas ACPX', 'Claude Code usa herramientas de Tlamatini vía MCP', 'Trío de archivos Globber / Grepper / Editor', 'Puente Arduino-CLI Arduiner', 'Captura Camcorder / Recorder', 'Reproducción AudioPlayer / VideoPlayer', 'Puente Kali configurado Kalier', 'Automatización de navegador Playwrighter', 'Control de escritorio Windower', '27 paquetes SKILL.md'],
+          items: ['Unrealer controla Unreal Engine', 'Blenderer controla Blender', 'Puente de firmware STM32er', 'Puente PlatformIO ESP32er', 'ESPHomer para dispositivos ESPHome YAML', 'MCPs externos desde JSON', 'Diagnósticos MCP Doctor', 'Talker permite que Tlamatini hable', 'Whisperer permite que Tlamatini escuche y entienda audio', 'Multi-Turn de superficie completa', 'Compuerta Ask Execs', 'Guía Step-by-Step', 'Compuerta estricta Pythonxer', 'Ejecutor de 4096 iteraciones', 'Tope de 256 llamadas', 'CLIs externas ACPX', 'Claude Code usa herramientas de Tlamatini vía MCP', 'Trío Globber / Grepper / Editor', 'Puente Arduino-CLI Arduiner', 'Captura Camcorder / Recorder', 'Reproducción AudioPlayer / VideoPlayer', 'Puente Kali Kalier', 'Automatización Playwrighter', 'Control Windower', '27 paquetes SKILL.md'],
         },
         {
           category: 'Entorno de Flujos',
@@ -957,7 +977,7 @@ const es: Translations = {
         },
         {
           category: 'Interfaces',
-          items: ['Registro de desinstalación en Windows 10|11', 'About Check for updates', 'Diálogo Config de Modelos', 'Config URLs y Wizard de API-Keys', 'Endpoints Config para Kali, STM32 MCP, ESP32 PlatformIO, ESPHome y Arduino CLI', 'Exposición MCP para agentes externos', 'Selector nativo de contexto', 'Menú DB Backup / Set DB', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'],
+          items: ['Registro de desinstalación en Windows 10|11', 'About Check for updates', 'Diálogo Config de Modelos', 'Config URLs y Wizard de API-Keys', 'Catálogo External MCPs con importación JSON', 'Endpoints Config para Kali, STM32 MCP, ESP32 PlatformIO, ESPHome y Arduino CLI', 'Exposición MCP para agentes externos', 'Selector nativo de contexto', 'Menú DB Backup / Set DB', 'ACPX-Skills Browse / Configure', 'Diagnostics / Reload Registry', 'WebSockets'],
         },
       ],
     },
