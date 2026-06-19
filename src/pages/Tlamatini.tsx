@@ -234,12 +234,11 @@ function TlamatiniInstallation() {
   }, []);
 
   const stepCode = [
-    '$env:OLLAMA_INSTALL_DIR =\n  "$env:LOCALAPPDATA\\Programs\\Ollama"\nirm https://ollama.com/install.ps1 | iex\nollama serve   # leave running in its own window',
-    'ollama pull Nomic-Embed-Text:latest\nollama pull kimi-k2.6:cloud\nollama pull qwen3.5:cloud\nollama pull gpt-oss:120b-cloud\nollama pull qwen3.5:397b-cloud\nollama pull glm-5.1:cloud',
-    '# Download Tlamatini v1.26.0 from GitHub\nhttps://github.com/XAIHT/Tlamatini/releases/tag/v1.26.0',
-    '# Unzip the archive anywhere (no admin rights)\nInstaller.exe   # pick install dir -> finish\n# Bundled Python 3.12.10, Java, Git, and\n# Playwright browsers are carried in.',
-    '# Launch Tlamatini from the desktop /\n# Start-Menu shortcut.',
-    '# Open in your browser, then say hi:\nhttp://127.0.0.1:8000\n# Log in:  user / changeme',
+    '# Option A: release installer, recommended\nhttps://github.com/XAIHT/Tlamatini/releases\n# Download the latest installer (.exe),\n# run the wizard, launch Tlamatini,\n# then open:\nhttp://127.0.0.1:8000/\n# Login: user / changeme\n# Updating later: About -> Check for updates\n\n# Option B: from source, for developers\ngit clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini\npython -m venv venv && venv\\Scripts\\activate\npip install -r requirements.txt\npython Tlamatini/manage.py migrate\npython Tlamatini/manage.py runserver --noreload',
+    '# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves the local embedding model\n# and the cloud chat models Tlamatini uses.',
+    'ollama signin',
+    '# Local embedding model\nollama pull nomic-embed-text\n\n# Cloud chat models\nollama pull kimi-k2.7-code:cloud\nollama pull qwen3.5:cloud',
+    '# In the Tlamatini navbar:\nConfig -> Models\n# Set the Ollama model for each subsystem,\n# then click Save.\n\nConfig -> Access Keys Wizard\n# Local Ollama: leave token blank.\n# Remote Ollama: paste the Ollama token.\n# Add any cloud-CLI keys, then click Save.\n\n# Tick Multi-Turn and put Tlamatini to work.',
   ];
   const steps = inst.steps.map((step, i) => ({ ...step, code: stepCode[i] }));
 

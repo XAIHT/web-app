@@ -327,14 +327,13 @@ const en = {
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'The one-click installer is bullet-proof — it carries its own Python 3.12.10, Java, Git, and Playwright browsers, so end users install only Ollama and the models, then download and run the v1.26.0 release below. Prefer source? Clone the repo and run from Python 3.12.10 instead. Self-modify builds can also generate a complete rebuildable source snapshot at build time. Installed builds register with Windows 10|11 uninstall mechanisms and can check About -> Check for updates to stage a newer release while preserving config, database, content, and one agents backup.',
+      desc: 'Getting started follows the README flow: install Tlamatini first, then install Ollama, sign in, pull the small local embedding model plus the cloud chat models, and finish in Config -> Models plus Config -> Access Keys Wizard. The release installer remains the recommended path because it carries Python 3.12.10 and every dependency; source mode stays available for developers.',
       steps: [
+        { label: 'Install Tlamatini' },
         { label: 'Install Ollama' },
-        { label: 'Pull Default Models' },
-        { label: 'Download the Release' },
-        { label: 'Run the Installer' },
-        { label: 'Launch Tlamatini' },
-        { label: 'Log In' },
+        { label: 'Sign In to Ollama' },
+        { label: 'Download the Models' },
+        { label: 'Point Tlamatini at the Models' },
       ],
     },
     agents: {
@@ -813,14 +812,13 @@ const es: Translations = {
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'El instalador de un solo clic lleva Python 3.12.10, Java, Git y Playwright, así que los usuarios finales instalan únicamente Ollama y los modelos, y luego descargan la versión v1.26.0. ¿Prefieres fuente? Clona el repo y ejecútalo desde Python 3.12.10. Las builds self-modify también pueden generar durante el build un snapshot reconstruible del código fuente. Las builds instaladas se registran en Windows 10|11 y pueden revisar About -> Check for updates para preparar una release nueva preservando config, base de datos, contenido y un backup de agentes.',
+      desc: 'El inicio sigue el flujo del README: instala Tlamatini primero, instala Ollama, inicia sesión, descarga el modelo local de embeddings y los modelos de chat en la nube, y termina en Config -> Models más Config -> Access Keys Wizard. El instalador sigue siendo el camino recomendado porque trae Python 3.12.10 y todas las dependencias; el modo fuente queda para desarrolladores.',
       steps: [
+        { label: 'Instalar Tlamatini' },
         { label: 'Instalar Ollama' },
-        { label: 'Descargar Modelos por Defecto' },
-        { label: 'Descargar la Versión' },
-        { label: 'Ejecutar el Instalador' },
-        { label: 'Iniciar Tlamatini' },
-        { label: 'Iniciar Sesión' },
+        { label: 'Iniciar Sesión en Ollama' },
+        { label: 'Descargar los Modelos' },
+        { label: 'Apuntar Tlamatini a los Modelos' },
       ],
     },
     agents: {
