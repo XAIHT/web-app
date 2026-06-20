@@ -37,7 +37,7 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.26.0',
+      'Tlamatini v1.26.1',
       'Self-Hosted AI',
       '53 Unreal Engine Control Commands',
       'Multi-Turn Operation',
@@ -84,7 +84,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.26.0 is the local-first AI operator for serious builders: she knows your codebase, controls Unreal Engine, controls Blender, handles STM32, ESP32, Arduino, and ESPHome smart-home device work, speaks with Talker, listens and understands audio with Whisperer, and turns chat or canvas intent into guarded, reusable action. Her newest surface connects to external MCP servers from JSON, adds MCP Doctor for safe onboarding, keeps Claude Code and other agents close to her tools, and brings hybrid RAG, full-surface Multi-Turn, 4096-iteration orchestration, Ask Execs approvals, Step-by-Step setup guidance, source snapshots, self-update, Config, DB, ACPX-Skills, GPU-aware context loading, and 82 workflow agents.',
+      desc: 'Tlamatini v1.26.1 is the local-first AI operator for serious builders: she knows your codebase, controls Unreal Engine, controls Blender, handles STM32, ESP32, Arduino, and ESPHome smart-home device work, speaks with Talker, listens and understands audio with Whisperer, and turns chat or canvas intent into guarded, reusable action. Her latest patch polishes the External MCP activation dialog while keeping hybrid RAG, full-surface Multi-Turn, 4096-iteration orchestration, Ask Execs approvals, Step-by-Step setup guidance, source snapshots, self-update, Config, DB, ACPX-Skills, GPU-aware context loading, and 82 workflow agents close to the operator.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -195,7 +195,7 @@ const en = {
         { desc: 'Enable or hide skills from the planner with the same feel as Tools and MCPs', type: 'Skills' },
         { desc: 'Catch missing tools, MCPs, ACPX agents, and orphan skill rows before runtime', type: 'Skills' },
         { desc: 'Rescan SKILL.md packages without restarting Tlamatini', type: 'Skills' },
-        { desc: 'Activate up to 5 external MCP servers from a searchable JSON catalog and let Multi-Turn call their tools', type: 'MCP' },
+        { desc: 'Activate up to 5 external MCP servers from a polished searchable catalog whose centered dialog keeps the catalog and active-services summary readable', type: 'MCP' },
         { desc: 'Run MCP Doctor before activation to detect transport, runtime, PATH, secrets, blockers, and the next setup step', type: 'MCP' },
         { desc: 'Installed builds appear where Windows 10|11 users expect to remove applications and can check About for staged self-updates', type: 'Installer' },
         { desc: 'Prompt before each state-changing Multi-Turn Tool, MCP, Agent, or Skill call, then proceed or fail safe', type: 'Runtime' },
@@ -236,7 +236,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.26.0 expands her reach: she controls Unreal Engine, controls Blender, runs critical STM32er firmware workflows, runs ESP32er PlatformIO workflows, builds ESPHome devices with ESPHomer, speaks aloud with Talker, listens and understands audio with Whisperer, connects to external MCPs from JSON, and uses MCP Doctor to diagnose them before activation. She still brings self-update, self-modify source snapshots, File-Creator persistence, Globber / Grepper / Editor precision, Arduiner, Windows 10|11 installed-app registration, Ask Execs and Step-by-Step gates, strict Pythonxer execution, Hybrid RAG, Config, DB, ACPX-Skills, full-surface Multi-Turn, GPU-aware context loading, 27 skills, and 82 workflow agents.',
+    ctaDesc: 'Tlamatini v1.26.1 expands her reach: she controls Unreal Engine, controls Blender, runs critical STM32er firmware workflows, runs ESP32er PlatformIO workflows, builds ESPHome devices with ESPHomer, speaks aloud with Talker, listens and understands audio with Whisperer, connects to external MCPs from JSON, and uses MCP Doctor to diagnose them before activation. She still brings self-update, self-modify source snapshots, File-Creator persistence, Globber / Grepper / Editor precision, Arduiner, Windows 10|11 installed-app registration, Ask Execs and Step-by-Step gates, strict Pythonxer execution, Hybrid RAG, Config, DB, ACPX-Skills, full-surface Multi-Turn, GPU-aware context loading, 27 skills, and 82 workflow agents.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -259,7 +259,7 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.26.0',
+      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.26.1',
       desc: 'A local-first AI operator that knows your project and can act: she controls Unreal Engine, controls Blender, runs STM32er, ESP32er, ESPHomer, and Arduiner device workflows, speaks with Talker, listens and understands audio with Whisperer, connects to external MCPs from JSON, diagnoses them with MCP Doctor, and turns guarded Multi-Turn work into reusable .flw automation. Hybrid RAG, source snapshots, native context, Config, DB, ACPX-Skills, External MCPs, full-surface Multi-Turn, 4096 iterations, Ask Execs, Step-by-Step, GPU-aware context loading, Claude Code access, and 82 workflow agents stay under your command.',
     },
     overview: {
@@ -267,7 +267,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She is a self-hosted app you run on your own machine, with the LLM your choice of local Ollama, Ollama Cloud (the shipped default), or a cloud API like Anthropic Claude, combining code-aware retrieval, her own self-knowledge map, live configuration, database snapshot controls, Windows installed-app polish, ACPX-Skills catalog control, guarded tool execution, opt-in external coding-agent delegation, direct Unreal Engine control, direct Blender scene control, STM32, ESP32, ESPHome, and Arduino automation, Talker speech, Whisperer listening and audio understanding, webcam, microphone, speaker, and on-screen video capture and playback, commit-aware code review, security analysis, and a visual automation canvas.',
-      p2: 'The v1.26.0 build opens the walls: External MCPs let Tlamatini activate up to five outside MCP servers from a searchable JSON catalog, bind their tools into Multi-Turn as `ext__server__tool`, and manage them with status, reconnect, doctor, list, call, import, set-active, and wait controls. MCP Doctor joins the canvas and chat as the safe triage agent for transport, runtime, PATH, secrets, blockers, and the exact next setup step. She still carries 82 agents, full-surface Multi-Turn, 27 skills, source-snapshot self-modification, File-Creator persistence, Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
+      p2: 'The v1.26.1 build polishes the External MCP era: Tlamatini can activate up to five outside MCP servers from a readable, searchable catalog, bind their tools into Multi-Turn as `ext__server__tool`, and manage them with status, reconnect, doctor, list, call, import, set-active, and wait controls. MCP Doctor joins the canvas and chat as the safe triage agent for transport, runtime, PATH, secrets, blockers, and the exact next setup step. She still carries 82 agents, full-surface Multi-Turn, 27 skills, source-snapshot self-modification, File-Creator persistence, Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, GPU warnings, self-knowledge, and saved .flw files close to the operator.',
       viewSource: 'View Source',
     },
     features: {
@@ -276,7 +276,7 @@ const en = {
       items: [
         {
           title: 'External MCPs and MCP Doctor',
-          description: 'Tlamatini can connect to any external MCP server declared in JSON, across stdio, streamable HTTP, SSE, and WebSocket, with up to five active at once. MCP Doctor checks a server before connection, names the blocker, and turns setup into a Step-by-Step conversation instead of a blind guess.',
+          description: 'Tlamatini can connect to any external MCP server declared in JSON, across stdio, streamable HTTP, SSE, and WebSocket, with up to five active at once. The polished activation dialog keeps the catalog searchable, centered, and readable while MCP Doctor checks a server before connection, names the blocker, and turns setup into a Step-by-Step conversation instead of a blind guess.',
         },
         {
           title: 'Controls Unreal Engine and Blender',
@@ -522,7 +522,7 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.26.0',
+      'Tlamatini v1.26.1',
       'IA Autoalojada',
       '53 Comandos de Control Unreal Engine',
       'Operación Multi-Turn',
@@ -569,7 +569,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.26.0 es la operadora de IA local-first para builders serios: conoce tu código, controla Unreal Engine, controla Blender, maneja STM32, ESP32, Arduino y dispositivos ESPHome smart-home, habla con Talker, escucha y entiende audio con Whisperer, y convierte intención de chat o lienzo en acción protegida y reutilizable. Su superficie nueva conecta servidores MCP externos desde JSON, agrega MCP Doctor para onboarding seguro, mantiene Claude Code y otros agentes cerca de sus herramientas, y conserva RAG híbrido, Multi-Turn de superficie completa, 4096 iteraciones, Ask Execs, guía Step-by-Step, snapshots de código, auto-actualización, Config, DB, ACPX-Skills, guardia de GPU y 82 agentes de flujo.',
+      desc: 'Tlamatini v1.26.1 es la operadora de IA local-first para builders serios: conoce tu código, controla Unreal Engine, controla Blender, maneja STM32, ESP32, Arduino y dispositivos ESPHome smart-home, habla con Talker, escucha y entiende audio con Whisperer, y convierte intención de chat o lienzo en acción protegida y reutilizable. Su parche más reciente pule el diálogo de activación de External MCPs mientras conserva RAG híbrido, Multi-Turn de superficie completa, 4096 iteraciones, Ask Execs, guía Step-by-Step, snapshots de código, auto-actualización, Config, DB, ACPX-Skills, guardia de GPU y 82 agentes de flujo cerca del operador.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -680,7 +680,7 @@ const es: Translations = {
         { desc: 'Habilita u oculta skills del planificador con la misma sensación que Tools y MCPs', type: 'Skills' },
         { desc: 'Detecta herramientas, MCPs, agentes ACPX faltantes y filas de skills huérfanas antes del tiempo de ejecución', type: 'Skills' },
         { desc: 'Vuelve a escanear los paquetes SKILL.md sin reiniciar Tlamatini', type: 'Skills' },
-        { desc: 'Activa hasta 5 servidores MCP externos desde un catálogo JSON buscable y deja que Multi-Turn llame sus herramientas', type: 'MCP' },
+        { desc: 'Activa hasta 5 servidores MCP externos desde un catálogo buscable y pulido cuyo diálogo centrado mantiene legibles el catálogo y el resumen de servicios activos', type: 'MCP' },
         { desc: 'Ejecuta MCP Doctor antes de activar para detectar transporte, runtime, PATH, secretos, bloqueos y el siguiente paso', type: 'MCP' },
         { desc: 'Las compilaciones instaladas aparecen donde los usuarios de Windows 10|11 esperan eliminar aplicaciones y pueden revisar About para auto-actualizarse', type: 'Instalador' },
         { desc: 'Pregunta antes de cada llamada Multi-Turn a Tool, MCP, Agent o Skill que cambia el estado, y luego continúa o falla de forma segura', type: 'Runtime' },
@@ -721,7 +721,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.26.0 amplía su alcance: controla Unreal Engine, controla Blender, ejecuta flujos críticos STM32er, ejecuta flujos ESP32er PlatformIO, crea dispositivos ESPHome con ESPHomer, habla con Talker, escucha y entiende audio con Whisperer, conecta MCPs externos desde JSON y usa MCP Doctor para diagnosticarlos antes de activarlos. Ella conserva auto-actualización, snapshots self-modify, File-Creator persistente, precisión Globber / Grepper / Editor, Arduiner, registro Windows 10|11, Ask Execs y Step-by-Step, Pythonxer estricto, RAG híbrido, Config, DB, ACPX-Skills, Multi-Turn de superficie completa, guardia GPU, 27 skills y 82 agentes.',
+    ctaDesc: 'Tlamatini v1.26.1 amplía su alcance: controla Unreal Engine, controla Blender, ejecuta flujos críticos STM32er, ejecuta flujos ESP32er PlatformIO, crea dispositivos ESPHome con ESPHomer, habla con Talker, escucha y entiende audio con Whisperer, conecta MCPs externos desde JSON y usa MCP Doctor para diagnosticarlos antes de activarlos. Ella conserva auto-actualización, snapshots self-modify, File-Creator persistente, precisión Globber / Grepper / Editor, Arduiner, registro Windows 10|11, Ask Execs y Step-by-Step, Pythonxer estricto, RAG híbrido, Config, DB, ACPX-Skills, Multi-Turn de superficie completa, guardia GPU, 27 skills y 82 agentes.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -744,7 +744,7 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.26.0',
+      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.26.1',
       desc: 'Una operadora de IA local-first que conoce tu proyecto y puede actuar: controla Unreal Engine, controla Blender, ejecuta flujos de dispositivo STM32er, ESP32er, ESPHomer y Arduiner, habla con Talker, escucha y entiende audio con Whisperer, conecta MCPs externos desde JSON, los diagnostica con MCP Doctor y convierte trabajo Multi-Turn protegido en automatización .flw reutilizable. RAG híbrido, snapshots de código, contexto nativo, Config, DB, ACPX-Skills, External MCPs, Multi-Turn de superficie completa, 4096 iteraciones, Ask Execs, Step-by-Step, guardia GPU, acceso de Claude Code y 82 agentes permanecen bajo tu mando.',
     },
     overview: {
@@ -752,7 +752,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Es una aplicación autoalojada que ejecutas en tu propia máquina, con el LLM a tu elección entre Ollama local, Ollama Cloud (el predeterminado de fábrica) o una API en la nube como Anthropic Claude, combinando recuperación consciente del código, su propio mapa de autoconocimiento, configuración en vivo, controles de instantáneas de base de datos, pulido como aplicación instalada en Windows, control del catálogo ACPX-Skills, ejecución protegida de herramientas, delegación opcional a agentes de programación externos, control directo de Unreal Engine, control directo de escenas Blender, automatización STM32, ESP32, ESPHome y Arduino, habla con Talker, escucha y entiende audio con Whisperer, captura y reproducción de webcam, micrófono, altavoz y video en pantalla, revisión de código consciente del commit, análisis de seguridad y un lienzo de automatización visual.',
-      p2: 'La compilación v1.26.0 abre los muros: External MCPs permite que Tlamatini active hasta cinco servidores MCP externos desde un catálogo JSON buscable, vincule sus herramientas en Multi-Turn como `ext__server__tool`, y los gestione con status, reconnect, doctor, list, call, import, set-active y wait. MCP Doctor entra al lienzo y al chat como el agente de diagnóstico para transporte, runtime, PATH, secretos, bloqueos y el siguiente paso exacto. Ella conserva 82 agentes, Multi-Turn de superficie completa, 27 skills, snapshot self-modify, File-Creator persistente, Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, advertencias GPU, autoconocimiento y archivos .flw cerca del operador.',
+      p2: 'La compilación v1.26.1 pule la era de External MCPs: Tlamatini puede activar hasta cinco servidores MCP externos desde un catálogo legible y buscable, vincular sus herramientas en Multi-Turn como `ext__server__tool`, y gestionarlos con status, reconnect, doctor, list, call, import, set-active y wait. MCP Doctor entra al lienzo y al chat como el agente de diagnóstico para transporte, runtime, PATH, secretos, bloqueos y el siguiente paso exacto. Ella conserva 82 agentes, Multi-Turn de superficie completa, 27 skills, snapshot self-modify, File-Creator persistente, Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Talker, Whisperer, ACPX-Skills, Config, DB, advertencias GPU, autoconocimiento y archivos .flw cerca del operador.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -761,7 +761,7 @@ const es: Translations = {
       items: [
         {
           title: 'MCPs Externos y MCP Doctor',
-          description: 'Tlamatini puede conectarse a cualquier servidor MCP externo declarado en JSON, mediante stdio, streamable HTTP, SSE o WebSocket, con hasta cinco activos a la vez. MCP Doctor revisa el servidor antes de conectarlo, nombra el bloqueo y convierte la configuración en una conversación Step-by-Step.',
+          description: 'Tlamatini puede conectarse a cualquier servidor MCP externo declarado en JSON, mediante stdio, streamable HTTP, SSE o WebSocket, con hasta cinco activos a la vez. El diálogo de activación pulido mantiene el catálogo buscable, centrado y legible mientras MCP Doctor revisa el servidor antes de conectarlo, nombra el bloqueo y convierte la configuración en una conversación Step-by-Step.',
         },
         {
           title: 'Controla Unreal Engine y Blender',
