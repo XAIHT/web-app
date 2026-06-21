@@ -169,6 +169,7 @@ function TlamatiniFeatures() {
     '/images/feature-workflow.jpg',
     '/images/feature-agents.jpg',
     '/images/feature-chat.jpg',
+    '/images/feature-chat.jpg',
   ];
   const features = f.items.map((item, i) => ({ ...item, image: featureImages[i] }));
 
