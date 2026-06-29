@@ -12,6 +12,7 @@ export default function Tlamatini() {
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       <Navigation dark />
       <TlamatiniHero />
+      <TlamatiniPresence />
       <TlamatiniOverview />
       <TlamatiniFeatures />
       <TlamatiniInstallation />
@@ -33,9 +34,9 @@ function TlamatiniHero() {
       style={{ background: '#000' }}
     >
       <img
-        src="/images/hero-tlamatini.jpg"
+        src="/images/tlamatini/realistic-tlamatini.png"
         alt="Tlamatini"
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        className="absolute inset-0 w-full h-full object-cover opacity-50"
       />
       <div
         className="absolute inset-0"
@@ -59,6 +60,124 @@ function TlamatiniHero() {
         <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           {h.desc}
         </p>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────── Presence ─────────────────── */
+
+function TlamatiniPresence() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const t = useT();
+  const p = t.tlamatini.presence;
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const items = el.querySelectorAll('.reveal-item');
+    gsap.to(items, {
+      opacity: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 80%' },
+    });
+    return () => {
+      ScrollTrigger.getAll().forEach(t => {
+        if (t.trigger === el) t.kill();
+      });
+    };
+  }, []);
+
+  const panels = [
+    { ...p.panels[0], type: 'image', src: '/images/tlamatini/shoulders-tlamatini.png' },
+    { ...p.panels[1], type: 'video', src: '/images/tlamatini/lets-make-magic.mp4' },
+    { ...p.panels[2], type: 'video', src: '/images/tlamatini/tlamatini-and-kyber.mp4' },
+  ];
+
+  return (
+    <section
+      ref={sectionRef}
+      style={{ background: '#0a0a0a', padding: 'clamp(80px, 10vh, 120px) 0' }}
+    >
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="section-label reveal-item block mb-4">{p.label}</span>
+          <h2
+            className="reveal-item font-bold mb-4"
+            style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', lineHeight: 1.12 }}
+          >
+            {p.title}
+          </h2>
+          <p className="reveal-item text-[#888] mx-auto" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
+            {p.desc}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-8 items-stretch">
+          <div className="reveal-item xaiht-card overflow-hidden min-w-0" style={{ padding: 0 }}>
+            <img
+              src="/images/tlamatini/hi-i-am-tlamatini.png"
+              alt={p.spotlight.title}
+              className="w-full object-cover"
+              style={{ height: 'clamp(280px, 42vw, 520px)', borderBottom: '1px solid #222' }}
+            />
+            <div className="p-6">
+              <span className="font-mono text-[10px] uppercase tracking-wider block mb-3" style={{ color: '#c9a96e' }}>
+                {p.spotlight.kicker}
+              </span>
+              <h3 className="text-xl font-semibold mb-3" style={{ color: '#f0f0f0' }}>
+                {p.spotlight.title}
+              </h3>
+              <p className="text-[#888]" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
+                {p.spotlight.desc}
+              </p>
+              <div className="flex flex-wrap gap-2 mt-5">
+                {p.chips.map((chip) => (
+                  <span
+                    key={chip}
+                    className="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded"
+                    style={{ color: '#c9a96e', background: '#c9a96e15', border: '1px solid #c9a96e30' }}
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 min-w-0">
+            {panels.map((panel) => (
+              <div key={panel.title} className="reveal-item xaiht-card overflow-hidden min-w-0" style={{ padding: 0 }}>
+                {panel.type === 'image' ? (
+                  <img
+                    src={panel.src}
+                    alt={panel.title}
+                    className="w-full h-44 object-cover"
+                    style={{ borderBottom: '1px solid #222' }}
+                  />
+                ) : (
+                  <video
+                    src={panel.src}
+                    className="w-full h-44 object-cover"
+                    style={{ borderBottom: '1px solid #222' }}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                  />
+                )}
+                <div className="p-5">
+                  <h3 className="text-base font-semibold mb-2" style={{ color: '#f0f0f0' }}>
+                    {panel.title}
+                  </h3>
+                  <p className="text-[#888]" style={{ fontSize: '0.875rem', lineHeight: 1.55 }}>
+                    {panel.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -124,7 +243,7 @@ function TlamatiniOverview() {
         </div>
         <div className="reveal-item">
           <img
-            src="/images/artifact-rag.jpg"
+            src="/images/tlamatini/realistic-tlamatini.png"
             alt="Tlamatini RAG System"
             className="w-full rounded-lg object-cover"
             style={{ border: '1px solid #222', maxHeight: '400px' }}
@@ -158,12 +277,12 @@ function TlamatiniFeatures() {
   }, []);
 
   const featureImages = [
-    '/images/feature-workflow.jpg',
-    '/images/feature-agents.jpg',
-    '/images/feature-agents.jpg',
-    '/images/feature-agents.jpg',
-    '/images/feature-chat.jpg',
-    '/images/feature-chat.jpg',
+    '/images/tlamatini/realistic-tlamatini.png',
+    '/images/tlamatini/tlamatini-drawings.png',
+    '/images/tlamatini/agentic-advisor.mp4',
+    '/images/tlamatini/lets-make-magic.mp4',
+    '/images/tlamatini/torso-tlamatini.png',
+    '/images/tlamatini/tlamatini-and-kyber.mp4',
     '/images/feature-chat.jpg',
     '/images/artifact-rag.jpg',
     '/images/feature-workflow.jpg',
@@ -190,12 +309,25 @@ function TlamatiniFeatures() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {features.map((feature) => (
             <div key={feature.title} className="reveal-item xaiht-card overflow-hidden" style={{ padding: 0 }}>
-              <img
-                src={feature.image}
-                alt={feature.title}
-                className="w-full h-48 object-cover"
-                style={{ borderBottom: '1px solid #222' }}
-              />
+              {feature.image.endsWith('.mp4') ? (
+                <video
+                  src={feature.image}
+                  className="w-full h-48 object-cover"
+                  style={{ borderBottom: '1px solid #222' }}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+              ) : (
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="w-full h-48 object-cover"
+                  style={{ borderBottom: '1px solid #222' }}
+                />
+              )}
               <div className="p-6">
                 <h3 className="text-lg font-semibold mb-2" style={{ color: '#f0f0f0' }}>
                   {feature.title}
@@ -323,25 +455,24 @@ function TlamatiniAgents() {
     {
       color: '#8a9ec7',
       names: [
-        'unrealer', 'blenderer', 'stm32er', 'esp32er', 'esphomer',
-        'executer', 'pythonxer', 'prompter', 'summarizer', 'crawler', 'googler',
-        'globber', 'grepper', 'editor',
-        'playwrighter', 'apirer', 'gitter', 'ssher', 'scper', 'dockerer',
-        'kuberneter', 'pser', 'jenkinser', 'sqler', 'mongoxer', 'mover',
-        'deleter', 'shoter', 'camcorder', 'recorder', 'whisperer', 'audioplayer',
-        'videoplayer', 'talker', 'mouser', 'keyboarder', 'windower', 'file-creator', 'file-interpreter',
-        'file-extractor', 'de-compresser', 'image-interpreter', 'j-decompiler',
-        'telegramer', 'teletlamatini', 'whatstlamatini', 'acpxer',
-        'arduiner', 'reviewer', 'analyzer', 'kalier',
+        'unrealer', 'blenderer', 'stm32er', 'esp32er', 'esphomer', 'arduiner',
+        'discoverer', 'kalier', 'executer', 'pythonxer', 'sqler', 'mongoxer',
+        'crawler', 'googler', 'playwrighter', 'apirer', 'gitter', 'reviewer',
+        'analyzer', 'ssher', 'scper', 'dockerer', 'mcp-doctor', 'kuberneter',
+        'pser', 'jenkinser', 'prompter', 'summarizer', 'file-interpreter',
+        'file-extractor', 'image-interpreter', 'j-decompiler', 'de-compresser',
+        'mover', 'deleter', 'file-creator', 'shoter', 'globber', 'grepper',
+        'editor', 'camcorder', 'recorder', 'whisperer', 'audioplayer',
+        'videoplayer', 'talker', 'mouser', 'windower', 'keyboarder',
       ],
     },
     { color: '#c79e7a', names: ['kyber-keygen', 'kyber-cipher', 'kyber-decipher'] },
-    { color: '#b08cc7', names: ['parametrizer', 'flowbacker', 'gatewayer', 'gateway-relayer', 'node-manager', 'mcp-doctor'] },
+    { color: '#b08cc7', names: ['parametrizer', 'flowbacker', 'flowcreator', 'gatewayer', 'gateway-relayer', 'node-manager'] },
     {
       color: '#7a9e8e',
-      names: ['monitor-log', 'monitor-netstat', 'emailer', 'recmailer', 'notifier', 'whatsapper', 'telegramrx', 'flowhypervisor'],
+      names: ['notifier', 'emailer', 'recmailer', 'whatsapper', 'telegrammer', 'instant-messaging-doctor', 'monitor-log', 'monitor-netstat', 'flowhypervisor'],
     },
-    { color: '#c9a96e', names: ['flowcreator'] },
+    { color: '#c9a96e', names: ['teletlamatini', 'acpxer'] },
   ];
 
   const agentGroups = agentGroupData.map((group, gi) => ({

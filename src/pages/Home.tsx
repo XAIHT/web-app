@@ -93,11 +93,17 @@ function OverviewSection() {
         {/* Right Column - Stats Card */}
         <div className="reveal-item min-w-0">
           <div className="xaiht-card">
+            <img
+              src="/images/tlamatini/torso-tlamatini.png"
+              alt="Tlamatini"
+              className="w-full rounded-lg object-cover mb-6"
+              style={{ maxHeight: '300px', border: '1px solid #222' }}
+            />
             <div className="grid grid-cols-2 gap-6">
               {[
                 { label: o.stats.agents, value: '82' },
                 { label: o.stats.skills, value: '27' },
-                { label: o.stats.version, value: 'v1.26.5' },
+                { label: o.stats.version, value: 'v1.32.0' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -446,11 +452,11 @@ function WorkflowSection() {
     { agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Talker, Whisperer, Arduiner, Executer, Pythonxer, Prompter, Summarizer, Crawler, Googler, Globber, Grepper, Editor, Playwrighter, Apirer, Gitter, Ssher, Scper, Dockerer, Kuberneter, Pser, Jenkinser, Sqler, Mongoxer, Mover, Deleter, Shoter, Camcorder, Recorder, AudioPlayer, VideoPlayer, Mouser, Keyboarder, Windower, File-Creator, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Telegramer, TeleTlamatini, WhatsTlamatini, ACPXer, Reviewer, Analyzer, Kalier', color: '#8a9ec7' },
+    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Discoverer, Kalier, Executer, Pythonxer, Sqler, Mongoxer, Crawler, Googler, Playwrighter, Apirer, Gitter, Reviewer, Analyzer, Ssher, Scper, Dockerer, MCP Doctor, Kuberneter, Pser, Jenkinser, Prompter, Summarizer, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Mover, Deleter, File-Creator, Shoter, Globber, Grepper, Editor, Camcorder, Recorder, Whisperer, AudioPlayer, VideoPlayer, Talker, Mouser, Windower, Keyboarder', color: '#8a9ec7' },
     { agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
-    { agents: 'Parametrizer, FlowBacker, Gatewayer, Gateway-Relayer, Node-Manager, MCP Doctor', color: '#c9a96e' },
-    { agents: 'Monitor-Log, Monitor-Netstat, Emailer, RecMailer, Notifier, Whatsapper, TelegramRX, FlowHypervisor', color: '#7a9e8e' },
-    { agents: 'FlowCreator', color: '#b08cc7' },
+    { agents: 'Parametrizer, FlowBacker, FlowCreator, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
+    { agents: 'Notifier, Emailer, RecMailer, Whatsapper, Telegrammer, Instant Messaging Doctor, Monitor-Log, Monitor-Netstat, FlowHypervisor', color: '#7a9e8e' },
+    { agents: 'TeleTlamatini, ACPXer', color: '#b08cc7' },
   ];
   const categories = categoryData.map((cat, i) => ({ ...cat, name: w.categories[i].name }));
 

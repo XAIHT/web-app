@@ -1,3 +1,11 @@
+<!--
+═══════════════════════════════════════════════════════════════════
+  ✦  T L A M A T I N I  ✦   —   "one who knows"
+  Created by  Angela López Mendoza   ·   @angelahack1
+  Developer · Architect · Creator of Tlamatini
+  Tlamatini Author Banner — do not remove (Angela's name is kept in every build)
+═══════════════════════════════════════════════════════════════════
+-->
 <p align="center">
   <img src="Tlamatini.jpg" alt="Tlamatini" width="180" height="180" />
 </p>
@@ -16,7 +24,7 @@
 
 <p align="center">
   <a href="https://discord.gg/WFQsrskgc"><img src="https://img.shields.io/badge/DISCORD-JOIN%20US-5865F2?style=for-the-badge&labelColor=2D2D2D&logo=discord&logoColor=white" alt="Join our Discord"/></a>
-  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.26.5"><img src="https://img.shields.io/badge/VERSION-v1.26.5-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version"/></a>
+  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.32.0"><img src="https://img.shields.io/badge/VERSION-v1.32.0-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version"/></a>
   <a href="https://www.python.org/downloads/release/python-31210/"><img src="https://img.shields.io/badge/PYTHON-3.12.10-3776AB?style=for-the-badge&labelColor=2D2D2D&logo=python&logoColor=white" alt="Python"/></a>
   <a href="#installation"><img src="https://img.shields.io/badge/PLATFORM-WIN%2010%20%7C%2011-0078D6?style=for-the-badge&labelColor=2D2D2D&logo=windows&logoColor=white" alt="Platform"/></a>
   <a href="#-the-full-capability-list"><img src="https://img.shields.io/badge/AGENT%20TYPES-82-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="82 agent types"/></a>
@@ -185,6 +193,7 @@ Everything Tlamatini can do, grouped:
 
 **🛡️ Security**
 - **Kalier** — authorized Kali Linux / MCP-Kali-Server offensive-security assessments.
+- **Discoverer** — ProjectDiscovery recon suite (subfinder/httpx/naabu/katana/nuclei/cvemap) via a self-installing private Go toolchain in <install_dir>/Go; authorized recon, attack-surface mapping & vulnerability discovery.
 - **security-audit / kali-pentest** skills.
 
 **🔌 External integration**
@@ -200,8 +209,11 @@ Everything Tlamatini can do, grouped:
 - **Recorder / Camcorder** — microphone and webcam capture.
 - **AudioPlayer / VideoPlayer** — audio and video playback with volume/loop control.
 
-**📨 Bridges & platform**
-- **TeleTlamatini / WhatsTlamatini** — Telegram and WhatsApp bridges into the full chat.
+**📨 Messaging, bridges & platform**
+- **Telegrammer** — Telegram send/receive that can send under **two identities**, picked per message with `provider`: **as the bot** (`provider=bot`, Bot API + a `@BotFather` token) or **as your own account** (`provider=user`, official Telegram user session). Plain English works — say *"send it as me"* (→ your account) or *"as the bot"*. `auto` (the default) uses your account for private `@usernames`/`+phone` and the bot for numeric ids/channels. Sending as you needs a one-time login; human configs stay readable as `@username`.
+- **Whatsapper** — WhatsApp send/receive with a `provider` switch for **which number sends**: **`cloud`** (default, the official Meta WhatsApp Cloud API — business number, templates, System User) or **`web`** (say *"send it as me"* / *"from my own WhatsApp"*) which sends from **your own personal number** by automating WhatsApp Web after a one-time QR login — no templates, no System User. The `web` path is unofficial (it drives WhatsApp Web) and carries Meta-ban risk; the `cloud` path remains the official, supported route.
+- **Instant Messaging Doctor** — automatically diagnoses Telegrammer/Whatsapper failures and can be called directly before critical sends; validates official tokens, contacts, readable `@username` routing, Meta templates/webhooks, and emits Parametrizer-ready repair actions.
+- **TeleTlamatini** — Telegram bridge into the full chat.
 - **Multi-model** — Ollama (local), Anthropic Claude (cloud), Qwen (vision).
 - **Self-knowledge & self-modification** — can read, modify, and rebuild her own source.
 - **PyInstaller packaging** — ships as a standalone Windows `.exe`.

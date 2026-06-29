@@ -1,3 +1,11 @@
+<!--
+═══════════════════════════════════════════════════════════════════
+  ✦  T L A M A T I N I  ✦   —   "one who knows"
+  Created by  Angela López Mendoza   ·   @angelahack1
+  Developer · Architect · Creator of Tlamatini
+  Tlamatini Author Banner — do not remove (Angela's name is kept in every build)
+═══════════════════════════════════════════════════════════════════
+-->
 # Tlamatini
 
 ![Project Logo](Tlamatini.jpg)
@@ -293,7 +301,7 @@ When the migrations finish and you have a superuser, run the server (chapter 7).
 
 ### Path B — Pre-built one-click installer (end users)
 
-Download the latest release ZIP — **[Tlamatini v1.26.0](https://github.com/XAIHT/Tlamatini/releases/tag/v1.26.0)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
+Download the latest release ZIP — **[Tlamatini v1.32.0](https://github.com/XAIHT/Tlamatini/releases/tag/v1.32.0)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
 
 1. Open the unzipped folder.
 2. Double-click **`Installer.exe`**.
@@ -507,7 +515,7 @@ This is the "show your work" view. It is the ground-truth counterpart to the pro
 State-changing tools only. The full list is in `_EXEC_REPORT_TOOLS` in `agent/mcp_agent.py` and includes:
 
 - **Direct tools**: `execute_command`, `execute_file`, `unzip_file`, `decompile_java`.
-- **Wrapped chat-agents**: every `chat_agent_*` that touches the system (executer, pythonxer, dockerer, kuberneter, ssher, scper, sqler, mongoxer, gitter, file_creator, mover, deleter, apirer, send_email, telegramer, whatsapper, notifier, kyber_keygen/cipher/decipher, **keyboarder**, **mouser**, **playwrighter**, jenkinser, unrealer).
+- **Wrapped chat-agents**: every `chat_agent_*` that touches the system (executer, pythonxer, dockerer, kuberneter, ssher, scper, sqler, mongoxer, gitter, file_creator, mover, deleter, apirer, send_email, telegrammer, whatsapper, notifier, kyber_keygen/cipher/decipher, **keyboarder**, **mouser**, **playwrighter**, jenkinser, unrealer).
 - **ACPX**: `acp_spawn`, `acp_send`, `acp_send_and_wait`, `acp_kill`, `acp_relay` — all merge into one "List of ACPx Operations" table.
 - **Skills**: `invoke_skill` gets its own table.
 
@@ -1192,9 +1200,10 @@ A compact reference for all 82 workflow-agent types. Spotlight chapters for **Pa
 | **Image-Interpreter** | LLM vision analysis of images. |
 | **J-Decompiler** | JAR/WAR/CLASS decompilation via bundled `jd-cli`. |
 | **De-Compresser** | Deterministic archive worker (compress OR decompress). Inferred direction: `input` ext or `output` ext picks the operation. Supports `.gz`, `.zip`, `.7z`, `.tar.gz`/`.gz.tar`. Password from `DE_COMPRESSER_PWD` env var when `passwordless=false`. |
-| **Telegramer** | Outbound Telegram message. |
+| **Telegrammer** | Single-run Telegram agent on **official Telegram surfaces only**. Bot mode uses the official Bot API (`telegram.bot_token` from @BotFather); optional user-session mode uses Telegram API credentials (`telegram.api_id`, `telegram.api_hash`, `telegram.session_name` / `session_string`) when private `@username` sends need a logged-in Telegram account. `mode` ∈ `auto` / `send` / `receive`: in `send` it posts `message` (or resolves a `contact_name`) to a human-readable `telegram.chat_id` / `@username`, then starts `target_agents`; in `receive` it waits up to `rx_max_seconds` for an inbound Bot API update (optionally filtered by `rx_from_chat_id` / `rx_match`), then starts `target_agents`. Contacts should keep people as `telegram: "@username"`; any Bot API numeric routing id belongs only in Telegrammer's private local username cache. Parametrizer SOURCE — emits `INI_SECTION_TELEGRAMMER<<<` (`mode`, `direction`, `chat_id`, `status`, `message_id`, body = `response_body`) with the visible recipient preserved. |
+| **Whatsapper** | Single-run WhatsApp agent on the **official Meta WhatsApp Cloud API** (Graph API — NO third-party gateway like Twilio or TextMeBot). `mode` ∈ `auto` / `send` / `receive`: in `send` it posts `message` (or a `template` with `template_language` / `template_params`, or resolves a `contact_name`) to `whatsapp.to` via `whatsapp.phone_number_id` + `whatsapp.access_token` on `whatsapp.graph_base` / `whatsapp.api_version`, then starts `target_agents`; in `receive` it stands up the official webhook (`whatsapp.webhook_host` / `webhook_port` / `webhook_path`, verified by `whatsapp.verify_token`) and waits up to `rx_max_seconds` for an inbound message (optionally filtered by `rx_from` / `rx_match`), then starts `target_agents`. Either way it does its one job and dies — and because it now STARTS `target_agents` it is no longer a terminal agent. Parametrizer SOURCE — emits `INI_SECTION_WHATSAPPER<<<` (`mode`, `direction`, `recipient`, `status`, `message_id`, body = `response_body`). |
+| **Instant Messaging Doctor** | Diagnostic/repair companion for **Telegrammer** and **Whatsapper**. It validates official Telegram token/user-session readiness, contact-book resolution, readable Telegram `@username` reachability, official Meta WhatsApp Cloud API phone-number/token/template/webhook readiness, WhatsApp 24-hour/template policy blockers, and failure-log excerpts. It can run directly as `chat_agent_instant_messaging_doctor` or automatically after Telegrammer/Whatsapper failures. Parametrizer SOURCE — emits `INI_SECTION_INSTANT_MESSAGING_DOCTOR<<<` (`platform`, `status`, `telegram_status`, `whatsapp_status`, `contact_status`, `repair_status`, `retry_status`, `actions_required`, body = `response_body`) so Forker can branch on ready vs operator-required repairs. It uses official APIs only and never suggests Twilio/TextMeBot/WhatsApp Web. |
 | **TeleTlamatini** | Long-running Telegram bridge that exposes the full Multi-Turn + Exec Report Tlamatini chat to authorized Telegram users. |
-| **WhatsTlamatini** | WhatsApp counterpart of TeleTlamatini, via Meta's WhatsApp Cloud API. |
 | **ACPXer** | Visual canvas counterpart of the 12 LLM-facing ACPX tools. One node = one external-CLI session lifecycle. |
 | **Unrealer** | Drives Unreal Engine 5 via the Unreal MCP plugin's TCP socket protocol (`127.0.0.1:55557` by default — plugin must already be running inside an UE5 editor instance). One node sends one JSON command (`{"type": <verb>, "params": {...}}`) and captures the engine's response into an `INI_SECTION_UNREALER<<<` block. Up to a 53-command surface across nine categories — editor / blueprint / node / project / umg plus system (in-editor `execute_python` + console), level, asset, and material. (See bonus chapter §57.) |
 | **Reviewer** | LLM-powered code reviewer. Resolves a `git diff` for `repo_path` (`diff_ref` like `HEAD~1` / `origin/main`, or empty = uncommitted working-tree + staged changes), sends it to an Ollama model with a senior-engineer prompt, and emits an `INI_SECTION_REVIEWER<<<` block whose first field is a `verdict` (`APPROVE` / `REQUEST_CHANGES` / `COMMENT`). Always triggers `target_agents`, so a downstream Forker can branch on `{verdict}`. Canvas counterpart of the `code-review` skill. |
@@ -1232,8 +1241,6 @@ A compact reference for all 82 workflow-agent types. Spotlight chapters for **Pa
 | **Emailer** | SMTP email on pattern detection. |
 | **RecMailer** | IMAP receiver with LLM keyword analysis. |
 | **Notifier** | Browser popup + optional sound on pattern detection (LangGraph). |
-| **Whatsapper** | WhatsApp messages via TextMeBot. |
-| **TelegramRX** | Telegram message receiver. |
 | **FlowHypervisor** | LLM watchdog over running agents. (See §23.) |
 
 ## AI / design
@@ -1276,7 +1283,7 @@ Each wrapped tool launches an isolated, sequenced runtime copy of a workflow age
 | **Execution & files** | `chat_agent_executer`, `chat_agent_pythonxer`, `chat_agent_pser`, `chat_agent_move_file`, `chat_agent_deleter`, `chat_agent_sleeper` |
 | **DevOps & infra** | `chat_agent_gitter`, `chat_agent_dockerer`, `chat_agent_kuberneter`, `chat_agent_jenkinser`, `chat_agent_ssher`, `chat_agent_scper` |
 | **Data & interpretation** | `chat_agent_sqler`, `chat_agent_mongoxer`, `chat_agent_file_creator`, `chat_agent_file_extractor`, `chat_agent_file_interpreter`, `chat_agent_image_interpreter`, `chat_agent_summarize_text` |
-| **Notifications & comms** | `chat_agent_send_email`, `chat_agent_notifier`, `chat_agent_telegramer`, `chat_agent_whatsapper`, `chat_agent_recmailer` |
+| **Notifications & comms** | `chat_agent_send_email`, `chat_agent_notifier`, `chat_agent_telegrammer`, `chat_agent_whatsapper`, `chat_agent_recmailer` |
 | **Desktop UI automation** | `chat_agent_shoter` (read-only), `chat_agent_camcorder` (read-only — webcam photo/video via OpenCV; canvas counterpart is the Camcorder workflow agent), `chat_agent_recorder` (read-only — microphone audio → WAV via `sounddevice`; canvas counterpart is the Recorder workflow agent), `chat_agent_audioplayer` (observational/output — plays an audio file to the speakers via `soundfile` + `sounddevice`, with `volume_percent` and a `time_played` truncate/loop; canvas counterpart is the AudioPlayer workflow agent), `chat_agent_videoplayer` (observational/output — plays a video file with audio on a chosen display via `ffpyplayer` + OpenCV, with `display_index` / `volume_percent` / `time_played` truncate-loop / window-size / `fullscreen`; canvas counterpart is the VideoPlayer workflow agent), `chat_agent_keyboarder`, `chat_agent_mouser`, `chat_agent_windower` |
 | **Routing** | `chat_agent_asker` |
 | **Archives & decompilation** | `chat_agent_j_decompiler`, `chat_agent_de_compresser` |
@@ -2139,7 +2146,7 @@ The backend currently exposes 103 routes. Highlights:
 
 ### Connection updates (canvas auto-configuration)
 
-`/update_<agent>_connection/<agent_name>/` for every agent type that has connections — Starter, Ender, Stopper, Raiser, Emailer, Monitor-Log, Notifier, Executer, Pythonxer, Sqler, Whatsapper, Recmailer, OR, AND, Croner, Mover, Mouser, Keyboarder, Windower, Sleeper, Cleaner, Deleter, Asker, Forker, Dockerer, Pser, Kuberneter, Apirer, Jenkinser, Crawler, Summarizer, FlowHypervisor, Counter, File-Interpreter, Image-Interpreter, Gatewayer, Gateway-Relayer, Node-Manager, File-Creator, File-Extractor, J-Decompiler, Kyber-KeyGen/Cipher/DeCipher, Parametrizer, FlowBacker, Barrier, Googler, TeleTlamatini, WhatsTlamatini, ACPXer.
+`/update_<agent>_connection/<agent_name>/` for every agent type that has connections — Starter, Ender, Stopper, Raiser, Emailer, Monitor-Log, Notifier, Executer, Pythonxer, Sqler, Whatsapper, Recmailer, OR, AND, Croner, Mover, Mouser, Keyboarder, Windower, Sleeper, Cleaner, Deleter, Asker, Forker, Dockerer, Pser, Kuberneter, Apirer, Jenkinser, Crawler, Summarizer, FlowHypervisor, Counter, File-Interpreter, Image-Interpreter, Gatewayer, Gateway-Relayer, Node-Manager, File-Creator, File-Extractor, J-Decompiler, Kyber-KeyGen/Cipher/DeCipher, Parametrizer, FlowBacker, Barrier, Googler, TeleTlamatini, ACPXer.
 
 Plus the Parametrizer-specific pair:
 
@@ -2693,7 +2700,7 @@ Unlike Unreal — where Tlamatini ships its own extended MCP fork — Blender's 
 - **Home / docs:** https://www.blender.org/lab/mcp-server/
 - **Source:** the `blender_mcp` repository on Blender's own Gitea (`projects.blender.org/lab/blender_mcp`). It has three parts: the **add-on** (the TCP socket server that runs *inside* Blender), the **`blmcp` MCP server** (a stdio↔socket bridge for generic MCP clients), and a bundled **`chat_client.py`** (a bare terminal chat).
 
-Here is the key architectural decision Tlamatini makes, and the reason Blenderer is a better experience than the stock setup: **Tlamatini talks to the add-on socket *directly* and ignores the `blmcp` bridge and the bundled chat client entirely.** Blenderer *is* the client. So you install exactly two things — **Blender** and **the add-on** — and skip `uv`, skip running a separate MCP-server process, skip the terminal chat. Everything you already love about Tlamatini (the canvas, Multi-Turn, the Exec Report, Parametrizer pipelines, the other 81 agents) then composes on top of Blender with zero extra plumbing.
+Here is the key architectural decision Tlamatini makes, and the reason Blenderer is a better experience than the stock setup: **Tlamatini talks to the add-on socket *directly* and ignores the `blmcp` bridge and the bundled chat client entirely.** Blenderer *is* the client. So you install exactly two things — **Blender** and **the add-on** — and skip `uv`, skip running a separate MCP-server process, skip the terminal chat. Everything you already love about Tlamatini (the canvas, Multi-Turn, the Exec Report, Parametrizer pipelines, the other 82 agents) then composes on top of Blender with zero extra plumbing.
 
 ## 59.3. Installing and enabling the add-on
 
@@ -3014,6 +3021,7 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 | **Counter** | Persistent counter agent with L/G threshold routing. |
 | **Crawler** | Developer-oriented web crawler (raw mode + LLM analysis). |
 | **Daphne** | HTTP/HTTP2/WebSocket protocol server for ASGI. |
+| **Discoverer** | Tlamatini agent that runs the **ProjectDiscovery** recon / attack-surface / vuln-discovery suite — `subfinder` / `httpx` / `naabu` / `katana` / `nuclei` / `cvemap`→`vulnx`, one tool per run — by invoking each CLI directly (no MCP server), like Kalier / ESP32er / Arduiner. Zero-config: a self-installing PRIVATE Go toolchain under `<install_dir>/Go` compiles the tools on first use (no system Go, no PATH change); the PDCP key is optional, naabu defaults to a Windows-safe CONNECT scan, and a fail-safe preflight refuses rather than mis-scan. Available both as the wrapped Multi-Turn tool `chat_agent_discoverer` and as a visual canvas node. **Authorized targets only.** |
 | **Dockerer** | Docker container management agent. |
 | **Embedding** | Numerical vector representation of text for similarity comparison. |
 | **ESP32er** | Tlamatini agent that scaffolds, builds, flashes, and monitors ESP32 firmware by driving **PlatformIO Core** (`pio`) directly — no MCP server (unlike STM32er). Zero-config bootstrap downloads PlatformIO via `get-platformio.py`; the `scaffold_build_upload` composite collapses create→write→build→upload into one run. Available both as the wrapped Multi-Turn tool `chat_agent_esp32er` and as a visual canvas node. The 69th entry in the agent catalog; the direct-CLI sibling of Arduiner. |
@@ -3067,7 +3075,6 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 | **Stopper** | Single-threaded pattern-based agent terminator. |
 | **Summarizer** | LLM polls source logs for events. |
 | **Tlamatini** | Nahuatl for "one who knows" — and the name of this assistant. The LLM responds to it as a self-reference. |
-| **TextMeBot** | Third-party WhatsApp messaging API. |
 | **WebSocket** | Full-duplex protocol over TCP. |
 | **Windower** | Deterministic Win32 window manager — locates an application window by title and runs one window-lifecycle operation (focus / minimize / maximize / restore / move / resize / close / topmost / arrange / list). The third member of the desktop-UI trio (Windower = the window, Mouser = clicks, Keyboarder = typing). |
 
@@ -3076,6 +3083,83 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 # Appendix C — Changelog
 
 ### Recent Updates
+
+- **Release v1.32.0 — Faster, Safer, and Properly Credited to Angela López Mendoza — 2026-06-29** — The releases from v1.27 through **v1.32.0** are a maintenance-and-identity wave layered on top of the messaging rebuild below, in four threads. **(1) Performance — the "3X" levers.** The chat path got materially faster: an Ollama serving-layer detector, a warmed embeddings handle, and `keep_alive` carried onto the basic and retrieval chains (so the stable system-prompt prefix's KV cache is reused between turns), plus an O(N²)→O(N) rewrite of the orphan-process reaper that had been pegging a core and stalling long chats — together with roughly **140** new tests. **(2) Private-data guard.** A forward-only privacy discipline: sensitive data is removed only in NEW commits — git history is never rewritten — backed by automated `test_private_data_guard.py` tests and a global CAPS SessionStart banner shown at the start of every Claude Code session on the machine. **(3) Public-release build hardening.** `build.py` keeps delicate dev-repo data out of shipped releases, the public-release verifier blocks only true PII (emails / handles / phone numbers) rather than ordinary names, and it never scrubs the operational files it actually needs (`data.keys`, `.private_targets.json`). **(4) Authorship — Angela López Mendoza, everywhere.** Angela is now stamped as the creator across the whole product: the About window credits **ANGELA LÓPEZ MENDOZA** in caps, the generated PDF and PPTX carry her name both visibly and in their document metadata, the build and package metadata embed her, `prompt.pmt` instructs the LLM to always respect her as the creator, and every source file carries an author banner. The public-release builder is explicitly forbidden from ever scrubbing her name — it may mask other PII, never that.
+
+- **One Switch, Two Voices — Telegrammer and Whatsapper Now Choose WHO Sends ("as me" vs "as the bot") — 2026-06-27** — The two messaging agents gained the single feature people ask for first: *send this from MY account, not from a bot*. Both now carry a `provider` knob that chooses the **identity** the message goes out under, and you set it in plain English — literally say *"send it as me"* or *"as the bot"* in chat — no IDs to memorize. The mechanics differ per platform because the platforms differ, and the difference is worth understanding once.
+
+  **Telegrammer — two official voices.** Telegram is generous: it offers *two* official APIs, so Telegrammer can send under either, cleanly, with no unofficial tricks.
+    - `provider=bot` → sends **as the bot** (the Bot API, with a `@BotFather` token). Good for channels, groups, and anyone who has pressed *Start* on your bot.
+    - `provider=user` → sends **as your own Telegram account** (the official user-session / MTProto API). This is the one that can DM a private `@username` directly, exactly as if you typed it on your phone.
+    - `provider=auto` (the default) → your account for private `@usernames` and `+phone` numbers, the bot for numeric ids and channels.
+    - Plain words map straight through: *me / myself / personal / "from my account"* → `user`; *bot / "as the bot" / "as a bot"* → `bot`. ("send as me" == "as me" == "me".)
+    - **One-time login:** the first time you send *as you*, Telegrammer pops a small login window asking for your phone and the code Telegram texts you (it uses your own `api_id` / `api_hash` from <https://my.telegram.org>). After that the session is remembered forever on that install — every later "as me" send goes straight through, and your **bot is never touched** by this login.
+
+    Functional samples — chat:
+    ```text
+    Tlamatini, send a Telegram to Ana as me: "running 10 min late".
+    Tlamatini, send a Telegram to the @build_alerts channel as the bot: "main is green ✅".
+    Tlamatini, telegram Mom from my own account and say I landed safely.
+    ```
+    The exact tool-call the model makes for the first one:
+    ```text
+    chat_agent_telegrammer(mode='send', provider='me', contact_name='Ana', message='running 10 min late')
+    ```
+    Functional sample — a canvas / `.flw` node's `config.yaml` (send as you):
+    ```yaml
+    mode: send
+    provider: user            # auto | bot | user  ("me"/"personal" also resolve to user)
+    message: "Hi from my own account"
+    contact_name: "Ana"       # resolved from contacts.json (telegram: "@ana_lazcano")
+    telegram:
+      bot_token: <TELEGRAM_BOT_TOKEN goes here>     # still used by bot/auto routes
+      api_id:   1234567                             # from https://my.telegram.org
+      api_hash: 0123456789abcdef0123456789abcdef
+      session_name: telegrammer_user_session        # remembers your login
+      chat_id: "@your_telegram_username"             # default recipient (contact_name='me')
+    ```
+
+  **Whatsapper — your own number, the unofficial way.** WhatsApp is the opposite of Telegram here: Meta offers **only one** official API — the business Cloud API, with its System User, message templates, and 24-hour-window rules. There is **no** official "send from my personal number" API. So Whatsapper now offers a deliberate choice:
+    - `provider=cloud` (the default, unchanged) → the **official** Meta WhatsApp Cloud API. Sends from your **business** number; cold first messages need an approved `template`; free-form text only delivers inside the 24-hour customer-service window. Stable and supported.
+    - `provider=web` → sends from your **own personal number** by automating **WhatsApp Web** through a real, logged-in Playwright browser profile — the same thing you do by hand at <https://web.whatsapp.com>. No templates. No System User. No business verification.
+    - Plain words: *me / myself / personal / "from my own WhatsApp"* → `web`; *official / business / "as the business"* → `cloud`.
+    - **One-time QR login:** the first `web` send opens a real browser window showing the WhatsApp **QR code**. On your phone: **WhatsApp → Linked devices → Link a device**, scan it once, and the login is remembered in a private profile folder — later sends go straight through, exactly like WhatsApp Web/Desktop.
+    - **The honest trade-off** (this is unofficial — know it before you lean on it):
+
+      | | `provider=web` (personal) | `provider=cloud` (official) |
+      |---|---|---|
+      | Sends from | **Your own number** | The business number |
+      | Templates / System User | **Not needed** | Required for cold sends |
+      | 24-hour-window rule | None | Applies |
+      | Meta-approved? | **No** — automates WhatsApp Web | Yes |
+      | Risk | Meta can **ban the number**; breaks if WhatsApp changes its web app | Stable, supported |
+      | Setup | One QR scan | The full Cloud-API onboarding |
+
+    Functional samples — chat:
+    ```text
+    Tlamatini, WhatsApp Ana as me: "I'm outside, come down 🙂".
+    Tlamatini, send a WhatsApp from my own number to Dad and say dinner's ready.
+    Tlamatini, WhatsApp the customer as the business using template hello_world (en_US).
+    ```
+    Functional sample — `config.yaml` (send from your own number):
+    ```yaml
+    mode: send
+    provider: web             # cloud (default) | web   ("me"/"personal" => web)
+    message: "Hi from my own WhatsApp"
+    contact_name: "Ana"       # resolved from contacts.json (whatsapp: "+52 1 55 5555 5555")
+    whatsapp:
+      web:
+        headless: false       # FIRST run MUST be headed so you can scan the QR
+        login_wait_seconds: 120
+        settle_seconds: 8
+        profile_dir: ""       # blank = a managed, remembered per-install login profile
+    ```
+
+  **Catalog of Prompts** gained three ready-to-run demos so you can try it in one click (all send only to *yourself*, and stop cleanly if the identity isn't set up yet): *"TELEGRAM 'AS ME'"* (`provider='me'`), *"TELEGRAM 'AS THE BOT'"* (`provider='bot'`), and *"WHATSAPP 'AS ME'"* (`provider='me'` → WhatsApp Web). Seeded by migrations `0156` (two Telegram prompts) and `0157` (one WhatsApp prompt), kept contiguous in the catalog.
+
+  **Under the hood / for builders:** the chooser is a tiny, forgiving resolver in each agent (`_resolve_provider` + `_normalize_provider_word`) that lowercases, collapses spaces/hyphens, strips a leading `send`/`as`, and maps a generous word-list onto the canonical routes; an unknown word falls back safely (Telegram → `auto`, WhatsApp → `cloud`) rather than erroring. WhatsApp's personal path is a self-contained `WhatsAppWebClient` (Playwright persistent context, `web.whatsapp.com/send` deep link, fallback selectors for the compose box and Send button, clear `login_required` / `invalid_number` statuses) — Playwright was chosen because Tlamatini already ships it (Googler/Playwrighter), so **no Node runtime was added**. The chat tool descriptions and both `HOW_TO_GET_YOUR_*_ASSETS.md` guides were updated (WhatsApp's now has an *"Option B: Send From Your Own Number"* section). Coverage: **37 new automated tests** (`agent/test_telegrammer_identity.py` + `agent/test_whatsapper_identity.py`) pinning provider resolution, normalization, send-routing, the WhatsApp-Web deep link, the no-browser guards, and the demo prompts — all green, ruff clean, migration graph valid. The live "as me" sends (Telegram phone-code login; WhatsApp QR scan) are the one step done interactively with the operator. **Source-only** for now — a frozen install picks it up after a `build.py` rebuild + `migrate`.
+
+- **Two Messaging Agents, Official APIs Only — Telegrammer + Whatsapper Consolidated to Send/Receive, Third-Party Gateways Retired — 2026-06-22; @username Contract Hardened + Instant Messaging Doctor Added — 2026-06-23** — The messaging surface was reduced to exactly **two** send/receive agents, each on the platform's own official API, each a single send-or-receive worker. **Telegramer was renamed to Telegrammer** and now uses **official Telegram surfaces only**: Bot API with a `bot_token` from @BotFather, plus an optional official Telegram user session (`api_id` / `api_hash` / `session_name` or `session_string`) for private `@username` sends that a bot cannot cold-DM. It carries a `mode` (`auto` / `send` / `receive`): `send` posts `message` (or a resolved `contact_name`) to a visible `telegram.chat_id` / `@username`; `receive` waits up to `rx_max_seconds` for an inbound Bot API update (optionally filtered by `rx_from_chat_id` / `rx_match`). Contacts should keep people as `telegram: "@username"`; Bot API numeric routes are internal cache entries under `.tlamatini`, never the human contact-book contract. Either way it does its one job, starts `target_agents`, and dies — and as a Parametrizer source it emits `INI_SECTION_TELEGRAMMER<<<` (`mode`, `direction`, `chat_id`, `status`, `message_id`, body = `response_body`) with the visible recipient preserved. **Whatsapper kept its name but was rebuilt onto the official Meta WhatsApp Cloud API** (Graph API): the same three modes, `send` posting `message` / a `template` (`template_language` / `template_params`) / a `contact_name` to `whatsapp.to` via `whatsapp.phone_number_id` + `whatsapp.access_token`, and `receive` standing up the official webhook (`whatsapp.webhook_host` / `webhook_port` / `webhook_path`, verified by `whatsapp.verify_token`). It now **starts `target_agents`** — so it is no longer a terminal agent — and emits `INI_SECTION_WHATSAPPER<<<` (`mode`, `direction`, `recipient`, `status`, `message_id`, body = `response_body`). **Instant Messaging Doctor** was added as the diagnostic/repair companion and wrapped Multi-Turn tool `chat_agent_instant_messaging_doctor`: Telegrammer/Whatsapper failures automatically launch it with the same contact/message/failure-log context, and critical flows can call it first to validate tokens, contacts, Telegram `@username` reachability, Meta phone-number/template/webhook readiness, and next repair actions through `INI_SECTION_INSTANT_MESSAGING_DOCTOR<<<`. Two agents were **retired completely**: **TelegramRX** (receiving is now just Telegrammer's `receive` mode) and **WhatsTlamatini** (TeleTlamatini stays as the long-running Telegram bridge). Every **third-party gateway was removed** — **no Twilio, no TextMeBot, no WhatsApp Web gateway** — leaving the comms stack on first-party APIs only.
 
 - **The External MCPs Era — Tlamatini Plugs Into Any MCP From a JSON File, Across Four Transports, With a Doctor at the Door — June 2026** — Until now Tlamatini's tool surface was *her* tools: the 78 pool agents, the ACPX child-CLIs, the Skills. This is the release where the walls come down. Drop a JSON config in front of her — the same `mcpServers` block you already paste into a desktop MCP client, a single-server `{ "command": ..., "args": ... }` snippet, or just a `{ "url": ... }` — and Tlamatini connects to **any external MCP server** and binds its remote tools as her own, named `ext__<server>__<tool>`. The engine is a config-driven **universal MCP client** (`agent/external_mcp_manager.py`, catalogued in `agent/external_mcps.json`) that speaks **four transports**: `stdio` for local processes, **Streamable HTTP** for already-running HTTP endpoints, legacy **HTTP+SSE**, and **WebSocket** JSON-RPC — so a Roblox Studio bridge, a Redis server, a knowledge-graph **memory**, **SQLite**, a web **fetch** server, all reach her the same way regardless of how they happen to talk. Servers connect **lazily on a background thread** so a slow one never blocks the chat, at most **five** stay active at once (a deliberate, sane cap), and the whole thing is administered from a new **"External ▸ MCPs"** navbar dialog — searchable, with **drag-a-`.json`-to-import** — backed by three endpoints and eight LLM-facing supervisor tools (`external_mcp_status` / `reconnect` / `doctor` / `list_tools` / `call` / `import` / `set_active` / `wait`) so the model can inspect, choose, call, and add MCPs *herself*. The full design contract lives in `docs/external_mcp_bulletproof_architecture.md`.
 
@@ -3173,7 +3257,7 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 
 - **`agents_descriptions.md` becomes the authoritative source for sidebar tooltips and canvas Description dialogs — May 2026** — A new file at the repo root (commit `88dd99b`) holds the human-readable description for every workflow agent in `## Workflow Agents` Markdown tables. The Django view `agent.views.agentic_control_panel` parses it via `_load_agent_purpose_map()` → `_resolve_agent_descriptions_search_paths()`, probing `agents_descriptions.md` first (next to `manage.py` in source mode, next to `sys.executable` in frozen mode) and falling back to `README.md` only if it's absent or yields zero rows. The lookup is case- and punctuation-insensitive — `re.sub(r'[^a-z0-9]+', '', name.lower())` keys "Kyber-KeyGen", "Kyber KeyGen", and "kyberkeygen" to the same row. Editing a row changes both human docs AND the live UI text — **there is no other source of truth**. `build.py` ships `agents_descriptions.md` next to the executable in frozen mode (`required_file_copies` was extended). UI fallback strings in `acp-canvas-core.js::showAgentPurposeTooltip` and `contextual_menus.js::openDescriptionDialog` were updated to mention the new file. The legacy alias `_load_agent_purpose_map_from_readme = _load_agent_purpose_map` is preserved so any out-of-tree caller keeps working. Companion change: `regen_secrets.py` was extended to scrub `emailer/config.yaml` and `recmailer/config.yaml` (Gmail app-password fields). Coverage: `agent/tests.py::AgentPurposeMapResolutionTests`.
 
-- **TeleTlamatini Three-Flag Bridging (Multi-Turn + Exec Report + ACPX) — May 2026** — Each Telegram message TeleTlamatini forwards to Tlamatini now carries `multi_turn_enabled`, `exec_report_enabled`, AND `acpx_enabled` verbatim (commit `1287e56`), so a Telegram user gets exactly the operational surface a browser user with all three checkboxes ticked would. `TlamatiniBridge.__init__` accepts `acpx_enabled`, includes it in the request envelope, and logs it; `agent/agents/teletlamatini/config.yaml` ships `acpx_enabled: true` so a fresh deploy can drive the full ACPX scheme out of the box. The resolver-level default stays `False` — that's the legacy-deploy backstop, not the user-facing knob. Practical pairing for users wiring TeleTlamatini today: leave all three flags `true` in `config.yaml`, and Telegram becomes a full ACPX-aware Tlamatini console — "use ACPX to spawn claude and ask it to summarize the current branch" works the same from a phone. WhatsTlamatini is the next mirror candidate; until then it remains Multi-Turn + Exec Report only.
+- **TeleTlamatini Three-Flag Bridging (Multi-Turn + Exec Report + ACPX) — May 2026** — Each Telegram message TeleTlamatini forwards to Tlamatini now carries `multi_turn_enabled`, `exec_report_enabled`, AND `acpx_enabled` verbatim (commit `1287e56`), so a Telegram user gets exactly the operational surface a browser user with all three checkboxes ticked would. `TlamatiniBridge.__init__` accepts `acpx_enabled`, includes it in the request envelope, and logs it; `agent/agents/teletlamatini/config.yaml` ships `acpx_enabled: true` so a fresh deploy can drive the full ACPX scheme out of the box. The resolver-level default stays `False` — that's the legacy-deploy backstop, not the user-facing knob. Practical pairing for users wiring TeleTlamatini today: leave all three flags `true` in `config.yaml`, and Telegram becomes a full ACPX-aware Tlamatini console — "use ACPX to spawn claude and ask it to summarize the current branch" works the same from a phone. WhatsTlamatini was later retired; WhatsApp send/receive now belongs to the short-lived Whatsapper agent, while TeleTlamatini remains the only current long-running remote full-chat bridge.
 
 - **Autonomous Multi-Turn Mode + 4 New Wrapped Tools (Sleeper, Mouser, run_wait, window_present) — May 2026** — A focused pass to make Multi-Turn fully autonomous on desktop-UI tasks ("open notepad, type X, wait 30 s, close it" — five tool calls, no vision LLM, no polling). Eight changes landed together (commit `84de29b`):
     1. **Repetition-breaker exemption** for the new background-friendly waiters so they don't get short-circuited as duplicates.
@@ -3213,7 +3297,7 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 
 - **Added ACPX Runtime + 20-Skill Catalog** - New `agent/acpx/` package implements an OpenClaw-compatible runtime that spawns external coding-agent CLIs (Claude Code, Cursor, Codex, Copilot, Gemini, Qwen, Pi, Droid, iFlow, Kilocode, Kimi, Kiro, OpenCode, plus a reserved `tlamatini` self-host slot) as child processes. Seven new LangChain `@tool`s seeded as togglable rows by migration `0071_acpx_skills`. Permission gating with three modes plus a non-interactive policy. API keys injected per-agent through `acpx.agents.<id>.env`. 20 seed `SKILL.md` packages cover hello-world, skill-creator, acp-router, eight Tlamatini-specific maintenance skills, and ten OpenClaw-format ports.
 
-- **Added WhatsTlamatini Agent** - WhatsApp counterpart of TeleTlamatini. Long-running active agent that exposes the full Tlamatini chat (`agent_page.html` Multi-Turn behavior, including the per-agent Exec Report tables) over **WhatsApp**, via Meta's WhatsApp Cloud API. Reuses TeleTlamatini's persistent Tlamatini WebSocket bridge verbatim, per-chat phase state machine, reanim-aware state, and optional Ollama-backed completeness classifier. Inbound messages arrive via a stdlib `http.server` ThreadingHTTPServer on a configurable host:port path — the user exposes the URL publicly (ngrok / cloudflared / domain / port-forward) and registers it as the app's webhook in Meta App → Webhooks. WhatsApp text messages are not editable, so the answer is delivered as a separate "✅ Result:" reply. Migration `0077_add_whatstlamatini.py`.
+- **Added WhatsTlamatini Agent** - Historical WhatsApp counterpart of TeleTlamatini. It exposed the full Tlamatini chat (`agent_page.html` Multi-Turn behavior, including the per-agent Exec Report tables) over **WhatsApp**, via Meta's WhatsApp Cloud API, and used a stdlib webhook server for inbound messages. Migration `0077_add_whatstlamatini.py`. This bridge was later retired on 2026-06-22; the current WhatsApp surface is **Whatsapper**, a short-lived official Meta Cloud API send/receive worker.
 
 - **Added TeleTlamatini Agent** - Long-running active agent that exposes the full Tlamatini chat over Telegram. Stays alive waiting for messages, password-gates each chat on first contact, uses an Ollama-backed completeness classifier to decide whether each user message is a clear and complete request (asking follow-up questions until it is), proxies the request into the local Tlamatini WebSocket chat with `multi_turn_enabled=true` and `exec_report_enabled=true`, sends the assembled answer back to the Telegram user, and starts the configured `target_agents` after every completed user request cycle.
 
@@ -3343,7 +3427,7 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 
 - **ESLint Configuration** - Added `eslint.config.mjs` for frontend JavaScript quality assurance.
 
-- **Added Summarizer / FlowHypervisor / Crawler / Jenkinser / Apirer / Pser / Dockerer / Telegramer / Telegramrx Agents**.
+- **Added Summarizer / FlowHypervisor / Crawler / Jenkinser / Apirer / Pser / Dockerer / Telegramer / Telegramrx Agents**. Telegramer and Telegramrx were later retired into the current **Telegrammer** send/receive agent.
 
 - **Enhanced Security Guardrails** - Local file system access strictly limited to explicitly allowed paths.
 
@@ -3386,7 +3470,6 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 - [FAISS](https://github.com/facebookresearch/faiss) — Vector similarity search
 - [Anthropic](https://www.anthropic.com/) — Claude API
 - [Bootstrap](https://getbootstrap.com/) — Frontend framework
-- [TextMeBot](https://textmebot.com/) — WhatsApp messaging API
 - [Ruff](https://github.com/astral-sh/ruff) — Python linter
 - [PyAutoGUI](https://github.com/asweigart/pyautogui) — Mouse/keyboard automation
 - [JD-CLI](https://github.com/intoolswetrust/jd-cli) — Java decompiler CLI
