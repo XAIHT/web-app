@@ -470,7 +470,7 @@ function TlamatiniAgents() {
     { color: '#b08cc7', names: ['parametrizer', 'flowbacker', 'flowcreator', 'gatewayer', 'gateway-relayer', 'node-manager'] },
     {
       color: '#7a9e8e',
-      names: ['notifier', 'emailer', 'recmailer', 'whatsapper', 'telegrammer', 'instant-messaging-doctor', 'monitor-log', 'monitor-netstat', 'flowhypervisor'],
+      names: ['notifier', 'emailer', 'recmailer', 'whatsapper', 'telegrammer', 'zavuerer', 'instant-messaging-doctor', 'monitor-log', 'monitor-netstat', 'flowhypervisor'],
     },
     { color: '#c9a96e', names: ['teletlamatini', 'acpxer'] },
   ];

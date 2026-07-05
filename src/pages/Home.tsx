@@ -101,9 +101,9 @@ function OverviewSection() {
             />
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '82' },
+                { label: o.stats.agents, value: '83' },
                 { label: o.stats.skills, value: '27' },
-                { label: o.stats.version, value: 'v1.32.0' },
+                { label: o.stats.version, value: 'v1.33.2' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -455,7 +455,7 @@ function WorkflowSection() {
     { agents: 'Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Discoverer, Kalier, Executer, Pythonxer, Sqler, Mongoxer, Crawler, Googler, Playwrighter, Apirer, Gitter, Reviewer, Analyzer, Ssher, Scper, Dockerer, MCP Doctor, Kuberneter, Pser, Jenkinser, Prompter, Summarizer, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Mover, Deleter, File-Creator, Shoter, Globber, Grepper, Editor, Camcorder, Recorder, Whisperer, AudioPlayer, VideoPlayer, Talker, Mouser, Windower, Keyboarder', color: '#8a9ec7' },
     { agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { agents: 'Parametrizer, FlowBacker, FlowCreator, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
-    { agents: 'Notifier, Emailer, RecMailer, Whatsapper, Telegrammer, Instant Messaging Doctor, Monitor-Log, Monitor-Netstat, FlowHypervisor', color: '#7a9e8e' },
+    { agents: 'Notifier, Emailer, RecMailer, Whatsapper, Telegrammer, Zavuerer, Instant Messaging Doctor, Monitor-Log, Monitor-Netstat, FlowHypervisor', color: '#7a9e8e' },
     { agents: 'TeleTlamatini, ACPXer', color: '#b08cc7' },
   ];
   const categories = categoryData.map((cat, i) => ({ ...cat, name: w.categories[i].name }));
@@ -557,6 +557,7 @@ function ToolsSection() {
     { name: 'Windows uninstall registration', color: '#c79e7a' },
     { name: 'Ask Execs', color: '#c9a96e' },
     { name: 'Controls Unreal Engine', color: '#8a9ec7' },
+    { name: 'Unrealer Editor Flows', color: '#8a9ec7' },
     { name: 'Controls Blender', color: '#8a9ec7' },
     { name: 'STM32er', color: '#7a9e8e' },
     { name: 'ESP32er', color: '#7a9e8e' },
@@ -568,10 +569,12 @@ function ToolsSection() {
     { name: 'AudioPlayer', color: '#c79e7a' },
     { name: 'VideoPlayer', color: '#c79e7a' },
     { name: 'Talker Speaks', color: '#c79e7a' },
+    { name: 'Zavuerer Unified Messaging', color: '#7a9e8e' },
     { name: 'Playwrighter', color: '#8a9ec7' },
     { name: 'Windower', color: '#c79e7a' },
     { name: 'Kalier', color: '#c9a96e' },
     { name: 'Reusable .flw', color: '#9e9e9e' },
+    { name: 'Create Flow', color: '#9e9e9e' },
     { name: 'Reviewer', color: '#7a9e8e' },
     { name: 'Analyzer', color: '#c79e7a' },
     { name: 'De-Compresser', color: '#8a9ec7' },

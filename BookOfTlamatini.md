@@ -10,7 +10,7 @@
 
 ![Project Logo](Tlamatini.jpg)
 
-> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, an Unreal MCP client for driving Unreal Engine 5 from chat or canvas, a visual workflow designer, 82 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
+> **The Book of Tlamatini** — a step-by-step guide to running, using, and mastering a locally-deployed AI developer assistant with RAG, Multi-Turn tool orchestration, ACPX external-CLI delegation, an Unreal MCP client for driving Unreal Engine 5 from chat or canvas, a visual workflow designer, 83 drag-and-drop agent types, and a backend Flow Compiler that turns the live canvas — or a chat-generated tool-call log — into a registry-validated, secret-redacted, source-and-frozen-portable workflow.
 >
 > Visit our site at **https://xaiht.org**, or get a one-minute taste of Tlamatini on YouTube: **https://youtu.be/a51miZ1JIe0**.
 >
@@ -30,7 +30,7 @@ Tlamatini provides orchestration, documentation, and guardrails, but it cannot g
 
 Before any of the deep chapters, here is the whole journey on a single page. It is the first and most important thing you will do with Tlamatini, so it comes first.
 
-There is a quiet economic argument hiding inside this software, and it is worth saying out loud before you install a thing. A frontier subscription — GPT-5.4, Claude Opus, and their kin — asks roughly **$200 every month** to talk to one model. Tlamatini turns that arithmetic on its head. **The app is free** — you never pay us; the single bill is **Ollama Pro, about $200 a *year*** (paid to Ollama), and around that one cloud connection she wraps **82 agent types and 75+ tools** that run on *your* machine. Comparable power, for roughly one-twelfth of the bill. That is why this chapter opens the book.
+There is a quiet economic argument hiding inside this software, and it is worth saying out loud before you install a thing. A frontier subscription — GPT-5.4, Claude Opus, and their kin — asks roughly **$200 every month** to talk to one model. Tlamatini turns that arithmetic on its head. **The app is free** — you never pay us; the single bill is **Ollama Pro, about $200 a *year*** (paid to Ollama), and around that one cloud connection she wraps **83 agent types and 75+ tools** that run on *your* machine. Comparable power, for roughly one-twelfth of the bill. That is why this chapter opens the book.
 
 Five steps take you from a bare machine to a Tlamatini that can flash a board, drive an engine, and run a whole workflow unattended.
 
@@ -76,11 +76,11 @@ Pull the small embedding model onto your own disk, and reach for the cloud chat 
 ollama pull nomic-embed-text
 
 # Cloud — served by Ollama Pro (pull, or simply sign in to use)
-ollama pull kimi-k2.7-code:cloud
+ollama pull glm-5.2:cloud
 ollama pull qwen3.5:cloud
 ```
 
-Any cloud model will do; the two above are the ones pictured in the screenshots that follow.
+Any cloud model will do; the two above are the current recommended pair (screenshots that follow may still show earlier model names).
 
 ### Step five — Point Tlamatini at the models
 
@@ -108,7 +108,7 @@ Tlamatini does a lot. This README is organized so you can stop reading at the de
 - **Part I — Getting Tlamatini Running**: prerequisites, Ollama, **Ollama Pro/Max subscription for the default `:cloud` models**, install, first login. *Read this once.*
 - **Part II — Using the Chat**: the five toolbar checkboxes (Multi-Turn, Exec Report, ACPX, Ask Execs, internet) walked through one by one. *This is the dummy-friendly heart of the book.*
 - **Part III — The Visual Workflow Designer**: drag-and-drop flows, FlowCreator, FlowHypervisor, Parametrizer, Gatewayer.
-- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 82 workflow agents.
+- **Part IV — The Tlamatini Bestiary**: compact one-row-per-agent reference for all 83 workflow agents.
 - **Part V — The Tool Surface**: every LLM-facing tool the chat can call, organized by family.
 - **Part VI — Inside Tlamatini**: architecture, RAG, the embedding-memory pre-flight guard, Multi-Turn pipeline, ACPX runtime mechanics. *For the curious.*
 - **Part VII — Configuration Reference**: every `config.json` knob.
@@ -301,7 +301,7 @@ When the migrations finish and you have a superuser, run the server (chapter 7).
 
 ### Path B — Pre-built one-click installer (end users)
 
-Download the latest release ZIP — **[Tlamatini v1.32.0](https://github.com/XAIHT/Tlamatini/releases/tag/v1.32.0)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
+Download the latest release ZIP — **[Tlamatini v1.33.0](https://github.com/XAIHT/Tlamatini/releases/tag/v1.33.0)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
 
 1. Open the unzipped folder.
 2. Double-click **`Installer.exe`**.
@@ -429,7 +429,7 @@ This is the big one. Until you tick **Multi-Turn**, Tlamatini only *describes* t
 Multi-Turn flips Tlamatini from "answerer" to **operator**:
 
 - The chat skips its prompt-shape validator (you no longer have to phrase requests as questions).
-- A request-scoped **planner** picks the relevant tools out of all 42 wrapped chat-agents, the 12 ACPX tools, and the core Python tools.
+- A request-scoped **planner** picks the relevant tools out of all 60 wrapped chat-agents, the 12 ACPX tools, and the core Python tools.
 - The unified-agent loop runs **up to 4096 iterations** (`unified_agent_max_iterations`): the LLM calls a tool, sees the result, decides what to call next, and chains its way to the goal.
 - Wrapped sub-agents launch **silently** in the background (no console window pop-ups).
 
@@ -1033,9 +1033,9 @@ Rules:
 
 ### Supported source agents
 
-32 agents emit Parametrizer-compatible sections:
+46 agents emit Parametrizer-compatible sections:
 
-Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, **Windower**, **Unrealer**, **Blenderer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **ESPHomer**, **Arduiner**.
+Apirer, Gitter, Kuberneter, Crawler, Summarizer, File-Interpreter, Image-Interpreter, File-Extractor, Prompter, FlowCreator, Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher, Gatewayer, Gateway-Relayer, Googler, **Playwrighter**, **ACPXer**, Shoter, **Camcorder**, **Recorder**, **AudioPlayer**, **VideoPlayer**, Mouser, **Windower**, **Unrealer**, **Blenderer**, **Reviewer**, **Analyzer**, **Kalier**, **STM32er**, **ESP32er**, **ESPHomer**, **Arduiner**, **De-Compresser**, **Talker**, **Whisperer**, **Editor**, **Grepper**, **Globber**, **Telegrammer**, **Whatsapper**, **Instant Messaging Doctor**, **MCP Doctor**, **Discoverer**, **Zavuerer**.
 
 ### How the visual mapping works
 
@@ -1956,14 +1956,14 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 
 ```powershell
 git status                                          # clean tree, on main
-git tag -a v1.26.0 -m "Release 1.26.0: <one-liner>"   # annotated tag
-git push origin v1.26.0
+git tag -a v1.33.0 -m "Release 1.33.0: <one-liner>"   # annotated tag
+git push origin v1.33.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.26.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.33.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
 
 ### Where the version shows up in a running install
 
@@ -1971,8 +1971,8 @@ The build computes the version once and bakes it into four surfaces:
 
 - **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
 - **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
-- **Release folder name** — `dist/Tlamatini_Release_v1.26.0/`.
-- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.26.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.26.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+- **Release folder name** — `dist/Tlamatini_Release_v1.33.0/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.33.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.33.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
 
 If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
 
@@ -2491,7 +2491,7 @@ A drag-and-drop workflow designer that can issue real, structured commands to a 
 2. **The Agent Contract registry.** Every agent's connection-field shape, parametrizer source fields, and `secret_paths` are declared once in `agent/services/agent_contracts.py`. Adding Unrealer was a single contract entry — and from that one entry the Flow Compiler, the canvas wiring, the Parametrizer dialog, the `.flw` save/load redaction, and the Validate dry-run all "just worked".
 3. **The wrapped chat-agent runtime.** Adding `chat_agent_unrealer` was one entry in `chat_agent_registry.py` plus two migrations (one for the Agent row, one for the Tool row). The wrapped runtime did the rest — sequencing, isolation, log capture, deduplication, exec-report integration, Parametrizer-compatibility, the lot.
 
-In other words: when a future engine — Unity, Godot, Blender, Houdini — exposes an equivalent MCP-style socket, **the cost of supporting it from Tlamatini is one new pool agent file, one contract entry, and two migrations**. The hard work is already done. That is the architectural payoff of the past year of refactoring, and Unreal MCP is the first place outside the existing 62-agent catalog where the cheque cashes for a brand-new domain.
+In other words: when a future engine — Unity, Godot, Blender, Houdini — exposes an equivalent MCP-style socket, **the cost of supporting it from Tlamatini is one new pool agent file, one contract entry, and two migrations**. The hard work is already done. That is the architectural payoff of the past year of refactoring, and Unreal MCP is the first place outside the existing 83-agent catalog where the cheque cashes for a brand-new domain.
 
 Welcome to driving Unreal Engine 5 from chat. Mind the collision volumes.
 
@@ -3022,6 +3022,7 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 | **Crawler** | Developer-oriented web crawler (raw mode + LLM analysis). |
 | **Daphne** | HTTP/HTTP2/WebSocket protocol server for ASGI. |
 | **Discoverer** | Tlamatini agent that runs the **ProjectDiscovery** recon / attack-surface / vuln-discovery suite — `subfinder` / `httpx` / `naabu` / `katana` / `nuclei` / `cvemap`→`vulnx`, one tool per run — by invoking each CLI directly (no MCP server), like Kalier / ESP32er / Arduiner. Zero-config: a self-installing PRIVATE Go toolchain under `<install_dir>/Go` compiles the tools on first use (no system Go, no PATH change); the PDCP key is optional, naabu defaults to a Windows-safe CONNECT scan, and a fail-safe preflight refuses rather than mis-scan. Available both as the wrapped Multi-Turn tool `chat_agent_discoverer` and as a visual canvas node. **Authorized targets only.** |
+| **Zavuerer** | Tlamatini agent that sends a message through **Zavu** (zavu.dev) — ONE unified REST API for **SMS / WhatsApp / Telegram / Email / Voice** from a single key. Instead of separately wiring Twilio + Meta's WhatsApp Cloud API + SMTP, Zavuerer POSTs to Zavu's `/v1/messages` endpoint; `channel: auto` lets Zavu's ML pick the best/cheapest channel with automatic fallback (e.g. WhatsApp fails → SMS). Direct HTTP over the Python stdlib (`urllib`, no SDK), like Kalier / Apirer. The `zavu_api_key` (free to sign up at zavu.dev, but Zavu charges pay-as-you-go to send) is set ONCE via **Config ▸ Access Keys Wizard ▸ "Unified Messaging (Zavu)"** and auto-injected on every run; with no key a send safely REFUSES (`status: refused`) instead of failing silently, and a fail-safe preflight checks the key / recipient / text / channel first. Available both as the wrapped Multi-Turn tool `chat_agent_zavuerer` and as a visual canvas node. **Authorized, opted-in recipients only** (A2P / the WhatsApp 24-hour window / GDPR). |
 | **Dockerer** | Docker container management agent. |
 | **Embedding** | Numerical vector representation of text for similarity comparison. |
 | **ESP32er** | Tlamatini agent that scaffolds, builds, flashes, and monitors ESP32 firmware by driving **PlatformIO Core** (`pio`) directly — no MCP server (unlike STM32er). Zero-config bootstrap downloads PlatformIO via `get-platformio.py`; the `scaffold_build_upload` composite collapses create→write→build→upload into one run. Available both as the wrapped Multi-Turn tool `chat_agent_esp32er` and as a visual canvas node. The 69th entry in the agent catalog; the direct-CLI sibling of Arduiner. |
@@ -3083,6 +3084,8 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 # Appendix C — Changelog
 
 ### Recent Updates
+
+- **Image-Interpreter Goes Triple-Model — Two Parallel Eyes and One Editor-in-Chief — 2026-07-04** — The Image-Interpreter agent was rebuilt around a THREE-model pipeline. For every image, TWO vision interpreters now run **in parallel**, each on its **own dedicated Ollama connection**: `interpreter_model_1` (default **qwen3.5:cloud**) works as a forensic measurement engine — best-in-class OCR, every mockup/GUI element inventoried with position % / size % / colors / fonts / verbatim text — while `interpreter_model_2` (default **gemma4:cloud**) reads the image holistically — design intent, visual hierarchy, people described exhaustively with reasoned identity hypotheses. A **barrier** waits until BOTH interpretations have arrived, and only then `merging_model` (default **glm-5.2:cloud**) fuses them into ONE definitive report (union of facts, conflict-resolution rules, discrepancy log). All FOUR prompts — the three engineered per-model prompts plus `prompt_user` — ship as complete, fully-rendered defaults in the agent's canvas config dialog, and every one of them receives the image **file name** as an identity clue (a file named after a person often depicts that person). Fail-safe by design: one failed interpreter still merges from the survivor, a failed merger delivers both raw interpretations concatenated, and the `INI_SECTION_IMAGE_INTERPRETER` block now carries `interpreter_model_1/2`, `merging_model` and `status` for downstream Parametrizer/Forker routing.
 
 - **Release v1.32.0 — Faster, Safer, and Properly Credited to Angela López Mendoza — 2026-06-29** — The releases from v1.27 through **v1.32.0** are a maintenance-and-identity wave layered on top of the messaging rebuild below, in four threads. **(1) Performance — the "3X" levers.** The chat path got materially faster: an Ollama serving-layer detector, a warmed embeddings handle, and `keep_alive` carried onto the basic and retrieval chains (so the stable system-prompt prefix's KV cache is reused between turns), plus an O(N²)→O(N) rewrite of the orphan-process reaper that had been pegging a core and stalling long chats — together with roughly **140** new tests. **(2) Private-data guard.** A forward-only privacy discipline: sensitive data is removed only in NEW commits — git history is never rewritten — backed by automated `test_private_data_guard.py` tests and a global CAPS SessionStart banner shown at the start of every Claude Code session on the machine. **(3) Public-release build hardening.** `build.py` keeps delicate dev-repo data out of shipped releases, the public-release verifier blocks only true PII (emails / handles / phone numbers) rather than ordinary names, and it never scrubs the operational files it actually needs (`data.keys`, `.private_targets.json`). **(4) Authorship — Angela López Mendoza, everywhere.** Angela is now stamped as the creator across the whole product: the About window credits **ANGELA LÓPEZ MENDOZA** in caps, the generated PDF and PPTX carry her name both visibly and in their document metadata, the build and package metadata embed her, `prompt.pmt` instructs the LLM to always respect her as the creator, and every source file carries an author banner. The public-release builder is explicitly forbidden from ever scrubbing her name — it may mask other PII, never that.
 
