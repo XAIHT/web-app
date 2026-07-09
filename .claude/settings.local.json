@@ -38,7 +38,8 @@
       "PowerShell(Get-ChildItem -Path \"C:\\\\Development\\\\XAIHT\\\\web-app\" -Force | Select-Object Name, @{Name='IsDir';Expression={$_.PSIsContainer}} | Format-Table -AutoSize)",
       "Bash(Format-Table -AutoSize)",
       "Bash(cd *)",
-      "Bash(grep -iE '\\\\.\\(html|htm|js|css|vue|jsx|tsx|md\\)$')"
+      "Bash(grep -iE '\\\\.\\(html|htm|js|css|vue|jsx|tsx|md\\)$')",
+      "Bash(docker port *)"
     ]
   }
 }
