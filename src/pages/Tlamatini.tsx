@@ -460,7 +460,7 @@ function TlamatiniAgents() {
         'crawler', 'googler', 'playwrighter', 'apirer', 'gitter', 'reviewer',
         'analyzer', 'ssher', 'scper', 'dockerer', 'mcp-doctor', 'kuberneter',
         'pser', 'jenkinser', 'prompter', 'summarizer', 'file-interpreter',
-        'file-extractor', 'image-interpreter', 'j-decompiler', 'de-compresser',
+        'file-extractor', 'image-interpreter', 'video-analyzer', 'j-decompiler', 'de-compresser',
         'mover', 'deleter', 'file-creator', 'shoter', 'globber', 'grepper',
         'editor', 'camcorder', 'recorder', 'whisperer', 'audioplayer',
         'videoplayer', 'talker', 'mouser', 'windower', 'keyboarder',

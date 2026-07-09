@@ -101,9 +101,9 @@ function OverviewSection() {
             />
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '83' },
+                { label: o.stats.agents, value: '84' },
                 { label: o.stats.skills, value: '27' },
-                { label: o.stats.version, value: 'v1.33.2' },
+                { label: o.stats.version, value: 'v1.38.1' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -452,7 +452,7 @@ function WorkflowSection() {
     { agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
     { agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
     { agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Discoverer, Kalier, Executer, Pythonxer, Sqler, Mongoxer, Crawler, Googler, Playwrighter, Apirer, Gitter, Reviewer, Analyzer, Ssher, Scper, Dockerer, MCP Doctor, Kuberneter, Pser, Jenkinser, Prompter, Summarizer, File-Interpreter, File-Extractor, Image-Interpreter, J-Decompiler, De-Compresser, Mover, Deleter, File-Creator, Shoter, Globber, Grepper, Editor, Camcorder, Recorder, Whisperer, AudioPlayer, VideoPlayer, Talker, Mouser, Windower, Keyboarder', color: '#8a9ec7' },
+    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Discoverer, Kalier, Executer, Pythonxer, Sqler, Mongoxer, Crawler, Googler, Playwrighter, Apirer, Gitter, Reviewer, Analyzer, Ssher, Scper, Dockerer, MCP Doctor, Kuberneter, Pser, Jenkinser, Prompter, Summarizer, File-Interpreter, File-Extractor, Image-Interpreter, Video-Analyzer, J-Decompiler, De-Compresser, Mover, Deleter, File-Creator, Shoter, Globber, Grepper, Editor, Camcorder, Recorder, Whisperer, AudioPlayer, VideoPlayer, Talker, Mouser, Windower, Keyboarder', color: '#8a9ec7' },
     { agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
     { agents: 'Parametrizer, FlowBacker, FlowCreator, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
     { agents: 'Notifier, Emailer, RecMailer, Whatsapper, Telegrammer, Zavuerer, Instant Messaging Doctor, Monitor-Log, Monitor-Netstat, FlowHypervisor', color: '#7a9e8e' },
@@ -564,6 +564,7 @@ function ToolsSection() {
     { name: 'ESPHomer', color: '#7a9e8e' },
     { name: 'Arduiner', color: '#7a9e8e' },
     { name: 'Camcorder', color: '#8a9ec7' },
+    { name: 'Video-Analyzer', color: '#8a9ec7' },
     { name: 'Recorder', color: '#8a9ec7' },
     { name: 'Whisperer Listens', color: '#8a9ec7' },
     { name: 'AudioPlayer', color: '#c79e7a' },
