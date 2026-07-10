@@ -145,3 +145,6 @@ vite.config.ts.timestamp-*
 # Claude Code worktrees (parallel agent checkouts — never commit)
 .claude/worktrees/
 
+# Angela's private git guide — kept locally, never published
+ANGELA-GIT-GUIDE*.pdf
+

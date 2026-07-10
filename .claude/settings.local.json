@@ -39,7 +39,10 @@
       "Bash(Format-Table -AutoSize)",
       "Bash(cd *)",
       "Bash(grep -iE '\\\\.\\(html|htm|js|css|vue|jsx|tsx|md\\)$')",
-      "Bash(docker port *)"
+      "Bash(docker port *)",
+      "Bash(git -C /c/Development/XAIHT/web-app ls-files)",
+      "Bash(git -C /c/Development/XAIHT/web-app status --short)",
+      "Bash(git rm *)"
     ]
   }
 }
