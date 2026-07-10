@@ -42,7 +42,9 @@
       "Bash(docker port *)",
       "Bash(git -C /c/Development/XAIHT/web-app ls-files)",
       "Bash(git -C /c/Development/XAIHT/web-app status --short)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(python *)",
+      "Bash(PYTHONIOENCODING=utf-8 python *)"
     ]
   }
 }
