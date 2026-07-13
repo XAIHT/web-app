@@ -19,15 +19,15 @@
 
 <p align="center">
   <b>💰 About $200 a YEAR — not $200 a MONTH.</b><br/>
-  Frontier plans like GPT-5.4 or Claude Opus cost about <b>$200 per month</b>. <b>Tlamatini is free and open-source</b> — your only bill is <b>Ollama Pro (~$200 a <i>year</i>, paid to Ollama, not us)</b>, and on top of it she stacks <b>84 agent types and 75+ tools</b>: comparable power for about <b>one twelfth</b> the price, all on your own machine.
+  Frontier plans like GPT-5.4 or Claude Opus cost about <b>$200 per month</b>. <b>Tlamatini is free and open-source</b> — your only bill is <b>Ollama Pro (~$200 a <i>year</i>, paid to Ollama, not us)</b>, and on top of it she stacks <b>85 agent types and 75+ tools</b>: comparable power for about <b>one twelfth</b> the price, all on your own machine.
 </p>
 
 <p align="center">
   <a href="https://discord.gg/WFQsrskgc"><img src="https://img.shields.io/badge/DISCORD-JOIN%20US-5865F2?style=for-the-badge&labelColor=2D2D2D&logo=discord&logoColor=white" alt="Join our Discord"/></a>
-  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.38.1"><img src="https://img.shields.io/badge/VERSION-v1.38.1-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version"/></a>
+  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.40.1"><img src="https://img.shields.io/badge/VERSION-v1.40.1-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version"/></a>
   <a href="https://www.python.org/downloads/release/python-31210/"><img src="https://img.shields.io/badge/PYTHON-3.12.10-3776AB?style=for-the-badge&labelColor=2D2D2D&logo=python&logoColor=white" alt="Python"/></a>
   <a href="#installation"><img src="https://img.shields.io/badge/PLATFORM-WIN%2010%20%7C%2011-0078D6?style=for-the-badge&labelColor=2D2D2D&logo=windows&logoColor=white" alt="Platform"/></a>
-  <a href="#-the-full-capability-list"><img src="https://img.shields.io/badge/AGENT%20TYPES-84-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="84 agent types"/></a>
+  <a href="#-the-full-capability-list"><img src="https://img.shields.io/badge/AGENT%20TYPES-85-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="85 agent types"/></a>
   <a href="#-the-full-capability-list"><img src="https://img.shields.io/badge/TOOLS-75-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="75 tools"/></a>
   <a href="https://github.com/XAIHT/Tlamatini/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="License"/></a>
 </p>
@@ -47,7 +47,7 @@
 
 ## 🚀 Get started — 5 steps to a cloud-powered Tlamatini
 
-The whole idea in one line: **don't pay $200 a month for a frontier model.** **Tlamatini is free** — your only cost is **Ollama Pro (~$200 a year, paid to Ollama, not us)**; point Tlamatini at it and drive **84 agent types and 75+ tools** from your own machine. Here's the full setup.
+The whole idea in one line: **don't pay $200 a month for a frontier model.** **Tlamatini is free** — your only cost is **Ollama Pro (~$200 a year, paid to Ollama, not us)**; point Tlamatini at it and drive **85 agent types and 75+ tools** from your own machine. Here's the full setup.
 
 ### 1 · Install Tlamatini
 
@@ -60,7 +60,7 @@ Best for most people. The installer bundles its own **Python 3.12.10** and every
 1. Open the **[Releases page](https://github.com/XAIHT/Tlamatini/releases)** and download the latest installer (`.exe`).
 2. Run it and follow the wizard.
 3. Launch **Tlamatini** from the Start-menu shortcut.
-4. Your browser opens at **`http://127.0.0.1:8000/`** — log in with **user / changeme**.
+4. Your browser opens at **`http://127.0.0.1:8000/`** — log in with **user / changeme**. *(`8000` is the default port; if it's taken or Windows has reserved it, set `django_port` in `config.json` — see the port note below.)*
 
 > 🔄 Updating later is one click: **About ▸ Check for updates** inside the app — it keeps your config, database, and keys.
 
@@ -77,6 +77,41 @@ python Tlamatini/manage.py migrate
 python Tlamatini/manage.py runserver --noreload
 # then open http://127.0.0.1:8000/   (default login: user / changeme)
 ```
+
+> **`--noreload` is optional (since 2026-07-11):** plain `python Tlamatini/manage.py runserver` now boots clean and auto-reloads on code edits. It used to double-start the MCP helper ports `:8765` / `:50051` and crash with `WinError 10048`; fixed by a reloader-aware gate in `agent/apps.py`.
+
+<details>
+<summary><b>🔌 Port 8000 already taken? Tlamatini won't start? (<code>WinError 10013</code>) — change one line</b></summary>
+
+<br>
+
+**`8000` is only the default.** Since **v1.40.1** the web port lives in your **`config.json`**:
+
+```jsonc
+"django_port": 8000     // ← put any free port here, e.g. 9000
+```
+
+Restart Tlamatini and she comes up on the new port — **no rebuild, no code edit**. Every launch path follows it: the desktop shortcut, double-clicking a `.flw` file, the browser that auto-opens, and `runserver` / `startserver` from source.
+
+**Why you might need this.** If Windows (usually **Hyper-V / WSL / Docker**) has *reserved* port 8000, Tlamatini cannot bind it and dies at startup with:
+
+> `WinError 10013` — *an attempt was made to access a socket in a way forbidden by its access permissions*
+
+To confirm that's what happened, list the ports Windows has reserved:
+
+```powershell
+netsh interface ipv4 show excludedportrange protocol=tcp
+```
+
+If `8000` falls inside one of those ranges, pick a port outside them (9000 is a common safe choice).
+
+**Good to know**
+- A port passed on the command line still wins: `python Tlamatini/manage.py runserver 9100`.
+- It's **fail-safe** — if you typo the value, Tlamatini falls back to 8000 and still starts (she prints a `--- [PORT] …` line explaining why).
+- Where's `config.json`? Next to `Tlamatini.exe` in an installed build; at `Tlamatini/agent/config.json` from source.
+- If you also run the **TeleTlamatini** Telegram bridge, point its `tlamatini.base_url` at the same port.
+
+</details>
 
 ### 2 · Install Ollama
 
@@ -194,11 +229,13 @@ Everything Tlamatini can do, grouped:
 **🛡️ Security**
 - **Kalier** — authorized Kali Linux / MCP-Kali-Server offensive-security assessments.
 - **Discoverer** — ProjectDiscovery recon suite (subfinder/httpx/naabu/katana/nuclei/cvemap — the CVE search runs ProjectDiscovery's `vulnx`, since cvemap's own API was retired Aug 2025) via a self-installing private Go toolchain in <install_dir>/Go; authorized recon, attack-surface mapping & vulnerability discovery. The **ProjectDiscovery Cloud (PDCP) key is OPTIONAL** (lifts cvemap/vulnx rate limits, enables nuclei `-ai`/cloud upload) — set it once in **Config ▸ Access Keys Wizard ▸ "Security Recon (ProjectDiscovery)"** (auto-injected into every run; redacted from `.flw` exports and by `regen_secrets.py` before a push).
+- **Nmapper** — LOCAL, **use-only** nmap bridge for pentesters / CTF: runs a real `nmap` the user installed themselves (Nmapper **NEVER bundles or redistributes nmap** — nmap's NPSL forbids embedding it in a product without a paid OEM licence), resolving it from PATH → `C:\Program Files\Nmap` → a `%LOCALAPPDATA%\Tlamatini\nmap` copy; if it's absent it refuses gracefully and `action='install'` fetches the OFFICIAL free nmap installer (admin/UAC; also brings Npcap). The default is an UNPRIVILEGED TCP connect scan (`-sT`, no Npcap, no admin) so a fresh install scans immediately; SYN / `-O` / UDP auto-downgrade to a connect scan on Windows without Npcap. Actions: `quick` / `full` / `top_ports` / `version` / `scripts` (NSE) / `host_discovery` / `udp` / `custom` / `validate` / `install`; emits `INI_SECTION_NMAPPER`. Distinct from **Kalier** (a remote Kali box) and **Discoverer** (ProjectDiscovery). **Authorized targets only.**
 - **Zavuerer** — **Zavu** unified messaging: SMS / WhatsApp / Telegram / Email / Voice from ONE API key (`channel: auto` smart-routes to the best channel with auto-fallback). Set the key once in **Config ▸ Access Keys Wizard ▸ "Unified Messaging (Zavu)"**; direct HTTP, fail-safe preflight, refuses safely when no key is set. **Zavu pricing:** sign-up is free (no card), but sending is pay-as-you-go — Zavu charges per message.
 - **security-audit / kali-pentest** skills.
 
 **🔌 External integration**
 - **Universal External-MCP client** — connect to any MCP server over 4 transports, up to 5 active, with 8 supervisor tools and an **MCP Doctor** agent that triages a server before you wire it.
+- **Companion-app discovery (Tlamatini-FlowPills)** — sister XAIHT apps locate Tlamatini's agent-template catalog instantly, with **no Python and no drive scan**: at install and on every launch Tlamatini publishes a per-user `HKCU\Software\XAIHT\Tlamatini` registry key + an `_tlamatini_agents_manifest.json` (each agent's `sha256`) next to the agents, and leaves a preserved-agents marker if you uninstall but keep the agents. HKCU-only, no admin, fail-open.
 
 **🖥️ Desktop & browser automation**
 - **Playwrighter** — scripted browser automation.
@@ -230,7 +267,7 @@ Everything Tlamatini can do, grouped:
 
 ## Installation
 
-See **[the full docs](https://github.com/XAIHT/Tlamatini/blob/main/BookOfTlamatini.md)** for complete setup — cloud models (Ollama Pro/Max, Claude API), the visual workflow designer, and building a frozen Windows distribution with PyInstaller. In short: install Ollama → clone, venv, `pip install -r requirements.txt`, `migrate` → `runserver --noreload` → open `http://127.0.0.1:8000/`.
+See **[the full docs](https://github.com/XAIHT/Tlamatini/blob/main/BookOfTlamatini.md)** for complete setup — cloud models (Ollama Pro/Max, Claude API), the visual workflow designer, and building a frozen Windows distribution with PyInstaller. In short: install Ollama → clone, venv, `pip install -r requirements.txt`, `migrate` → `runserver` (`--noreload` optional since 2026-07-11) → open `http://127.0.0.1:8000/`.
 
 ---
 

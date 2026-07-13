@@ -367,7 +367,7 @@ function TlamatiniInstallation() {
   }, []);
 
   const stepCode = [
-    '# Option A: release installer, recommended\nhttps://github.com/XAIHT/Tlamatini/releases\n# Download the latest installer (.exe),\n# run the wizard, launch Tlamatini,\n# then open:\nhttp://127.0.0.1:8000/\n# Login: user / changeme\n# Updating later: About -> Check for updates\n\n# Option B: from source, for developers\ngit clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini\npython -m venv venv && venv\\Scripts\\activate\npip install -r requirements.txt\npython Tlamatini/manage.py migrate\npython Tlamatini/manage.py runserver --noreload',
+    '# Option A: release installer, recommended\nhttps://github.com/XAIHT/Tlamatini/releases\n# Download the latest installer (.exe),\n# run the wizard, launch Tlamatini,\n# then open the configured web port:\nhttp://127.0.0.1:8000/\n# Login: user / changeme\n# If 8000 is reserved, set django_port in config.json.\n# Updating later: About -> Check for updates\n\n# Option B: from source, for developers\ngit clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini\npython -m venv venv && venv\\Scripts\\activate\npip install -r requirements.txt\npython Tlamatini/manage.py migrate\npython Tlamatini/manage.py runserver --noreload\n# --noreload is optional; an explicit port also wins:\npython Tlamatini/manage.py runserver 9100',
     '# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves the local embedding model\n# and the cloud chat models Tlamatini uses.',
     'ollama signin',
     '# Local embedding model\nollama pull nomic-embed-text\n\n# Cloud chat models\nollama pull kimi-k2.7-code:cloud\nollama pull qwen3.5:cloud',
@@ -456,7 +456,7 @@ function TlamatiniAgents() {
       color: '#8a9ec7',
       names: [
         'unrealer', 'blenderer', 'stm32er', 'esp32er', 'esphomer', 'arduiner',
-        'discoverer', 'kalier', 'executer', 'pythonxer', 'sqler', 'mongoxer',
+        'discoverer', 'nmapper', 'kalier', 'executer', 'pythonxer', 'sqler', 'mongoxer',
         'crawler', 'googler', 'playwrighter', 'apirer', 'gitter', 'reviewer',
         'analyzer', 'ssher', 'scper', 'dockerer', 'mcp-doctor', 'kuberneter',
         'pser', 'jenkinser', 'prompter', 'summarizer', 'file-interpreter',
