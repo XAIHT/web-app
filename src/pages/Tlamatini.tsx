@@ -371,7 +371,7 @@ function TlamatiniInstallation() {
     '# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves the local embedding model\n# and the cloud chat models Tlamatini uses.',
     'ollama signin',
     '# Local embedding model\nollama pull nomic-embed-text\n\n# Cloud chat models\nollama pull kimi-k2.7-code:cloud\nollama pull qwen3.5:cloud',
-    '# In the Tlamatini navbar:\nConfig -> Models\n# Set the Ollama model for each subsystem,\n# then click Save.\n\nConfig -> Access Keys Wizard\n# Local Ollama: leave token blank.\n# Remote Ollama: paste the Ollama token.\n# Add any cloud-CLI keys, then click Save.\n\n# Tick Multi-Turn and put Tlamatini to work.',
+    '# In the Tlamatini navbar:\nConfig -> Models\n# Set the Ollama model for each subsystem,\n# then click Save.\n\nConfig -> Access Keys Wizard\n# Local Ollama: leave token blank.\n# Remote Ollama: paste the Ollama token.\n# Add any cloud-CLI keys, then click Save.\n\nConfig -> Voice\n# Optionally tune her animated browser voice,\n# answer reading, completion notice, or silence.\n\n# Tick Multi-Turn and put Tlamatini to work.',
   ];
   const steps = inst.steps.map((step, i) => ({ ...step, code: stepCode[i] }));
 

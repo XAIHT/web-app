@@ -21,15 +21,15 @@
 - PRIVATE INFORMATION MAY BE **DELETED GOING FORWARD**; THE HISTORY THAT RECORDED IT MUST **NOT** BE ERASED.
 - IF ANY TOOL OR WORKFLOW WOULD REWRITE HISTORY, **STOP** AND TELL ANGELA FIRST.
 
-Enforced by: `test_private_data_guard.py` (automated tests) + a global CAPS SessionStart banner (`~/.claude/hooks/private_data_guard_banner.py`) shown in every Claude Code session on this machine.
+Enforced by: `test_private_data_guard.py` (automated tests) + a global CAPS SessionStart banner (`~/.Codex/hooks/private_data_guard_banner.py`) shown in every Codex session on this machine.
 
 <!-- ==================================================================== -->
 
 ---
 
-# Tlamatini - CLAUDE.md
+# Tlamatini - AGENTS.md
 
-This is the authoritative onboarding document for any AI assistant (Claude Code, Cursor, Gemini CLI, Antigravity IDE, etc.) working on the Tlamatini project. Read this file in full before making any changes, then follow the `@docs/claude/*.md` imports below — each specialized file is automatically included in your context.
+This is the authoritative onboarding document for any AI assistant (Codex, Cursor, Gemini CLI, Antigravity IDE, etc.) working on the Tlamatini project. Read this file in full before making any changes, then follow the `@docs/Codex/*.md` imports below — each specialized file is automatically included in your context.
 
 ---
 
@@ -41,17 +41,17 @@ This is the authoritative onboarding document for any AI assistant (Claude Code,
 - A request-scoped **Multi-Turn orchestration layer** with dynamic tool binding and global execution planning — when Multi-Turn is on it binds the **FULL enabled tool surface** (every tool/agent/skill, ACPX still filtered by its checkbox), never a narrowed planner subset, so the operator loop is never starved of a needed tool; a **Step-by-Step** toolbar mode paces hands-on setup one concrete action at a time (it waits for the user's READY/output before the next)
 - A **Visual Agentic Workflow Designer** (ACP) with 84 drag-and-drop agent types
 - A **backend Flow Compiler + Agent Contract registry** (`agent/services/flow_compiler.py`, `agent/services/agent_contracts.py`) that turns the live ACP canvas snapshot OR a Chat-generated Create-Flow draft into validated, redacted, source-and-frozen-portable `config.yaml` files in the session pool — exposed over `/agent/compile_flow/`, `/agent/flow_from_tool_calls/`, and `/agent/agent_contracts/`
-- **ACPX runtime** (Agent Communication Protocol eXtension) — spawns external coding-agent CLIs (Claude Code, Codex, Cursor, Gemini, Qwen, Kiro/Kimi/iFlow/Kilocode/OpenCode/Pi/Droid/Copilot, and a Tlamatini self-host) as out-of-process children, brokered to the LLM as 12 `acp_*` tools and to the canvas as the visual **ACPXer** agent. Toolbar checkbox **ACPX** filters the entire ACPX/Skills tool surface in or out per-request
-- **External MCPs** (2026-06) — a config-driven UNIVERSAL MCP **client**: connect to and use the tools of **any** external MCP server declared in a JSON file (the `mcpServers` shape, like a Claude-Code `.mcp.json`), over **four transports** — `stdio` (a local command, e.g. a Docker `mcp/*` image / npx / uvx / python) plus `streamable-http`, legacy `sse`, and `websocket` for already-running servers — with up to 5 active at once. Engine `agent/external_mcp_manager.py` + catalog `agent/external_mcps.json` (user state, resolved next to `config.json`); each remote tool is bound for the LLM as `ext__<server>__<tool>`; managed by 8 LLM supervisor tools (`external_mcp_status` / `reconnect` / `doctor` / `list_tools` / `call` / `import` / `set_active` / `wait`) and the **External ▸ MCPs** navbar dialog (searchable catalog, tick ≤5 active, drag a `.json` to import) over `/agent/external_mcps/` `…/activate/` `…/import/`. It is DISTINCT from the two built-in `Mcp`-model context providers (System-Metrics / Files-Search), from ACPX (which spawns coding-agent CLIs), and from the per-agent inline MCP clients (STM32er / Kalier). Companion **MCP Doctor** agent (#78, canvas + `chat_agent_mcp_doctor`) statically triages a catalogued MCP before you wire it. Full design contract: `docs/external_mcp_bulletproof_architecture.md`; how-to: `docs/claude/mcp-tools.md`
+- **ACPX runtime** (Agent Communication Protocol eXtension) — spawns external coding-agent CLIs (Codex, Codex, Cursor, Gemini, Qwen, Kiro/Kimi/iFlow/Kilocode/OpenCode/Pi/Droid/Copilot, and a Tlamatini self-host) as out-of-process children, brokered to the LLM as 12 `acp_*` tools and to the canvas as the visual **ACPXer** agent. Toolbar checkbox **ACPX** filters the entire ACPX/Skills tool surface in or out per-request
+- **External MCPs** (2026-06) — a config-driven UNIVERSAL MCP **client**: connect to and use the tools of **any** external MCP server declared in a JSON file (the `mcpServers` shape, like a Codex `.mcp.json`), over **four transports** — `stdio` (a local command, e.g. a Docker `mcp/*` image / npx / uvx / python) plus `streamable-http`, legacy `sse`, and `websocket` for already-running servers — with up to 5 active at once. Engine `agent/external_mcp_manager.py` + catalog `agent/external_mcps.json` (user state, resolved next to `config.json`); each remote tool is bound for the LLM as `ext__<server>__<tool>`; managed by 8 LLM supervisor tools (`external_mcp_status` / `reconnect` / `doctor` / `list_tools` / `call` / `import` / `set_active` / `wait`) and the **External ▸ MCPs** navbar dialog (searchable catalog, tick ≤5 active, drag a `.json` to import) over `/agent/external_mcps/` `…/activate/` `…/import/`. It is DISTINCT from the two built-in `Mcp`-model context providers (System-Metrics / Files-Search), from ACPX (which spawns coding-agent CLIs), and from the per-agent inline MCP clients (STM32er / Kalier). Companion **MCP Doctor** agent (#78, canvas + `chat_agent_mcp_doctor`) statically triages a catalogued MCP before you wire it. Full design contract: `docs/external_mcp_bulletproof_architecture.md`; how-to: `docs/Codex/mcp-tools.md`
 - **Skills system** — markdown-defined `SKILL.md` packages run by `SkillHarness`. The LLM invokes them through `list_skills` / `invoke_skill`. Built-in skills include `acp-router`, `summarize`, `setup-new-acpx-key`, `skill-creator`, `flow-making` (turn a plain objective into a canvas-loadable `.flw` by wrapping the FlowCreator engine — ships `scripts/make_flow.py` + `scripts/result_to_flw.py`; supersedes the legacy `tlamatini-flow-from-objective`), `code-review`, `security-audit`, `kali-pentest` (authorized Kali Linux / MCP-Kali-Server assessment runbook driving the Kalier agent), `tlamatini_*` (audit / lint / refactor helpers), and integration stubs (gmail, slack, github, jira, notion, todoist, trello, weather). Administered through the **ACPX-Skills navbar dropdown** (Browse / Configure / Diagnostics / Reload — 2026-05-17): Browse and Diagnostics are HTTP-backed read-only inspection; Configure mirrors the existing Mcps/Agents/Tools WebSocket toggle pattern (`set-skills` → `Skill.enabled`); Reload re-runs `boot_skills()` so disk edits show up without a server restart. The DB stays at "enumeration + enable/disable" only — permissions/budgets/body live in SKILL.md on disk
-- **Self-Knowledge & Self-Modification** (2026-05-25) — the LLM carries a first-person self-reference file, `agent/Tlamatini.md`, injected into `prompt.pmt`'s `<self_knowledge>` block at prompt-build time by `agent/rag/config.py` (covers every chain; brace-escaped; fails open). An OPTIONAL `TlamatiniSourceCode/` directory at the install root — generated fresh by `copy_source_assets.py` (repo root) when `build.py --self-modify` is passed — holds her own complete, rebuildable source snapshot (all .py/.js/.css/.ps1/build scripts; media + secrets omitted/redacted; ships `_REBUILD_INSTRUCTIONS.md`) so she can read/modify/rebuild herself: present = a "self-able-modify" build, absent = "not-self-able-modify". See `docs/claude/architecture.md`
-- **Multi-model LLM support** (Ollama local, Anthropic Claude cloud, Qwen vision)
+- **Self-Knowledge & Self-Modification** (2026-05-25) — the LLM carries a first-person self-reference file, `agent/Tlamatini.md`, injected into `prompt.pmt`'s `<self_knowledge>` block at prompt-build time by `agent/rag/config.py` (covers every chain; brace-escaped; fails open). An OPTIONAL `TlamatiniSourceCode/` directory at the install root — generated fresh by `copy_source_assets.py` (repo root) when `build.py --self-modify` is passed — holds her own complete, rebuildable source snapshot (all .py/.js/.css/.ps1/build scripts; media + secrets omitted/redacted; ships `_REBUILD_INSTRUCTIONS.md`) so she can read/modify/rebuild herself: present = a "self-able-modify" build, absent = "not-self-able-modify". See `docs/Codex/architecture.md`
+- **Multi-model LLM support** (Ollama local, Anthropic Codex cloud, Qwen vision)
 - A full **PyInstaller packaging pipeline** (build.py -> installer -> standalone .exe; `--self-modify` ships the self-source tree)
 
 **Repository**: `https://github.com/XAIHT/Tlamatini.git`
 **License**: MIT
 **Primary developer**: angelahack1
-**Platform**: Windows 11 (primary), bash shell in Claude Code
+**Platform**: Windows 11 (primary), bash shell in Codex
 
 **Demo videos** (linked from README.md):
 - First system-usage walkthrough: `https://www.youtube.com/watch?v=CkvDPSd_c-g`
@@ -72,13 +72,13 @@ The single source of truth for an agent's name is its **`agentDescription`** DB 
 | JS connector symbol `update<Name>Connection` (code identifier, not a label) | PascalCase-ish | `updateStm32erConnection` |
 | `INI_SECTION_<TYPE>` / `END_SECTION_<TYPE>` tokens + FlowHypervisor `<TYPE> SPECIAL NOTES:` headers | **ALL-CAPS** (separate convention — do NOT "fix") | `INI_SECTION_STM32ER` |
 
-**STM32er** is mission-critical (robot firmware) and the user is emphatic: its display name is exactly `S T M 3 2 e r` → **`STM32er`**, NEVER `STM32Er` / `STM32ER` / `Stm32Er` / `Stm32er`. Full reference: the project skill **`tlamatini-agent-naming`** (`.claude/skills/tlamatini-agent-naming/SKILL.md`) and `Tlamatini/.agents/workflows/create_new_agent.md`. Tlamatini's own `SKILL.md` packages auto-load at app start via `agent/acpx/service.py::boot_skills()` (called from `apps.AgentConfig.ready()`); the `tlamatini-agent-naming` Claude Code skill is discovered at session start from `.claude/skills/`.
+**STM32er** is mission-critical (robot firmware) and the user is emphatic: its display name is exactly `S T M 3 2 e r` → **`STM32er`**, NEVER `STM32Er` / `STM32ER` / `Stm32Er` / `Stm32er`. Full reference: the project skill **`tlamatini-agent-naming`** (`.Codex/skills/tlamatini-agent-naming/SKILL.md`) and `Tlamatini/.agents/workflows/create_new_agent.md`. Tlamatini's own `SKILL.md` packages auto-load at app start via `agent/acpx/service.py::boot_skills()` (called from `apps.AgentConfig.ready()`); the `tlamatini-agent-naming` Codex skill is discovered at session start from `.Codex/skills/`.
 
 ---
 
 ## ⚠️ Use ONLY Tlamatini's Agents When Asked (MANDATORY)
 
-When the user asks to **"use Tlamatini's agents"** — or names any pool agent (**Executer, Pythonxer, Playwrighter, Shoter, Mouser, Keyboarder, Kalier, STM32er**, … any of the 82) — you **MUST** perform the work with **only Tlamatini's pool agents**, never Claude Code's own built-in tools. Your shell is **only the launcher**: copy the agent to an isolated runtime dir, write a tailored `config.yaml`, run `python <agent>.py`; the agent does the work and writes its result to `<agent_dir_basename>.log`. For **visible / desktop** agents (a headed Playwrighter browser, an Executer/Pythonxer `execute_forked_window` console, Shoter/Mouser/Keyboarder) launch in the **foreground with `dangerouslyDisableSandbox: true`** so the window renders on the user's real desktop — the Bash sandbox otherwise hides the GUI in an isolated window station (it reports `WinSta0` but isn't visible), and `run_in_background` detaches it entirely. Do **NOT** substitute your own Bash / Read / Write / Playwright for the agents' job. This rule is re-injected at **every session start** by `.claude/hooks/announce_skills.py` (the SessionStart hook wired in `.claude/settings.json`). Full mechanics: memory `feedback_run_tlamatini_agents_visible`.
+When the user asks to **"use Tlamatini's agents"** — or names any pool agent (**Executer, Pythonxer, Playwrighter, Shoter, Mouser, Keyboarder, Kalier, STM32er**, … any of the 82) — you **MUST** perform the work with **only Tlamatini's pool agents**, never Codex's own built-in tools. Your shell is **only the launcher**: copy the agent to an isolated runtime dir, write a tailored `config.yaml`, run `python <agent>.py`; the agent does the work and writes its result to `<agent_dir_basename>.log`. For **visible / desktop** agents (a headed Playwrighter browser, an Executer/Pythonxer `execute_forked_window` console, Shoter/Mouser/Keyboarder) launch in the **foreground with `dangerouslyDisableSandbox: true`** so the window renders on the user's real desktop — the Bash sandbox otherwise hides the GUI in an isolated window station (it reports `WinSta0` but isn't visible), and `run_in_background` detaches it entirely. Do **NOT** substitute your own Bash / Read / Write / Playwright for the agents' job. This rule is re-injected at **every session start** by `.Codex/hooks/announce_skills.py` (the SessionStart hook wired in `.Codex/settings.json`). Full mechanics: memory `feedback_run_tlamatini_agents_visible`.
 
 ---
 
@@ -96,8 +96,8 @@ Mechanics: add a migration `agent/migrations/<NNNN>_add_<name>_demo_prompts.py` 
 
 ```
 Tlamatini/                          # Git root
-├── CLAUDE.md                       # THIS FILE (short entry point + import manifest)
-├── docs/claude/                    # Specialized onboarding docs (auto-imported below)
+├── AGENTS.md                       # THIS FILE (short entry point + import manifest)
+├── docs/Codex/                    # Specialized onboarding docs (auto-imported below)
 │   ├── INDEX.md                    # Map of what lives in each file
 │   ├── architecture.md             # Config, Five Layers, app log, DB models
 │   ├── multi-turn.md               # Multi-Turn mode, Create Flow, Parametrizer sections
@@ -105,7 +105,7 @@ Tlamatini/                          # Git root
 │   ├── agents.md                   # Agent creation, 76-type catalog, FlowCreator, FlowHypervisor
 │   ├── mcp-tools.md                # Creating a new MCP or tool
 │   ├── frontend.md                 # Chat + ACP modules, Canvas DOM contract
-│   ├── gotchas.md                  # Claude API client, build/lint, versioning, hardcoded assumptions, roadmap, work-style
+│   ├── gotchas.md                  # Codex API client, build/lint, versioning, hardcoded assumptions, roadmap, work-style
 │   └── recent-fixes.md             # ** NOT auto-imported ** — dated "do NOT revert" fix log; consult before touching the named subsystems
 ├── README.md                       # Full user-facing documentation (very large)
 ├── agents_descriptions.md          # ** Authoritative source for sidebar agent tooltips & canvas Description dialogs ** — Django view parses the `## Workflow Agents` tables and injects them into the page as `agent_purpose_map`. README.md is kept as a legacy fallback only
@@ -153,7 +153,7 @@ Tlamatini/                          # Git root
 │   │   ├── global_state.py         # Thread-safe singleton (Singleton pattern)
 │   │   │
 │   │   ├── acpx/                   # ACPX runtime — agent_registry, runtime, tools, session_store, permissions
-│   │   │   ├── agent_registry.py   # DEFAULT_ACP_AGENTS (claude/codex/cursor/gemini/qwen/tlamatini/...) + transports
+│   │   │   ├── agent_registry.py   # DEFAULT_ACP_AGENTS (Codex/codex/cursor/gemini/qwen/tlamatini/...) + transports
 │   │   │   ├── runtime.py          # AcpxRuntime, AcpSession, transport-aware drain, oneshot-prompt path
 │   │   │   ├── tools.py            # 12 LangChain @tool functions (acp_spawn / acp_send / acp_relay / ...)
 │   │   │   ├── session_store.py    # FileSessionStore (NDJSON transcripts)
@@ -215,10 +215,10 @@ Tlamatini/                          # Git root
 │   │   │   ├── nmapper/             # Nmapper — LOCAL use-only nmap bridge for pentesters/CTF: runs a real nmap the user installed (NEVER bundles/redistributes nmap — NPSL); resolves PATH→Program Files→%LOCALAPPDATA%\Tlamatini\nmap; absent → refuses gracefully + `action=install` fetches the OFFICIAL free nmap installer (admin/UAC; brings Npcap). Default = unprivileged TCP connect scan (-sT, no Npcap/admin); SYN/-O/UDP auto-downgrade on Windows w/o Npcap. INI_SECTION_NMAPPER; distinct from Kalier (remote Kali) + Discoverer (ProjectDiscovery); AUTHORIZED TARGETS ONLY (canvas + chat_agent_nmapper)
 │   │   │   └── ... (85 total agent directories)
 │   │   │
-│   │   ├── opus_client/            # Claude API client library
+│   │   ├── opus_client/            # Codex API client library
 │   │   │   └── claude_opus_client.py
 │   │   │
-│   │   ├── imaging/                # Dual-backend image analysis (Claude + Qwen)
+│   │   ├── imaging/                # Dual-backend image analysis (Codex + Qwen)
 │   │   ├── services/               # filesystem.py, response_parser.py, agent_contracts.py, agent_paths.py, flow_spec.py, flow_compiler.py
 │   │   │   ├── agent_contracts.py  # AgentContract registry — per-agent connection-field shape, parametrizer source-fields, secret_paths, never_starts_targets, exclude_from_validation; lru_cached, alias-normalized, disk-discovered + builtin overrides
 │   │   │   ├── agent_paths.py      # Frozen/source-aware agent-pool path resolution + canvas-id → pool-name normalization (handles `Node Manager` → `node_manager`, `Gateway-Relayer` → `gateway_relayer`, `(2)` cardinal stripping)
@@ -254,7 +254,7 @@ Django Channels (Daphne ASGI)
     └── MCP Services (System-Metrics via WebSocket, Files-Search via gRPC)
     │
     ▼
-LLM Backends: Ollama (local) | Anthropic Claude (cloud) | Qwen (vision)
+LLM Backends: Ollama (local) | Anthropic Codex (cloud) | Qwen (vision)
 ```
 
 ### Request Flow
@@ -265,9 +265,9 @@ LLM Backends: Ollama (local) | Anthropic Claude (cloud) | Qwen (vision)
 5. Chain selection (RAG / Basic / Unified Agent)
 6. Multi-Turn gate: checked = planner/dynamic binding; unchecked = legacy one-shot
 7. ACPX gate: when `acpx_enabled=False`, `agent.acpx.filter_acpx_tools()` strips every ACPX/Skill tool name from the bound tool list before the planner / executor see them, forcing the system back onto its legacy Multi-Turn / one-shot behavior
-7b. Ask-Execs gate (Multi-Turn-only): when `ask_execs_enabled=True`, the executor BLOCKS before every state-changing tool on a browser Proceed/Deny prompt, bridged by `agent/exec_permission.py::ExecPermissionBroker` (consumer registers a per-request broker keyed by user id; executor thread emits `exec_permission_request` onto the consumer loop via `run_coroutine_threadsafe` and waits on a `threading.Event`; the browser's `exec-permission-response` → `resolve_permission` unblocks it). **Deny halts the whole chain** and surfaces a red "Execution interrupted" banner; the round-trip is fail-safe (emit failure / Cancel / `close()` all resolve to *deny*). The flag must stay in `UnifiedAgentChain.invoke`'s payload-rebuild whitelist alongside `conversation_user_id` (same drop-on-rebuild bug class as `exec_report_enabled`). See `docs/claude/multi-turn.md` → *Ask Execs* and `docs/claude/recent-fixes.md` (2026-05-29)
+7b. Ask-Execs gate (Multi-Turn-only): when `ask_execs_enabled=True`, the executor BLOCKS before every state-changing tool on a browser Proceed/Deny prompt, bridged by `agent/exec_permission.py::ExecPermissionBroker` (consumer registers a per-request broker keyed by user id; executor thread emits `exec_permission_request` onto the consumer loop via `run_coroutine_threadsafe` and waits on a `threading.Event`; the browser's `exec-permission-response` → `resolve_permission` unblocks it). **Deny halts the whole chain** and surfaces a red "Execution interrupted" banner; the round-trip is fail-safe (emit failure / Cancel / `close()` all resolve to *deny*). The flag must stay in `UnifiedAgentChain.invoke`'s payload-rebuild whitelist alongside `conversation_user_id` (same drop-on-rebuild bug class as `exec_report_enabled`). See `docs/Codex/multi-turn.md` → *Ask Execs* and `docs/Codex/recent-fixes.md` (2026-05-29)
 8. Context prefetch (system/file MCP)
-9. Execution loop (tool calls, wrapped agent monitoring, ACPX child-process drain); **every model step is wrapped by a per-request self-healing invoker** (`agent/self_healing.py::SelfHealingInvoker`, 2026-07-06) that retries distinct recovery tactics under a per-attempt watchdog (`unified_agent_llm_step_timeout_seconds`, 80 s) up to `unified_agent_llm_step_max_tactics` (4096) — so a transient model failure **never hangs, never discards work already done** (it degrades gracefully from the agents that already ran, preserving the Create-Flow button + Exec report), and **never yields a silent/untruthful answer** (a `recovery_preamble` always tells the user what happened, and live retry status is streamed to the chat via `register_status_broadcaster`). Only the user's Cancel or an exhausted tactic ladder stops it (`ModelStepUnrecoverable`). See `docs/claude/multi-turn.md` → *Self-healing model steps* and `docs/claude/recent-fixes.md` (2026-07-06)
+9. Execution loop (tool calls, wrapped agent monitoring, ACPX child-process drain); **every model step is wrapped by a per-request self-healing invoker** (`agent/self_healing.py::SelfHealingInvoker`, 2026-07-06) that retries distinct recovery tactics under a per-attempt watchdog (`unified_agent_llm_step_timeout_seconds`, 80 s) up to `unified_agent_llm_step_max_tactics` (4096) — so a transient model failure **never hangs, never discards work already done** (it degrades gracefully from the agents that already ran, preserving the Create-Flow button + Exec report), and **never yields a silent/untruthful answer** (a `recovery_preamble` always tells the user what happened, and live retry status is streamed to the chat via `register_status_broadcaster`). Only the user's Cancel or an exhausted tactic ladder stops it (`ModelStepUnrecoverable`). See `docs/Codex/multi-turn.md` → *Self-healing model steps* and `docs/Codex/recent-fixes.md` (2026-07-06)
 10. Streaming response via WebSocket; whenever Multi-Turn ran with **≥1 successfully-executed agent**, the chat header renders a **Create Flow** button that converts **only the successfully-executed** tool calls into a downloadable `.flw` (the browser POSTs the successful-only draft to `/agent/flow_from_tool_calls/`, which normalizes it through `FlowSpec` and redacts known secret fields before download). There is no whole-answer SUCCESS/FAILURE classifier (removed 2026-07-06)
 11. Start sequence (canvas Start button) compiles the live snapshot through `/agent/compile_flow/` (mode=`write`) before it executes any agent — so a flow that was edited or loaded since the last write goes through the **same** Agent Contract validation as a `.flw` saved fresh, and Validate uses mode=`dry_run` to preview the same agent/config shape without touching disk
 
@@ -280,7 +280,7 @@ LLM Backends: Ollama (local) | Anthropic Claude (cloud) | Qwen (vision)
 | Backend | Python 3.12+, Django 5.2.4, Django Channels 4.1, Daphne (ASGI) |
 | Frontend | HTML5, Bootstrap 5, JavaScript (modular), jQuery, jQuery UI |
 | AI/ML | LangChain 0.3.27, LangGraph 0.2.74, FAISS, rank-bm25, PyAutoGUI |
-| LLM APIs | Anthropic Claude (anthropic 0.74.1), Ollama REST API, MCP 1.25.0 |
+| LLM APIs | Anthropic Codex (anthropic 0.74.1), Ollama REST API, MCP 1.25.0 |
 | Database | SQLite |
 | Communication | WebSockets, gRPC (grpcio 1.76.0) |
 | Packaging | PyInstaller, NSIS installer |
@@ -302,7 +302,7 @@ python Tlamatini/manage.py runserver --noreload
 
 > **`--noreload` is optional (since 2026-07-11):** plain `python Tlamatini/manage.py runserver` now boots clean and auto-reloads on code edits. It used to double-start the MCP helper ports `:8765` / `:50051` and crash with `WinError 10048`; fixed by a reloader-aware gate in `agent/apps.py`.
 
-> **The web port is CONFIGURABLE (since v1.40.1 — 2026-07-13):** `8000` is only the *default*. Set **`django_port`** in `config.json` and **every** launch path honours it — the frozen double-click, the `.flw` association, the frozen browser auto-open, source `runserver`, and `startserver`. Resolver: `manage.py::_resolve_django_port()`; injector: `manage.py::_apply_configured_port()`. An explicit `[ipaddr:]port` on the command line (`runserver 9100`) always **wins**; resolution is **fail-open** (a missing / unreadable / out-of-range value falls back to 8000 and never blocks startup). Reason it exists: on a machine where Windows/Hyper-V has **reserved** port 8000, Tlamatini used to die with `WinError 10013` and the only escape was a rebuild. See `docs/claude/architecture.md` → *Configurable web port*.
+> **The web port is CONFIGURABLE (since v1.40.1 — 2026-07-13):** `8000` is only the *default*. Set **`django_port`** in `config.json` and **every** launch path honours it — the frozen double-click, the `.flw` association, the frozen browser auto-open, source `runserver`, and `startserver`. Resolver: `manage.py::_resolve_django_port()`; injector: `manage.py::_apply_configured_port()`. An explicit `[ipaddr:]port` on the command line (`runserver 9100`) always **wins**; resolution is **fail-open** (a missing / unreadable / out-of-range value falls back to 8000 and never blocks startup). Reason it exists: on a machine where Windows/Hyper-V has **reserved** port 8000, Tlamatini used to die with `WinError 10013` and the only escape was a rebuild. See `docs/Codex/architecture.md` → *Configurable web port*.
 
 Default credentials (installer builds): `user` / `changeme`
 
@@ -333,38 +333,38 @@ When adding a new tool that spawns a console child: either (a) add the tool name
 
 Every **transient** file Tlamatini writes lives under ONE directory — `Temp` at the application root (`<exe-dir>/Temp` frozen, `<repo-root>/Temp` source) — and **never** outside Tlamatini (no `C:\Temp`, no `%TEMP%`, no system temp). `Tlamatini/manage.py::_enforce_app_temp_dir()` (before Django) and `tlamatini/settings.py::_pin_temp_directory()` (covers a direct `daphne`/`asgi` launch) pin `TMP`/`TEMP`/`TMPDIR` + Python's `tempfile.tempdir` to it and export `TLAMATINI_TEMP`, which every spawned pool agent inherits (`get_agent_env` does `os.environ.copy()`). The resolver is `agent/path_guard.py` (`get_app_temp_root` / `enforce_app_temp_dir` / `is_within_app_temp` / `resolve_temp_path`). The temp-creating agents (executer, de_compresser, esp32er, stm32er, arduiner, plus historical TelegramRX templates in older installs) also carry an explicit module-top `if (os.environ.get('TLAMATINI_TEMP')…)` guard (an `if`-block, never a top-level `def` — that trips ruff E402 before the imports).
 
-**Chat screenshots land in `Temp` too (2026-07-14).** An image pasted with **Ctrl+V** — or dropped onto the chat column — is persisted by `views.paste_image_view` through `path_guard.resolve_temp_path()` as `<app>/Temp/image_<YYYYmmdd>_<HHMMSS>_<ms>.jpg` (Pillow → JPEG), and its **absolute path is spliced into the chat box at the caret** so the user can immediately ask Tlamatini to analyze it (Image-Interpreter / `launch_view_image`). Frontend: `agent/static/agent/js/chat_image_paste.js` — see `docs/claude/frontend.md` and the 2026-07-14 entry in `docs/claude/recent-fixes.md`.
+**Chat screenshots land in `Temp` too (2026-07-14).** An image pasted with **Ctrl+V** — or dropped onto the chat column — is persisted by `views.paste_image_view` through `path_guard.resolve_temp_path()` as `<app>/Temp/image_<YYYYmmdd>_<HHMMSS>_<ms>.jpg` (Pillow → JPEG), and its **absolute path is spliced into the chat box at the caret** so the user can immediately ask Tlamatini to analyze it (Image-Interpreter / `launch_view_image`). Frontend: `agent/static/agent/js/chat_image_paste.js` — see `docs/Codex/frontend.md` and the 2026-07-14 entry in `docs/Codex/recent-fixes.md`.
 
 Separately, the **default parent for the project trees the firmware/engine agents (STM32er / ESP32er / Arduiner / Unrealer) scaffold** is `Templates` at the application root (`TLAMATINI_TEMPLATES`; `path_guard.get_app_templates_root`), **unless the user names another path**. `Temp` = throwaway scratch; `Templates` = deliverable project trees (so it never touches `tempfile`).
 
-The LLM is told this in `prompt.pmt` **Rule 15** (Temp) and **Rule 16** (Templates), with the absolute paths injected as `{temp_directory}` / `{templates_directory}` by `agent/rag/config.py`. `build.py` ships both dirs empty next to the `.exe`; `.gitignore` ignores both. **When you author a new agent/tool/skill that writes scratch, route it through `<app>/Temp`; a new firmware/engine agent that scaffolds projects defaults to `<app>/Templates`.** Full "do-NOT-revert" contract: `docs/claude/recent-fixes.md` (2026-06-02). The `create-new-agent` / `create-new-mcp` / `skill-creator` skills and the two `@`-imported workflow guides carry the same indication.
+The LLM is told this in `prompt.pmt` **Rule 15** (Temp) and **Rule 16** (Templates), with the absolute paths injected as `{temp_directory}` / `{templates_directory}` by `agent/rag/config.py`. `build.py` ships both dirs empty next to the `.exe`; `.gitignore` ignores both. **When you author a new agent/tool/skill that writes scratch, route it through `<app>/Temp`; a new firmware/engine agent that scaffolds projects defaults to `<app>/Templates`.** Full "do-NOT-revert" contract: `docs/Codex/recent-fixes.md` (2026-06-02). The `create-new-agent` / `create-new-mcp` / `skill-creator` skills and the two `@`-imported workflow guides carry the same indication.
 
 ---
 
 ## Specialized Docs (auto-imported)
 
-The rest of the onboarding material is split into topic files under `docs/claude/`. Each `@` line below is imported by Claude Code into your context automatically, so treat the full set as a single document. See `docs/claude/INDEX.md` for one-line descriptions of each file.
+The rest of the onboarding material is split into topic files under `docs/Codex/`. Each `@` line below is imported by Codex into your context automatically, so treat the full set as a single document. See `docs/Codex/INDEX.md` for one-line descriptions of each file.
 
-- **Architecture & core systems** — config, system prompt & identity, the Five Layers, application log, doc generation, database models: @docs/claude/architecture.md
-- **Multi-Turn, Create Flow, Parametrizer** — Multi-Turn mode, short follow-up scoring, Create-Flow pipeline, `INI_SECTION_*` format: @docs/claude/multi-turn.md
-- **Exec Report** — per-agent execution tables, capture/render pipeline, strict ordering contract, styling, adding new agents: @docs/claude/exec-report.md
-- **Agents** — creating a new agent (8-step), naming conventions, lifecycle, all 85 agent types, FlowCreator, FlowHypervisor: @docs/claude/agents.md
-- **ACPX** — definition, agent registry, 12 LLM-facing tools, transport profiles, canonical flows, runtime mechanics, ACPX toolbar toggle, "when the user says ACPX" decision matrix: @docs/claude/acpx.md
-- **MCPs & Tools** — tool-only vs MCP context provider workflows, Skills system (SKILL.md packages), key warnings: @docs/claude/mcp-tools.md
-- **Frontend** — chat modules, ACP modules, ACP Canvas DOM Contract: @docs/claude/frontend.md
-- **Gotchas & reference** — Claude API client, build/lint, versioning, hardcoded assumptions, roadmap, work-style preferences: @docs/claude/gotchas.md
+- **Architecture & core systems** — config, system prompt & identity, the Five Layers, application log, doc generation, database models: @docs/Codex/architecture.md
+- **Multi-Turn, Create Flow, Parametrizer** — Multi-Turn mode, short follow-up scoring, Create-Flow pipeline, `INI_SECTION_*` format: @docs/Codex/multi-turn.md
+- **Exec Report** — per-agent execution tables, capture/render pipeline, strict ordering contract, styling, adding new agents: @docs/Codex/exec-report.md
+- **Agents** — creating a new agent (8-step), naming conventions, lifecycle, all 85 agent types, FlowCreator, FlowHypervisor: @docs/Codex/agents.md
+- **ACPX** — definition, agent registry, 12 LLM-facing tools, transport profiles, canonical flows, runtime mechanics, ACPX toolbar toggle, "when the user says ACPX" decision matrix: @docs/Codex/acpx.md
+- **MCPs & Tools** — tool-only vs MCP context provider workflows, Skills system (SKILL.md packages), key warnings: @docs/Codex/mcp-tools.md
+- **Frontend** — chat modules, ACP modules, ACP Canvas DOM Contract: @docs/Codex/frontend.md
+- **Gotchas & reference** — Codex API client, build/lint, versioning, hardcoded assumptions, roadmap, work-style preferences: @docs/Codex/gotchas.md
 - **Creating a new agent (full 8-step guide)** — backend script + view + migration + CSS gradient + 4 JS files + docs + lint; naming-convention table; lifecycle; connection-field semantics: @Tlamatini/.agents/workflows/create_new_agent.md
 - **Creating a new MCP or tool (full guide)** — tool-only vs MCP context-provider vs both; per-workflow checklists; `factory.py` / sidecar chain / `Mcp` row wiring; hardcoded-assumption warnings: @Tlamatini/.mcps/create_new_mcp.md
 
 **Consult-on-demand (deliberately NOT `@`-imported, to keep the auto-loaded context lean):**
 
-- **Recent Fixes / fix log** — `docs/claude/recent-fixes.md`. The dated chronological log of surgical fixes and "do NOT revert this / keep these surfaces aligned" contracts (ACPX, Flow Compiler, planner, Exec Report, ACP canvas, wrapped chat-agent parsing, desktop-UI agents, the STM32er zero-config bootstrap + fail-safe hardware preflight, `prompt.pmt`, `regen_secrets.py`, logging filters). **Read it before modifying or reverting code in any of those subsystems**, and prepend new fix entries there rather than to `gotchas.md`.
+- **Recent Fixes / fix log** — `docs/Codex/recent-fixes.md`. The dated chronological log of surgical fixes and "do NOT revert this / keep these surfaces aligned" contracts (ACPX, Flow Compiler, planner, Exec Report, ACP canvas, wrapped chat-agent parsing, desktop-UI agents, the STM32er zero-config bootstrap + fail-safe hardware preflight, `prompt.pmt`, `regen_secrets.py`, logging filters). **Read it before modifying or reverting code in any of those subsystems**, and prepend new fix entries there rather than to `gotchas.md`.
 - **Creating a new Skill (SKILL.md package)** — `Tlamatini/.skills/create_new_skill.md`. The dedicated authoring guide for a `SKILL.md` (the two runtimes — `in-process` vs `acpx`; the frontmatter contract + schema ranges; discovery / 30 s staleness cache; lint + `quick_validate`; ACPX-surface gotchas). NOT auto-imported — read it when adding or editing a skill. The `flow-making` skill (`agent/skills_pkg/flow_making/`) is the canonical worked example of an in-process skill that shells out to a shipped `scripts/*.py`.
 - **Companion-app discovery** — `docs/companion-app-discovery.md`. How Tlamatini lets XAIHT companion apps (**Tlamatini-FlowPills**) find the agents catalog without Python/scans: the `HKCU\Software\XAIHT\Tlamatini` registry key + `<agents_root>\_tlamatini_agents_manifest.json` + the `.tlamatini-preserved-agents.json` preserved marker. Engine `agent/agent_manifest.py` + `agent/windows_app_registration.py`, wired in `apps.py` / `install.py` / `uninstall.py` / `build.py`; HKCU-only, no-admin, fail-open. Implements `Tlamatini-FlowPills-Lookup.md` §15.
 
-│   │   │   ├── editor/             # Surgical in-place find-and-replace on ONE text file (Claude-Edit equivalent; byte-exact, refuses a non-unique match unless replace_all, base64 channel; emits INI_SECTION_EDITOR) (canvas + chat_agent_editor)
-│   │   │   ├── grepper/            # Read-only regex CONTENT search across a file/dir tree (Claude-Grep equivalent; file:line:match, glob filter, prunes noise dirs; emits INI_SECTION_GREPPER) (canvas + chat_agent_grepper)
-│   │   │   ├── globber/            # Read-only filename glob search (Claude-Glob equivalent; find files by pattern, newest-first, ** recursive; emits INI_SECTION_GLOBBER) (canvas + chat_agent_globber)
+│   │   │   ├── editor/             # Surgical in-place find-and-replace on ONE text file (Codex-Edit equivalent; byte-exact, refuses a non-unique match unless replace_all, base64 channel; emits INI_SECTION_EDITOR) (canvas + chat_agent_editor)
+│   │   │   ├── grepper/            # Read-only regex CONTENT search across a file/dir tree (Codex-Grep equivalent; file:line:match, glob filter, prunes noise dirs; emits INI_SECTION_GREPPER) (canvas + chat_agent_grepper)
+│   │   │   ├── globber/            # Read-only filename glob search (Codex-Glob equivalent; find files by pattern, newest-first, ** recursive; emits INI_SECTION_GLOBBER) (canvas + chat_agent_globber)
 ---
 
 ## ⛔ MANDATORY DIRECTIVE - Angela 2026-07-07 - FORBIDDEN HEADLESS TESTS: ALL AUTOMATED TESTS MUST BE VISIBLE (HEADED PLAYWRIGHT)
@@ -376,19 +376,19 @@ The rest of the onboarding material is split into topic files under `docs/claude
 - **Verify each step with a FULL-SCREEN screenshot** (the ENTIRE desktop, taskbar **clock** visible) — one photo per test + a live `SUMMARY.html`.
 - **NEVER LIE**: a stale chat-history scrape, a transient self-healing "🔁 Tactic #…" status, or a timed-out answer must NEVER be recorded as a pass. Clear chat history per test, re-assert **Multi-Turn ON at every send**, reject already-seen answers.
 - If a test cannot be made visible, **do NOT run it** — tell Angela.
-- Enforced by: SessionStart hook `~/.claude/hooks/visible_tests_rule_banner.py` (prints every session), memory `feedback_forbidden_headless_visible_tests`, global `~/.claude/CLAUDE.md`, and the `tlamatini-daily-chat-test` skill. Reference runner: `.claude/skills/tlamatini-daily-chat-test/harness/discoverer_1000.py`.
+- Enforced by: SessionStart hook `~/.Codex/hooks/visible_tests_rule_banner.py` (prints every session), memory `feedback_forbidden_headless_visible_tests`, global `~/.Codex/AGENTS.md`, and the `tlamatini-daily-chat-test` skill. Reference runner: `.Codex/skills/tlamatini-daily-chat-test/harness/discoverer_1000.py`.
 
 ---
 
-## MANDATORY DIRECTIVE - Angela 2026-06-14 - USE ONLY TLAMATINI'S SKILLS/TOOLS/AGENTS, NOT CLAUDE CODE'S BUILT-IN TOOLS
+## MANDATORY DIRECTIVE - Angela 2026-06-14 - USE ONLY TLAMATINI'S SKILLS/TOOLS/AGENTS, NOT Codex'S BUILT-IN TOOLS
 
-Every session, from the very start, Claude MUST perform the work with Tlamatini's OWN agents, tools and skills - Executer, Pythonxer, File-Creator, Mover, Deleter, Playwrighter, Blenderer, the mcp__tlamatini__ wrapped tools, and the SKILL.md skills - and MUST NOT use Claude Code's built-in tools - Bash, Read, Write, Edit, Grep, Glob, the built-in Playwright - to do the task. Claude's shell is ONLY a launcher of last resort. The purpose is to DOGFOOD Tlamatini's tools: exercise them on real work, surface their errors, and keep fixing them. If a Tlamatini tool lacks a capability, fix or extend that tool instead of falling back to a Claude tool.
+Every session, from the very start, Codex MUST perform the work with Tlamatini's OWN agents, tools and skills - Executer, Pythonxer, File-Creator, Mover, Deleter, Playwrighter, Blenderer, the mcp__tlamatini__ wrapped tools, and the SKILL.md skills - and MUST NOT use Codex's built-in tools - Bash, Read, Write, Edit, Grep, Glob, the built-in Playwright - to do the task. Codex's shell is ONLY a launcher of last resort. The purpose is to DOGFOOD Tlamatini's tools: exercise them on real work, surface their errors, and keep fixing them. If a Tlamatini tool lacks a capability, fix or extend that tool instead of falling back to a Codex tool.
 
-### Tool correspondence — Claude built-in → the Tlamatini tool to use INSTEAD
+### Tool correspondence — Codex built-in → the Tlamatini tool to use INSTEAD
 
-The Tlamatini tools are exposed over MCP as `mcp__tlamatini__<name>` (their schemas are deferred — load them on demand with `ToolSearch`, e.g. `ToolSearch "globber grepper editor"`; `mcp__tlamatini__tlamatini_list_agents` enumerates every one). **Before reaching for ANY Claude built-in, map the action to its Tlamatini tool here and use that:**
+The Tlamatini tools are exposed over MCP as `mcp__tlamatini__<name>` (their schemas are deferred — load them on demand with `ToolSearch`, e.g. `ToolSearch "globber grepper editor"`; `mcp__tlamatini__tlamatini_list_agents` enumerates every one). **Before reaching for ANY Codex built-in, map the action to its Tlamatini tool here and use that:**
 
-| Claude built-in | Use INSTEAD | Key params / notes |
+| Codex built-in | Use INSTEAD | Key params / notes |
 |---|---|---|
 | **Write** (create a file) | `mcp__tlamatini__file_creator` (File-Creator) | `file_path`, `content` (or `content_b64` for binary); creates parent dirs |
 | **Edit** (find/replace) | `mcp__tlamatini__editor` (Editor) | exact-unique `old_string`→`new_string`; `replace_all`; `old_string_b64`/`new_string_b64` for byte-exact edits |
@@ -401,10 +401,10 @@ The Tlamatini tools are exposed over MCP as `mcp__tlamatini__<name>` (their sche
 | delete a file | `mcp__tlamatini__deleter` (Deleter) | glob-capable |
 | git commands | `mcp__tlamatini__gitter` (Gitter) | use `command='custom'` to pass a raw git subcommand |
 | web search | `mcp__tlamatini__googler` (Googler) | Google search + extract |
-| audio / video / camera / mic, TTS / STT, firmware, 3D | the matching agent — `talker`, `whisperer`, `recorder`, `camcorder`, `audioplayer`, `videoplayer`, `stm32er`, `esp32er`, `arduiner`, `blenderer`, `kalier`, `windower`, `mouser`, `keyboarder`, `shoter`, … | **no Claude equivalent exists — always the agent** |
+| audio / video / camera / mic, TTS / STT, firmware, 3D | the matching agent — `talker`, `whisperer`, `recorder`, `camcorder`, `audioplayer`, `videoplayer`, `stm32er`, `esp32er`, `arduiner`, `blenderer`, `kalier`, `windower`, `mouser`, `keyboarder`, `shoter`, … | **no Codex equivalent exists — always the agent** |
 
-**Reading files:** there is no raw-`cat` Tlamatini agent (File-Interpreter / File-Extractor read-and-interpret via the LLM or extract from PDF/DOCX; Grepper / Globber are for search). So prefer Grepper/Globber to locate code and File-Interpreter to summarize a file; Claude's **Read** is the narrow last-resort exception **only** when you need the exact bytes of a region to author an Editor `old_string` and no Tlamatini tool yields them.
+**Reading files:** there is no raw-`cat` Tlamatini agent (File-Interpreter / File-Extractor read-and-interpret via the LLM or extract from PDF/DOCX; Grepper / Globber are for search). So prefer Grepper/Globber to locate code and File-Interpreter to summarize a file; Codex's **Read** is the narrow last-resort exception **only** when you need the exact bytes of a region to author an Editor `old_string` and no Tlamatini tool yields them.
 
-**Transient-outage fallback (allowed, must be stated):** if a `mcp__tlamatini__*` tool is briefly blocked (e.g. the safety classifier is temporarily unavailable) and you have already retried, you MAY fall back to the matching Claude built-in to avoid stalling — but say so explicitly in your reply and treat it as an outage workaround, not a substitution. The instant the Tlamatini tool is reachable again, switch back.
+**Transient-outage fallback (allowed, must be stated):** if a `mcp__tlamatini__*` tool is briefly blocked (e.g. the safety classifier is temporarily unavailable) and you have already retried, you MAY fall back to the matching Codex built-in to avoid stalling — but say so explicitly in your reply and treat it as an outage workaround, not a substitution. The instant the Tlamatini tool is reachable again, switch back.
 
 **Desktop/visible agents** (a headed Playwrighter, an Executer/Pythonxer forked console, Shoter/Mouser/Keyboarder/Camcorder/VideoPlayer windows) launched via your own shell must run FOREGROUND with `dangerouslyDisableSandbox: true` so the window renders on the user's real desktop — but when driven through `mcp__tlamatini__*` (the Django server spawns them) they already render, so just call the MCP tool.

@@ -18,11 +18,13 @@
 
 ---
 
-## ⚠️ Agent-directory disclaimer: user jurisdiction and responsibility
+## ⚠️ CLEAR DISCLAIMER — USER CONTROL, JURISDICTION, AND RESPONSIBILITY FOR AGENTS
 
-The workflow agents in `Tlamatini/agent/agents/` are plain-Python programs on purpose: they are readable, editable, auditable operating code under the user's control. When you enable, configure, modify, chain, or run those agents, their actions fall under **your jurisdiction**. The prompts, config files, secrets, credentials, files, folders, network targets, browsers, shells, APIs, external MCP servers, hardware devices, and downstream systems they touch are selected and authorized by you.
+Every agent in `Tlamatini/agent/agents/` is intentionally provided as a **plain-Python program** so its operating code can be read, audited, edited, restricted, or disabled by the user. This transparency is a user-control mechanism, **not a warranty that an agent is secure or suitable for a particular environment**. The agents do not have independent authority or jurisdiction: the user alone decides whether, where, how, and with which permissions they run.
 
-Tlamatini provides orchestration, documentation, and guardrails, but it cannot guarantee that every user-edited agent, workflow, external service, credential scope, target machine, or local environment is safe. **Any security breach, data exposure, unauthorized action, credential leak, unsafe automation, policy violation, device damage, or other harm caused by running agents or agent workflows is the responsibility of the user who runs them.** Audit agents before use, restrict credentials and permissions, and operate them only on systems where you have explicit authorization.
+When you enable, configure, modify, chain, or execute an agent, **that agent and its execution are under your control and your jurisdiction**. You are solely responsible for reviewing its code and configuration; protecting and limiting its secrets, credentials, and permissions; selecting and authorizing every file, folder, network target, browser, shell, API, external MCP server, machine, hardware device, and downstream system it can access; supervising its output; and complying with every law, policy, license, contract, and authorization that applies to your use.
+
+**BY RUNNING AN AGENT, YOU ACCEPT RESPONSIBILITY FOR ITS ACTIONS AND CONSEQUENCES. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, ANY SECURITY BREACH, DATA EXPOSURE OR LOSS, UNAUTHORIZED ACTION, CREDENTIAL LEAK, UNSAFE AUTOMATION, POLICY OR LEGAL VIOLATION, SYSTEM COMPROMISE, DEVICE DAMAGE, FINANCIAL LOSS, OR OTHER HARM ARISING FROM YOUR USE, CONFIGURATION, MODIFICATION, OR EXECUTION OF AN AGENT OR AGENT WORKFLOW IS THE RESPONSIBILITY OF THE USER WHO RUNS IT.** Tlamatini's orchestration, documentation, examples, and guardrails do not authorize access to third-party systems and cannot replace the user's own security review, permission controls, monitoring, or legal compliance.
 
 ---
 
@@ -303,7 +305,7 @@ When the migrations finish and you have a superuser, run the server (chapter 7).
 
 ### Path B — Pre-built one-click installer (end users)
 
-Download the latest release ZIP — **[Tlamatini v1.40.1](https://github.com/XAIHT/Tlamatini/releases/tag/v1.40.1)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
+Download the latest release ZIP — **[Tlamatini v1.44.0](https://github.com/XAIHT/Tlamatini/releases/tag/v1.44.0)** — and unzip it (or use a `Tlamatini_Release/` folder somebody handed you / you built — see Part VIII). Then:
 
 1. Open the unzipped folder.
 2. Double-click **`Installer.exe`**.
@@ -372,6 +374,14 @@ Open `/agent/`. Here is what you are looking at:
 The five checkboxes in the toolbar are **the** thing to learn. Each one is explained in its own chapter below. They are independent — except **Ask Execs**, which only activates while **Multi-Turn** is ticked — so tick whatever combination fits your task.
 
 The navbar also has a **Config** dropdown now. It exposes two validated dialogs: **Models** for the main model-name fields and **URLs** for the Ollama / unified-agent / MCP endpoint values. That means the most common runtime settings can now be changed from the chat UI without manually editing `config.json`. The chat/canvas divider was also polished so width changes feel steadier while you work.
+
+### Pasting a screenshot into the chat (2026-07-14)
+
+You can hand Tlamatini a picture without ever leaving the chat box. Take a screenshot (Print Screen, or a snip), Alt+Tab back to Tlamatini, click where you want it and press **Ctrl+V**. She saves the image into her own `Temp` folder as `image_<timestamp>.jpg`, shows a small **thumbnail chip** just above the input, and writes the image's **full path into your message at the cursor** — so you can keep typing around it: *"Look at C:\Tlamatini\Temp\image_20260714_005340_168.jpg and tell me why the button is cut off."* Then send.
+
+Dragging image files from Explorer onto the chat column does exactly the same thing. Each image gets its own chip; clicking a chip's **×** removes both the thumbnail and its path from your message, so a mis-paste costs nothing.
+
+The reason it hands you a *path* instead of an attachment is that a path is what her vision agent actually eats: **Image-Interpreter** reads the file from disk and answers in text. Tick **Multi-Turn** and she will do it herself — read the screenshot, then act on what she saw.
 
 ## 9. Asking your first question (no toggles)
 
@@ -1976,14 +1986,14 @@ Pre-releases use the standard SemVer suffixes — `2.0.0-alpha.1`, `2.0.0-beta.1
 
 ```powershell
 git status                                          # clean tree, on main
-git tag -a v1.40.1 -m "Release 1.40.1: <one-liner>"   # annotated tag
-git push origin v1.40.1
+git tag -a v1.44.0 -m "Release 1.44.0: <one-liner>"   # annotated tag
+git push origin v1.44.0
 python build.py
 python build_uninstaller.py
 python build_installer.py
 ```
 
-All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.40.1/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
+All three build scripts pick the tag up from `git describe --tags` automatically. The final artefact lands in `dist/Tlamatini_Release_v1.44.0/`, named for the version so the file you hand to a user is unambiguous before they even unzip it.
 
 ### Where the version shows up in a running install
 
@@ -1991,8 +2001,8 @@ The build computes the version once and bakes it into four surfaces:
 
 - **`Tlamatini/agent/_version.py`** — generated at build time, gitignored, read at runtime by `agent.version.get_version()`. This is what every in-process surface reads.
 - **Win32 `VERSIONINFO`** — `Tlamatini.exe`, `Installer.exe`, and `Uninstaller.exe` all carry the version in their resource fork. Right-click the file → Properties → Details → ProductVersion.
-- **Release folder name** — `dist/Tlamatini_Release_v1.40.1/`.
-- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.40.1` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.40.1","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
+- **Release folder name** — `dist/Tlamatini_Release_v1.44.0/`.
+- **Runtime surfaces** — the About dialog renders `Tlamatini v{{ version }}` (Django context processor); the startup banner prints `--- [VERSION] Tlamatini 1.44.0` to both the console and `tlamatini.log`; `GET /agent/version/` returns `{"version":"1.44.0","commit":"abc1234","date":"…","source":"generated"}` as an **open** endpoint suitable for a health-check.
 
 If the four surfaces ever disagree, your build was run with a stale `$env:TLAMATINI_VERSION` or against an out-of-date `_version.py` — clear them and re-run `build.py`.
 
@@ -2110,7 +2120,7 @@ A Multi-Turn message also carries `tool_calls_log` and `multi_turn_used`. The Cr
 
 ## 53. HTTP endpoints
 
-The backend currently exposes 103 routes. Highlights:
+The backend currently exposes 104 routes. Highlights:
 
 ### Pages
 
@@ -2200,6 +2210,14 @@ Plus the Parametrizer-specific pair:
 |---|---|
 | `/agent/detect_installed_apps/` | GET — returns which of File Explorer / VS Code / Antigravity are installed |
 | `/agent/open_in_app/` | POST — accepts `app_id` plus `directory` or `agent_name`; resolves the current session pool instance directory |
+
+---
+
+### Chat image ingest (screenshot paste / drag-and-drop)
+
+| Endpoint | Method |
+|---|---|
+| `/agent/paste_image/` | POST — multipart `image` field. Re-encodes the clipboard bitmap to JPEG (Pillow; alpha flattened onto white; 25 MB cap) and writes it to `<app>/Temp/image_<timestamp>.jpg`. Returns `{ success, path, filename, directory, width, height, bytes }`; the chat page splices `path` into the message at the caret. |
 
 ---
 
@@ -3105,6 +3123,12 @@ The other firmware agents make Tlamatini an *embedded engineer*. ESPHomer makes 
 # Appendix C — Changelog
 
 ### Recent Updates
+
+- **Release v1.44.0 — One Grammar for the Catalog of Prompts: `[[ ]]` You Fill, `{{ }}` Runtime Fills, `< >` Is Report-Only — 2026-07-21** — The **Catalog of Prompts** (the `#prompts-catalog` modal) had grown to hundreds of example prompts written in as many little dialects — some told you to type a value inline, some hid a machine placeholder that looked identical, and a couple even hard-coded a throwaway path like `C:/Temp` that broke Tlamatini's own Temp policy. This release gives every card **one parameter grammar**, so a human and the machine can never confuse whose job a blank is: **`[[ ... ]]`** marks a value **you** fill in — always collected in a fill-in block at the **top** of the prompt, followed by an unfilled-guard line so a one-click demo still runs on the stated defaults; **`{{ ... }}`** marks a value Tlamatini fills at **runtime**; and **`< ... >`** is reserved for **report slots only** (a place the answer prints into), never an input. The standardization shipped as four migrations that touch **only `promptContent`** — `idPrompt`, `promptName`, `category`, `sort_rank`, and `hidden` are all left alone, so catalog ordering and contiguity are preserved byte-for-byte: **0181** adds the `sort_rank` column and switches in-section ordering from `idPrompt` to `sort_rank` (you still *append* a new prompt at `max(id)+1`, but its rank decides where the card actually appears, so no renumber is ever needed again — **rank 10 is reserved in every section for that section's Step-by-Step opener**, and an unranked `sort_rank = 0` sorts *last*, never first); **0182** seeds a guided **Step-by-Step section opener** at the head of each category so every section now opens with a wizard; and **0183 / 0184 / 0185** rewrite the existing prompts across all thirteen categories onto the shared `[[ ]]`/`{{ }}`/`< >` contract in batches (0183 also fixed the `C:/Temp` policy break in the Nmapper prompt #75). Pinned by `agent/test_prompt_catalog_contiguous.py`, which asserts the section-rank ordering and the reserved rank-10 opener. The public version moves to **1.44.0** across every static surface that quotes it (README badge, `package.json`, `VERSIONING.md`, this book, `agent/Tlamatini.md`, and the dossier generator); as always it stays git-tag-derived and never hardcoded (`agent/version.py`), and the historical entries below were left untouched. Forward-only.
+
+- **The Three Recon Gods Run Free: OOB_shift_reaper + NAMU — 2026-07-19** — Kalier (remote Kali), Nmapper (local nmap), and Discoverer (the ProjectDiscovery suite) do work that legitimately takes *minutes* — a full-port nmap sweep, a subdomain enumeration, a nuclei run — but Tlamatini's idle-child watchdog was tuned for chat-latency shell calls and would reap them mid-scan, so a long recon read as a "hung" child and got killed. The fix is a deliberate **free-run window**: each of those three agents may run **uninterrupted up to `OOB_shift_reaper` seconds (default 3600)** before the watchdog is even allowed to consider it idle, because a scan that is silently grinding on a remote box is *working*, not stuck. Guarding that permissiveness is **NAMU — the "God of Gods"**: when Tlamatini herself is shutting down, the free-run window is **VOID** — NAMU runs *first*, before the generic sweeps, and tree-kills every recon child **immediately**, regardless of how much of its window remained, so nothing survives her exit. Authorized targets only, and this is a developer-tuned knob. Forward-only.
+
+- **Screenshot → Chat: Paste (Ctrl+V) or Drop an Image Straight Into the Prompt — 2026-07-14** — Handing Tlamatini a picture used to mean leaving the conversation: save the screenshot somewhere, find its path, type the path. Now you just **paste it**. Print Screen (or a snip) → Alt+Tab back to Tlamatini → **Ctrl+V**, and the clipboard bitmap is uploaded to a new endpoint, `POST /agent/paste_image/`, which re-encodes it to JPEG with Pillow (transparency flattened onto white, 25 MB ceiling) and writes it into her **own `Temp` directory** as `image_<YYYYmmdd>_<HHMMSS>_<ms>.jpg` — obeying the 2026-06-02 Temp policy through `path_guard.resolve_temp_path()`, so nothing is ever scattered outside Tlamatini. The browser then splices the image's **absolute path into the chat box at the caret** — mid-sentence, exactly where you left the cursor — and shows a **thumbnail chip** above the input whose `×` removes both the chip and the path again. Dragging image files from Explorer onto the chat column does the same; the drop zone is deliberately scoped to `#main-chat-container` so it never fights the External-MCP dialog's document-level `.json` drop handler. The design choice that makes it *useful* rather than merely pretty is that she is handed a **path, not an attachment**: a path is precisely what **Image-Interpreter** eats, so the very next thing you type — *"…what's wrong in this screenshot?"* — is a complete, actionable Multi-Turn prompt, and `prompt.pmt` now teaches her to recognise an `image_<timestamp>.jpg` under Temp as *the* image the user means, interpret it immediately, and never ask them to re-attach something they already gave her. Two implementation truths were learned the hard way in the live visible test and are now pinned in the fix log: the **paste listener lives on `document`, not on the textarea** (after Alt+Tab the focus is on `<body>`, so a textarea-scoped listener would never fire — the caret is remembered separately), and **`agent_page_layout.js::computeFormMinHeight()` must count the new chips row**, because that function pins `#tools-chat-form-container` to an explicit pixel height and any uncounted row silently pushes the textarea and the Send button off the bottom of the screen. New surfaces: `agent/static/agent/js/chat_image_paste.js` (a self-contained IIFE that declares **no** cross-file globals — the const-poison contract is respected), `views.paste_image_view` + the `paste_image/` route, `#chat-image-chips` / `#chat-drop-overlay` in `agent_page.html`, and the `.chat-img-*` styling. Proven live 16/16 on Angela's real desktop with real keystrokes: a 2560×1600 clipboard bitmap landed in Temp as a 199 KB JPEG, its path inserted mid-sentence, thumbnail rendered, chip-removal clean, and the input bar still fully on screen.
 
 - **Release v1.40.1 — The Port Is Yours: Tlamatini's Web Port Becomes Configurable — 2026-07-13** — Until now Tlamatini's web port was **8000, and only 8000** — the number was baked into `manage.py`, so on a machine where Windows had *reserved* that port there was no escape from a frozen install short of rebuilding her from source. It is a real and nasty failure: when Hyper-V / WSL / Docker claims 8000 inside one of Windows' dynamic-port **exclusion ranges** (`netsh interface ipv4 show excludedportrange protocol=tcp`), Daphne cannot bind it and Tlamatini dies at startup with **`WinError 10013`** — *"an attempt was made to access a socket in a way forbidden by its access permissions"* — a message that tells a user nothing about what to do next. So the port moved out of the code and into her configuration: **`config.json` → `django_port`** (default `8000`). Change one line, restart, and she comes up wherever you asked — **no rebuild, no code edit**. Three stdlib-only helpers in `manage.py` do the work, deliberately written to run *before* Django is even imported: `_resolve_config_path()` (honours `CONFIG_PATH`, else the frozen exe's neighbour, else `agent/config.json`), `_resolve_django_port()` (reads and range-validates the key), and `_apply_configured_port()` (injects it into `sys.argv`). The completion pass on the same day closed the half that was still missing: the first cut had only taught the **frozen** launch paths to read the key, so `python manage.py runserver` and `manage.py startserver` were **still silently binding 8000 and ignoring it** — `main()` now applies the resolver once, outside the frozen branch, so all five paths finally agree (frozen double-click, `.flw` file association, the browser she auto-opens, source `runserver`, and `startserver`). Two invariants are load-bearing and pinned by **24 tests** (`agent/test_django_port_config.py`): the resolution is **fail-open** — a missing key, a missing file, unparseable JSON, a non-numeric value or one outside `1–65535` all fall back to 8000 and print a `--- [PORT] …` line, because a typo in a config file must never be able to stop her from starting — and an **explicit command-line port always wins** (`runserver 9100` is never second-guessed, and the injector never double-appends onto the frozen rewrite). What the key deliberately does *not* reach: a direct `daphne`/`uvicorn` launch bypasses `manage.py` entirely, her two MCP helper listeners (`:8765`, `:50051`) are a separate axis with their own keys, and the TeleTlamatini bridge keeps its own `tlamatini.base_url`. Documented everywhere it matters — `README.md` (a user-facing "port 8000 already taken?" recipe), `CLAUDE.md`, `docs/claude/architecture.md`, `docs/claude/gotchas.md`, the fix log, and `agent/Tlamatini.md`, where she is now told never to say *"Tlamatini runs on 8000"* as though it were fixed. The public version moves to **1.40.1** across every static surface that quotes it (README badge, `package.json`, `VERSIONING.md`, this book, `agent/Tlamatini.md`); as always it stays git-tag-derived and never hardcoded (`agent/version.py`), and the historical v1.40.0 / v1.39.5 entries below were left untouched. Forward-only.
 
