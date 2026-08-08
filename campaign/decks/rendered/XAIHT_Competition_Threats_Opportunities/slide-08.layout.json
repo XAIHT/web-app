@@ -1,0 +1,1454 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/1x40cf",
+    "id": "1x40cf",
+    "slide": 8,
+    "layoutId": "7e5aaea7-1c39-4250-851b-d0ffb22ec489",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#090B0C",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "7e5aaea7-1c39-4250-851b-d0ffb22ec489",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qpsjidgb",
+      "id": "1",
+      "bbox": [
+        56,
+        40,
+        620,
+        22
+      ],
+      "geometry": "rect",
+      "text": "STRENGTHS",
+      "textPreview": "STRENGTHS",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#42A783",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "STRENGTHS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "STRENGTHS",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#42A783",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "STRENGTHS",
+              "fontSize": 10,
+              "color": "#42A783",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dsj2tsfm",
+      "id": "2",
+      "name": "slide-8-title",
+      "bbox": [
+        56,
+        76,
+        1110,
+        72
+      ],
+      "geometry": "rect",
+      "text": "The current product already demonstrates unusual integration breadth.",
+      "textPreview": "The current product already demonstrates unusual integration breadth.",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The current product already demonstrates unusual integration breadth."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The current product already demonstrates unusual integration breadth.",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The current product already demonstrates unusual integration breadth.",
+              "fontSize": 34,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cra1kny1",
+      "id": "3",
+      "bbox": [
+        56,
+        158,
+        1060,
+        38
+      ],
+      "geometry": "rect",
+      "text": "These strengths become commercial only when packaged into reliable, repeatable outcomes.",
+      "textPreview": "These strengths become commercial only when packaged into reliable, repeatable outcomes.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "These strengths become commercial only when packaged into reliable, repeatable outcomes."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "These strengths become commercial only when packaged into reliable, repeatable outcomes.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "These strengths become commercial only when packaged into reliable, repeatable outcomes.",
+              "fontSize": 16,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3mhknixk",
+      "id": "4",
+      "bbox": [
+        56,
+        681,
+        1168,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#303738",
+      "lineColor": "#303738",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/218jedgz",
+      "id": "5",
+      "bbox": [
+        56,
+        688,
+        240,
+        18
+      ],
+      "geometry": "rect",
+      "text": "XAIHT / TLAMATINI",
+      "textPreview": "XAIHT / TLAMATINI",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#D6A84B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "XAIHT / TLAMATINI"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "XAIHT / TLAMATINI",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#D6A84B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "XAIHT / TLAMATINI",
+              "fontSize": 9,
+              "color": "#D6A84B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/poz2p8fq",
+      "id": "6",
+      "bbox": [
+        410,
+        688,
+        460,
+        18
+      ],
+      "geometry": "rect",
+      "text": "COMPETITION / THREATS / OPPORTUNITIES",
+      "textPreview": "COMPETITION / THREATS / OPPORTUNITIES",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "COMPETITION / THREATS / OPPORTUNITIES"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "COMPETITION / THREATS / OPPORTUNITIES",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "COMPETITION / THREATS / OPPORTUNITIES",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/onq1g3y5",
+      "id": "7",
+      "bbox": [
+        1170,
+        688,
+        54,
+        18
+      ],
+      "geometry": "rect",
+      "text": "08",
+      "textPreview": "08",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "08"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "08",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "08",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ilkz2xo",
+      "id": "8",
+      "bbox": [
+        56,
+        220,
+        360,
+        145
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mxc3qxg3",
+      "id": "9",
+      "bbox": [
+        56,
+        220,
+        5,
+        145
+      ],
+      "geometry": "rect",
+      "fillColor": "#36B7D9",
+      "lineColor": "#36B7D9",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gr25crih",
+      "id": "10",
+      "bbox": [
+        78,
+        238,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "BREADTH",
+      "textPreview": "BREADTH",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "BREADTH"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "BREADTH",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "BREADTH",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcb6lwzm",
+      "id": "11",
+      "bbox": [
+        78,
+        278,
+        318,
+        73
+      ],
+      "geometry": "rect",
+      "text": "85 agents and 94 Multi-Turn tools across software, media, engines, devices, messaging, desktop, browser, and MCP.",
+      "textPreview": "85 agents and 94 Multi-Turn tools across software, media, engines, devices, messaging, desktop, browser, and MCP.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "85 agents and 94 Multi-Turn tools across software, media,"
+          },
+          {
+            "index": 2,
+            "text": "engines, devices, messaging, desktop, browser, and MCP."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "85 agents and 94 Multi-Turn tools across software, media, engines, devices, messaging, desktop, browser, and MCP.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "85 agents and 94 Multi-Turn tools across software, media, engines, devices, messaging, desktop, browser, and MCP.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/upknah0b",
+      "id": "12",
+      "bbox": [
+        444,
+        220,
+        360,
+        145
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vqtojmhw",
+      "id": "13",
+      "bbox": [
+        444,
+        220,
+        5,
+        145
+      ],
+      "geometry": "rect",
+      "fillColor": "#42A783",
+      "lineColor": "#42A783",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8n2587i5",
+      "id": "14",
+      "bbox": [
+        466,
+        238,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "INSPECTABILITY",
+      "textPreview": "INSPECTABILITY",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INSPECTABILITY"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INSPECTABILITY",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INSPECTABILITY",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tob6hczq",
+      "id": "15",
+      "bbox": [
+        466,
+        278,
+        318,
+        73
+      ],
+      "geometry": "rect",
+      "text": "MIT core, readable Python agents, visible workflows, and source-grounded claims.",
+      "textPreview": "MIT core, readable Python agents, visible workflows, and source-grounded claims.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "MIT core, readable Python agents, visible workflows, and"
+          },
+          {
+            "index": 2,
+            "text": "source-grounded claims."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "MIT core, readable Python agents, visible workflows, and source-grounded claims.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MIT core, readable Python agents, visible workflows, and source-grounded claims.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6l0n6h0z",
+      "id": "16",
+      "bbox": [
+        832,
+        220,
+        392,
+        145
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7m9ofmhk",
+      "id": "17",
+      "bbox": [
+        832,
+        220,
+        5,
+        145
+      ],
+      "geometry": "rect",
+      "fillColor": "#D6A84B",
+      "lineColor": "#D6A84B",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kji547i9",
+      "id": "18",
+      "bbox": [
+        854,
+        238,
+        350,
+        30
+      ],
+      "geometry": "rect",
+      "text": "HUMAN COMMAND",
+      "textPreview": "HUMAN COMMAND",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "HUMAN COMMAND"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "HUMAN COMMAND",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "HUMAN COMMAND",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkr6dczu",
+      "id": "19",
+      "bbox": [
+        854,
+        278,
+        350,
+        73
+      ],
+      "geometry": "rect",
+      "text": "Approval gates, Step-by-Step pacing, reports, cancellation, and explicit responsibility.",
+      "textPreview": "Approval gates, Step-by-Step pacing, reports, cancellation, and explicit responsibility.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Approval gates, Step-by-Step pacing, reports, cancellation, and"
+          },
+          {
+            "index": 2,
+            "text": "explicit responsibility."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Approval gates, Step-by-Step pacing, reports, cancellation, and explicit responsibility.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Approval gates, Step-by-Step pacing, reports, cancellation, and explicit responsibility.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14zul4n6",
+      "id": "20",
+      "bbox": [
+        56,
+        395,
+        360,
+        145
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03qdsz6l",
+      "id": "21",
+      "bbox": [
+        56,
+        395,
+        5,
+        145
+      ],
+      "geometry": "rect",
+      "fillColor": "#8B78D3",
+      "lineColor": "#8B78D3",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2hcju50",
+      "id": "22",
+      "bbox": [
+        78,
+        413,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "LOCAL-FIRST CONTEXT",
+      "textPreview": "LOCAL-FIRST CONTEXT",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LOCAL-FIRST CONTEXT"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LOCAL-FIRST CONTEXT",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LOCAL-FIRST CONTEXT",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e18vqpov",
+      "id": "23",
+      "bbox": [
+        78,
+        453,
+        318,
+        73
+      ],
+      "geometry": "rect",
+      "text": "Project retrieval and local application state reduce dependence on a single cloud surface.",
+      "textPreview": "Project retrieval and local application state reduce dependence on a single cloud surface.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Project retrieval and local application state reduce"
+          },
+          {
+            "index": 2,
+            "text": "dependence on a single cloud surface."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Project retrieval and local application state reduce dependence on a single cloud surface.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Project retrieval and local application state reduce dependence on a single cloud surface.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0zuhkna",
+      "id": "24",
+      "bbox": [
+        444,
+        395,
+        360,
+        145
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/czqdoz6p",
+      "id": "25",
+      "bbox": [
+        444,
+        395,
+        5,
+        145
+      ],
+      "geometry": "rect",
+      "fillColor": "#E56855",
+      "lineColor": "#E56855",
+      "lineWidth": 1
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ryhcfu54",
+      "id": "26",
+      "bbox": [
+        466,
+        413,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "PHYSICAL PROOF",
+      "textPreview": "PHYSICAL PROOF",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PHYSICAL PROOF"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PHYSICAL PROOF",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PHYSICAL PROOF",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qdobmpoj",
+      "id": "27",
+      "bbox": [
+        466,
+        453,
+        318,
+        73
+      ],
+      "geometry": "rect",
+      "text": "Robotics, firmware, video verdicts, and engine outputs make demonstrations tangible.",
+      "textPreview": "Robotics, firmware, video verdicts, and engine outputs make demonstrations tangible.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Robotics, firmware, video verdicts, and engine outputs make"
+          },
+          {
+            "index": 2,
+            "text": "demonstrations tangible."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Robotics, firmware, video verdicts, and engine outputs make demonstrations tangible.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Robotics, firmware, video verdicts, and engine outputs make demonstrations tangible.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xwjutone",
+      "id": "28",
+      "bbox": [
+        832,
+        395,
+        392,
+        145
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wvad0j6t",
+      "id": "29",
+      "bbox": [
+        832,
+        395,
+        5,
+        145
+      ],
+      "geometry": "rect",
+      "fillColor": "#36B7D9",
+      "lineColor": "#36B7D9",
+      "lineWidth": 1
+    },
+    {
+      "order": 30,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uh4rel4b",
+      "id": "30",
+      "bbox": [
+        854,
+        413,
+        350,
+        30
+      ],
+      "geometry": "rect",
+      "text": "ECOSYSTEM BRIDGE",
+      "textPreview": "ECOSYSTEM BRIDGE",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ECOSYSTEM BRIDGE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ECOSYSTEM BRIDGE",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ECOSYSTEM BRIDGE",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 31,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vidsnqlw",
+      "id": "31",
+      "bbox": [
+        854,
+        453,
+        350,
+        73
+      ],
+      "geometry": "rect",
+      "text": "ACPX and MCP allow external agents to become collaborators rather than only competitors.",
+      "textPreview": "ACPX and MCP allow external agents to become collaborators rather than only competitors.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ACPX and MCP allow external agents to become collaborators"
+          },
+          {
+            "index": 2,
+            "text": "rather than only competitors."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ACPX and MCP allow external agents to become collaborators rather than only competitors.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ACPX and MCP allow external agents to become collaborators rather than only competitors.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

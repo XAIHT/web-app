@@ -1,0 +1,1098 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/iznu3z",
+    "id": "iznu3z",
+    "slide": 5,
+    "layoutId": "7e5aaea7-1c39-4250-851b-d0ffb22ec489",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#090B0C",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "7e5aaea7-1c39-4250-851b-d0ffb22ec489",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nmdwbq10",
+      "id": "1",
+      "bbox": [
+        56,
+        40,
+        620,
+        22
+      ],
+      "geometry": "rect",
+      "text": "AUTOMATION AND FRAMEWORKS",
+      "textPreview": "AUTOMATION AND FRAMEWORKS",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#42A783",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AUTOMATION AND FRAMEWORKS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AUTOMATION AND FRAMEWORKS",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#42A783",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "AUTOMATION AND FRAMEWORKS",
+              "fontSize": 10,
+              "color": "#42A783",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/onmxkv2l",
+      "id": "2",
+      "name": "slide-5-title",
+      "bbox": [
+        56,
+        76,
+        1110,
+        72
+      ],
+      "geometry": "rect",
+      "text": "Workflow incumbents own connectors; frameworks own programmable orchestration.",
+      "textPreview": "Workflow incumbents own connectors; frameworks own programmable orchestration.",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Workflow incumbents own connectors; frameworks own programmable"
+          },
+          {
+            "index": 2,
+            "text": "orchestration."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Workflow incumbents own connectors; frameworks own programmable orchestration.",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Workflow incumbents own connectors; frameworks own programmable orchestration.",
+              "fontSize": 34,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9oved0j6",
+      "id": "3",
+      "bbox": [
+        56,
+        158,
+        1060,
+        38
+      ],
+      "geometry": "rect",
+      "text": "XAIHT’s answer is integration depth across local project context, engines, devices, voice, and human command.",
+      "textPreview": "XAIHT’s answer is integration depth across local project context, engines, devices, voice, and human command.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "XAIHT’s answer is integration depth across local project context, engines, devices, voice, and human command."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "XAIHT’s answer is integration depth across local project context, engines, devices, voice, and human command.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "XAIHT’s answer is integration depth across local project context, engines, devices, voice, and human command.",
+              "fontSize": 16,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/apofm5kr",
+      "id": "4",
+      "bbox": [
+        56,
+        681,
+        1168,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#303738",
+      "lineColor": "#303738",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bqxwfq1w",
+      "id": "5",
+      "bbox": [
+        56,
+        688,
+        240,
+        18
+      ],
+      "geometry": "rect",
+      "text": "XAIHT / TLAMATINI",
+      "textPreview": "XAIHT / TLAMATINI",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#D6A84B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "XAIHT / TLAMATINI"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "XAIHT / TLAMATINI",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#D6A84B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "XAIHT / TLAMATINI",
+              "fontSize": 9,
+              "color": "#D6A84B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wr6xov2h",
+      "id": "6",
+      "bbox": [
+        410,
+        688,
+        460,
+        18
+      ],
+      "geometry": "rect",
+      "text": "COMPETITION / THREATS / OPPORTUNITIES",
+      "textPreview": "COMPETITION / THREATS / OPPORTUNITIES",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "COMPETITION / THREATS / OPPORTUNITIES"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "COMPETITION / THREATS / OPPORTUNITIES",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "COMPETITION / THREATS / OPPORTUNITIES",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xsfyh0j2",
+      "id": "7",
+      "bbox": [
+        1170,
+        688,
+        54,
+        18
+      ],
+      "geometry": "rect",
+      "text": "05",
+      "textPreview": "05",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itofq5kn",
+      "id": "8",
+      "bbox": [
+        56,
+        230,
+        360,
+        300
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/juxgja18",
+      "id": "9",
+      "bbox": [
+        56,
+        230,
+        5,
+        300
+      ],
+      "geometry": "rect",
+      "fillColor": "#42A783",
+      "lineColor": "#42A783",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ba9kjuh0",
+      "id": "10",
+      "bbox": [
+        78,
+        248,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "n8n",
+      "textPreview": "n8n",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "n8n"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "n8n",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "n8n",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a903ap0f",
+      "id": "11",
+      "bbox": [
+        78,
+        288,
+        318,
+        228
+      ],
+      "geometry": "rect",
+      "text": "Large workflow/connectors surface and AI-agent nodes\n\nStrategic reading: Hard to beat on general SaaS automation",
+      "textPreview": "Large workflow/connectors surface and AI-agent nodes |  | Strategic reading: Hard to beat on general SaaS automation",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Large workflow/connectors surface and AI-agent nodes"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "Strategic reading: Hard to beat on general SaaS automation"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Large workflow/connectors surface and AI-agent nodes",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Large workflow/connectors surface and AI-agent nodes",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Strategic reading: Hard to beat on general SaaS automation",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Strategic reading: Hard to beat on general SaaS automation",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xcr2l4zq",
+      "id": "12",
+      "bbox": [
+        446,
+        230,
+        360,
+        300
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbilczil",
+      "id": "13",
+      "bbox": [
+        446,
+        230,
+        5,
+        300
+      ],
+      "geometry": "rect",
+      "fillColor": "#D6A84B",
+      "lineColor": "#D6A84B",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6pkfuho",
+      "id": "14",
+      "bbox": [
+        468,
+        248,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "Dify",
+      "textPreview": "Dify",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Dify"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Dify",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Dify",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/25gj6p03",
+      "id": "15",
+      "bbox": [
+        468,
+        288,
+        318,
+        228
+      ],
+      "geometry": "rect",
+      "text": "Open-source LLM application and workflow platform\n\nStrategic reading: Strong adjacent open-source distribution",
+      "textPreview": "Open-source LLM application and workflow platform |  | Strategic reading: Strong adjacent open-source distribution",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Open-source LLM application and workflow platform"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "Strategic reading: Strong adjacent open-source distribution"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Open-source LLM application and workflow platform",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Open-source LLM application and workflow platform",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Strategic reading: Strong adjacent open-source distribution",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Strategic reading: Strong adjacent open-source distribution",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8r2h4zu",
+      "id": "16",
+      "bbox": [
+        836,
+        230,
+        360,
+        300
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7yl8zi9",
+      "id": "17",
+      "bbox": [
+        836,
+        230,
+        5,
+        300
+      ],
+      "geometry": "rect",
+      "fillColor": "#8B78D3",
+      "lineColor": "#8B78D3",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72tkreh8",
+      "id": "18",
+      "bbox": [
+        858,
+        248,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "LangGraph",
+      "textPreview": "LangGraph",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LangGraph"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LangGraph",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LangGraph",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1k3i90n",
+      "id": "19",
+      "bbox": [
+        858,
+        288,
+        318,
+        228
+      ],
+      "geometry": "rect",
+      "text": "Stateful agent orchestration for developers\n\nStrategic reading: Powerful framework; more building block than packaged operator",
+      "textPreview": "Stateful agent orchestration for developers |  | Strategic reading: Powerful framework; more building block than packaged operator",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Stateful agent orchestration for developers"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "Strategic reading: Powerful framework; more building block"
+          },
+          {
+            "index": 4,
+            "text": "than packaged operator"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Stateful agent orchestration for developers",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Stateful agent orchestration for developers",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "Strategic reading: Powerful framework; more building block than packaged operator",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Strategic reading: Powerful framework; more building block than packaged operator",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ix4nqdkv",
+      "id": "20",
+      "bbox": [
+        56,
+        655,
+        1120,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Sources: n8n AI Agents, Dify, and LangGraph official product pages.",
+      "textPreview": "Sources: n8n AI Agents, Dify, and LangGraph official product pages.",
+      "resolvedFontSize": 8,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 8,
+        "typeface": "+mn-lt",
+        "color": "#727B77",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Sources: n8n AI Agents, Dify, and LangGraph official product pages."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Sources: n8n AI Agents, Dify, and LangGraph official product pages.",
+          "resolvedTextStyle": {
+            "fontSize": 8,
+            "color": "#727B77",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Sources: n8n AI Agents, Dify, and LangGraph official product pages.",
+              "fontSize": 8,
+              "color": "#727B77",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

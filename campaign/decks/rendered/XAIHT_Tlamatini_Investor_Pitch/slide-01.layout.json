@@ -1,0 +1,401 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/yzge32",
+    "id": "yzge32",
+    "slide": 1,
+    "layoutId": "84c45efc-bb53-4a4b-9130-2aa44626236d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "5a9b24bc-045d-4044-949e-6972762dc21e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#090B0C",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "84c45efc-bb53-4a4b-9130-2aa44626236d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "5a9b24bc-045d-4044-949e-6972762dc21e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "5a9b24bc-045d-4044-949e-6972762dc21e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/983yhgz2",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "alt": "The human-commanded operations layer for builders",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "a73219ee-e0ba-42b6-8c08-97bfb8e0b992",
+        "contentType": "image/png",
+        "byteLength": 1878140
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fm5w7eho",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        650,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#090B0C",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ulwfe903",
+      "id": "3",
+      "bbox": [
+        650,
+        0,
+        140,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#111516",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/kjux4ri5",
+      "id": "4",
+      "bbox": [
+        58,
+        54,
+        430,
+        76
+      ],
+      "alt": "XAIHT Tlamatini logo",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "7e03a697-411a-48ce-968e-63a386bab4be",
+        "contentType": "image/png",
+        "byteLength": 40090
+      }
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4ryxkji5",
+      "id": "5",
+      "bbox": [
+        58,
+        226,
+        610,
+        190
+      ],
+      "geometry": "rect",
+      "text": "The human-commanded operations layer for builders",
+      "textPreview": "The human-commanded operations layer for builders",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 46,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The human-commanded"
+          },
+          {
+            "index": 2,
+            "text": "operations layer for builders"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The human-commanded operations layer for builders",
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The human-commanded operations layer for builders",
+              "fontSize": 46,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3qpgbeh0",
+      "id": "6",
+      "bbox": [
+        58,
+        438,
+        540,
+        84
+      ],
+      "geometry": "rect",
+      "text": "Tlamatini connects project intelligence, guarded action, creative engines, embedded hardware, and reusable workflows.",
+      "textPreview": "Tlamatini connects project intelligence, guarded action, creative engines, embedded hardware, and reusable workflows.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#D5D9D5",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Tlamatini connects project intelligence, guarded action, creative"
+          },
+          {
+            "index": 2,
+            "text": "engines, embedded hardware, and reusable workflows."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Tlamatini connects project intelligence, guarded action, creative engines, embedded hardware, and reusable workflows.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#D5D9D5",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Tlamatini connects project intelligence, guarded action, creative engines, embedded hardware, and reusable workflows.",
+              "fontSize": 18,
+              "color": "#D5D9D5",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2pgfi90f",
+      "id": "7",
+      "bbox": [
+        58,
+        633,
+        180,
+        22
+      ],
+      "geometry": "rect",
+      "text": "JULY 2026",
+      "textPreview": "JULY 2026",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#D6A84B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "JULY 2026"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "JULY 2026",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#D6A84B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "JULY 2026",
+              "fontSize": 10,
+              "color": "#D6A84B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dw7yh8z2",
+      "id": "8",
+      "bbox": [
+        280,
+        633,
+        300,
+        22
+      ],
+      "geometry": "rect",
+      "text": "INVESTOR BRIEF",
+      "textPreview": "INVESTOR BRIEF",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INVESTOR BRIEF"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INVESTOR BRIEF",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INVESTOR BRIEF",
+              "fontSize": 10,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

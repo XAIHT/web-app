@@ -1,0 +1,1140 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/c1cimm",
+    "id": "c1cimm",
+    "slide": 2,
+    "layoutId": "84c45efc-bb53-4a4b-9130-2aa44626236d",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "5a9b24bc-045d-4044-949e-6972762dc21e",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#090B0C",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "84c45efc-bb53-4a4b-9130-2aa44626236d",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "5a9b24bc-045d-4044-949e-6972762dc21e",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "5a9b24bc-045d-4044-949e-6972762dc21e",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4b61kvud",
+      "id": "1",
+      "bbox": [
+        56,
+        40,
+        620,
+        22
+      ],
+      "geometry": "rect",
+      "text": "CATEGORY SHIFT",
+      "textPreview": "CATEGORY SHIFT",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#42A783",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "CATEGORY SHIFT"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "CATEGORY SHIFT",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#42A783",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "CATEGORY SHIFT",
+              "fontSize": 10,
+              "color": "#42A783",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ax0rqts",
+      "id": "2",
+      "name": "slide-2-title",
+      "bbox": [
+        56,
+        76,
+        1110,
+        72
+      ],
+      "geometry": "rect",
+      "text": "AI is moving beyond the chat box.",
+      "textPreview": "AI is moving beyond the chat box.",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AI is moving beyond the chat box."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AI is moving beyond the chat box.",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "AI is moving beyond the chat box.",
+              "fontSize": 34,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i9ozilc7",
+      "id": "3",
+      "bbox": [
+        56,
+        158,
+        1060,
+        38
+      ],
+      "geometry": "rect",
+      "text": "The valuable unit is no longer an answer. It is an inspectable action across the systems where work happens.",
+      "textPreview": "The valuable unit is no longer an answer. It is an inspectable action across the systems where work happens.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The valuable unit is no longer an answer. It is an inspectable action across the systems where work happens."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The valuable unit is no longer an answer. It is an inspectable action across the systems where work happens.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The valuable unit is no longer an answer. It is an inspectable action across the systems where work happens.",
+              "fontSize": 16,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0zix0bu",
+      "id": "4",
+      "bbox": [
+        56,
+        681,
+        1168,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#303738",
+      "lineColor": "#303738",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/szq1ovu9",
+      "id": "5",
+      "bbox": [
+        56,
+        688,
+        240,
+        18
+      ],
+      "geometry": "rect",
+      "text": "XAIHT / TLAMATINI",
+      "textPreview": "XAIHT / TLAMATINI",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#D6A84B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "XAIHT / TLAMATINI"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "XAIHT / TLAMATINI",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#D6A84B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "XAIHT / TLAMATINI",
+              "fontSize": 9,
+              "color": "#D6A84B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/reh0vat4",
+      "id": "6",
+      "bbox": [
+        410,
+        688,
+        460,
+        18
+      ],
+      "geometry": "rect",
+      "text": "INVESTOR BRIEF",
+      "textPreview": "INVESTOR BRIEF",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "INVESTOR BRIEF"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "INVESTOR BRIEF",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "INVESTOR BRIEF",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qd8jm5cj",
+      "id": "7",
+      "bbox": [
+        1170,
+        688,
+        54,
+        18
+      ],
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t4vilgbq",
+      "id": "8",
+      "bbox": [
+        56,
+        220,
+        260,
+        330
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83mhcbu5",
+      "id": "9",
+      "bbox": [
+        56,
+        220,
+        5,
+        330
+      ],
+      "geometry": "rect",
+      "fillColor": "#36B7D9",
+      "lineColor": "#36B7D9",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/eh4fyt8j",
+      "id": "10",
+      "bbox": [
+        78,
+        238,
+        218,
+        30
+      ],
+      "geometry": "rect",
+      "text": "Coding agents",
+      "textPreview": "Coding agents",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Coding agents"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Coding agents",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Coding agents",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fidgry94",
+      "id": "11",
+      "bbox": [
+        78,
+        278,
+        218,
+        258
+      ],
+      "geometry": "rect",
+      "text": "Deep code execution, but commonly optimized around repositories and software delivery.",
+      "textPreview": "Deep code execution, but commonly optimized around repositories and software delivery.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Deep code execution, but commonly"
+          },
+          {
+            "index": 2,
+            "text": "optimized around repositories and"
+          },
+          {
+            "index": 3,
+            "text": "software delivery."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Deep code execution, but commonly optimized around repositories and software delivery.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Deep code execution, but commonly optimized around repositories and software delivery.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0j6x03qp",
+      "id": "12",
+      "bbox": [
+        342,
+        220,
+        260,
+        330
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1kfyt8ra",
+      "id": "13",
+      "bbox": [
+        342,
+        220,
+        5,
+        330
+      ],
+      "geometry": "rect",
+      "fillColor": "#42A783",
+      "lineColor": "#42A783",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2loz2d8v",
+      "id": "14",
+      "bbox": [
+        364,
+        238,
+        218,
+        30
+      ],
+      "geometry": "rect",
+      "text": "Automation platforms",
+      "textPreview": "Automation platforms",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Automation platforms"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Automation platforms",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Automation platforms",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nmxgvi9g",
+      "id": "15",
+      "bbox": [
+        364,
+        278,
+        218,
+        258
+      ],
+      "geometry": "rect",
+      "text": "Broad business integrations, but often distant from project context, creative tools, and device work.",
+      "textPreview": "Broad business integrations, but often distant from project context, creative tools, and device work.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Broad business integrations, but often"
+          },
+          {
+            "index": 2,
+            "text": "distant from project context, creative"
+          },
+          {
+            "index": 3,
+            "text": "tools, and device work."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Broad business integrations, but often distant from project context, creative tools, and device work.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Broad business integrations, but often distant from project context, creative tools, and device work.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o76h4nql",
+      "id": "16",
+      "bbox": [
+        628,
+        220,
+        260,
+        330
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8fyxsr6",
+      "id": "17",
+      "bbox": [
+        628,
+        220,
+        5,
+        330
+      ],
+      "geometry": "rect",
+      "fillColor": "#E56855",
+      "lineColor": "#E56855",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a9oz6d8r",
+      "id": "18",
+      "bbox": [
+        650,
+        238,
+        218,
+        30
+      ],
+      "geometry": "rect",
+      "text": "Physical toolchains",
+      "textPreview": "Physical toolchains",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Physical toolchains"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Physical toolchains",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Physical toolchains",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bahgzi9c",
+      "id": "19",
+      "bbox": [
+        650,
+        278,
+        218,
+        258
+      ],
+      "geometry": "rect",
+      "text": "Powerful engines and boards, but fragmented across specialists, commands, and local setup.",
+      "textPreview": "Powerful engines and boards, but fragmented across specialists, commands, and local setup.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Powerful engines and boards, but"
+          },
+          {
+            "index": 2,
+            "text": "fragmented across specialists,"
+          },
+          {
+            "index": 3,
+            "text": "commands, and local setup."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Powerful engines and boards, but fragmented across specialists, commands, and local setup.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Powerful engines and boards, but fragmented across specialists, commands, and local setup.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ehgn25k",
+      "id": "20",
+      "bbox": [
+        914,
+        220,
+        310,
+        330
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6d8fexoz",
+      "id": "21",
+      "bbox": [
+        914,
+        220,
+        5,
+        330
+      ],
+      "geometry": "rect",
+      "fillColor": "#D6A84B",
+      "lineColor": "#D6A84B",
+      "lineWidth": 1
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgzypsna",
+      "id": "22",
+      "bbox": [
+        936,
+        238,
+        268,
+        30
+      ],
+      "geometry": "rect",
+      "text": "The open space",
+      "textPreview": "The open space",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The open space"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The open space",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The open space",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fqxgn65",
+      "id": "23",
+      "bbox": [
+        936,
+        278,
+        268,
+        258
+      ],
+      "geometry": "rect",
+      "text": "A local-first operator that knows the project, crosses these surfaces, and keeps the human in command.",
+      "textPreview": "A local-first operator that knows the project, crosses these surfaces, and keeps the human in command.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A local-first operator that knows the project,"
+          },
+          {
+            "index": 2,
+            "text": "crosses these surfaces, and keeps the human in"
+          },
+          {
+            "index": 3,
+            "text": "command."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A local-first operator that knows the project, crosses these surfaces, and keeps the human in command.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A local-first operator that knows the project, crosses these surfaces, and keeps the human in command.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

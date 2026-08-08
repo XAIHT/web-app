@@ -1,0 +1,959 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/tzkzy3",
+    "id": "tzkzy3",
+    "slide": 11,
+    "layoutId": "7e5aaea7-1c39-4250-851b-d0ffb22ec489",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#090B0C",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "7e5aaea7-1c39-4250-851b-d0ffb22ec489",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "6c57d8e3-9ca1-4049-97f3-217b660c9fa0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7epgjm9s",
+      "id": "1",
+      "bbox": [
+        56,
+        40,
+        620,
+        22
+      ],
+      "geometry": "rect",
+      "text": "OPPORTUNITIES",
+      "textPreview": "OPPORTUNITIES",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#42A783",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "OPPORTUNITIES"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "OPPORTUNITIES",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#42A783",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "OPPORTUNITIES",
+              "fontSize": 10,
+              "color": "#42A783",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fixcrad",
+      "id": "2",
+      "name": "slide-11-title",
+      "bbox": [
+        56,
+        76,
+        1110,
+        72
+      ],
+      "geometry": "rect",
+      "text": "Open-source distribution can turn specialist integrations into a trust network.",
+      "textPreview": "Open-source distribution can turn specialist integrations into a trust network.",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Open-source distribution can turn specialist integrations into a trust network."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Open-source distribution can turn specialist integrations into a trust network.",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Open-source distribution can turn specialist integrations into a trust network.",
+              "fontSize": 34,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgrylwry",
+      "id": "3",
+      "bbox": [
+        56,
+        158,
+        1060,
+        38
+      ],
+      "geometry": "rect",
+      "text": "The highest-value opportunities pair visible proof with paid implementation.",
+      "textPreview": "The highest-value opportunities pair visible proof with paid implementation.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The highest-value opportunities pair visible proof with paid implementation."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The highest-value opportunities pair visible proof with paid implementation.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The highest-value opportunities pair visible proof with paid implementation.",
+              "fontSize": 16,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uh0fe1sj",
+      "id": "4",
+      "bbox": [
+        56,
+        681,
+        1168,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#303738",
+      "lineColor": "#303738",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vi9gn69o",
+      "id": "5",
+      "bbox": [
+        56,
+        688,
+        240,
+        18
+      ],
+      "geometry": "rect",
+      "text": "XAIHT / TLAMATINI",
+      "textPreview": "XAIHT / TLAMATINI",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#D6A84B",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "XAIHT / TLAMATINI"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "XAIHT / TLAMATINI",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#D6A84B",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "XAIHT / TLAMATINI",
+              "fontSize": 9,
+              "color": "#D6A84B",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gjixgba9",
+      "id": "6",
+      "bbox": [
+        410,
+        688,
+        460,
+        18
+      ],
+      "geometry": "rect",
+      "text": "COMPETITION / THREATS / OPPORTUNITIES",
+      "textPreview": "COMPETITION / THREATS / OPPORTUNITIES",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "COMPETITION / THREATS / OPPORTUNITIES"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "COMPETITION / THREATS / OPPORTUNITIES",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "COMPETITION / THREATS / OPPORTUNITIES",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hkrypgru",
+      "id": "7",
+      "bbox": [
+        1170,
+        688,
+        54,
+        18
+      ],
+      "geometry": "rect",
+      "text": "11",
+      "textPreview": "11",
+      "resolvedFontSize": 9,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 9,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "11"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "11",
+          "resolvedTextStyle": {
+            "fontSize": 9,
+            "color": "#9CA5A1",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "11",
+              "fontSize": 9,
+              "color": "#9CA5A1",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/il0zi1sf",
+      "id": "8",
+      "bbox": [
+        56,
+        220,
+        360,
+        300
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3m9gr690",
+      "id": "9",
+      "bbox": [
+        56,
+        220,
+        5,
+        300
+      ],
+      "geometry": "rect",
+      "fillColor": "#D6A84B",
+      "lineColor": "#D6A84B",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bul03yt4",
+      "id": "10",
+      "bbox": [
+        78,
+        238,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "VERTICAL WORKFLOW PACKS",
+      "textPreview": "VERTICAL WORKFLOW PACKS",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "VERTICAL WORKFLOW PACKS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "VERTICAL WORKFLOW PACKS",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "VERTICAL WORKFLOW PACKS",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/atczatcj",
+      "id": "11",
+      "bbox": [
+        78,
+        278,
+        318,
+        228
+      ],
+      "geometry": "rect",
+      "text": "Validated packs for embedded bring-up, robotic verification, game-production steps, and operational readiness.",
+      "textPreview": "Validated packs for embedded bring-up, robotic verification, game-production steps, and operational readiness.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Validated packs for embedded bring-up, robotic verification,"
+          },
+          {
+            "index": 2,
+            "text": "game-production steps, and operational readiness."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Validated packs for embedded bring-up, robotic verification, game-production steps, and operational readiness.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Validated packs for embedded bring-up, robotic verification, game-production steps, and operational readiness.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xw3i5oba",
+      "id": "12",
+      "bbox": [
+        444,
+        220,
+        360,
+        300
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvuhcjup",
+      "id": "13",
+      "bbox": [
+        444,
+        220,
+        5,
+        300
+      ],
+      "geometry": "rect",
+      "fillColor": "#42A783",
+      "lineColor": "#42A783",
+      "lineWidth": 1
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nq10zet8",
+      "id": "14",
+      "bbox": [
+        466,
+        238,
+        318,
+        30
+      ],
+      "geometry": "rect",
+      "text": "PARTNER-LED DELIVERY",
+      "textPreview": "PARTNER-LED DELIVERY",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "PARTNER-LED DELIVERY"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "PARTNER-LED DELIVERY",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "PARTNER-LED DELIVERY",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/25sz69cn",
+      "id": "15",
+      "bbox": [
+        466,
+        278,
+        318,
+        228
+      ],
+      "geometry": "rect",
+      "text": "Makerspaces, systems integrators, educators, and studios extend reach without centralizing every support burden.",
+      "textPreview": "Makerspaces, systems integrators, educators, and studios extend reach without centralizing every support burden.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Makerspaces, systems integrators, educators, and studios"
+          },
+          {
+            "index": 2,
+            "text": "extend reach without centralizing every support burden."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Makerspaces, systems integrators, educators, and studios extend reach without centralizing every support burden.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Makerspaces, systems integrators, educators, and studios extend reach without centralizing every support burden.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/psji1oby",
+      "id": "16",
+      "bbox": [
+        832,
+        220,
+        392,
+        300
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#111516",
+      "lineColor": "#303738",
+      "lineWidth": 1
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/orah8jut",
+      "id": "17",
+      "bbox": [
+        832,
+        220,
+        5,
+        300
+      ],
+      "geometry": "rect",
+      "fillColor": "#36B7D9",
+      "lineColor": "#36B7D9",
+      "lineWidth": 1
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7m50bitc",
+      "id": "18",
+      "bbox": [
+        854,
+        238,
+        350,
+        30
+      ],
+      "geometry": "rect",
+      "text": "HUMAN-COMMAND STANDARD",
+      "textPreview": "HUMAN-COMMAND STANDARD",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#F2F3EE",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "HUMAN-COMMAND STANDARD"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "HUMAN-COMMAND STANDARD",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#F2F3EE",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "HUMAN-COMMAND STANDARD",
+              "fontSize": 16,
+              "color": "#F2F3EE",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m1wzidcr",
+      "id": "19",
+      "bbox": [
+        854,
+        278,
+        350,
+        228
+      ],
+      "geometry": "rect",
+      "text": "Publish practical patterns for approval, evidence, cancellation, credential scope, and agent responsibility.",
+      "textPreview": "Publish practical patterns for approval, evidence, cancellation, credential scope, and agent responsibility.",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#9CA5A1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Publish practical patterns for approval, evidence, cancellation,"
+          },
+          {
+            "index": 2,
+            "text": "credential scope, and agent responsibility."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Publish practical patterns for approval, evidence, cancellation, credential scope, and agent responsibility.",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#9CA5A1",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Publish practical patterns for approval, evidence, cancellation, credential scope, and agent responsibility.",
+              "fontSize": 12,
+              "color": "#9CA5A1",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

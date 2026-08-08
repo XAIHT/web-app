@@ -1,0 +1,438 @@
+{"kind":"deck","id":"pr/jrnzaf","name":"Deck"}
+{"kind":"layout","layoutId":"6c57d8e3-9ca1-4049-97f3-217b660c9fa0","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"7e5aaea7-1c39-4250-851b-d0ffb22ec489","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/t67ip0","slide":1,"title":"Win the bridge, not the category war","textShapes":4}
+{"kind":"shape","id":"sh/behsfq50","slide":1,"bbox":[0,0,650,720]}
+{"kind":"shape","id":"sh/qd8r6lof","slide":1,"bbox":[650,0,140,720]}
+{"kind":"textbox","id":"sh/03a9cv6h","slide":1,"text":"Win the bridge, not the category war","textPreview":"Win the bridge, not the category war","textChars":36,"textLines":1,"bbox":[58,226,610,190]}
+{"kind":"textbox","id":"sh/z2hsjq5w","slide":1,"text":"A strategic assessment of coding agents, automation platforms, agent frameworks, and Tlamatini’s credible wedge.","textPreview":"A strategic assessment of coding agents, automation platforms, agent frameworks, and Tlamatini’s credible wedge.","textChars":112,"textLines":1,"bbox":[58,438,540,84]}
+{"kind":"textbox","id":"sh/yh8ralor","slide":1,"text":"JULY 2026","textPreview":"JULY 2026","textChars":9,"textLines":1,"bbox":[58,633,180,22]}
+{"kind":"textbox","id":"sh/98jap0ne","slide":1,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[280,633,300,22]}
+{"kind":"image","id":"im/p8vyhwba","slide":1,"name":"","alt":"Win the bridge, not the category war","bbox":[0,0,1280,720]}
+{"kind":"image","id":"im/cvmhcbal","slide":1,"name":"","alt":"XAIHT Tlamatini logo","bbox":[58,54,430,76]}
+{"kind":"notes","id":"nt/t67ip0","slide":1,"text":""}
+{"kind":"slide","id":"sl/ht76hq","slide":2,"title":"DECISION FRAME","textShapes":12}
+{"kind":"textbox","id":"sh/sv6lwz6d","slide":2,"text":"DECISION FRAME","textPreview":"DECISION FRAME","textChars":14,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/7uxk3ups","slide":2,"name":"slide-2-title","text":"Where can XAIHT win before incumbents absorb the feature set?","textPreview":"Where can XAIHT win before incumbents absorb the feature set?","textChars":61,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/69o3u9o7","slide":2,"text":"The answer must combine differentiated capability, customer pain, distribution, and a supportable operating model.","textPreview":"The answer must combine differentiated capability, customer pain, distribution, and a supportable operating model.","textChars":114,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/58f2147m","slide":2,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/k76lsz61","slide":2,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/j6dkzupg","slide":2,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/i543qpob","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/x4v2xk7q","slide":2,"bbox":[56,230,360,300]}
+{"kind":"shape","id":"sh/w3mlofq5","slide":2,"bbox":[56,230,5,300]}
+{"kind":"textbox","id":"sh/ep8r2lkf","slide":2,"text":"QUESTION 1","textPreview":"QUESTION 1","textChars":10,"textLines":1,"bbox":[78,248,318,30]}
+{"kind":"textbox","id":"sh/zqhsvql0","slide":2,"text":"Which workflows require codebase context and real-world tool execution in the same bounded run?","textPreview":"Which workflows require codebase context and real-world tool execution in the same bounded run?","textChars":95,"textLines":1,"bbox":[78,288,318,228]}
+{"kind":"shape","id":"sh/0rq94v25","slide":2,"bbox":[444,230,360,300]}
+{"kind":"shape","id":"sh/1szaxg3q","slide":2,"bbox":[444,230,5,300]}
+{"kind":"textbox","id":"sh/q1ory143","slide":2,"text":"QUESTION 2","textPreview":"QUESTION 2","textChars":10,"textLines":1,"bbox":[466,248,318,30]}
+{"kind":"textbox","id":"sh/r2x8r6lo","slide":2,"text":"Where does human-commanded local operation matter enough to affect purchase or adoption?","textPreview":"Where does human-commanded local operation matter enough to affect purchase or adoption?","textChars":88,"textLines":1,"bbox":[466,288,318,228]}
+{"kind":"shape","id":"sh/cnq90bm9","slide":2,"bbox":[832,230,392,300]}
+{"kind":"shape","id":"sh/dozatg3u","slide":2,"bbox":[832,230,5,300]}
+{"kind":"textbox","id":"sh/ixoru147","slide":2,"text":"QUESTION 3","textPreview":"QUESTION 3","textChars":10,"textLines":1,"bbox":[854,248,350,30]}
+{"kind":"textbox","id":"sh/3yx8n6ls","slide":2,"text":"Which wedge can produce paid, repeatable workflows before broad platforms close the gap?","textPreview":"Which wedge can produce paid, repeatable workflows before broad platforms close the gap?","textChars":88,"textLines":1,"bbox":[854,288,350,228]}
+{"kind":"notes","id":"nt/ht76hq","slide":2,"text":""}
+{"kind":"slide","id":"sl/wji6bg","slide":3,"title":"MARKET STRUCTURE","textShapes":13}
+{"kind":"textbox","id":"sh/t4fydoby","slide":3,"text":"MARKET STRUCTURE","textPreview":"MARKET STRUCTURE","textChars":16,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/614z29s7","slide":3,"name":"slide-3-title","text":"Three established categories converge on agentic work.","textPreview":"Three established categories converge on agentic work.","textChars":54,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/r2dgbets","slide":3,"text":"XAIHT should cooperate with them where possible and compete only where its cross-surface operating layer matters.","textPreview":"XAIHT should cooperate with them where possible and compete only where its cross-surface operating layer matters.","textChars":113,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/4zmh0za1","slide":3,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/50vy94bm","slide":3,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/ix4zy9sb","slide":3,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/jydg7etw","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/ovqhc3al","slide":3,"bbox":[56,220,360,320]}
+{"kind":"shape","id":"sh/pwzil8b6","slide":3,"bbox":[56,220,5,320]}
+{"kind":"textbox","id":"sh/9oby9wrq","slide":3,"text":"CODING AGENTS","textPreview":"CODING AGENTS","textChars":13,"textLines":1,"bbox":[78,238,318,30]}
+{"kind":"textbox","id":"sh/832h0rq5","slide":3,"text":"OpenAI Codex · Claude Code · GitHub Copilot · Cursor\n\nCore advantage: Repository depth, software delivery, developer distribution","textPreview":"OpenAI Codex · Claude Code · GitHub Copilot · Cursor |  | Core advantage: Repository depth, software delivery, developer distribution","textChars":129,"textLines":3,"bbox":[78,278,318,248]}
+{"kind":"shape","id":"sh/729g7m9k","slide":3,"bbox":[446,220,360,320]}
+{"kind":"shape","id":"sh/m10zy18z","slide":3,"bbox":[446,220,5,320]}
+{"kind":"textbox","id":"sh/l0ry5wru","slide":3,"text":"AUTOMATION PLATFORMS","textPreview":"AUTOMATION PLATFORMS","textChars":20,"textLines":1,"bbox":[468,238,318,30]}
+{"kind":"textbox","id":"sh/kzixwrq9","slide":3,"text":"n8n · Dify\n\nCore advantage: Business connectors, workflow builders, deployment surfaces","textPreview":"n8n · Dify |  | Core advantage: Business connectors, workflow builders, deployment surfaces","textChars":87,"textLines":3,"bbox":[468,278,318,248]}
+{"kind":"shape","id":"sh/zy9g3m9o","slide":3,"bbox":[836,220,360,320]}
+{"kind":"shape","id":"sh/yx0fuh83","slide":3,"bbox":[836,220,5,320]}
+{"kind":"textbox","id":"sh/5wvyhgry","slide":3,"text":"AGENT FRAMEWORKS","textPreview":"AGENT FRAMEWORKS","textChars":16,"textLines":1,"bbox":[858,238,318,30]}
+{"kind":"textbox","id":"sh/4vmh8bqd","slide":3,"text":"LangGraph and adjacent ecosystems\n\nCore advantage: Programmable orchestration, state, evaluation, developer extensibility","textPreview":"LangGraph and adjacent ecosystems |  | Core advantage: Programmable orchestration, state, evaluation, developer extensibility","textChars":121,"textLines":3,"bbox":[858,278,318,248]}
+{"kind":"textbox","id":"sh/4zu1kzyp","slide":3,"text":"Sources: official product and documentation pages listed in the campaign claims ledger.","textPreview":"Sources: official product and documentation pages listed in the campaign claims ledger.","textChars":87,"textLines":1,"bbox":[56,655,1120,20]}
+{"kind":"notes","id":"nt/wji6bg","slide":3,"text":""}
+{"kind":"slide","id":"sl/yz8ybo","slide":4,"title":"CODING AGENTS","textShapes":19}
+{"kind":"textbox","id":"sh/jqxwr2t8","slide":4,"text":"CODING AGENTS","textPreview":"CODING AGENTS","textChars":13,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/kr6x07ut","slide":4,"name":"slide-4-title","text":"The strongest competitors own developer attention and repository workflows.","textPreview":"The strongest competitors own developer attention and repository workflows.","textChars":75,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/5sfetcbe","slide":4,"text":"Their distribution and model quality are existential threats; their narrower physical-tool focus creates room.","textPreview":"Their distribution and model quality are existential threats; their narrower physical-tool focus creates room.","textChars":110,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/al4fuxcr","slide":4,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/bmdwnitc","slide":4,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/wnmxwnuh","slide":4,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/xovepsb2","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"textbox","id":"sh/uh8f6hcv","slide":4,"text":"OpenAI Codex","textPreview":"OpenAI Codex","textChars":12,"textLines":1,"bbox":[66,215,210,34]}
+{"kind":"textbox","id":"sh/fihgzmtg","slide":4,"text":"Cloud coding agent ecosystem and strong model distribution","textPreview":"Cloud coding agent ecosystem and strong model distribution","textChars":58,"textLines":1,"bbox":[290,215,400,48]}
+{"kind":"textbox","id":"sh/bupwbi10","slide":4,"text":"Partner through ACPX/MCP; do not compete on raw coding model quality","textPreview":"Partner through ACPX/MCP; do not compete on raw coding model quality","textChars":68,"textLines":1,"bbox":[720,215,470,48]}
+{"kind":"shape","id":"sh/qtwvid0f","slide":4,"bbox":[66,285,1130,1]}
+{"kind":"textbox","id":"sh/dw7edsj6","slide":4,"text":"Claude Code","textPreview":"Claude Code","textChars":11,"textLines":1,"bbox":[66,313,210,34]}
+{"kind":"textbox","id":"sh/cvyxknil","slide":4,"text":"Terminal-first coding and broad developer trust","textPreview":"Terminal-first coding and broad developer trust","textChars":47,"textLines":1,"bbox":[290,313,400,48]}
+{"kind":"textbox","id":"sh/zypwfi1c","slide":4,"text":"Use as an external agent while Tlamatini supplies wider tool surfaces","textPreview":"Use as an external agent while Tlamatini supplies wider tool surfaces","textChars":69,"textLines":1,"bbox":[720,313,470,48]}
+{"kind":"shape","id":"sh/yxgfmx0r","slide":4,"bbox":[66,383,1130,1]}
+{"kind":"textbox","id":"sh/l07ehsj2","slide":4,"text":"GitHub Copilot","textPreview":"GitHub Copilot","textChars":14,"textLines":1,"bbox":[66,411,210,34]}
+{"kind":"textbox","id":"sh/0zyxonih","slide":4,"text":"Deep IDE and GitHub workflow distribution","textPreview":"Deep IDE and GitHub workflow distribution","textChars":41,"textLines":1,"bbox":[290,411,400,48]}
+{"kind":"textbox","id":"sh/n29wj218","slide":4,"text":"Differentiate beyond code completion and repository operations","textPreview":"Differentiate beyond code completion and repository operations","textChars":62,"textLines":1,"bbox":[720,411,470,48]}
+{"kind":"shape","id":"sh/m10fqx0n","slide":4,"bbox":[66,481,1130,1]}
+{"kind":"textbox","id":"sh/ixkzi1kv","slide":4,"text":"Cursor","textPreview":"Cursor","textChars":6,"textLines":1,"bbox":[66,509,210,34]}
+{"kind":"textbox","id":"sh/jit0b6lg","slide":4,"text":"Agentic editor and background-agent workflow","textPreview":"Agentic editor and background-agent workflow","textChars":44,"textLines":1,"bbox":[290,509,400,48]}
+{"kind":"textbox","id":"sh/4j2hkb21","slide":4,"text":"Compete on local cross-surface orchestration, not editor ergonomics","textPreview":"Compete on local cross-surface orchestration, not editor ergonomics","textChars":67,"textLines":1,"bbox":[720,509,470,48]}
+{"kind":"shape","id":"sh/5kbidg3m","slide":4,"bbox":[66,579,1130,1]}
+{"kind":"textbox","id":"sh/atkzehkz","slide":4,"text":"Sources: OpenAI Codex, Anthropic Claude Code, GitHub Copilot, and Cursor official pages/documentation.","textPreview":"Sources: OpenAI Codex, Anthropic Claude Code, GitHub Copilot, and Cursor official pages/documentation.","textChars":102,"textLines":1,"bbox":[56,655,1120,20]}
+{"kind":"notes","id":"nt/yz8ybo","slide":4,"text":""}
+{"kind":"slide","id":"sl/iznu3z","slide":5,"title":"AUTOMATION AND FRAMEWORKS","textShapes":13}
+{"kind":"textbox","id":"sh/nmdwbq10","slide":5,"text":"AUTOMATION AND FRAMEWORKS","textPreview":"AUTOMATION AND FRAMEWORKS","textChars":25,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/onmxkv2l","slide":5,"name":"slide-5-title","text":"Workflow incumbents own connectors; frameworks own programmable orchestration.","textPreview":"Workflow incumbents own connectors; frameworks own programmable orchestration.","textChars":78,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/9oved0j6","slide":5,"text":"XAIHT’s answer is integration depth across local project context, engines, devices, voice, and human command.","textPreview":"XAIHT’s answer is integration depth across local project context, engines, devices, voice, and human command.","textChars":109,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/apofm5kr","slide":5,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/bqxwfq1w","slide":5,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/wr6xov2h","slide":5,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/xsfyh0j2","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/itofq5kn","slide":5,"bbox":[56,230,360,300]}
+{"kind":"shape","id":"sh/juxgja18","slide":5,"bbox":[56,230,5,300]}
+{"kind":"textbox","id":"sh/ba9kjuh0","slide":5,"text":"n8n","textPreview":"n8n","textChars":3,"textLines":1,"bbox":[78,248,318,30]}
+{"kind":"textbox","id":"sh/a903ap0f","slide":5,"text":"Large workflow/connectors surface and AI-agent nodes\n\nStrategic reading: Hard to beat on general SaaS automation","textPreview":"Large workflow/connectors surface and AI-agent nodes |  | Strategic reading: Hard to beat on general SaaS automation","textChars":112,"textLines":3,"bbox":[78,288,318,228]}
+{"kind":"shape","id":"sh/xcr2l4zq","slide":5,"bbox":[446,230,360,300]}
+{"kind":"shape","id":"sh/cbilczil","slide":5,"bbox":[446,230,5,300]}
+{"kind":"textbox","id":"sh/n6pkfuho","slide":5,"text":"Dify","textPreview":"Dify","textChars":4,"textLines":1,"bbox":[468,248,318,30]}
+{"kind":"textbox","id":"sh/25gj6p03","slide":5,"text":"Open-source LLM application and workflow platform\n\nStrategic reading: Strong adjacent open-source distribution","textPreview":"Open-source LLM application and workflow platform |  | Strategic reading: Strong adjacent open-source distribution","textChars":110,"textLines":3,"bbox":[468,288,318,228]}
+{"kind":"shape","id":"sh/p8r2h4zu","slide":5,"bbox":[836,230,360,300]}
+{"kind":"shape","id":"sh/o7yl8zi9","slide":5,"bbox":[836,230,5,300]}
+{"kind":"textbox","id":"sh/72tkreh8","slide":5,"text":"LangGraph","textPreview":"LangGraph","textChars":9,"textLines":1,"bbox":[858,248,318,30]}
+{"kind":"textbox","id":"sh/m1k3i90n","slide":5,"text":"Stateful agent orchestration for developers\n\nStrategic reading: Powerful framework; more building block than packaged operator","textPreview":"Stateful agent orchestration for developers |  | Strategic reading: Powerful framework; more building block than packaged operator","textChars":126,"textLines":3,"bbox":[858,288,318,228]}
+{"kind":"textbox","id":"sh/ix4nqdkv","slide":5,"text":"Sources: n8n AI Agents, Dify, and LangGraph official product pages.","textPreview":"Sources: n8n AI Agents, Dify, and LangGraph official product pages.","textChars":67,"textLines":1,"bbox":[56,655,1120,20]}
+{"kind":"notes","id":"nt/iznu3z","slide":5,"text":""}
+{"kind":"slide","id":"sl/he8xsi","slide":6,"title":"WEDGE","textShapes":11}
+{"kind":"textbox","id":"sh/retwzetc","slide":6,"text":"WEDGE","textPreview":"WEDGE","textChars":5,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/cf2dsjux","slide":6,"name":"slide-6-title","text":"XAIHT can own the moment software reaches an engine, board, instrument, or voice loop.","textPreview":"XAIHT can own the moment software reaches an engine, board, instrument, or voice loop.","textChars":86,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/dgbe1obi","slide":6,"text":"This is narrower than “all AI work” and broader than a code editor.","textPreview":"This is narrower than “all AI work” and broader than a code editor.","textChars":67,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/ehkvutcn","slide":6,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/z2tw3yt8","slide":6,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/032dwjut","slide":6,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/14be5obe","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/n6dw7ytk","slide":6,"bbox":[680,223,12,12]}
+{"kind":"textbox","id":"sh/7ytkvap4","slide":6,"text":"Project-aware context before action","textPreview":"Project-aware context before action","textChars":35,"textLines":1,"bbox":[708,220,472,68]}
+{"kind":"shape","id":"sh/mxkjm58j","slide":6,"bbox":[680,295,12,12]}
+{"kind":"textbox","id":"sh/90b2xk7u","slide":6,"text":"Direct Unreal, Blender, STM32, ESP32, ESPHome, and Arduino paths","textPreview":"Direct Unreal, Blender, STM32, ESP32, ESPHome, and Arduino paths","textChars":64,"textLines":1,"bbox":[708,292,472,68]}
+{"kind":"shape","id":"sh/8z21ofq9","slide":6,"bbox":[680,367,12,12]}
+{"kind":"textbox","id":"sh/za90rqps","slide":6,"text":"Voice, image, video, desktop, browser, messaging, and external agents","textPreview":"Voice, image, video, desktop, browser, messaging, and external agents","textChars":69,"textLines":1,"bbox":[708,364,472,68]}
+{"kind":"shape","id":"sh/y90ji587","slide":6,"bbox":[680,439,12,12]}
+{"kind":"textbox","id":"sh/lwb2t07y","slide":6,"text":"Explicit approvals, execution evidence, and user jurisdiction","textPreview":"Explicit approvals, execution evidence, and user jurisdiction","textChars":61,"textLines":1,"bbox":[708,436,472,68]}
+{"kind":"shape","id":"sh/kb21kvqd","slide":6,"bbox":[680,511,12,12]}
+{"kind":"textbox","id":"sh/j6dk3upw","slide":6,"text":"Successful work captured as reusable .flw orchestration","textPreview":"Successful work captured as reusable .flw orchestration","textChars":55,"textLines":1,"bbox":[708,508,472,68]}
+{"kind":"image","id":"im/jatgb25k","slide":6,"name":"","alt":"Embedded robotics workbench","bbox":[56,205,560,390]}
+{"kind":"notes","id":"nt/he8xsi","slide":6,"text":""}
+{"kind":"slide","id":"sl/jgnfia","slide":7,"title":"FEATURE MATRIX","textShapes":47}
+{"kind":"textbox","id":"sh/1gr6h87a","slide":7,"text":"FEATURE MATRIX","textPreview":"FEATURE MATRIX","textChars":14,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/etgn6toj","slide":7,"name":"slide-7-title","text":"Tlamatini is differentiated by surface combination, not by winning every column.","textPreview":"Tlamatini is differentiated by surface combination, not by winning every column.","textChars":80,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/fupofyp4","slide":7,"text":"Directional assessment based on public product positioning; verify during customer discovery.","textPreview":"Directional assessment based on public product positioning; verify during customer discovery.","textChars":93,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/oji5c361","slide":7,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/pkr6l876","slide":7,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/2h0nadov","slide":7,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/3i9ojipg","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"textbox","id":"sh/4ne5gj6h","slide":7,"text":"Capability","textPreview":"Capability","textChars":10,"textLines":1,"bbox":[56,205,350,30]}
+{"kind":"textbox","id":"sh/5o7m9o72","slide":7,"text":"Coding agents","textPreview":"Coding agents","textChars":13,"textLines":1,"bbox":[420,205,180,30]}
+{"kind":"textbox","id":"sh/xwve9ovi","slide":7,"text":"Automation","textPreview":"Automation","textChars":10,"textLines":1,"bbox":[620,205,170,30]}
+{"kind":"textbox","id":"sh/cvmdgjex","slide":7,"text":"Frameworks","textPreview":"Frameworks","textChars":10,"textLines":1,"bbox":[810,205,170,30]}
+{"kind":"textbox","id":"sh/batw7eds","slide":7,"text":"Tlamatini","textPreview":"Tlamatini","textChars":9,"textLines":1,"bbox":[1000,205,224,30]}
+{"kind":"shape","id":"sh/a9kve9w7","slide":7,"bbox":[50,239,1174,44]}
+{"kind":"textbox","id":"sh/l0vedovu","slide":7,"text":"Repository coding depth","textPreview":"Repository coding depth","textChars":23,"textLines":1,"bbox":[56,245,350,28]}
+{"kind":"textbox","id":"sh/kzmdkje9","slide":7,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[420,245,180,28]}
+{"kind":"textbox","id":"sh/zydwbydo","slide":7,"text":"MED","textPreview":"MED","textChars":3,"textLines":1,"bbox":[620,245,170,28]}
+{"kind":"textbox","id":"sh/yx4vitw3","slide":7,"text":"MED","textPreview":"MED","textChars":3,"textLines":1,"bbox":[810,245,170,28]}
+{"kind":"textbox","id":"sh/94feh8vq","slide":7,"text":"MED-HIGH","textPreview":"MED-HIGH","textChars":8,"textLines":1,"bbox":[1000,245,224,28]}
+{"kind":"textbox","id":"sh/836xo3e5","slide":7,"text":"Business connectors","textPreview":"Business connectors","textChars":19,"textLines":1,"bbox":[56,295,350,28]}
+{"kind":"textbox","id":"sh/sjep0bqt","slide":7,"text":"LOW-MED","textPreview":"LOW-MED","textChars":7,"textLines":1,"bbox":[420,295,180,28]}
+{"kind":"textbox","id":"sh/dk769g7e","slide":7,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[620,295,170,28]}
+{"kind":"textbox","id":"sh/qhw7y18n","slide":7,"text":"LOW","textPreview":"LOW","textChars":3,"textLines":1,"bbox":[810,295,170,28]}
+{"kind":"textbox","id":"sh/ri5o76p8","slide":7,"text":"MED","textPreview":"MED","textChars":3,"textLines":1,"bbox":[1000,295,224,28]}
+{"kind":"shape","id":"sh/0nyp4bqp","slide":7,"bbox":[50,339,1174,44]}
+{"kind":"textbox","id":"sh/1o7qdg7a","slide":7,"text":"Creative engines","textPreview":"Creative engines","textChars":16,"textLines":1,"bbox":[56,345,350,28]}
+{"kind":"textbox","id":"sh/elg72l8j","slide":7,"text":"LOW","textPreview":"LOW","textChars":3,"textLines":1,"bbox":[420,345,180,28]}
+{"kind":"textbox","id":"sh/fmp8b6p4","slide":7,"text":"LOW","textPreview":"LOW","textChars":3,"textLines":1,"bbox":[620,345,170,28]}
+{"kind":"textbox","id":"sh/grupsrql","slide":7,"text":"LOW","textPreview":"LOW","textChars":3,"textLines":1,"bbox":[810,345,170,28]}
+{"kind":"textbox","id":"sh/hsn61w76","slide":7,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[1000,345,224,28]}
+{"kind":"textbox","id":"sh/z6ts7u9o","slide":7,"text":"Embedded hardware","textPreview":"Embedded hardware","textChars":17,"textLines":1,"bbox":[56,395,350,28]}
+{"kind":"textbox","id":"sh/y5kryps3","slide":7,"text":"LOW","textPreview":"LOW","textChars":3,"textLines":1,"bbox":[420,395,180,28]}
+{"kind":"textbox","id":"sh/l8ba94re","slide":7,"text":"LOW-MED","textPreview":"LOW-MED","textChars":7,"textLines":1,"bbox":[620,395,170,28]}
+{"kind":"textbox","id":"sh/k7290za9","slide":7,"text":"LOW","textPreview":"LOW","textChars":3,"textLines":1,"bbox":[810,395,170,28]}
+{"kind":"textbox","id":"sh/bi9s3a9c","slide":7,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[1000,395,224,28]}
+{"kind":"shape","id":"sh/ah0ru5sr","slide":7,"bbox":[50,439,1174,44]}
+{"kind":"textbox","id":"sh/x4ba5kri","slide":7,"text":"Visual reusable flows","textPreview":"Visual reusable flows","textChars":21,"textLines":1,"bbox":[56,445,350,28]}
+{"kind":"textbox","id":"sh/c329wfax","slide":7,"text":"LOW-MED","textPreview":"LOW-MED","textChars":7,"textLines":1,"bbox":[420,445,180,28]}
+{"kind":"textbox","id":"sh/ne9sza9g","slide":7,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[620,445,170,28]}
+{"kind":"textbox","id":"sh/2d0rq5sv","slide":7,"text":"CODE","textPreview":"CODE","textChars":4,"textLines":1,"bbox":[810,445,170,28]}
+{"kind":"textbox","id":"sh/2lkvudof","slide":7,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[1000,445,224,28]}
+{"kind":"textbox","id":"sh/3mtw3y50","slide":7,"text":"Human approval surface","textPreview":"Human approval surface","textChars":22,"textLines":1,"bbox":[56,495,350,28]}
+{"kind":"textbox","id":"sh/4n2dw36l","slide":7,"text":"VARIES","textPreview":"VARIES","textChars":6,"textLines":1,"bbox":[420,495,180,28]}
+{"kind":"textbox","id":"sh/pobe58n6","slide":7,"text":"VARIES","textPreview":"VARIES","textChars":6,"textLines":1,"bbox":[620,495,170,28]}
+{"kind":"textbox","id":"sh/uhkvqtoj","slide":7,"text":"CUSTOM","textPreview":"CUSTOM","textChars":6,"textLines":1,"bbox":[810,495,170,28]}
+{"kind":"textbox","id":"sh/fitwzy54","slide":7,"text":"EXPLICIT","textPreview":"EXPLICIT","textChars":8,"textLines":1,"bbox":[1000,495,224,28]}
+{"kind":"shape","id":"sh/gj2ds369","slide":7,"bbox":[50,539,1174,44]}
+{"kind":"textbox","id":"sh/hkbe18nu","slide":7,"text":"Local-first project operator","textPreview":"Local-first project operator","textChars":28,"textLines":1,"bbox":[56,545,350,28]}
+{"kind":"textbox","id":"sh/6t0vmto7","slide":7,"text":"VARIES","textPreview":"VARIES","textChars":6,"textLines":1,"bbox":[420,545,180,28]}
+{"kind":"textbox","id":"sh/7u9cve5s","slide":7,"text":"VARIES","textPreview":"VARIES","textChars":6,"textLines":1,"bbox":[620,545,170,28]}
+{"kind":"textbox","id":"sh/98zy1w7a","slide":7,"text":"CUSTOM","textPreview":"CUSTOM","textChars":6,"textLines":1,"bbox":[810,545,170,28]}
+{"kind":"textbox","id":"sh/o76h8rqp","slide":7,"text":"CORE","textPreview":"CORE","textChars":4,"textLines":1,"bbox":[1000,545,224,28]}
+{"kind":"textbox","id":"sh/n6xgzmp4","slide":7,"text":"Directional assessment from official public product descriptions; no benchmark or hands-on parity test is implied.","textPreview":"Directional assessment from official public product descriptions; no benchmark or hands-on parity test is implied.","textChars":114,"textLines":1,"bbox":[56,655,1120,20]}
+{"kind":"notes","id":"nt/jgnfia","slide":7,"text":""}
+{"kind":"slide","id":"sl/1x40cf","slide":8,"title":"STRENGTHS","textShapes":18}
+{"kind":"textbox","id":"sh/qpsjidgb","slide":8,"text":"STRENGTHS","textPreview":"STRENGTHS","textChars":9,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/dsj2tsfm","slide":8,"name":"slide-8-title","text":"The current product already demonstrates unusual integration breadth.","textPreview":"The current product already demonstrates unusual integration breadth.","textChars":69,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/cra1kny1","slide":8,"text":"These strengths become commercial only when packaged into reliable, repeatable outcomes.","textPreview":"These strengths become commercial only when packaged into reliable, repeatable outcomes.","textChars":88,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/3mhknixk","slide":8,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/218jedgz","slide":8,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/poz2p8fq","slide":8,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/onq1g3y5","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/7ilkz2xo","slide":8,"bbox":[56,220,360,145]}
+{"kind":"shape","id":"sh/mxc3qxg3","slide":8,"bbox":[56,220,5,145]}
+{"kind":"textbox","id":"sh/gr25crih","slide":8,"text":"BREADTH","textPreview":"BREADTH","textChars":7,"textLines":1,"bbox":[78,238,318,30]}
+{"kind":"textbox","id":"sh/hcb6lwzm","slide":8,"text":"85 agents and 94 Multi-Turn tools across software, media, engines, devices, messaging, desktop, browser, and MCP.","textPreview":"85 agents and 94 Multi-Turn tools across software, media, engines, devices, messaging, desktop, browser, and MCP.","textChars":113,"textLines":1,"bbox":[78,278,318,73]}
+{"kind":"shape","id":"sh/upknah0b","slide":8,"bbox":[444,220,360,145]}
+{"kind":"shape","id":"sh/vqtojmhw","slide":8,"bbox":[444,220,5,145]}
+{"kind":"textbox","id":"sh/8n2587i5","slide":8,"text":"INSPECTABILITY","textPreview":"INSPECTABILITY","textChars":14,"textLines":1,"bbox":[466,238,318,30]}
+{"kind":"textbox","id":"sh/tob6hczq","slide":8,"text":"MIT core, readable Python agents, visible workflows, and source-grounded claims.","textPreview":"MIT core, readable Python agents, visible workflows, and source-grounded claims.","textChars":80,"textLines":1,"bbox":[466,278,318,73]}
+{"kind":"shape","id":"sh/6l0n6h0z","slide":8,"bbox":[832,220,392,145]}
+{"kind":"shape","id":"sh/7m9ofmhk","slide":8,"bbox":[832,220,5,145]}
+{"kind":"textbox","id":"sh/kji547i9","slide":8,"text":"HUMAN COMMAND","textPreview":"HUMAN COMMAND","textChars":13,"textLines":1,"bbox":[854,238,350,30]}
+{"kind":"textbox","id":"sh/lkr6dczu","slide":8,"text":"Approval gates, Step-by-Step pacing, reports, cancellation, and explicit responsibility.","textPreview":"Approval gates, Step-by-Step pacing, reports, cancellation, and explicit responsibility.","textChars":88,"textLines":1,"bbox":[854,278,350,73]}
+{"kind":"shape","id":"sh/14zul4n6","slide":8,"bbox":[56,395,360,145]}
+{"kind":"shape","id":"sh/03qdsz6l","slide":8,"bbox":[56,395,5,145]}
+{"kind":"textbox","id":"sh/z2hcju50","slide":8,"text":"LOCAL-FIRST CONTEXT","textPreview":"LOCAL-FIRST CONTEXT","textChars":19,"textLines":1,"bbox":[78,413,318,30]}
+{"kind":"textbox","id":"sh/e18vqpov","slide":8,"text":"Project retrieval and local application state reduce dependence on a single cloud surface.","textPreview":"Project retrieval and local application state reduce dependence on a single cloud surface.","textChars":90,"textLines":1,"bbox":[78,453,318,73]}
+{"kind":"shape","id":"sh/d0zuhkna","slide":8,"bbox":[444,395,360,145]}
+{"kind":"shape","id":"sh/czqdoz6p","slide":8,"bbox":[444,395,5,145]}
+{"kind":"textbox","id":"sh/ryhcfu54","slide":8,"text":"PHYSICAL PROOF","textPreview":"PHYSICAL PROOF","textChars":14,"textLines":1,"bbox":[466,413,318,30]}
+{"kind":"textbox","id":"sh/qdobmpoj","slide":8,"text":"Robotics, firmware, video verdicts, and engine outputs make demonstrations tangible.","textPreview":"Robotics, firmware, video verdicts, and engine outputs make demonstrations tangible.","textChars":84,"textLines":1,"bbox":[466,453,318,73]}
+{"kind":"shape","id":"sh/xwjutone","slide":8,"bbox":[832,395,392,145]}
+{"kind":"shape","id":"sh/wvad0j6t","slide":8,"bbox":[832,395,5,145]}
+{"kind":"textbox","id":"sh/uh4rel4b","slide":8,"text":"ECOSYSTEM BRIDGE","textPreview":"ECOSYSTEM BRIDGE","textChars":16,"textLines":1,"bbox":[854,413,350,30]}
+{"kind":"textbox","id":"sh/vidsnqlw","slide":8,"text":"ACPX and MCP allow external agents to become collaborators rather than only competitors.","textPreview":"ACPX and MCP allow external agents to become collaborators rather than only competitors.","textChars":88,"textLines":1,"bbox":[854,453,350,73]}
+{"kind":"notes","id":"nt/1x40cf","slide":8,"text":""}
+{"kind":"slide","id":"sl/6wucg7","slide":9,"title":"WEAKNESSES","textShapes":12}
+{"kind":"textbox","id":"sh/5krals3m","slide":9,"text":"WEAKNESSES","textPreview":"WEAKNESSES","textChars":10,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/ih0bqdkv","slide":9,"name":"slide-9-title","text":"Breadth creates reliability, onboarding, and support debt.","textPreview":"Breadth creates reliability, onboarding, and support debt.","textChars":58,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/3i9sjilg","slide":9,"text":"The strategy must narrow the promise before scaling the company.","textPreview":"The strategy must narrow the promise before scaling the company.","textChars":64,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/sn2twn2x","slide":9,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/d8baps3i","slide":9,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/ql0buxkr","slide":9,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/rmtsnilc","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/8ry9k32t","slide":9,"bbox":[76,218,12,12]}
+{"kind":"textbox","id":"sh/tc7ad83e","slide":9,"text":"No verified commercial traction or retained-use baseline yet","textPreview":"No verified commercial traction or retained-use baseline yet","textChars":60,"textLines":1,"bbox":[104,215,1052,60]}
+{"kind":"shape","id":"sh/tsvaxgv2","slide":9,"bbox":[76,282,12,12]}
+{"kind":"textbox","id":"sh/srmtobeh","slide":9,"text":"Many external dependencies, credentials, toolchains, and local environment assumptions","textPreview":"Many external dependencies, credentials, toolchains, and local environment assumptions","textChars":86,"textLines":1,"bbox":[104,279,1052,60]}
+{"kind":"shape","id":"sh/rqdsv6dw","slide":9,"bbox":[76,346,12,12]}
+{"kind":"textbox","id":"sh/6p4bm1wb","slide":9,"text":"Broad test and documentation surface increases release burden","textPreview":"Broad test and documentation surface increases release burden","textChars":61,"textLines":1,"bbox":[104,343,1052,60]}
+{"kind":"shape","id":"sh/1gfa1gvy","slide":9,"bbox":[76,410,12,12]}
+{"kind":"textbox","id":"sh/gfmtsved","slide":9,"text":"Windows-first installed experience limits initial platform reach","textPreview":"Windows-first installed experience limits initial platform reach","textChars":64,"textLines":1,"bbox":[104,407,1052,60]}
+{"kind":"shape","id":"sh/fedszqds","slide":9,"bbox":[76,474,12,12]}
+{"kind":"textbox","id":"sh/et4bqlw7","slide":9,"text":"No shipped enterprise identity, fleet policy, signed channel, or formal support SLA","textPreview":"No shipped enterprise identity, fleet policy, signed channel, or formal support SLA","textChars":83,"textLines":1,"bbox":[104,471,1052,60]}
+{"kind":"shape","id":"sh/pkfu50vu","slide":9,"bbox":[76,538,12,12]}
+{"kind":"textbox","id":"sh/oj6twvep","slide":9,"text":"Brand must prove calm utility instead of looking like a generalized science-fiction assistant","textPreview":"Brand must prove calm utility instead of looking like a generalized science-fiction assistant","textChars":93,"textLines":1,"bbox":[104,535,1052,60]}
+{"kind":"notes","id":"nt/6wucg7","slide":9,"text":""}
+{"kind":"slide","id":"sl/p97gja","slide":10,"title":"THREATS","textShapes":14}
+{"kind":"textbox","id":"sh/2d0365sb","slide":10,"text":"THREATS","textPreview":"THREATS","textChars":7,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/pgrmhkb2","slide":10,"name":"slide-10-title","text":"Incumbents can copy features faster than XAIHT can copy distribution.","textPreview":"Incumbents can copy features faster than XAIHT can copy distribution.","textChars":69,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/4fil8fah","slide":10,"text":"The response is focus, evidence, and interoperability.","textPreview":"The response is focus, evidence, and interoperability.","textChars":54,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/r2t4ja9s","slide":10,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/qhknapsn","slide":10,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/d4bmlkry","slide":10,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/c325cfad","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/z6t4nu94","slide":10,"bbox":[56,215,552,160]}
+{"kind":"shape","id":"sh/e5knepsj","slide":10,"bbox":[56,215,5,160]}
+{"kind":"textbox","id":"sh/onaxobux","slide":10,"text":"PLATFORM BUNDLING","textPreview":"PLATFORM BUNDLING","textChars":17,"textLines":1,"bbox":[78,233,510,30]}
+{"kind":"textbox","id":"sh/9ojehgbi","slide":10,"text":"Coding and cloud platforms add workflow, browser, desktop, and connector surfaces.\n\nResponse: Win a vertical process before horizontal parity arrives.","textPreview":"Coding and cloud platforms add workflow, browser, desktop, and connector surfaces. |  | Response: Win a vertical process before horizonta...","textChars":150,"textLines":3,"bbox":[78,273,510,88]}
+{"kind":"shape","id":"sh/2l8fm1cr","slide":10,"bbox":[640,215,552,160]}
+{"kind":"shape","id":"sh/nm1wf6tc","slide":10,"bbox":[640,215,5,160]}
+{"kind":"textbox","id":"sh/wraxsbut","slide":10,"text":"MODEL COMMODITIZATION","textPreview":"MODEL COMMODITIZATION","textChars":21,"textLines":1,"bbox":[662,233,510,30]}
+{"kind":"textbox","id":"sh/xsjelgbe","slide":10,"text":"Base-model quality converges and reduces perceived product differentiation.\n\nResponse: Make validated tool execution and workflow evidence the product.","textPreview":"Base-model quality converges and reduces perceived product differentiation. |  | Response: Make validated tool execution and workflow evi...","textChars":151,"textLines":3,"bbox":[662,273,510,88]}
+{"kind":"shape","id":"sh/apsfq1c3","slide":10,"bbox":[56,400,552,160]}
+{"kind":"shape","id":"sh/bq1wj6to","slide":10,"bbox":[56,400,5,160]}
+{"kind":"textbox","id":"sh/kvuxwva5","slide":10,"text":"SECURITY INCIDENT","textPreview":"SECURITY INCIDENT","textChars":17,"textLines":1,"bbox":[78,418,510,30]}
+{"kind":"textbox","id":"sh/lg3yp0bq","slide":10,"text":"A powerful connector or modified agent causes harm or exposes private information.\n\nResponse: Keep jurisdiction explicit; narrow scopes; publish incident and recovery discipline.","textPreview":"A powerful connector or modified agent causes harm or exposes private information. |  | Response: Keep jurisdiction explicit; narrow scop...","textChars":178,"textLines":3,"bbox":[78,458,510,88]}
+{"kind":"shape","id":"sh/t0f6twzi","slide":10,"bbox":[640,400,552,160]}
+{"kind":"shape","id":"sh/8z65kryx","slide":10,"bbox":[640,400,5,160]}
+{"kind":"textbox","id":"sh/7yxormhc","slide":10,"text":"SUPPORT OVERLOAD","textPreview":"SUPPORT OVERLOAD","textChars":16,"textLines":1,"bbox":[662,418,510,30]}
+{"kind":"textbox","id":"sh/6xonihgr","slide":10,"text":"Heterogeneous local setups consume founder time and erase service margin.\n\nResponse: Standardize three hero stacks and refuse unsupported combinations.","textPreview":"Heterogeneous local setups consume founder time and erase service margin. |  | Response: Standardize three hero stacks and refuse unsuppo...","textChars":151,"textLines":3,"bbox":[662,458,510,88]}
+{"kind":"notes","id":"nt/p97gja","slide":10,"text":""}
+{"kind":"slide","id":"sl/tzkzy3","slide":11,"title":"OPPORTUNITIES","textShapes":12}
+{"kind":"textbox","id":"sh/7epgjm9s","slide":11,"text":"OPPORTUNITIES","textPreview":"OPPORTUNITIES","textChars":13,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/8fixcrad","slide":11,"name":"slide-11-title","text":"Open-source distribution can turn specialist integrations into a trust network.","textPreview":"Open-source distribution can turn specialist integrations into a trust network.","textChars":79,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/tgrylwry","slide":11,"text":"The highest-value opportunities pair visible proof with paid implementation.","textPreview":"The highest-value opportunities pair visible proof with paid implementation.","textChars":76,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/uh0fe1sj","slide":11,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/vi9gn69o","slide":11,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/gjixgba9","slide":11,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/hkrypgru","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/il0zi1sf","slide":11,"bbox":[56,220,360,300]}
+{"kind":"shape","id":"sh/3m9gr690","slide":11,"bbox":[56,220,5,300]}
+{"kind":"textbox","id":"sh/bul03yt4","slide":11,"text":"VERTICAL WORKFLOW PACKS","textPreview":"VERTICAL WORKFLOW PACKS","textChars":23,"textLines":1,"bbox":[78,238,318,30]}
+{"kind":"textbox","id":"sh/atczatcj","slide":11,"text":"Validated packs for embedded bring-up, robotic verification, game-production steps, and operational readiness.","textPreview":"Validated packs for embedded bring-up, robotic verification, game-production steps, and operational readiness.","textChars":110,"textLines":1,"bbox":[78,278,318,228]}
+{"kind":"shape","id":"sh/xw3i5oba","slide":11,"bbox":[444,220,360,300]}
+{"kind":"shape","id":"sh/cvuhcjup","slide":11,"bbox":[444,220,5,300]}
+{"kind":"textbox","id":"sh/nq10zet8","slide":11,"text":"PARTNER-LED DELIVERY","textPreview":"PARTNER-LED DELIVERY","textChars":20,"textLines":1,"bbox":[466,238,318,30]}
+{"kind":"textbox","id":"sh/25sz69cn","slide":11,"text":"Makerspaces, systems integrators, educators, and studios extend reach without centralizing every support burden.","textPreview":"Makerspaces, systems integrators, educators, and studios extend reach without centralizing every support burden.","textChars":112,"textLines":1,"bbox":[466,278,318,228]}
+{"kind":"shape","id":"sh/psji1oby","slide":11,"bbox":[832,220,392,300]}
+{"kind":"shape","id":"sh/orah8jut","slide":11,"bbox":[832,220,5,300]}
+{"kind":"textbox","id":"sh/7m50bitc","slide":11,"text":"HUMAN-COMMAND STANDARD","textPreview":"HUMAN-COMMAND STANDARD","textChars":22,"textLines":1,"bbox":[854,238,350,30]}
+{"kind":"textbox","id":"sh/m1wzidcr","slide":11,"text":"Publish practical patterns for approval, evidence, cancellation, credential scope, and agent responsibility.","textPreview":"Publish practical patterns for approval, evidence, cancellation, credential scope, and agent responsibility.","textChars":108,"textLines":1,"bbox":[854,278,350,228]}
+{"kind":"notes","id":"nt/tzkzy3","slide":11,"text":""}
+{"kind":"slide","id":"sl/6vl4c2","slide":12,"title":"EXTERNAL SIGNALS","textShapes":17}
+{"kind":"textbox","id":"sh/xobuh4ri","slide":12,"text":"EXTERNAL SIGNALS","textPreview":"EXTERNAL SIGNALS","textChars":16,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/alkvm987","slide":12,"name":"slide-12-title","text":"The market rewards augmentation, but access and infrastructure remain uneven.","textPreview":"The market rewards augmentation, but access and infrastructure remain uneven.","textChars":77,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/bmtcfe9s","slide":12,"text":"This favors adaptable systems that expose constraints instead of hiding them.","textPreview":"This favors adaptable systems that expose constraints instead of hiding them.","textChars":77,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/kb2dsjq9","slide":12,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/lcvuloru","slide":12,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/ypkvq983","slide":12,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/jatcje9o","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/0fitgzq5","slide":12,"bbox":[56,230,260,128]}
+{"kind":"textbox","id":"sh/1gru9kra","slide":12,"text":"25%","textPreview":"25%","textChars":3,"textLines":1,"bbox":[74,248,224,48]}
+{"kind":"textbox","id":"sh/tkve58vu","slide":12,"text":"workers with some GenAI exposure","textPreview":"workers with some GenAI exposure","textChars":32,"textLines":1,"bbox":[74,305,224,38]}
+{"kind":"shape","id":"sh/sjmxw3e9","slide":12,"bbox":[342,230,260,128]}
+{"kind":"textbox","id":"sh/ridw3ydo","slide":12,"text":"34%","textPreview":"34%","textChars":3,"textLines":1,"bbox":[360,248,224,48]}
+{"kind":"textbox","id":"sh/6x4vutw3","slide":12,"text":"gain for novice/low-skilled workers in one field study","textPreview":"gain for novice/low-skilled workers in one field study","textChars":54,"textLines":1,"bbox":[360,305,224,38]}
+{"kind":"shape","id":"sh/1ofe98vq","slide":12,"bbox":[628,230,260,128]}
+{"kind":"textbox","id":"sh/gn6x03e5","slide":12,"text":"2.2B","textPreview":"2.2B","textChars":4,"textLines":1,"bbox":[646,248,224,48]}
+{"kind":"textbox","id":"sh/fmxw7ydk","slide":12,"text":"people offline in 2025","textPreview":"people offline in 2025","textChars":22,"textLines":1,"bbox":[646,305,224,38]}
+{"kind":"shape","id":"sh/elofydwf","slide":12,"bbox":[914,230,310,128]}
+{"kind":"textbox","id":"sh/pszedsv2","slide":12,"text":"4 Cs","textPreview":"4 Cs","textChars":4,"textLines":1,"bbox":[932,248,274,48]}
+{"kind":"textbox","id":"sh/or6x4neh","slide":12,"text":"connectivity, compute, context, competency","textPreview":"connectivity, compute, context, competency","textChars":42,"textLines":1,"bbox":[932,305,274,38]}
+{"kind":"textbox","id":"sh/ovehgrmd","slide":12,"text":"Strategic consequence","textPreview":"Strategic consequence","textChars":21,"textLines":1,"bbox":[56,420,240,28]}
+{"kind":"textbox","id":"sh/9w7y9w3y","slide":12,"text":"Product value will vary sharply by region, sector, infrastructure, language context, and operator skill. XAIHT should measure local activation conditions as carefully as model quality.","textPreview":"Product value will vary sharply by region, sector, infrastructure, language context, and operator skill. XAIHT should measure local activ...","textChars":184,"textLines":1,"bbox":[56,458,1080,90]}
+{"kind":"textbox","id":"sh/mtwzeh4n","slide":12,"text":"Sources: ILO 2025; NBER w31161; ITU 2025; World Bank Digital Progress and Trends Report 2025.","textPreview":"Sources: ILO 2025; NBER w31161; ITU 2025; World Bank Digital Progress and Trends Report 2025.","textChars":93,"textLines":1,"bbox":[56,655,1120,20]}
+{"kind":"notes","id":"nt/6vl4c2","slide":12,"text":""}
+{"kind":"slide","id":"sl/14nlzq","slide":13,"title":"SCENARIOS","textShapes":12}
+{"kind":"textbox","id":"sh/43e1gful","slide":13,"text":"SCENARIOS","textPreview":"SCENARIOS","textChars":9,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/325k7ad0","slide":13,"name":"slide-13-title","text":"Three plausible futures require the same first move: prove a narrow workflow.","textPreview":"Three plausible futures require the same first move: prove a narrow workflow.","textChars":77,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/21wje5cf","slide":13,"text":"Planning horizon: 2026-2028. These are scenarios, not forecasts.","textPreview":"Planning horizon: 2026-2028. These are scenarios, not forecasts.","textChars":64,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/h0n250vu","slide":13,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/gze1cvu9","slide":13,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/fe503qdo","slide":13,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/udwja5c3","slide":13,"text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/1wr2h4vy","slide":13,"bbox":[56,220,360,320]}
+{"kind":"shape","id":"sh/0vy1ozud","slide":13,"bbox":[56,220,5,320]}
+{"kind":"textbox","id":"sh/ytkb6lgn","slide":13,"text":"A · PLATFORM ABSORPTION","textPreview":"A · PLATFORM ABSORPTION","textChars":23,"textLines":1,"bbox":[78,238,318,30]}
+{"kind":"textbox","id":"sh/zutszqh8","slide":13,"text":"Incumbents bundle most horizontal agent functions.\n\nXAIHT survives through specialist engine/device workflows, local deployment expertise, and interoperability.","textPreview":"Incumbents bundle most horizontal agent functions. |  | XAIHT survives through specialist engine/device workflows, local deployment exper...","textChars":160,"textLines":3,"bbox":[78,278,318,248]}
+{"kind":"shape","id":"sh/0vmt8byt","slide":13,"bbox":[444,220,360,320]}
+{"kind":"shape","id":"sh/lwva1gzy","slide":13,"bbox":[444,220,5,320]}
+{"kind":"textbox","id":"sh/q5kr21gb","slide":13,"text":"B · OPEN ECOSYSTEM","textPreview":"B · OPEN ECOSYSTEM","textChars":18,"textLines":1,"bbox":[466,238,318,30]}
+{"kind":"textbox","id":"sh/b6tsb6hw","slide":13,"text":"Models and connectors commoditize while open agent standards grow.\n\nXAIHT becomes the human-commanded operating shell and workflow marketplace.","textPreview":"Models and connectors commoditize while open agent standards grow. |  | XAIHT becomes the human-commanded operating shell and workflow ma...","textChars":143,"textLines":3,"bbox":[466,278,318,248]}
+{"kind":"shape","id":"sh/c7294byh","slide":13,"bbox":[832,220,392,320]}
+{"kind":"shape","id":"sh/dsbadgz2","slide":13,"bbox":[832,220,5,320]}
+{"kind":"textbox","id":"sh/a14be5gv","slide":13,"text":"C · VERTICAL TRUST","textPreview":"C · VERTICAL TRUST","textChars":18,"textLines":1,"bbox":[854,238,350,30]}
+{"kind":"textbox","id":"sh/v2ds7axg","slide":13,"text":"Safety, sovereignty, and reliability push buyers toward bounded vertical systems.\n\nXAIHT wins with validated packs and operational readiness services.","textPreview":"Safety, sovereignty, and reliability push buyers toward bounded vertical systems. |  | XAIHT wins with validated packs and operational re...","textChars":150,"textLines":3,"bbox":[854,278,350,248]}
+{"kind":"notes","id":"nt/14nlzq","slide":13,"text":""}
+{"kind":"slide","id":"sl/xlhwil","slide":14,"title":"90-DAY RESPONSE","textShapes":15}
+{"kind":"textbox","id":"sh/e1k7ixgr","slide":14,"text":"90-DAY RESPONSE","textPreview":"90-DAY RESPONSE","textChars":15,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/14bqtcf2","slide":14,"name":"slide-14-title","text":"Package three proofs and measure one commercial funnel.","textPreview":"Package three proofs and measure one commercial funnel.","textChars":55,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/g32pk7yx","slide":14,"text":"The priority is learning velocity, not feature count.","textPreview":"The priority is learning velocity, not feature count.","textChars":53,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/ry98n2x0","slide":14,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/6x07exgf","slide":14,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/t0bqpsf6","slide":14,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/sz2pgnyl","slide":14,"text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/bud8zmxk","slide":14,"bbox":[56,225,360,128]}
+{"kind":"textbox","id":"sh/qt4rqhgz","slide":14,"text":"0-30","textPreview":"0-30","textChars":4,"textLines":1,"bbox":[74,243,324,48]}
+{"kind":"textbox","id":"sh/cvy543yp","slide":14,"text":"ALIGN","textPreview":"ALIGN","textChars":5,"textLines":1,"bbox":[74,300,324,38]}
+{"kind":"textbox","id":"sh/xw76x8fa","slide":14,"text":"Ship the identity, claims ledger, security boundary, and three reproducible demos.","textPreview":"Ship the identity, claims ledger, security boundary, and three reproducible demos.","textChars":82,"textLines":1,"bbox":[74,375,324,115]}
+{"kind":"shape","id":"sh/atwn2tgz","slide":14,"bbox":[446,225,360,128]}
+{"kind":"textbox","id":"sh/bupovyxk","slide":14,"text":"31-60","textPreview":"31-60","textChars":5,"textLines":1,"bbox":[464,243,324,48]}
+{"kind":"textbox","id":"sh/ore50jyt","slide":14,"text":"ACTIVATE","textPreview":"ACTIVATE","textChars":8,"textLines":1,"bbox":[464,300,324,38]}
+{"kind":"textbox","id":"sh/psn6tofe","slide":14,"text":"Recruit 10 design partners; measure time to first bounded success and first saved workflow.","textPreview":"Recruit 10 design partners; measure time to first bounded success and first saved workflow.","textChars":91,"textLines":1,"bbox":[464,375,324,115]}
+{"kind":"shape","id":"sh/2pwnytgn","slide":14,"bbox":[836,225,360,128]}
+{"kind":"textbox","id":"sh/nq5orex8","slide":14,"text":"61-90","textPreview":"61-90","textChars":5,"textLines":1,"bbox":[854,243,324,48]}
+{"kind":"textbox","id":"sh/0ne5wjyh","slide":14,"text":"CONVERT","textPreview":"CONVERT","textChars":7,"textLines":1,"bbox":[854,300,324,38]}
+{"kind":"textbox","id":"sh/1on6poz2","slide":14,"text":"Offer Launch Lab and integration sprints; measure paid conversion, delivery time, and margin.","textPreview":"Offer Launch Lab and integration sprints; measure paid conversion, delivery time, and margin.","textChars":93,"textLines":1,"bbox":[854,375,324,115]}
+{"kind":"notes","id":"nt/xlhwil","slide":14,"text":""}
+{"kind":"slide","id":"sl/hnib7g","slide":15,"title":"PROOF SCORECARD","textShapes":16}
+{"kind":"textbox","id":"sh/3294nahk","slide":15,"text":"PROOF SCORECARD","textPreview":"PROOF SCORECARD","textChars":15,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/o3i5wfip","slide":15,"name":"slide-15-title","text":"A wedge is real only when operators repeat it and pay for it.","textPreview":"A wedge is real only when operators repeat it and pay for it.","textChars":61,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/pormpkza","slide":15,"text":"Use one scorecard across product, commercial, and trust outcomes.","textPreview":"Use one scorecard across product, commercial, and trust outcomes.","textChars":65,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/qp0nyp0v","slide":15,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/bq94rahg","slide":15,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/cr250fi1","slide":15,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/dsbmtkzm","slide":15,"text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"textbox","id":"sh/ytkn2p07","slide":15,"text":"ACTIVATION","textPreview":"ACTIVATION","textChars":10,"textLines":1,"bbox":[68,210,210,30]}
+{"kind":"textbox","id":"sh/zut4vuhc","slide":15,"text":"Installer completion · time to first bounded action · setup interventions","textPreview":"Installer completion · time to first bounded action · setup interventions","textChars":73,"textLines":1,"bbox":[296,210,850,44]}
+{"kind":"shape","id":"sh/fqhk36ho","slide":15,"bbox":[68,264,1080,1]}
+{"kind":"textbox","id":"sh/up83a103","slide":15,"text":"REUSE","textPreview":"REUSE","textChars":5,"textLines":1,"bbox":[68,288,210,30]}
+{"kind":"textbox","id":"sh/hsz25gze","slide":15,"text":"Time to first saved .flw · workflows reused per active operator","textPreview":"Time to first saved .flw · workflows reused per active operator","textChars":63,"textLines":1,"bbox":[296,288,850,44]}
+{"kind":"shape","id":"sh/grqlcbit","slide":15,"bbox":[68,342,1080,1]}
+{"kind":"textbox","id":"sh/7mhkzmhc","slide":15,"text":"RETENTION","textPreview":"RETENTION","textChars":9,"textLines":1,"bbox":[68,366,210,30]}
+{"kind":"textbox","id":"sh/6lo3610r","slide":15,"text":"Weekly retained operators · second use case adopted","textPreview":"Weekly retained operators · second use case adopted","textChars":51,"textLines":1,"bbox":[296,366,850,44]}
+{"kind":"shape","id":"sh/toz21wzi","slide":15,"bbox":[68,420,1080,1]}
+{"kind":"textbox","id":"sh/snql8rix","slide":15,"text":"ECONOMICS","textPreview":"ECONOMICS","textChars":9,"textLines":1,"bbox":[68,444,210,30]}
+{"kind":"textbox","id":"sh/ri14bqhg","slide":15,"text":"Paid conversion · delivery hours · gross margin · support burden","textPreview":"Paid conversion · delivery hours · gross margin · support burden","textChars":64,"textLines":1,"bbox":[296,444,850,44]}
+{"kind":"shape","id":"sh/qhs3il0b","slide":15,"bbox":[68,498,1080,1]}
+{"kind":"textbox","id":"sh/mdwnapkj","slide":15,"text":"TRUST","textPreview":"TRUST","textChars":5,"textLines":1,"bbox":[68,522,210,30]}
+{"kind":"textbox","id":"sh/ne5o3u1o","slide":15,"text":"Denied actions · cancel recovery · credential findings · incident severity","textPreview":"Denied actions · cancel recovery · credential findings · incident severity","textChars":74,"textLines":1,"bbox":[296,522,850,44]}
+{"kind":"shape","id":"sh/8fe5cz29","slide":15,"bbox":[68,576,1080,1]}
+{"kind":"notes","id":"nt/hnib7g","slide":15,"text":""}
+{"kind":"slide","id":"sl/d9bvri","slide":16,"title":"ECOSYSTEM STRATEGY","textShapes":14}
+{"kind":"textbox","id":"sh/kr6hsjqd","slide":16,"text":"ECOSYSTEM STRATEGY","textPreview":"ECOSYSTEM STRATEGY","textChars":18,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/zqxgje9s","slide":16,"name":"slide-16-title","text":"Turn major agents into tools inside the wider operating layer.","textPreview":"Turn major agents into tools inside the wider operating layer.","textChars":62,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/ypofq98n","slide":16,"text":"Interoperability reduces direct model competition and lets XAIHT focus on orchestration, physical surfaces, and trust.","textPreview":"Interoperability reduces direct model competition and lets XAIHT focus on orchestration, physical surfaces, and trust.","textChars":118,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/9gzyp87a","slide":16,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/8v6hw3qp","slide":16,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/7uxgny94","slide":16,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/mtozut8j","slide":16,"text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"shape","id":"sh/hkzyt876","slide":16,"bbox":[56,220,552,150]}
+{"kind":"shape","id":"sh/wjqh03ql","slide":16,"bbox":[56,220,5,150]}
+{"kind":"textbox","id":"sh/6x0jqhgf","slide":16,"text":"EXTERNAL CODING AGENTS","textPreview":"EXTERNAL CODING AGENTS","textChars":22,"textLines":1,"bbox":[78,238,510,30]}
+{"kind":"textbox","id":"sh/7y9kjmx0","slide":16,"text":"ACPX delegates to supported CLIs when the operator chooses.","textPreview":"ACPX delegates to supported CLIs when the operator chooses.","textChars":59,"textLines":1,"bbox":[78,278,510,78]}
+{"kind":"shape","id":"sh/8zilsry5","slide":16,"bbox":[640,220,552,150]}
+{"kind":"shape","id":"sh/t0r2lwfq","slide":16,"bbox":[640,220,5,150]}
+{"kind":"textbox","id":"sh/ul03u1gb","slide":16,"text":"MCP SERVERS","textPreview":"MCP SERVERS","textChars":11,"textLines":1,"bbox":[662,238,510,30]}
+{"kind":"textbox","id":"sh/vmtknmxw","slide":16,"text":"Universal transports connect third-party tools while expanding the attack surface.","textPreview":"Universal transports connect third-party tools while expanding the attack surface.","textChars":82,"textLines":1,"bbox":[662,278,510,78]}
+{"kind":"shape","id":"sh/gn2lwryh","slide":16,"bbox":[56,400,552,150]}
+{"kind":"shape","id":"sh/hob2pwf2","slide":16,"bbox":[56,400,5,150]}
+{"kind":"textbox","id":"sh/apgjixg7","slide":16,"text":"TLAMATINI OVER MCP","textPreview":"TLAMATINI OVER MCP","textChars":18,"textLines":1,"bbox":[78,418,510,30]}
+{"kind":"textbox","id":"sh/bqpkb2hs","slide":16,"text":"External clients can use enabled Tlamatini tools and agents.","textPreview":"External clients can use enabled Tlamatini tools and agents.","textChars":60,"textLines":1,"bbox":[78,458,510,78]}
+{"kind":"shape","id":"sh/zalgjydk","slide":16,"bbox":[640,400,552,150]}
+{"kind":"shape","id":"sh/e9czqtwz","slide":16,"bbox":[640,400,5,150]}
+{"kind":"textbox","id":"sh/1wnil8va","slide":16,"text":"WORKFLOW PACKS","textPreview":"WORKFLOW PACKS","textChars":14,"textLines":1,"bbox":[662,418,510,30]}
+{"kind":"textbox","id":"sh/0vehs3e5","slide":16,"text":"Validated .flw processes become the shared operational asset.","textPreview":"Validated .flw processes become the shared operational asset.","textChars":61,"textLines":1,"bbox":[662,458,510,78]}
+{"kind":"notes","id":"nt/d9bvri","slide":16,"text":""}
+{"kind":"slide","id":"sl/w8buj5","slide":17,"title":"RISK REGISTER","textShapes":24}
+{"kind":"textbox","id":"sh/v2tcjid0","slide":17,"text":"RISK REGISTER","textPreview":"RISK REGISTER","textChars":13,"textLines":1,"bbox":[56,40,620,22]}
+{"kind":"textbox","id":"sh/g3mtcnul","slide":17,"name":"slide-17-title","text":"The highest risks are operational, not rhetorical.","textPreview":"The highest risks are operational, not rhetorical.","textChars":50,"textLines":1,"bbox":[56,76,1110,72]}
+{"kind":"textbox","id":"sh/h4vulsvq","slide":17,"text":"Assign owners and evidence before scaling promotion.","textPreview":"Assign owners and evidence before scaling promotion.","textChars":52,"textLines":1,"bbox":[56,158,1060,38]}
+{"kind":"shape","id":"sh/mdkb6dw3","slide":17,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/7etsfido","slide":17,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/8f2t8nu9","slide":17,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/tgbuh8vu","slide":17,"text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"textbox","id":"sh/y90b2tw7","slide":17,"text":"Security / privacy","textPreview":"Security / privacy","textChars":18,"textLines":1,"bbox":[64,205,240,28]}
+{"kind":"textbox","id":"sh/za9sbyds","slide":17,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[320,205,80,28]}
+{"kind":"textbox","id":"sh/3edc7upg","slide":17,"text":"Scope controls, secret handling, release guards, incident response","textPreview":"Scope controls, secret handling, release guards, incident response","textChars":66,"textLines":1,"bbox":[430,205,750,42]}
+{"kind":"shape","id":"sh/id4byp8v","slide":17,"bbox":[64,251,1110,1]}
+{"kind":"textbox","id":"sh/5gfu947m","slide":17,"text":"Integration reliability","textPreview":"Integration reliability","textChars":23,"textLines":1,"bbox":[64,272,240,28]}
+{"kind":"textbox","id":"sh/4fmt0zq1","slide":17,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[320,272,80,28]}
+{"kind":"textbox","id":"sh/rixcbeps","slide":17,"text":"Three supported stacks, reproducible tests, dependency diagnostics","textPreview":"Three supported stacks, reproducible tests, dependency diagnostics","textChars":66,"textLines":1,"bbox":[430,272,750,42]}
+{"kind":"shape","id":"sh/qhov2987","slide":17,"bbox":[64,318,1110,1]}
+{"kind":"textbox","id":"sh/dkfud47i","slide":17,"text":"Support economics","textPreview":"Support economics","textChars":17,"textLines":1,"bbox":[64,339,240,28]}
+{"kind":"textbox","id":"sh/sj6d4jqx","slide":17,"text":"HIGH","textPreview":"HIGH","textChars":4,"textLines":1,"bbox":[320,339,80,28]}
+{"kind":"textbox","id":"sh/7mtczap8","slide":17,"text":"Measure delivery hours, refuse unsupported combinations, partner network","textPreview":"Measure delivery hours, refuse unsupported combinations, partner network","textChars":72,"textLines":1,"bbox":[430,339,750,42]}
+{"kind":"shape","id":"sh/6lkb658n","slide":17,"bbox":[64,385,1110,1]}
+{"kind":"textbox","id":"sh/ahsfedsb","slide":17,"text":"Platform competition","textPreview":"Platform competition","textChars":20,"textLines":1,"bbox":[64,406,240,28]}
+{"kind":"textbox","id":"sh/b21w7i9w","slide":17,"text":"MED","textPreview":"MED","textChars":3,"textLines":1,"bbox":[320,406,80,28]}
+{"kind":"textbox","id":"sh/c3axgnah","slide":17,"text":"Interoperate, focus vertical, accumulate workflow evidence","textPreview":"Interoperate, focus vertical, accumulate workflow evidence","textChars":58,"textLines":1,"bbox":[430,406,750,42]}
+{"kind":"shape","id":"sh/x4jy9sr2","slide":17,"bbox":[64,452,1110,1]}
+{"kind":"textbox","id":"sh/2d8fadsf","slide":17,"text":"Brand credibility","textPreview":"Brand credibility","textChars":17,"textLines":1,"bbox":[64,473,240,28]}
+{"kind":"textbox","id":"sh/nehw3i90","slide":17,"text":"MED","textPreview":"MED","textChars":3,"textLines":1,"bbox":[320,473,80,28]}
+{"kind":"textbox","id":"sh/ofaxc3a5","slide":17,"text":"Current counts, real demos, no fabricated traction, no autonomous fantasy","textPreview":"Current counts, real demos, no fabricated traction, no autonomous fantasy","textChars":73,"textLines":1,"bbox":[430,473,750,42]}
+{"kind":"shape","id":"sh/pgje58rq","slide":17,"bbox":[64,519,1110,1]}
+{"kind":"textbox","id":"sh/e98f6ts3","slide":17,"text":"Energy / access","textPreview":"Energy / access","textChars":15,"textLines":1,"bbox":[64,540,240,28]}
+{"kind":"textbox","id":"sh/fahwzy9o","slide":17,"text":"MED","textPreview":"MED","textChars":3,"textLines":1,"bbox":[320,540,80,28]}
+{"kind":"textbox","id":"sh/h4ni5wb6","slide":17,"text":"Measure local hardware, connectivity, model, and language constraints","textPreview":"Measure local hardware, connectivity, model, and language constraints","textChars":69,"textLines":1,"bbox":[430,540,750,42]}
+{"kind":"shape","id":"sh/g3ehcrul","slide":17,"bbox":[64,586,1110,1]}
+{"kind":"notes","id":"nt/w8buj5","slide":17,"text":""}
+{"kind":"slide","id":"sl/vcbbf3","slide":18,"title":"XAIHT / TLAMATINI","textShapes":7}
+{"kind":"shape","id":"sh/tovudsjm","slide":18,"bbox":[0,0,790,720]}
+{"kind":"textbox","id":"sh/snmtkni1","slide":18,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[58,56,260,22]}
+{"kind":"textbox","id":"sh/jytc7i1k","slide":18,"text":"Focus the promise. Expand the proof.","textPreview":"Focus the promise. Expand the proof.","textChars":36,"textLines":1,"bbox":[58,190,650,130]}
+{"kind":"textbox","id":"sh/ixkbed0z","slide":18,"text":"Tlamatini should not challenge every coding agent or automation platform. It should become the trusted operator for workflows that cross code, engines, devices, media, and human approval.","textPreview":"Tlamatini should not challenge every coding agent or automation platform. It should become the trusted operator for workflows that cross ...","textChars":187,"textLines":1,"bbox":[58,350,610,110]}
+{"kind":"textbox","id":"sh/5kvu9sjq","slide":18,"text":"Win one vertical workflow, then earn the right to widen.","textPreview":"Win one vertical workflow, then earn the right to widen.","textChars":56,"textLines":1,"bbox":[58,535,620,58]}
+{"kind":"shape","id":"sh/kzmtgni5","slide":18,"bbox":[56,681,1168,1]}
+{"kind":"textbox","id":"sh/3uxcj2ho","slide":18,"text":"XAIHT / TLAMATINI","textPreview":"XAIHT / TLAMATINI","textChars":17,"textLines":1,"bbox":[56,688,240,18]}
+{"kind":"textbox","id":"sh/2tobqx03","slide":18,"text":"COMPETITION / THREATS / OPPORTUNITIES","textPreview":"COMPETITION / THREATS / OPPORTUNITIES","textChars":37,"textLines":1,"bbox":[410,688,460,18]}
+{"kind":"textbox","id":"sh/0je94r2t","slide":18,"text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1170,688,54,18]}
+{"kind":"image","id":"im/ru1gjyh0","slide":18,"name":"","alt":"Focus the promise. Expand the proof.","bbox":[0,0,1280,720]}
+{"kind":"notes","id":"nt/vcbbf3","slide":18,"text":""}

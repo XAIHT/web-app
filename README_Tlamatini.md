@@ -19,15 +19,15 @@
 
 <p align="center">
   <b>💰 About $200 a YEAR — not $200 a MONTH.</b><br/>
-  Frontier plans like GPT-5.4 or Claude Opus cost about <b>$200 per month</b>. <b>Tlamatini is free and open-source</b> — your only bill is <b>Ollama Pro (~$200 a <i>year</i>, paid to Ollama, not us)</b>, and on top of it she stacks <b>85 agent types and 75+ tools</b>: comparable power for about <b>one twelfth</b> the price, all on your own machine.
+  Frontier plans like GPT-5.4 or Claude Opus cost about <b>$200 per month</b>. <b>Tlamatini is free and open-source</b> — your only bill is <b>Ollama Pro (~$200 a <i>year</i>, paid to Ollama, not us)</b>, and on top of it she stacks <b>87 agent types and 75+ tools</b>: comparable power for about <b>one twelfth</b> the price, all on your own machine.
 </p>
 
 <p align="center">
   <a href="https://discord.gg/WFQsrskgc"><img src="https://img.shields.io/badge/DISCORD-JOIN%20US-5865F2?style=for-the-badge&labelColor=2D2D2D&logo=discord&logoColor=white" alt="Join our Discord"/></a>
-  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.40.1"><img src="https://img.shields.io/badge/VERSION-v1.40.1-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version"/></a>
+  <a href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.48.2"><img src="https://img.shields.io/badge/VERSION-v1.48.2-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="Version"/></a>
   <a href="https://www.python.org/downloads/release/python-31210/"><img src="https://img.shields.io/badge/PYTHON-3.12.10-3776AB?style=for-the-badge&labelColor=2D2D2D&logo=python&logoColor=white" alt="Python"/></a>
   <a href="#installation"><img src="https://img.shields.io/badge/PLATFORM-WIN%2010%20%7C%2011-0078D6?style=for-the-badge&labelColor=2D2D2D&logo=windows&logoColor=white" alt="Platform"/></a>
-  <a href="#-the-full-capability-list"><img src="https://img.shields.io/badge/AGENT%20TYPES-85-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="85 agent types"/></a>
+  <a href="#-the-full-capability-list"><img src="https://img.shields.io/badge/AGENT%20TYPES-87-8A2BE2?style=for-the-badge&labelColor=2D2D2D" alt="87 agent types"/></a>
   <a href="#-the-full-capability-list"><img src="https://img.shields.io/badge/TOOLS-75-16A34A?style=for-the-badge&labelColor=2D2D2D" alt="75 tools"/></a>
   <a href="https://github.com/XAIHT/Tlamatini/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-1E90FF?style=for-the-badge&labelColor=2D2D2D" alt="License"/></a>
 </p>
@@ -47,7 +47,7 @@
 
 ## 🚀 Get started — 5 steps to a cloud-powered Tlamatini
 
-The whole idea in one line: **don't pay $200 a month for a frontier model.** **Tlamatini is free** — your only cost is **Ollama Pro (~$200 a year, paid to Ollama, not us)**; point Tlamatini at it and drive **85 agent types and 75+ tools** from your own machine. Here's the full setup.
+The whole idea in one line: **don't pay $200 a month for a frontier model.** **Tlamatini is free** — your only cost is **Ollama Pro (~$200 a year, paid to Ollama, not us)**; point Tlamatini at it and drive **87 agent types and 75+ tools** from your own machine. Here's the full setup.
 
 ### 1 · Install Tlamatini
 
@@ -161,12 +161,6 @@ Add any cloud-CLI keys here too — plus the messaging keys, the Kali server URL
 
 Done — tick **Multi-Turn** in the chat toolbar and put Tlamatini to work.
 
----
-
-> **📹 [ Drop a 15-second GIF here ]** — flashing a board from a prompt, or wiring agent types on the canvas and hitting Start. One real GIF up top sells this faster than anything written below.
-
----
-
 ## 💎 The jewels — what nothing else can do
 
 Claude Code, Codex, Cursor, Gemini — they edit text files. Tlamatini does that **and** reaches into the physical and creative world, then lets you *wire it all together visually*:
@@ -179,7 +173,7 @@ Claude Code, Codex, Cursor, Gemini — they edit text files. Tlamatini does that
 | 🛠️ | **Modify entire software projects** | Read, grep, refactor, edit, and rebuild whole codebases — not just single files — with hybrid RAG grounding. |
 | 🛡️ | **Security assessments** | Authorized Kali Linux / pentest runbooks + code security-audit skills, driven from chat. |
 | 📟 | **STM32 · ESP32 · Arduino firmware** | Scaffold → build → **flash a real connected board** → read serial, with a safety preflight that refuses mis-targeted firmware. |
-| 🧩 | **A VISUAL WORKFLOW DESIGNER** | **84 drag-and-drop agent types** on a canvas you wire into runnable, savable `.flw` flows. *No other coding agent — Claude Code, Codex, none of them — gives you this.* This is the crown jewel. |
+| 🧩 | **A VISUAL WORKFLOW DESIGNER** | **87 drag-and-drop agent types** on a canvas you wire into runnable, savable `.flw` flows. *No other coding agent — Claude Code, Codex, none of them — gives you this.* This is the crown jewel. |
 
 > **The headline no competitor can copy:** Tlamatini is the only local-first AI dev assistant where you *design the agent workflow visually*, then have it flash firmware, drive Unreal/Blender, run security tools, and command any external MCP — all from one machine.
 
@@ -189,11 +183,13 @@ Claude Code, Codex, Cursor, Gemini — they edit text files. Tlamatini does that
 
 Embeddings and chat run on your local [Ollama](https://ollama.com) install. Cloud models (Claude API, Ollama Pro/Max) and delegation to cloud CLIs are **opt-in, per request, never the default.** Your code and firmware never leave the box unless you route them out yourself.
 
-## ⚠️ Agent-directory disclaimer: user jurisdiction and responsibility
+## ⚠️ CLEAR DISCLAIMER — USER CONTROL, JURISDICTION, AND RESPONSIBILITY FOR AGENTS
 
-The workflow agents in `Tlamatini/agent/agents/` are plain-Python programs on purpose: they are readable, editable, auditable operating code under the user's control. When you enable, configure, modify, chain, or run those agents, their actions fall under **your jurisdiction**. The prompts, config files, secrets, credentials, files, folders, network targets, browsers, shells, APIs, external MCP servers, hardware devices, and downstream systems they touch are selected and authorized by you.
+Every agent in `Tlamatini/agent/agents/` is intentionally provided as a **plain-Python program** so its operating code can be read, audited, edited, restricted, or disabled by the user. This transparency is a user-control mechanism, **not a warranty that an agent is secure or suitable for a particular environment**. The agents do not have independent authority or jurisdiction: the user alone decides whether, where, how, and with which permissions they run.
 
-Tlamatini provides orchestration, documentation, and guardrails, but it cannot guarantee that every user-edited agent, workflow, external service, credential scope, target machine, or local environment is safe. **Any security breach, data exposure, unauthorized action, credential leak, unsafe automation, policy violation, device damage, or other harm caused by running agents or agent workflows is the responsibility of the user who runs them.** Audit agents before use, restrict credentials and permissions, and operate them only on systems where you have explicit authorization.
+When you enable, configure, modify, chain, or execute an agent, **that agent and its execution are under your control and your jurisdiction**. You are solely responsible for reviewing its code and configuration; protecting and limiting its secrets, credentials, and permissions; selecting and authorizing every file, folder, network target, browser, shell, API, external MCP server, machine, hardware device, and downstream system it can access; supervising its output; and complying with every law, policy, license, contract, and authorization that applies to your use.
+
+**BY RUNNING AN AGENT, YOU ACCEPT RESPONSIBILITY FOR ITS ACTIONS AND CONSEQUENCES. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, ANY SECURITY BREACH, DATA EXPOSURE OR LOSS, UNAUTHORIZED ACTION, CREDENTIAL LEAK, UNSAFE AUTOMATION, POLICY OR LEGAL VIOLATION, SYSTEM COMPROMISE, DEVICE DAMAGE, FINANCIAL LOSS, OR OTHER HARM ARISING FROM YOUR USE, CONFIGURATION, MODIFICATION, OR EXECUTION OF AN AGENT OR AGENT WORKFLOW IS THE RESPONSIBILITY OF THE USER WHO RUNS IT.** Tlamatini's orchestration, documentation, examples, and guardrails do not authorize access to third-party systems and cannot replace the user's own security review, permission controls, monitoring, or legal compliance.
 
 ---
 
@@ -202,14 +198,14 @@ Tlamatini provides orchestration, documentation, and guardrails, but it cannot g
 Everything Tlamatini can do, grouped:
 
 **🧩 Orchestration & design**
-- **Visual Workflow Designer (ACP)** — 84 drag-and-drop agent types wired into runnable flows; save/load `.flw` files; Flow Compiler validates the canvas into `config.yaml`.
+- **Visual Workflow Designer (ACP)** — 87 drag-and-drop agent types wired into runnable flows; save/load `.flw` files; Flow Compiler validates the canvas into `config.yaml`.
 - **Multi-Turn orchestration** — a tool-calling loop with **75 tools** and a global execution planner; **Step-by-Step** mode paces hands-on setup one action at a time; **self-healing model steps** mean a network/model hiccup never freezes her — she retries under a watchdog, finishes gracefully from work already done, and always tells you what happened.
-- **FlowCreator / FlowHypervisor** — let an LLM design a flow; a watchdog monitors flow health.
+- **FlowCreator / FlowHypervisor** — let an LLM design a flow; a watchdog monitors flow health. FlowCreator is now also **callable from chat** (`chat_agent_flowcreator`): describe a flow in plain words and it writes a real, canvas-loadable `.flw` file to disk.
 - **Parametrizer / Gatewayer / Gateway-Relayer / Node Manager** — chain agent outputs into the next agent's config; trigger flows from webhooks, folder-drops, or GitHub/GitLab.
 - **ACPX** — spawn external coding-agent CLIs (Claude Code, Codex, Cursor, Gemini, Qwen, and more) as tools and relay between them.
 
 **📟 Firmware & hardware**
-- **STM32er** — zero-config STM32 build/flash/observe with a critical-mission safety preflight.
+- **STM32er** — zero-config STM32 build/flash/observe across the whole ST 32-bit line (Blue Pill → F7/G/L/H7/U5/WB) via a dual backend (PlatformIO `ststm32` + the STM32F407VG template MCP), with a critical-mission safety preflight.
 - **ESP32er** — direct PlatformIO build/flash/monitor, zero-config bootstrap.
 - **Arduiner** — direct `arduino-cli`, auto-installs binary + core, build/upload.
 - **ESPHomer** — ESPHome smart-home device configs (YAML, no C++), zero-config.
@@ -219,6 +215,16 @@ Everything Tlamatini can do, grouped:
 - **Blenderer** — Blender scene/object/render/code over the official MCP socket.
 
 **🛠️ Code & projects**
+- **PDFer** — the **document composer**: turn Tlamatini's own answer, some Markdown/HTML, plain text, a folder of images, or several existing PDFs into ONE styled PDF — with a cover page, real tables, page numbers and an optional table of contents. It is the WRITE side of the document family (File-Extractor / File-Interpreter *read* documents; PDFer *authors* them). **Needs no installation** — every engine it uses already ships inside Tlamatini. Modes: `auto` (it sniffs the content for you) / `markdown` / `html` / `text` / `images` (one-per-page, fit, or grid) / `mixed` (prose + embedded figures) / `merge` / `info` / `validate`. Optionally let an Ollama model tidy the text into clean Markdown first (off by default; a failed tidy never loses your document). PDFs land in **Documents/TlamatiniPDF** with a collision-proof name, and a fail-safe preflight refuses rather than write an empty or wrong file.
+- **LaTeXer** — the **LaTeX typesetter**, and the typesetting sibling of PDFer: PDFer *composes* a PDF out of Markdown, HTML and pictures; LaTeXer *typesets* one from real `.tex` source — proper mathematics, a real bibliography, numbered cross-references, an index. Hand it a whole folder of `.tex` files and it finds the master document itself, follows every `\input`, runs `biber`/`bibtex` and `makeindex`, and keeps re-running the compiler until the cross-references settle — then it turns the famously unreadable LaTeX log into a short list of real errors. You can also hand it a bare fragment (even just `$E = mc^2$`) and it wraps it in a proper preamble for you. Eight built-in templates (article, report, book, beamer, letter, cv, homework, spanish-article), plus authoring actions to create, edit, read, list, lint and inspect `.tex` files. PDFs land in **Documents/TlamatiniLaTeX**.
+
+  > ### ⚠️ LaTeXer needs **MiKTeX** — and that is the *only* thing it needs
+  >
+  > Tlamatini does **not** ship a TeX distribution: a full one is several gigabytes, and the whole release is kept small on purpose. So install **MiKTeX** once — **https://miktex.org/download** — and then install Tlamatini. That is it: **MiKTeX + Tlamatini = LaTeXer works, forever, with nothing else to configure.**
+  >
+  > **Why MiKTeX specifically?** Because when a document asks for a LaTeX package you have never installed, **MiKTeX downloads and installs it by itself, in the middle of the build** — so the document still comes out. That single feature is what lets LaTeXer typeset *anything* out of the box. TeX Live and MacTeX are detected and used if you already have one, but neither can do that, so you would have to hunt down missing packages yourself. **MiKTeX is the recommended choice.**
+  >
+  > No LaTeX installed? LaTeXer tells you so plainly and refuses — it never crashes and never pretends a PDF was made. Ask it to run `action: validate` to see exactly what it found, or `action: install` and it will download and launch the official **MiKTeX** installer for you.
 - **Editor / Grepper / Globber** — surgical find-and-replace, regex content search, filename glob (Claude-Edit/Grep/Glob equivalents).
 - **File-Creator / Mover / Deleter / File-Interpreter / File-Extractor** — create, move, delete, read-and-interpret, extract from PDF/DOCX.
 - **Executer / Pythonxer** — run shell commands and gated Python.
@@ -248,6 +254,8 @@ Everything Tlamatini can do, grouped:
 - **AudioPlayer / VideoPlayer** — audio and video playback with volume/loop control.
 - **Image-Interpreter** — triple-model vision analysis: qwen3.5:cloud + gemma4:cloud interpret each image **in parallel** on two dedicated Ollama connections, then glm-5.2:cloud merges both interpretations into one definitive report (mockup/GUI inventories in % coordinates, full OCR, people described exhaustively with identity clues taken from the image file name).
 
+- **Screenshot → chat (paste or drop)** — hit Print Screen (or snip), Alt+Tab back to Tlamatini and press **Ctrl+V** — or drag image files onto the chat column. She saves the image into her own `Temp` folder as `image_<timestamp>.jpg`, shows a thumbnail above the input, and drops the **full path into your message at the cursor**, so you can finish the sentence — *"…what's wrong in this screenshot?"* — and send. The path is what Image-Interpreter reads.
+
 **📨 Messaging, bridges & platform**
 - **Telegrammer** — Telegram send/receive that can send under **two identities**, picked per message with `provider`: **as the bot** (`provider=bot`, Bot API + a `@BotFather` token) or **as your own account** (`provider=user`, official Telegram user session). Plain English works — say *"send it as me"* (→ your account) or *"as the bot"*. `auto` (the default) uses your account for private `@usernames`/`+phone` and the bot for numeric ids/channels. Sending as you needs a one-time login; human configs stay readable as `@username`.
 - **Whatsapper** — WhatsApp send/receive with a `provider` switch for **which number sends**: **`cloud`** (default, the official Meta WhatsApp Cloud API — business number, templates, System User) or **`web`** (say *"send it as me"* / *"from my own WhatsApp"*) which sends from **your own personal number** by automating WhatsApp Web after a one-time QR login — no templates, no System User. The `web` path is unofficial (it drives WhatsApp Web) and carries Meta-ban risk; the `cloud` path remains the official, supported route.
@@ -258,6 +266,25 @@ Everything Tlamatini can do, grouped:
 - **PyInstaller packaging** — ships as a standalone Windows `.exe`.
 
 ---
+
+## 🧹 Your context stays clean — automatic binary detection
+
+When you point Tlamatini at a folder (**Context ▸ Set directory as context**), real projects are full of files that are not text: compiled binaries, images, archives, model weights, databases, build artefacts. Feeding those into an embedding index is pure damage — it wastes VRAM and time, and it buries your real code under noise.
+
+Tlamatini screens **every** file by its actual bytes before loading it, and silently skips the binary ones. It is on by default and needs no setup.
+
+- **Fast by design** — at most one 8 KiB read per file, and known binary extensions are never opened at all. Screening a 4 GB video costs the same as screening a README.
+- **Content-based, not name-based** — a PNG renamed `notes.md` is still caught. This works *alongside* **Context ▸ Set file type omissions**, which stays exactly as it was for the files *you* choose to ignore.
+- **Never silent** — every skipped file is listed in `tlamatini.log` with the reason it was skipped, so you always know why something is not in your context:
+
+```
+--- [BINARY-GUARD] 3 binary file(s) OMITTED from the context / embedding chain
+--- [BINARY-GUARD]   ✗ OMITTED C:\proj\assets\logo.png  [extension: known binary extension .png]
+```
+
+- **Safe by default** — if anything is uncertain or unreadable, the file is loaded as text rather than dropped. Your context is never removed on a guess. Accented and legacy-encoded text files (Spanish, French, cp1252 …) are always kept.
+
+Turn it off with `"binary_context_detection": false` in `config.json`; tune it with `binary_detection_control_ratio`, or rescue a specific extension with `binary_detection_force_text_extensions`.
 
 ## See it work
 

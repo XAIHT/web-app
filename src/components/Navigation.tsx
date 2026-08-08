@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { useAuth } from '@/hooks/useAuth';
-import { useT } from '@/i18n/context';
+import { useLanguage, useT } from '@/i18n/context';
 import LanguageSwitch from '@/components/LanguageSwitch';
 
 interface NavigationProps {
@@ -13,9 +13,11 @@ export default function Navigation({ dark = false }: NavigationProps) {
   const location = useLocation();
   const { user, isAuthenticated, logout } = useAuth();
   const t = useT();
+  const { lang } = useLanguage();
 
   const isHome = location.pathname === '/';
   const isTlamatini = location.pathname === '/tlamatini';
+  const isLaunch = location.pathname === '/launch';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,13 +66,8 @@ export default function Navigation({ dark = false }: NavigationProps) {
     >
       <div className="max-w-[1200px] mx-auto flex items-center justify-between h-14 px-6">
         {/* Brand */}
-        <Link to="/" className="flex items-center gap-2">
-          <span
-            className="font-mono text-[1.5rem] tracking-[0.15em] uppercase"
-            style={{ color: '#c9a96e' }}
-          >
-            XAIHT
-          </span>
+        <Link to="/" className="flex items-center gap-2" aria-label="XAIHT home">
+          <img src="/images/campaign/xaiht-wordmark.svg" alt="XAIHT" className="h-7 w-auto" />
         </Link>
 
         {/* Center Nav Links */}
@@ -98,6 +95,12 @@ export default function Navigation({ dark = false }: NavigationProps) {
           {!isHome && !isTlamatini && (
             <Link to="/" className="nav-link">{t.nav.home}</Link>
           )}
+          <Link
+            to="/launch"
+            className={`nav-link ${isLaunch ? 'active' : ''}`}
+          >
+            {lang === 'es' ? 'Lanzamiento' : 'Launch'}
+          </Link>
           <Link
             to="/tlamatini"
             className={`nav-link ${isTlamatini ? 'active' : ''}`}

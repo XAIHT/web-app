@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title desc">
+  <title id="title">XAIHT company mark</title>
+  <desc id="desc">A geometric X formed by four paths around an open central aperture.</desc>
+  <path fill="#D6A84B" fill-rule="evenodd" d="M8 12h24l18 26 18-26h24L62 50l30 38H68L50 62 32 88H8l30-38L8 12Zm42 29-9 9 9 9 9-9-9-9Z"/>
+  <path fill="#42A783" d="M50 4 58 12 50 24 42 12 50 4ZM96 50 88 58 76 50 88 42 96 50ZM50 96 42 88 50 76 58 88 50 96ZM4 50 12 42 24 50 12 58 4 50Z"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 120" role="img" aria-labelledby="title desc">
+  <title id="title">XAIHT company wordmark</title>
+  <desc id="desc">The XAIHT aperture mark followed by the company name and Intelligence under human command.</desc>
+  <rect width="560" height="120" fill="#090B0C"/>
+  <g transform="translate(16 14) scale(.92)">
+    <path fill="#D6A84B" fill-rule="evenodd" d="M8 12h24l18 26 18-26h24L62 50l30 38H68L50 62 32 88H8l30-38L8 12Zm42 29-9 9 9 9 9-9-9-9Z"/>
+    <path fill="#42A783" d="M50 4 58 12 50 24 42 12 50 4ZM96 50 88 58 76 50 88 42 96 50ZM50 96 42 88 50 76 58 88 50 96ZM4 50 12 42 24 50 12 58 4 50Z"/>
+  </g>
+  <text x="132" y="66" fill="#F2F3EE" font-family="Space Grotesk, Inter, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="0">XAIHT</text>
+  <text x="134" y="91" fill="#42A783" font-family="IBM Plex Mono, Consolas, monospace" font-size="13" font-weight="600" letter-spacing="0">INTELLIGENCE UNDER HUMAN COMMAND.</text>
+</svg>
