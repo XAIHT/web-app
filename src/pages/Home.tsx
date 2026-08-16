@@ -102,8 +102,8 @@ function OverviewSection() {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { label: o.stats.agents, value: '87' },
-                { label: o.stats.skills, value: '27' },
-                { label: o.stats.version, value: 'v1.48.2' },
+                { label: o.stats.skills, value: '28' },
+                { label: o.stats.version, value: 'v1.48.15' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -552,7 +552,7 @@ function ToolsSection() {
     { name: 'ACPX-Skills -> Configure', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Diagnostics', color: '#b08cc7' },
     { name: 'ACPX-Skills -> Reload Registry', color: '#b08cc7' },
-    { name: 'External MCPs', color: '#b08cc7' },
+    { name: 'Private MCP Runtimes', color: '#b08cc7' },
     { name: 'MCP Doctor', color: '#b08cc7' },
     { name: 'Windows uninstall registration', color: '#c79e7a' },
     { name: 'Ask Execs', color: '#c9a96e' },
@@ -586,14 +586,14 @@ function ToolsSection() {
     { name: 'Full-surface Multi-Turn', color: '#7a9e8e' },
     { name: 'Pythonxer strict gate', color: '#7a9e8e' },
     { name: 'File-Creator persistence', color: '#7a9e8e' },
-    { name: 'Globber / Grepper / Editor', color: '#7a9e8e' },
+    { name: 'UTF-Aware Grepper', color: '#7a9e8e' },
     { name: 'chat_agent_executer', color: '#7a9e8e' },
     { name: 'chat_agent_sleeper', color: '#7a9e8e' },
     { name: 'chat_agent_mouser', color: '#c79e7a' },
     { name: 'acp_spawn', color: '#b08cc7' },
     { name: 'acp_relay', color: '#b08cc7' },
     { name: 'Claude Code uses Tlamatini tools', color: '#b08cc7' },
-    { name: 'invoke_skill', color: '#9e9e9e' },
+    { name: '28 runtime skills', color: '#9e9e9e' },
   ];
   const tools = toolData.map((tool, i) => ({ ...tool, ...t.home.tools.items[i] }));
 

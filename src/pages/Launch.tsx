@@ -39,7 +39,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.48.2',
+    eyebrow: 'XAIHT presents Tlamatini v1.48.15',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
@@ -47,7 +47,7 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Current release'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini combines code-aware retrieval, guarded execution, visual workflows, external-agent coordination, and direct creative and embedded tooling. The operator keeps the right to inspect, approve, deny, or stop.',
+    shiftBody: 'Tlamatini combines code-aware retrieval, guarded execution, 107 built-in Multi-Turn tools, visual workflows, external-agent coordination, private External-MCP runtimes, and direct creative and embedded tooling. The operator keeps the right to inspect, approve, deny, or stop.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
@@ -77,7 +77,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.48.2',
+    eyebrow: 'XAIHT presenta Tlamatini v1.48.15',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
@@ -85,7 +85,7 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini combina recuperacion consciente del codigo, ejecucion protegida, flujos visuales, coordinacion de agentes externos y herramientas creativas y embebidas directas. El operador conserva el derecho de inspeccionar, aprobar, negar o detener.',
+    shiftBody: 'Tlamatini combina recuperacion consciente del codigo, ejecucion protegida, 107 herramientas Multi-Turn integradas, flujos visuales, coordinacion de agentes externos, runtimes privados para External MCPs y herramientas creativas y embebidas directas. El operador conserva el derecho de inspeccionar, aprobar, negar o detener.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['87', '75+', '27', 'v1.48.2'].map((value, index) => (
+            {['87', '107', '28', 'v1.48.15'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>

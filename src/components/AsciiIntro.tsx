@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useT } from '@/i18n/context';
 
 const STAR_COUNT = 120;
@@ -21,7 +21,7 @@ export default function AsciiIntro() {
   const phraseIndexRef = useRef(0);
   const posXRef = useRef(0);
   const rafRef = useRef<number>(0);
-  const starsRef = useRef(createStars());
+  const stars = useMemo(() => createStars(), []);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -70,8 +70,6 @@ export default function AsciiIntro() {
       window.removeEventListener('resize', handleResize);
     };
   }, [phrases]);
-
-  const stars = starsRef.current;
 
   return (
     <section className="nasa-banner-container">

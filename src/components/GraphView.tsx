@@ -20,7 +20,7 @@ type SimLink = d3.SimulationLinkDatum<SimNode>;
 export default function GraphView({ data, onNodeClick, selectedNodeId }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
-  const stableClick = useCallback(onNodeClick, [onNodeClick]);
+  const stableClick = useCallback((id: string) => onNodeClick(id), [onNodeClick]);
 
   useEffect(() => {
     const container = containerRef.current;
