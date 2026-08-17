@@ -103,7 +103,7 @@ function OverviewSection() {
               {[
                 { label: o.stats.agents, value: '87' },
                 { label: o.stats.skills, value: '28' },
-                { label: o.stats.version, value: 'v1.48.15' },
+                { label: o.stats.version, value: 'v1.48.17' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
