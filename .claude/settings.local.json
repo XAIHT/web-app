@@ -44,7 +44,9 @@
       "Bash(git -C /c/Development/XAIHT/web-app status --short)",
       "Bash(git rm *)",
       "Bash(python *)",
-      "Bash(PYTHONIOENCODING=utf-8 python *)"
+      "Bash(PYTHONIOENCODING=utf-8 python *)",
+      "Bash(docker volume *)",
+      "Bash(ssh -i /c/Development/jenkins-docker/keys/vm_deploy -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/c/Development/jenkins-docker/keys/known_hosts jenkins-deployer@136.116.194.179 \"whoami; sudo -n -l | grep xaiht-app\")"
     ]
   }
 }
