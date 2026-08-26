@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -101,9 +101,9 @@ function OverviewSection() {
             />
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '87' },
-                { label: o.stats.skills, value: '28' },
-                { label: o.stats.version, value: 'v1.48.17' },
+                { label: o.stats.agents, value: '88' },
+                { label: o.stats.skills, value: '29' },
+                { label: o.stats.version, value: 'v1.50.0' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -159,27 +159,27 @@ function VisionMissionSection() {
     };
   }, []);
 
-  const icons = [
-    (
+  const icons: Record<string, ReactNode> = {
+    vision: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
         <circle cx="12" cy="12" r="3" />
         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
       </svg>
     ),
-    (
+    mission: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a9e8e" strokeWidth="1.5">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
       </svg>
     ),
-    (
+    concept: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a96e" strokeWidth="1.5">
         <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
         <path d="M12 16v-4M12 8h.01" />
       </svg>
     ),
-  ];
+  };
 
-  const cards = v.cards.map((card, i) => ({ ...card, icon: icons[i] }));
+  const cards = v.cards.map((card) => ({ ...card, icon: icons[card.id] }));
 
   return (
     <section
@@ -448,17 +448,15 @@ function WorkflowSection() {
     };
   }, []);
 
-  const categoryData = [
-    { agents: 'Starter, Ender, Stopper, Cleaner, Sleeper, Croner', color: '#c9a96e' },
-    { agents: 'Raiser, Forker, Asker, Counter', color: '#7a9e8e' },
-    { agents: 'OR, AND, Barrier', color: '#9e9e9e' },
-    { agents: 'Unrealer, Blenderer, STM32er, ESP32er, ESPHomer, Arduiner, Discoverer, Nmapper, Kalier, Executer, Pythonxer, Sqler, Mongoxer, Crawler, Googler, Playwrighter, Apirer, Gitter, Reviewer, Analyzer, Ssher, Scper, Dockerer, MCP Doctor, Kuberneter, Pser, Jenkinser, Prompter, Summarizer, File-Interpreter, File-Extractor, Image-Interpreter, Video-Analyzer, J-Decompiler, De-Compresser, Mover, Deleter, File-Creator, Shoter, Globber, Grepper, PDFer, LaTeXer, Editor, Camcorder, Recorder, Whisperer, AudioPlayer, VideoPlayer, Talker, Mouser, Windower, Keyboarder', color: '#8a9ec7' },
-    { agents: 'Kyber-KeyGen, Kyber-Cipher, Kyber-DeCipher (CRYSTALS-Kyber)', color: '#c79e7a' },
-    { agents: 'Parametrizer, FlowBacker, FlowCreator, Gatewayer, Gateway-Relayer, Node-Manager', color: '#c9a96e' },
-    { agents: 'Notifier, Emailer, RecMailer, Whatsapper, Telegrammer, Zavuerer, Instant Messaging Doctor, Monitor-Log, Monitor-Netstat, FlowHypervisor', color: '#7a9e8e' },
-    { agents: 'TeleTlamatini, ACPXer', color: '#b08cc7' },
+  const categoryColors = [
+    '#c9a96e', '#7a9e8e', '#9e9e9e', '#8a9ec7', '#7a9e8e',
+    '#c9a96e', '#c79e7a', '#b08cc7', '#c9a96e',
   ];
-  const categories = categoryData.map((cat, i) => ({ ...cat, name: w.categories[i].name }));
+  const categories = t.tlamatini.agents.groups.map((group, i) => ({
+    name: group.category,
+    agents: group.agents.map(agent => agent.name).join(', '),
+    color: categoryColors[i] ?? '#9e9e9e',
+  }));
 
   return (
     <section
@@ -543,59 +541,23 @@ function ToolsSection() {
     };
   }, []);
 
-  const toolData = [
-    { name: 'Config -> Models', color: '#c9a96e' },
-    { name: 'Config -> URLs', color: '#c9a96e' },
-    { name: 'DB -> Backup database', color: '#c79e7a' },
-    { name: 'DB -> Set DB', color: '#c79e7a' },
-    { name: 'ACPX-Skills -> Browse', color: '#b08cc7' },
-    { name: 'ACPX-Skills -> Configure', color: '#b08cc7' },
-    { name: 'ACPX-Skills -> Diagnostics', color: '#b08cc7' },
-    { name: 'ACPX-Skills -> Reload Registry', color: '#b08cc7' },
-    { name: 'Private MCP Runtimes', color: '#b08cc7' },
-    { name: 'MCP Doctor', color: '#b08cc7' },
-    { name: 'Windows uninstall registration', color: '#c79e7a' },
-    { name: 'Ask Execs', color: '#c9a96e' },
-    { name: 'Controls Unreal Engine', color: '#8a9ec7' },
-    { name: 'Unrealer Editor Flows', color: '#8a9ec7' },
-    { name: 'Controls Blender', color: '#8a9ec7' },
-    { name: 'STM32er', color: '#7a9e8e' },
-    { name: 'ESP32er', color: '#7a9e8e' },
-    { name: 'ESPHomer', color: '#7a9e8e' },
-    { name: 'Arduiner', color: '#7a9e8e' },
-    { name: 'PDFer Documents', color: '#c9a96e' },
-    { name: 'LaTeXer Typesetting', color: '#c9a96e' },
-    { name: 'Camcorder', color: '#8a9ec7' },
-    { name: 'Video-Analyzer', color: '#8a9ec7' },
-    { name: 'Recorder', color: '#8a9ec7' },
-    { name: 'Whisperer Listens', color: '#8a9ec7' },
-    { name: 'AudioPlayer', color: '#c79e7a' },
-    { name: 'VideoPlayer', color: '#c79e7a' },
-    { name: 'Talker Speaks', color: '#c79e7a' },
-    { name: 'Zavuerer Unified Messaging', color: '#7a9e8e' },
-    { name: 'Playwrighter', color: '#8a9ec7' },
-    { name: 'Windower', color: '#c79e7a' },
-    { name: 'Kalier', color: '#c9a96e' },
-    { name: 'Nmapper', color: '#c9a96e' },
-    { name: 'Reusable .flw', color: '#9e9e9e' },
-    { name: 'Create Flow', color: '#9e9e9e' },
-    { name: 'Reviewer', color: '#7a9e8e' },
-    { name: 'Analyzer', color: '#c79e7a' },
-    { name: 'De-Compresser', color: '#8a9ec7' },
-    { name: 'embedding_guard', color: '#8a9ec7' },
-    { name: 'Full-surface Multi-Turn', color: '#7a9e8e' },
-    { name: 'Pythonxer strict gate', color: '#7a9e8e' },
-    { name: 'File-Creator persistence', color: '#7a9e8e' },
-    { name: 'UTF-Aware Grepper', color: '#7a9e8e' },
-    { name: 'chat_agent_executer', color: '#7a9e8e' },
-    { name: 'chat_agent_sleeper', color: '#7a9e8e' },
-    { name: 'chat_agent_mouser', color: '#c79e7a' },
-    { name: 'acp_spawn', color: '#b08cc7' },
-    { name: 'acp_relay', color: '#b08cc7' },
-    { name: 'Claude Code uses Tlamatini tools', color: '#b08cc7' },
-    { name: '28 runtime skills', color: '#9e9e9e' },
-  ];
-  const tools = toolData.map((tool, i) => ({ ...tool, ...t.home.tools.items[i] }));
+  const toolColors: Record<string, string> = {
+    visual_workflows: '#c9a96e', multi_turn: '#7a9e8e', human_control: '#c79e7a',
+    truthful_reports: '#7a9e8e', flowcreator: '#c9a96e', acpx: '#b08cc7',
+    external_mcps: '#b08cc7', skills: '#b08cc7', rag: '#8a9ec7',
+    unrealer: '#c9a96e', blenderer: '#c9a96e', stm32er: '#7a9e8e',
+    esp_firmware: '#7a9e8e', robotic_loop: '#8a9ec7', whisperer: '#8a9ec7',
+    talker: '#c79e7a', media: '#8a9ec7', netspeed: '#7a9e8e',
+    googler: '#8a9ec7', blue_hat: '#c79e7a', security_agents: '#c79e7a',
+    codebase: '#7a9e8e', documents: '#8a9ec7', browser_desktop: '#c79e7a',
+    messaging: '#7a9e8e', database: '#c79e7a', windows_delivery: '#9e9e9e',
+    self_knowledge: '#9e9e9e', prompt_catalog: '#b08cc7', mcp_adder: '#b08cc7',
+    dependable_runtime: '#7a9e8e',
+  };
+  const tools = t.home.tools.items.map(tool => ({
+    ...tool,
+    color: toolColors[tool.id] ?? '#9e9e9e',
+  }));
 
   return (
     <section

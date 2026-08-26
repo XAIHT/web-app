@@ -87,11 +87,12 @@ function TlamatiniPresence() {
     };
   }, []);
 
-  const panels = [
-    { ...p.panels[0], type: 'image', src: '/images/tlamatini/shoulders-tlamatini.png' },
-    { ...p.panels[1], type: 'video', src: '/images/tlamatini/lets-make-magic.mp4' },
-    { ...p.panels[2], type: 'video', src: '/images/tlamatini/tlamatini-and-kyber.mp4' },
-  ];
+  const panelMedia: Record<string, { type: 'image' | 'video'; src: string }> = {
+    friendly: { type: 'image', src: '/images/tlamatini/shoulders-tlamatini.png' },
+    control: { type: 'video', src: '/images/tlamatini/lets-make-magic.mp4' },
+    machines: { type: 'video', src: '/images/tlamatini/tlamatini-and-kyber.mp4' },
+  };
+  const panels = p.panels.map((panel) => ({ ...panel, ...panelMedia[panel.id] }));
 
   return (
     <section
@@ -276,22 +277,22 @@ function TlamatiniFeatures() {
     };
   }, []);
 
-  const featureImages = [
-    '/images/tlamatini/realistic-tlamatini.png',
-    '/images/tlamatini/tlamatini-drawings.png',
-    '/images/tlamatini/agentic-advisor.mp4',
-    '/images/tlamatini/lets-make-magic.mp4',
-    '/images/tlamatini/torso-tlamatini.png',
-    '/images/tlamatini/tlamatini-and-kyber.mp4',
-    '/images/feature-chat.jpg',
-    '/images/artifact-rag.jpg',
-    '/images/feature-agents.jpg',
-    '/images/feature-workflow.jpg',
-    '/images/feature-agents.jpg',
-    '/images/feature-chat.jpg',
-    '/images/feature-chat.jpg',
-  ];
-  const features = f.items.map((item, i) => ({ ...item, image: featureImages[i] }));
+  const featureImages: Record<string, string> = {
+    security: '/images/tlamatini/realistic-tlamatini.png',
+    netspeed: '/images/tlamatini/tlamatini-drawings.png',
+    creative_engines: '/images/tlamatini/agentic-advisor.mp4',
+    embedded: '/images/tlamatini/lets-make-magic.mp4',
+    voice_vision: '/images/tlamatini/torso-tlamatini.png',
+    documents: '/images/tlamatini/tlamatini-and-kyber.mp4',
+    multi_turn: '/images/feature-chat.jpg',
+    visual_workflows: '/images/feature-workflow.jpg',
+    external_mcps: '/images/feature-agents.jpg',
+    acpx_skills: '/images/feature-agents.jpg',
+    research_rag: '/images/artifact-rag.jpg',
+    database: '/images/feature-chat.jpg',
+    windows_delivery: '/images/feature-agents.jpg',
+  };
+  const features = f.items.map((item) => ({ ...item, image: featureImages[item.id] }));
 
   return (
     <section
@@ -367,14 +368,14 @@ function TlamatiniInstallation() {
     };
   }, []);
 
-  const stepCode = [
-    '# Option A: release installer, recommended\nhttps://github.com/XAIHT/Tlamatini/releases\n# Download the latest installer (.exe),\n# run the wizard, launch Tlamatini,\n# then open the configured web port:\nhttp://127.0.0.1:8000/\n# Login: user / changeme\n# If 8000 is reserved, set django_port in config.json.\n# Updating later: About -> Check for updates\n\n# Option B: from source, for developers\ngit clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini\npython -m venv venv && venv\\Scripts\\activate\npip install -r requirements.txt\npython Tlamatini/manage.py migrate\npython Tlamatini/manage.py runserver --noreload\n# --noreload is optional; an explicit port also wins:\npython Tlamatini/manage.py runserver 9100',
-    '# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves the local embedding model\n# and the cloud chat models Tlamatini uses.',
-    'ollama signin',
-    '# Local embedding model\nollama pull nomic-embed-text\n\n# Cloud chat models\nollama pull kimi-k2.7-code:cloud\nollama pull qwen3.5:cloud',
-    '# In the Tlamatini navbar:\nConfig -> Models\n# Set the Ollama model for each subsystem,\n# then click Save.\n\nConfig -> Access Keys Wizard\n# Local Ollama: leave token blank.\n# Remote Ollama: paste the Ollama token.\n# Add any cloud-CLI keys, then click Save.\n\nConfig -> Voice\n# Optionally tune her animated browser voice,\n# answer reading, completion notice, or silence.\n\n# Tick Multi-Turn and put Tlamatini to work.',
-  ];
-  const steps = inst.steps.map((step, i) => ({ ...step, code: stepCode[i] }));
+  const stepCode: Record<string, string> = {
+    install_tlamatini: '# Option A: release installer, recommended\nhttps://github.com/XAIHT/Tlamatini/releases\n# Download the latest installer (.exe),\n# run the wizard, launch Tlamatini,\n# then open the configured web port:\nhttp://127.0.0.1:8000/\n# Login: user / changeme\n# If 8000 is reserved, set django_port in config.json.\n# Updating later: About -> Check for updates\n\n# Option B: from source, for developers\ngit clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini\npython -m venv venv && venv\\Scripts\\activate\npip install -r requirements.txt\npython Tlamatini/manage.py migrate\npython Tlamatini/manage.py runserver --noreload\n# --noreload is optional; an explicit port also wins:\npython Tlamatini/manage.py runserver 9100',
+    install_ollama: '# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves the local embedding model\n# and the cloud chat models Tlamatini uses.',
+    sign_in_ollama: 'ollama signin',
+    download_models: '# Local embedding model\nollama pull nomic-embed-text\n\n# Cloud chat models\nollama pull kimi-k2.7-code:cloud\nollama pull qwen3.5:cloud',
+    configure_models: '# In the Tlamatini navbar:\nConfig -> Models\n# Set the Ollama model for each subsystem,\n# then click Save.\n\nConfig -> Access Keys Wizard\n# Local Ollama: leave token blank.\n# Remote Ollama: paste the Ollama token.\n# Add any cloud-CLI keys, then click Save.\n\nConfig -> Voice\n# Optionally tune her animated browser voice,\n# answer reading, completion notice, or silence.\n\n# Optional: LaTeXer compiles real .tex projects with MiKTeX\nhttps://miktex.org/download\n\n# Tick Multi-Turn and put Tlamatini to work.',
+  };
+  const steps = inst.steps.map((step) => ({ ...step, code: stepCode[step.id] }));
 
   return (
     <section
@@ -449,37 +450,13 @@ function TlamatiniAgents() {
     };
   }, []);
 
-  const agentGroupData = [
-    { color: '#c9a96e', names: ['starter', 'ender', 'stopper', 'cleaner', 'sleeper', 'croner'] },
-    { color: '#7a9e8e', names: ['raiser', 'forker', 'asker', 'counter'] },
-    { color: '#9e9e9e', names: ['or', 'and', 'barrier'] },
-    {
-      color: '#8a9ec7',
-      names: [
-        'unrealer', 'blenderer', 'stm32er', 'esp32er', 'esphomer', 'arduiner',
-        'discoverer', 'nmapper', 'kalier', 'executer', 'pythonxer', 'sqler', 'mongoxer',
-        'crawler', 'googler', 'playwrighter', 'apirer', 'gitter', 'reviewer',
-        'analyzer', 'ssher', 'scper', 'dockerer', 'mcp-doctor', 'kuberneter',
-        'pser', 'jenkinser', 'prompter', 'summarizer', 'file-interpreter',
-        'file-extractor', 'image-interpreter', 'video-analyzer', 'j-decompiler', 'de-compresser',
-        'mover', 'deleter', 'file-creator', 'shoter', 'globber', 'grepper',
-        'pdfer', 'latexer', 'editor', 'camcorder', 'recorder', 'whisperer', 'audioplayer',
-        'videoplayer', 'talker', 'mouser', 'windower', 'keyboarder',
-      ],
-    },
-    { color: '#c79e7a', names: ['kyber-keygen', 'kyber-cipher', 'kyber-decipher'] },
-    { color: '#b08cc7', names: ['parametrizer', 'flowbacker', 'flowcreator', 'gatewayer', 'gateway-relayer', 'node-manager'] },
-    {
-      color: '#7a9e8e',
-      names: ['notifier', 'emailer', 'recmailer', 'whatsapper', 'telegrammer', 'zavuerer', 'instant-messaging-doctor', 'monitor-log', 'monitor-netstat', 'flowhypervisor'],
-    },
-    { color: '#c9a96e', names: ['teletlamatini', 'acpxer'] },
+  const groupColors = [
+    '#c9a96e', '#7a9e8e', '#9e9e9e', '#8a9ec7', '#7a9e8e',
+    '#c9a96e', '#c79e7a', '#b08cc7', '#c9a96e',
   ];
-
-  const agentGroups = agentGroupData.map((group, gi) => ({
-    category: ag.groups[gi].category,
-    color: group.color,
-    agents: group.names.map((name, ai) => ({ name, desc: ag.groups[gi].agents[ai].desc })),
+  const agentGroups = ag.groups.map((group, index) => ({
+    ...group,
+    color: groupColors[index] ?? '#9e9e9e',
   }));
 
   return (
@@ -505,7 +482,7 @@ function TlamatiniAgents() {
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-2 h-2 rounded-full" style={{ background: group.color }} />
                 <h3 className="text-sm font-semibold" style={{ color: '#f0f0f0' }}>
-                  {group.category} {ag.groupLabel}
+                  {group.category}
                 </h3>
               </div>
               <div className="space-y-2">
