@@ -46,7 +46,11 @@
       "Bash(python *)",
       "Bash(PYTHONIOENCODING=utf-8 python *)",
       "Bash(docker volume *)",
-      "Bash(ssh -i /c/Development/jenkins-docker/keys/vm_deploy -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/c/Development/jenkins-docker/keys/known_hosts jenkins-deployer@136.116.194.179 \"whoami; sudo -n -l | grep xaiht-app\")"
+      "Bash(ssh -i /c/Development/jenkins-docker/keys/vm_deploy -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/c/Development/jenkins-docker/keys/known_hosts jenkins-deployer@136.116.194.179 \"whoami; sudo -n -l | grep xaiht-app\")",
+      "Bash(git -C /c/Development/XAIHT/web-app log --oneline -5)",
+      "Bash(docker run *)",
+      "Bash(MSYS_NO_PATHCONV=1 docker run --rm -v /c/Development/XAIHT/web-app:/app -w //app node:20-alpine sh -c \"cd /app && npm install --package-lock-only --no-audit\")",
+      "Bash(DOCKER_BUILDKIT=1 docker build -t xaiht-app:lockfile-verify .)"
     ]
   }
 }
