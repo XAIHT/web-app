@@ -50,7 +50,7 @@ const flattenAgentNames = (lang: 'en' | 'es') =>
     group.agents.map((agent) => agent.name),
   );
 
-describe('Tlamatini v1.50.0 website truth contract', () => {
+describe('Tlamatini v1.51.3 website truth contract', () => {
   it('keeps the exact 88-agent catalog in nine authoritative families', () => {
     const english = flattenAgentNames('en');
     const spanish = flattenAgentNames('es');
@@ -85,7 +85,7 @@ describe('Tlamatini v1.50.0 website truth contract', () => {
   it('advertises every post-v1.48 capability and the current crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.50.0', '88 agents', '108 built-in Multi-Turn tools', '29 skills',
+      'v1.51.3', '88 agents', '108 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
     ]) {
@@ -96,7 +96,7 @@ describe('Tlamatini v1.50.0 website truth contract', () => {
   it('keeps the technology stack current and substantial in both languages', () => {
     for (const lang of ['en', 'es'] as const) {
       const stack = translations[lang].tlamatini.techStack;
-      expect(stack.title).toContain('v1.50.0');
+      expect(stack.title).toContain('v1.51.3');
       expect(stack.groups).toHaveLength(6);
       stack.groups.forEach((group) => expect(group.items.length).toBeGreaterThanOrEqual(5));
     }

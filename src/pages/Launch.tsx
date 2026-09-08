@@ -39,7 +39,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.50.6',
+    eyebrow: 'XAIHT presents Tlamatini v1.51.3',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
@@ -51,11 +51,11 @@ const copy = {
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
-      ['Codebase intelligence', 'Hybrid retrieval, file tools, PDF and LaTeX authoring, review, analysis, and reusable project context.'],
+      ['Codebase intelligence', 'Hybrid retrieval, reliable code saving, PDFer with 20 design treatments and layout checks, LaTeX, review, and analysis.'],
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
       ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino paths join firmware to real instruments.'],
       ['Voice and media', 'Talker, Whisperer, image interpretation, recording, playback, and video verdicts.'],
-      ['Human command', 'Ask Execs, Step-by-Step, execution reports, and explicit stop points.'],
+      ['Human command', 'Ask Execs, Step-by-Step, execution reports, optional ACPX readiness probes, and clear reasons when delegation is blocked.'],
       ['Reusable orchestration', 'Successful Multi-Turn work can become a visible, inspectable .flw workflow.'],
     ],
     commandLabel: 'Humanly tempered',
@@ -77,7 +77,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.50.6',
+    eyebrow: 'XAIHT presenta Tlamatini v1.51.3',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
@@ -89,11 +89,11 @@ const copy = {
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
-      ['Inteligencia del codigo', 'Recuperacion hibrida, archivos, autoria PDF y LaTeX, revision, analisis y contexto reutilizable.'],
+      ['Inteligencia del codigo', 'Recuperacion hibrida, guardado fiable del codigo, PDFer con 20 estilos y revision del diseno, LaTeX, revision y analisis.'],
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
       ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales.'],
       ['Voz y medios', 'Talker, Whisperer, interpretacion visual, grabacion, reproduccion y veredictos de video.'],
-      ['Mando humano', 'Ask Execs, Step-by-Step, reportes de ejecucion y puntos explicitos de parada.'],
+      ['Mando humano', 'Ask Execs, Step-by-Step, reportes, pruebas opcionales de preparacion ACPX y motivos claros cuando la delegacion se bloquea.'],
       ['Orquestacion reutilizable', 'El trabajo Multi-Turn exitoso puede volverse un flujo .flw visible e inspeccionable.'],
     ],
     commandLabel: 'Humanamente templada',
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['88', '108', '29', 'v1.50.6'].map((value, index) => (
+            {['88', '108', '29', 'v1.51.3'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>

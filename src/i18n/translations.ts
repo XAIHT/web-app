@@ -37,12 +37,12 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.50.6',
-      'Public Builds Prove Privacy Before Shipping',
-      'Ctrl+C Always Exits Cleanly',
-      'Googler Unwraps Cleaner Search Results',
-      'Deleter Refuses Unsafe Scope',
-      'FlowHypervisor Understands Safe Refusals',
+      'Tlamatini v1.51.3',
+      'ACPX Checks Real Agent Readiness',
+      'Clear Reasons When Delegation Is Blocked',
+      'PDFer Designs Around Your Content',
+      '20 PDF Styles, One Signature Color',
+      'Generated Code Stays Loadable and Savable',
       'MIT-Licensed Self-Hosted AI',
       '53 Unreal Engine Control Commands',
       'Multi-Turn Operation',
@@ -82,7 +82,7 @@ const en = {
       'Complete Build-Time Source Snapshot',
       'Byte-Complete File-Creator',
       'FlowCreator Builds Flows From a Sentence',
-      'PDFer Composes Styled PDFs',
+      'PDFer Checks the Finished Page Layout',
       'LaTeXer Typesets and Self-Repairs',
       'Automatic Binary Context Guard',
       'Oversized-Context Recovery',
@@ -122,7 +122,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.50.6 is the MIT-licensed, local-first AI operator for serious builders. She controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, listens and understands with Whisperer, measures real network quality with NetSpeed-Calculator, and turns one sentence into a canvas-ready workflow through FlowCreator. Across 88 agents, 108 built-in Multi-Turn tools, and 29 skills, she now pairs privacy-proven public builds with Blue-hat Windows defense, resilient research, safer file operations, truthful outcomes, and operator-first control.',
+      desc: 'Tlamatini v1.51.3 is the MIT-licensed, local-first AI operator for serious builders. She controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, listens and understands with Whisperer, measures real network quality with NetSpeed-Calculator, and turns one sentence into a canvas-ready workflow through FlowCreator. Across 88 agents, 108 built-in Multi-Turn tools, and 29 skills, she adds content-aware PDF design, real ACPX readiness checks, reliable code saving, and clear delegation outcomes to her Blue-hat defense and operator-first control.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -164,14 +164,14 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Tlamatini v1.50.6 unifies an animated speaking avatar, paste-or-drop vision, binary-aware RAG, a guided Prompt Catalog, WAL-safe database operations, active-first External MCPs, FlowCreator, PDFer, LaTeXer, NetSpeed-Calculator, Blue-hat Windows defense, and resilient Multi-Turn with Unrealer, Blenderer, STM32er, ESP32er, Talker, Whisperer, MCP Doctor, and ACPX on one self-hosted command surface. Public-build privacy proofs and cleaner Windows shutdown make that power easier to trust.',
+        desc: 'Tlamatini v1.51.3 unifies an animated speaking avatar, paste-or-drop vision, binary-aware RAG, a guided Prompt Catalog, WAL-safe database operations, active-first External MCPs, FlowCreator, PDFer, LaTeXer, NetSpeed-Calculator, Blue-hat Windows defense, and resilient Multi-Turn with Unrealer, Blenderer, STM32er, ESP32er, Talker, Whisperer, MCP Doctor, and ACPX on one self-hosted command surface. PDFer now checks the pages she creates, while ACPX tests peer readiness and explains blocked work.',
         card1: {
           title: 'Chat, Config, DB, Skills, MCPs, and Context',
           desc: 'The chat surface keeps Multi-Turn, Ask Execs, Step-by-Step, Hard Cancel, truthful Exec Report, chat-callable FlowCreator, ACPX, context, image previews, Config Voice, Models / URLs / API-Keys, DB, Skills, External MCPs, messaging, and self-update close at hand. The visual designer now warns visibly if its backend disappears, while text-select plus Space toggles whole checkbox groups.',
         },
         card2: {
           title: 'LLM, External MCPs, ACPX, Skills, and GPU Guard',
-          desc: 'Unrealer controls Unreal Engine, Blenderer controls Blender, STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB, and ESP32er drives PlatformIO. PDFer turns answers, Markdown, HTML, images, or existing PDFs into styled documents; LaTeXer builds mathematical and scholarly projects through an eight-stage repair ladder; Talker speaks; Whisperer listens; and active External MCPs stay pinned above the searchable catalog.',
+          desc: 'Unrealer controls Unreal Engine, Blenderer controls Blender, STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB, and ESP32er drives PlatformIO. PDFer turns mixed sources into documents with 20 content-aware styles, coordinated colors, and measured layout checks; LaTeXer builds mathematical and scholarly projects through an eight-stage repair ladder; Talker speaks; Whisperer listens; and active External MCPs stay pinned above the searchable catalog.',
         },
       },
       rag: {
@@ -221,9 +221,9 @@ const en = {
         { id: 'visual_workflows', name: '88 Agents. One Visual Canvas.', desc: 'Design, connect, run, save, and reload real agent workflows as portable .flw files—without surrendering the clarity of seeing every step.', type: 'Canvas' },
         { id: 'multi_turn', name: '108 Tools, One Multi-Turn Mind', desc: 'Tlamatini keeps her full enabled surface ready across long jobs, with 4,096 iterations and a 256-call hard ceiling for ambitious work.', type: 'Orchestration' },
         { id: 'human_control', name: 'You Keep the Final Say', desc: 'Ask Execs pauses before state-changing work, Step-by-Step waits for your READY, and Hard Cancel prevents a stopped run from reviving itself.', type: 'Human Control' },
-        { id: 'truthful_reports', name: 'Proof, Not Green Paint', desc: 'Execution Reports read each agent\'s structured verdict, separating a successful diagnosis that found problems from work that genuinely failed.', type: 'Evidence' },
+        { id: 'truthful_reports', name: 'Proof, Not Green Paint', desc: 'Execution Reports distinguish completed diagnostics from failed work. ACPX also reads what a peer delivered, names blocked or empty responses, and retains the transcript for investigation.', type: 'Evidence' },
         { id: 'flowcreator', name: 'Describe It. Get a Real .flw.', desc: 'Tell FlowCreator what you want in ordinary language and receive a canvas-loadable workflow you can inspect before anything runs.', type: 'Flow' },
-        { id: 'acpx', name: 'Let the Best Coding Agents Collaborate', desc: 'ACPX can coordinate Claude Code, Codex, Cursor, Gemini, Qwen, and other agent CLIs inside the same Tlamatini-led mission.', type: 'Delegation' },
+        { id: 'acpx', name: 'Let the Best Coding Agents Collaborate', desc: 'Coordinate Claude Code, Codex, Cursor, Gemini, Qwen, and other coding agents. Optional real-prompt checks reveal readiness; blocked permissions, authentication, configuration, or usage limits get clear explanations with transcripts retained.', type: 'Delegation' },
         { id: 'external_mcps', name: 'The MCP Ecosystem, Connected', desc: 'Connect up to five external MCP servers over stdio, streamable HTTP, SSE, or WebSocket and bring their tools into Tlamatini immediately.', type: 'MCP' },
         { id: 'skills', name: '29 Skills That Teach Her How', desc: 'Reusable SKILL.md packages add guided flow making, reviews, security work, MCP onboarding, integrations, and specialist operating playbooks.', type: 'Skills' },
         { id: 'rag', name: 'Whole-Project Memory, Minus the Noise', desc: 'FAISS + BM25 hybrid retrieval understands deep code trees while byte-level filtering keeps binaries from wasting time or poisoning context.', type: 'RAG' },
@@ -239,8 +239,8 @@ const en = {
         { id: 'googler', name: 'Googler Finds Better Paths to the Web', desc: 'Structured dorks, lawful-source presets, plain-HTTP discovery, visible-browser fallback, cleaner Bing redirect decoding, and Mojeek self-result filtering turn difficult research into resilient, traceable results.', type: 'Research' },
         { id: 'blue_hat', name: 'Blue-Hat Defense Under Your Control', desc: 'The operator-controlled Windows security toolkit monitors ten host-signal families with detect-only, armed, watch, and explicit aggressive modes.', type: 'Defense' },
         { id: 'security_agents', name: 'Three Paths for Authorized Recon', desc: 'Use Discoverer for ProjectDiscovery, Nmapper for local nmap, and Kalier for a configured Kali box—each with clear boundaries and honest results.', type: 'Security' },
-        { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Find files, search content, edit surgically, create or move assets, review diffs, scan risks, run commands, and rebuild complete projects.', type: 'Codebase' },
-        { id: 'documents', name: 'PDFer + LaTeXer: Documents Worth Shipping', desc: 'Compose polished PDFs from mixed sources or typeset serious mathematics, bibliographies, indexes, and presentations from real LaTeX projects.', type: 'Documents' },
+        { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Find, search, edit, create, review, and rebuild across the project. Multiple generated code blocks now keep distinct saved names and working canvas links, with older duplicate records recovered without deleting content.', type: 'Codebase' },
+        { id: 'documents', name: 'PDFer + LaTeXer: Documents Worth Shipping', desc: 'PDFer chooses among 20 content-aware styles, builds a palette from your color, uses real fonts, fits tables, and checks the finished PDF. LaTeXer handles mathematics, bibliographies, indexes, and presentations.', type: 'Documents' },
         { id: 'browser_desktop', name: 'Browser and Desktop Automation', desc: 'Playwrighter drives interactive sites while Windower, Mouser, Keyboarder, and Shoter operate and document the real Windows desktop.', type: 'Automation' },
         { id: 'messaging', name: 'Reach People Through the Right Channel', desc: 'Send and receive through Telegram, WhatsApp, email, browser notifications, or unified Zavu messaging—with explicit identity and operator choice.', type: 'Messaging' },
         { id: 'database', name: 'WAL-Safe Database Protection', desc: 'Backup and stage SQLite databases through the online backup API, verify integrity, and handle WAL/SHM sidecars without pretending a bare file is complete.', type: 'Data' },
@@ -248,14 +248,14 @@ const en = {
         { id: 'self_knowledge', name: 'She Knows How She Is Built', desc: 'First-person self-knowledge helps Tlamatini explain her own architecture; an optional self-modify build can also carry a guarded, rebuildable source snapshot.', type: 'Identity' },
         { id: 'prompt_catalog', name: 'A Prompt Catalog That Guides the First Step', desc: 'Every category opens with a Step-by-Step wizard, while one clear parameter grammar distinguishes your inputs, runtime values, and final report slots.', type: 'Guidance' },
         { id: 'mcp_adder', name: 'Add an External MCP with a Guarded Guide', desc: 'The newest onboarding skill classifies transport, separates secrets, diagnoses readiness, activates only on intent, and proves the remote tool before use.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Long Runs That Finish Truthfully', desc: 'Watchdogs, bounded observations, context recovery, protected foreground work, clean Ctrl+C shutdown, and a leaner frozen web runtime keep demanding jobs moving without invented success.', type: 'Reliability' },
+        { id: 'dependable_runtime', name: 'Long Runs That Finish Truthfully', desc: 'Context recovery, protected foreground work, and clean shutdown support long jobs. Windows launch fixes preserve multiline prompts for supported coding CLIs and resolve npm/pnpm-based External MCP commands.', type: 'Reliability' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.50.6 goes beyond coding assistants: she controls Unreal Engine and Blender, runs critical STM32er and ESP32er firmware workflows, speaks with Talker, listens with Whisperer, measures real connections with NetSpeed-Calculator, and turns a sentence into a reusable visual flow. Privacy-proven public builds, Blue-hat Windows defense, resilient research, WAL-safe data handling, active-first External MCPs, 88 workflow agents, 108 built-in Multi-Turn tools, and 29 skills make her deeper, safer, and unmistakably yours.',
+    ctaDesc: 'Tlamatini v1.51.3 goes beyond coding assistants: she controls Unreal Engine and Blender, runs critical STM32er and ESP32er firmware workflows, speaks with Talker, listens with Whisperer, measures real connections with NetSpeed-Calculator, and turns a sentence into a reusable visual flow. Content-aware PDF design, clearer ACPX diagnostics, Blue-hat defense, WAL-safe data handling, active-first External MCPs, 88 workflow agents, 108 built-in Multi-Turn tools, and 29 skills make her deeper, safer, and unmistakably yours.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -278,8 +278,8 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.50.6',
-      desc: 'A local-first, MIT-licensed AI operator that knows your project and acts beyond code: she controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, listens with Whisperer, measures networks with NetSpeed-Calculator, and designs complete visual workflows from one sentence. Binary-safe RAG, Blue-hat Windows defense, truthful verdicts, WAL-safe data handling, 108 built-in Multi-Turn tools, 88 agents, and 29 skills remain under your command.',
+      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.51.3',
+      desc: 'A local-first, MIT-licensed AI operator that knows your project and acts beyond code: she controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, listens with Whisperer, measures networks with NetSpeed-Calculator, and designs complete visual workflows from one sentence. Content-aware PDF design, real ACPX readiness checks, binary-safe RAG, Blue-hat defense, and 108 built-in Multi-Turn tools, 88 agents, and 29 skills remain under your command.',
     },
     presence: {
       label: 'Tlamatini Signal',
@@ -314,7 +314,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She is a self-hosted app you run on your own machine, combining binary-aware project retrieval, self-knowledge, live configuration, guarded tools, opt-in delegation, direct Unreal Engine and Blender control, broad STM32 / ESP32 / ESPHome / Arduino automation, Talker speech, Whisperer listening, paste-to-chat vision, PDFer document composition, LaTeXer typesetting, robotic verdicts, dual-identity messaging, code review, security analysis, and a visual automation canvas.',
-      p2: 'Release v1.50.6 makes public delivery safer from a pristine clone: a target-independent privacy preflight proves a clean tree, refuses private or unreadable evidence, and restores every managed secret-bearing configuration after release preparation. It carries a cleaner Windows Ctrl+C shutdown, a leaner frozen web runtime that preserves Talker audio support, sharper Googler results, and the Blue-hat defense foundation—while FlowCreator, PDFer, LaTeXer, WAL-safe data handling, context recovery, and truthful Execution Reports keep ambitious work dependable.',
+      p2: 'With v1.51.3, PDFer reads your content and chooses from 20 design treatments, builds a coordinated palette from one color, uses real typefaces, fits complex tables, and checks the finished pages for overlap, clipping, blank pages, and contrast. ACPX adds opt-in readiness probes and clear reasons when a peer cannot deliver. Generated code blocks stay separately loadable and savable, while the latest Windows launch fixes preserve multiline prompts for supported agent CLIs and help External MCPs start reliably.',
       viewSource: 'View Source',
     },
     features: {
@@ -326,11 +326,11 @@ const en = {
         { id: 'creative_engines', title: 'Tlamatini Controls Unreal Engine and Blender', description: 'Drive a live Unreal editor through 53 commands, turn one prompt into a ready-to-build Unreal Engine 5.8 C++ project, or create, inspect, materialize, capture, and render Blender scenes through the official MCP add-on.' },
         { id: 'embedded', title: 'STM32er, ESP32er, Arduino, and ESPHome', description: 'Mission-critical STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB with dual backends and fail-safe checks. ESP32er, Arduiner, and ESPHomer extend that same practical reach to PlatformIO, Arduino CLI, and smart-home YAML.' },
         { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Paste images into chat, judge recorded motion, capture every monitor, speak through Talker, and let Whisperer listen to a microphone or audio file. Her animated avatar can also read answers aloud through a local browser voice without a GPU.' },
-        { id: 'documents', title: 'PDFer + LaTeXer Document Studio', description: 'Compose polished PDFs from answers, Markdown, HTML, text, pictures, or existing files, then typeset serious mathematics, bibliographies, indexes, and presentations through LaTeXer\'s copy-safe repair ladder.' },
+        { id: 'documents', title: 'PDFer + LaTeXer Document Studio', description: 'Turn mixed sources into polished PDFs with 20 design treatments, a palette from one color, host typefaces, content-appropriate illustrations, and fitted tables. PDFer checks the finished layout and lets you override the style; LaTeXer adds mathematics, references, and copy-safe repairs.' },
         { id: 'multi_turn', title: '108 Tools, Guarded Multi-Turn', description: 'The full enabled surface stays available across long missions. Ask Execs, Step-by-Step, Hard Cancel, bounded observations, context recovery, and truthful Execution Reports preserve human authority without starving the work of a needed capability.' },
-        { id: 'visual_workflows', title: '88 Agents on One Visual Canvas', description: 'All 88 correctly named agents are organized into nine faithful families and connect as visible, validated nodes. Save the result as a reusable .flw, or let FlowCreator produce one from a plain-language objective for your inspection.' },
+        { id: 'visual_workflows', title: '88 Agents on One Visual Canvas', description: 'Connect 88 correctly named agents across nine families, save reusable .flw workflows, or let FlowCreator build one from your objective. Generated programs and snippets retain distinct names and working canvas links, including recovered older duplicates.' },
         { id: 'external_mcps', title: 'External MCPs, MCP Doctor, and MCP Adder', description: 'Connect up to five MCP servers over stdio, streamable HTTP, SSE, or WebSocket. MCP Doctor checks readiness, while the newest MCP Adder skill guides transport choice, secret separation, diagnosis, activation, and a real remote-tool test.' },
-        { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Let selected coding-agent CLIs collaborate through ACPX, expose Tlamatini tools to MCP clients, and browse, configure, diagnose, or reload 29 reusable SKILL.md packages without restarting the app.' },
+        { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
         { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler combines structured dorks, lawful-source presets, direct discovery, visible-browser fallback, cleaner Bing redirects, and Mojeek self-result filtering. FAISS + BM25 grounds the answer in deep project trees while byte-level filtering keeps binary noise out of context.' },
         { id: 'database', title: 'WAL-Safe SQLite Data Handling', description: 'DB Backup and Set DB use SQLite\'s online backup API, integrity validation, clean staging, and WAL/SHM sidecar hygiene so live data can be preserved and handed off without pretending a copied main file is enough.' },
         { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'The installer carries Python 3.12.10, registers on Windows 10/11, supports sealed updates and configurable ports, and preserves user state. Public builds prove privacy from a pristine clone and refuse private evidence; every build includes self-knowledge, while optional self-modify builds add a protected source snapshot.' },
@@ -427,7 +427,7 @@ const en = {
             { name: 'Shoter', desc: 'Captures the whole multi-monitor desktop as visual evidence' },
             { name: 'Globber', desc: 'Finds files by glob pattern without changing them' },
             { name: 'Grepper', desc: 'Searches text content across encodings and project trees' },
-            { name: 'PDFer', desc: 'Composes polished PDFs from text, web content, images, or PDFs' },
+            { name: 'PDFer', desc: 'Designs PDFs in 20 styles with coordinated color, fitted tables, and layout checks' },
             { name: 'LaTeXer', desc: 'Typesets real LaTeX projects with an eight-stage repair ladder' },
             { name: 'Editor', desc: 'Applies surgical exact-string edits to one text file' },
             { name: 'Camcorder', desc: 'Captures webcam photographs or video' },
@@ -458,7 +458,7 @@ const en = {
         {
           category: 'Utility Agents',
           agents: [
-            { name: 'Parametrizer', desc: 'Routes richer structured fields directly into the next agent configuration' },
+            { name: 'Parametrizer', desc: 'Routes agent results and PDF design choices into the next step for consistent reports' },
             { name: 'FlowBacker', desc: 'Backs up a completed session before cleanup' },
             { name: 'FlowCreator', desc: 'Creates real canvas-loadable workflows from natural language' },
             { name: 'Gatewayer', desc: 'Accepts authenticated webhooks or folder-drop events' },
@@ -490,7 +490,7 @@ const en = {
     },
     techStack: {
       label: 'Technology',
-      title: 'The Technology Behind Tlamatini v1.50.6',
+      title: 'The Technology Behind Tlamatini v1.51.3',
       groups: [
         {
           category: 'Core & Real-Time Web',
@@ -546,12 +546,12 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.50.6',
-      'Builds Públicas Demuestran Privacidad Antes de Salir',
-      'Ctrl+C Siempre Cierra con Limpieza',
-      'Googler Desenvuelve Resultados Más Limpios',
-      'Deleter Rechaza Alcances Inseguros',
-      'FlowHypervisor Entiende Rechazos Seguros',
+      'Tlamatini v1.51.3',
+      'ACPX Comprueba la Preparación Real del Agente',
+      'Motivos Claros Cuando la Delegación se Bloquea',
+      'PDFer Diseña Según tu Contenido',
+      '20 Estilos PDF, un Color Distintivo',
+      'Tu Código Generado se Puede Abrir y Guardar',
       'IA Autoalojada con Licencia MIT',
       '53 Comandos de Control Unreal Engine',
       'Operación Multi-Turn',
@@ -591,7 +591,7 @@ const es: Translations = {
       'Snapshot Completo de Código en Build',
       'File-Creator Persistente',
       'FlowCreator Crea Flujos desde una Frase',
-      'PDFer Compone PDFs Elegantes',
+      'PDFer Verifica el Diseño del PDF Terminado',
       'LaTeXer Compone y se Autorrepara',
       'Guardia Automática de Contexto Binario',
       'Recuperación de Contextos Sobredimensionados',
@@ -631,7 +631,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.50.6 es la operadora de IA local-first con licencia MIT para quienes construyen en serio. Controla Unreal Engine y Blender, programa hardware STM32 y ESP32, habla con Talker, escucha y entiende con Whisperer, mide redes reales con NetSpeed-Calculator y convierte una frase en un flujo listo para el lienzo mediante FlowCreator. Con 88 agentes, 108 herramientas Multi-Turn integradas y 29 skills, ahora une builds públicas con privacidad demostrada, defensa Windows Blue-hat, investigación resistente, operaciones de archivos más seguras, resultados veraces y control del operador.',
+      desc: 'Tlamatini v1.51.3 es la operadora de IA local-first con licencia MIT para quienes construyen en serio. Controla Unreal Engine y Blender, programa hardware STM32 y ESP32, habla con Talker, escucha y entiende con Whisperer, mide redes reales con NetSpeed-Calculator y convierte una frase en un flujo listo para el lienzo mediante FlowCreator. Con 88 agentes, 108 herramientas Multi-Turn integradas y 29 skills, añade diseño PDF según el contenido, comprobaciones reales de ACPX, guardado fiable del código y resultados claros de delegación a su defensa Blue-hat y al control del operador.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -673,14 +673,14 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Tlamatini v1.50.6 reúne avatar animado con voz, visión desde el chat, RAG consciente de binarios, Catálogo de Prompts guiado, operaciones WAL-safe de base de datos, MCPs externos, FlowCreator, PDFer, LaTeXer, NetSpeed-Calculator, defensa Windows Blue-hat y Multi-Turn resistente junto con Unrealer, Blenderer, STM32er, ESP32er, Talker, Whisperer, MCP Doctor y ACPX en una sola superficie autoalojada. Las pruebas de privacidad de las builds públicas y un cierre Windows más limpio hacen que ese poder sea más confiable.',
+        desc: 'Tlamatini v1.51.3 reúne avatar animado con voz, visión desde el chat, RAG consciente de binarios, Catálogo de Prompts guiado, operaciones WAL-safe de base de datos, MCPs externos, FlowCreator, PDFer, LaTeXer, NetSpeed-Calculator, defensa Windows Blue-hat y Multi-Turn resistente junto con Unrealer, Blenderer, STM32er, ESP32er, Talker, Whisperer, MCP Doctor y ACPX en una sola superficie autoalojada. PDFer ahora verifica las páginas que crea, mientras ACPX comprueba la preparación de sus agentes y explica los bloqueos.',
         card1: {
           title: 'Chat, Config, DB, Skills, MCPs y Contexto',
           desc: 'La superficie de chat mantiene a mano Multi-Turn, Ask Execs, Step-by-Step, Hard Cancel, Exec Report veraz, FlowCreator invocable, ACPX, contexto, previews de imágenes, Config Voice, Models / URLs / API-Keys, DB, Skills, MCPs externos, mensajería y auto-actualización. El diseñador visual avisa si pierde su backend, mientras seleccionar texto y pulsar Espacio controla grupos completos de casillas.',
         },
         card2: {
           title: 'LLM, MCPs Externos, ACPX, Skills y Guardia GPU',
-          desc: 'Unrealer controla Unreal Engine, Blenderer controla Blender, STM32er abarca Blue Pill hasta F7 / G / L / H7 / U5 / WB y ESP32er impulsa PlatformIO. PDFer convierte respuestas, Markdown, HTML, imágenes o PDFs existentes en documentos elegantes; LaTeXer construye proyectos matemáticos y académicos con una escalera de reparación de ocho etapas; Talker habla, Whisperer escucha y los MCPs externos activos permanecen fijados sobre el catálogo buscable.',
+          desc: 'Unrealer controla Unreal Engine, Blenderer controla Blender, STM32er abarca Blue Pill hasta F7 / G / L / H7 / U5 / WB y ESP32er impulsa PlatformIO. PDFer convierte fuentes mixtas en documentos con 20 estilos según el contenido, colores coordinados y verificación del diseño; LaTeXer construye proyectos matemáticos y académicos con una escalera de reparación de ocho etapas; Talker habla, Whisperer escucha y los MCPs externos activos permanecen fijados sobre el catálogo buscable.',
         },
       },
       rag: {
@@ -730,9 +730,9 @@ const es: Translations = {
         { id: 'visual_workflows', name: '88 Agentes. Un Lienzo Visual.', desc: 'Diseña, conecta, ejecuta, guarda y vuelve a cargar flujos reales como archivos .flw portables, viendo con claridad cada paso.', type: 'Lienzo' },
         { id: 'multi_turn', name: '108 Herramientas, una Mente Multi-Turn', desc: 'Tlamatini mantiene disponible toda su superficie habilitada durante trabajos largos, con 4,096 iteraciones y un límite firme de 256 llamadas.', type: 'Orquestación' },
         { id: 'human_control', name: 'Tú Conservas la Última Palabra', desc: 'Ask Execs pausa antes de cambiar estado, Step-by-Step espera tu READY y Hard Cancel impide que una ejecución detenida vuelva a levantarse.', type: 'Control Humano' },
-        { id: 'truthful_reports', name: 'Evidencia, no Pintura Verde', desc: 'Exec Report lee el veredicto estructurado de cada agente y distingue un diagnóstico exitoso con hallazgos de un trabajo que realmente falló.', type: 'Evidencia' },
+        { id: 'truthful_reports', name: 'Evidencia, no Pintura Verde', desc: 'Los Exec Reports distinguen diagnósticos completados de trabajo fallido. ACPX también evalúa la entrega del agente, identifica respuestas bloqueadas o vacías y conserva la transcripción para investigar.', type: 'Evidencia' },
         { id: 'flowcreator', name: 'Descríbelo. Recibe un .flw Real.', desc: 'Dile a FlowCreator lo que quieres en lenguaje común y recibe un flujo cargable en el lienzo para inspeccionarlo antes de ejecutar.', type: 'Flujo' },
-        { id: 'acpx', name: 'Los Mejores Agentes Colaborando', desc: 'ACPX puede coordinar Claude Code, Codex, Cursor, Gemini, Qwen y otros CLIs de agentes dentro de una misma misión dirigida por Tlamatini.', type: 'Delegación' },
+        { id: 'acpx', name: 'Los Mejores Agentes Colaborando', desc: 'Coordina Claude Code, Codex, Cursor, Gemini, Qwen y otros agentes. Las pruebas opcionales con prompts reales comprueban preparación; permisos, autenticación, configuración o límites de uso se explican con transcripciones conservadas.', type: 'Delegación' },
         { id: 'external_mcps', name: 'Todo el Ecosistema MCP, Conectado', desc: 'Conecta hasta cinco servidores MCP externos por stdio, streamable HTTP, SSE o WebSocket e incorpora sus herramientas de inmediato.', type: 'MCP' },
         { id: 'skills', name: '29 Skills que le Enseñan Cómo', desc: 'Paquetes SKILL.md reutilizables añaden creación guiada de flujos, revisiones, seguridad, incorporación de MCPs, integraciones y procedimientos especializados.', type: 'Skills' },
         { id: 'rag', name: 'Memoria de Proyecto sin Ruido Binario', desc: 'La recuperación híbrida FAISS + BM25 entiende árboles profundos de código y aparta binarios por bytes antes de que desperdicien contexto.', type: 'RAG' },
@@ -748,8 +748,8 @@ const es: Translations = {
         { id: 'googler', name: 'Googler Encuentra Mejores Rutas Web', desc: 'Dorks estructurados, fuentes lícitas, descubrimiento HTTP, fallback visible, decodificación limpia de redirects Bing y filtrado de autorresultados Mojeek producen investigación resistente y rastreable.', type: 'Investigación' },
         { id: 'blue_hat', name: 'Defensa Blue-Hat Bajo tu Control', desc: 'El toolkit Windows controlado por el operador observa diez familias de señales con modos detect-only, armed, watch y aggressive explícito.', type: 'Defensa' },
         { id: 'security_agents', name: 'Tres Caminos para Recon Autorizado', desc: 'Usa Discoverer para ProjectDiscovery, Nmapper para nmap local y Kalier para un Kali configurado, todos con límites claros y resultados honestos.', type: 'Seguridad' },
-        { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Descubre archivos, busca contenido, edita quirúrgicamente, crea o mueve recursos, revisa diffs, analiza riesgos, ejecuta y recompila proyectos enteros.', type: 'Codebase' },
-        { id: 'documents', name: 'PDFer + LaTeXer: Documentos para Entregar', desc: 'Compone PDFs pulidos desde fuentes mixtas o maqueta matemáticas, bibliografías, índices y presentaciones desde proyectos LaTeX reales.', type: 'Documentos' },
+        { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Busca, edita, crea, revisa y recompila el proyecto completo. Los bloques de código generados conservan nombres distintos y enlaces funcionales al lienzo; los duplicados antiguos se recuperan sin borrar contenido.', type: 'Codebase' },
+        { id: 'documents', name: 'PDFer + LaTeXer: Documentos para Entregar', desc: 'PDFer elige entre 20 estilos según el contenido, crea una paleta desde tu color, usa fuentes reales, ajusta tablas y verifica el PDF terminado. LaTeXer resuelve matemáticas, bibliografías, índices y presentaciones.', type: 'Documentos' },
         { id: 'browser_desktop', name: 'Automatización de Navegador y Escritorio', desc: 'Playwrighter conduce sitios interactivos; Windower, Mouser, Keyboarder y Shoter operan y documentan el escritorio Windows real.', type: 'Automatización' },
         { id: 'messaging', name: 'Llega por el Canal Correcto', desc: 'Envía y recibe por Telegram, WhatsApp, email, notificaciones o mensajería unificada Zavu, con identidad explícita y decisión del operador.', type: 'Mensajería' },
         { id: 'database', name: 'Protección de Base de Datos WAL-Safe', desc: 'Respalda y prepara SQLite mediante la API de backup online, verifica integridad y trata sidecars WAL/SHM sin fingir que un archivo aislado está completo.', type: 'Datos' },
@@ -757,14 +757,14 @@ const es: Translations = {
         { id: 'self_knowledge', name: 'Ella Sabe Cómo Está Construida', desc: 'Su autoconocimiento en primera persona explica la arquitectura; un build opcional self-modify también puede llevar un snapshot reconstruible y protegido.', type: 'Identidad' },
         { id: 'prompt_catalog', name: 'Un Catálogo que Guía el Primer Paso', desc: 'Cada categoría abre con un wizard Step-by-Step y una gramática clara separa tus entradas, valores de runtime y espacios del reporte final.', type: 'Guía' },
         { id: 'mcp_adder', name: 'Añade un MCP con una Guía Protegida', desc: 'La skill más reciente clasifica transporte, separa secretos, diagnostica, activa sólo con intención y prueba la herramienta remota antes de usarla.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Trabajos Largos que Terminan con Verdad', desc: 'Watchdogs, observaciones limitadas, recuperación de contexto, trabajo foreground protegido, cierre limpio con Ctrl+C y un runtime web frozen más ligero sostienen la misión sin inventar éxito.', type: 'Confiabilidad' },
+        { id: 'dependable_runtime', name: 'Trabajos Largos que Terminan con Verdad', desc: 'Recuperación de contexto, trabajo protegido y cierre limpio sostienen misiones largas. El arranque Windows preserva prompts multilínea en CLIs compatibles y resuelve comandos de MCPs externos instalados con npm/pnpm.', type: 'Confiabilidad' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.50.6 pone sus joyas de la corona al frente: controla Unreal Engine y Blender, ejecuta trabajo crítico con STM32er y ESP32er, habla con Talker, escucha con Whisperer, mide conexiones con NetSpeed-Calculator y transforma una frase en un flujo real. Builds públicas con privacidad demostrada, defensa Windows Blue-hat, investigación resistente, datos WAL-safe, MCPs externos, 88 agentes, 108 herramientas Multi-Turn integradas y 29 skills convierten una sola máquina en una superficie de creación extraordinaria.',
+    ctaDesc: 'Tlamatini v1.51.3 pone sus joyas de la corona al frente: controla Unreal Engine y Blender, ejecuta trabajo crítico con STM32er y ESP32er, habla con Talker, escucha con Whisperer, mide conexiones con NetSpeed-Calculator y transforma una frase en un flujo real. Diseño PDF según el contenido, diagnósticos ACPX más claros, defensa Blue-hat, datos WAL-safe, MCPs externos, 88 agentes, 108 herramientas Multi-Turn integradas y 29 skills convierten una sola máquina en una superficie de creación extraordinaria.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -787,8 +787,8 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.50.6',
-      desc: 'Una operadora de IA local-first con licencia MIT que conoce tu proyecto y actúa: controla Unreal Engine y Blender, ejecuta trabajo crítico con STM32er y ESP32er, habla con Talker, escucha con Whisperer, mide redes con NetSpeed-Calculator y convierte una frase en un flujo visual. RAG binario-seguro, defensa Windows Blue-hat, veredictos honestos, datos WAL-safe, 108 herramientas Multi-Turn, 88 agentes y 29 skills permanecen bajo tu mando.',
+      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.51.3',
+      desc: 'Una operadora de IA local-first con licencia MIT que conoce tu proyecto y actúa: controla Unreal Engine y Blender, ejecuta trabajo crítico con STM32er y ESP32er, habla con Talker, escucha con Whisperer, mide redes con NetSpeed-Calculator y convierte una frase en un flujo visual. Diseño PDF según el contenido, comprobaciones reales de ACPX, RAG binario-seguro, defensa Blue-hat, 108 herramientas Multi-Turn, 88 agentes y 29 skills permanecen bajo tu mando.',
     },
     presence: {
       label: 'Señal Tlamatini',
@@ -823,7 +823,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Es una aplicación autoalojada que ejecutas en tu propia máquina, combinando recuperación de proyectos consciente de binarios, autoconocimiento, configuración viva, herramientas protegidas, delegación opcional, control directo de Unreal Engine y Blender, automatización STM32 / ESP32 / ESPHome / Arduino, habla Talker, escucha Whisperer, visión desde el chat, composición PDFer, maquetación LaTeXer, veredictos robóticos, mensajería con doble identidad, revisión de código, análisis de seguridad y un lienzo visual.',
-      p2: 'La versión v1.50.6 hace más segura la entrega pública desde un clon limpio: un preflight de privacidad independiente demuestra un árbol limpio, rechaza evidencia privada o ilegible y restaura cada configuración administrada después de preparar la release. También lleva cierre Ctrl+C más limpio en Windows, runtime web frozen más ligero sin debilitar el audio de Talker, resultados Googler más precisos y la base defensiva Blue-hat; FlowCreator, PDFer, LaTeXer, datos WAL-safe, recuperación de contexto y Exec Reports veraces sostienen el trabajo ambicioso.',
+      p2: 'Con v1.51.3, PDFer lee tu contenido y elige entre 20 tratamientos de diseño, crea una paleta desde un color, usa tipografías reales, ajusta tablas complejas y revisa solapamientos, recortes, páginas vacías y contraste en el PDF terminado. ACPX añade pruebas de preparación opcionales y motivos claros cuando un agente no puede entregar. Cada bloque de código se puede abrir y guardar por separado; las últimas mejoras de arranque Windows preservan prompts multilínea en CLIs compatibles y ayudan a iniciar MCPs externos.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -858,7 +858,7 @@ const es: Translations = {
         {
           id: 'documents',
           title: 'Estudio Documental PDFer + LaTeXer',
-          description: 'Compone PDFs pulidos desde respuestas, Markdown, HTML, texto, imágenes o archivos existentes y maqueta matemáticas, bibliografías, índices y presentaciones serias mediante la escalera de reparación copy-safe de LaTeXer.',
+          description: 'Convierte fuentes mixtas en PDFs con 20 tratamientos de diseño, una paleta desde un color, fuentes del equipo, ilustraciones adecuadas y tablas ajustadas. PDFer verifica el resultado y permite elegir el estilo; LaTeXer añade matemáticas, referencias y reparación sobre copias.',
         },
         {
           id: 'multi_turn',
@@ -868,7 +868,7 @@ const es: Translations = {
         {
           id: 'visual_workflows',
           title: '88 Agentes en un Solo Lienzo Visual',
-          description: 'Los 88 agentes, nombrados con exactitud, se organizan en nueve familias fieles y se conectan como nodos visibles y validados. Guarda el resultado como .flw reutilizable o deja que FlowCreator produzca uno desde un objetivo común.',
+          description: 'Conecta 88 agentes en nueve familias, guarda flujos .flw reutilizables o deja que FlowCreator los cree desde tu objetivo. Los programas y snippets generados conservan nombres distintos y enlaces funcionales al lienzo, incluidos duplicados antiguos recuperados.',
         },
         {
           id: 'external_mcps',
@@ -878,7 +878,7 @@ const es: Translations = {
         {
           id: 'acpx_skills',
           title: 'Delegación ACPX + 29 Skills de Runtime',
-          description: 'Deja colaborar a CLIs de agentes elegidos mediante ACPX, expone herramientas Tlamatini a clientes MCP y examina, configura, diagnostica o recarga 29 paquetes SKILL.md sin reiniciar la aplicación.',
+          description: 'Delega a CLIs y expone herramientas a clientes MCP. Las pruebas opcionales de preparación envían un prompt real y pueden consumir cuota; los veredictos explican fallas. Configura argumentos, transporte y tiempos de respuesta sin recompilar, junto con 29 skills reutilizables.',
         },
         {
           id: 'research_rag',
@@ -988,7 +988,7 @@ const es: Translations = {
             { name: 'Shoter', desc: 'Captura todo el escritorio multimonitor como evidencia visual' },
             { name: 'Globber', desc: 'Encuentra archivos por patrón glob sin modificarlos' },
             { name: 'Grepper', desc: 'Busca texto entre codificaciones y árboles de proyecto' },
-            { name: 'PDFer', desc: 'Compone PDFs desde texto, web, imágenes o PDFs existentes' },
+            { name: 'PDFer', desc: 'Diseña PDFs en 20 estilos con color coordinado, tablas ajustadas y revisión del diseño' },
             { name: 'LaTeXer', desc: 'Maqueta LaTeX real con una escalera de reparación de ocho etapas' },
             { name: 'Editor', desc: 'Aplica ediciones quirúrgicas exactas a un archivo de texto' },
             { name: 'Camcorder', desc: 'Captura fotografías o video desde la webcam' },
@@ -1019,7 +1019,7 @@ const es: Translations = {
         {
           category: 'Agentes de Utilidad',
           agents: [
-            { name: 'Parametrizer', desc: 'Enruta campos estructurados más ricos a la configuración del siguiente agente' },
+            { name: 'Parametrizer', desc: 'Enruta resultados y decisiones de diseño PDF al siguiente paso para informes coherentes' },
             { name: 'FlowBacker', desc: 'Respalda una sesión terminada antes de limpiarla' },
             { name: 'FlowCreator', desc: 'Crea flujos reales cargables en lienzo desde lenguaje natural' },
             { name: 'Gatewayer', desc: 'Acepta webhooks autenticados o eventos de carpeta' },
@@ -1051,7 +1051,7 @@ const es: Translations = {
     },
     techStack: {
       label: 'Tecnología',
-      title: 'La Tecnología Detrás de Tlamatini v1.50.6',
+      title: 'La Tecnología Detrás de Tlamatini v1.51.3',
       groups: [
         {
           category: 'Núcleo y Web en Tiempo Real',
