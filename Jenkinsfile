@@ -27,6 +27,50 @@ pipeline {
       }
     }
 
+    stage('Sync lockfile with package.json') {
+      steps {
+        sh '''
+          set -eu
+          # Self-heal: Tlamatini's AutoBot bumps package.json versions
+          # without regenerating package-lock.json, which makes 'npm ci'
+          # in the Build image stage below fail. This step regenerates
+          # the lockfile in-place using the SAME image the Dockerfile
+          # uses, so the build always sees a lockfile that matches
+          # package.json — no matter what upstream forgot.
+          #
+          # The Jenkins agent's workspace isn't visible to Docker
+          # Desktop's daemon via bind mount, so we shuffle package.json
+          # and package-lock.json through a helper container via docker
+          # cp / docker exec.
+          HELPER="lockfile-sync-${BUILD_NUMBER}"
+          docker rm -f "$HELPER" >/dev/null 2>&1 || true
+          docker run -d --name "$HELPER" --entrypoint sh node:20-alpine -c "sleep 600" >/dev/null
+
+          docker cp package.json      "$HELPER":/tmp/package.json
+          docker cp package-lock.json "$HELPER":/tmp/package-lock.json
+
+          BEFORE=$(sha256sum package-lock.json | cut -c1-12)
+          docker exec -w /tmp "$HELPER" npm install --package-lock-only --no-audit --loglevel=error
+          docker cp "$HELPER":/tmp/package-lock.json ./package-lock.json
+          AFTER=$(sha256sum package-lock.json | cut -c1-12)
+
+          docker rm -f "$HELPER" >/dev/null 2>&1 || true
+
+          if [ "$BEFORE" = "$AFTER" ]; then
+            echo ">>> Lockfile already in sync with package.json — no changes."
+          else
+            echo ">>> Lockfile was OUT OF SYNC (self-healed at build time):"
+            echo ">>>   before sha256: ${BEFORE}"
+            echo ">>>   after  sha256: ${AFTER}"
+            echo ">>> Consider running the same command locally and pushing"
+            echo ">>> so main matches production:"
+            echo ">>>   docker run --rm -v \"\$PWD\":/app -w //app node:20-alpine \\"
+            echo ">>>     npm install --package-lock-only --no-audit"
+          fi
+        '''
+      }
+    }
+
     stage('Build image') {
       steps {
         sh '''
