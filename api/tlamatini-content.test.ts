@@ -50,7 +50,7 @@ const flattenAgentNames = (lang: 'en' | 'es') =>
     group.agents.map((agent) => agent.name),
   );
 
-describe('Tlamatini v1.51.3 website truth contract', () => {
+describe('Tlamatini v1.51.7 website truth contract', () => {
   it('keeps the exact 88-agent catalog in nine authoritative families', () => {
     const english = flattenAgentNames('en');
     const spanish = flattenAgentNames('es');
@@ -85,7 +85,7 @@ describe('Tlamatini v1.51.3 website truth contract', () => {
   it('advertises every post-v1.48 capability and the current crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.51.3', '88 agents', '108 built-in Multi-Turn tools', '29 skills',
+      'v1.51.7', '88 agents', '108 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
     ]) {
@@ -96,7 +96,7 @@ describe('Tlamatini v1.51.3 website truth contract', () => {
   it('keeps the technology stack current and substantial in both languages', () => {
     for (const lang of ['en', 'es'] as const) {
       const stack = translations[lang].tlamatini.techStack;
-      expect(stack.title).toContain('v1.51.3');
+      expect(stack.title).toContain('v1.51.7');
       expect(stack.groups).toHaveLength(6);
       stack.groups.forEach((group) => expect(group.items.length).toBeGreaterThanOrEqual(5));
     }
@@ -111,17 +111,38 @@ describe('Tlamatini v1.51.3 website truth contract', () => {
     }
   });
 
+  it('keeps voice-command boundaries and the current model setup in both languages', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const listening = copy.home.tools.items.find((tool) => tool.id === 'whisperer');
+      const catalog = copy.home.tools.items.find((tool) => tool.id === 'prompt_catalog');
+      expect(listening?.desc).toContain('10');
+      expect(listening?.desc).toContain('300');
+      expect(catalog?.desc).toContain('VOICE COMMANDS');
+      expect(catalog?.desc).toContain('SPEAK YOUR PROMPT');
+      expect(catalog?.desc).toMatch(/written confirmation|confirmación escrita/);
+      expect(copy.tlamatini.presence.panels[0].desc).toContain('120');
+      expect(copy.tlamatini.overview.p2).toContain('glm-5.3:cloud');
+      expect(copy.tlamatini.overview.p2).toMatch(/latest source|código más reciente/);
+    }
+    const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
+    expect(setup).toContain('ollama pull glm-5.3:cloud');
+    expect(setup).not.toContain('ollama pull kimi-k2.7-code:cloud');
+  });
+
   it('rejects stale releases, removed guardian claims, plan copy, and positional text joins', () => {
     const visibleSource = [
       'src/i18n/translations.ts',
       'src/pages/Home.tsx',
       'src/pages/Tlamatini.tsx',
+      'src/pages/Launch.tsx',
       'src/components/Footer.tsx',
       'src/components/Navigation.tsx',
     ].map((file) => readFileSync(resolve(file), 'utf8')).join('\n');
 
     for (const forbidden of [
       /v1\.48\.2/i,
+      /v1\.51\.[0-6]\b/i,
       /\b87 (?:workflow )?agents\b/i,
       /\b75 tools\b/i,
       /\b28 (?:runtime )?(?:skill|SKILL\.md)/i,

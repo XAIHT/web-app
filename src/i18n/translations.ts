@@ -37,12 +37,12 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.51.3',
-      'ACPX Checks Real Agent Readiness',
-      'Clear Reasons When Delegation Is Blocked',
-      'PDFer Designs Around Your Content',
-      '20 PDF Styles, One Signature Color',
-      'Generated Code Stays Loadable and Savable',
+      'Tlamatini v1.51.7',
+      'Speak Your Prompt. Put Her to Work.',
+      'Whisperer Listens Until You Finish',
+      'Silence-Gated Voice Capture',
+      'A Smoother, Resizable Speaking Avatar',
+      'Console Clicks No Longer Freeze Her',
       'MIT-Licensed Self-Hosted AI',
       '53 Unreal Engine Control Commands',
       'Multi-Turn Operation',
@@ -66,7 +66,7 @@ const en = {
       'Webcam + Microphone Capture',
       'On-Screen Video Playback',
       'Tlamatini Speaks with Talker',
-      'Animated In-Chat Avatar + Browser Voice',
+      'Speech-Timed Avatar + Browser Voice',
       'No-GPU Chrome / Edge Speech',
       'Tlamatini Listens with Whisperer',
       'Tlamatini Understands Audio',
@@ -103,7 +103,7 @@ const en = {
       'Robotic Loop Training',
       'Paste or Drop Images Straight into Chat',
       'Large Screenshot Chip Preview',
-      'Guided Catalog of Prompts',
+      'Voice Commands Open the Prompt Catalog',
       'One Clear Prompt Parameter Grammar',
       'Per-User Hard Cancel That Stays Cancelled',
       'Long Recon Runs Without Premature Reaping',
@@ -122,7 +122,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.51.3 is the MIT-licensed, local-first AI operator for serious builders. She controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, listens and understands with Whisperer, measures real network quality with NetSpeed-Calculator, and turns one sentence into a canvas-ready workflow through FlowCreator. Across 88 agents, 108 built-in Multi-Turn tools, and 29 skills, she adds content-aware PDF design, real ACPX readiness checks, reliable code saving, and clear delegation outcomes to her Blue-hat defense and operator-first control.',
+      desc: 'Tlamatini v1.51.7 is the MIT-licensed, local-first AI operator for serious builders. She controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, listens and understands with Whisperer, measures networks, and turns an objective into a visual workflow. Her latest source adds voice commands: speak your prompt, review what she heard, and put 88 agents, 108 built-in Multi-Turn tools, and 29 skills to work. Silence-aware listening and a smoother speaking avatar bring her closer to the way you think.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -164,7 +164,7 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Tlamatini v1.51.3 unifies an animated speaking avatar, paste-or-drop vision, binary-aware RAG, a guided Prompt Catalog, WAL-safe database operations, active-first External MCPs, FlowCreator, PDFer, LaTeXer, NetSpeed-Calculator, Blue-hat Windows defense, and resilient Multi-Turn with Unrealer, Blenderer, STM32er, ESP32er, Talker, Whisperer, MCP Doctor, and ACPX on one self-hosted command surface. PDFer now checks the pages she creates, while ACPX tests peer readiness and explains blocked work.',
+        desc: 'Tlamatini v1.51.7 connects Unreal Engine and Blender control, STM32 and ESP32 firmware, Talker speech, and Whisperer listening with project-aware RAG, visual workflows, PDFer, LaTeXer, Blue-hat defense, and ACPX. Her latest source brings spoken prompts into the same guarded Multi-Turn workspace. A smoother avatar and a console shield keep the experience responsive, while you stay in command.',
         card1: {
           title: 'Chat, Config, DB, Skills, MCPs, and Context',
           desc: 'The chat surface keeps Multi-Turn, Ask Execs, Step-by-Step, Hard Cancel, truthful Exec Report, chat-callable FlowCreator, ACPX, context, image previews, Config Voice, Models / URLs / API-Keys, DB, Skills, External MCPs, messaging, and self-update close at hand. The visual designer now warns visibly if its backend disappears, while text-select plus Space toggles whole checkbox groups.',
@@ -212,7 +212,7 @@ const en = {
     workflow: {
       label: 'Workflow Designer',
       title: 'Drag, Drop, Orchestrate',
-      desc: 'The Visual Workflow Designer presents all 88 correctly named agent types across nine faithful families. NetSpeed-Calculator joins Unrealer, Blenderer, dual-backend STM32er, ESP32er, PDFer, LaTeXer, FlowCreator, Talker, Whisperer, security, messaging, browser, desktop, review, infrastructure, TeleTlamatini, and ACPXer in runnable, savable .flw workflows.',
+      desc: 'The Visual Workflow Designer brings 88 agent types into nine families, led by Unrealer, Blenderer, STM32er, and ESP32er. Talker speaks; Whisperer listens. Route a valid transcript through Parametrizer into the next agent, or combine documents, security, media, messaging, and infrastructure in a reusable .flw. Empty or unavailable transcripts must stop or branch, never become invented instructions.',
     },
     tools: {
       label: 'Beyond Code',
@@ -232,30 +232,30 @@ const en = {
         { id: 'stm32er', name: 'STM32er Programs Real Boards', desc: 'Scaffold, build, flash, reset, and observe STM32 firmware from Blue Pill through F7, G, L, H7, U5, and WB—with fail-safe hardware checks.', type: 'Firmware' },
         { id: 'esp_firmware', name: 'ESP32, Arduino, and ESPHome', desc: 'Move from an idea to compiled, uploaded, observable firmware through zero-config PlatformIO, Arduino CLI, and ESPHome automation.', type: 'Embedded' },
         { id: 'robotic_loop', name: 'A Robotic Loop That Can See', desc: 'STM32er acts, Camcorder records, Video-Analyzer judges motion, and Forker can send the system back to improve until the physical result passes.', type: 'Vision' },
-        { id: 'whisperer', name: 'Whisperer Lets Tlamatini Listen', desc: 'Speak through a microphone or hand her an audio file; Whisperer turns it into usable text with local GPU detection and dependable CPU fallback.', type: 'Voice' },
-        { id: 'talker', name: 'Talker Gives Tlamatini Her Voice', desc: 'Generate expressive female-voice audio, save it as WAV, and play it aloud—while her animated browser avatar can also read answers without a GPU.', type: 'Voice' },
+        { id: 'whisperer', name: 'Whisperer Turns Your Voice into Intent', desc: 'Speak naturally: recording ends after 10 seconds of silence by default, with a 300-second ceiling. Name a duration to record exactly that long. Transcribe audio files too, locally with CPU fallback or through a configured cloud recognizer.', type: 'Voice' },
+        { id: 'talker', name: 'Talker Gives Tlamatini Her Voice', desc: 'Generate expressive female-voice audio, save it as WAV, and play it aloud. Separately, her smoother browser avatar follows spoken text and reads answers with installed voices, without a GPU or an extra language model.', type: 'Voice' },
         { id: 'media', name: 'Eyes, Ears, Screen, and Playback', desc: 'Capture every monitor, webcam video, and microphone audio; inspect images and motion; then play sound or video on the device you choose.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Measures What Matters', desc: 'Measure download, upload, latency, jitter, packet loss, and bufferbloat across several keyless providers—with confidence intervals, not one flattering number.', type: 'Network' },
         { id: 'googler', name: 'Googler Finds Better Paths to the Web', desc: 'Structured dorks, lawful-source presets, plain-HTTP discovery, visible-browser fallback, cleaner Bing redirect decoding, and Mojeek self-result filtering turn difficult research into resilient, traceable results.', type: 'Research' },
         { id: 'blue_hat', name: 'Blue-Hat Defense Under Your Control', desc: 'The operator-controlled Windows security toolkit monitors ten host-signal families with detect-only, armed, watch, and explicit aggressive modes.', type: 'Defense' },
         { id: 'security_agents', name: 'Three Paths for Authorized Recon', desc: 'Use Discoverer for ProjectDiscovery, Nmapper for local nmap, and Kalier for a configured Kali box—each with clear boundaries and honest results.', type: 'Security' },
-        { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Find, search, edit, create, review, and rebuild across the project. Multiple generated code blocks now keep distinct saved names and working canvas links, with older duplicate records recovered without deleting content.', type: 'Codebase' },
+        { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Find, edit, review, and rebuild across the project. Generated code keeps distinct saved names and working canvas links; Gitter now preserves Windows backslashes and quoted paths in custom Git commands.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + LaTeXer: Documents Worth Shipping', desc: 'PDFer chooses among 20 content-aware styles, builds a palette from your color, uses real fonts, fits tables, and checks the finished PDF. LaTeXer handles mathematics, bibliographies, indexes, and presentations.', type: 'Documents' },
         { id: 'browser_desktop', name: 'Browser and Desktop Automation', desc: 'Playwrighter drives interactive sites while Windower, Mouser, Keyboarder, and Shoter operate and document the real Windows desktop.', type: 'Automation' },
         { id: 'messaging', name: 'Reach People Through the Right Channel', desc: 'Send and receive through Telegram, WhatsApp, email, browser notifications, or unified Zavu messaging—with explicit identity and operator choice.', type: 'Messaging' },
         { id: 'database', name: 'WAL-Safe Database Protection', desc: 'Backup and stage SQLite databases through the online backup API, verify integrity, and handle WAL/SHM sidecars without pretending a bare file is complete.', type: 'Data' },
-        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'The installer carries Python 3.12.10, registers cleanly on Windows 10/11, supports configurable ports, preserves user state, and proves a public build is free of private evidence before shipping.', type: 'Windows' },
+        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'Install with the carried Python 3.12.10 runtime, keep your state through updates, and press Enter on the welcome page to reach chat. Public builds check privacy; the console shield keeps a paused log window from freezing her work.', type: 'Windows' },
         { id: 'self_knowledge', name: 'She Knows How She Is Built', desc: 'First-person self-knowledge helps Tlamatini explain her own architecture; an optional self-modify build can also carry a guarded, rebuildable source snapshot.', type: 'Identity' },
-        { id: 'prompt_catalog', name: 'A Prompt Catalog That Guides the First Step', desc: 'Every category opens with a Step-by-Step wizard, while one clear parameter grammar distinguishes your inputs, runtime values, and final report slots.', type: 'Guidance' },
+        { id: 'prompt_catalog', name: 'Your Voice Is the First Step', desc: 'The latest source opens the catalog with VOICE COMMANDS: a guided, read-only rehearsal and SPEAK YOUR PROMPT. She shows the transcript before acting, stops if nothing was understood, and asks for written confirmation before irreversible work.', type: 'Guidance' },
         { id: 'mcp_adder', name: 'Add an External MCP with a Guarded Guide', desc: 'The newest onboarding skill classifies transport, separates secrets, diagnoses readiness, activates only on intent, and proves the remote tool before use.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Long Runs That Finish Truthfully', desc: 'Context recovery, protected foreground work, and clean shutdown support long jobs. Windows launch fixes preserve multiline prompts for supported coding CLIs and resolve npm/pnpm-based External MCP commands.', type: 'Reliability' },
+        { id: 'dependable_runtime', name: 'Long Runs That Keep Moving', desc: 'A paused Windows console no longer blocks the application or its durable log. Installed builds disable click-to-select freezing by default, while Ctrl+C stays protected. Context recovery and reliable external-agent startup remain in place.', type: 'Reliability' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.51.3 goes beyond coding assistants: she controls Unreal Engine and Blender, runs critical STM32er and ESP32er firmware workflows, speaks with Talker, listens with Whisperer, measures real connections with NetSpeed-Calculator, and turns a sentence into a reusable visual flow. Content-aware PDF design, clearer ACPX diagnostics, Blue-hat defense, WAL-safe data handling, active-first External MCPs, 88 workflow agents, 108 built-in Multi-Turn tools, and 29 skills make her deeper, safer, and unmistakably yours.',
+    ctaDesc: 'Tlamatini v1.51.7 goes beyond coding assistants: she controls Unreal Engine and Blender, runs critical STM32er and ESP32er firmware workflows, speaks with Talker, listens with Whisperer, and turns ideas into reusable visual flows. Her latest source lets your voice become the prompt. With a smoother avatar, content-aware PDFs, clear ACPX diagnostics, Blue-hat defense, 88 workflow agents, 108 built-in Multi-Turn tools, and 29 skills, the power stays unmistakably yours.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -278,24 +278,24 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.51.3',
-      desc: 'A local-first, MIT-licensed AI operator that knows your project and acts beyond code: she controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, listens with Whisperer, measures networks with NetSpeed-Calculator, and designs complete visual workflows from one sentence. Content-aware PDF design, real ACPX readiness checks, binary-safe RAG, Blue-hat defense, and 108 built-in Multi-Turn tools, 88 agents, and 29 skills remain under your command.',
+      subtitle: 'Self-Hosted, Cloud-Capable AI Developer Assistant v1.51.7',
+      desc: 'A local-first, MIT-licensed AI operator that knows your project and acts beyond code: she controls Unreal Engine and Blender, flashes STM32 and ESP32 hardware, speaks with Talker, and listens with Whisperer. Her latest source turns spoken prompts into guarded work. Silence-aware recording, a smoother avatar, visual workflows, PDF design, and 108 built-in Multi-Turn tools, 88 agents, and 29 skills stay under your command.',
     },
     presence: {
       label: 'Tlamatini Signal',
       title: 'A Face and a Voice at the Command Surface',
-      desc: 'Tlamatini now carries that presence into the product itself: her animated chat avatar blinks, reports status, announces completion, and can read answers through built-in Chrome or Edge female voices without a GPU. Behind that warmer face remain direct Unreal Engine and Blender control, critical STM32 and ESP32 work, Talker speech, Whisperer listening, vision, workflows, and guarded autonomy.',
+      desc: 'Her chat avatar now blends expressions smoothly and follows the timing of spoken text through installed Chrome or Edge voices, without a GPU or an extra language model. Resize her portrait and keep that size next visit. Behind her face remain direct Unreal Engine and Blender control, critical STM32 and ESP32 work, Talker speech, Whisperer listening, vision, and guarded workflows.',
       chips: ['Unreal Engine', 'Blender', 'STM32', 'ESP32', 'Talker', 'Whisperer', 'Avatar Voice', 'Paste-to-Chat Vision'],
       spotlight: {
         kicker: 'Humanly Tempered Intelligence',
         title: 'She stands, speaks, and listens at the command surface',
-        desc: 'Tlamatini is not a dry terminal. Her animated in-chat face can tell you when she is working or finished and optionally read the answer aloud, Talker gives her a dedicated generated-audio voice, and Whisperer lets her listen and understand audio—all while the operator keeps control of the machinery.',
+        desc: 'Speak an instruction in the latest source and Whisperer turns it into the prompt Tlamatini acts on. She shows what she heard first and stops when no usable transcript arrives. Talker gives her generated speech; her separate browser voice reads answers with a smoothly animated face. Irreversible actions still need your written confirmation.',
       },
       panels: [
         {
           id: 'friendly',
           title: 'Friendly by Design',
-          desc: 'A warmer face for a serious local AI operator: an animated avatar with speech bubbles, blinking expressions, spoken status, and answer reading through browser voices already on the machine.',
+          desc: 'Her familiar portrait stays steady while expressions blend and her mouth follows spoken text. A resizable dock remembers your preferred size, with a 120-pixel minimum, spoken status, and answer reading through installed browser voices.',
         },
         {
           id: 'control',
@@ -305,7 +305,7 @@ const en = {
         {
           id: 'machines',
           title: 'Cryptography, Media, and Machines',
-          desc: 'Kyber, Talker, Whisperer, Unrealer, Blenderer, dual-backend STM32er, ESP32er, and paste-to-chat vision all sit inside the same guarded operator story.',
+          desc: 'Unrealer, Blenderer, STM32er, and ESP32er put engines and hardware within reach. Talker speaks, Whisperer listens and understands audio, and Kyber plus paste-to-chat vision complete the same guarded workspace.',
         },
       ],
     },
@@ -314,7 +314,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She is a self-hosted app you run on your own machine, combining binary-aware project retrieval, self-knowledge, live configuration, guarded tools, opt-in delegation, direct Unreal Engine and Blender control, broad STM32 / ESP32 / ESPHome / Arduino automation, Talker speech, Whisperer listening, paste-to-chat vision, PDFer document composition, LaTeXer typesetting, robotic verdicts, dual-identity messaging, code review, security analysis, and a visual automation canvas.',
-      p2: 'With v1.51.3, PDFer reads your content and chooses from 20 design treatments, builds a coordinated palette from one color, uses real typefaces, fits complex tables, and checks the finished pages for overlap, clipping, blank pages, and contrast. ACPX adds opt-in readiness probes and clear reasons when a peer cannot deliver. Generated code blocks stay separately loadable and savable, while the latest Windows launch fixes preserve multiline prompts for supported agent CLIs and help External MCPs start reliably.',
+      p2: 'Release v1.51.7 brings silence-aware Whisperer recording and a smoother, resizable speaking avatar. The latest source adds VOICE COMMANDS at the front of the Prompt Catalog: rehearse safely, then speak your real prompt with Multi-Turn, Exec Report, and ACPX enabled. A live silence countdown shows when recording will end; unsupported audio streams report a fixed-length fallback. Console-click protection, Enter-to-chat, Windows-path-safe Gitter commands, and the glm-5.3:cloud default make everyday work more dependable.',
       viewSource: 'View Source',
     },
     features: {
@@ -325,7 +325,7 @@ const en = {
         { id: 'netspeed', title: 'NetSpeed-Calculator Measures the Real Connection', description: 'The newest workflow agent measures download, upload, latency, jitter, packet loss, and bufferbloat across multiple keyless providers, repeats its samples, and reports confidence intervals instead of one flattering speed-test number.' },
         { id: 'creative_engines', title: 'Tlamatini Controls Unreal Engine and Blender', description: 'Drive a live Unreal editor through 53 commands, turn one prompt into a ready-to-build Unreal Engine 5.8 C++ project, or create, inspect, materialize, capture, and render Blender scenes through the official MCP add-on.' },
         { id: 'embedded', title: 'STM32er, ESP32er, Arduino, and ESPHome', description: 'Mission-critical STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB with dual backends and fail-safe checks. ESP32er, Arduiner, and ESPHomer extend that same practical reach to PlatformIO, Arduino CLI, and smart-home YAML.' },
-        { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Paste images into chat, judge recorded motion, capture every monitor, speak through Talker, and let Whisperer listen to a microphone or audio file. Her animated avatar can also read answers aloud through a local browser voice without a GPU.' },
+        { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer listens until silence or a duration you choose. The latest source turns your spoken words into reviewed prompts. Paste images, analyze video, and hear answers through her smoother browser avatar, with no GPU needed for that voice or animation.' },
         { id: 'documents', title: 'PDFer + LaTeXer Document Studio', description: 'Turn mixed sources into polished PDFs with 20 design treatments, a palette from one color, host typefaces, content-appropriate illustrations, and fitted tables. PDFer checks the finished layout and lets you override the style; LaTeXer adds mathematics, references, and copy-safe repairs.' },
         { id: 'multi_turn', title: '108 Tools, Guarded Multi-Turn', description: 'The full enabled surface stays available across long missions. Ask Execs, Step-by-Step, Hard Cancel, bounded observations, context recovery, and truthful Execution Reports preserve human authority without starving the work of a needed capability.' },
         { id: 'visual_workflows', title: '88 Agents on One Visual Canvas', description: 'Connect 88 correctly named agents across nine families, save reusable .flw workflows, or let FlowCreator build one from your objective. Generated programs and snippets retain distinct names and working canvas links, including recovered older duplicates.' },
@@ -333,7 +333,7 @@ const en = {
         { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
         { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler combines structured dorks, lawful-source presets, direct discovery, visible-browser fallback, cleaner Bing redirects, and Mojeek self-result filtering. FAISS + BM25 grounds the answer in deep project trees while byte-level filtering keeps binary noise out of context.' },
         { id: 'database', title: 'WAL-Safe SQLite Data Handling', description: 'DB Backup and Set DB use SQLite\'s online backup API, integrity validation, clean staging, and WAL/SHM sidecar hygiene so live data can be preserved and handed off without pretending a copied main file is enough.' },
-        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'The installer carries Python 3.12.10, registers on Windows 10/11, supports sealed updates and configurable ports, and preserves user state. Public builds prove privacy from a pristine clone and refuse private evidence; every build includes self-knowledge, while optional self-modify builds add a protected source snapshot.' },
+        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'Install on Windows 10/11 with Python 3.12.10 included, preserved-state updates, and configurable ports. Press Enter to reach chat; console clicks no longer freeze the core or its log. Public-build privacy checks, self-knowledge, and optional protected source snapshots remain included.' },
       ],
     },
     installation: {
@@ -401,7 +401,7 @@ const en = {
             { name: 'ESP32er', desc: 'Builds, uploads, and monitors ESP32 firmware through PlatformIO' },
             { name: 'Arduiner', desc: 'Builds and uploads Arduino-family firmware through Arduino CLI' },
             { name: 'ESPHomer', desc: 'Creates and deploys ESPHome smart-device firmware from YAML' },
-            { name: 'Gitter', desc: 'Performs local Git operations inside a workflow' },
+            { name: 'Gitter', desc: 'Runs Git workflows while preserving Windows paths and quoted arguments' },
             { name: 'Reviewer', desc: 'Reviews diffs with commit-state awareness and a clear verdict' },
             { name: 'Analyzer', desc: 'Runs deterministic static, secret, and dependency analysis' },
             { name: 'Ssher', desc: 'Runs commands on a remote host over SSH' },
@@ -432,7 +432,7 @@ const en = {
             { name: 'Editor', desc: 'Applies surgical exact-string edits to one text file' },
             { name: 'Camcorder', desc: 'Captures webcam photographs or video' },
             { name: 'Recorder', desc: 'Records microphone input into WAV audio' },
-            { name: 'Whisperer', desc: 'Listens to a microphone or file and turns speech into text' },
+            { name: 'Whisperer', desc: 'Listens until silence, transcribes audio, and supplies spoken prompts to guarded workflows' },
             { name: 'AudioPlayer', desc: 'Plays audio through a selected output device' },
             { name: 'VideoPlayer', desc: 'Plays video with sound on a chosen display' },
             { name: 'Talker', desc: 'Generates and speaks expressive female-voice audio' },
@@ -458,7 +458,7 @@ const en = {
         {
           category: 'Utility Agents',
           agents: [
-            { name: 'Parametrizer', desc: 'Routes agent results and PDF design choices into the next step for consistent reports' },
+            { name: 'Parametrizer', desc: 'Carries transcripts, results, and PDF design choices into the next workflow step' },
             { name: 'FlowBacker', desc: 'Backs up a completed session before cleanup' },
             { name: 'FlowCreator', desc: 'Creates real canvas-loadable workflows from natural language' },
             { name: 'Gatewayer', desc: 'Accepts authenticated webhooks or folder-drop events' },
@@ -490,7 +490,7 @@ const en = {
     },
     techStack: {
       label: 'Technology',
-      title: 'The Technology Behind Tlamatini v1.51.3',
+      title: 'The Technology Behind Tlamatini v1.51.7',
       groups: [
         {
           category: 'Core & Real-Time Web',
@@ -498,7 +498,7 @@ const en = {
         },
         {
           category: 'AI, Retrieval & Vision',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama local and cloud-compatible endpoints', 'Anthropic Claude API + external agent CLIs', 'Triple-model image interpretation', 'Binary-aware context + RRF fusion'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama endpoints + glm-5.3:cloud default', 'Anthropic Claude API + external agent CLIs', 'Triple-model image interpretation', 'Binary-aware context + RRF fusion'],
         },
         {
           category: 'Agent & Workflow Platform',
@@ -514,7 +514,7 @@ const en = {
         },
         {
           category: 'Windows Delivery & Defense',
-          items: ['Windows 10/11 native application', 'PyInstaller 6.18 + NSIS packaging', 'Privacy-proven public builds from pristine clones', 'Clean Ctrl+C shutdown + lean frozen web runtime', 'Sealed updates with preserved state + configurable port', 'Blue-hat Windows security toolkit + visible proof harness'],
+          items: ['Windows 10/11 native application', 'PyInstaller 6.18 + NSIS packaging', 'Privacy-proven public builds from pristine clones', 'Console shield + protected Ctrl+C shutdown', 'Sealed updates with preserved state + configurable port', 'Blue-hat Windows security toolkit + visible proof harness'],
         },
       ],
     },
@@ -546,12 +546,12 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.51.3',
-      'ACPX Comprueba la Preparación Real del Agente',
-      'Motivos Claros Cuando la Delegación se Bloquea',
-      'PDFer Diseña Según tu Contenido',
-      '20 Estilos PDF, un Color Distintivo',
-      'Tu Código Generado se Puede Abrir y Guardar',
+      'Tlamatini v1.51.7',
+      'Di tu Prompt. Ponla a Trabajar.',
+      'Whisperer Escucha Hasta que Termines',
+      'Grabación con Detección de Silencio',
+      'Avatar con Habla Fluida y Tamaño Ajustable',
+      'La Consola Ya No Congela su Trabajo',
       'IA Autoalojada con Licencia MIT',
       '53 Comandos de Control Unreal Engine',
       'Operación Multi-Turn',
@@ -575,7 +575,7 @@ const es: Translations = {
       'Captura de Webcam + Micrófono',
       'Reproducción de Video en Pantalla',
       'Tlamatini Habla con Talker',
-      'Avatar Animado en Chat + Voz del Navegador',
+      'Avatar al Ritmo del Habla + Voz del Navegador',
       'Voz Chrome / Edge Sin GPU',
       'Tlamatini Escucha con Whisperer',
       'Tlamatini Entiende Audio',
@@ -612,7 +612,7 @@ const es: Translations = {
       'Entrenamiento de Bucle Robótico',
       'Pega o Suelta Imágenes Directo en el Chat',
       'Vista Previa Grande de Screenshots',
-      'Catálogo de Prompts Guiado',
+      'El Catálogo Abre con Comandos de Voz',
       'Una Gramática Clara para Parámetros',
       'Hard Cancel por Usuario que Sí Permanece Cancelado',
       'Recon Largo Sin Corte Prematuro',
@@ -631,7 +631,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.51.3 es la operadora de IA local-first con licencia MIT para quienes construyen en serio. Controla Unreal Engine y Blender, programa hardware STM32 y ESP32, habla con Talker, escucha y entiende con Whisperer, mide redes reales con NetSpeed-Calculator y convierte una frase en un flujo listo para el lienzo mediante FlowCreator. Con 88 agentes, 108 herramientas Multi-Turn integradas y 29 skills, añade diseño PDF según el contenido, comprobaciones reales de ACPX, guardado fiable del código y resultados claros de delegación a su defensa Blue-hat y al control del operador.',
+      desc: 'Tlamatini v1.51.7 es la operadora de IA local-first con licencia MIT para quienes construyen en serio. Controla Unreal Engine y Blender, programa hardware STM32 y ESP32, habla con Talker, escucha y entiende con Whisperer, mide redes y convierte objetivos en flujos visuales. Su código más reciente añade comandos de voz: di tu prompt, revisa lo que escuchó y pon a trabajar 88 agentes, 108 herramientas Multi-Turn integradas y 29 skills. La escucha con detección de silencio y un avatar más fluido la acercan a tu forma de pensar.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -673,7 +673,7 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Tlamatini v1.51.3 reúne avatar animado con voz, visión desde el chat, RAG consciente de binarios, Catálogo de Prompts guiado, operaciones WAL-safe de base de datos, MCPs externos, FlowCreator, PDFer, LaTeXer, NetSpeed-Calculator, defensa Windows Blue-hat y Multi-Turn resistente junto con Unrealer, Blenderer, STM32er, ESP32er, Talker, Whisperer, MCP Doctor y ACPX en una sola superficie autoalojada. PDFer ahora verifica las páginas que crea, mientras ACPX comprueba la preparación de sus agentes y explica los bloqueos.',
+        desc: 'Tlamatini v1.51.7 conecta control de Unreal Engine y Blender, firmware STM32 y ESP32, habla Talker y escucha Whisperer con RAG del proyecto, flujos visuales, PDFer, LaTeXer, defensa Blue-hat y ACPX. Su código más reciente lleva prompts hablados al mismo espacio Multi-Turn protegido. Un avatar más fluido y la protección de consola mantienen una experiencia ágil, bajo tu mando.',
         card1: {
           title: 'Chat, Config, DB, Skills, MCPs y Contexto',
           desc: 'La superficie de chat mantiene a mano Multi-Turn, Ask Execs, Step-by-Step, Hard Cancel, Exec Report veraz, FlowCreator invocable, ACPX, contexto, previews de imágenes, Config Voice, Models / URLs / API-Keys, DB, Skills, MCPs externos, mensajería y auto-actualización. El diseñador visual avisa si pierde su backend, mientras seleccionar texto y pulsar Espacio controla grupos completos de casillas.',
@@ -721,7 +721,7 @@ const es: Translations = {
     workflow: {
       label: 'Diseñador de Flujos',
       title: 'Arrastra, Suelta, Orquesta',
-      desc: 'El Diseñador Visual de Flujos presenta los 88 tipos de agente en nueve familias fieles. NetSpeed-Calculator se une a Unrealer, Blenderer, STM32er con doble backend, ESP32er, PDFer, LaTeXer, FlowCreator, Talker, Whisperer, seguridad, mensajería, navegador, escritorio, infraestructura, TeleTlamatini y ACPXer en flujos .flw ejecutables y reutilizables.',
+      desc: 'El Diseñador Visual reúne 88 tipos de agente en nueve familias, con Unrealer, Blenderer, STM32er y ESP32er al frente. Talker habla; Whisperer escucha. Lleva una transcripción válida por Parametrizer al siguiente agente o combina documentos, seguridad, medios, mensajería e infraestructura en un .flw reutilizable. Las transcripciones vacías o no disponibles deben detenerse o bifurcarse, nunca convertirse en instrucciones inventadas.',
     },
     tools: {
       label: 'Más Allá del Código',
@@ -741,30 +741,30 @@ const es: Translations = {
         { id: 'stm32er', name: 'STM32er Programa Placas Reales', desc: 'Genera, compila, flashea, reinicia y observa firmware desde Blue Pill hasta F7, G, L, H7, U5 y WB con comprobaciones fail-safe.', type: 'Firmware' },
         { id: 'esp_firmware', name: 'ESP32, Arduino y ESPHome', desc: 'Pasa de una idea a firmware compilado, cargado y observable mediante PlatformIO, Arduino CLI y ESPHome con arranque automático.', type: 'Embebidos' },
         { id: 'robotic_loop', name: 'Un Bucle Robótico que Puede Ver', desc: 'STM32er actúa, Camcorder graba, Video-Analyzer juzga y Forker puede devolver el sistema a mejorar hasta que el resultado físico pase.', type: 'Visión' },
-        { id: 'whisperer', name: 'Whisperer Permite a Tlamatini Escuchar', desc: 'Habla por el micrófono o entrega un archivo: Whisperer lo transforma en texto con detección de GPU local y fallback confiable a CPU.', type: 'Voz' },
-        { id: 'talker', name: 'Talker le Da su Voz a Tlamatini', desc: 'Genera voz femenina expresiva, guárdala en WAV y reprodúcela; su avatar también puede leer respuestas sin requerir GPU.', type: 'Voz' },
+        { id: 'whisperer', name: 'Whisperer Convierte tu Voz en Intención', desc: 'Habla naturalmente: la grabación termina tras 10 segundos de silencio por defecto, con un máximo de 300 segundos. Indica una duración para grabar ese tiempo exacto. También transcribe archivos, localmente con respaldo en CPU o con un reconocedor cloud configurado.', type: 'Voz' },
+        { id: 'talker', name: 'Talker le Da su Voz a Tlamatini', desc: 'Genera voz femenina expresiva, guárdala en WAV y escúchala. Por separado, su avatar más fluido sigue el texto hablado y lee respuestas con voces instaladas, sin GPU ni un modelo de lenguaje adicional.', type: 'Voz' },
         { id: 'media', name: 'Ojos, Oídos, Pantalla y Reproducción', desc: 'Captura todos los monitores, webcam y micrófono; interpreta imágenes y movimiento; después reproduce audio o video donde elijas.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Mide lo que Importa', desc: 'Mide descarga, subida, latencia, jitter, pérdida y bufferbloat en varios proveedores sin llave, con intervalos de confianza y no un número favorecedor.', type: 'Red' },
         { id: 'googler', name: 'Googler Encuentra Mejores Rutas Web', desc: 'Dorks estructurados, fuentes lícitas, descubrimiento HTTP, fallback visible, decodificación limpia de redirects Bing y filtrado de autorresultados Mojeek producen investigación resistente y rastreable.', type: 'Investigación' },
         { id: 'blue_hat', name: 'Defensa Blue-Hat Bajo tu Control', desc: 'El toolkit Windows controlado por el operador observa diez familias de señales con modos detect-only, armed, watch y aggressive explícito.', type: 'Defensa' },
         { id: 'security_agents', name: 'Tres Caminos para Recon Autorizado', desc: 'Usa Discoverer para ProjectDiscovery, Nmapper para nmap local y Kalier para un Kali configurado, todos con límites claros y resultados honestos.', type: 'Seguridad' },
-        { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Busca, edita, crea, revisa y recompila el proyecto completo. Los bloques de código generados conservan nombres distintos y enlaces funcionales al lienzo; los duplicados antiguos se recuperan sin borrar contenido.', type: 'Codebase' },
+        { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Busca, edita, revisa y recompila el proyecto. El código generado conserva nombres distintos y enlaces funcionales al lienzo; Gitter ahora respeta barras de Windows y rutas entre comillas en comandos Git personalizados.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + LaTeXer: Documentos para Entregar', desc: 'PDFer elige entre 20 estilos según el contenido, crea una paleta desde tu color, usa fuentes reales, ajusta tablas y verifica el PDF terminado. LaTeXer resuelve matemáticas, bibliografías, índices y presentaciones.', type: 'Documentos' },
         { id: 'browser_desktop', name: 'Automatización de Navegador y Escritorio', desc: 'Playwrighter conduce sitios interactivos; Windower, Mouser, Keyboarder y Shoter operan y documentan el escritorio Windows real.', type: 'Automatización' },
         { id: 'messaging', name: 'Llega por el Canal Correcto', desc: 'Envía y recibe por Telegram, WhatsApp, email, notificaciones o mensajería unificada Zavu, con identidad explícita y decisión del operador.', type: 'Mensajería' },
         { id: 'database', name: 'Protección de Base de Datos WAL-Safe', desc: 'Respalda y prepara SQLite mediante la API de backup online, verifica integridad y trata sidecars WAL/SHM sin fingir que un archivo aislado está completo.', type: 'Datos' },
-        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'El instalador lleva Python 3.12.10, se registra en Windows 10/11, permite cambiar el puerto, conserva el estado y demuestra que una build pública no contiene evidencia privada antes de entregarla.', type: 'Windows' },
+        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'Instala con Python 3.12.10 incluido, conserva tu estado al actualizar y pulsa Enter en la bienvenida para ir al chat. Las builds públicas verifican privacidad; la protección de consola evita que una ventana de logs pausada congele el trabajo.', type: 'Windows' },
         { id: 'self_knowledge', name: 'Ella Sabe Cómo Está Construida', desc: 'Su autoconocimiento en primera persona explica la arquitectura; un build opcional self-modify también puede llevar un snapshot reconstruible y protegido.', type: 'Identidad' },
-        { id: 'prompt_catalog', name: 'Un Catálogo que Guía el Primer Paso', desc: 'Cada categoría abre con un wizard Step-by-Step y una gramática clara separa tus entradas, valores de runtime y espacios del reporte final.', type: 'Guía' },
+        { id: 'prompt_catalog', name: 'Tu Voz Es el Primer Paso', desc: 'El código más reciente abre el catálogo con VOICE COMMANDS: un ensayo guiado de solo lectura y SPEAK YOUR PROMPT. Ella muestra la transcripción antes de actuar, se detiene si no entendió y pide confirmación escrita antes de acciones irreversibles.', type: 'Guía' },
         { id: 'mcp_adder', name: 'Añade un MCP con una Guía Protegida', desc: 'La skill más reciente clasifica transporte, separa secretos, diagnostica, activa sólo con intención y prueba la herramienta remota antes de usarla.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Trabajos Largos que Terminan con Verdad', desc: 'Recuperación de contexto, trabajo protegido y cierre limpio sostienen misiones largas. El arranque Windows preserva prompts multilínea en CLIs compatibles y resuelve comandos de MCPs externos instalados con npm/pnpm.', type: 'Confiabilidad' },
+        { id: 'dependable_runtime', name: 'Trabajos Largos que Siguen Adelante', desc: 'Una consola Windows pausada ya no bloquea la aplicación ni su log persistente. Las builds instaladas desactivan por defecto el bloqueo por selección y protegen Ctrl+C. Conserva recuperación de contexto y arranque fiable de agentes externos.', type: 'Confiabilidad' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.51.3 pone sus joyas de la corona al frente: controla Unreal Engine y Blender, ejecuta trabajo crítico con STM32er y ESP32er, habla con Talker, escucha con Whisperer, mide conexiones con NetSpeed-Calculator y transforma una frase en un flujo real. Diseño PDF según el contenido, diagnósticos ACPX más claros, defensa Blue-hat, datos WAL-safe, MCPs externos, 88 agentes, 108 herramientas Multi-Turn integradas y 29 skills convierten una sola máquina en una superficie de creación extraordinaria.',
+    ctaDesc: 'Tlamatini v1.51.7 va más allá del código: controla Unreal Engine y Blender, ejecuta flujos críticos con STM32er y ESP32er, habla con Talker, escucha con Whisperer y convierte ideas en flujos visuales reutilizables. Su código más reciente convierte tu voz en el prompt. Con avatar más fluido, PDFs según el contenido, diagnósticos ACPX claros, defensa Blue-hat, 88 agentes de flujo, 108 herramientas Multi-Turn integradas y 29 skills, el poder sigue siendo tuyo.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -787,24 +787,24 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.51.3',
-      desc: 'Una operadora de IA local-first con licencia MIT que conoce tu proyecto y actúa: controla Unreal Engine y Blender, ejecuta trabajo crítico con STM32er y ESP32er, habla con Talker, escucha con Whisperer, mide redes con NetSpeed-Calculator y convierte una frase en un flujo visual. Diseño PDF según el contenido, comprobaciones reales de ACPX, RAG binario-seguro, defensa Blue-hat, 108 herramientas Multi-Turn, 88 agentes y 29 skills permanecen bajo tu mando.',
+      subtitle: 'Asistente de Desarrollo con IA, Autoalojado y en la Nube v1.51.7',
+      desc: 'Una operadora de IA local-first con licencia MIT que conoce tu proyecto y actúa más allá del código: controla Unreal Engine y Blender, programa hardware STM32 y ESP32, habla con Talker y escucha con Whisperer. Su código más reciente convierte prompts hablados en trabajo protegido. Grabación con detección de silencio, avatar más fluido, flujos visuales, diseño PDF, 108 herramientas Multi-Turn integradas, 88 agentes y 29 skills permanecen bajo tu mando.',
     },
     presence: {
       label: 'Señal Tlamatini',
       title: 'Un Rostro y una Voz en la Superficie de Mando',
-      desc: 'Tlamatini lleva esa presencia al producto: su avatar animado en el chat parpadea, informa estado, anuncia cuando termina y puede leer respuestas con voces femeninas incluidas en Chrome o Edge sin usar GPU. Detrás del rostro siguen el control de Unreal Engine y Blender, STM32 y ESP32 críticos, habla Talker, escucha Whisperer, visión, flujos y autonomía protegida.',
+      desc: 'Su avatar del chat mezcla expresiones con fluidez y sigue el ritmo del texto hablado con voces instaladas de Chrome o Edge, sin GPU ni un modelo de lenguaje adicional. Ajusta su tamaño y consérvalo en la próxima visita. Detrás de su rostro siguen el control de Unreal Engine y Blender, STM32 y ESP32 críticos, habla Talker, escucha Whisperer, visión y flujos protegidos.',
       chips: ['Unreal Engine', 'Blender', 'STM32', 'ESP32', 'Talker', 'Whisperer', 'Voz del Avatar', 'Visión Pegada al Chat'],
       spotlight: {
         kicker: 'Inteligencia Humanamente Templada',
         title: 'Ella está, habla y escucha frente a la superficie de mando',
-        desc: 'Tlamatini no es una terminal seca. Su rostro animado puede contarte que trabaja o terminó y leer la respuesta; Talker le da una voz de audio generado; Whisperer le permite escuchar y entender, mientras el operador conserva el control de la maquinaria.',
+        desc: 'Di una instrucción en el código más reciente y Whisperer la convierte en el prompt que Tlamatini ejecuta. Ella muestra lo que escuchó y se detiene si no obtiene una transcripción útil. Talker genera su voz; por separado, la voz del navegador lee respuestas con un rostro animado fluido. Las acciones irreversibles aún necesitan tu confirmación escrita.',
       },
       panels: [
         {
           id: 'friendly',
           title: 'Amable por Diseño',
-          desc: 'Un rostro más cálido para una operadora local seria: avatar animado, globos de diálogo, parpadeos, estado hablado y lectura de respuestas con voces ya instaladas en el navegador.',
+          desc: 'Su rostro permanece estable mientras mezcla expresiones y acompaña el texto hablado. El avatar recuerda tu tamaño preferido, con un mínimo de 120 píxeles, avisos de estado y lectura de respuestas mediante voces instaladas del navegador.',
         },
         {
           id: 'control',
@@ -814,7 +814,7 @@ const es: Translations = {
         {
           id: 'machines',
           title: 'Criptografía, Media y Máquinas',
-          desc: 'Kyber, Talker, Whisperer, Unrealer, Blenderer, STM32er con doble backend, ESP32er y la visión pegada al chat viven en una misma historia de operación protegida.',
+          desc: 'Unrealer, Blenderer, STM32er y ESP32er ponen motores y hardware a tu alcance. Talker habla, Whisperer escucha y entiende audio; Kyber y la visión pegada al chat completan el mismo espacio de trabajo protegido.',
         },
       ],
     },
@@ -823,7 +823,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Es una aplicación autoalojada que ejecutas en tu propia máquina, combinando recuperación de proyectos consciente de binarios, autoconocimiento, configuración viva, herramientas protegidas, delegación opcional, control directo de Unreal Engine y Blender, automatización STM32 / ESP32 / ESPHome / Arduino, habla Talker, escucha Whisperer, visión desde el chat, composición PDFer, maquetación LaTeXer, veredictos robóticos, mensajería con doble identidad, revisión de código, análisis de seguridad y un lienzo visual.',
-      p2: 'Con v1.51.3, PDFer lee tu contenido y elige entre 20 tratamientos de diseño, crea una paleta desde un color, usa tipografías reales, ajusta tablas complejas y revisa solapamientos, recortes, páginas vacías y contraste en el PDF terminado. ACPX añade pruebas de preparación opcionales y motivos claros cuando un agente no puede entregar. Cada bloque de código se puede abrir y guardar por separado; las últimas mejoras de arranque Windows preservan prompts multilínea en CLIs compatibles y ayudan a iniciar MCPs externos.',
+      p2: 'La versión v1.51.7 incorpora grabación Whisperer con detección de silencio y un avatar más fluido y ajustable. El código más reciente añade VOICE COMMANDS al inicio del Catálogo de Prompts: ensaya sin riesgo y luego di tu prompt con Multi-Turn, Exec Report y ACPX habilitados. Una cuenta regresiva muestra cuándo terminará la grabación; si el dispositivo no admite el flujo de audio, informa la alternativa de duración fija. Protección de consola, Enter para ir al chat, rutas Windows correctas en Gitter y glm-5.3:cloud como modelo predeterminado hacen más fiable el trabajo diario.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -853,7 +853,7 @@ const es: Translations = {
         {
           id: 'voice_vision',
           title: 'Ella Ve, Habla, Escucha y Entiende',
-          description: 'Pega imágenes en el chat, juzga movimiento grabado, captura todos los monitores, habla con Talker y deja que Whisperer escuche un micrófono o archivo. Su avatar también puede leer respuestas con una voz local del navegador sin GPU.',
+          description: 'Talker habla; Whisperer escucha hasta el silencio o durante el tiempo que elijas. El código más reciente convierte tus palabras en prompts revisados. Pega imágenes, analiza video y escucha respuestas mediante su avatar más fluido, sin GPU para esa voz ni su animación.',
         },
         {
           id: 'documents',
@@ -893,7 +893,7 @@ const es: Translations = {
         {
           id: 'windows_delivery',
           title: 'Una App Windows Real que se Conoce',
-          description: 'El instalador lleva Python 3.12.10, se registra en Windows 10/11, admite actualizaciones selladas y puerto configurable y preserva el estado. Las builds públicas demuestran privacidad desde un clon limpio y rechazan evidencia privada; todas incluyen autoconocimiento y las self-modify opcionales añaden un snapshot protegido.',
+          description: 'Instala en Windows 10/11 con Python 3.12.10 incluido, actualizaciones que preservan tu estado y puerto configurable. Pulsa Enter para ir al chat; los clics en consola ya no congelan el núcleo ni el log. Conserva verificaciones de privacidad, autoconocimiento y snapshots protegidos opcionales.',
         },
       ],
     },
@@ -962,7 +962,7 @@ const es: Translations = {
             { name: 'ESP32er', desc: 'Compila, carga y monitorea ESP32 mediante PlatformIO' },
             { name: 'Arduiner', desc: 'Compila y carga firmware Arduino mediante Arduino CLI' },
             { name: 'ESPHomer', desc: 'Crea y despliega dispositivos ESPHome desde YAML' },
-            { name: 'Gitter', desc: 'Ejecuta operaciones Git locales dentro de un flujo' },
+            { name: 'Gitter', desc: 'Ejecuta flujos Git respetando rutas Windows y argumentos entre comillas' },
             { name: 'Reviewer', desc: 'Revisa diffs con conciencia de commit y un veredicto claro' },
             { name: 'Analyzer', desc: 'Ejecuta análisis estático, de secretos y dependencias' },
             { name: 'Ssher', desc: 'Ejecuta comandos remotos por SSH' },
@@ -993,7 +993,7 @@ const es: Translations = {
             { name: 'Editor', desc: 'Aplica ediciones quirúrgicas exactas a un archivo de texto' },
             { name: 'Camcorder', desc: 'Captura fotografías o video desde la webcam' },
             { name: 'Recorder', desc: 'Graba el micrófono en audio WAV' },
-            { name: 'Whisperer', desc: 'Escucha micrófono o archivo y transforma voz en texto' },
+            { name: 'Whisperer', desc: 'Escucha hasta el silencio, transcribe audio y aporta prompts hablados a flujos protegidos' },
             { name: 'AudioPlayer', desc: 'Reproduce audio por el dispositivo de salida elegido' },
             { name: 'VideoPlayer', desc: 'Reproduce video con sonido en una pantalla elegida' },
             { name: 'Talker', desc: 'Genera y pronuncia audio expresivo con voz femenina' },
@@ -1019,7 +1019,7 @@ const es: Translations = {
         {
           category: 'Agentes de Utilidad',
           agents: [
-            { name: 'Parametrizer', desc: 'Enruta resultados y decisiones de diseño PDF al siguiente paso para informes coherentes' },
+            { name: 'Parametrizer', desc: 'Lleva transcripciones, resultados y diseño PDF al siguiente paso del flujo' },
             { name: 'FlowBacker', desc: 'Respalda una sesión terminada antes de limpiarla' },
             { name: 'FlowCreator', desc: 'Crea flujos reales cargables en lienzo desde lenguaje natural' },
             { name: 'Gatewayer', desc: 'Acepta webhooks autenticados o eventos de carpeta' },
@@ -1051,7 +1051,7 @@ const es: Translations = {
     },
     techStack: {
       label: 'Tecnología',
-      title: 'La Tecnología Detrás de Tlamatini v1.51.3',
+      title: 'La Tecnología Detrás de Tlamatini v1.51.7',
       groups: [
         {
           category: 'Núcleo y Web en Tiempo Real',
@@ -1059,7 +1059,7 @@ const es: Translations = {
         },
         {
           category: 'IA, Recuperación y Visión',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama locales y compatibles con nube', 'API Anthropic Claude + CLIs de agentes externos', 'Interpretación visual triple-modelo', 'Contexto consciente de binarios + fusión RRF'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama + glm-5.3:cloud predeterminado', 'API Anthropic Claude + CLIs de agentes externos', 'Interpretación visual triple-modelo', 'Contexto consciente de binarios + fusión RRF'],
         },
         {
           category: 'Plataforma de Agentes y Flujos',
@@ -1075,7 +1075,7 @@ const es: Translations = {
         },
         {
           category: 'Entrega y Defensa en Windows',
-          items: ['Aplicación nativa para Windows 10/11', 'Empaquetado PyInstaller 6.18 + NSIS', 'Builds públicas con privacidad probada desde clones limpios', 'Cierre Ctrl+C limpio + runtime web frozen más ligero', 'Updates sellados con estado + puerto configurable', 'Toolkit Blue-hat de Windows + harness de prueba visible'],
+          items: ['Aplicación nativa para Windows 10/11', 'Empaquetado PyInstaller 6.18 + NSIS', 'Builds públicas con privacidad probada desde clones limpios', 'Protección de consola + cierre Ctrl+C protegido', 'Updates sellados con estado + puerto configurable', 'Toolkit Blue-hat de Windows + harness de prueba visible'],
         },
       ],
     },
