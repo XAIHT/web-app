@@ -57,15 +57,11 @@ pipeline {
           docker rm -f "$HELPER" >/dev/null 2>&1 || true
 
           if [ "$BEFORE" = "$AFTER" ]; then
-            echo ">>> Lockfile already in sync with package.json — no changes."
+            echo ">>> Lockfile already in sync with package.json - no changes."
           else
-            echo ">>> Lockfile was OUT OF SYNC (self-healed at build time):"
+            echo ">>> Lockfile was OUT OF SYNC (self-healed at build time)."
             echo ">>>   before sha256: ${BEFORE}"
             echo ">>>   after  sha256: ${AFTER}"
-            echo ">>> Consider running the same command locally and pushing"
-            echo ">>> so main matches production:"
-            echo ">>>   docker run --rm -v \"\$PWD\":/app -w //app node:20-alpine \\"
-            echo ">>>     npm install --package-lock-only --no-audit"
           fi
         '''
       }
