@@ -39,7 +39,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.51.7',
+    eyebrow: 'XAIHT presents Tlamatini v1.65.4',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
@@ -47,16 +47,16 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Current release'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini combines code-aware retrieval, guarded execution, 108 built-in Multi-Turn tools, visual workflows, external-agent coordination, private External-MCP runtimes, and direct creative and embedded tooling. Public builds now prove privacy before shipping, while the operator keeps the right to inspect, approve, deny, or stop.',
+    shiftBody: 'Tlamatini connects Unreal Engine, Blender, STM32, and ESP32 with code-aware retrieval, whole-document PDF context, editable presentations, and video understanding. Her 109 built-in Multi-Turn tools work with a visible context gauge and guarded execution, while you keep the right to inspect, approve, deny, or stop.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
-      ['Codebase intelligence', 'Hybrid retrieval, reliable code saving, PDFer with 20 design treatments and layout checks, LaTeX, review, and analysis.'],
+      ['Codebase intelligence', 'Project retrieval, whole-PDF context, editable PPTXer decks, PDFer composition, and LaTeXer typesetting turn knowledge into deliverables.'],
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
-      ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino paths join firmware to real instruments.'],
-      ['Voice and media', 'Talker speaks; Whisperer listens until silence. Latest-source voice commands turn your words into prompts, with transcript review.'],
-      ['Human command', 'Ask Execs, Step-by-Step, execution reports, optional ACPX readiness probes, and clear reasons when delegation is blocked.'],
-      ['Reusable orchestration', 'Successful Multi-Turn work can become a visible, inspectable .flw workflow.'],
+      ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino join firmware to real instruments, with working ESP32 and smart-home templates to start from.'],
+      ['Voice and media', 'Talker speaks; Whisperer listens and turns your words into reviewed prompts. Video-Analyzer adds timestamped transcription and audiovisual summaries.'],
+      ['Human command', 'A visible context gauge, 38 model settings, Ask Execs, Step-by-Step, and honest execution reports keep decisions in your hands.'],
+      ['Reusable orchestration', 'FlowCreator selects from all 89 agents and validates connections and data mappings before publishing an inspectable .flw.'],
     ],
     commandLabel: 'Humanly tempered',
     commandTitle: 'Capability is not permission.',
@@ -77,7 +77,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.51.7',
+    eyebrow: 'XAIHT presenta Tlamatini v1.65.4',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
@@ -85,16 +85,16 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini combina recuperacion consciente del codigo, ejecucion protegida, 108 herramientas Multi-Turn integradas, flujos visuales, coordinacion de agentes externos, runtimes privados para External MCPs y herramientas creativas y embebidas directas. Las builds publicas ahora demuestran privacidad antes de salir, mientras el operador conserva el derecho de inspeccionar, aprobar, negar o detener.',
+    shiftBody: 'Tlamatini conecta Unreal Engine, Blender, STM32 y ESP32 con recuperacion del codigo, contexto de PDFs completos, presentaciones editables y comprension de video. Sus 109 herramientas Multi-Turn integradas trabajan con un indicador de contexto y ejecucion protegida; tu conservas el derecho de inspeccionar, aprobar, negar o detener.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
-      ['Inteligencia del codigo', 'Recuperacion hibrida, guardado fiable del codigo, PDFer con 20 estilos y revision del diseno, LaTeX, revision y analisis.'],
+      ['Inteligencia del codigo', 'Recuperacion de proyectos, contexto de PDFs completos, presentaciones PPTXer, composicion PDFer y LaTeXer convierten conocimiento en entregables.'],
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
-      ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales.'],
-      ['Voz y medios', 'Talker habla; Whisperer escucha hasta el silencio. El codigo mas reciente convierte tu voz en prompts, con revision de lo escuchado.'],
-      ['Mando humano', 'Ask Execs, Step-by-Step, reportes, pruebas opcionales de preparacion ACPX y motivos claros cuando la delegacion se bloquea.'],
-      ['Orquestacion reutilizable', 'El trabajo Multi-Turn exitoso puede volverse un flujo .flw visible e inspeccionable.'],
+      ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales, partiendo de plantillas funcionales ESP32 y smart home.'],
+      ['Voz y medios', 'Talker habla; Whisperer escucha y convierte tu voz en prompts revisados. Video-Analyzer agrega transcripcion y resumen audiovisual con marcas de tiempo.'],
+      ['Mando humano', 'Un indicador de contexto, 38 ajustes de modelos, Ask Execs, Step-by-Step y reportes honestos mantienen las decisiones en tus manos.'],
+      ['Orquestacion reutilizable', 'FlowCreator elige entre 89 agentes y valida conexiones y mapeos antes de publicar un .flw inspeccionable.'],
     ],
     commandLabel: 'Humanamente templada',
     commandTitle: 'Capacidad no significa permiso.',
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['88', '108', '29', 'v1.51.7'].map((value, index) => (
+            {['89', '109', '29', 'v1.65.4'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>

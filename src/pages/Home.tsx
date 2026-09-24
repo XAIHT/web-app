@@ -101,9 +101,9 @@ function OverviewSection() {
             />
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '88' },
+                { label: o.stats.agents, value: '89' },
                 { label: o.stats.skills, value: '29' },
-                { label: o.stats.version, value: 'v1.51.7' },
+                { label: o.stats.version, value: 'v1.65.4' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
