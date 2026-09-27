@@ -30,9 +30,9 @@ const expectedAgentGroups = [
 ] as const;
 
 const expectedToolIds = [
-  'visual_workflows', 'multi_turn', 'human_control', 'truthful_reports',
+  'visual_workflows', 'prompt_flow', 'prompt_context', 'multi_turn', 'human_control', 'truthful_reports',
   'flowcreator', 'acpx', 'external_mcps', 'skills', 'rag', 'unrealer',
-  'blenderer', 'stm32er', 'esp_firmware', 'robotic_loop', 'whisperer',
+  'blenderer', 'stm32er', 'esp_firmware', 'robotic_loop', 'image_vision', 'analysis_recovery', 'whisperer',
   'talker', 'media', 'netspeed', 'googler', 'blue_hat', 'security_agents',
   'codebase', 'documents', 'pdf_canvas', 'model_config', 'browser_desktop', 'messaging', 'database',
   'windows_delivery', 'self_knowledge', 'prompt_catalog', 'mcp_adder',
@@ -50,7 +50,7 @@ const flattenAgentNames = (lang: 'en' | 'es') =>
     group.agents.map((agent) => agent.name),
   );
 
-describe('Tlamatini v1.65.4 website truth contract', () => {
+describe('Tlamatini v1.70.0 source website truth contract', () => {
   it('keeps the exact 89-agent catalog in nine authoritative families', () => {
     const english = flattenAgentNames('en');
     const spanish = flattenAgentNames('es');
@@ -82,10 +82,10 @@ describe('Tlamatini v1.65.4 website truth contract', () => {
     }
   });
 
-  it('advertises the published release, carried capabilities, and crown jewels', () => {
+  it('advertises the current source, carried capabilities, and crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.65.4', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
+      'v1.70.0', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
       'PPTXer', 'Context Governor', '256-call',
@@ -97,7 +97,7 @@ describe('Tlamatini v1.65.4 website truth contract', () => {
   it('keeps the technology stack current and substantial in both languages', () => {
     for (const lang of ['en', 'es'] as const) {
       const stack = translations[lang].tlamatini.techStack;
-      expect(stack.title).toContain('v1.65.4');
+      expect(stack.title).toContain('v1.70.0');
       expect(stack.groups).toHaveLength(6);
       stack.groups.forEach((group) => expect(group.items.length).toBeGreaterThanOrEqual(5));
     }
@@ -123,16 +123,17 @@ describe('Tlamatini v1.65.4 website truth contract', () => {
       expect(catalog?.desc).toContain('SPEAK YOUR PROMPT');
       expect(catalog?.desc).toMatch(/written confirmation|confirmación escrita/);
       expect(copy.tlamatini.presence.panels[0].desc).toContain('120');
-      expect(copy.tlamatini.overview.p2).toContain('Context Governor');
-      expect(copy.tlamatini.overview.p2).toContain('v1.65.4');
+      expect(copy.tlamatini.overview.p2).toContain('Prompt Flow Panel');
+      expect(copy.tlamatini.overview.p2).toContain('v1.70.0');
     }
     const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
     expect(setup).toContain('ollama pull glm-5.3:cloud');
-    expect(setup).toContain('ollama pull jcyhsiao/qwen3.5cloud:latest');
+    expect(setup).toContain('ollama pull mistral-large-3:675b-cloud');
     expect(setup).toContain('ollama pull gemma4:cloud');
     expect(setup).toContain('38 settings in six categories');
     expect(setup).toContain('latest published release ZIP');
     expect(setup).not.toContain('ollama pull qwen3.5:cloud');
+    expect(setup).not.toContain('ollama pull jcyhsiao/qwen3.5cloud:latest');
     expect(setup).not.toContain('ollama pull kimi-k2.7-code:cloud');
   });
 
@@ -160,9 +161,70 @@ describe('Tlamatini v1.65.4 website truth contract', () => {
     const home = readFileSync(resolve('src/pages/Home.tsx'), 'utf8');
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
     expect(home).toContain("value: '89'");
-    expect(home).toContain("value: 'v1.65.4'");
-    expect(launch).toContain("['89', '109', '29', 'v1.65.4']");
+    expect(home).toContain("value: 'v1.70.0'");
+    expect(launch).toContain("['89', '109', '29', 'v1.70.0']");
     expect(launch).toContain('PPTXer');
+  });
+
+  it('distinguishes prompt diagrams from agent workflows in both languages', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const findTool = (id: string) => copy.home.tools.items.find((tool) => tool.id === id);
+      const prompt = findTool('prompt_flow')?.desc ?? '';
+      for (const operation of [
+        'Prompt', 'Programmed Prompt', 'Decision', 'Feed embeddings',
+        'Flush embeddings', 'Clean History', 'User Commentary',
+        'Multi-Turn', 'ACPX', 'Play', 'Pause', 'Stop',
+      ]) expect(prompt).toContain(operation);
+
+      const context = findTool('prompt_context')?.desc ?? '';
+      expect(context).toContain('{{last_output}}');
+      expect(context).toContain('.fpmt');
+      expect(context).toMatch(/opening never runs|abrir nunca ejecuta/);
+      expect(context).toMatch(/remain open|manteniendo abiertos/);
+      expect(findTool('visual_workflows')?.desc).toContain('.flw');
+      expect(copy.home.workflow.desc).toContain('.flw');
+      expect(copy.home.workflow.desc).toContain('.fpmt');
+      expect(copy.ascii.phrases.some((phrase) => phrase.includes('Prompt Flow Panel'))).toBe(true);
+      expect(copy.tlamatini.features.items.find((feature) => feature.id === 'visual_workflows')?.description).toContain('.fpmt');
+      expect(copy.tlamatini.agents.groups.flatMap((group) => group.agents)).toHaveLength(89);
+    }
+  });
+
+  it('keeps current-source vision failures explicit without claiming recovery stops', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const findTool = (id: string) => copy.home.tools.items.find((tool) => tool.id === id);
+      const vision = findTool('image_vision')?.desc ?? '';
+      for (const model of ['Mistral', 'Gemma', 'GLM']) expect(vision).toContain(model);
+      const recovery = findTool('analysis_recovery')?.desc ?? '';
+      expect(recovery).toContain('Fatal analysis errors');
+      expect(recovery).toContain('Dismiss');
+      expect(recovery).toMatch(/Latest-source|código más reciente/);
+      expect(recovery).toMatch(/without.*cancelling|sin.*cancelar/);
+      expect(recovery).toMatch(/retries|Reintentos/);
+      expect(findTool('pdf_canvas')?.desc).toMatch(/never loaded as incomplete context|nunca la carga como contexto incompleto/);
+      expect(findTool('media')?.desc).toMatch(/reject failed observers|rechaza fallas de observación/);
+    }
+  });
+
+  it('aligns menu locations and separates source updates from published installers', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      for (const label of ['Panels', 'Agentic Control Panel', 'Prompt Flow Panel', 'Config', 'Configure MCPs', 'Configure Agents']) {
+        expect(copy.home.architecture.overview.card1.desc).toContain(label);
+      }
+      expect(copy.tlamatini.overview.p2).toMatch(/Source improvements can precede published installers|código puede adelantarse a los instaladores publicados/);
+      expect(copy.tlamatini.installation.desc).toMatch(/latest published Windows release|última versión Windows publicada/);
+    }
+    const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
+    expect(setup).toContain('Config -> Configure MCPs');
+    expect(setup).toContain('Config -> Configure Agents');
+    expect(setup).toContain('Panels -> Agentic Control Panel');
+    expect(setup).toContain('Panels -> Prompt Flow Panel');
+    const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
+    expect(launch).toContain('Source version');
+    expect(launch).not.toContain('Current release');
   });
 
   it('rejects stale releases, removed guardian claims, plan copy, and positional text joins', () => {
@@ -178,7 +240,8 @@ describe('Tlamatini v1.65.4 website truth contract', () => {
     for (const forbidden of [
       /v1\.48\.2/i,
       /v1\.51\.\d+\b/i,
-      /v1\.65\.5\b/i,
+      /v1\.65\.\d+\b/i,
+      /jcyhsiao\/qwen3\.5cloud:latest/i,
       /\b(?:87|88) (?:workflow[ -]?)?agents\b/i,
       /\b108 (?:built-in )?(?:Multi-Turn )?tools\b/i,
       /\b66 wrapped\b/i,
