@@ -33,7 +33,7 @@ const expectedToolIds = [
   'visual_workflows', 'prompt_flow', 'prompt_context', 'multi_turn', 'human_control', 'truthful_reports',
   'flowcreator', 'acpx', 'external_mcps', 'skills', 'rag', 'unrealer',
   'blenderer', 'stm32er', 'esp_firmware', 'robotic_loop', 'image_vision', 'analysis_recovery', 'whisperer',
-  'talker', 'media', 'netspeed', 'googler', 'blue_hat', 'security_agents',
+  'mic_preferences', 'talker', 'media', 'netspeed', 'googler', 'blue_hat', 'security_agents',
   'codebase', 'documents', 'pdf_canvas', 'model_config', 'browser_desktop', 'messaging', 'database',
   'windows_delivery', 'self_knowledge', 'prompt_catalog', 'mcp_adder',
   'dependable_runtime',
@@ -50,7 +50,7 @@ const flattenAgentNames = (lang: 'en' | 'es') =>
     group.agents.map((agent) => agent.name),
   );
 
-describe('Tlamatini v1.70.0 source website truth contract', () => {
+describe('Tlamatini v1.72.0 source website truth contract', () => {
   it('keeps the exact 89-agent catalog in nine authoritative families', () => {
     const english = flattenAgentNames('en');
     const spanish = flattenAgentNames('es');
@@ -85,7 +85,7 @@ describe('Tlamatini v1.70.0 source website truth contract', () => {
   it('advertises the current source, carried capabilities, and crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.70.0', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
+      'v1.72.0', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
       'PPTXer', 'Context Governor', '256-call',
@@ -97,7 +97,7 @@ describe('Tlamatini v1.70.0 source website truth contract', () => {
   it('keeps the technology stack current and substantial in both languages', () => {
     for (const lang of ['en', 'es'] as const) {
       const stack = translations[lang].tlamatini.techStack;
-      expect(stack.title).toContain('v1.70.0');
+      expect(stack.title).toContain('v1.72.0');
       expect(stack.groups).toHaveLength(6);
       stack.groups.forEach((group) => expect(group.items.length).toBeGreaterThanOrEqual(5));
     }
@@ -124,7 +124,7 @@ describe('Tlamatini v1.70.0 source website truth contract', () => {
       expect(catalog?.desc).toMatch(/written confirmation|confirmación escrita/);
       expect(copy.tlamatini.presence.panels[0].desc).toContain('120');
       expect(copy.tlamatini.overview.p2).toContain('Prompt Flow Panel');
-      expect(copy.tlamatini.overview.p2).toContain('v1.70.0');
+      expect(copy.tlamatini.overview.p2).toContain('v1.72.0');
     }
     const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
     expect(setup).toContain('ollama pull glm-5.3:cloud');
@@ -161,8 +161,8 @@ describe('Tlamatini v1.70.0 source website truth contract', () => {
     const home = readFileSync(resolve('src/pages/Home.tsx'), 'utf8');
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
     expect(home).toContain("value: '89'");
-    expect(home).toContain("value: 'v1.70.0'");
-    expect(launch).toContain("['89', '109', '29', 'v1.70.0']");
+    expect(home).toContain("value: 'v1.72.0'");
+    expect(launch).toContain("['89', '109', '29', 'v1.72.0']");
     expect(launch).toContain('PPTXer');
   });
 
@@ -225,6 +225,52 @@ describe('Tlamatini v1.70.0 source website truth contract', () => {
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
     expect(launch).toContain('Source version');
     expect(launch).not.toContain('Current release');
+  });
+
+  it('separates direct dictation, microphone preferences, and guided voice commands', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const findTool = (id: string) => copy.home.tools.items.find((tool) => tool.id === id);
+      const direct = findTool('whisperer')?.desc ?? '';
+      expect(direct).toMatch(/host microphone|micrófono del equipo/);
+      expect(direct).toMatch(/automatically|automáticamente/);
+      expect(direct).toMatch(/editable draft|borrador/);
+      expect(direct).toMatch(/cloud engines receive your audio|motores cloud opcionales reciben tu audio/);
+      expect(direct).toContain('CPU');
+      const mic = findTool('mic_preferences')?.desc ?? '';
+      for (const label of ['Config -> Mic', 'Config -> Models -> Speech', 'Voice', 'beam/VAD']) {
+        expect(mic).toContain(label);
+      }
+      expect(mic).toMatch(/this browser|este navegador/);
+      expect(mic).toMatch(/next recording|próxima grabación/);
+      expect(findTool('prompt_catalog')?.desc).toMatch(/separate from direct Mic|distintas del botón Mic/);
+      expect(copy.tlamatini.presence.spotlight.desc).toMatch(/never submit|nunca envían/);
+      expect(copy.tlamatini.presence.spotlight.desc).toContain('Silent');
+      const agents = copy.tlamatini.agents.groups.flatMap((group) => group.agents);
+      expect(agents.find((agent) => agent.name === 'Whisperer')?.desc).toMatch(/auto-send|autoenvío/);
+      expect(copy.ascii.phrases.some((phrase) => phrase.includes('Config -> Mic'))).toBe(true);
+    }
+    const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
+    expect(setup).toContain('Config -> Mic');
+    expect(setup).toContain('Send automatically (default)');
+    expect(setup).toContain('Keep in the chat input');
+    expect(setup).toContain('python -m pip install -r requirements.txt');
+  });
+
+  it('keeps new source capabilities distinct from the published installer', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      expect(copy.tlamatini.hero.subtitle).toContain('v1.72.0');
+      expect(copy.tlamatini.installation.desc).toContain('v1.72.0');
+      expect(copy.tlamatini.installation.desc).toContain('v1.70.0');
+      const packaging = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
+      expect(packaging).toContain('89');
+      expect(packaging).toContain('ESPHome');
+      expect(packaging).toMatch(/Missing or changed|ausentes o modificados/);
+      const visibleCopy = JSON.stringify(copy);
+      expect(visibleCopy).not.toMatch(/zero[- ]latency|latencia cero/i);
+      expect(visibleCopy).not.toMatch(/prompts revisados|reviewed prompts/);
+    }
   });
 
   it('rejects stale releases, removed guardian claims, plan copy, and positional text joins', () => {
