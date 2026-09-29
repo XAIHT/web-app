@@ -39,15 +39,15 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.72.0 source',
+    eyebrow: 'XAIHT presents Tlamatini v1.72.1',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
     platform: 'Explore Tlamatini',
-    proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Source version'],
+    proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Current release'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. Her v1.72.0 source brings direct dictation to chat: speak a prompt, then send automatically or review a draft. Two complementary canvases and 109 built-in Multi-Turn tools turn that intent into inspectable work under your direction.',
+    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. Her published v1.72.1 release adds real Ollama context counts to direct voice prompts and two visual canvases. Coordinate 109 built-in Multi-Turn tools with a clearer view of what your main chat sends, and keep the work under your direction.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
@@ -55,7 +55,7 @@ const copy = {
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
       ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino join firmware to real instruments, with working ESP32 and smart-home templates to start from.'],
       ['Voice and media', 'Talker speaks; Whisperer takes direct prompts from the host microphone. Config -> Mic offers automatic send or an editable draft, with live capture feedback in chat. Video-Analyzer adds timestamped media insights.'],
-      ['Human command', 'Clearer Panels and Config menus, 38 model settings, Ask Execs, and visible context keep decisions in your hands. Latest-source visual errors stay visible while recovery continues.'],
+      ['Human command', 'Real Ollama token counts make main-chat context visible in one-shot and Multi-Turn; estimates stay labeled. Panels, Config, 38 model settings, and Ask Execs keep decisions in your hands. Visual errors remain visible while recovery continues.'],
       ['Reusable orchestration', 'Connect 89 agents in .flw workflows or draw prompts, decisions, and human checkpoints in .fpmt diagrams. Each prompt run keeps its own conversation and context.'],
     ],
     commandLabel: 'Humanly tempered',
@@ -77,15 +77,15 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta el codigo Tlamatini v1.72.0',
+    eyebrow: 'XAIHT presenta Tlamatini v1.72.1',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
     platform: 'Explorar Tlamatini',
-    proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version del codigo'],
+    proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version publicada'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. Su codigo v1.72.0 lleva el dictado directo al chat: habla y envia automaticamente o revisa un borrador. Dos lienzos complementarios y 109 herramientas Multi-Turn integradas convierten esa intencion en trabajo visible bajo tu direccion.',
+    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. Su version publicada v1.72.1 suma conteos reales de Ollama a voz directa y dos lienzos visuales. Coordina 109 herramientas Multi-Turn integradas con una vista clara de lo que envia tu chat principal, manteniendo el trabajo bajo tu direccion.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
@@ -93,7 +93,7 @@ const copy = {
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
       ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales, partiendo de plantillas funcionales ESP32 y smart home.'],
       ['Voz y medios', 'Talker habla; Whisperer recibe prompts desde el microfono anfitrion. Config -> Mic ofrece envio automatico o borrador editable, con captura visible en chat. Video-Analyzer aporta analisis con marcas de tiempo.'],
-      ['Mando humano', 'Panels y Config mas claros, 38 ajustes, Ask Execs y contexto visible mantienen las decisiones en tus manos. Los errores visuales del codigo mas reciente se muestran sin detener la recuperacion.'],
+      ['Mando humano', 'Tokens reales de Ollama muestran el contexto del chat principal en one-shot y Multi-Turn; las estimaciones se identifican. Panels, Config, 38 ajustes y Ask Execs conservan tu control. Los errores visuales no ocultan la recuperacion.'],
       ['Orquestacion reutilizable', 'Conecta 89 agentes en flujos .flw o dibuja prompts, decisiones y consultas humanas en .fpmt. Cada ejecucion conserva su conversacion y contexto propios.'],
     ],
     commandLabel: 'Humanamente templada',
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['89', '109', '29', 'v1.72.0'].map((value, index) => (
+            {['89', '109', '29', 'v1.72.1'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>

@@ -37,7 +37,7 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.72.0',
+      'Tlamatini v1.72.1',
       'Prompt Flow Panel: Draw a Conversation',
       'Seven Operations. Your Next Reusable Prompt Flow.',
       'Two Canvases. Shared Editing Controls.',
@@ -46,7 +46,7 @@ const en = {
       'Read PDFs. Give Her the Whole Document.',
       'Video Transcripts and Audiovisual Summaries',
       '38 Model Settings. One Config Menu.',
-      'A Live Gauge for Model Context',
+      'Real Ollama Tokens. Clear Context Headroom.',
       'Mic Beside Send. Speak Your Next Prompt.',
       'Config -> Mic: Send or Review First',
       'Live Levels. Silence-Gated Dictation.',
@@ -55,7 +55,7 @@ const en = {
       'MIT-Licensed Self-Hosted AI',
       '53 Unreal Engine Control Commands',
       'Multi-Turn Operation',
-      'Context-Aware Multi-Turn',
+      'Real Counts in One-Shot and Multi-Turn',
       '29 Skill Packages',
       '89 Workflow Agents',
       '109 Built-In Multi-Turn Tools',
@@ -131,7 +131,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.72.0 puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. Now dictate straight into chat: send automatically or review your words first. Two visual canvases turn agent work and conversations into reusable flows. Create documents, understand media, and coordinate 89 agents, 109 built-in Multi-Turn tools, and 29 skills from her current source.',
+      desc: 'Tlamatini v1.72.1 puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. Dictate a prompt, shape a visual workflow, and see real Ollama token counts as she works. Create documents, understand media, and coordinate 89 agents, 109 built-in Multi-Turn tools, and 29 skills. Her latest Windows release brings that control to your machine.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -173,7 +173,7 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. The v1.72.0 source adds direct chat dictation and Config -> Mic, alongside two visual canvases and one configurable workspace.',
+        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Tlamatini v1.72.1 adds real Ollama context counts to direct dictation, two visual canvases, and one configurable workspace.',
         card1: {
           title: 'Two Panels, One Command Surface',
           desc: 'Panels opens Agentic Control Panel and Prompt Flow Panel while chat works. Config groups Configure MCPs, Configure Agents, Models, URLs, keys, Voice, and the new Mic preferences. DB, Skills, External MCPs, and context remain close at hand.',
@@ -186,7 +186,7 @@ const en = {
       rag: {
         label: 'RAG System',
         title: 'Advanced Retrieval-Augmented Generation',
-        desc: 'Bring projects and whole PDFs into the conversation. FAISS + BM25 keeps answers grounded, with binary filtering and GPU preflight. Choose text-only PDF context or opt into Image-Interpreter. Latest-source safeguards reject incomplete visual preparation instead of loading it as usable context.',
+        desc: 'Bring projects and whole PDFs into the conversation. FAISS + BM25 keeps answers grounded, with binary filtering and GPU preflight. Choose text-only PDF context or opt into Image-Interpreter. Safeguards reject incomplete visual preparation instead of loading it as usable context.',
         nodes: [
           { name: 'Load Context', desc: 'Project trees or whole PDFs from the canvas' },
           { name: 'Binary Guard', desc: 'Fast byte-level filtering with fail-open safety' },
@@ -197,11 +197,11 @@ const en = {
       multiTurn: {
         label: 'Multi-Turn',
         title: 'Context-Aware Orchestration',
-        desc: 'Tlamatini coordinates 109 built-in tools with a live view of request size. The Context Governor measures the actual request, manages oversized context, and keeps an emergency tool set available. Ask Execs protects changes, Hard Cancel stays final, and execution reports distinguish delivered work from problems that still need attention.',
+        desc: 'Tlamatini coordinates 109 built-in tools with real Ollama token counts for your main chat. The gauge refreshes as context and modes change; estimates stay labeled until confirmed. Context Governor manages oversized requests, Ask Execs protects changes, and Hard Cancel keeps you in command.',
         items: [
           {
             title: 'Context Governor',
-            desc: 'Measures request bytes, estimates tokens, and preserves a working tool set when context grows. Missing measurements appear as unknown, never a false zero.',
+            desc: 'Measured bytes, Ollama-confirmed tokens, and a working tool set as context grows. Pending counts stay labeled estimates; missing data is never a false zero.',
           },
           {
             title: 'Ask Execs + Hard Cancel',
@@ -209,7 +209,7 @@ const en = {
           },
           {
             title: 'Exec Report',
-            desc: 'Distinguishes real completion from failure. Latest-source vision reports reject missing model evidence while keeping recovery available.',
+            desc: 'Distinguishes real completion from failure. Visual reports reject missing model evidence while keeping recovery available.',
           },
           {
             title: 'Create Flow',
@@ -230,9 +230,10 @@ const en = {
         { id: 'visual_workflows', name: '89 Agents. A More Capable Canvas.', desc: 'Find an agent by name, configure it, and duplicate selections with their settings and internal connections. Undo/redo, a Starters locator, zoom/Fit, examples, and an unsaved-change indicator make .flw design easier. Stop a running or paused flow before editing.', type: 'Canvas' },
         { id: 'prompt_flow', name: 'Draw a Conversation. Press Play.', desc: 'Prompt Flow Panel brings seven operations to one diagram: Prompt, Programmed Prompt, Decision, Feed embeddings, Flush embeddings, Clean History, and User Commentary. Branch on an answer or ask a person; enable Multi-Turn and ACPX per prompt. Validate, then Play, Pause, or Stop.', type: 'Prompt Canvas' },
         { id: 'prompt_context', name: 'A Reusable Conversation, Its Own Context', desc: 'Pass answers forward with {{last_output}}. Each run keeps its own history and reference text, separate from chat. Save .fpmt files and recover per-user browser drafts; opening never runs them. Schedule a step by delay or local time while the page and Tlamatini remain open.', type: 'Prompt Flows' },
-        { id: 'multi_turn', name: '109 Tools, One Multi-Turn Mind', desc: 'A live context gauge and Context Governor keep long jobs informed and equipped, with a 4,096-iteration ceiling and a 256-call hard ceiling.', type: 'Orchestration' },
+        { id: 'multi_turn', name: '109 Tools, One Multi-Turn Mind', desc: 'Work with 109 tools, a 4,096-iteration ceiling, and a 256-call hard ceiling. The gauge now pairs each main-chat request with its real Ollama token count in one-shot and Multi-Turn, separately for each user. Estimates stay labeled; Context Governor keeps a working tool set available.', type: 'Orchestration' },
+        { id: 'context_preview', name: 'Know Where Your Next Prompt Starts', desc: 'The main-chat baseline refreshes with history, context, modes, skills, reconnects, and completed or cancelled work. Your next question, plan, and question-specific context are not included yet. Optional Ollama probes consume real tokens; unchanged requests reuse cached counts. Disable probing in config.json. Side-agent and ACPX child calls are excluded from the gauge.', type: 'Context Insight' },
         { id: 'human_control', name: 'You Keep the Final Say', desc: 'Ask Execs pauses before state-changing work, Step-by-Step waits for your READY, and Hard Cancel prevents a stopped run from reviving itself.', type: 'Human Control' },
-        { id: 'truthful_reports', name: 'Proof, Not Green Paint', desc: 'Execution Reports distinguish completed diagnostics from failed work. ACPX checks what a peer delivered and retains transcripts. Latest-source image and video safeguards reject incomplete evidence rather than presenting it as a successful analysis.', type: 'Evidence' },
+        { id: 'truthful_reports', name: 'Proof, Not Green Paint', desc: 'Execution Reports distinguish completed diagnostics from failed work. ACPX checks what a peer delivered and retains transcripts. Image and video safeguards reject incomplete evidence rather than presenting it as a successful analysis.', type: 'Evidence' },
         { id: 'flowcreator', name: 'Describe It. Get a Real .flw.', desc: 'FlowCreator chooses from all 89 agents, checks branches, fields, and data mappings, and repairs invalid plans within limits before delivering a workflow for your review.', type: 'Flow' },
         { id: 'acpx', name: 'Let the Best Coding Agents Collaborate', desc: 'Coordinate Claude Code, Codex, Cursor, Gemini, Qwen, and other coding agents. Optional real-prompt checks reveal readiness; blocked permissions, authentication, configuration, or usage limits get clear explanations with transcripts retained.', type: 'Delegation' },
         { id: 'external_mcps', name: 'The MCP Ecosystem, Connected', desc: 'Connect up to five external MCP servers over stdio, streamable HTTP, SSE, or WebSocket and bring their tools into Tlamatini immediately.', type: 'MCP' },
@@ -243,35 +244,35 @@ const en = {
         { id: 'stm32er', name: 'STM32er Programs Real Boards', desc: 'Scaffold, build, flash, reset, and observe STM32 firmware from Blue Pill through F7, G, L, H7, U5, and WB—with fail-safe hardware checks.', type: 'Firmware' },
         { id: 'esp_firmware', name: 'ESP32, Arduino, and ESPHome', desc: 'Start ESP32 firmware from a bundled blink-and-print project, or scaffold ESPHome light and sensor devices with optional separated secrets. Build, upload, and observe through PlatformIO, Arduino CLI, or ESPHome, with hardware preflight checks.', type: 'Embedded' },
         { id: 'robotic_loop', name: 'A Robotic Loop That Can See', desc: 'STM32er acts, Camcorder records, and Video-Analyzer checks motion before Forker chooses the next path. A robotics pass requires two explicit independent passes; missing evidence cannot pass. Recovery branches can respond to a failed analysis attempt.', type: 'Vision' },
-        { id: 'image_vision', name: 'Two Visual Readings. One Cross-Checked Report.', desc: 'Image-Interpreter uses Mistral and Gemma in parallel, then GLM synthesizes their readings. Explore screenshots, interface mockups, charts, photos, and PDF imagery with OCR and spatial detail. Latest-source checks require both observers and a completed synthesis, not raw notes or an unannounced model swap.', type: 'Vision' },
-        { id: 'analysis_recovery', name: 'Visible Errors. Recovery Still Running.', desc: 'Latest-source image, video, and PDF failures collect in one non-modal Fatal analysis errors dialog. Dismiss hides it without erasing history or cancelling work; a new error brings it back. Existing retries and flow-recovery routes stay active with your chosen models, while incomplete analysis is rejected.', type: 'Recovery' },
+        { id: 'image_vision', name: 'Two Visual Readings. One Cross-Checked Report.', desc: 'Image-Interpreter uses Mistral and Gemma in parallel, then GLM synthesizes their readings. Explore screenshots, interface mockups, charts, photos, and PDF imagery with OCR and spatial detail. Visual checks require both observers and a completed synthesis, not raw notes or an unannounced model swap.', type: 'Vision' },
+        { id: 'analysis_recovery', name: 'Visible Errors. Recovery Still Running.', desc: 'Image, video, and PDF failures collect in one non-modal Fatal analysis errors dialog. Dismiss hides it without erasing history or cancelling work; a new error brings it back. Existing retries and flow-recovery routes stay active with your chosen models, while incomplete analysis is rejected.', type: 'Recovery' },
         { id: 'whisperer', name: 'Speak a Prompt. Choose When She Acts.', desc: 'Mic beside Send starts Whisperer directly on the Tlamatini host microphone. Live levels and a silence countdown stay in chat; defaults are 3.5 seconds of silence and a 300-second cap. Send automatically or keep an editable draft without changing your chat modes. Local recognition has CPU fallback; optional cloud engines receive your audio. Standalone Whisperer also transcribes files.', type: 'Voice' },
         { id: 'mic_preferences', name: 'A Microphone Tuned to You', desc: 'Config -> Mic chooses auto-send or review, host input, gain, silence timing, recording limit, sensitivity, language, English translation, sample rate, channels, and local beam/VAD options. Preferences stay in this browser and apply to the next recording; unset fields inherit defaults. Config -> Models -> Speech selects the recognizer. Voice controls the avatar, separately.', type: 'Voice Settings' },
         { id: 'talker', name: 'Talker Gives Tlamatini Her Voice', desc: 'Generate expressive female-voice audio, save it as WAV, and play it aloud. Separately, her smoother browser avatar follows spoken text and reads answers with installed voices, without a GPU or an extra language model.', type: 'Voice' },
-        { id: 'media', name: 'Video You Can Ask Questions About', desc: 'Video-Analyzer transcribes selected audio tracks without opening a microphone, then can combine speech with two visual observers for timestamped summaries and action items. Coverage limits stay explicit. Latest-source checks reject failed observers or synthesis, while preserving retries and recovery routes.', type: 'Media' },
+        { id: 'media', name: 'Video You Can Ask Questions About', desc: 'Video-Analyzer transcribes selected audio tracks without opening a microphone, then can combine speech with two visual observers for timestamped summaries and action items. Coverage limits stay explicit. Visual checks reject failed observers or synthesis, while preserving retries and recovery routes.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Measures What Matters', desc: 'Measure download, upload, latency, jitter, packet loss, and bufferbloat across several keyless providers—with confidence intervals, not one flattering number.', type: 'Network' },
         { id: 'googler', name: 'Googler Finds Better Paths to the Web', desc: 'Structured dorks, lawful-source presets, plain-HTTP discovery, visible-browser fallback, cleaner Bing redirect decoding, and Mojeek self-result filtering turn difficult research into resilient, traceable results.', type: 'Research' },
         { id: 'blue_hat', name: 'Blue-Hat Defense Under Your Control', desc: 'The operator-controlled Windows security toolkit monitors ten host-signal families with detect-only, armed, watch, and explicit aggressive modes.', type: 'Defense' },
         { id: 'security_agents', name: 'Three Paths for Authorized Recon', desc: 'Use Discoverer for ProjectDiscovery, Nmapper for local nmap, and Kalier for a configured Kali box—each with clear boundaries and honest results.', type: 'Security' },
         { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Globber finds the file, Grepper searches or reads exact line ranges, and Editor makes precise changes using a byte-exact handoff. Review, rebuild, and manage Git without losing Windows paths or saved program identity.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Create editable PowerPoint decks with 36 treatments and 17 font pairings. PDFer adds 24 visual styles to 20 content themes; LaTeXer offers 30 styles for real typesetting. Measured layouts and clear audit findings support your final review.', type: 'Documents' },
-        { id: 'pdf_canvas', name: 'Read the PDF. Bring It into Context.', desc: 'Read a PDF locally without a model call. Use as context prepares the whole document after Continue; optional Process images adds Image-Interpreter. Progress and cancellation stay visible. In the latest source, a failed visual preparation is reported, never loaded as incomplete context.', type: 'Documents' },
+        { id: 'pdf_canvas', name: 'Read the PDF. Bring It into Context.', desc: 'Read a PDF locally without a model call. Use as context prepares the whole document after Continue; optional Process images adds Image-Interpreter. Progress and cancellation stay visible. A failed visual preparation is reported, never loaded as incomplete context.', type: 'Documents' },
         { id: 'model_config', name: 'Your Models, One Place to Choose', desc: 'Config -> Models puts 38 model, engine, and voice settings in six searchable categories for 21 model-backed agents. Current vision defaults pair Mistral with Gemma and a GLM synthesis. Shared defaults and explicit overrides stay yours; a retired model needs your choice, not a silent substitution.', type: 'Configuration' },
         { id: 'browser_desktop', name: 'Browser and Desktop Automation', desc: 'Playwrighter drives sites; Mouser maps clicks to screen, window, or screenshot coordinates; Keyboarder checks the target and stops on focus loss. Shoter records capture geometry. Delivered input is reported honestly, not mistaken for application success.', type: 'Automation' },
         { id: 'messaging', name: 'Reach People Through the Right Channel', desc: 'Send and receive through Telegram, WhatsApp, email, browser notifications, or unified Zavu messaging—with explicit identity and operator choice.', type: 'Messaging' },
         { id: 'database', name: 'WAL-Safe Database Protection', desc: 'Backup and stage SQLite databases through the online backup API, verify integrity, and handle WAL/SHM sidecars without pretending a bare file is complete.', type: 'Data' },
-        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'Install with Python 3.12.10 and local UI assets. Current-source packaging uses one inventory to carry and verify required helpers, including direct dictation settings. Missing or changed files block update handoff; user state stays preserved. Dependency coverage spans all 89 agents, with ESPHome kept in its separate runtime. Installers follow published releases.', type: 'Windows' },
-        { id: 'self_knowledge', name: 'She Knows How She Is Built', desc: 'First-person self-knowledge helps her explain her architecture. Optional self-modify builds carry a sanitized, rebuildable source snapshot, including both visual panels and direct dictation. Inclusion checks now follow the same required-file inventory as packaging, so the worker\'s settings helper travels with her source.', type: 'Identity' },
+        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'Install v1.72.1 or use About -> Check for updates. Python 3.12.10 and local UI assets travel with her; required-file checks cover voice settings and the context-preview runtime. Missing or changed files block update handoff while user state stays preserved. Dependency coverage spans all 89 agents, with ESPHome in its separate runtime.', type: 'Windows' },
+        { id: 'self_knowledge', name: 'She Knows How She Is Built', desc: 'First-person self-knowledge helps her explain her architecture. Optional self-modify builds carry a sanitized, rebuildable source snapshot: both visual panels, direct dictation, and now the context-preview engine. Shared required-file checks keep the voice settings helper and the new runtime module accounted for.', type: 'Identity' },
         { id: 'prompt_catalog', name: 'A Guided First Voice Command', desc: 'VOICE COMMANDS keeps its read-only rehearsal and SPEAK YOUR PROMPT workflow, with transcript read-back and written confirmation for irreversible work. These guided catalog routes are separate from direct Mic dictation: its optional review happens in the normal chat input, not a confirmation dialog.', type: 'Guidance' },
         { id: 'mcp_adder', name: 'Add an External MCP with a Guarded Guide', desc: 'The onboarding skill classifies transport, separates secrets, diagnoses readiness, activates only on operator intent, and proves the remote tool before use.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Long Runs That Keep Moving', desc: 'Retuned reasoning defaults reduce empty replies, completed agent waits return promptly, and a paused console cannot block her durable log. Context recovery keeps tools available; External MCP calls can repair simple scalar mismatches without discarding the request.', type: 'Reliability' },
+        { id: 'dependable_runtime', name: 'Long Runs That Keep Moving', desc: 'Long jobs keep their tools and recovery paths. Wrapped questions are no longer sent twice, and one-shot chat drops unnecessary system-context filler while retaining live metrics when needed. Completed agent waits return promptly; External MCP calls can repair simple scalar mismatches without losing the request.', type: 'Reliability' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.72.0 controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Explore her current source: direct voice prompts, 89 workflow agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels. Speak an idea, shape the work, and keep the choice to review before sending.',
+    ctaDesc: 'Tlamatini v1.72.1 controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Direct voice prompts, real Ollama context counts, 89 agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels put you in command. Explore her source or install the latest Windows release.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -294,7 +295,7 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.72.0 Source',
+      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.72.1',
       desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. Speak your next prompt directly into chat, then choose automatic send or an editable draft. Connect 89 agents, draw reusable conversations, and bring documents, media, 109 built-in Multi-Turn tools, and 29 skills under your command.',
     },
     presence: {
@@ -330,7 +331,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She runs on your machine and connects Unreal Engine and Blender control, STM32 / ESP32 / ESPHome / Arduino firmware, Talker speech, and Whisperer listening with code-aware retrieval. Agent and prompt canvases offer complementary ways to orchestrate her. PDFer, PPTXer, and LaTeXer create deliverables; media, messaging, security, and opt-in delegation extend your reach.',
-      p2: 'The v1.72.0 source brings direct Whisperer dictation and Config -> Mic: choose your host input, tune capture, and send automatically or review a draft. The Prompt Flow Panel and agent canvas remain complementary ways to orchestrate work. Stronger visual-analysis checks and runtime packaging guard the handoff. Source improvements can precede published installers; the latest published release is v1.70.0.',
+      p2: 'Now published as v1.72.1: real Ollama token counts for the main chat, in one-shot and Multi-Turn. The gauge refreshes with history, context, and mode changes, keeping estimates distinct from confirmed counts. Direct dictation, Config -> Mic, Prompt Flow Panel, and stronger packaging checks come with her. Install the latest release or use About -> Check for updates.',
       viewSource: 'View Source',
     },
     features: {
@@ -343,19 +344,19 @@ const en = {
         { id: 'embedded', title: 'STM32er, ESP32er, Arduino, and ESPHome', description: 'Mission-critical STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB with fail-safe checks. ESP32er now scaffolds working blink-and-print firmware; ESPHomer offers light and sensor templates with optional separated secrets. Arduino CLI completes the hardware toolkit.' },
         { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer now brings direct dictation to chat with automatic send or editable drafts, configured in Config -> Mic. Live levels and a silence countdown keep capture visible without another window. Image-Interpreter cross-checks visual evidence; Video-Analyzer adds timestamps and summaries. Her separate browser avatar reads answers without a GPU.' },
         { id: 'documents', title: 'PDFer + PPTXer + LaTeXer Studio', description: 'PPTXer creates editable decks with 36 treatments and 17 font pairings, carrying long text onto continuation slides. PDFer combines 24 visual styles with 20 content themes; LaTeXer offers 30 styles for mathematical typesetting. Open existing PDFs in the canvas and choose whole-document context, with optional image analysis.' },
-        { id: 'multi_turn', title: '109 Tools, Context-Aware Multi-Turn', description: 'See measured request bytes and estimated tokens in the context gauge. The Context Governor manages oversized requests without leaving her tool-less. Ask Execs, Step-by-Step, Hard Cancel, and truthful Execution Reports keep human authority intact.' },
+        { id: 'multi_turn', title: '109 Tools, Context-Aware Multi-Turn', description: 'See measured bytes and real Ollama prompt-token counts for your main chat in one-shot and Multi-Turn. Pending counts stay marked est.; confirmed counts read REAL. The model-reported context limit guides headroom, with local limits respected. Context Governor, Ask Execs, Step-by-Step, and Hard Cancel keep work informed and under your control.' },
         { id: 'visual_workflows', title: 'Two Canvases. Agents and Conversations.', description: 'Connect 89 agents in the Agentic Control Panel and save .flw workflows. In Prompt Flow Panel, shape prompts, decisions, reference text, and human replies into .fpmt diagrams with per-run context. Both share selection, connection, dragging, zoom, and undo controls. Opening a prompt diagram never starts it.' },
         { id: 'external_mcps', title: 'External MCPs, MCP Doctor, and MCP Adder', description: 'Connect up to five MCP servers over stdio, streamable HTTP, SSE, or WebSocket. MCP Doctor checks readiness, while MCP Adder guides transport choice, secret separation, diagnosis, activation, and a real remote-tool test. Simple scalar mismatches can be repaired before a call is lost.' },
         { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
         { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler combines structured dorks, lawful-source presets, direct discovery, visible-browser fallback, cleaner Bing redirects, and Mojeek self-result filtering. FAISS + BM25 grounds the answer in deep project trees while byte-level filtering keeps binary noise out of context.' },
         { id: 'database', title: 'WAL-Safe SQLite Data Handling', description: 'DB Backup and Set DB use SQLite\'s online backup API, integrity validation, clean staging, and WAL/SHM sidecar hygiene so live data can be preserved and handed off without pretending a copied main file is enough.' },
-        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'Windows 10/11 installation carries Python and local UI assets. Updated packaging checks cover both panels and direct dictation, including the worker settings helper; missing or changed required files are rejected before update handoff. Optional sanitized source snapshots support rebuilding. Source improvements reach installed copies through a rebuilt, published package.' },
+        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'The published v1.72.1 Windows release brings real context counts, direct dictation, and both visual panels. Python and local UI assets are carried; shared file checks protect voice settings and the context-preview runtime. Updates verify required files before handoff and preserve user state. Optional sanitized source snapshots support rebuilding.' },
       ],
     },
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'Explore the v1.72.0 source with direct dictation and Config -> Mic, or install the latest published Windows release, v1.70.0. Sign in to Ollama and pull the models below. Config -> Models and Access Keys Wizard handle models and credentials; Mic tunes capture. Installer builds carry Python 3.12.10. LaTeXer PDF compilation needs TeX.',
+      desc: 'Install the latest published Windows release, v1.72.1, or run her source. Real context counts, direct dictation, and Config -> Mic are included. Sign in to Ollama and pull the models below; Config -> Models and Access Keys Wizard handle configuration. Existing installs can use About -> Check for updates. Python 3.12.10 is carried; LaTeXer PDF compilation needs TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Install Tlamatini' },
         { id: 'install_ollama', label: 'Install Ollama' },
@@ -507,7 +508,7 @@ const en = {
     },
     techStack: {
       label: 'Technology',
-      title: 'The Technology Behind Tlamatini v1.72.0',
+      title: 'The Technology Behind Tlamatini v1.72.1',
       groups: [
         {
           category: 'Core & Real-Time Web',
@@ -515,7 +516,7 @@ const en = {
         },
         {
           category: 'AI, Retrieval & Vision',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama endpoints + glm-5.3:cloud default', 'Anthropic Claude API + external agent CLIs', 'Mistral + Gemma vision; GLM synthesis', 'Binary-aware context + RRF fusion', '38 model settings + Context Governor'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama endpoints + glm-5.3:cloud default', 'Anthropic Claude API + external agent CLIs', 'Mistral + Gemma vision; GLM synthesis', 'Binary-aware context + RRF fusion', '38 model settings + real Ollama context gauge'],
         },
         {
           category: 'Agent & Workflow Platform',
@@ -563,7 +564,7 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.72.0',
+      'Tlamatini v1.72.1',
       'Prompt Flow Panel: Dibuja una Conversación',
       'Siete Operaciones. Tu Próximo Flujo de Prompts.',
       'Dos Lienzos. Controles Compartidos.',
@@ -572,7 +573,7 @@ const es: Translations = {
       'Lee PDFs. Dale el Documento Completo.',
       'Transcripciones y Resúmenes Audiovisuales',
       '38 Ajustes de Modelos. Un Menú Config.',
-      'Uso del Contexto Siempre a la Vista',
+      'Tokens Reales de Ollama. Contexto a la Vista.',
       'Mic junto a Send. Dicta tu Próximo Prompt.',
       'Config -> Mic: Enviar o Revisar Primero',
       'Nivel en Vivo. Dictado con Cierre por Silencio.',
@@ -581,7 +582,7 @@ const es: Translations = {
       'IA Autoalojada con Licencia MIT',
       '53 Comandos de Control Unreal Engine',
       'Operación Multi-Turn',
-      'Multi-Turn Consciente del Contexto',
+      'Conteos Reales en One-Shot y Multi-Turn',
       '29 Paquetes de Skills',
       '89 Agentes de Flujo',
       '109 Herramientas Multi-Turn Integradas',
@@ -657,7 +658,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.72.0 pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Ahora dicta directamente al chat: envía automáticamente o revisa tus palabras primero. Dos lienzos convierten trabajo y conversaciones en flujos reutilizables. Crea documentos, comprende medios y coordina 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills desde su código actual.',
+      desc: 'Tlamatini v1.72.1 pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Dicta un prompt, diseña un flujo y observa tokens reales de Ollama mientras trabaja. Crea documentos, comprende medios y coordina 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills. Su última versión Windows lleva ese control a tu máquina.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -699,7 +700,7 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. El código v1.72.0 añade dictado directo y Config -> Mic, junto a dos lienzos visuales y un mismo espacio configurable.',
+        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. Tlamatini v1.72.1 suma conteos reales de contexto de Ollama al dictado directo, dos lienzos y un mismo espacio configurable.',
         card1: {
           title: 'Dos Paneles, un Centro de Mando',
           desc: 'Panels abre Agentic Control Panel y Prompt Flow Panel mientras el chat trabaja. Config reúne Configure MCPs, Configure Agents, Models, URLs, claves, Voice y las nuevas preferencias Mic. DB, Skills, MCPs externos y contexto quedan a mano.',
@@ -712,7 +713,7 @@ const es: Translations = {
       rag: {
         label: 'Sistema RAG',
         title: 'Generación Aumentada por Recuperación Avanzada',
-        desc: 'Lleva proyectos y PDFs completos a la conversación. FAISS + BM25 fundamenta respuestas, con filtrado binario y comprobación GPU. Elige texto PDF o activa Image-Interpreter. Las protecciones del código más reciente rechazan la preparación visual incompleta en vez de cargarla como contexto útil.',
+        desc: 'Lleva proyectos y PDFs completos a la conversación. FAISS + BM25 fundamenta respuestas, con filtrado binario y comprobación GPU. Elige texto PDF o activa Image-Interpreter. Las protecciones visuales rechazan la preparación visual incompleta en vez de cargarla como contexto útil.',
         nodes: [
           { name: 'Cargar Contexto', desc: 'Árboles de proyecto o PDFs completos desde el lienzo' },
           { name: 'Guardia Binaria', desc: 'Filtro rápido por bytes que falla de forma abierta' },
@@ -723,11 +724,11 @@ const es: Translations = {
       multiTurn: {
         label: 'Multi-Turn',
         title: 'Orquestación Consciente del Contexto',
-        desc: 'Tlamatini coordina 109 herramientas integradas con el tamaño de cada solicitud a la vista. Context Governor mide la solicitud real, gestiona contextos excesivos y mantiene herramientas de emergencia disponibles. Ask Execs protege los cambios, Hard Cancel permanece definitivo y los reportes distinguen entregas de problemas pendientes.',
+        desc: 'Tlamatini coordina 109 herramientas con tokens reales de Ollama para tu chat principal. El indicador se actualiza al cambiar contexto y modos; las estimaciones se identifican hasta confirmarse. Context Governor gestiona solicitudes excesivas, Ask Execs protege cambios y Hard Cancel conserva tu mando.',
         items: [
           {
             title: 'Context Governor',
-            desc: 'Mide bytes, estima tokens y conserva herramientas cuando crece el contexto. Las mediciones ausentes se muestran como desconocidas, nunca como un cero falso.',
+            desc: 'Bytes medidos, tokens confirmados por Ollama y herramientas disponibles. Los conteos pendientes siguen como estimaciones; los datos ausentes nunca son un cero falso.',
           },
           {
             title: 'Ask Execs + Hard Cancel',
@@ -735,7 +736,7 @@ const es: Translations = {
           },
           {
             title: 'Exec Report',
-            desc: 'Distingue una entrega real de una falla. La visión del código más reciente rechaza evidencia ausente y mantiene disponible la recuperación.',
+            desc: 'Distingue una entrega real de una falla. El análisis visual rechaza evidencia ausente y mantiene disponible la recuperación.',
           },
           {
             title: 'Crear Flujo',
@@ -756,9 +757,10 @@ const es: Translations = {
         { id: 'visual_workflows', name: '89 Agentes. Un Lienzo Más Capaz.', desc: 'Busca agentes por nombre, configúralos y duplica selecciones con ajustes y conexiones internas. Deshacer/rehacer, localizador de Starters, zoom/Fit, ejemplos y aviso de cambios facilitan diseñar .flw. Detén un flujo activo o pausado antes de editarlo.', type: 'Lienzo' },
         { id: 'prompt_flow', name: 'Dibuja una Conversación. Pulsa Play.', desc: 'Prompt Flow Panel reúne siete operaciones: Prompt, Programmed Prompt, Decision, Feed embeddings, Flush embeddings, Clean History y User Commentary. Decide según una respuesta o consulta a una persona; activa Multi-Turn y ACPX por prompt. Valida y controla con Play, Pause o Stop.', type: 'Lienzo de Prompts' },
         { id: 'prompt_context', name: 'Conversaciones Reutilizables, Contexto Propio', desc: 'Transfiere respuestas con {{last_output}}. Cada ejecución conserva historial y referencias propios, separados del chat. Guarda .fpmt y recupera borradores por usuario; abrir nunca ejecuta. Programa pasos por demora u hora local manteniendo abiertos la página y Tlamatini.', type: 'Flujos de Prompts' },
-        { id: 'multi_turn', name: '109 Herramientas, una Mente Multi-Turn', desc: 'El indicador de contexto y Context Governor mantienen informados y equipados los trabajos largos, con un techo de 4,096 iteraciones y un límite firme de 256 llamadas.', type: 'Orquestación' },
+        { id: 'multi_turn', name: '109 Herramientas, una Mente Multi-Turn', desc: 'Trabaja con 109 herramientas, un techo de 4,096 iteraciones y un límite firme de 256 llamadas. El indicador asocia cada solicitud del chat principal con sus tokens reales de Ollama en one-shot y Multi-Turn, por usuario. Las estimaciones se identifican y Context Governor conserva herramientas disponibles.', type: 'Orquestación' },
+        { id: 'context_preview', name: 'Conoce el Punto de Partida de tu Próximo Prompt', desc: 'La base del chat principal se actualiza con historial, contexto, modos, skills, reconexiones y trabajo terminado o cancelado. Aún excluye tu próxima pregunta, plan y contexto específico. Las consultas opcionales a Ollama consumen tokens reales; solicitudes iguales reutilizan conteos en caché. Desactívalas en config.json. Las llamadas de agentes secundarios e hijos ACPX quedan fuera del indicador.', type: 'Contexto Visible' },
         { id: 'human_control', name: 'Tú Conservas la Última Palabra', desc: 'Ask Execs pausa antes de cambiar estado, Step-by-Step espera tu READY y Hard Cancel impide que una ejecución detenida vuelva a levantarse.', type: 'Control Humano' },
-        { id: 'truthful_reports', name: 'Evidencia, no Pintura Verde', desc: 'Los reportes distinguen diagnósticos completos de trabajos fallidos. ACPX comprueba la entrega y conserva transcripciones. Las protecciones visuales del código más reciente rechazan evidencia incompleta en vez de presentarla como análisis exitoso.', type: 'Evidencia' },
+        { id: 'truthful_reports', name: 'Evidencia, no Pintura Verde', desc: 'Los reportes distinguen diagnósticos completos de trabajos fallidos. ACPX comprueba la entrega y conserva transcripciones. Las protecciones visuales rechazan evidencia incompleta en vez de presentarla como análisis exitoso.', type: 'Evidencia' },
         { id: 'flowcreator', name: 'Descríbelo. Recibe un .flw Real.', desc: 'FlowCreator elige entre 89 agentes, comprueba ramas, campos y mapeos, y repara planes inválidos dentro de límites antes de entregarte un flujo para revisión.', type: 'Flujo' },
         { id: 'acpx', name: 'Los Mejores Agentes Colaborando', desc: 'Coordina Claude Code, Codex, Cursor, Gemini, Qwen y otros agentes. Las pruebas opcionales con prompts reales comprueban preparación; permisos, autenticación, configuración o límites de uso se explican con transcripciones conservadas.', type: 'Delegación' },
         { id: 'external_mcps', name: 'Todo el Ecosistema MCP, Conectado', desc: 'Conecta hasta cinco servidores MCP externos por stdio, streamable HTTP, SSE o WebSocket e incorpora sus herramientas de inmediato.', type: 'MCP' },
@@ -769,35 +771,35 @@ const es: Translations = {
         { id: 'stm32er', name: 'STM32er Programa Placas Reales', desc: 'Genera, compila, flashea, reinicia y observa firmware desde Blue Pill hasta F7, G, L, H7, U5 y WB con comprobaciones fail-safe.', type: 'Firmware' },
         { id: 'esp_firmware', name: 'ESP32, Arduino y ESPHome', desc: 'Inicia firmware ESP32 desde una plantilla funcional de parpadeo y salida serial, o genera dispositivos ESPHome de luz y sensores con secretos separados opcionales. Compila, carga y observa mediante PlatformIO, Arduino CLI o ESPHome, con verificaciones previas del hardware.', type: 'Embebidos' },
         { id: 'robotic_loop', name: 'Un Bucle Robótico que Puede Ver', desc: 'STM32er actúa, Camcorder graba y Video-Analyzer comprueba movimiento antes de que Forker elija la ruta. El éxito robótico exige dos aprobaciones independientes; la evidencia ausente no basta. Las ramas de recuperación pueden responder a un intento fallido.', type: 'Visión' },
-        { id: 'image_vision', name: 'Dos Lecturas Visuales. Un Reporte Contrastado.', desc: 'Image-Interpreter usa Mistral y Gemma en paralelo y GLM sintetiza sus lecturas. Explora capturas, interfaces, gráficas, fotos e imágenes PDF con OCR y detalle espacial. El código más reciente exige ambos observadores y una síntesis completa, no notas sueltas ni sustituciones silenciosas de modelo.', type: 'Visión' },
-        { id: 'analysis_recovery', name: 'Errores Visibles. Recuperación Activa.', desc: 'Las fallas de imagen, video y PDF del código más reciente se acumulan en Fatal analysis errors, sin bloquear controles. Dismiss oculta sin borrar historial ni cancelar; otro error vuelve a mostrarlo. Reintentos y rutas de recuperación siguen con tus modelos, rechazando análisis incompletos.', type: 'Recuperación' },
+        { id: 'image_vision', name: 'Dos Lecturas Visuales. Un Reporte Contrastado.', desc: 'Image-Interpreter usa Mistral y Gemma en paralelo y GLM sintetiza sus lecturas. Explora capturas, interfaces, gráficas, fotos e imágenes PDF con OCR y detalle espacial. La verificación visual exige ambos observadores y una síntesis completa, no notas sueltas ni sustituciones silenciosas de modelo.', type: 'Visión' },
+        { id: 'analysis_recovery', name: 'Errores Visibles. Recuperación Activa.', desc: 'Las fallas de imagen, video y PDF se acumulan en Fatal analysis errors, sin bloquear controles. Dismiss oculta sin borrar historial ni cancelar; otro error vuelve a mostrarlo. Reintentos y rutas de recuperación siguen con tus modelos, rechazando análisis incompletos.', type: 'Recuperación' },
         { id: 'whisperer', name: 'Dicta un Prompt. Elige Cuándo Actúa.', desc: 'Mic junto a Send inicia Whisperer en el micrófono del equipo que ejecuta Tlamatini. Nivel y cuenta de silencio quedan en el chat; por defecto son 3.5 segundos de silencio y un límite de 300 segundos. Envía automáticamente o conserva un borrador sin cambiar tus modos. El reconocimiento local tiene fallback CPU; los motores cloud opcionales reciben tu audio. Whisperer también transcribe archivos.', type: 'Voz' },
         { id: 'mic_preferences', name: 'Un Micrófono a Tu Medida', desc: 'Config -> Mic elige autoenvío o revisión, entrada del equipo, ganancia, silencio, duración límite, sensibilidad, idioma, traducción al inglés, frecuencia, canales y opciones locales beam/VAD. Las preferencias quedan en este navegador y rigen desde la próxima grabación; campos sin definir heredan valores. Config -> Models -> Speech selecciona el reconocedor. Voice controla el avatar por separado.', type: 'Ajustes de Voz' },
         { id: 'talker', name: 'Talker le Da su Voz a Tlamatini', desc: 'Genera voz femenina expresiva, guárdala en WAV y escúchala. Por separado, su avatar más fluido sigue el texto hablado y lee respuestas con voces instaladas, sin GPU ni un modelo de lenguaje adicional.', type: 'Voz' },
-        { id: 'media', name: 'Video al que Puedes Hacerle Preguntas', desc: 'Video-Analyzer transcribe pistas elegidas sin abrir el micrófono y puede combinar la voz con dos observadores visuales para resúmenes y tareas con marcas de tiempo. Expone límites de cobertura. El código más reciente rechaza fallas de observación o síntesis y conserva reintentos y rutas de recuperación.', type: 'Media' },
+        { id: 'media', name: 'Video al que Puedes Hacerle Preguntas', desc: 'Video-Analyzer transcribe pistas elegidas sin abrir el micrófono y puede combinar la voz con dos observadores visuales para resúmenes y tareas con marcas de tiempo. Expone límites de cobertura. La verificación visual rechaza fallas de observación o síntesis y conserva reintentos y rutas de recuperación.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Mide lo que Importa', desc: 'Mide descarga, subida, latencia, jitter, pérdida y bufferbloat en varios proveedores sin llave, con intervalos de confianza y no un número favorecedor.', type: 'Red' },
         { id: 'googler', name: 'Googler Encuentra Mejores Rutas Web', desc: 'Dorks estructurados, fuentes lícitas, descubrimiento HTTP, fallback visible, decodificación limpia de redirects Bing y filtrado de autorresultados Mojeek producen investigación resistente y rastreable.', type: 'Investigación' },
         { id: 'blue_hat', name: 'Defensa Blue-Hat Bajo tu Control', desc: 'El toolkit Windows controlado por el operador observa diez familias de señales con modos detect-only, armed, watch y aggressive explícito.', type: 'Defensa' },
         { id: 'security_agents', name: 'Tres Caminos para Recon Autorizado', desc: 'Usa Discoverer para ProjectDiscovery, Nmapper para nmap local y Kalier para un Kali configurado, todos con límites claros y resultados honestos.', type: 'Seguridad' },
         { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Globber encuentra el archivo, Grepper busca o lee rangos exactos y Editor aplica cambios precisos con transferencia byte-exacta. Revisa, recompila y gestiona Git sin perder rutas Windows ni la identidad del código guardado.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Crea PowerPoints editables con 36 tratamientos y 17 combinaciones tipográficas. PDFer añade 24 estilos visuales a 20 temas de contenido; LaTeXer ofrece 30 estilos de maquetación real. Diseños medidos y hallazgos claros apoyan tu revisión final.', type: 'Documentos' },
-        { id: 'pdf_canvas', name: 'Lee el PDF. Incorpóralo al Contexto.', desc: 'Lee un PDF local sin llamar a un modelo. Use as context prepara el documento tras Continue; Process images añade Image-Interpreter opcionalmente. Conserva progreso y cancelación. El código más reciente informa una preparación visual fallida y nunca la carga como contexto incompleto.', type: 'Documentos' },
+        { id: 'pdf_canvas', name: 'Lee el PDF. Incorpóralo al Contexto.', desc: 'Lee un PDF local sin llamar a un modelo. Use as context prepara el documento tras Continue; Process images añade Image-Interpreter opcionalmente. Conserva progreso y cancelación. Ella informa una preparación visual fallida y nunca la carga como contexto incompleto.', type: 'Documentos' },
         { id: 'model_config', name: 'Tus Modelos, en un Solo Lugar', desc: 'Config -> Models reúne 38 ajustes de modelo, motor y voz en seis categorías para 21 agentes con modelos. La visión actual combina Mistral con Gemma y síntesis GLM. Tú eliges valores globales y ajustes específicos; un modelo retirado requiere tu decisión, no una sustitución silenciosa.', type: 'Configuración' },
         { id: 'browser_desktop', name: 'Automatización de Navegador y Escritorio', desc: 'Playwrighter conduce sitios; Mouser sitúa clics en coordenadas de pantalla, ventana o captura; Keyboarder verifica el destino y se detiene si pierde foco. Shoter registra geometría. La entrega de entrada se informa sin confundirla con éxito de la aplicación.', type: 'Automatización' },
         { id: 'messaging', name: 'Llega por el Canal Correcto', desc: 'Envía y recibe por Telegram, WhatsApp, email, notificaciones o mensajería unificada Zavu, con identidad explícita y decisión del operador.', type: 'Mensajería' },
         { id: 'database', name: 'Protección de Base de Datos WAL-Safe', desc: 'Respalda y prepara SQLite mediante la API de backup online, verifica integridad y trata sidecars WAL/SHM sin fingir que un archivo aislado está completo.', type: 'Datos' },
-        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'Instala con Python 3.12.10 y recursos locales. El empaquetado actual copia y verifica auxiliares desde un inventario único, incluida la configuración del dictado. Archivos requeridos ausentes o modificados bloquean la actualización; se conservan los datos. La cobertura de dependencias abarca 89 agentes y mantiene ESPHome separado. Los instaladores siguen las versiones publicadas.', type: 'Windows' },
-        { id: 'self_knowledge', name: 'Ella Sabe Cómo Está Construida', desc: 'Su autoconocimiento en primera persona le permite explicar su arquitectura. Builds opcionales con automodificación llevan un snapshot saneado y reconstruible, incluidos ambos paneles y el dictado. Las comprobaciones siguen el mismo inventario de archivos requeridos del empaquetado, incluido el auxiliar de configuración de voz.', type: 'Identidad' },
+        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'Instala v1.72.1 o usa About -> Check for updates. Lleva Python 3.12.10 y recursos locales; las comprobaciones cubren configuración de voz y vista previa de contexto. Archivos requeridos ausentes o modificados bloquean la actualización, conservando tus datos. La cobertura de dependencias abarca 89 agentes y mantiene ESPHome en su entorno separado.', type: 'Windows' },
+        { id: 'self_knowledge', name: 'Ella Sabe Cómo Está Construida', desc: 'Su autoconocimiento le permite explicar su arquitectura. Builds opcionales con automodificación llevan código saneado y reconstruible: ambos lienzos, dictado y ahora el motor de vista previa de contexto. Las comprobaciones de archivos requeridos cubren la configuración de voz y el nuevo módulo.', type: 'Identidad' },
         { id: 'prompt_catalog', name: 'Tu Primer Comando de Voz, Guiado', desc: 'VOICE COMMANDS conserva su ensayo de solo lectura y SPEAK YOUR PROMPT, con lectura del transcript y confirmación escrita para trabajo irreversible. Estas rutas guiadas son distintas del botón Mic: su revisión opcional ocurre en el campo normal del chat, no en un diálogo de confirmación.', type: 'Guía' },
         { id: 'mcp_adder', name: 'Añade un MCP con una Guía Protegida', desc: 'La skill de incorporación clasifica transporte, separa secretos, diagnostica, activa sólo con intención y prueba la herramienta remota antes de usarla.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Trabajos Largos que Siguen Adelante', desc: 'Los ajustes de razonamiento reducen respuestas vacías, las esperas concluyen cuando termina el agente y una consola pausada no bloquea el log. La recuperación de contexto conserva herramientas; los MCPs externos pueden corregir valores escalares simples sin perder la solicitud.', type: 'Confiabilidad' },
+        { id: 'dependable_runtime', name: 'Trabajos Largos que Siguen Adelante', desc: 'Los trabajos largos conservan herramientas y recuperación. Las preguntas envueltas en contexto ya no se envían dos veces; one-shot elimina relleno de contexto del sistema y conserva métricas cuando hacen falta. Las esperas terminan al concluir el agente y los MCPs externos corrigen valores escalares simples sin perder la solicitud.', type: 'Confiabilidad' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.72.0 controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Explora su código actual: prompts por voz, 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos visuales. Dicta una idea, diseña el trabajo y conserva la opción de revisar antes de enviar.',
+    ctaDesc: 'Tlamatini v1.72.1 controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Voz directa, contexto con tokens reales de Ollama, 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos te ponen al mando. Explora su código o instala la última versión Windows.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -820,7 +822,7 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | Código v1.72.0',
+      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.72.1',
       desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Dicta tu próximo prompt directamente al chat y elige envío automático o un borrador editable. Conecta 89 agentes, dibuja conversaciones reutilizables y pon documentos, medios, 109 herramientas Multi-Turn integradas y 29 skills bajo tu mando.',
     },
     presence: {
@@ -856,7 +858,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Se ejecuta en tu máquina y conecta control de Unreal Engine y Blender, firmware STM32 / ESP32 / ESPHome / Arduino, habla Talker y escucha Whisperer con comprensión del código. Sus lienzos de agentes y prompts ofrecen formas complementarias de orquestarla. PDFer, PPTXer y LaTeXer crean entregables; medios, mensajería, seguridad y delegación opcional amplían tu alcance.',
-      p2: 'El código v1.72.0 incorpora dictado directo con Whisperer y Config -> Mic: elige la entrada del equipo anfitrión, ajusta la captura y envía automáticamente o revisa un borrador. Prompt Flow Panel y el lienzo de agentes siguen complementándose. El análisis visual y el empaquetado refuerzan sus comprobaciones. El código puede adelantarse a los instaladores publicados; la última versión publicada es v1.70.0.',
+      p2: 'Ya publicada como v1.72.1: tokens reales de Ollama para el chat principal, en one-shot y Multi-Turn. El indicador se actualiza con historial, contexto y modos, distinguiendo estimaciones de conteos confirmados. Incluye dictado, Config -> Mic, Prompt Flow Panel y empaquetado reforzado. Instala la última versión o usa About -> Check for updates.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -896,7 +898,7 @@ const es: Translations = {
         {
           id: 'multi_turn',
           title: '109 Herramientas, Contexto a la Vista',
-          description: 'Ve bytes medidos y tokens estimados en el indicador de contexto. Context Governor gestiona solicitudes excesivas sin dejarla sin herramientas. Ask Execs, Step-by-Step, Hard Cancel y Exec Reports veraces conservan la autoridad humana.',
+          description: 'Ve bytes medidos y tokens reales de Ollama para tu chat principal en one-shot y Multi-Turn. Conteos pendientes dicen est.; los confirmados, REAL. El límite reportado por el modelo orienta el espacio disponible, respetando límites locales. Context Governor, Ask Execs, Step-by-Step y Hard Cancel conservan tu control.',
         },
         {
           id: 'visual_workflows',
@@ -926,14 +928,14 @@ const es: Translations = {
         {
           id: 'windows_delivery',
           title: 'Una App Windows Real que se Conoce',
-          description: 'La instalación Windows 10/11 lleva Python y recursos locales. El empaquetado comprueba ambos paneles y el dictado, incluido su auxiliar de configuración; rechaza archivos requeridos ausentes o modificados antes de actualizar. Snapshots saneados opcionales permiten reconstruir. Las mejoras llegan a instalaciones mediante un paquete reconstruido y publicado.',
+          description: 'La versión Windows publicada v1.72.1 lleva conteos reales, dictado y ambos lienzos. Incluye Python y recursos locales; las comprobaciones protegen configuración de voz y vista previa de contexto. Los updates verifican archivos requeridos antes de continuar y conservan datos. Snapshots saneados opcionales permiten reconstruir.',
         },
       ],
     },
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'Explora el código v1.72.0 con dictado directo y Config -> Mic, o instala la última versión Windows publicada, v1.70.0. Inicia sesión en Ollama y descarga los modelos indicados. Config -> Models y Access Keys Wizard gestionan modelos y credenciales; Mic ajusta la captura. El instalador lleva Python 3.12.10. Compilar PDFs con LaTeXer requiere TeX.',
+      desc: 'Instala la última versión Windows publicada, v1.72.1, o ejecuta su código. Incluye conteos reales de contexto, dictado y Config -> Mic. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models y Access Keys Wizard gestionan la configuración. Actualiza desde About -> Check for updates. Lleva Python 3.12.10; compilar PDFs con LaTeXer requiere TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Instalar Tlamatini' },
         { id: 'install_ollama', label: 'Instalar Ollama' },
@@ -1085,7 +1087,7 @@ const es: Translations = {
     },
     techStack: {
       label: 'Tecnología',
-      title: 'La Tecnología Detrás de Tlamatini v1.72.0',
+      title: 'La Tecnología Detrás de Tlamatini v1.72.1',
       groups: [
         {
           category: 'Núcleo y Web en Tiempo Real',
@@ -1093,7 +1095,7 @@ const es: Translations = {
         },
         {
           category: 'IA, Recuperación y Visión',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama + glm-5.3:cloud predeterminado', 'API Anthropic Claude + CLIs de agentes externos', 'Visión Mistral + Gemma; síntesis GLM', 'Contexto consciente de binarios + fusión RRF', '38 ajustes de modelos + Context Governor'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama + glm-5.3:cloud predeterminado', 'API Anthropic Claude + CLIs de agentes externos', 'Visión Mistral + Gemma; síntesis GLM', 'Contexto consciente de binarios + fusión RRF', '38 ajustes de modelos + tokens reales de Ollama'],
         },
         {
           category: 'Plataforma de Agentes y Flujos',
