@@ -33,7 +33,7 @@ const expectedToolIds = [
   'visual_workflows', 'prompt_flow', 'prompt_context', 'multi_turn', 'context_preview', 'human_control', 'truthful_reports',
   'flowcreator', 'acpx', 'external_mcps', 'skills', 'rag', 'unrealer',
   'blenderer', 'stm32er', 'esp_firmware', 'robotic_loop', 'image_vision', 'analysis_recovery', 'whisperer',
-  'mic_preferences', 'talker', 'media', 'netspeed', 'googler', 'blue_hat', 'security_agents',
+  'mic_preferences', 'talker', 'media', 'netspeed', 'googler', 'crawler', 'blue_hat', 'security_agents',
   'codebase', 'documents', 'pdf_canvas', 'model_config', 'browser_desktop', 'messaging', 'database',
   'windows_delivery', 'self_knowledge', 'prompt_catalog', 'mcp_adder',
   'dependable_runtime',
@@ -50,7 +50,7 @@ const flattenAgentNames = (lang: 'en' | 'es') =>
     group.agents.map((agent) => agent.name),
   );
 
-describe('Tlamatini v1.72.1 website truth contract', () => {
+describe('Tlamatini v1.72.4 website truth contract', () => {
   it('keeps the exact 89-agent catalog in nine authoritative families', () => {
     const english = flattenAgentNames('en');
     const spanish = flattenAgentNames('es');
@@ -85,7 +85,7 @@ describe('Tlamatini v1.72.1 website truth contract', () => {
   it('advertises the current release, carried capabilities, and crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.72.1', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
+      'v1.72.4', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
       'PPTXer', 'Context Governor', '256-call',
@@ -97,7 +97,7 @@ describe('Tlamatini v1.72.1 website truth contract', () => {
   it('keeps the technology stack current and substantial in both languages', () => {
     for (const lang of ['en', 'es'] as const) {
       const stack = translations[lang].tlamatini.techStack;
-      expect(stack.title).toContain('v1.72.1');
+      expect(stack.title).toContain('v1.72.4');
       expect(stack.groups).toHaveLength(6);
       stack.groups.forEach((group) => expect(group.items.length).toBeGreaterThanOrEqual(5));
     }
@@ -124,7 +124,7 @@ describe('Tlamatini v1.72.1 website truth contract', () => {
       expect(catalog?.desc).toMatch(/written confirmation|confirmación escrita/);
       expect(copy.tlamatini.presence.panels[0].desc).toContain('120');
       expect(copy.tlamatini.overview.p2).toContain('Prompt Flow Panel');
-      expect(copy.tlamatini.overview.p2).toContain('v1.72.1');
+      expect(copy.tlamatini.overview.p2).toContain('v1.72.4');
     }
     const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
     expect(setup).toContain('ollama pull glm-5.3:cloud');
@@ -161,8 +161,8 @@ describe('Tlamatini v1.72.1 website truth contract', () => {
     const home = readFileSync(resolve('src/pages/Home.tsx'), 'utf8');
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
     expect(home).toContain("value: '89'");
-    expect(home).toContain("value: 'v1.72.1'");
-    expect(launch).toContain("['89', '109', '29', 'v1.72.1']");
+    expect(home).toContain("value: 'v1.72.4'");
+    expect(launch).toContain("['89', '109', '29', 'v1.72.4']");
     expect(launch).toContain('PPTXer');
   });
 
@@ -259,8 +259,8 @@ describe('Tlamatini v1.72.1 website truth contract', () => {
   it('keeps the published installer current without overstating the capabilities', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
-      expect(copy.tlamatini.hero.subtitle).toContain('v1.72.1');
-      expect(copy.tlamatini.installation.desc).toContain('v1.72.1');
+      expect(copy.tlamatini.hero.subtitle).toContain('v1.72.4');
+      expect(copy.tlamatini.installation.desc).toContain('v1.72.4');
       expect(copy.tlamatini.installation.desc).toContain('About -> Check for updates');
       expect(copy.tlamatini.hero.subtitle).not.toMatch(/Source|Código/);
       const packaging = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
@@ -305,6 +305,57 @@ describe('Tlamatini v1.72.1 website truth contract', () => {
     }
   });
 
+  it('advertises bounded three-tier search with honest outcomes and retained result coverage', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const search = copy.home.tools.items.find((item) => item.id === 'googler')?.desc ?? '';
+      expect(search).toMatch(/six parallel HTTP|seis rutas HTTP paralelas/);
+      expect(search).toMatch(/eight real-browser|ocho rutas de navegador/);
+      expect(search).toMatch(/open-knowledge|fuentes abiertas/);
+      expect(search).toMatch(/cooldowns|pausas entre motores/);
+      expect(search).toContain('Cancel');
+      expect(search).toMatch(/No CAPTCHA or access-control bypass|Sin evadir CAPTCHA ni controles de acceso/);
+      const research = copy.tlamatini.features.items.find((item) => item.id === 'research_rag')?.description ?? '';
+      expect(research).toMatch(/titles and URLs|títulos y URLs/);
+      expect(research).toMatch(/shortened text|texto abreviado/);
+      expect(research).toContain('Crawler');
+      expect(research).toMatch(/malformed HTML|HTML mal formado/);
+      expect(research).toMatch(/report fallback extraction|informan la extracción alternativa/);
+    }
+  });
+
+  it('keeps Crawler scope, failure reporting, and JavaScript boundaries clear', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const crawler = copy.home.tools.items.find((item) => item.id === 'crawler')?.desc ?? '';
+      expect(crawler).toMatch(/specified page by default|página indicada por defecto/);
+      expect(crawler).toMatch(/page, size, and time limits|límites de páginas, tamaño y tiempo/);
+      expect(crawler).toMatch(/not analyzed as content|no se analizan como contenido/);
+      expect(crawler).toContain('JavaScript');
+      expect(crawler).toContain('Playwrighter');
+      const agents = copy.tlamatini.agents.groups.flatMap((group) => group.agents);
+      expect(agents.find((agent) => agent.name === 'Crawler')?.desc).toMatch(/by default|por defecto/);
+      expect(agents.find((agent) => agent.name === 'Googler')?.desc).toMatch(/three tiers|tres niveles/);
+      expect(copy.ascii.phrases.some((phrase) => phrase.includes('Crawler'))).toBe(true);
+      expect(JSON.stringify(copy)).not.toMatch(/invulnerable|unblockable|guaranteed access|nunca se bloquea/i);
+    }
+  });
+
+  it('promotes clearer avatar lips without confusing browser speech with Talker', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const portrait = copy.tlamatini.presence.panels.find((panel) => panel.id === 'friendly')?.desc ?? '';
+      expect(portrait).toMatch(/lips|labios/);
+      expect(portrait).toMatch(/open-mouth artwork|apertura de su propio retrato/);
+      expect(portrait).toMatch(/spoken text|texto hablado/);
+      const speech = copy.home.tools.items.find((item) => item.id === 'talker')?.desc ?? '';
+      expect(speech).toContain('WAV');
+      expect(speech).toMatch(/Separately|Por separado/);
+      expect(speech).toMatch(/without exaggerated motion|sin movimientos exagerados/);
+      expect(copy.ascii.phrases.some((phrase) => /Lip Movement|Labios Más Expresivos/.test(phrase))).toBe(true);
+    }
+  });
+
   it('rejects stale releases, removed guardian claims, plan copy, and positional text joins', () => {
     const visibleSource = [
       'src/i18n/translations.ts',
@@ -319,7 +370,7 @@ describe('Tlamatini v1.72.1 website truth contract', () => {
       /v1\.48\.2/i,
       /v1\.51\.\d+\b/i,
       /v1\.65\.\d+\b/i,
-      /v1\.(?:70\.0|72\.0)\b/i,
+      /v1\.(?:70\.0|72\.[0-3])\b/i,
       /jcyhsiao\/qwen3\.5cloud:latest/i,
       /\b(?:87|88) (?:workflow[ -]?)?agents\b/i,
       /\b108 (?:built-in )?(?:Multi-Turn )?tools\b/i,

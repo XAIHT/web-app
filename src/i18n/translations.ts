@@ -37,7 +37,7 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.72.1',
+      'Tlamatini v1.72.4',
       'Prompt Flow Panel: Draw a Conversation',
       'Seven Operations. Your Next Reusable Prompt Flow.',
       'Two Canvases. Shared Editing Controls.',
@@ -50,7 +50,7 @@ const en = {
       'Mic Beside Send. Speak Your Next Prompt.',
       'Config -> Mic: Send or Review First',
       'Live Levels. Silence-Gated Dictation.',
-      'A Smoother, Resizable Speaking Avatar',
+      'Clearer Lip Movement. Her Familiar Voice.',
       'A Ready Whisperer Worker for Faster Voice Starts',
       'MIT-Licensed Self-Hosted AI',
       '53 Unreal Engine Control Commands',
@@ -122,7 +122,9 @@ const en = {
       'Tlamatini-FlowPills Discovery',
       'NetSpeed-Calculator Measures the Real Connection',
       'Blue-Hat Windows Defense Toolkit',
-      'Googler Resilient Web Research',
+      'Googler: Three Search Tiers, Clear Outcomes',
+      'Crawler Reads the Page You Choose',
+      'Web Text Recovered. Fallbacks Disclosed.',
       'External MCP Adder Skill',
     ],
   },
@@ -131,7 +133,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.72.1 puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. Dictate a prompt, shape a visual workflow, and see real Ollama token counts as she works. Create documents, understand media, and coordinate 89 agents, 109 built-in Multi-Turn tools, and 29 skills. Her latest Windows release brings that control to your machine.',
+      desc: 'Tlamatini v1.72.4 puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. Research with stronger web search and page reading; watch her avatar speak with clearer lip movement. Real Ollama context counts, two visual canvases, 89 agents, 109 built-in Multi-Turn tools, and 29 skills turn your intent into work you can inspect.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -173,7 +175,7 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Tlamatini v1.72.1 adds real Ollama context counts to direct dictation, two visual canvases, and one configurable workspace.',
+        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Tlamatini v1.72.4 joins resilient web research, real Ollama context counts, direct dictation, and two visual canvases in one workspace.',
         card1: {
           title: 'Two Panels, One Command Surface',
           desc: 'Panels opens Agentic Control Panel and Prompt Flow Panel while chat works. Config groups Configure MCPs, Configure Agents, Models, URLs, keys, Voice, and the new Mic preferences. DB, Skills, External MCPs, and context remain close at hand.',
@@ -248,10 +250,11 @@ const en = {
         { id: 'analysis_recovery', name: 'Visible Errors. Recovery Still Running.', desc: 'Image, video, and PDF failures collect in one non-modal Fatal analysis errors dialog. Dismiss hides it without erasing history or cancelling work; a new error brings it back. Existing retries and flow-recovery routes stay active with your chosen models, while incomplete analysis is rejected.', type: 'Recovery' },
         { id: 'whisperer', name: 'Speak a Prompt. Choose When She Acts.', desc: 'Mic beside Send starts Whisperer directly on the Tlamatini host microphone. Live levels and a silence countdown stay in chat; defaults are 3.5 seconds of silence and a 300-second cap. Send automatically or keep an editable draft without changing your chat modes. Local recognition has CPU fallback; optional cloud engines receive your audio. Standalone Whisperer also transcribes files.', type: 'Voice' },
         { id: 'mic_preferences', name: 'A Microphone Tuned to You', desc: 'Config -> Mic chooses auto-send or review, host input, gain, silence timing, recording limit, sensitivity, language, English translation, sample rate, channels, and local beam/VAD options. Preferences stay in this browser and apply to the next recording; unset fields inherit defaults. Config -> Models -> Speech selects the recognizer. Voice controls the avatar, separately.', type: 'Voice Settings' },
-        { id: 'talker', name: 'Talker Gives Tlamatini Her Voice', desc: 'Generate expressive female-voice audio, save it as WAV, and play it aloud. Separately, her smoother browser avatar follows spoken text and reads answers with installed voices, without a GPU or an extra language model.', type: 'Voice' },
+        { id: 'talker', name: 'Talker Gives Tlamatini Her Voice', desc: 'Generate expressive female-voice audio, save it as WAV, and play it aloud. Separately, her browser avatar reads answers with installed voices and clearer speech-timed lip movement. Her familiar portrait sets the limit: expressive opening and closing, without exaggerated motion, a GPU, or an extra language model.', type: 'Voice' },
         { id: 'media', name: 'Video You Can Ask Questions About', desc: 'Video-Analyzer transcribes selected audio tracks without opening a microphone, then can combine speech with two visual observers for timestamped summaries and action items. Coverage limits stay explicit. Visual checks reject failed observers or synthesis, while preserving retries and recovery routes.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Measures What Matters', desc: 'Measure download, upload, latency, jitter, packet loss, and bufferbloat across several keyless providers—with confidence intervals, not one flattering number.', type: 'Network' },
-        { id: 'googler', name: 'Googler Finds Better Paths to the Web', desc: 'Structured dorks, lawful-source presets, plain-HTTP discovery, visible-browser fallback, cleaner Bing redirect decoding, and Mojeek self-result filtering turn difficult research into resilient, traceable results.', type: 'Research' },
+        { id: 'googler', name: 'Googler Finds Better Paths to the Web', desc: 'Search across six parallel HTTP routes, eight real-browser routes, and an identified open-knowledge fallback. Relevance checks filter off-topic hits; engine cooldowns avoid repeated refusals. One time budget bounds the search, and Cancel stops it from chat. No CAPTCHA or access-control bypass. Structured dorks, lawful-source presets, and URL-only results keep research focused. Blocks, timeouts, unreachable sites, and genuine no matches stay distinct.', type: 'Research' },
+        { id: 'crawler', name: 'Read the Page You Actually Asked For', desc: 'Crawler reads the specified page by default, then analyzes raw source or readable text. Expand to linked pages when you choose, with page, size, and time limits. Bot walls and timeouts are reported, not analyzed as content; an empty crawl explains why. For JavaScript-driven pages, choose Playwrighter.', type: 'Web Reading' },
         { id: 'blue_hat', name: 'Blue-Hat Defense Under Your Control', desc: 'The operator-controlled Windows security toolkit monitors ten host-signal families with detect-only, armed, watch, and explicit aggressive modes.', type: 'Defense' },
         { id: 'security_agents', name: 'Three Paths for Authorized Recon', desc: 'Use Discoverer for ProjectDiscovery, Nmapper for local nmap, and Kalier for a configured Kali box—each with clear boundaries and honest results.', type: 'Security' },
         { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Globber finds the file, Grepper searches or reads exact line ranges, and Editor makes precise changes using a byte-exact handoff. Review, rebuild, and manage Git without losing Windows paths or saved program identity.', type: 'Codebase' },
@@ -261,7 +264,7 @@ const en = {
         { id: 'browser_desktop', name: 'Browser and Desktop Automation', desc: 'Playwrighter drives sites; Mouser maps clicks to screen, window, or screenshot coordinates; Keyboarder checks the target and stops on focus loss. Shoter records capture geometry. Delivered input is reported honestly, not mistaken for application success.', type: 'Automation' },
         { id: 'messaging', name: 'Reach People Through the Right Channel', desc: 'Send and receive through Telegram, WhatsApp, email, browser notifications, or unified Zavu messaging—with explicit identity and operator choice.', type: 'Messaging' },
         { id: 'database', name: 'WAL-Safe Database Protection', desc: 'Backup and stage SQLite databases through the online backup API, verify integrity, and handle WAL/SHM sidecars without pretending a bare file is complete.', type: 'Data' },
-        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'Install v1.72.1 or use About -> Check for updates. Python 3.12.10 and local UI assets travel with her; required-file checks cover voice settings and the context-preview runtime. Missing or changed files block update handoff while user state stays preserved. Dependency coverage spans all 89 agents, with ESPHome in its separate runtime.', type: 'Windows' },
+        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'Install v1.72.4 or use About -> Check for updates. Python 3.12.10 and local UI assets travel with her; required-file checks cover voice settings and the context-preview runtime. Missing or changed files block update handoff while user state stays preserved. Dependency coverage spans all 89 agents, with ESPHome in its separate runtime.', type: 'Windows' },
         { id: 'self_knowledge', name: 'She Knows How She Is Built', desc: 'First-person self-knowledge helps her explain her architecture. Optional self-modify builds carry a sanitized, rebuildable source snapshot: both visual panels, direct dictation, and now the context-preview engine. Shared required-file checks keep the voice settings helper and the new runtime module accounted for.', type: 'Identity' },
         { id: 'prompt_catalog', name: 'A Guided First Voice Command', desc: 'VOICE COMMANDS keeps its read-only rehearsal and SPEAK YOUR PROMPT workflow, with transcript read-back and written confirmation for irreversible work. These guided catalog routes are separate from direct Mic dictation: its optional review happens in the normal chat input, not a confirmation dialog.', type: 'Guidance' },
         { id: 'mcp_adder', name: 'Add an External MCP with a Guarded Guide', desc: 'The onboarding skill classifies transport, separates secrets, diagnoses readiness, activates only on operator intent, and proves the remote tool before use.', type: 'MCP' },
@@ -272,7 +275,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.72.1 controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Direct voice prompts, real Ollama context counts, 89 agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels put you in command. Explore her source or install the latest Windows release.',
+    ctaDesc: 'Tlamatini v1.72.4 controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Stronger web research and a more expressive speaking avatar join direct voice prompts, real context counts, 89 agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels. Explore her source or install the latest Windows release.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -295,7 +298,7 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.72.1',
+      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.72.4',
       desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. Speak your next prompt directly into chat, then choose automatic send or an editable draft. Connect 89 agents, draw reusable conversations, and bring documents, media, 109 built-in Multi-Turn tools, and 29 skills under your command.',
     },
     presence: {
@@ -312,7 +315,7 @@ const en = {
         {
           id: 'friendly',
           title: 'Friendly by Design',
-          desc: 'Her familiar portrait stays steady while expressions blend and her mouth follows spoken text. A resizable dock remembers your preferred size, with a 120-pixel minimum, spoken status, and answer reading through installed browser voices.',
+          desc: 'Her familiar portrait now opens and closes its lips more clearly with spoken text, never beyond its own open-mouth artwork. A resizable dock remembers your preferred size, with a 120-pixel minimum, spoken status, and answer reading through installed browser voices.',
         },
         {
           id: 'control',
@@ -331,7 +334,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She runs on your machine and connects Unreal Engine and Blender control, STM32 / ESP32 / ESPHome / Arduino firmware, Talker speech, and Whisperer listening with code-aware retrieval. Agent and prompt canvases offer complementary ways to orchestrate her. PDFer, PPTXer, and LaTeXer create deliverables; media, messaging, security, and opt-in delegation extend your reach.',
-      p2: 'Now published as v1.72.1: real Ollama token counts for the main chat, in one-shot and Multi-Turn. The gauge refreshes with history, context, and mode changes, keeping estimates distinct from confirmed counts. Direct dictation, Config -> Mic, Prompt Flow Panel, and stronger packaging checks come with her. Install the latest release or use About -> Check for updates.',
+      p2: 'Published v1.72.4 makes web research more dependable: Googler searches through three tiers, Crawler reads the page you specify, and both recover text that malformed HTML could hide. Refusals and timeouts stay explicit. Clearer avatar lip movement joins direct dictation, Config -> Mic, real Ollama context counts, and Prompt Flow Panel. Install the release or use About -> Check for updates.',
       viewSource: 'View Source',
     },
     features: {
@@ -342,21 +345,21 @@ const en = {
         { id: 'netspeed', title: 'NetSpeed-Calculator Measures the Real Connection', description: 'Measure download, upload, latency, jitter, packet loss, and bufferbloat across multiple keyless providers, with repeated samples and confidence intervals instead of one flattering speed-test number.' },
         { id: 'creative_engines', title: 'Tlamatini Controls Unreal Engine and Blender', description: 'Drive a live Unreal editor through 53 commands, turn one prompt into a ready-to-build Unreal Engine 5.8 C++ project, or create, inspect, materialize, capture, and render Blender scenes through the official MCP add-on.' },
         { id: 'embedded', title: 'STM32er, ESP32er, Arduino, and ESPHome', description: 'Mission-critical STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB with fail-safe checks. ESP32er now scaffolds working blink-and-print firmware; ESPHomer offers light and sensor templates with optional separated secrets. Arduino CLI completes the hardware toolkit.' },
-        { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer now brings direct dictation to chat with automatic send or editable drafts, configured in Config -> Mic. Live levels and a silence countdown keep capture visible without another window. Image-Interpreter cross-checks visual evidence; Video-Analyzer adds timestamps and summaries. Her separate browser avatar reads answers without a GPU.' },
+        { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer now brings direct dictation to chat with automatic send or editable drafts, configured in Config -> Mic. Live levels and a silence countdown keep capture visible without another window. Image-Interpreter cross-checks visual evidence; Video-Analyzer adds timestamps and summaries. Her separate browser avatar reads answers with clearer lip movement, without a GPU.' },
         { id: 'documents', title: 'PDFer + PPTXer + LaTeXer Studio', description: 'PPTXer creates editable decks with 36 treatments and 17 font pairings, carrying long text onto continuation slides. PDFer combines 24 visual styles with 20 content themes; LaTeXer offers 30 styles for mathematical typesetting. Open existing PDFs in the canvas and choose whole-document context, with optional image analysis.' },
         { id: 'multi_turn', title: '109 Tools, Context-Aware Multi-Turn', description: 'See measured bytes and real Ollama prompt-token counts for your main chat in one-shot and Multi-Turn. Pending counts stay marked est.; confirmed counts read REAL. The model-reported context limit guides headroom, with local limits respected. Context Governor, Ask Execs, Step-by-Step, and Hard Cancel keep work informed and under your control.' },
         { id: 'visual_workflows', title: 'Two Canvases. Agents and Conversations.', description: 'Connect 89 agents in the Agentic Control Panel and save .flw workflows. In Prompt Flow Panel, shape prompts, decisions, reference text, and human replies into .fpmt diagrams with per-run context. Both share selection, connection, dragging, zoom, and undo controls. Opening a prompt diagram never starts it.' },
         { id: 'external_mcps', title: 'External MCPs, MCP Doctor, and MCP Adder', description: 'Connect up to five MCP servers over stdio, streamable HTTP, SSE, or WebSocket. MCP Doctor checks readiness, while MCP Adder guides transport choice, secret separation, diagnosis, activation, and a real remote-tool test. Simple scalar mismatches can be repaired before a call is lost.' },
         { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
-        { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler combines structured dorks, lawful-source presets, direct discovery, visible-browser fallback, cleaner Bing redirects, and Mojeek self-result filtering. FAISS + BM25 grounds the answer in deep project trees while byte-level filtering keeps binary noise out of context.' },
+        { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler lists returned titles and URLs before sharing room among page excerpts, labeling shortened text for deeper reading with Crawler. Both recover text from malformed HTML and report fallback extraction. Deadlines and explicit outcomes keep web research accountable; FAISS + BM25 grounds answers in your project while filtering binary noise.' },
         { id: 'database', title: 'WAL-Safe SQLite Data Handling', description: 'DB Backup and Set DB use SQLite\'s online backup API, integrity validation, clean staging, and WAL/SHM sidecar hygiene so live data can be preserved and handed off without pretending a copied main file is enough.' },
-        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'The published v1.72.1 Windows release brings real context counts, direct dictation, and both visual panels. Python and local UI assets are carried; shared file checks protect voice settings and the context-preview runtime. Updates verify required files before handoff and preserve user state. Optional sanitized source snapshots support rebuilding.' },
+        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'The published v1.72.4 Windows release brings stronger web reading, bounded search, and clearer avatar lip movement alongside real context counts, direct dictation, and both visual panels. Python and local UI assets are carried; shared file checks protect voice settings and the context-preview runtime. Updates verify required files before handoff and preserve user state. Optional sanitized source snapshots support rebuilding.' },
       ],
     },
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'Install the latest published Windows release, v1.72.1, or run her source. Real context counts, direct dictation, and Config -> Mic are included. Sign in to Ollama and pull the models below; Config -> Models and Access Keys Wizard handle configuration. Existing installs can use About -> Check for updates. Python 3.12.10 is carried; LaTeXer PDF compilation needs TeX.',
+      desc: 'Install the latest published Windows release, v1.72.4, or run her source. Stronger web research, clearer avatar lip movement, real context counts, and Config -> Mic are included. Sign in to Ollama and pull the models below; Config -> Models and Access Keys Wizard handle configuration. Existing installs can use About -> Check for updates. Python 3.12.10 is carried; LaTeXer PDF compilation needs TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Install Tlamatini' },
         { id: 'install_ollama', label: 'Install Ollama' },
@@ -405,8 +408,8 @@ const en = {
             { name: 'Pythonxer', desc: 'Runs Python behind compile and Ruff correctness gates' },
             { name: 'Sqler', desc: 'Executes work against Microsoft SQL Server' },
             { name: 'Mongoxer', desc: 'Executes scripts against MongoDB' },
-            { name: 'Crawler', desc: 'Crawls sites and analyzes raw or readable web content' },
-            { name: 'Googler', desc: 'Runs resilient indexed search with structured dorks, redirect cleanup, and visible fallback' },
+            { name: 'Crawler', desc: 'Reads the specified page by default, with bounded crawling, text recovery, and explicit blocked/timeout outcomes' },
+            { name: 'Googler', desc: 'Searches three tiers with deadlines, relevance checks, engine cooldowns, and clearly identified sources' },
             { name: 'Playwrighter', desc: 'Drives a real browser through scripted interactive steps' },
             { name: 'Apirer', desc: 'Calls HTTP APIs with structured requests and measured responses' },
             { name: 'Kalier', desc: 'Bridges authorized assessments to a configured Kali Linux server' },
@@ -508,7 +511,7 @@ const en = {
     },
     techStack: {
       label: 'Technology',
-      title: 'The Technology Behind Tlamatini v1.72.1',
+      title: 'The Technology Behind Tlamatini v1.72.4',
       groups: [
         {
           category: 'Core & Real-Time Web',
@@ -564,7 +567,7 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.72.1',
+      'Tlamatini v1.72.4',
       'Prompt Flow Panel: Dibuja una Conversación',
       'Siete Operaciones. Tu Próximo Flujo de Prompts.',
       'Dos Lienzos. Controles Compartidos.',
@@ -577,7 +580,7 @@ const es: Translations = {
       'Mic junto a Send. Dicta tu Próximo Prompt.',
       'Config -> Mic: Enviar o Revisar Primero',
       'Nivel en Vivo. Dictado con Cierre por Silencio.',
-      'Avatar con Habla Fluida y Tamaño Ajustable',
+      'Labios Más Expresivos. Su Voz Familiar.',
       'Whisperer Preparada para Iniciar el Dictado Más Rápido',
       'IA Autoalojada con Licencia MIT',
       '53 Comandos de Control Unreal Engine',
@@ -649,7 +652,9 @@ const es: Translations = {
       'Descubrimiento para Tlamatini-FlowPills',
       'NetSpeed-Calculator Mide la Conexión Real',
       'Toolkit de Defensa Windows Blue-Hat',
-      'Investigación Web Resistente con Googler',
+      'Googler: Tres Niveles, Resultados Claros',
+      'Crawler Lee la Página que Tú Eliges',
+      'Texto Web Recuperado. Alternativas Visibles.',
       'Skill External MCP Adder',
     ],
   },
@@ -658,7 +663,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.72.1 pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Dicta un prompt, diseña un flujo y observa tokens reales de Ollama mientras trabaja. Crea documentos, comprende medios y coordina 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills. Su última versión Windows lleva ese control a tu máquina.',
+      desc: 'Tlamatini v1.72.4 pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Investiga con búsquedas y lectura web reforzadas; su avatar habla con labios más expresivos. Conteos reales de Ollama, dos lienzos, 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills convierten tu intención en trabajo que puedes inspeccionar.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -700,7 +705,7 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. Tlamatini v1.72.1 suma conteos reales de contexto de Ollama al dictado directo, dos lienzos y un mismo espacio configurable.',
+        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. Tlamatini v1.72.4 reúne investigación web reforzada, conteos reales de Ollama, dictado directo y dos lienzos en un mismo espacio.',
         card1: {
           title: 'Dos Paneles, un Centro de Mando',
           desc: 'Panels abre Agentic Control Panel y Prompt Flow Panel mientras el chat trabaja. Config reúne Configure MCPs, Configure Agents, Models, URLs, claves, Voice y las nuevas preferencias Mic. DB, Skills, MCPs externos y contexto quedan a mano.',
@@ -775,10 +780,11 @@ const es: Translations = {
         { id: 'analysis_recovery', name: 'Errores Visibles. Recuperación Activa.', desc: 'Las fallas de imagen, video y PDF se acumulan en Fatal analysis errors, sin bloquear controles. Dismiss oculta sin borrar historial ni cancelar; otro error vuelve a mostrarlo. Reintentos y rutas de recuperación siguen con tus modelos, rechazando análisis incompletos.', type: 'Recuperación' },
         { id: 'whisperer', name: 'Dicta un Prompt. Elige Cuándo Actúa.', desc: 'Mic junto a Send inicia Whisperer en el micrófono del equipo que ejecuta Tlamatini. Nivel y cuenta de silencio quedan en el chat; por defecto son 3.5 segundos de silencio y un límite de 300 segundos. Envía automáticamente o conserva un borrador sin cambiar tus modos. El reconocimiento local tiene fallback CPU; los motores cloud opcionales reciben tu audio. Whisperer también transcribe archivos.', type: 'Voz' },
         { id: 'mic_preferences', name: 'Un Micrófono a Tu Medida', desc: 'Config -> Mic elige autoenvío o revisión, entrada del equipo, ganancia, silencio, duración límite, sensibilidad, idioma, traducción al inglés, frecuencia, canales y opciones locales beam/VAD. Las preferencias quedan en este navegador y rigen desde la próxima grabación; campos sin definir heredan valores. Config -> Models -> Speech selecciona el reconocedor. Voice controla el avatar por separado.', type: 'Ajustes de Voz' },
-        { id: 'talker', name: 'Talker le Da su Voz a Tlamatini', desc: 'Genera voz femenina expresiva, guárdala en WAV y escúchala. Por separado, su avatar más fluido sigue el texto hablado y lee respuestas con voces instaladas, sin GPU ni un modelo de lenguaje adicional.', type: 'Voz' },
+        { id: 'talker', name: 'Talker le Da su Voz a Tlamatini', desc: 'Genera voz femenina expresiva, guárdala en WAV y escúchala. Por separado, su avatar lee respuestas con voces instaladas y labios que acompañan el texto hablado con mayor claridad. Su propio retrato fija el límite: apertura y cierre expresivos, sin movimientos exagerados, GPU ni otro modelo de lenguaje.', type: 'Voz' },
         { id: 'media', name: 'Video al que Puedes Hacerle Preguntas', desc: 'Video-Analyzer transcribe pistas elegidas sin abrir el micrófono y puede combinar la voz con dos observadores visuales para resúmenes y tareas con marcas de tiempo. Expone límites de cobertura. La verificación visual rechaza fallas de observación o síntesis y conserva reintentos y rutas de recuperación.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Mide lo que Importa', desc: 'Mide descarga, subida, latencia, jitter, pérdida y bufferbloat en varios proveedores sin llave, con intervalos de confianza y no un número favorecedor.', type: 'Red' },
-        { id: 'googler', name: 'Googler Encuentra Mejores Rutas Web', desc: 'Dorks estructurados, fuentes lícitas, descubrimiento HTTP, fallback visible, decodificación limpia de redirects Bing y filtrado de autorresultados Mojeek producen investigación resistente y rastreable.', type: 'Investigación' },
+        { id: 'googler', name: 'Googler Encuentra Mejores Rutas Web', desc: 'Busca en seis rutas HTTP paralelas, ocho rutas de navegador real y fuentes abiertas identificadas. Los filtros de relevancia descartan resultados ajenos; las pausas entre motores evitan insistir tras un bloqueo. Un plazo limita la búsqueda y Cancel la detiene desde el chat. Sin evadir CAPTCHA ni controles de acceso. Dorks, fuentes lícitas y listas de URLs mantienen el foco. Bloqueos, tiempos agotados, sitios inaccesibles y búsquedas sin coincidencias se distinguen.', type: 'Investigación' },
+        { id: 'crawler', name: 'Lee la Página que Realmente Pediste', desc: 'Crawler lee la página indicada por defecto y analiza código fuente o texto legible. Amplía a enlaces cuando lo elijas, con límites de páginas, tamaño y tiempo. Los bloqueos y tiempos agotados se informan, no se analizan como contenido; si nada pudo leerse, explica por qué. Para páginas que dependen de JavaScript, elige Playwrighter.', type: 'Lectura Web' },
         { id: 'blue_hat', name: 'Defensa Blue-Hat Bajo tu Control', desc: 'El toolkit Windows controlado por el operador observa diez familias de señales con modos detect-only, armed, watch y aggressive explícito.', type: 'Defensa' },
         { id: 'security_agents', name: 'Tres Caminos para Recon Autorizado', desc: 'Usa Discoverer para ProjectDiscovery, Nmapper para nmap local y Kalier para un Kali configurado, todos con límites claros y resultados honestos.', type: 'Seguridad' },
         { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Globber encuentra el archivo, Grepper busca o lee rangos exactos y Editor aplica cambios precisos con transferencia byte-exacta. Revisa, recompila y gestiona Git sin perder rutas Windows ni la identidad del código guardado.', type: 'Codebase' },
@@ -788,7 +794,7 @@ const es: Translations = {
         { id: 'browser_desktop', name: 'Automatización de Navegador y Escritorio', desc: 'Playwrighter conduce sitios; Mouser sitúa clics en coordenadas de pantalla, ventana o captura; Keyboarder verifica el destino y se detiene si pierde foco. Shoter registra geometría. La entrega de entrada se informa sin confundirla con éxito de la aplicación.', type: 'Automatización' },
         { id: 'messaging', name: 'Llega por el Canal Correcto', desc: 'Envía y recibe por Telegram, WhatsApp, email, notificaciones o mensajería unificada Zavu, con identidad explícita y decisión del operador.', type: 'Mensajería' },
         { id: 'database', name: 'Protección de Base de Datos WAL-Safe', desc: 'Respalda y prepara SQLite mediante la API de backup online, verifica integridad y trata sidecars WAL/SHM sin fingir que un archivo aislado está completo.', type: 'Datos' },
-        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'Instala v1.72.1 o usa About -> Check for updates. Lleva Python 3.12.10 y recursos locales; las comprobaciones cubren configuración de voz y vista previa de contexto. Archivos requeridos ausentes o modificados bloquean la actualización, conservando tus datos. La cobertura de dependencias abarca 89 agentes y mantiene ESPHome en su entorno separado.', type: 'Windows' },
+        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'Instala v1.72.4 o usa About -> Check for updates. Lleva Python 3.12.10 y recursos locales; las comprobaciones cubren configuración de voz y vista previa de contexto. Archivos requeridos ausentes o modificados bloquean la actualización, conservando tus datos. La cobertura de dependencias abarca 89 agentes y mantiene ESPHome en su entorno separado.', type: 'Windows' },
         { id: 'self_knowledge', name: 'Ella Sabe Cómo Está Construida', desc: 'Su autoconocimiento le permite explicar su arquitectura. Builds opcionales con automodificación llevan código saneado y reconstruible: ambos lienzos, dictado y ahora el motor de vista previa de contexto. Las comprobaciones de archivos requeridos cubren la configuración de voz y el nuevo módulo.', type: 'Identidad' },
         { id: 'prompt_catalog', name: 'Tu Primer Comando de Voz, Guiado', desc: 'VOICE COMMANDS conserva su ensayo de solo lectura y SPEAK YOUR PROMPT, con lectura del transcript y confirmación escrita para trabajo irreversible. Estas rutas guiadas son distintas del botón Mic: su revisión opcional ocurre en el campo normal del chat, no en un diálogo de confirmación.', type: 'Guía' },
         { id: 'mcp_adder', name: 'Añade un MCP con una Guía Protegida', desc: 'La skill de incorporación clasifica transporte, separa secretos, diagnostica, activa sólo con intención y prueba la herramienta remota antes de usarla.', type: 'MCP' },
@@ -799,7 +805,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.72.1 controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Voz directa, contexto con tokens reales de Ollama, 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos te ponen al mando. Explora su código o instala la última versión Windows.',
+    ctaDesc: 'Tlamatini v1.72.4 controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Investigación web reforzada y un avatar más expresivo se unen a voz directa, conteos reales, 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos. Explora su código o instala la última versión Windows.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -822,7 +828,7 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.72.1',
+      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.72.4',
       desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Dicta tu próximo prompt directamente al chat y elige envío automático o un borrador editable. Conecta 89 agentes, dibuja conversaciones reutilizables y pon documentos, medios, 109 herramientas Multi-Turn integradas y 29 skills bajo tu mando.',
     },
     presence: {
@@ -839,7 +845,7 @@ const es: Translations = {
         {
           id: 'friendly',
           title: 'Amable por Diseño',
-          desc: 'Su rostro permanece estable mientras mezcla expresiones y acompaña el texto hablado. El avatar recuerda tu tamaño preferido, con un mínimo de 120 píxeles, avisos de estado y lectura de respuestas mediante voces instaladas del navegador.',
+          desc: 'Su rostro ahora abre y cierra los labios con mayor claridad al acompañar el texto hablado, sin superar la apertura de su propio retrato. El avatar recuerda tu tamaño preferido, con un mínimo de 120 píxeles, avisos de estado y lectura mediante voces instaladas del navegador.',
         },
         {
           id: 'control',
@@ -858,7 +864,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Se ejecuta en tu máquina y conecta control de Unreal Engine y Blender, firmware STM32 / ESP32 / ESPHome / Arduino, habla Talker y escucha Whisperer con comprensión del código. Sus lienzos de agentes y prompts ofrecen formas complementarias de orquestarla. PDFer, PPTXer y LaTeXer crean entregables; medios, mensajería, seguridad y delegación opcional amplían tu alcance.',
-      p2: 'Ya publicada como v1.72.1: tokens reales de Ollama para el chat principal, en one-shot y Multi-Turn. El indicador se actualiza con historial, contexto y modos, distinguiendo estimaciones de conteos confirmados. Incluye dictado, Config -> Mic, Prompt Flow Panel y empaquetado reforzado. Instala la última versión o usa About -> Check for updates.',
+      p2: 'La versión publicada v1.72.4 refuerza la investigación web: Googler busca en tres niveles, Crawler lee la página indicada y ambos recuperan texto que HTML mal formado podía ocultar. Bloqueos y tiempos agotados se informan. Labios más expresivos se unen al dictado, Config -> Mic, conteos reales de Ollama y Prompt Flow Panel. Instala la versión o usa About -> Check for updates.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -888,7 +894,7 @@ const es: Translations = {
         {
           id: 'voice_vision',
           title: 'Ella Ve, Habla, Escucha y Entiende',
-          description: 'Talker habla; Whisperer lleva el dictado directo al chat con envío automático o borradores editables desde Config -> Mic. Nivel y cuenta de silencio muestran la captura sin otra ventana. Image-Interpreter contrasta evidencia visual; Video-Analyzer añade marcas de tiempo y resúmenes. El avatar del navegador lee respuestas sin GPU.',
+          description: 'Talker habla; Whisperer lleva el dictado directo al chat con envío automático o borradores editables desde Config -> Mic. Nivel y cuenta de silencio muestran la captura sin otra ventana. Image-Interpreter contrasta evidencia visual; Video-Analyzer añade marcas de tiempo y resúmenes. El avatar del navegador lee respuestas con labios más expresivos, sin GPU.',
         },
         {
           id: 'documents',
@@ -918,7 +924,7 @@ const es: Translations = {
         {
           id: 'research_rag',
           title: 'Investigación Resistente, Anclada a tu Proyecto',
-          description: 'Googler combina dorks estructurados, fuentes lícitas, descubrimiento directo, fallback visible, redirects Bing más limpios y filtrado de autorresultados Mojeek. FAISS + BM25 fundamenta la respuesta en árboles profundos mientras el filtro por bytes aparta el ruido binario.',
+          description: 'Googler enumera títulos y URLs antes de repartir espacio entre extractos; identifica texto abreviado para ampliarlo con Crawler. Ambos recuperan texto de HTML mal formado e informan la extracción alternativa. Plazos y resultados explícitos hacen verificable la investigación; FAISS + BM25 fundamenta respuestas en tu proyecto y filtra ruido binario.',
         },
         {
           id: 'database',
@@ -928,14 +934,14 @@ const es: Translations = {
         {
           id: 'windows_delivery',
           title: 'Una App Windows Real que se Conoce',
-          description: 'La versión Windows publicada v1.72.1 lleva conteos reales, dictado y ambos lienzos. Incluye Python y recursos locales; las comprobaciones protegen configuración de voz y vista previa de contexto. Los updates verifican archivos requeridos antes de continuar y conservan datos. Snapshots saneados opcionales permiten reconstruir.',
+          description: 'La versión Windows publicada v1.72.4 refuerza lectura web, búsquedas con plazos y labios del avatar, junto a conteos reales, dictado y ambos lienzos. Incluye Python y recursos locales; las comprobaciones protegen configuración de voz y vista previa de contexto. Los updates verifican archivos requeridos antes de continuar y conservan datos. Snapshots saneados opcionales permiten reconstruir.',
         },
       ],
     },
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'Instala la última versión Windows publicada, v1.72.1, o ejecuta su código. Incluye conteos reales de contexto, dictado y Config -> Mic. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models y Access Keys Wizard gestionan la configuración. Actualiza desde About -> Check for updates. Lleva Python 3.12.10; compilar PDFs con LaTeXer requiere TeX.',
+      desc: 'Instala la última versión Windows publicada, v1.72.4, o ejecuta su código. Incluye investigación web reforzada, labios más expresivos, conteos reales y Config -> Mic. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models y Access Keys Wizard gestionan la configuración. Actualiza desde About -> Check for updates. Lleva Python 3.12.10; compilar PDFs con LaTeXer requiere TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Instalar Tlamatini' },
         { id: 'install_ollama', label: 'Instalar Ollama' },
@@ -984,8 +990,8 @@ const es: Translations = {
             { name: 'Pythonxer', desc: 'Ejecuta Python detrás de compuertas compile y Ruff' },
             { name: 'Sqler', desc: 'Trabaja contra Microsoft SQL Server' },
             { name: 'Mongoxer', desc: 'Ejecuta scripts contra MongoDB' },
-            { name: 'Crawler', desc: 'Rastrea sitios y analiza contenido web crudo o legible' },
-            { name: 'Googler', desc: 'Busca con dorks estructurados, limpieza de redirects y fallback visible' },
+            { name: 'Crawler', desc: 'Lee la página indicada por defecto, con límites de rastreo, recuperación de texto y bloqueos o tiempos agotados explícitos' },
+            { name: 'Googler', desc: 'Busca en tres niveles con plazos, filtros de relevancia, pausas entre motores y fuentes identificadas' },
             { name: 'Playwrighter', desc: 'Conduce un navegador real mediante pasos interactivos' },
             { name: 'Apirer', desc: 'Llama APIs HTTP con solicitudes estructuradas y respuestas medidas' },
             { name: 'Kalier', desc: 'Conecta evaluaciones autorizadas con un servidor Kali configurado' },
@@ -1087,7 +1093,7 @@ const es: Translations = {
     },
     techStack: {
       label: 'Tecnología',
-      title: 'La Tecnología Detrás de Tlamatini v1.72.1',
+      title: 'La Tecnología Detrás de Tlamatini v1.72.4',
       groups: [
         {
           category: 'Núcleo y Web en Tiempo Real',

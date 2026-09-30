@@ -39,7 +39,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.72.1',
+    eyebrow: 'XAIHT presents Tlamatini v1.72.4',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
@@ -47,14 +47,14 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Current release'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. Her published v1.72.1 release adds real Ollama context counts to direct voice prompts and two visual canvases. Coordinate 109 built-in Multi-Turn tools with a clearer view of what your main chat sends, and keep the work under your direction.',
+    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. Her published v1.72.4 release strengthens web research, recovers text from malformed pages, and gives her speaking avatar clearer lip movement. Direct voice prompts, real Ollama context counts, two visual canvases, and 109 built-in Multi-Turn tools keep the work under your direction.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
-      ['Codebase intelligence', 'Project retrieval, whole-PDF context, editable PPTXer decks, PDFer composition, and LaTeXer typesetting turn knowledge into deliverables.'],
+      ['Codebase intelligence', 'Ground research in your project and the web: Googler and Crawler add bounded searches, text recovery, and explicit outcomes. Whole-PDF context, PPTXer, PDFer, and LaTeXer turn knowledge into deliverables.'],
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
       ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino join firmware to real instruments, with working ESP32 and smart-home templates to start from.'],
-      ['Voice and media', 'Talker speaks; Whisperer takes direct prompts from the host microphone. Config -> Mic offers automatic send or an editable draft, with live capture feedback in chat. Video-Analyzer adds timestamped media insights.'],
+      ['Voice and media', 'Talker speaks; Whisperer takes direct prompts from the host microphone. Config -> Mic offers automatic send or an editable draft, with live capture feedback in chat. Her avatar speaks with clearer lip movement; Video-Analyzer adds timestamped media insights.'],
       ['Human command', 'Real Ollama token counts make main-chat context visible in one-shot and Multi-Turn; estimates stay labeled. Panels, Config, 38 model settings, and Ask Execs keep decisions in your hands. Visual errors remain visible while recovery continues.'],
       ['Reusable orchestration', 'Connect 89 agents in .flw workflows or draw prompts, decisions, and human checkpoints in .fpmt diagrams. Each prompt run keeps its own conversation and context.'],
     ],
@@ -77,7 +77,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.72.1',
+    eyebrow: 'XAIHT presenta Tlamatini v1.72.4',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
@@ -85,14 +85,14 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version publicada'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. Su version publicada v1.72.1 suma conteos reales de Ollama a voz directa y dos lienzos visuales. Coordina 109 herramientas Multi-Turn integradas con una vista clara de lo que envia tu chat principal, manteniendo el trabajo bajo tu direccion.',
+    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. Su version publicada v1.72.4 refuerza la investigacion web, recupera texto de paginas mal formadas y da mayor expresividad a los labios de su avatar. Voz directa, conteos reales de Ollama, dos lienzos y 109 herramientas Multi-Turn integradas mantienen el trabajo bajo tu direccion.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
-      ['Inteligencia del codigo', 'Recuperacion de proyectos, contexto de PDFs completos, presentaciones PPTXer, composicion PDFer y LaTeXer convierten conocimiento en entregables.'],
+      ['Inteligencia del codigo', 'Fundamenta la investigacion en tu proyecto y la web: Googler y Crawler suman plazos, recuperacion de texto y resultados explicitos. Contexto PDF, PPTXer, PDFer y LaTeXer convierten conocimiento en entregables.'],
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
       ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales, partiendo de plantillas funcionales ESP32 y smart home.'],
-      ['Voz y medios', 'Talker habla; Whisperer recibe prompts desde el microfono anfitrion. Config -> Mic ofrece envio automatico o borrador editable, con captura visible en chat. Video-Analyzer aporta analisis con marcas de tiempo.'],
+      ['Voz y medios', 'Talker habla; Whisperer recibe prompts desde el microfono anfitrion. Config -> Mic ofrece envio automatico o borrador editable, con captura visible en chat. Su avatar habla con labios mas expresivos; Video-Analyzer aporta analisis con marcas de tiempo.'],
       ['Mando humano', 'Tokens reales de Ollama muestran el contexto del chat principal en one-shot y Multi-Turn; las estimaciones se identifican. Panels, Config, 38 ajustes y Ask Execs conservan tu control. Los errores visuales no ocultan la recuperacion.'],
       ['Orquestacion reutilizable', 'Conecta 89 agentes en flujos .flw o dibuja prompts, decisiones y consultas humanas en .fpmt. Cada ejecucion conserva su conversacion y contexto propios.'],
     ],
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['89', '109', '29', 'v1.72.1'].map((value, index) => (
+            {['89', '109', '29', 'v1.72.4'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>
