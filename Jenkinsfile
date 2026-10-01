@@ -42,19 +42,54 @@ pipeline {
           # Desktop's daemon via bind mount, so we shuffle package.json
           # and package-lock.json through a helper container via docker
           # cp / docker exec.
+          #
+          # Hardened 2026-10-01 after builds #20 and #21 "hung" here:
+          # a stale lockfile (18 ranges bumped in package.json on
+          # 2026-09-27) made npm re-resolve from an EMPTY cache on every
+          # build. With registry.npmjs.org crawling at 150-250 KB/s
+          # (typescript's metadata alone is 15.7 MB), npm outlived the
+          # helper's old 10-minute "sleep 600" and was killed mid-run,
+          # silently, behind --loglevel=error. Now:
+          #   - npm's cache lives in the named Docker volume
+          #     xaiht-npm-cache, so metadata is downloaded once and only
+          #     revalidated afterwards;
+          #   - npm is bounded by NPM_SYNC_TIMEOUT and fails with a named
+          #     reason; the helper always outlives it;
+          #   - --loglevel=http prints every registry fetch, so progress
+          #     is visible in the console instead of one frozen line;
+          #   - the helper is removed on success, failure AND abort, and
+          #     helpers left behind by older aborted builds are swept.
           HELPER="lockfile-sync-${BUILD_NUMBER}"
-          docker rm -f "$HELPER" >/dev/null 2>&1 || true
-          docker run -d --name "$HELPER" --entrypoint sh node:20-alpine -c "sleep 600" >/dev/null
+          NPM_CACHE_VOLUME="xaiht-npm-cache"
+          NPM_SYNC_TIMEOUT=900    # seconds npm may run (15 min)
+          HELPER_LIFETIME=1200    # helper outlives npm by 5 min
+
+          cleanup() { docker rm -f "$HELPER" >/dev/null 2>&1 || true; }
+          trap cleanup EXIT
+          trap 'cleanup; exit 130' INT
+          trap 'cleanup; exit 143' TERM
+
+          docker ps -aq --filter "name=lockfile-sync-" | xargs -r docker rm -f >/dev/null 2>&1 || true
+          docker volume create "$NPM_CACHE_VOLUME" >/dev/null
+          docker run -d --name "$HELPER" \
+            -v "$NPM_CACHE_VOLUME":/root/.npm \
+            --entrypoint sh node:20-alpine -c "sleep $HELPER_LIFETIME" >/dev/null
 
           docker cp package.json      "$HELPER":/tmp/package.json
           docker cp package-lock.json "$HELPER":/tmp/package-lock.json
 
           BEFORE=$(sha256sum package-lock.json | cut -c1-12)
-          docker exec -w /tmp "$HELPER" npm install --package-lock-only --no-audit --loglevel=error
+          echo ">>> Syncing package-lock.json (npm limit ${NPM_SYNC_TIMEOUT}s, cache volume ${NPM_CACHE_VOLUME})"
+          if ! docker exec -w /tmp "$HELPER" timeout -s TERM "$NPM_SYNC_TIMEOUT" \
+                 npm install --package-lock-only --no-audit --no-fund \
+                 --loglevel=http --fetch-retries=4 --fetch-retry-maxtimeout=120000; then
+            echo ">>> FAILED: npm could not sync package-lock.json within ${NPM_SYNC_TIMEOUT}s."
+            echo ">>> Likely cause: registry.npmjs.org is slow or unreachable from Docker."
+            echo ">>> Lasting fix: commit an in-sync package-lock.json so this step has nothing to fetch."
+            exit 1
+          fi
           docker cp "$HELPER":/tmp/package-lock.json ./package-lock.json
           AFTER=$(sha256sum package-lock.json | cut -c1-12)
-
-          docker rm -f "$HELPER" >/dev/null 2>&1 || true
 
           if [ "$BEFORE" = "$AFTER" ]; then
             echo ">>> Lockfile already in sync with package.json - no changes."
