@@ -37,7 +37,8 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.72.4',
+      'Tlamatini v1.73.0',
+      'Drop a Message. Keep the Conversation.',
       'Prompt Flow Panel: Draw a Conversation',
       'Seven Operations. Your Next Reusable Prompt Flow.',
       'Two Canvases. Shared Editing Controls.',
@@ -133,13 +134,13 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini v1.72.4 puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. Research with stronger web search and page reading; watch her avatar speak with clearer lip movement. Real Ollama context counts, two visual canvases, 89 agents, 109 built-in Multi-Turn tools, and 29 skills turn your intent into work you can inspect.',
+      desc: 'Tlamatini puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. New in v1.73.0 source: Drop a chat message and keep the rest of the conversation, without reconnecting. Resilient web research, real Ollama context counts, two visual canvases, 89 agents, 109 built-in Multi-Turn tools, and 29 skills turn your intent into work you can inspect.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
         agents: 'Agents',
         skills: 'Skills',
-        version: 'Version',
+        version: 'Source Version',
         iterations: 'Iterations',
       },
     },
@@ -175,7 +176,7 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Tlamatini v1.72.4 joins resilient web research, real Ollama context counts, direct dictation, and two visual canvases in one workspace.',
+        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Her v1.73.0 source adds per-message Drop to resilient web research, real context counts, direct dictation, and two visual canvases.',
         card1: {
           title: 'Two Panels, One Command Surface',
           desc: 'Panels opens Agentic Control Panel and Prompt Flow Panel while chat works. Config groups Configure MCPs, Configure Agents, Models, URLs, keys, Voice, and the new Mic preferences. DB, Skills, External MCPs, and context remain close at hand.',
@@ -233,8 +234,9 @@ const en = {
         { id: 'prompt_flow', name: 'Draw a Conversation. Press Play.', desc: 'Prompt Flow Panel brings seven operations to one diagram: Prompt, Programmed Prompt, Decision, Feed embeddings, Flush embeddings, Clean History, and User Commentary. Branch on an answer or ask a person; enable Multi-Turn and ACPX per prompt. Validate, then Play, Pause, or Stop.', type: 'Prompt Canvas' },
         { id: 'prompt_context', name: 'A Reusable Conversation, Its Own Context', desc: 'Pass answers forward with {{last_output}}. Each run keeps its own history and reference text, separate from chat. Save .fpmt files and recover per-user browser drafts; opening never runs them. Schedule a step by delay or local time while the page and Tlamatini remain open.', type: 'Prompt Flows' },
         { id: 'multi_turn', name: '109 Tools, One Multi-Turn Mind', desc: 'Work with 109 tools, a 4,096-iteration ceiling, and a 256-call hard ceiling. The gauge now pairs each main-chat request with its real Ollama token count in one-shot and Multi-Turn, separately for each user. Estimates stay labeled; Context Governor keeps a working tool set available.', type: 'Orchestration' },
-        { id: 'context_preview', name: 'Know Where Your Next Prompt Starts', desc: 'The main-chat baseline refreshes with history, context, modes, skills, reconnects, and completed or cancelled work. Your next question, plan, and question-specific context are not included yet. Optional Ollama probes consume real tokens; unchanged requests reuse cached counts. Disable probing in config.json. Side-agent and ACPX child calls are excluded from the gauge.', type: 'Context Insight' },
+        { id: 'context_preview', name: 'Know Where Your Next Prompt Starts', desc: 'The main-chat baseline refreshes with history, including Drop, plus context, modes, skills, reconnects, and completed or cancelled work. Your next question, plan, and question-specific context are not included yet. Optional Ollama probes consume real tokens; unchanged requests reuse cached counts. Disable probing in config.json. Side-agent and ACPX child calls are excluded from the gauge.', type: 'Context Insight' },
         { id: 'human_control', name: 'You Keep the Final Say', desc: 'Ask Execs pauses before state-changing work, Step-by-Step waits for your READY, and Hard Cancel prevents a stopped run from reviving itself.', type: 'Human Control' },
+        { id: 'drop_message', name: 'Drop a Message. Keep the Conversation.', desc: 'New in v1.73.0 source: remove one saved message, yours or hers, from chat and the history she reads next. No reconnect; surrounding messages stay. Cancel is selected first, and Drop is blocked while she answers. Deletion cannot be undone. Drop both cards to remove an exchange; completed work and separate External MCP memory remain. Unsaved notices only clear from your screen.', type: 'Chat Control' },
         { id: 'truthful_reports', name: 'Proof, Not Green Paint', desc: 'Execution Reports distinguish completed diagnostics from failed work. ACPX checks what a peer delivered and retains transcripts. Image and video safeguards reject incomplete evidence rather than presenting it as a successful analysis.', type: 'Evidence' },
         { id: 'flowcreator', name: 'Describe It. Get a Real .flw.', desc: 'FlowCreator chooses from all 89 agents, checks branches, fields, and data mappings, and repairs invalid plans within limits before delivering a workflow for your review.', type: 'Flow' },
         { id: 'acpx', name: 'Let the Best Coding Agents Collaborate', desc: 'Coordinate Claude Code, Codex, Cursor, Gemini, Qwen, and other coding agents. Optional real-prompt checks reveal readiness; blocked permissions, authentication, configuration, or usage limits get clear explanations with transcripts retained.', type: 'Delegation' },
@@ -275,7 +277,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini v1.72.4 controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Stronger web research and a more expressive speaking avatar join direct voice prompts, real context counts, 89 agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels. Explore her source or install the latest Windows release.',
+    ctaDesc: 'Tlamatini controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Her v1.73.0 source adds per-message Drop to direct voice prompts, real context counts, 89 agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels. Explore the new source or install the published Windows release, v1.72.4.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -298,8 +300,8 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.72.4',
-      desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. Speak your next prompt directly into chat, then choose automatic send or an editable draft. Connect 89 agents, draw reusable conversations, and bring documents, media, 109 built-in Multi-Turn tools, and 29 skills under your command.',
+      subtitle: 'Self-Hosted AI | Source v1.73.0 | Installer v1.72.4',
+      desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. Speak your next prompt, then choose automatic send or an editable draft. In v1.73.0 source, Drop gives you control over individual messages in her next chat history. Connect 89 agents, draw reusable conversations, and bring documents, media, 109 built-in Multi-Turn tools, and 29 skills under your command.',
     },
     presence: {
       label: 'Tlamatini Signal',
@@ -334,7 +336,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She runs on your machine and connects Unreal Engine and Blender control, STM32 / ESP32 / ESPHome / Arduino firmware, Talker speech, and Whisperer listening with code-aware retrieval. Agent and prompt canvases offer complementary ways to orchestrate her. PDFer, PPTXer, and LaTeXer create deliverables; media, messaging, security, and opt-in delegation extend your reach.',
-      p2: 'Published v1.72.4 makes web research more dependable: Googler searches through three tiers, Crawler reads the page you specify, and both recover text that malformed HTML could hide. Refusals and timeouts stay explicit. Clearer avatar lip movement joins direct dictation, Config -> Mic, real Ollama context counts, and Prompt Flow Panel. Install the release or use About -> Check for updates.',
+      p2: 'New in tagged source v1.73.0: keep the conversation you want. Drop removes a selected prompt or answer from the history she reads next, without reconnecting; the messages around it stay. Your open chat tabs stay in sync, and the context gauge refreshes. Direct dictation, Config -> Mic, resilient web research, and Prompt Flow Panel remain. The published installer is still v1.72.4; About -> Check for updates follows published releases.',
       viewSource: 'View Source',
     },
     features: {
@@ -347,7 +349,7 @@ const en = {
         { id: 'embedded', title: 'STM32er, ESP32er, Arduino, and ESPHome', description: 'Mission-critical STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB with fail-safe checks. ESP32er now scaffolds working blink-and-print firmware; ESPHomer offers light and sensor templates with optional separated secrets. Arduino CLI completes the hardware toolkit.' },
         { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer now brings direct dictation to chat with automatic send or editable drafts, configured in Config -> Mic. Live levels and a silence countdown keep capture visible without another window. Image-Interpreter cross-checks visual evidence; Video-Analyzer adds timestamps and summaries. Her separate browser avatar reads answers with clearer lip movement, without a GPU.' },
         { id: 'documents', title: 'PDFer + PPTXer + LaTeXer Studio', description: 'PPTXer creates editable decks with 36 treatments and 17 font pairings, carrying long text onto continuation slides. PDFer combines 24 visual styles with 20 content themes; LaTeXer offers 30 styles for mathematical typesetting. Open existing PDFs in the canvas and choose whole-document context, with optional image analysis.' },
-        { id: 'multi_turn', title: '109 Tools, Context-Aware Multi-Turn', description: 'See measured bytes and real Ollama prompt-token counts for your main chat in one-shot and Multi-Turn. Pending counts stay marked est.; confirmed counts read REAL. The model-reported context limit guides headroom, with local limits respected. Context Governor, Ask Execs, Step-by-Step, and Hard Cancel keep work informed and under your control.' },
+        { id: 'multi_turn', title: '109 Tools, Context-Aware Multi-Turn', description: 'See real Ollama token counts for your main chat in one-shot and Multi-Turn: pending counts read est.; confirmed counts read REAL. Context Governor, Ask Execs, Step-by-Step, and Hard Cancel keep you in command. In v1.73.0 source, Drop removes a selected message from future chat history, not completed actions or separate MCP memory. Save a Create Flow download before dropping its answer.' },
         { id: 'visual_workflows', title: 'Two Canvases. Agents and Conversations.', description: 'Connect 89 agents in the Agentic Control Panel and save .flw workflows. In Prompt Flow Panel, shape prompts, decisions, reference text, and human replies into .fpmt diagrams with per-run context. Both share selection, connection, dragging, zoom, and undo controls. Opening a prompt diagram never starts it.' },
         { id: 'external_mcps', title: 'External MCPs, MCP Doctor, and MCP Adder', description: 'Connect up to five MCP servers over stdio, streamable HTTP, SSE, or WebSocket. MCP Doctor checks readiness, while MCP Adder guides transport choice, secret separation, diagnosis, activation, and a real remote-tool test. Simple scalar mismatches can be repaired before a call is lost.' },
         { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
@@ -359,7 +361,7 @@ const en = {
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'Install the latest published Windows release, v1.72.4, or run her source. Stronger web research, clearer avatar lip movement, real context counts, and Config -> Mic are included. Sign in to Ollama and pull the models below; Config -> Models and Access Keys Wizard handle configuration. Existing installs can use About -> Check for updates. Python 3.12.10 is carried; LaTeXer PDF compilation needs TeX.',
+      desc: 'Install the latest published Windows release, v1.72.4, or run the tagged v1.73.0 source for the new Drop control. The installer already includes resilient web research, clearer avatar lip movement, real context counts, and Config -> Mic. Sign in to Ollama and pull the models below; Config -> Models and Access Keys Wizard handle configuration. Existing installs can use About -> Check for updates. Python 3.12.10 is carried; LaTeXer PDF compilation needs TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Install Tlamatini' },
         { id: 'install_ollama', label: 'Install Ollama' },
@@ -511,7 +513,7 @@ const en = {
     },
     techStack: {
       label: 'Technology',
-      title: 'The Technology Behind Tlamatini v1.72.4',
+      title: 'The Technology Behind Tlamatini v1.73.0',
       groups: [
         {
           category: 'Core & Real-Time Web',
@@ -567,7 +569,8 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.72.4',
+      'Tlamatini v1.73.0',
+      'Drop: Elimina un Mensaje, Conserva la Conversación.',
       'Prompt Flow Panel: Dibuja una Conversación',
       'Siete Operaciones. Tu Próximo Flujo de Prompts.',
       'Dos Lienzos. Controles Compartidos.',
@@ -663,13 +666,13 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini v1.72.4 pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Investiga con búsquedas y lectura web reforzadas; su avatar habla con labios más expresivos. Conteos reales de Ollama, dos lienzos, 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills convierten tu intención en trabajo que puedes inspeccionar.',
+      desc: 'Tlamatini pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Nuevo en el código v1.73.0: Drop elimina un mensaje del chat y conserva la conversación, sin reconectar. Investigación web reforzada, conteos reales de Ollama, dos lienzos, 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills convierten tu intención en trabajo que puedes inspeccionar.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
         agents: 'Agentes',
         skills: 'Skills',
-        version: 'Versión',
+        version: 'Versión del Código',
         iterations: 'Iteraciones',
       },
     },
@@ -705,7 +708,7 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. Tlamatini v1.72.4 reúne investigación web reforzada, conteos reales de Ollama, dictado directo y dos lienzos en un mismo espacio.',
+        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. Su código v1.73.0 suma Drop por mensaje a investigación web, conteos reales, dictado directo y dos lienzos.',
         card1: {
           title: 'Dos Paneles, un Centro de Mando',
           desc: 'Panels abre Agentic Control Panel y Prompt Flow Panel mientras el chat trabaja. Config reúne Configure MCPs, Configure Agents, Models, URLs, claves, Voice y las nuevas preferencias Mic. DB, Skills, MCPs externos y contexto quedan a mano.',
@@ -763,8 +766,9 @@ const es: Translations = {
         { id: 'prompt_flow', name: 'Dibuja una Conversación. Pulsa Play.', desc: 'Prompt Flow Panel reúne siete operaciones: Prompt, Programmed Prompt, Decision, Feed embeddings, Flush embeddings, Clean History y User Commentary. Decide según una respuesta o consulta a una persona; activa Multi-Turn y ACPX por prompt. Valida y controla con Play, Pause o Stop.', type: 'Lienzo de Prompts' },
         { id: 'prompt_context', name: 'Conversaciones Reutilizables, Contexto Propio', desc: 'Transfiere respuestas con {{last_output}}. Cada ejecución conserva historial y referencias propios, separados del chat. Guarda .fpmt y recupera borradores por usuario; abrir nunca ejecuta. Programa pasos por demora u hora local manteniendo abiertos la página y Tlamatini.', type: 'Flujos de Prompts' },
         { id: 'multi_turn', name: '109 Herramientas, una Mente Multi-Turn', desc: 'Trabaja con 109 herramientas, un techo de 4,096 iteraciones y un límite firme de 256 llamadas. El indicador asocia cada solicitud del chat principal con sus tokens reales de Ollama en one-shot y Multi-Turn, por usuario. Las estimaciones se identifican y Context Governor conserva herramientas disponibles.', type: 'Orquestación' },
-        { id: 'context_preview', name: 'Conoce el Punto de Partida de tu Próximo Prompt', desc: 'La base del chat principal se actualiza con historial, contexto, modos, skills, reconexiones y trabajo terminado o cancelado. Aún excluye tu próxima pregunta, plan y contexto específico. Las consultas opcionales a Ollama consumen tokens reales; solicitudes iguales reutilizan conteos en caché. Desactívalas en config.json. Las llamadas de agentes secundarios e hijos ACPX quedan fuera del indicador.', type: 'Contexto Visible' },
+        { id: 'context_preview', name: 'Conoce el Punto de Partida de tu Próximo Prompt', desc: 'La base del chat principal se actualiza con historial, incluido Drop, contexto, modos, skills, reconexiones y trabajo terminado o cancelado. Aún excluye tu próxima pregunta, plan y contexto específico. Las consultas opcionales a Ollama consumen tokens reales; solicitudes iguales reutilizan conteos en caché. Desactívalas en config.json. Las llamadas de agentes secundarios e hijos ACPX quedan fuera del indicador.', type: 'Contexto Visible' },
         { id: 'human_control', name: 'Tú Conservas la Última Palabra', desc: 'Ask Execs pausa antes de cambiar estado, Step-by-Step espera tu READY y Hard Cancel impide que una ejecución detenida vuelva a levantarse.', type: 'Control Humano' },
+        { id: 'drop_message', name: 'Elimina un Mensaje, Conserva la Conversación', desc: 'Nuevo en el código v1.73.0: elimina un mensaje guardado, tuyo o suyo, del chat y del historial que ella leerá después. Sin reconectar; los mensajes alrededor permanecen. Cancel queda seleccionado y Drop se bloquea mientras responde. No se puede deshacer. Elimina ambas tarjetas para quitar un intercambio; el trabajo realizado y la memoria MCP externa permanecen. Los avisos sin guardar sólo se quitan de pantalla.', type: 'Control del Chat' },
         { id: 'truthful_reports', name: 'Evidencia, no Pintura Verde', desc: 'Los reportes distinguen diagnósticos completos de trabajos fallidos. ACPX comprueba la entrega y conserva transcripciones. Las protecciones visuales rechazan evidencia incompleta en vez de presentarla como análisis exitoso.', type: 'Evidencia' },
         { id: 'flowcreator', name: 'Descríbelo. Recibe un .flw Real.', desc: 'FlowCreator elige entre 89 agentes, comprueba ramas, campos y mapeos, y repara planes inválidos dentro de límites antes de entregarte un flujo para revisión.', type: 'Flujo' },
         { id: 'acpx', name: 'Los Mejores Agentes Colaborando', desc: 'Coordina Claude Code, Codex, Cursor, Gemini, Qwen y otros agentes. Las pruebas opcionales con prompts reales comprueban preparación; permisos, autenticación, configuración o límites de uso se explican con transcripciones conservadas.', type: 'Delegación' },
@@ -805,7 +809,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini v1.72.4 controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Investigación web reforzada y un avatar más expresivo se unen a voz directa, conteos reales, 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos. Explora su código o instala la última versión Windows.',
+    ctaDesc: 'Tlamatini controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Su código v1.73.0 suma Drop por mensaje a voz directa, conteos reales, 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos. Explora el nuevo código o instala la versión Windows publicada, v1.72.4.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -828,8 +832,8 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.72.4',
-      desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Dicta tu próximo prompt directamente al chat y elige envío automático o un borrador editable. Conecta 89 agentes, dibuja conversaciones reutilizables y pon documentos, medios, 109 herramientas Multi-Turn integradas y 29 skills bajo tu mando.',
+      subtitle: 'IA Autoalojada | Código v1.73.0 | Instalador v1.72.4',
+      desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Dicta tu próximo prompt y elige envío automático o un borrador editable. En el código v1.73.0, Drop te da control sobre mensajes individuales del historial que ella leerá después. Conecta 89 agentes, dibuja conversaciones reutilizables y pon documentos, medios, 109 herramientas Multi-Turn integradas y 29 skills bajo tu mando.',
     },
     presence: {
       label: 'Señal Tlamatini',
@@ -864,7 +868,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Se ejecuta en tu máquina y conecta control de Unreal Engine y Blender, firmware STM32 / ESP32 / ESPHome / Arduino, habla Talker y escucha Whisperer con comprensión del código. Sus lienzos de agentes y prompts ofrecen formas complementarias de orquestarla. PDFer, PPTXer y LaTeXer crean entregables; medios, mensajería, seguridad y delegación opcional amplían tu alcance.',
-      p2: 'La versión publicada v1.72.4 refuerza la investigación web: Googler busca en tres niveles, Crawler lee la página indicada y ambos recuperan texto que HTML mal formado podía ocultar. Bloqueos y tiempos agotados se informan. Labios más expresivos se unen al dictado, Config -> Mic, conteos reales de Ollama y Prompt Flow Panel. Instala la versión o usa About -> Check for updates.',
+      p2: 'Nuevo en el código etiquetado v1.73.0: conserva la conversación que quieres. Drop quita un prompt o una respuesta del historial que ella leerá después, sin reconectar; los mensajes alrededor permanecen. Tus pestañas del chat se sincronizan y el indicador de contexto se actualiza. Siguen el dictado, Config -> Mic, la investigación web y Prompt Flow Panel. El instalador publicado sigue en v1.72.4; About -> Check for updates sigue las versiones publicadas.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -904,7 +908,7 @@ const es: Translations = {
         {
           id: 'multi_turn',
           title: '109 Herramientas, Contexto a la Vista',
-          description: 'Ve bytes medidos y tokens reales de Ollama para tu chat principal en one-shot y Multi-Turn. Conteos pendientes dicen est.; los confirmados, REAL. El límite reportado por el modelo orienta el espacio disponible, respetando límites locales. Context Governor, Ask Execs, Step-by-Step y Hard Cancel conservan tu control.',
+          description: 'Observa tokens reales de Ollama para el chat principal en one-shot y Multi-Turn: est. mientras están pendientes, REAL al confirmarse. Context Governor, Ask Execs, Step-by-Step y Hard Cancel conservan tu mando. En el código v1.73.0, Drop elimina un mensaje del próximo historial, no acciones realizadas ni memoria MCP aparte. Descarga Create Flow antes de eliminar su respuesta.',
         },
         {
           id: 'visual_workflows',
@@ -941,7 +945,7 @@ const es: Translations = {
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'Instala la última versión Windows publicada, v1.72.4, o ejecuta su código. Incluye investigación web reforzada, labios más expresivos, conteos reales y Config -> Mic. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models y Access Keys Wizard gestionan la configuración. Actualiza desde About -> Check for updates. Lleva Python 3.12.10; compilar PDFs con LaTeXer requiere TeX.',
+      desc: 'Instala la última versión Windows publicada, v1.72.4, o ejecuta el código etiquetado v1.73.0 para usar Drop. El instalador ya incluye investigación web reforzada, labios más expresivos, conteos reales y Config -> Mic. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models y Access Keys Wizard gestionan la configuración. Actualiza desde About -> Check for updates. Lleva Python 3.12.10; compilar PDFs con LaTeXer requiere TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Instalar Tlamatini' },
         { id: 'install_ollama', label: 'Instalar Ollama' },
@@ -1093,7 +1097,7 @@ const es: Translations = {
     },
     techStack: {
       label: 'Tecnología',
-      title: 'La Tecnología Detrás de Tlamatini v1.72.4',
+      title: 'La Tecnología Detrás de Tlamatini v1.73.0',
       groups: [
         {
           category: 'Núcleo y Web en Tiempo Real',
