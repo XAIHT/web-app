@@ -59,7 +59,16 @@ pipeline {
           #     is visible in the console instead of one frozen line;
           #   - the helper is removed on success, failure AND abort, and
           #     helpers left behind by older aborted builds are swept.
+          #
+          # Fixed 2026-10-01 after build #26 died with "EACCES: permission
+          # denied, open '/tmp/package-lock.json'" (npm running as root!):
+          # docker cp keeps the workspace owner (jenkins, uid 1000), and
+          # Docker Desktop's kernel runs with fs.protected_regular=2, which
+          # forbids even root from opening, for writing, a file in a sticky
+          # world-writable dir (/tmp) that it does not own. The files now
+          # go to a private, non-sticky WORK_DIR and are chowned to root.
           HELPER="lockfile-sync-${BUILD_NUMBER}"
+          WORK_DIR="/work"
           NPM_CACHE_VOLUME="xaiht-npm-cache"
           NPM_SYNC_TIMEOUT=900    # seconds npm may run (15 min)
           HELPER_LIFETIME=1200    # helper outlives npm by 5 min
@@ -75,20 +84,28 @@ pipeline {
             -v "$NPM_CACHE_VOLUME":/root/.npm \
             --entrypoint sh node:20-alpine -c "sleep $HELPER_LIFETIME" >/dev/null
 
-          docker cp package.json      "$HELPER":/tmp/package.json
-          docker cp package-lock.json "$HELPER":/tmp/package-lock.json
+          docker exec "$HELPER" mkdir -p "$WORK_DIR"
+          docker cp package.json      "$HELPER":"$WORK_DIR"/package.json
+          docker cp package-lock.json "$HELPER":"$WORK_DIR"/package-lock.json
+          docker exec "$HELPER" chown -R 0:0 "$WORK_DIR"
 
           BEFORE=$(sha256sum package-lock.json | cut -c1-12)
           echo ">>> Syncing package-lock.json (npm limit ${NPM_SYNC_TIMEOUT}s, cache volume ${NPM_CACHE_VOLUME})"
-          if ! docker exec -w /tmp "$HELPER" timeout -s TERM "$NPM_SYNC_TIMEOUT" \
-                 npm install --package-lock-only --no-audit --no-fund \
-                 --loglevel=http --fetch-retries=4 --fetch-retry-maxtimeout=120000; then
-            echo ">>> FAILED: npm could not sync package-lock.json within ${NPM_SYNC_TIMEOUT}s."
+          NPM_RC=0
+          docker exec -w "$WORK_DIR" "$HELPER" timeout -s TERM "$NPM_SYNC_TIMEOUT" \
+            npm install --package-lock-only --no-audit --no-fund \
+            --loglevel=http --fetch-retries=4 --fetch-retry-maxtimeout=120000 || NPM_RC=$?
+          if [ "$NPM_RC" -eq 143 ]; then
+            # busybox timeout exits 143 when it had to kill npm
+            echo ">>> FAILED: npm did not finish syncing package-lock.json within ${NPM_SYNC_TIMEOUT}s."
             echo ">>> Likely cause: registry.npmjs.org is slow or unreachable from Docker."
             echo ">>> Lasting fix: commit an in-sync package-lock.json so this step has nothing to fetch."
             exit 1
+          elif [ "$NPM_RC" -ne 0 ]; then
+            echo ">>> FAILED: npm exited with code ${NPM_RC} (not a timeout) - read the 'npm error' lines above."
+            exit 1
           fi
-          docker cp "$HELPER":/tmp/package-lock.json ./package-lock.json
+          docker cp "$HELPER":"$WORK_DIR"/package-lock.json ./package-lock.json
           AFTER=$(sha256sum package-lock.json | cut -c1-12)
 
           if [ "$BEFORE" = "$AFTER" ]; then
