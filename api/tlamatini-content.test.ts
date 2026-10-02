@@ -82,10 +82,10 @@ describe('Tlamatini v1.74.0 website truth contract', () => {
     }
   });
 
-  it('advertises the current source, published installer, and crown jewels', () => {
+  it('advertises the current release and crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.74.0', 'v1.73.0', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
+      'v1.74.0', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
       'PPTXer', 'Context Governor', '256-call', 'Compact mode',
@@ -222,8 +222,8 @@ describe('Tlamatini v1.74.0 website truth contract', () => {
     expect(setup).toContain('Panels -> Agentic Control Panel');
     expect(setup).toContain('Panels -> Prompt Flow Panel');
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
-    expect(launch).toContain('Source version');
-    expect(launch).not.toContain('Current release');
+    expect(launch).toContain('Current release');
+    expect(launch).not.toContain('Source version');
   });
 
   it('separates direct dictation, microphone preferences, and guided voice commands', () => {
@@ -259,10 +259,10 @@ describe('Tlamatini v1.74.0 website truth contract', () => {
   it('keeps the published installer current without overstating the capabilities', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
-      expect(copy.tlamatini.hero.subtitle).toContain('v1.73.0');
-      expect(copy.tlamatini.installation.desc).toContain('v1.73.0');
+      expect(copy.tlamatini.hero.subtitle).toContain('v1.74.0');
+      expect(copy.tlamatini.installation.desc).toContain('v1.74.0');
       expect(copy.tlamatini.installation.desc).toContain('About -> Check for updates');
-      expect(copy.tlamatini.hero.subtitle).toMatch(/Source v1\.74\.0|Código v1\.74\.0/);
+      expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.74\.0$/);
       const packaging = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
       expect(packaging).toContain('89');
       expect(packaging).toContain('ESPHome');
@@ -356,28 +356,28 @@ describe('Tlamatini v1.74.0 website truth contract', () => {
     }
   });
 
-  it('distinguishes the pushed source tag from the latest published installer', () => {
+  it('presents one current product version across the site and installer', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
-      expect(copy.home.overview.stats.version).toMatch(/Source|Código/);
+      expect(copy.home.overview.stats.version).toBe(lang === 'en' ? 'Version' : 'Versión');
       expect(copy.home.overview.desc).toContain('v1.74.0');
       expect(copy.ascii.phrases).toContain('Tlamatini v1.74.0');
-      expect(copy.tlamatini.hero.subtitle).toMatch(/Installer v1\.73\.0|Instalador v1\.73\.0/);
+      expect(copy.tlamatini.hero.subtitle.match(/v\d+\.\d+\.\d+/g)).toEqual(['v1.74.0']);
+      expect(copy.tlamatini.hero.subtitle).not.toMatch(/Source|Installer|Código|Instalador/);
       expect(copy.tlamatini.installation.desc).toContain('v1.74.0');
-      expect(copy.tlamatini.installation.desc).toContain('v1.73.0');
       expect(copy.footer.ctaDesc).toContain('v1.74.0');
-      expect(copy.footer.ctaDesc).toContain('v1.73.0');
-      expect(copy.home.tools.items.find((item) => item.id === 'windows_delivery')?.desc).toContain('v1.73.0');
-      expect(copy.tlamatini.features.items.find((item) => item.id === 'windows_delivery')?.description).toContain('v1.73.0');
-      expect(JSON.stringify(copy)).not.toMatch(/published v1\.74\.0|publicada v1\.74\.0|instalador v1\.74\.0|installer v1\.74\.0/i);
+      expect(copy.home.tools.items.find((item) => item.id === 'windows_delivery')?.desc).toContain('v1.74.0');
+      expect(copy.tlamatini.features.items.find((item) => item.id === 'windows_delivery')?.description).toContain('v1.74.0');
+      expect(JSON.stringify(copy)).not.toMatch(/v1\.73\.\d|v1\.74\.0 source|código (?:etiquetado )?v1\.74\.0/i);
     }
     const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
-    expect(setup).toContain('Latest published installer: v1.73.0');
-    expect(setup).toContain('Option B: tagged v1.74.0 source, with Compact mode');
+    expect(setup).toContain('Latest published installer: v1.74.0');
+    expect(setup).toContain('Option B: run Tlamatini v1.74.0 from source');
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
-    expect(launch).toContain('Source v1.74.0');
-    expect(launch).toContain('Codigo v1.74.0');
-    expect(launch).toContain('published Windows installer is v1.73.0');
+    expect(launch).toContain('XAIHT presents Tlamatini v1.74.0');
+    expect(launch).toContain('XAIHT presenta Tlamatini v1.74.0');
+    expect(launch).toContain('v1.74.0 Windows installer or source');
+    expect(launch).not.toMatch(/v1\.73\.\d|Source v1\.|Codigo v1\./);
   });
 
   it('describes Compact mode as an honest per-model fit, not a silent downgrade', () => {
@@ -391,11 +391,11 @@ describe('Tlamatini v1.74.0 website truth contract', () => {
       expect(compact).toMatch(/agents, ACPX, and External MCPs pause|pausa agentes, ACPX y MCPs externos/);
       expect(compact).toMatch(/dialog and badge|diálogo y una insignia/);
       expect(compact).toMatch(/complete context|contexto completo/);
-      expect(compact).toMatch(/readable on every model|legibles con cualquier modelo/);
+      expect(compact).toMatch(/readability on every model|lectura con cualquier modelo/);
       expect(compact).toContain('context_compact_mode');
       for (const value of ['auto', 'always', 'never']) expect(compact).toContain(value);
       expect(copy.home.tools.items.find((item) => item.id === 'model_config')?.desc).toMatch(/servers you configured, asked with your token|servidores que configuraste, consultados con tu token/);
-      expect(copy.home.tools.items.find((item) => item.id === 'drop_message')?.desc).toMatch(/v1\.73\.0 installer|instalador v1\.73\.0/);
+      expect(compact).toMatch(/restore Full mode and your enabled tools|recuperar Full y tus herramientas habilitadas/);
       expect(copy.tlamatini.overview.p2).toMatch(/Compact/);
       expect(copy.tlamatini.features.items.find((item) => item.id === 'multi_turn')?.description).toMatch(/silently cut|recortó en silencio/);
       expect(copy.ascii.phrases.some((phrase) => phrase.includes('Compact'))).toBe(true);
@@ -407,11 +407,24 @@ describe('Tlamatini v1.74.0 website truth contract', () => {
     expect(launch).toContain('Compact mode for a small model, the complete context for a big one');
   });
 
+  it('covers authenticated model discovery and the packaged capacity interface', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const models = copy.home.tools.items.find((item) => item.id === 'model_config')?.desc ?? '';
+      expect(models).toMatch(/servers you configured, asked with your token|servidores que configuraste, consultados con tu token/);
+      expect(models).toMatch(/Startup checks use that token too|El arranque también usa ese token/);
+      expect(models).toMatch(/failures name the server and cause|errores identifican servidor y causa/);
+      expect(copy.home.architecture.overview.card1.desc).toMatch(/models from your configured Ollama servers|modelos de tus servidores Ollama configurados/);
+      const delivery = copy.home.tools.items.find((item) => item.id === 'windows_delivery')?.desc ?? '';
+      expect(delivery).toMatch(/capacity dialog|diálogo de capacidad/);
+      expect(delivery).toMatch(/table contrast|contraste de tablas/);
+    }
+  });
+
   it('describes Drop as selective chat-history control, not an undo or a memory wipe', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
       const drop = copy.home.tools.items.find((item) => item.id === 'drop_message')?.desc ?? '';
-      expect(drop).toContain('v1.73.0');
       expect(drop).toMatch(/yours or hers|tuyo o suyo/);
       expect(drop).toMatch(/history she reads next|historial que ella leerá después/);
       expect(drop).toMatch(/No reconnect|Sin reconectar/);
@@ -446,7 +459,7 @@ describe('Tlamatini v1.74.0 website truth contract', () => {
       /v1\.48\.2/i,
       /v1\.51\.\d+\b/i,
       /v1\.65\.\d+\b/i,
-      /v1\.(?:70\.0|72\.\d)\b/i,
+      /v1\.(?:70\.0|72\.\d|73\.\d)\b/i,
       /jcyhsiao\/qwen3\.5cloud:latest/i,
       /\b(?:87|88) (?:workflow[ -]?)?agents\b/i,
       /\b108 (?:built-in )?(?:Multi-Turn )?tools\b/i,

@@ -39,15 +39,15 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini | Source v1.74.0',
+    eyebrow: 'XAIHT presents Tlamatini v1.74.0',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
     platform: 'Explore Tlamatini',
-    proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Source version'],
+    proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Current release'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. Tagged source v1.74.0 fits every request to the model it is sent to: Compact mode for a small model, the complete context for a big one, and readable answer tables on both. Drop, voice prompts, real context counts, two visual canvases, and 109 built-in Multi-Turn tools keep the work under your direction. The published Windows installer is v1.73.0.',
+    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. Tlamatini v1.74.0 fits every request to the model it is sent to: Compact mode for a small model, the complete context for a big one, and readable answer tables on both. Drop, voice prompts, real context counts, two visual canvases, and 109 built-in Multi-Turn tools keep the work under your direction. Available as the v1.74.0 Windows installer or source.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
@@ -77,15 +77,15 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini | Codigo v1.74.0',
+    eyebrow: 'XAIHT presenta Tlamatini v1.74.0',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
     platform: 'Explorar Tlamatini',
-    proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version del codigo'],
+    proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. El codigo etiquetado v1.74.0 ajusta cada solicitud al modelo que la recibe: modo Compact para un modelo pequeno, el contexto completo para uno grande y tablas de respuesta legibles en ambos. Drop, voz directa, conteos reales, dos lienzos y 109 herramientas Multi-Turn integradas mantienen el trabajo bajo tu direccion. El instalador Windows publicado es v1.73.0.',
+    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. Tlamatini v1.74.0 ajusta cada solicitud al modelo que la recibe: modo Compact para un modelo pequeno, el contexto completo para uno grande y tablas de respuesta legibles en ambos. Drop, voz directa, conteos reales, dos lienzos y 109 herramientas Multi-Turn integradas mantienen el trabajo bajo tu direccion. Disponible como instalador Windows v1.74.0 o codigo fuente.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
