@@ -37,10 +37,10 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.74.0',
-      'Compact Mode: Every Request Fits Its Model',
-      'Small Model or Big Model. Always the Right Request.',
-      'Readable Answer Tables on Every Model',
+      'Tlamatini v1.75.0',
+      'Compact Mode: Choose What She Carries',
+      'See Each Tool’s Token Estimate',
+      'Latest Source: Self-modify at Your Command',
       'Drop a Message. Keep the Conversation.',
       'Prompt Flow Panel: Draw a Conversation',
       'Seven Operations. Your Next Reusable Prompt Flow.',
@@ -50,7 +50,7 @@ const en = {
       'Read PDFs. Give Her the Whole Document.',
       'Video Transcripts and Audiovisual Summaries',
       '38 Model Settings. One Config Menu.',
-      'Real Ollama Tokens. Clear Context Headroom.',
+      'Real Ollama Tokens. Context Cuts Made Visible.',
       'Mic Beside Send. Speak Your Next Prompt.',
       'Config -> Mic: Send or Review First',
       'Live Levels. Silence-Gated Dictation.',
@@ -137,7 +137,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. New in v1.74.0: Compact mode fits every request to the model you choose, keeping essential live context within a smaller model\'s reach while a larger model retains her complete request. Drop, real Ollama context counts, two visual canvases, 89 agents, 109 built-in Multi-Turn tools, and 29 skills turn your intent into work you can inspect.',
+      desc: 'Tlamatini puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. New in v1.75.0: choose the tools your model carries with a real Compact-mode switch, estimated token costs, and clear context warnings. Latest source adds optional self-knowledge and more resilient conversations. Two visual canvases, 89 agents, 109 built-in Multi-Turn tools, and 29 skills turn your intent into work you can inspect.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -179,7 +179,7 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Tlamatini v1.74.0 fits each request to its model with Compact mode, beside Drop, real context counts, direct dictation, and two visual canvases.',
+        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Tlamatini v1.75.0 puts Compact mode in your hands, with tool choices, token estimates, and context warnings beside Drop, dictation, and two visual canvases.',
         card1: {
           title: 'Two Panels, One Command Surface',
           desc: 'Panels opens Agentic Control Panel and Prompt Flow Panel. Config groups Configure MCPs, Configure Agents, Models, URLs, keys, Voice, and Mic. Models lists models from your configured Ollama servers. DB, Skills, External MCPs, and context stay close at hand.',
@@ -203,11 +203,11 @@ const en = {
       multiTurn: {
         label: 'Multi-Turn',
         title: 'Context-Aware Orchestration',
-        desc: 'Tlamatini coordinates 109 built-in tools with real Ollama token counts for your main chat. The gauge refreshes as context and modes change; estimates stay labeled until confirmed. Context Governor notices a request a model silently cut, Compact mode fits the next one, Ask Execs protects changes, and Hard Cancel keeps you in command.',
+        desc: 'Tlamatini coordinates 109 built-in tools with real Ollama token counts for your main chat. Compact mode follows your saved tool choices. CONTEXT-WINDOW reveals overload and warns when an answer used a cut request. Ask Execs protects changes, and Hard Cancel keeps you in command.',
         items: [
           {
             title: 'Context Governor',
-            desc: 'Ollama-confirmed tokens, the real window a model actually reads, and a working tool set as context grows. Pending counts stay labeled estimates; missing data is never a false zero.',
+            desc: 'Ollama-confirmed counts, labeled estimates, and a CONTEXT-WINDOW gauge that can show OVER beyond 100%. CUT reveals how much of the request the model read.',
           },
           {
             title: 'Ask Execs + Hard Cancel',
@@ -238,7 +238,7 @@ const en = {
         { id: 'prompt_context', name: 'A Reusable Conversation, Its Own Context', desc: 'Pass answers forward with {{last_output}}. Each run keeps its own history and reference text, separate from chat. Save .fpmt files and recover per-user browser drafts; opening never runs them. Schedule a step by delay or local time while the page and Tlamatini remain open.', type: 'Prompt Flows' },
         { id: 'multi_turn', name: '109 Tools, One Multi-Turn Mind', desc: 'Work with 109 tools, a 4,096-iteration ceiling, and a 256-call hard ceiling. The gauge now pairs each main-chat request with its real Ollama token count in one-shot and Multi-Turn, separately for each user. Estimates stay labeled; Context Governor keeps a working tool set available.', type: 'Orchestration' },
         { id: 'context_preview', name: 'Know Where Your Next Prompt Starts', desc: 'The main-chat baseline refreshes with history, including Drop, plus context, modes, skills, reconnects, and completed or cancelled work. Your next question, plan, and question-specific context are not included yet. Optional Ollama probes consume real tokens; unchanged requests reuse cached counts. Disable probing in config.json. Side-agent and ACPX child calls are excluded from the gauge.', type: 'Context Insight' },
-        { id: 'compact_mode', name: 'Small Model or Big Model. Always the Right Request.', desc: 'New in v1.74.0: when your chosen model cannot read her complete request, Compact mode keeps live system metrics, file search, and the current time, while agents, ACPX, and External MCPs pause. A dialog and badge say so; your MCP choices stay intact. Choose a larger-window model to restore Full mode and your enabled tools. Big models still receive the complete context. Table contrast improves readability on every model. Set context_compact_mode to auto, always, or never.', type: 'Model Fit' },
+        { id: 'compact_mode', name: 'Compact Mode. Your Tools, Your Choice.', desc: 'New in v1.75.0: the toolbar switch really unticks Configure rows, keeping System-Metrics, Files-Search, and Current-Time. Tick back only the agents, tools, and skills you need; External MCPs stay paused. Saved choices apply to the next question without a restart. A model too small for the full selection locks Compact ON. A larger model unlocks it but keeps your picks until you switch it OFF, which enables every row and restores previously active External MCPs.', type: 'Model Fit' },
         { id: 'human_control', name: 'You Keep the Final Say', desc: 'Ask Execs pauses before state-changing work, Step-by-Step waits for your READY, and Hard Cancel prevents a stopped run from reviving itself.', type: 'Human Control' },
         { id: 'drop_message', name: 'Drop a Message. Keep the Conversation.', desc: 'Remove one saved message, yours or hers, from chat and the history she reads next. No reconnect; surrounding messages stay. Cancel is selected first, and Drop is blocked while she answers. Deletion cannot be undone. Drop both cards to remove an exchange; completed work and separate External MCP memory remain. Unsaved notices only clear from your screen.', type: 'Chat Control' },
         { id: 'truthful_reports', name: 'Proof, Not Green Paint', desc: 'Execution Reports distinguish completed diagnostics from failed work. ACPX checks what a peer delivered and retains transcripts. Image and video safeguards reject incomplete evidence rather than presenting it as a successful analysis.', type: 'Evidence' },
@@ -266,22 +266,22 @@ const en = {
         { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Globber finds the file, Grepper searches or reads exact line ranges, and Editor makes precise changes using a byte-exact handoff. Review, rebuild, and manage Git without losing Windows paths or saved program identity.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Create editable PowerPoint decks with 36 treatments and 17 font pairings. PDFer adds 24 visual styles to 20 content themes; LaTeXer offers 30 styles for real typesetting. Measured layouts and clear audit findings support your final review.', type: 'Documents' },
         { id: 'pdf_canvas', name: 'Read the PDF. Bring It into Context.', desc: 'Read a PDF locally without a model call. Use as context prepares the whole document after Continue; optional Process images adds Image-Interpreter. Progress and cancellation stay visible. A failed visual preparation is reported, never loaded as incomplete context.', type: 'Documents' },
-        { id: 'model_config', name: 'Your Models, One Place to Choose', desc: 'Config -> Models puts 38 model, engine, and voice settings in six searchable categories for 21 model-backed agents. Its Ollama list comes from the servers you configured, asked with your token, so a remote GPU shows its own models. Startup checks use that token too; connection failures name the server and cause. Vision pairs Mistral with Gemma and a GLM synthesis; a retired model needs your choice, not a silent substitution.', type: 'Configuration' },
+        { id: 'model_config', name: 'Your Models, One Place to Choose', desc: 'Config -> Models puts 38 model, engine, and voice settings in six searchable categories for 21 model-backed agents. Lists come from the servers you configured, asked with your token; startup checks use it too, and failures name the server and cause. In v1.75.0, Configure dialogs show each row’s estimated token cost and a green, amber, or red budget. Selecting an agent also selects its chat tool, and saved agent choices survive a restart.', type: 'Configuration' },
         { id: 'browser_desktop', name: 'Browser and Desktop Automation', desc: 'Playwrighter drives sites; Mouser maps clicks to screen, window, or screenshot coordinates; Keyboarder checks the target and stops on focus loss. Shoter records capture geometry. Delivered input is reported honestly, not mistaken for application success.', type: 'Automation' },
         { id: 'messaging', name: 'Reach People Through the Right Channel', desc: 'Send and receive through Telegram, WhatsApp, email, browser notifications, or unified Zavu messaging—with explicit identity and operator choice.', type: 'Messaging' },
         { id: 'database', name: 'WAL-Safe Database Protection', desc: 'Backup and stage SQLite databases through the online backup API, verify integrity, and handle WAL/SHM sidecars without pretending a bare file is complete.', type: 'Data' },
-        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'Install v1.74.0 with Compact mode, readable tables, and Drop, or use About -> Check for updates. Python 3.12.10 and local UI assets travel with her; required-file checks cover the capacity dialog, table contrast, and voice settings. Missing or changed files block update handoff while user state stays preserved. Dependency coverage spans all 89 agents, with ESPHome in its separate runtime.', type: 'Windows' },
-        { id: 'self_knowledge', name: 'She Knows How She Is Built', desc: 'First-person self-knowledge helps her explain her architecture. Optional self-modify builds carry a sanitized, rebuildable source snapshot: both visual panels, direct dictation, the context-preview engine, and now the Compact-mode fitter. Shared required-file checks keep the voice settings helper and the new runtime modules accounted for.', type: 'Identity' },
+        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'The Windows installer carries Python 3.12.10 and local UI assets, with required-file checks for the capacity dialog, table contrast, and voice settings. Missing or changed files block update handoff while user state stays preserved. Dependency coverage spans all 89 agents, with ESPHome in its separate runtime. About -> Check for updates follows published releases; see Installation for current download availability.', type: 'Windows' },
+        { id: 'self_knowledge', name: 'Her Self-Knowledge. Your Choice.', desc: 'Latest source adds a Self-modify switch: visible in source runs and builds carrying her self-modify snapshot, hidden otherwise. ON includes her self-knowledge; OFF saves about 28.9K tokens per request and tells her not to read, edit, or rebuild her own code. A model that cannot hold it locks the switch OFF without erasing your choice; a larger model unlocks it. Optional sanitized source snapshots remain rebuildable.', type: 'Identity' },
         { id: 'prompt_catalog', name: 'A Guided First Voice Command', desc: 'VOICE COMMANDS keeps its read-only rehearsal and SPEAK YOUR PROMPT workflow, with transcript read-back and written confirmation for irreversible work. These guided catalog routes are separate from direct Mic dictation: its optional review happens in the normal chat input, not a confirmation dialog.', type: 'Guidance' },
         { id: 'mcp_adder', name: 'Add an External MCP with a Guarded Guide', desc: 'The onboarding skill classifies transport, separates secrets, diagnoses readiness, activates only on operator intent, and proves the remote tool before use.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Long Runs That Keep Moving', desc: 'Long jobs keep their tools and recovery paths; a first step a model cut is re-fitted and resent. Wrapped questions are no longer sent twice, and one-shot chat drops unnecessary system-context filler while retaining live metrics when needed. Completed agent waits return promptly; External MCP calls can repair simple scalar mismatches without losing the request.', type: 'Reliability' },
+        { id: 'dependable_runtime', name: 'Long Runs That Keep Moving', desc: 'Latest source keeps chat moving if a history summary fails: the history is sent unsummarized, while Cancel still stops the run. Ollama stop-sequence limits are respected in chat and image analysis. Wrapped questions are no longer sent twice, and one-shot chat avoids system-context filler. Completed agent waits return promptly; External MCP calls can repair simple scalar mismatches. A cut first step is retried; an answer based on a cut request carries a warning.', type: 'Reliability' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Tlamatini v1.74.0 adds Compact mode, so small local models and big cloud models each receive a request they can read, beside Drop, direct voice prompts, real context counts, 89 agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels. Explore her source or install the latest Windows release.',
+    ctaDesc: 'Tlamatini controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. In v1.75.0, choose what your model carries with Compact mode, token estimates, and visible context warnings. Bring 89 agents, 109 built-in Multi-Turn tools, 29 skills, and two visual panels to your next project. Explore the latest source or choose the published Windows installer.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -304,8 +304,8 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.74.0',
-      desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. Speak your next prompt, then choose automatic send or an editable draft. In v1.74.0, Compact mode fits every request to the model you choose. Connect 89 agents, draw reusable conversations, drop any message, and bring documents, media, 109 built-in Multi-Turn tools, and 29 skills under your command.',
+      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.75.0',
+      desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. In v1.75.0, choose your tools with Compact mode and see their context cost. Latest source adds a Self-modify switch for optional self-knowledge. Connect 89 agents, draw reusable conversations, drop any message, and bring documents, media, 109 built-in Multi-Turn tools, and 29 skills under your command.',
     },
     presence: {
       label: 'Tlamatini Signal',
@@ -340,7 +340,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She runs on your machine and connects Unreal Engine and Blender control, STM32 / ESP32 / ESPHome / Arduino firmware, Talker speech, and Whisperer listening with code-aware retrieval. Agent and prompt canvases offer complementary ways to orchestrate her. PDFer, PPTXer, and LaTeXer create deliverables; media, messaging, security, and opt-in delegation extend your reach.',
-      p2: 'New in v1.74.0: a workspace that adapts to your model. A small model gets Compact mode, with live metrics, file search, and the time; a big model keeps the complete context, and answer tables stay readable. Drop removes a selected message from the history she reads next; your open chat tabs stay in sync, and the context gauge refreshes. Direct dictation, Config -> Mic, and Prompt Flow Panel remain. Install v1.74.0 or use About -> Check for updates.',
+      p2: 'New in v1.75.0: Compact mode becomes your switch, with tool-by-tool choices, token estimates, and a warning if the model reads only part of a request. Latest source adds capacity-aware Self-modify and keeps chat going if a history summary fails. Drop keeps open chat tabs in sync, and the context gauge refreshes. Dictation, Config -> Mic, and Prompt Flow Panel remain. About -> Check for updates follows published installers; the latest source is available now.',
       viewSource: 'View Source',
     },
     features: {
@@ -353,19 +353,19 @@ const en = {
         { id: 'embedded', title: 'STM32er, ESP32er, Arduino, and ESPHome', description: 'Mission-critical STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB with fail-safe checks. ESP32er now scaffolds working blink-and-print firmware; ESPHomer offers light and sensor templates with optional separated secrets. Arduino CLI completes the hardware toolkit.' },
         { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer now brings direct dictation to chat with automatic send or editable drafts, configured in Config -> Mic. Live levels and a silence countdown keep capture visible without another window. Image-Interpreter cross-checks visual evidence; Video-Analyzer adds timestamps and summaries. Her separate browser avatar reads answers with clearer lip movement, without a GPU.' },
         { id: 'documents', title: 'PDFer + PPTXer + LaTeXer Studio', description: 'PPTXer creates editable decks with 36 treatments and 17 font pairings, carrying long text onto continuation slides. PDFer combines 24 visual styles with 20 content themes; LaTeXer offers 30 styles for mathematical typesetting. Open existing PDFs in the canvas and choose whole-document context, with optional image analysis.' },
-        { id: 'multi_turn', title: '109 Tools, Context-Aware Multi-Turn', description: 'See real Ollama token counts for your main chat in one-shot and Multi-Turn: pending counts read est.; confirmed counts read REAL. In v1.74.0, a request a model silently cut is detected, and Compact mode fits the next one. Context Governor, Ask Execs, Step-by-Step, and Hard Cancel keep you in command. Drop removes a selected message from future chat history, not completed actions or separate MCP memory. Save a Create Flow download before dropping its answer.' },
+        { id: 'multi_turn', title: '109 Tools, Context-Aware Multi-Turn', description: 'See real Ollama counts for your main chat in one-shot and Multi-Turn: est. while pending, REAL when confirmed. CONTEXT-WINDOW shows OVER and CUT; a cut answer carries a warning. Compact mode follows selected tools without a restart. Ask Execs, Step-by-Step, and Hard Cancel keep you in command. Drop removes a selected message, not completed actions or separate MCP memory. Save a Create Flow download before dropping its answer.' },
         { id: 'visual_workflows', title: 'Two Canvases. Agents and Conversations.', description: 'Connect 89 agents in the Agentic Control Panel and save .flw workflows. In Prompt Flow Panel, shape prompts, decisions, reference text, and human replies into .fpmt diagrams with per-run context. Both share selection, connection, dragging, zoom, and undo controls. Opening a prompt diagram never starts it.' },
         { id: 'external_mcps', title: 'External MCPs, MCP Doctor, and MCP Adder', description: 'Connect up to five MCP servers over stdio, streamable HTTP, SSE, or WebSocket. MCP Doctor checks readiness, while MCP Adder guides transport choice, secret separation, diagnosis, activation, and a real remote-tool test. Simple scalar mismatches can be repaired before a call is lost.' },
         { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
         { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler lists returned titles and URLs before sharing room among page excerpts, labeling shortened text for deeper reading with Crawler. Both recover text from malformed HTML and report fallback extraction. Deadlines and explicit outcomes keep web research accountable; FAISS + BM25 grounds answers in your project while filtering binary noise.' },
         { id: 'database', title: 'WAL-Safe SQLite Data Handling', description: 'DB Backup and Set DB use SQLite\'s online backup API, integrity validation, clean staging, and WAL/SHM sidecar hygiene so live data can be preserved and handed off without pretending a copied main file is enough.' },
-        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'The published v1.74.0 Windows release brings Compact mode, configured-server model discovery, readable answer tables, and Drop. Direct dictation, real context counts, and both visual panels are included. Python and local UI assets travel with her; build checks cover the capacity dialog and table contrast. Updates verify required files before handoff and preserve user state. Optional sanitized source snapshots support rebuilding.' },
+        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'Python and local UI assets travel with her. Updates verify required files before handoff and preserve user state; optional sanitized source snapshots support rebuilding. Latest source adds the Self-modify switch only where she has her source: ON includes self-knowledge, OFF reduces context use, and a model too small to hold it locks it OFF. The installation section identifies the latest published Windows download.' },
       ],
     },
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'Install the latest published Windows release, v1.74.0, or run her source. Both bring Compact mode, models from your configured Ollama servers, readable answer tables, and Drop, alongside resilient web research, direct dictation, and real context counts. Sign in to Ollama and pull the models below; Config -> Models and Access Keys Wizard handle configuration. Existing installs can use About -> Check for updates. Python 3.12.10 is carried; LaTeXer PDF compilation needs TeX.',
+      desc: 'Tlamatini v1.75.0 is tagged; the latest published Windows release is v1.74.0. Run the latest source for the new Compact-mode controls, Self-modify switch, and chat reliability fixes. About -> Check for updates follows published installers, not source-only changes. Sign in to Ollama and pull the models below; Config -> Models and Access Keys Wizard handle setup. The installer carries Python 3.12.10; LaTeXer PDF compilation needs TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Install Tlamatini' },
         { id: 'install_ollama', label: 'Install Ollama' },
@@ -517,7 +517,7 @@ const en = {
     },
     techStack: {
       label: 'Technology',
-      title: 'The Technology Behind Tlamatini v1.74.0',
+      title: 'The Technology Behind Tlamatini v1.75.0',
       groups: [
         {
           category: 'Core & Real-Time Web',
@@ -525,7 +525,7 @@ const en = {
         },
         {
           category: 'AI, Retrieval & Vision',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama endpoints + glm-5.3:cloud default', 'Anthropic Claude API + external agent CLIs', 'Mistral + Gemma vision; GLM synthesis', 'Binary-aware context + RRF fusion', '38 model settings + real Ollama context gauge', 'Per-model request fitting: Full or Compact'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama endpoints + glm-5.3:cloud default', 'Anthropic Claude API + external agent CLIs', 'Mistral + Gemma vision; GLM synthesis', 'Binary-aware context + RRF fusion', '38 model settings + real Ollama context gauge', 'Compact switch + per-tool token estimates'],
         },
         {
           category: 'Agent & Workflow Platform',
@@ -573,10 +573,10 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.74.0',
-      'Modo Compact: Cada Solicitud Cabe en su Modelo',
-      'Modelo Pequeño o Grande. Siempre la Solicitud Correcta.',
-      'Tablas de Respuesta Legibles con Cualquier Modelo',
+      'Tlamatini v1.75.0',
+      'Modo Compact: Tú Eliges Qué Lleva',
+      'Conoce los Tokens Estimados de Cada Herramienta',
+      'Código Más Reciente: Self-modify Bajo Tu Mando',
       'Drop: Elimina un Mensaje, Conserva la Conversación.',
       'Prompt Flow Panel: Dibuja una Conversación',
       'Siete Operaciones. Tu Próximo Flujo de Prompts.',
@@ -586,7 +586,7 @@ const es: Translations = {
       'Lee PDFs. Dale el Documento Completo.',
       'Transcripciones y Resúmenes Audiovisuales',
       '38 Ajustes de Modelos. Un Menú Config.',
-      'Tokens Reales de Ollama. Contexto a la Vista.',
+      'Tokens Reales de Ollama. Recortes a la Vista.',
       'Mic junto a Send. Dicta tu Próximo Prompt.',
       'Config -> Mic: Enviar o Revisar Primero',
       'Nivel en Vivo. Dictado con Cierre por Silencio.',
@@ -673,7 +673,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Nuevo en v1.74.0: el modo Compact ajusta cada solicitud al modelo que eliges, conservando contexto esencial al alcance de un modelo pequeño y la solicitud completa para uno de mayor capacidad. Drop, conteos reales de Ollama, dos lienzos, 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills convierten tu intención en trabajo que puedes inspeccionar.',
+      desc: 'Tlamatini pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Nuevo en v1.75.0: elige las herramientas de tu modelo con un interruptor Compact real, costos estimados en tokens y avisos claros de contexto. El código más reciente añade autoconocimiento opcional y conversaciones más resistentes. Dos lienzos, 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills convierten tu intención en trabajo que puedes inspeccionar.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -715,7 +715,7 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. Tlamatini v1.74.0 ajusta cada solicitud a su modelo con el modo Compact, junto a Drop, conteos reales, dictado directo y dos lienzos.',
+        desc: 'Unreal Engine, Blender, STM32 y ESP32 se unen a Talker y Whisperer. Tlamatini v1.75.0 suma control Compact y costos en tokens, junto a Drop, dictado y dos lienzos.',
         card1: {
           title: 'Dos Paneles, un Centro de Mando',
           desc: 'Panels abre Agentic Control Panel y Prompt Flow Panel. Config reúne Configure MCPs, Configure Agents, Models, URLs, claves, Voice y Mic; Models lista los modelos de tus servidores Ollama configurados. DB, Skills, MCPs externos y contexto quedan a mano.',
@@ -739,11 +739,11 @@ const es: Translations = {
       multiTurn: {
         label: 'Multi-Turn',
         title: 'Orquestación Consciente del Contexto',
-        desc: 'Tlamatini coordina 109 herramientas con tokens reales de Ollama para tu chat principal. El indicador se actualiza al cambiar contexto y modos; las estimaciones se identifican hasta confirmarse. Context Governor detecta una solicitud que un modelo recortó en silencio, el modo Compact ajusta la siguiente, Ask Execs protege cambios y Hard Cancel conserva tu mando.',
+        desc: 'Tlamatini coordina 109 herramientas con tokens reales de Ollama para tu chat principal. Compact sigue tu selección guardada. CONTEXT-WINDOW revela sobrecarga y avisa si una respuesta usó una solicitud recortada. Ask Execs protege cambios y Hard Cancel conserva tu mando.',
         items: [
           {
             title: 'Context Governor',
-            desc: 'Tokens confirmados por Ollama, la ventana real que un modelo alcanza a leer y herramientas disponibles. Los conteos pendientes siguen como estimaciones; los datos ausentes nunca son un cero falso.',
+            desc: 'Conteos confirmados por Ollama, estimaciones identificadas y un indicador CONTEXT-WINDOW que muestra OVER al superar 100%. CUT revela cuánto de la solicitud leyó el modelo.',
           },
           {
             title: 'Ask Execs + Hard Cancel',
@@ -774,7 +774,7 @@ const es: Translations = {
         { id: 'prompt_context', name: 'Conversaciones Reutilizables, Contexto Propio', desc: 'Transfiere respuestas con {{last_output}}. Cada ejecución conserva historial y referencias propios, separados del chat. Guarda .fpmt y recupera borradores por usuario; abrir nunca ejecuta. Programa pasos por demora u hora local manteniendo abiertos la página y Tlamatini.', type: 'Flujos de Prompts' },
         { id: 'multi_turn', name: '109 Herramientas, una Mente Multi-Turn', desc: 'Trabaja con 109 herramientas, un techo de 4,096 iteraciones y un límite firme de 256 llamadas. El indicador asocia cada solicitud del chat principal con sus tokens reales de Ollama en one-shot y Multi-Turn, por usuario. Las estimaciones se identifican y Context Governor conserva herramientas disponibles.', type: 'Orquestación' },
         { id: 'context_preview', name: 'Conoce el Punto de Partida de tu Próximo Prompt', desc: 'La base del chat principal se actualiza con historial, incluido Drop, contexto, modos, skills, reconexiones y trabajo terminado o cancelado. Aún excluye tu próxima pregunta, plan y contexto específico. Las consultas opcionales a Ollama consumen tokens reales; solicitudes iguales reutilizan conteos en caché. Desactívalas en config.json. Las llamadas de agentes secundarios e hijos ACPX quedan fuera del indicador.', type: 'Contexto Visible' },
-        { id: 'compact_mode', name: 'Modelo Pequeño o Grande. Siempre la Solicitud Correcta.', desc: 'Nuevo en v1.74.0: si el modelo elegido no puede leer su solicitud completa, el modo Compact conserva métricas del sistema en vivo, búsqueda de archivos y la hora, mientras pausa agentes, ACPX y MCPs externos. Un diálogo y una insignia lo indican; tu selección de MCPs no cambia. Elige un modelo de mayor contexto para recuperar Full y tus herramientas habilitadas. Los modelos grandes reciben el contexto completo. El contraste de tablas mejora la lectura con cualquier modelo. Configura context_compact_mode en auto, always o never.', type: 'Ajuste al Modelo' },
+        { id: 'compact_mode', name: 'Modo Compact. Tus Herramientas, Tu Decisión.', desc: 'Nuevo en v1.75.0: el interruptor desmarca realmente las filas de Configure, conservando System-Metrics, Files-Search y Current-Time. Reactiva sólo agentes, herramientas y skills necesarios; los MCPs externos siguen pausados. Guarda y aplica a la siguiente pregunta sin reiniciar. Un modelo sin capacidad para toda la selección bloquea Compact en ON. Uno mayor lo desbloquea y conserva tu selección hasta pasarlo a OFF: activa todas las filas y restaura los MCPs externos antes activos.', type: 'Ajuste al Modelo' },
         { id: 'human_control', name: 'Tú Conservas la Última Palabra', desc: 'Ask Execs pausa antes de cambiar estado, Step-by-Step espera tu READY y Hard Cancel impide que una ejecución detenida vuelva a levantarse.', type: 'Control Humano' },
         { id: 'drop_message', name: 'Elimina un Mensaje, Conserva la Conversación', desc: 'Elimina un mensaje guardado, tuyo o suyo, del chat y del historial que ella leerá después. Sin reconectar; los mensajes alrededor permanecen. Cancel queda seleccionado y Drop se bloquea mientras responde. No se puede deshacer. Elimina ambas tarjetas para quitar un intercambio; el trabajo realizado y la memoria MCP externa permanecen. Los avisos sin guardar sólo se quitan de pantalla.', type: 'Control del Chat' },
         { id: 'truthful_reports', name: 'Evidencia, no Pintura Verde', desc: 'Los reportes distinguen diagnósticos completos de trabajos fallidos. ACPX comprueba la entrega y conserva transcripciones. Las protecciones visuales rechazan evidencia incompleta en vez de presentarla como análisis exitoso.', type: 'Evidencia' },
@@ -802,22 +802,22 @@ const es: Translations = {
         { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Globber encuentra el archivo, Grepper busca o lee rangos exactos y Editor aplica cambios precisos con transferencia byte-exacta. Revisa, recompila y gestiona Git sin perder rutas Windows ni la identidad del código guardado.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Crea PowerPoints editables con 36 tratamientos y 17 combinaciones tipográficas. PDFer añade 24 estilos visuales a 20 temas de contenido; LaTeXer ofrece 30 estilos de maquetación real. Diseños medidos y hallazgos claros apoyan tu revisión final.', type: 'Documentos' },
         { id: 'pdf_canvas', name: 'Lee el PDF. Incorpóralo al Contexto.', desc: 'Lee un PDF local sin llamar a un modelo. Use as context prepara el documento tras Continue; Process images añade Image-Interpreter opcionalmente. Conserva progreso y cancelación. Ella informa una preparación visual fallida y nunca la carga como contexto incompleto.', type: 'Documentos' },
-        { id: 'model_config', name: 'Tus Modelos, en un Solo Lugar', desc: 'Config -> Models reúne 38 ajustes de modelo, motor y voz en seis categorías para 21 agentes con modelos. Su lista Ollama viene de los servidores que configuraste, consultados con tu token, así una GPU remota muestra sus propios modelos. El arranque también usa ese token; los errores identifican servidor y causa. La visión combina Mistral con Gemma y síntesis GLM; un modelo retirado requiere tu decisión, no una sustitución silenciosa.', type: 'Configuración' },
+        { id: 'model_config', name: 'Tus Modelos, en un Solo Lugar', desc: 'Config -> Models reúne 38 ajustes de modelo, motor y voz en seis categorías para 21 agentes con modelos. Las listas vienen de los servidores que configuraste, consultados con tu token; el arranque también lo usa y los errores identifican servidor y causa. En v1.75.0, Configure muestra el costo estimado en tokens de cada fila y un presupuesto verde, ámbar o rojo. Elegir un agente activa su herramienta de chat; las selecciones guardadas sobreviven al reinicio.', type: 'Configuración' },
         { id: 'browser_desktop', name: 'Automatización de Navegador y Escritorio', desc: 'Playwrighter conduce sitios; Mouser sitúa clics en coordenadas de pantalla, ventana o captura; Keyboarder verifica el destino y se detiene si pierde foco. Shoter registra geometría. La entrega de entrada se informa sin confundirla con éxito de la aplicación.', type: 'Automatización' },
         { id: 'messaging', name: 'Llega por el Canal Correcto', desc: 'Envía y recibe por Telegram, WhatsApp, email, notificaciones o mensajería unificada Zavu, con identidad explícita y decisión del operador.', type: 'Mensajería' },
         { id: 'database', name: 'Protección de Base de Datos WAL-Safe', desc: 'Respalda y prepara SQLite mediante la API de backup online, verifica integridad y trata sidecars WAL/SHM sin fingir que un archivo aislado está completo.', type: 'Datos' },
-        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'Instala v1.74.0 con modo Compact, tablas legibles y Drop, o usa About -> Check for updates. Lleva Python 3.12.10 y recursos locales; las comprobaciones cubren el diálogo de capacidad, contraste de tablas y configuración de voz. Archivos requeridos ausentes o modificados bloquean la actualización, conservando tus datos. La cobertura de dependencias abarca 89 agentes y mantiene ESPHome en su entorno separado.', type: 'Windows' },
-        { id: 'self_knowledge', name: 'Ella Sabe Cómo Está Construida', desc: 'Su autoconocimiento le permite explicar su arquitectura. Builds opcionales con automodificación llevan código saneado y reconstruible: ambos lienzos, dictado, el motor de vista previa de contexto y ahora el ajustador del modo Compact. Las comprobaciones de archivos requeridos cubren la configuración de voz y los nuevos módulos.', type: 'Identidad' },
+        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'El instalador Windows lleva Python 3.12.10 y recursos locales, con comprobaciones para el diálogo de capacidad, contraste de tablas y configuración de voz. Archivos requeridos ausentes o modificados bloquean la actualización y conservan tus datos. Las dependencias abarcan 89 agentes y ESPHome mantiene su entorno separado. About -> Check for updates sigue versiones publicadas; consulta Instalación para conocer la descarga disponible.', type: 'Windows' },
+        { id: 'self_knowledge', name: 'Su Autoconocimiento. Tu Decisión.', desc: 'El código más reciente añade Self-modify: visible al ejecutar desde código o en builds con su snapshot de automodificación, oculto en los demás. ON incluye su autoconocimiento; OFF ahorra unos 28.9K tokens por solicitud y le indica no leer, editar ni reconstruir su propio código. Un modelo sin capacidad lo bloquea en OFF sin borrar tu elección; uno mayor lo desbloquea. Los snapshots saneados opcionales siguen siendo reconstruibles.', type: 'Identidad' },
         { id: 'prompt_catalog', name: 'Tu Primer Comando de Voz, Guiado', desc: 'VOICE COMMANDS conserva su ensayo de solo lectura y SPEAK YOUR PROMPT, con lectura del transcript y confirmación escrita para trabajo irreversible. Estas rutas guiadas son distintas del botón Mic: su revisión opcional ocurre en el campo normal del chat, no en un diálogo de confirmación.', type: 'Guía' },
         { id: 'mcp_adder', name: 'Añade un MCP con una Guía Protegida', desc: 'La skill de incorporación clasifica transporte, separa secretos, diagnostica, activa sólo con intención y prueba la herramienta remota antes de usarla.', type: 'MCP' },
-        { id: 'dependable_runtime', name: 'Trabajos Largos que Siguen Adelante', desc: 'Los trabajos largos conservan herramientas y recuperación; un primer paso que un modelo recortó se reajusta y reenvía. Las preguntas envueltas en contexto ya no se envían dos veces; one-shot elimina relleno de contexto del sistema y conserva métricas cuando hacen falta. Las esperas terminan al concluir el agente y los MCPs externos corrigen valores escalares simples sin perder la solicitud.', type: 'Confiabilidad' },
+        { id: 'dependable_runtime', name: 'Trabajos Largos que Siguen Adelante', desc: 'El código más reciente mantiene el chat si falla el resumen del historial: envía el historial sin resumir y Cancel aún detiene la ejecución. Respeta los límites de secuencias de parada de Ollama en chat e imágenes. Las preguntas ya no se envían dos veces y one-shot evita relleno de contexto del sistema. Las esperas terminan al concluir el agente; los MCPs externos corrigen valores escalares simples. Un primer paso recortado se reintenta; una respuesta basada en un recorte lleva un aviso.', type: 'Confiabilidad' },
       ],
     },
   },
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Tlamatini v1.74.0 suma el modo Compact, para que modelos locales pequeños y modelos grandes en la nube reciban una solicitud que pueden leer, junto a Drop, voz directa, conteos reales, 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos. Explora su código o instala la última versión Windows.',
+    ctaDesc: 'Tlamatini controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. En v1.75.0, elige qué lleva tu modelo con Compact, estimaciones de tokens y avisos visibles de contexto. Lleva 89 agentes, 109 herramientas Multi-Turn integradas, 29 skills y dos lienzos a tu próximo proyecto. Explora el código más reciente o elige el instalador Windows publicado.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -840,8 +840,8 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.74.0',
-      desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Dicta tu próximo prompt y elige envío automático o un borrador editable. En v1.74.0, el modo Compact ajusta cada solicitud al modelo que eliges. Conecta 89 agentes, dibuja conversaciones reutilizables, elimina cualquier mensaje con Drop y pon documentos, medios, 109 herramientas Multi-Turn integradas y 29 skills bajo tu mando.',
+      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.75.0',
+      desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. En v1.75.0, elige tus herramientas con Compact y observa su costo de contexto. El código más reciente añade Self-modify para autoconocimiento opcional. Conecta 89 agentes, dibuja conversaciones reutilizables, elimina mensajes con Drop y pon documentos, medios, 109 herramientas Multi-Turn integradas y 29 skills bajo tu mando.',
     },
     presence: {
       label: 'Señal Tlamatini',
@@ -876,7 +876,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Se ejecuta en tu máquina y conecta control de Unreal Engine y Blender, firmware STM32 / ESP32 / ESPHome / Arduino, habla Talker y escucha Whisperer con comprensión del código. Sus lienzos de agentes y prompts ofrecen formas complementarias de orquestarla. PDFer, PPTXer y LaTeXer crean entregables; medios, mensajería, seguridad y delegación opcional amplían tu alcance.',
-      p2: 'Nuevo en v1.74.0: un espacio de trabajo que se adapta a tu modelo. Un modelo pequeño usa el modo Compact, con métricas en vivo, búsqueda de archivos y la hora; uno grande conserva el contexto completo, y las tablas de respuesta siempre se leen. Drop quita un mensaje del historial que ella leerá después; tus pestañas del chat se sincronizan y el indicador de contexto se actualiza. Siguen el dictado, Config -> Mic y Prompt Flow Panel. Instala v1.74.0 o usa About -> Check for updates.',
+      p2: 'Nuevo en v1.75.0: Compact es tu interruptor, con selección de herramientas, estimaciones de tokens y avisos si el modelo lee sólo parte de una solicitud. El código más reciente añade Self-modify según capacidad y mantiene el chat si falla un resumen. Con Drop, tus pestañas del chat se sincronizan y el indicador de contexto se actualiza. Siguen dictado, Config -> Mic y Prompt Flow Panel. About -> Check for updates sigue instaladores publicados; el código más reciente ya está disponible.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -916,7 +916,7 @@ const es: Translations = {
         {
           id: 'multi_turn',
           title: '109 Herramientas, Contexto a la Vista',
-          description: 'Observa tokens reales de Ollama para el chat principal en one-shot y Multi-Turn: est. mientras están pendientes, REAL al confirmarse. En v1.74.0, una solicitud que un modelo recortó en silencio se detecta y el modo Compact ajusta la siguiente. Context Governor, Ask Execs, Step-by-Step y Hard Cancel conservan tu mando. Drop elimina un mensaje del próximo historial, no acciones realizadas ni memoria MCP aparte. Descarga Create Flow antes de eliminar su respuesta.',
+          description: 'Observa conteos reales de Ollama para el chat principal en one-shot y Multi-Turn: est. al esperar, REAL al confirmar. CONTEXT-WINDOW muestra OVER y CUT; una respuesta recortada lleva un aviso. Compact sigue las herramientas seleccionadas sin reiniciar. Ask Execs, Step-by-Step y Hard Cancel conservan tu mando. Drop quita un mensaje, no acciones realizadas ni memoria MCP aparte. Descarga Create Flow antes de eliminar su respuesta.',
         },
         {
           id: 'visual_workflows',
@@ -946,14 +946,14 @@ const es: Translations = {
         {
           id: 'windows_delivery',
           title: 'Una App Windows Real que se Conoce',
-          description: 'La versión Windows publicada v1.74.0 trae modo Compact, modelos del servidor configurado, tablas legibles y Drop. Incluye dictado, conteos reales y ambos lienzos. Lleva Python y recursos locales; las comprobaciones cubren el diálogo de capacidad y el contraste de tablas. Los updates verifican archivos requeridos antes de continuar y conservan datos. Snapshots saneados opcionales permiten reconstruir.',
+          description: 'Python y recursos locales viajan con ella. Los updates verifican archivos requeridos antes de continuar y conservan datos; snapshots saneados opcionales permiten reconstruir. El código más reciente añade Self-modify sólo donde ella tiene su código: ON incluye autoconocimiento, OFF reduce el contexto y un modelo sin capacidad lo bloquea en OFF. La sección Instalación identifica la última descarga Windows publicada.',
         },
       ],
     },
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'Instala la última versión Windows publicada, v1.74.0, o ejecuta su código. Ambas opciones incluyen modo Compact, modelos de tus servidores Ollama, tablas legibles y Drop, junto a investigación web reforzada, dictado directo y conteos reales. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models y Access Keys Wizard gestionan la configuración. Actualiza desde About -> Check for updates. Lleva Python 3.12.10; compilar PDFs con LaTeXer requiere TeX.',
+      desc: 'Tlamatini v1.75.0 ya está etiquetada; la última versión Windows publicada es v1.74.0. Ejecuta el código más reciente para los nuevos controles Compact, Self-modify y mejoras del chat. About -> Check for updates sigue instaladores publicados, no cambios exclusivos del código. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models y Access Keys Wizard gestionan la configuración. El instalador lleva Python 3.12.10; compilar PDFs con LaTeXer requiere TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Instalar Tlamatini' },
         { id: 'install_ollama', label: 'Instalar Ollama' },
@@ -1105,7 +1105,7 @@ const es: Translations = {
     },
     techStack: {
       label: 'Tecnología',
-      title: 'La Tecnología Detrás de Tlamatini v1.74.0',
+      title: 'La Tecnología Detrás de Tlamatini v1.75.0',
       groups: [
         {
           category: 'Núcleo y Web en Tiempo Real',
@@ -1113,7 +1113,7 @@ const es: Translations = {
         },
         {
           category: 'IA, Recuperación y Visión',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama + glm-5.3:cloud predeterminado', 'API Anthropic Claude + CLIs de agentes externos', 'Visión Mistral + Gemma; síntesis GLM', 'Contexto consciente de binarios + fusión RRF', '38 ajustes de modelos + tokens reales de Ollama', 'Ajuste por modelo: solicitud Full o Compact'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama + glm-5.3:cloud predeterminado', 'API Anthropic Claude + CLIs de agentes externos', 'Visión Mistral + Gemma; síntesis GLM', 'Contexto consciente de binarios + fusión RRF', '38 ajustes de modelos + tokens reales de Ollama', 'Interruptor Compact + tokens por herramienta'],
         },
         {
           category: 'Plataforma de Agentes y Flujos',

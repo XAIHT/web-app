@@ -39,7 +39,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.74.0',
+    eyebrow: 'XAIHT presents Tlamatini v1.75.0',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
@@ -47,7 +47,7 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Current release'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. Tlamatini v1.74.0 fits every request to the model it is sent to: Compact mode for a small model, the complete context for a big one, and readable answer tables on both. Drop, voice prompts, real context counts, two visual canvases, and 109 built-in Multi-Turn tools keep the work under your direction. Available as the v1.74.0 Windows installer or source.',
+    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In v1.75.0, Compact mode puts tool selection in your hands, with token estimates and visible context warnings. Latest source adds optional self-knowledge and keeps a failed history summary from ending the conversation. Two visual canvases and 109 built-in Multi-Turn tools turn intent into inspectable work.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
@@ -55,7 +55,7 @@ const copy = {
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
       ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino join firmware to real instruments, with working ESP32 and smart-home templates to start from.'],
       ['Voice and media', 'Talker speaks; Whisperer takes direct prompts from the host microphone. Config -> Mic offers automatic send or an editable draft, with live capture feedback in chat. Her avatar speaks with clearer lip movement; Video-Analyzer adds timestamped media insights.'],
-      ['Human command', 'Real Ollama counts reveal main-chat context; estimates stay labeled. Panels, Config, 38 model settings, and Ask Execs keep decisions yours. Compact mode tells you what a small model pauses; Drop removes a chosen message after confirmation, not completed work or separate MCP memory. Visual errors remain visible during recovery.'],
+      ['Human command', 'Real Ollama counts reveal main-chat context; estimates stay labeled. Compact mode follows your selected tools and shows their token budget. Self-modify in the latest source lets you choose whether she carries her self-knowledge, when the model can hold it. Ask Execs, Step-by-Step, and Hard Cancel keep decisions yours. Drop removes a message, not completed work or separate MCP memory.'],
       ['Reusable orchestration', 'Connect 89 agents in .flw workflows or draw prompts, decisions, and human checkpoints in .fpmt diagrams. Each prompt run keeps its own conversation and context.'],
     ],
     commandLabel: 'Humanly tempered',
@@ -77,7 +77,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.74.0',
+    eyebrow: 'XAIHT presenta Tlamatini v1.75.0',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
@@ -85,7 +85,7 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. Tlamatini v1.74.0 ajusta cada solicitud al modelo que la recibe: modo Compact para un modelo pequeno, el contexto completo para uno grande y tablas de respuesta legibles en ambos. Drop, voz directa, conteos reales, dos lienzos y 109 herramientas Multi-Turn integradas mantienen el trabajo bajo tu direccion. Disponible como instalador Windows v1.74.0 o codigo fuente.',
+    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En v1.75.0, Compact pone las herramientas en tus manos, con estimaciones de tokens y avisos de contexto. El codigo mas reciente suma autoconocimiento opcional y evita que un resumen fallido termine la conversacion. Dos lienzos y 109 herramientas Multi-Turn integradas convierten intencion en trabajo inspeccionable.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
@@ -93,7 +93,7 @@ const copy = {
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
       ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales, partiendo de plantillas funcionales ESP32 y smart home.'],
       ['Voz y medios', 'Talker habla; Whisperer recibe prompts desde el microfono anfitrion. Config -> Mic ofrece envio automatico o borrador editable, con captura visible en chat. Su avatar habla con labios mas expresivos; Video-Analyzer aporta analisis con marcas de tiempo.'],
-      ['Mando humano', 'Tokens reales de Ollama muestran el contexto; las estimaciones se identifican. Panels, Config, 38 ajustes y Ask Execs conservan tu mando. El modo Compact te avisa lo que se pausa con un modelo pequeno; Drop elimina un mensaje tras confirmar, no trabajo realizado ni memoria MCP aparte. Los errores visuales no ocultan la recuperacion.'],
+      ['Mando humano', 'Conteos reales de Ollama muestran el contexto; las estimaciones se identifican. Compact sigue tus herramientas y muestra su presupuesto de tokens. Self-modify en el codigo mas reciente permite elegir su autoconocimiento cuando el modelo tiene capacidad. Ask Execs, Step-by-Step y Hard Cancel conservan tu mando. Drop quita un mensaje, no trabajo realizado ni memoria MCP aparte.'],
       ['Orquestacion reutilizable', 'Conecta 89 agentes en flujos .flw o dibuja prompts, decisiones y consultas humanas en .fpmt. Cada ejecucion conserva su conversacion y contexto propios.'],
     ],
     commandLabel: 'Humanamente templada',
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['89', '109', '29', 'v1.74.0'].map((value, index) => (
+            {['89', '109', '29', 'v1.75.0'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>
