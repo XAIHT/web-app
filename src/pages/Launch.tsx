@@ -39,7 +39,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.76.0',
+    eyebrow: 'XAIHT presents Tlamatini v1.77.0',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
@@ -47,14 +47,14 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Product version'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In v1.76.0, Model Brain tunes your models from published settings and shows the sources. Rich-text flow notes, Windows file opening, and verified document delivery connect two visual canvases and 109 built-in Multi-Turn tools to results you can inspect.',
+    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In v1.77.0, she welcomes you by name and keeps you informed in the first person. Model Brain, two visual canvases, and 109 built-in Multi-Turn tools turn intent into inspectable results. The new installer keeps your generated projects when you uninstall.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
       ['Codebase intelligence', 'Ground research in your project and the web. File-Creator writes or appends; Mover preserves unrelated destination files. PDFer, PPTXer, and LaTeXer turn knowledge into deliverables, keeping layout findings and partial results visible.'],
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
       ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino join firmware to real instruments, with working ESP32 and smart-home templates to start from.'],
-      ['Voice and media', 'Talker speaks; Whisperer takes direct prompts from the host microphone. Config -> Mic offers automatic send or an editable draft, with live capture feedback in chat. Her avatar speaks with clearer lip movement; Video-Analyzer adds timestamped media insights.'],
+      ['Voice and media', 'Talker speaks; Whisperer takes direct prompts from the host microphone. Config -> Mic offers automatic send or an editable draft, with live capture feedback in chat. Her avatar reads first-person chat messages and answers with expressive lips; Video-Analyzer adds timestamped media insights.'],
       ['Human command', 'Choose models in Config and watch Auto-tuning explain the settings. Model Brain preserves supported reasoning within an answer; Compact and Self-modify keep context choices yours. Ask Execs, Step-by-Step, and Hard Cancel preserve your control. Drop removes a message, not completed work or separate MCP memory.'],
       ['Reusable orchestration', 'Connect 89 agents in .flw or guide conversations in .fpmt. User Input asks for a reply; rich-text User Commentary stays a static note. Open either format from Windows, resize Run output, and keep each prompt run separate from chat.'],
     ],
@@ -77,7 +77,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.76.0',
+    eyebrow: 'XAIHT presenta Tlamatini v1.77.0',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
@@ -85,14 +85,14 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En v1.76.0, Model Brain ajusta tus modelos con valores publicados y muestra su origen. Notas enriquecidas, apertura desde Windows y entregables verificados conectan dos lienzos y 109 herramientas Multi-Turn integradas con resultados que puedes revisar.',
+    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En v1.77.0, te recibe por tu nombre y te informa en primera persona. Model Brain, dos lienzos y 109 herramientas Multi-Turn integradas convierten ideas en resultados revisables. El nuevo instalador conserva tus proyectos al desinstalar.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
       ['Inteligencia del codigo', 'Fundamenta la investigacion en tu proyecto y la web. File-Creator escribe o agrega; Mover conserva archivos ajenos del destino. PDFer, PPTXer y LaTeXer crean entregables con problemas de maquetacion y resultados parciales a la vista.'],
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
       ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales, partiendo de plantillas funcionales ESP32 y smart home.'],
-      ['Voz y medios', 'Talker habla; Whisperer recibe prompts desde el microfono anfitrion. Config -> Mic ofrece envio automatico o borrador editable, con captura visible en chat. Su avatar habla con labios mas expresivos; Video-Analyzer aporta analisis con marcas de tiempo.'],
+      ['Voz y medios', 'Talker habla; Whisperer recibe prompts desde el microfono anfitrion. Config -> Mic ofrece envio automatico o borrador editable, con captura visible en chat. Su avatar lee mensajes en primera persona y respuestas con labios expresivos; Video-Analyzer aporta analisis con marcas de tiempo.'],
       ['Mando humano', 'Elige modelos en Config y observa Auto-tuning explicar sus ajustes. Model Brain conserva razonamiento compatible dentro de una respuesta; Compact y Self-modify mantienen tus decisiones de contexto. Ask Execs, Step-by-Step y Hard Cancel conservan tu mando. Drop quita un mensaje, no trabajo realizado ni memoria MCP aparte.'],
       ['Orquestacion reutilizable', 'Conecta 89 agentes en .flw o guia conversaciones en .fpmt. User Input pide una respuesta; User Commentary conserva notas enriquecidas estaticas. Abre ambos desde Windows, ajusta Run output y separa cada ejecucion del chat.'],
     ],
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['89', '109', '29', 'v1.76.0'].map((value, index) => (
+            {['89', '109', '29', 'v1.77.0'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>
