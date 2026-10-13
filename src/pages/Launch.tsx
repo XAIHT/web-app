@@ -39,7 +39,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.78.0',
+    eyebrow: 'XAIHT presents Tlamatini v1.82.0',
     title: 'Command the whole workspace.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'View source',
@@ -47,14 +47,14 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Product version'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In v1.78.0, About -> Usage shows reported balances and measured activity while she works. Float her avatar, make room for the conversation, and send several images in one analysis run. Two visual canvases and 109 built-in Multi-Turn tools keep ideas moving toward results.',
+    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. With v1.82.0, read Markdown as a page, turn video links into insights, and install with a recovery copy. Familiar controls connect the chat and both canvases. About -> Usage shows reported balances and measured activity while 109 built-in Multi-Turn tools keep work moving.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
-      ['Codebase intelligence', 'Ground research in your project and the web. File-Creator writes or appends; Mover preserves unrelated destination files. PDFer, PPTXer, and LaTeXer turn knowledge into deliverables, keeping layout findings and partial results visible.'],
+      ['Codebase intelligence', 'Read Markdown in Preview or Source; keep the original for context and saving. Ground research in your project and the web. File-Creator writes or appends; Mover preserves unrelated destination files. PDFer, PPTXer, and LaTeXer turn knowledge into deliverables, keeping layout findings and partial results visible.'],
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
       ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino join firmware to real instruments, with working ESP32 and smart-home templates to start from.'],
-      ['Voice and media', 'Talker speaks; Whisperer turns host-microphone speech into direct prompts or editable drafts. Float her avatar and resize the composer with pointer or keyboard. Image-Interpreter accepts multi-image lists without duplicate files; Video-Analyzer adds timestamped insights.'],
+      ['Voice and media', 'Talker speaks; Whisperer turns host-microphone speech into direct prompts or editable drafts. Float her avatar and resize the composer with pointer or keyboard. Image-Interpreter accepts multi-image lists without duplicate files. Video-Analyzer fetches supported YouTube, Vimeo, and direct media links for timestamped transcripts and summaries.'],
       ['Human command', 'Model Brain tunes your models; About -> Usage separates reported account balances from measured chat activity. View 7/30-day charts without interrupting her answer. Compact, Self-modify, Ask Execs, Step-by-Step, and Hard Cancel keep you in command. Drop removes a message, not completed work or separate MCP memory.'],
       ['Reusable orchestration', 'Connect 89 agents in .flw or guide conversations in .fpmt. User Input asks for a reply; rich-text User Commentary stays a static note. Open either format from Windows, resize Run output, and keep each prompt run separate from chat.'],
     ],
@@ -77,7 +77,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.78.0',
+    eyebrow: 'XAIHT presenta Tlamatini v1.82.0',
     title: 'Comanda todo el espacio de trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Ver codigo',
@@ -85,14 +85,14 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En v1.78.0, About -> Usage muestra saldos reportados y actividad medida mientras trabaja. Separa su avatar, dale espacio al chat y analiza varias imagenes en una ejecucion. Dos lienzos y 109 herramientas Multi-Turn integradas acercan tus ideas a resultados.',
+    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. Con v1.82.0, lee Markdown como una pagina, convierte enlaces de video en conocimiento e instala con una copia de recuperacion. Controles familiares conectan chat y ambos lienzos. About -> Usage muestra saldos reportados y actividad medida mientras 109 herramientas Multi-Turn integradas impulsan el trabajo.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
-      ['Inteligencia del codigo', 'Fundamenta la investigacion en tu proyecto y la web. File-Creator escribe o agrega; Mover conserva archivos ajenos del destino. PDFer, PPTXer y LaTeXer crean entregables con problemas de maquetacion y resultados parciales a la vista.'],
+      ['Inteligencia del codigo', 'Lee Markdown en Preview o Source; conserva el original para contexto y guardado. Fundamenta la investigacion en tu proyecto y la web. File-Creator escribe o agrega; Mover conserva archivos ajenos del destino. PDFer, PPTXer y LaTeXer crean entregables con problemas de maquetacion y resultados parciales a la vista.'],
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
       ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales, partiendo de plantillas funcionales ESP32 y smart home.'],
-      ['Voz y medios', 'Talker habla; Whisperer convierte la voz del microfono anfitrion en prompts o borradores editables. Separa su avatar y ajusta el area de escritura con puntero o teclado. Image-Interpreter admite listas sin duplicar archivos; Video-Analyzer aporta analisis con marcas de tiempo.'],
+      ['Voz y medios', 'Talker habla; Whisperer convierte la voz del microfono anfitrion en prompts o borradores editables. Separa su avatar y ajusta el area de escritura con puntero o teclado. Image-Interpreter admite listas sin duplicar archivos. Video-Analyzer descarga enlaces compatibles de YouTube, Vimeo y medios directos para transcripciones y resumenes con marcas de tiempo.'],
       ['Mando humano', 'Model Brain ajusta tus modelos; About -> Usage separa saldos reportados de actividad medida del chat. Consulta graficas de 7/30 dias sin interrumpir la respuesta. Compact, Self-modify, Ask Execs, Step-by-Step y Hard Cancel mantienen tu mando. Drop quita un mensaje, no trabajo realizado ni memoria MCP aparte.'],
       ['Orquestacion reutilizable', 'Conecta 89 agentes en .flw o guia conversaciones en .fpmt. User Input pide una respuesta; User Commentary conserva notas enriquecidas estaticas. Abre ambos desde Windows, ajusta Run output y separa cada ejecucion del chat.'],
     ],
@@ -152,7 +152,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['89', '109', '29', 'v1.78.0'].map((value, index) => (
+            {['89', '109', '29', 'v1.82.0'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>

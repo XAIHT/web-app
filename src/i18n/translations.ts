@@ -37,7 +37,7 @@ const en = {
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
-      'Tlamatini v1.78.0',
+      'Tlamatini v1.82.0',
       'Model Brain: Tuned to the Model You Choose',
       'Compact Mode: Your Tools, Their Token Cost',
       'Self-modify at Your Command',
@@ -47,8 +47,8 @@ const en = {
       'Open .flw and .fpmt Straight from Windows',
       'Undo, Duplicate, Zoom. Keep the Whole Picture.',
       'PPTXer Creates Editable PowerPoint Decks',
-      'Read PDFs. Give Her the Whole Document.',
-      'Video Transcripts and Audiovisual Summaries',
+      'PDFs and Markdown. Read, Then Give Her Context.',
+      'Video Links Become Transcripts and Insights',
       '38 Model Settings. One Config Menu.',
       'Real Ollama Tokens. Context Cuts Made Visible.',
       'Mic Beside Send. Speak Your Next Prompt.',
@@ -103,7 +103,7 @@ const en = {
       'WAL-Safe SQLite Backup + Staging',
       'Multi-Monitor Shoter Proof',
       'Bulk Checkbox Control',
-      'Float Her Avatar. Make Room for Your Words.',
+      'Float Her Avatar. Resize Every Pane.',
       'Bot or Personal-Account Messaging',
       'Config API-Keys Wizard',
       'Native Context Picker',
@@ -121,7 +121,7 @@ const en = {
       'Per-User Hard Cancel That Stays Cancelled',
       'Long Recon Runs Without Premature Reaping',
       'Structured External-MCP Results',
-      'New Installer. Keep Your Templates.',
+      'Install, Recover, Retry. Keep Your Projects.',
       'Configurable Web Port',
       'Tlamatini-FlowPills Discovery',
       'NetSpeed-Calculator Measures the Real Connection',
@@ -137,7 +137,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: 'Tlamatini puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. New in v1.78.0: see reported credits and measured activity in About -> Usage, give your conversation more room, and bring several images into one analysis run. With 89 agents, 109 built-in Multi-Turn tools, and 29 skills, your workspace becomes a place to build, inspect, and act.',
+      desc: 'Tlamatini puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. In v1.82.0, read Markdown as a page, turn video links into knowledge, and start with recoverable Windows setup. One familiar workspace brings 89 agents, 109 built-in Multi-Turn tools, and 29 skills to your next idea.',
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -179,7 +179,7 @@ const en = {
       overview: {
         label: 'Architecture',
         title: 'Built as a Self-Hosted AI Control Plane',
-        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. Tlamatini v1.78.0 adds Usage insight, more room to chat, and flexible image lists. Your work, your command.',
+        desc: 'Unreal Engine, Blender, STM32, and ESP32 meet Talker speech and Whisperer listening. In v1.82.0: Markdown reading, video links, and one familiar workspace. Your work, your command.',
         card1: {
           title: 'Two Panels, One Command Surface',
           desc: 'Panels opens Agentic Control Panel and Prompt Flow Panel. Config holds Configure MCPs, Configure Agents, Models, Voice, and Mic; Model Brain tunes saved models. About -> Usage shows measured activity. DB, Skills, and External MCPs stay close.',
@@ -192,7 +192,7 @@ const en = {
       rag: {
         label: 'RAG System',
         title: 'Advanced Retrieval-Augmented Generation',
-        desc: 'Bring projects and whole PDFs into the conversation. FAISS + BM25 keeps answers grounded, with binary filtering and GPU preflight. Choose text-only PDF context or opt into Image-Interpreter. Safeguards reject incomplete visual preparation instead of loading it as usable context.',
+        desc: 'Bring projects, whole PDFs, and original Markdown into the conversation. FAISS + BM25 grounds answers, with binary filtering and GPU preflight. Choose text-only PDF context or Image-Interpreter; incomplete visual preparation is rejected.',
         nodes: [
           { name: 'Load Context', desc: 'Project trees or whole PDFs from the canvas' },
           { name: 'Binary Guard', desc: 'Fast byte-level filtering with fail-open safety' },
@@ -253,11 +253,11 @@ const en = {
         { id: 'esp_firmware', name: 'ESP32, Arduino, and ESPHome', desc: 'Start ESP32 firmware from a bundled blink-and-print project, or scaffold ESPHome light and sensor devices with optional separated secrets. Build, upload, and observe through PlatformIO, Arduino CLI, or ESPHome, with hardware preflight checks.', type: 'Embedded' },
         { id: 'robotic_loop', name: 'A Robotic Loop That Can See', desc: 'STM32er acts, Camcorder records, and Video-Analyzer checks motion before Forker chooses the next path. A robotics pass requires two explicit independent passes; missing evidence cannot pass. Recovery branches can respond to a failed analysis attempt.', type: 'Vision' },
         { id: 'image_vision', name: 'Two Visual Readings. One Cross-Checked Report.', desc: 'Image-Interpreter uses Mistral and Gemma in parallel, then GLM synthesizes their readings. Send comma-separated image paths in one run: repeated files are analyzed once, unresolved entries are reported, and an existing filename containing a comma stays intact. Read screenshots, charts, photos, and PDF imagery with OCR and spatial detail. Visual checks still require both observers and completed synthesis.', type: 'Vision' },
-        { id: 'analysis_recovery', name: 'Visible Errors. Recovery Still Running.', desc: 'Image, video, and PDF failures collect in one non-modal Fatal analysis errors dialog. Dismiss hides it without erasing history or cancelling work; a new error brings it back. Existing retries and flow-recovery routes stay active with your chosen models, while incomplete analysis is rejected.', type: 'Recovery' },
+        { id: 'analysis_recovery', name: 'Visible Errors. Recovery Still Running.', desc: 'Fatal analysis errors collects image, video, and PDF failures. Dismiss hides it without erasing history or cancelling work. Existing retries keep your chosen models. Video-Analyzer checks GPU readiness and sizes CPU threads to your machine. A repairable site change can trigger one private downloader update and retry, without changing your Python. Sign-in, unavailable media, network, and timeout failures stay explicit. Source-only follow-up, not in the v1.82.0 installer: invalid or incomplete image/video requests are refused for correction without a fatal alert; real failures still surface.', type: 'Recovery' },
         { id: 'whisperer', name: 'Speak a Prompt. Choose When She Acts.', desc: 'Mic beside Send starts Whisperer directly on the Tlamatini host microphone. Live levels and a silence countdown stay in chat; defaults are 3.5 seconds of silence and a 300-second cap. Send automatically or keep an editable draft without changing your chat modes. Local recognition has CPU fallback; optional cloud engines receive your audio. Standalone Whisperer also transcribes files.', type: 'Voice' },
         { id: 'mic_preferences', name: 'A Microphone Tuned to You', desc: 'Config -> Mic chooses auto-send or review, host input, gain, silence timing, recording limit, sensitivity, language, English translation, sample rate, channels, and local beam/VAD options. Preferences stay in this browser and apply to the next recording; unset fields inherit defaults. Config -> Models -> Speech selects the recognizer. Voice controls the avatar, separately.', type: 'Voice Settings' },
         { id: 'talker', name: 'Talker Gives Tlamatini Her Voice', desc: 'Generate expressive female-voice audio, save it as WAV, and play it aloud. Separately, her browser avatar reads answers and warm first-person status messages with installed voices. Speech-timed lips follow her familiar portrait without exaggerated motion, a GPU, or an extra language model.', type: 'Voice' },
-        { id: 'media', name: 'Video You Can Ask Questions About', desc: 'Video-Analyzer transcribes selected audio tracks without opening a microphone, then can combine speech with two visual observers for timestamped summaries and action items. Coverage limits stay explicit. Visual checks reject failed observers or synthesis, while preserving retries and recovery routes.', type: 'Media' },
+        { id: 'media', name: 'Video Links Become Usable Knowledge', desc: 'Included in v1.82.0: ask Video-Analyzer to transcribe or summarize a supported YouTube, Vimeo, or direct media link. She fetches one item, not a playlist; transcription downloads audio only and never opens a microphone. Choose audio tracks in local videos, or transcribe an audio file. Summaries combine speech and two visual observers into timestamped findings and action items, with the source title and URL. Reuse downloads and join picture with sound without a separate ffmpeg install. Coverage limits stay explicit. Visual checks reject failed observers or synthesis, while preserving retries and recovery routes.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Measures What Matters', desc: 'Measure download, upload, latency, jitter, packet loss, and bufferbloat across several keyless providers—with confidence intervals, not one flattering number.', type: 'Network' },
         { id: 'googler', name: 'Googler Finds Better Paths to the Web', desc: 'Search across six parallel HTTP routes, eight real-browser routes, and an identified open-knowledge fallback. Relevance checks filter off-topic hits; engine cooldowns avoid repeated refusals. One time budget bounds the search, and Cancel stops it from chat. No CAPTCHA or access-control bypass. Structured dorks, lawful-source presets, and URL-only results keep research focused. Blocks, timeouts, unreachable sites, and genuine no matches stay distinct.', type: 'Research' },
         { id: 'crawler', name: 'Read the Page You Actually Asked For', desc: 'Crawler reads the specified page by default, then analyzes raw source or readable text. Expand to linked pages when you choose, with page, size, and time limits. Bot walls and timeouts are reported, not analyzed as content; an empty crawl explains why. For JavaScript-driven pages, choose Playwrighter.', type: 'Web Reading' },
@@ -265,12 +265,12 @@ const en = {
         { id: 'security_agents', name: 'Three Paths for Authorized Recon', desc: 'Use Discoverer for ProjectDiscovery, Nmapper for local nmap, and Kalier for a configured Kali box—each with clear boundaries and honest results.', type: 'Security' },
         { id: 'codebase', name: 'She Works Across the Whole Codebase', desc: 'Globber finds the file, Grepper reads exact lines, and Editor applies precise changes. File-Creator can write or append without replacing existing content. Mover merges folders while preserving unrelated files and reports incomplete transfers; same-name files may still be replaced. Review, rebuild, and manage Git with Windows paths intact.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Build editable PowerPoint decks with 36 treatments and 17 font pairings. PDFer offers 24 visual styles and 20 content themes; LaTeXer adds 30 styles. Real PDFs are verified before delivery, layout findings stay visible, and heavily reduced repairs receive a .DEGRADED.pdf name. Document and capture agents retain finished files if Windows blocks the requested folder.', type: 'Documents' },
-        { id: 'pdf_canvas', name: 'Read the PDF. Bring It into Context.', desc: 'Read a PDF locally without a model call. Use as context prepares the whole document after Continue; Process images optionally adds Image-Interpreter. Failed visual preparation is never loaded as incomplete context. If another account signs in from the same browser, a refused upload explains the mismatch, marks the failed step, and asks you to reload.', type: 'Documents' },
+        { id: 'pdf_canvas', name: 'PDFs and Markdown, Ready for Context', desc: 'Read PDFs locally without a model call. Use as context prepares the whole document after Continue; Process images optionally adds Image-Interpreter. Failed visual preparation is never loaded as incomplete context. If another account signs in, a refused upload marks the failed step and asks you to reload. Open or drop .md and .markdown files into a rendered Preview, with Source one click away. Choose folder connects relative images and linked Markdown. Copy, Use as context, and Save preserve the original Markdown. Rendering uses local libraries, not a CDN; remote images can still load from the web.', type: 'Documents' },
         { id: 'model_config', name: 'Model Brain. Choose a Model, See It Tune.', desc: 'Config -> Models brings 38 settings across six categories for 21 model-backed agents. Save opens live Auto-tuning with the source of each value. Model Brain uses vendor profiles, learns unfamiliar models from published settings, or falls back to Ollama and model defaults. Your overrides win, context respects model capacity, and learned profiles survive updates. Lists use your configured servers and token. Configure retains estimated token costs and saved tool choices.', type: 'Configuration' },
         { id: 'browser_desktop', name: 'Browser and Desktop Automation', desc: 'Playwrighter drives sites; Mouser maps clicks to screen, window, or screenshot coordinates; Keyboarder checks the target and stops on focus loss. Shoter records capture geometry. Delivered input is reported honestly, not mistaken for application success.', type: 'Automation' },
         { id: 'messaging', name: 'Reach People Through the Right Channel', desc: 'Send and receive through Telegram, WhatsApp, email, browser notifications, or unified Zavu messaging—with explicit identity and operator choice.', type: 'Messaging' },
         { id: 'database', name: 'WAL-Safe Database Protection', desc: 'Backup and stage SQLite databases through the online backup API, verify integrity, and handle WAL/SHM sidecars without pretending a bare file is complete.', type: 'Data' },
-        { id: 'windows_delivery', name: 'A Real Windows Application', desc: 'Python 3.12.10 and local UI assets travel with her; dependencies cover 89 agents, with ESPHome isolated. Updates verify required files and preserve user state. Windows opens .flw and .fpmt without running them; logs stay plain text. The new installer supplies an uninstaller that keeps nonempty project folders, including Templates and doc_generated, preserving user content while removing Temp scratch. Locked files report incomplete removal. In-app updates keep the existing Uninstaller.exe.', type: 'Windows' },
+        { id: 'windows_delivery', name: 'Setup That Can Recover', desc: 'Install and uninstall with clear progress, Retry, Change folder, and a readable local log. Setup verifies a recovery copy before changing files and attempts restoration after interruption. Failed recovery keeps its copies and explains what remains. Locked files identify their owner when available; other apps stay open. Python 3.12.10 travels with her, and logs stay plain text. Dependencies cover 89 agents with ESPHome isolated; updates verify required files. Removal keeps agents and nonempty project folders, preserving user content; Temp scratch goes after success, and incomplete removal is reported. In-app updates keep the existing Uninstaller.exe; use the new Installer to replace it.', type: 'Windows' },
         { id: 'self_knowledge', name: 'Her Self-Knowledge. Your Choice.', desc: 'Self-modify is visible in source runs and builds carrying her self-modify snapshot, hidden otherwise. ON includes her self-knowledge; OFF saves about 28.9K tokens per request and tells her not to read, edit, or rebuild her own code. A model that cannot hold it locks the switch OFF without erasing your choice; a larger model unlocks it. Optional sanitized source snapshots remain rebuildable.', type: 'Identity' },
         { id: 'prompt_catalog', name: 'A Guided First Voice Command', desc: 'VOICE COMMANDS keeps its read-only rehearsal and SPEAK YOUR PROMPT workflow, with transcript read-back and written confirmation for irreversible work. These guided catalog routes are separate from direct Mic dictation: its optional review happens in the normal chat input, not a confirmation dialog.', type: 'Guidance' },
         { id: 'mcp_adder', name: 'Add an External MCP with a Guarded Guide', desc: 'The onboarding skill classifies transport, separates secrets, diagnoses readiness, activates only on operator intent, and proves the remote tool before use.', type: 'MCP' },
@@ -281,7 +281,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: 'Tlamatini controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. With v1.78.0, see measured usage while she works, shape the chat workspace, and give her more visual evidence in one run. Put Model Brain, 89 agents, 109 built-in Multi-Turn tools, and 29 skills behind your next idea.',
+    ctaDesc: 'Tlamatini controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Start with v1.82.0: recoverable setup, readable Markdown, and video links you can turn into knowledge. Put Model Brain, 89 agents, 109 built-in Multi-Turn tools, and 29 skills behind your next idea.',
     viewSource: 'View Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -304,8 +304,8 @@ const en = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Projects',
-      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.78.0',
-      desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. Tlamatini v1.78.0 adds About -> Usage, a more flexible chat workspace, and multi-image analysis. She greets you in the first person. Put 89 agents, 109 built-in Multi-Turn tools, and 29 skills to work.',
+      subtitle: 'Self-Hosted, Cloud-Capable AI | v1.82.0',
+      desc: 'She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. Tlamatini v1.82.0 brings recoverable setup, Markdown Preview, and video-link analysis into one familiar workspace. She greets you in the first person. Put 89 agents, 109 built-in Multi-Turn tools, and 29 skills to work.',
     },
     presence: {
       label: 'Tlamatini Signal',
@@ -340,7 +340,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She runs on your machine and connects Unreal Engine and Blender control, STM32 / ESP32 / ESPHome / Arduino firmware, Talker speech, and Whisperer listening with code-aware retrieval. Agent and prompt canvases offer complementary ways to orchestrate her. PDFer, PPTXer, and LaTeXer create deliverables; media, messaging, security, and opt-in delegation extend your reach.',
-      p2: 'New in v1.78.0: About -> Usage brings reported credits, refill timing, and 7/30-day activity into view while she works. Its Models tab shows measured chat calls, not an account-wide breakdown. Float her avatar and resize the composer to make room for the conversation; dock her again when you prefer. Image-Interpreter now accepts image-path lists without repeating files. Model Brain and Prompt Flow Panel remain at your command. Update through About -> Check for updates.',
+      p2: 'New in v1.82.0: read Markdown in Preview or Source, transcribe supported video links, and install with a verified recovery copy. Chat, Prompt Flow Panel, Agentic Control Panel, and the PDF viewer share familiar controls, with mouse or keyboard pane resizing. Model Brain and About -> Usage remain close: Models shows measured chat calls, not an account-wide breakdown. About -> Check for updates delivers the published app; run the new Installer to refresh the uninstaller too.',
       viewSource: 'View Source',
     },
     features: {
@@ -351,21 +351,21 @@ const en = {
         { id: 'netspeed', title: 'NetSpeed-Calculator Measures the Real Connection', description: 'Measure download, upload, latency, jitter, packet loss, and bufferbloat across multiple keyless providers, with repeated samples and confidence intervals instead of one flattering speed-test number.' },
         { id: 'creative_engines', title: 'Tlamatini Controls Unreal Engine and Blender', description: 'Drive a live Unreal editor through 53 commands, turn one prompt into a ready-to-build Unreal Engine 5.8 C++ project, or create, inspect, materialize, capture, and render Blender scenes through the official MCP add-on.' },
         { id: 'embedded', title: 'STM32er, ESP32er, Arduino, and ESPHome', description: 'Mission-critical STM32er spans Blue Pill through F7 / G / L / H7 / U5 / WB with fail-safe checks. ESP32er now scaffolds working blink-and-print firmware; ESPHomer offers light and sensor templates with optional separated secrets. Arduino CLI completes the hardware toolkit.' },
-        { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer brings direct dictation with automatic send or editable drafts from Config -> Mic. Her floating avatar frees space for a resizable composer while reading first-person messages with expressive lips. Image-Interpreter accepts lists of image paths and cross-checks visual evidence; Video-Analyzer adds timestamps and summaries. Her browser voice needs no GPU.' },
+        { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer brings direct dictation with automatic send or editable drafts from Config -> Mic. Her floating avatar frees space for a resizable composer while reading first-person messages with expressive lips. Image-Interpreter accepts lists of image paths and cross-checks visual evidence. Video-Analyzer turns supported links into timestamped transcripts and audiovisual summaries. Her browser voice needs no GPU.' },
         { id: 'documents', title: 'PDFer + PPTXer + LaTeXer Studio', description: 'PPTXer creates editable decks with 36 treatments and 17 font pairings; PDFer offers 24 styles and 20 themes. LaTeXer combines 30 styles with focused repairs for large documents, verified PDF delivery, and visible layout findings. A repair that removes substantial content gets a .DEGRADED.pdf name. Finished documents and captures survive a blocked destination, with their actual saved path reported.' },
         { id: 'multi_turn', title: 'Know Your Context. See Your Usage.', description: 'See Ollama counts for your main chat in one-shot and Multi-Turn: est. while pending, REAL when confirmed. CONTEXT-WINDOW shows OVER and CUT; a cut answer carries a warning. About -> Usage adds reported monthly/purchased balances, refill weeks/date, and separate 7/30-day charts. Model graphs cover recorded chat calls, not other apps or child agents. Ask Execs, Step-by-Step, Hard Cancel, Compact mode, and Drop keep you in command. Save a Create Flow download before dropping its message.' },
-        { id: 'visual_workflows', title: 'Two Canvases. Agents and Conversations.', description: 'Connect 89 agents in .flw workflows or guide conversations through .fpmt diagrams. User Input asks for a runtime reply; User Commentary adds static rich-text notes that never enter model context. Resize notes and Run output without changing canvas zoom. Open either format from Windows or chat, return to the right editor after login, and choose when to run.' },
+        { id: 'visual_workflows', title: 'Two Canvases. One Familiar Workspace.', description: 'Connect 89 agents in .flw workflows or guide conversations through .fpmt diagrams. User Input asks for a runtime reply; User Commentary adds static rich-text notes that never enter model context. Resize notes and Run output without changing canvas zoom. Shared pane controls work with mouse or keyboard; resizable dialogs work from every edge and corner. Open either format from Windows or chat, return to the right editor after login, and choose when to run.' },
         { id: 'external_mcps', title: 'External MCPs, MCP Doctor, and MCP Adder', description: 'Connect up to five MCP servers over stdio, streamable HTTP, SSE, or WebSocket. MCP Doctor checks readiness, while MCP Adder guides transport choice, secret separation, diagnosis, activation, and a real remote-tool test. Simple scalar mismatches can be repaired before a call is lost.' },
         { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
         { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler lists returned titles and URLs before sharing room among page excerpts, labeling shortened text for deeper reading with Crawler. Both recover text from malformed HTML and report fallback extraction. Deadlines and explicit outcomes keep web research accountable; FAISS + BM25 grounds answers in your project while filtering binary noise.' },
         { id: 'database', title: 'WAL-Safe SQLite Data Handling', description: 'DB Backup and Set DB use SQLite\'s online backup API, integrity validation, clean staging, and WAL/SHM sidecar hygiene so live data can be preserved and handed off without pretending a copied main file is enough.' },
-        { id: 'windows_delivery', title: 'A Real Windows App That Knows Itself', description: 'Your projects stay yours. The new uninstaller keeps application, applications, content_generated, context_files, doc_generated, and Templates whenever they contain files; agents is always kept, while Temp scratch is erased. Locked files are reported. Use the new Installer to replace an older uninstaller; in-app updates keep the existing copy. Python travels with her, optional source snapshots support rebuilding, and Windows flow associations respect your defaults.' },
+        { id: 'windows_delivery', title: 'Install with a Recovery Plan. Keep Your Work.', description: 'The shared Installer and Uninstaller verify a recovery copy before changing files, restore interrupted work when possible, and keep errors visible with Retry, Change folder, and a log path. Locked files name the holding program when available; other apps stay open. Removal keeps application, applications, content_generated, context_files, doc_generated, and Templates whenever they contain files; agents is always kept, while Temp scratch is erased after success. Use the new Installer: in-app updates keep the existing copy. Windows flow associations respect your defaults.' },
       ],
     },
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: 'Get Tlamatini v1.78.0 for Windows 11 x64 from Releases, or run her from source. About -> Check for updates delivers the published app but keeps your existing Uninstaller.exe. Run the new Installer to get the project-preserving uninstaller too. Sign in to Ollama and pull the models below; Config -> Models opens Model Brain Auto-tuning. About -> Usage shows reported balances and measured activity. Python 3.12.10 is bundled; LaTeXer PDF compilation needs TeX.',
+      desc: 'Get the published Tlamatini v1.82.0 for Windows 11 x64 from Releases, or run her from source. Extract the complete ZIP, run Installer.exe, choose a folder, review, and install. The setup window shows progress and keeps Retry, Change folder, and a log path available after an error. About -> Check for updates delivers the published app but keeps your existing Uninstaller.exe. Run the new Installer to refresh it too. Sign in to Ollama and pull the models below. Config -> Models opens Model Brain Auto-tuning; About -> Usage shows balances and measured activity. Python 3.12.10 is bundled; LaTeXer PDF compilation needs TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Install Tlamatini' },
         { id: 'install_ollama', label: 'Install Ollama' },
@@ -443,7 +443,7 @@ const en = {
             { name: 'File-Interpreter', desc: 'Reads and interprets documents across common office formats' },
             { name: 'File-Extractor', desc: 'Extracts raw text from documents and fallback formats' },
             { name: 'Image-Interpreter', desc: 'Accepts image-path lists without duplicates; cross-checks two visual readings with a third-model synthesis and reports failed evidence' },
-            { name: 'Video-Analyzer', desc: 'Transcribes video audio, synthesizes sampled visuals and speech, or checks motion with two independent verdicts' },
+            { name: 'Video-Analyzer', desc: 'Transcribes audio, summarizes video from local files or supported web links with source attribution, or checks motion with two independent verdicts' },
             { name: 'NetSpeed-Calculator', desc: 'Measures throughput, latency, jitter, loss, and bufferbloat with error bars' },
             { name: 'J-Decompiler', desc: 'Turns Java bytecode and archives back into readable source' },
             { name: 'De-Compresser', desc: 'Compresses or extracts common archive formats deterministically' },
@@ -517,11 +517,11 @@ const en = {
     },
     techStack: {
       label: 'Technology',
-      title: 'The Technology Behind Tlamatini v1.78.0',
+      title: 'The Technology Behind Tlamatini v1.82.0',
       groups: [
         {
           category: 'Core & Real-Time Web',
-          items: ['Python 3.12.10 carried runtime', 'Django 5.2.15', 'Django Channels 4.1 + Daphne ASGI', 'SQLite with WAL-safe online backup', 'WebSockets + WhiteNoise delivery', 'Local UI assets + PDF.js 6.3.289 viewer'],
+          items: ['Python 3.12.10 carried runtime', 'Django 5.2.15', 'Django Channels 4.1 + Daphne ASGI', 'SQLite with WAL-safe online backup', 'WebSockets + WhiteNoise delivery', 'Local UI assets + PDF.js 6.3.289 + Markdown preview'],
         },
         {
           category: 'AI, Retrieval & Vision',
@@ -541,7 +541,7 @@ const en = {
         },
         {
           category: 'Windows Delivery & Defense',
-          items: ['Windows 11 x64 release + native integration', 'PyInstaller 6.18 + NSIS packaging', 'Privacy-proven public builds from pristine clones', 'Severity-colored console + protected Ctrl+C', 'Sealed updates with preserved state + configurable port', 'Blue-hat Windows security toolkit'],
+          items: ['Windows 11 x64 + recoverable setup + native integration', 'PyInstaller 6.18 + NSIS packaging', 'Privacy-proven public builds from pristine clones', 'Severity-colored console + protected Ctrl+C', 'Sealed updates with preserved state + configurable port', 'Blue-hat Windows security toolkit'],
         },
       ],
     },
@@ -573,7 +573,7 @@ const es: Translations = {
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
-      'Tlamatini v1.78.0',
+      'Tlamatini v1.82.0',
       'Model Brain: Ajustado al Modelo que Eliges',
       'Modo Compact: Tus Herramientas y sus Tokens',
       'Self-modify Bajo Tu Mando',
@@ -583,8 +583,8 @@ const es: Translations = {
       'Abre .flw y .fpmt Directo desde Windows',
       'Deshaz, Duplica, Acerca. Conserva la Visión Completa.',
       'PPTXer Crea PowerPoints Editables',
-      'Lee PDFs. Dale el Documento Completo.',
-      'Transcripciones y Resúmenes Audiovisuales',
+      'PDFs y Markdown. Lee y Dale Contexto.',
+      'Enlaces de Video, Transcripciones y Conocimiento',
       '38 Ajustes de Modelos. Un Menú Config.',
       'Tokens Reales de Ollama. Recortes a la Vista.',
       'Mic junto a Send. Dicta tu Próximo Prompt.',
@@ -639,7 +639,7 @@ const es: Translations = {
       'Backup y Staging SQLite WAL-Safe',
       'Evidencia Multimonitor con Shoter',
       'Control Masivo de Casillas',
-      'Separa su Avatar. Dale Espacio a Tus Palabras.',
+      'Separa su Avatar. Ajusta Cada Panel.',
       'Mensajería como Bot o Cuenta Personal',
       'Wizard de API-Keys',
       'Selector de Contexto Nativo',
@@ -657,7 +657,7 @@ const es: Translations = {
       'Hard Cancel por Usuario que Sí Permanece Cancelado',
       'Recon Largo Sin Corte Prematuro',
       'Resultados Estructurados de MCPs Externos',
-      'Nuevo Instalador. Conserva Tus Templates.',
+      'Instala, Recupera, Reintenta. Conserva Tus Proyectos.',
       'Puerto Web Configurable',
       'Descubrimiento para Tlamatini-FlowPills',
       'NetSpeed-Calculator Mide la Conexión Real',
@@ -673,7 +673,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: 'Tlamatini pone Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Ella habla con Talker y escucha con Whisperer. Nuevo en v1.78.0: consulta créditos reportados y actividad medida en About -> Usage, dale más espacio a la conversación y analiza varias imágenes en una ejecución. Con 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills, tu espacio se convierte en un lugar para crear, revisar y actuar.',
+      desc: 'Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Tlamatini habla con Talker y escucha con Whisperer. En v1.82.0, lee Markdown como una página, convierte enlaces de video en conocimiento e instala con recuperación. Un entorno familiar reúne 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills para tu próxima idea.',
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -715,7 +715,7 @@ const es: Translations = {
       overview: {
         label: 'Arquitectura',
         title: 'Construida como un Plano de Control de IA Autoalojada',
-        desc: 'Unreal Engine, Blender, STM32 y ESP32, con Talker y Whisperer. En v1.78.0: Usage, más espacio para el chat y listas de imágenes. Tú al mando.',
+        desc: 'Unreal Engine, Blender, STM32 y ESP32, con Talker y Whisperer. En v1.82.0: Markdown, enlaces de video y un entorno familiar. Tú al mando.',
         card1: {
           title: 'Dos Paneles, un Centro de Mando',
           desc: 'Panels abre Agentic Control Panel y Prompt Flow Panel. Config: Configure MCPs, Configure Agents, Models, Voice y Mic. Model Brain ajusta modelos. About -> Usage muestra actividad. DB, Skills y MCPs siguen a mano.',
@@ -728,7 +728,7 @@ const es: Translations = {
       rag: {
         label: 'Sistema RAG',
         title: 'Generación Aumentada por Recuperación Avanzada',
-        desc: 'Lleva proyectos y PDFs completos a la conversación. FAISS + BM25 fundamenta respuestas, con filtrado binario y comprobación GPU. Elige texto PDF o activa Image-Interpreter. Las protecciones visuales rechazan la preparación visual incompleta en vez de cargarla como contexto útil.',
+        desc: 'Lleva proyectos, PDFs completos y Markdown original a la conversación. FAISS + BM25 fundamenta respuestas, con filtrado binario y comprobación GPU. Elige texto PDF o Image-Interpreter; la preparación visual incompleta se rechaza.',
         nodes: [
           { name: 'Cargar Contexto', desc: 'Árboles de proyecto o PDFs completos desde el lienzo' },
           { name: 'Guardia Binaria', desc: 'Filtro rápido por bytes que falla de forma abierta' },
@@ -789,11 +789,11 @@ const es: Translations = {
         { id: 'esp_firmware', name: 'ESP32, Arduino y ESPHome', desc: 'Inicia firmware ESP32 desde una plantilla funcional de parpadeo y salida serial, o genera dispositivos ESPHome de luz y sensores con secretos separados opcionales. Compila, carga y observa mediante PlatformIO, Arduino CLI o ESPHome, con verificaciones previas del hardware.', type: 'Embebidos' },
         { id: 'robotic_loop', name: 'Un Bucle Robótico que Puede Ver', desc: 'STM32er actúa, Camcorder graba y Video-Analyzer comprueba movimiento antes de que Forker elija la ruta. El éxito robótico exige dos aprobaciones independientes; la evidencia ausente no basta. Las ramas de recuperación pueden responder a un intento fallido.', type: 'Visión' },
         { id: 'image_vision', name: 'Dos Lecturas Visuales. Un Reporte Contrastado.', desc: 'Image-Interpreter usa Mistral y Gemma en paralelo y GLM sintetiza sus lecturas. Envía rutas separadas por comas en una ejecución: procesa una vez cada archivo repetido, informa entradas no resueltas y respeta nombres de archivo existentes con comas. Lee capturas, gráficas, fotos e imágenes PDF con OCR y detalle espacial. La verificación sigue exigiendo ambos observadores y síntesis completa.', type: 'Visión' },
-        { id: 'analysis_recovery', name: 'Errores Visibles. Recuperación Activa.', desc: 'Las fallas de imagen, video y PDF se acumulan en Fatal analysis errors, sin bloquear controles. Dismiss oculta sin borrar historial ni cancelar; otro error vuelve a mostrarlo. Reintentos y rutas de recuperación siguen con tus modelos, rechazando análisis incompletos.', type: 'Recuperación' },
+        { id: 'analysis_recovery', name: 'Errores Visibles. Recuperación Activa.', desc: 'Fatal analysis errors reúne fallas de imagen, video y PDF. Dismiss oculta sin borrar historial ni cancelar. Reintentos conservan tus modelos. Video-Analyzer comprueba la GPU y ajusta los hilos CPU al equipo. Un cambio reparable del sitio puede activar una actualización privada del descargador y un reintento, sin modificar tu Python. Inicio de sesión, medios no disponibles, fallas de red y tiempos agotados se informan. Mejora sólo en código fuente, no en el instalador v1.82.0: solicitudes inválidas o incompletas de imagen/video se rechazan para corregirlas sin alerta fatal; las fallas reales siguen visibles.', type: 'Recuperación' },
         { id: 'whisperer', name: 'Dicta un Prompt. Elige Cuándo Actúa.', desc: 'Mic junto a Send inicia Whisperer en el micrófono del equipo que ejecuta Tlamatini. Nivel y cuenta de silencio quedan en el chat; por defecto son 3.5 segundos de silencio y un límite de 300 segundos. Envía automáticamente o conserva un borrador sin cambiar tus modos. El reconocimiento local tiene fallback CPU; los motores cloud opcionales reciben tu audio. Whisperer también transcribe archivos.', type: 'Voz' },
         { id: 'mic_preferences', name: 'Un Micrófono a Tu Medida', desc: 'Config -> Mic elige autoenvío o revisión, entrada del equipo, ganancia, silencio, duración límite, sensibilidad, idioma, traducción al inglés, frecuencia, canales y opciones locales beam/VAD. Las preferencias quedan en este navegador y rigen desde la próxima grabación; campos sin definir heredan valores. Config -> Models -> Speech selecciona el reconocedor. Voice controla el avatar por separado.', type: 'Ajustes de Voz' },
         { id: 'talker', name: 'Talker le Da su Voz a Tlamatini', desc: 'Genera voz femenina expresiva, guárdala en WAV y escúchala. Por separado, su avatar lee respuestas y mensajes cercanos en primera persona con voces instaladas. Los labios acompañan el habla siguiendo su retrato, sin movimientos exagerados, GPU ni otro modelo de lenguaje.', type: 'Voz' },
-        { id: 'media', name: 'Video al que Puedes Hacerle Preguntas', desc: 'Video-Analyzer transcribe pistas elegidas sin abrir el micrófono y puede combinar la voz con dos observadores visuales para resúmenes y tareas con marcas de tiempo. Expone límites de cobertura. La verificación visual rechaza fallas de observación o síntesis y conserva reintentos y rutas de recuperación.', type: 'Media' },
+        { id: 'media', name: 'Del Enlace de Video al Conocimiento', desc: 'Incluido en v1.82.0: pide a Video-Analyzer transcribir o resumir un enlace compatible de YouTube, Vimeo o un archivo multimedia directo. Descarga un elemento, no una playlist; para transcribir descarga sólo audio y nunca abre el micrófono. Elige pistas de videos locales o transcribe un archivo de audio. Combina voz y dos observadores visuales en hallazgos y tareas con marcas de tiempo, título y URL de origen. Reutiliza descargas y une imagen y sonido sin instalar ffmpeg aparte. Expone límites de cobertura. La verificación visual rechaza fallas de observación o síntesis y conserva reintentos y rutas de recuperación.', type: 'Media' },
         { id: 'netspeed', name: 'NetSpeed-Calculator Mide lo que Importa', desc: 'Mide descarga, subida, latencia, jitter, pérdida y bufferbloat en varios proveedores sin llave, con intervalos de confianza y no un número favorecedor.', type: 'Red' },
         { id: 'googler', name: 'Googler Encuentra Mejores Rutas Web', desc: 'Busca en seis rutas HTTP paralelas, ocho rutas de navegador real y fuentes abiertas identificadas. Los filtros de relevancia descartan resultados ajenos; las pausas entre motores evitan insistir tras un bloqueo. Un plazo limita la búsqueda y Cancel la detiene desde el chat. Sin evadir CAPTCHA ni controles de acceso. Dorks, fuentes lícitas y listas de URLs mantienen el foco. Bloqueos, tiempos agotados, sitios inaccesibles y búsquedas sin coincidencias se distinguen.', type: 'Investigación' },
         { id: 'crawler', name: 'Lee la Página que Realmente Pediste', desc: 'Crawler lee la página indicada por defecto y analiza código fuente o texto legible. Amplía a enlaces cuando lo elijas, con límites de páginas, tamaño y tiempo. Los bloqueos y tiempos agotados se informan, no se analizan como contenido; si nada pudo leerse, explica por qué. Para páginas que dependen de JavaScript, elige Playwrighter.', type: 'Lectura Web' },
@@ -801,12 +801,12 @@ const es: Translations = {
         { id: 'security_agents', name: 'Tres Caminos para Recon Autorizado', desc: 'Usa Discoverer para ProjectDiscovery, Nmapper para nmap local y Kalier para un Kali configurado, todos con límites claros y resultados honestos.', type: 'Seguridad' },
         { id: 'codebase', name: 'Trabaja Sobre el Codebase Completo', desc: 'Globber encuentra, Grepper lee líneas exactas y Editor aplica cambios precisos. File-Creator escribe o añade al final sin reemplazar contenido previo. Mover combina carpetas conservando archivos ajenos e informa transferencias incompletas; archivos del mismo nombre aún pueden reemplazarse. Revisa, reconstruye y usa Git con rutas Windows intactas.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Crea PowerPoints editables con 36 tratamientos y 17 combinaciones tipográficas. PDFer ofrece 24 estilos y 20 temas; LaTeXer suma 30 estilos. Verifica PDFs reales antes de entregarlos, informa problemas de maquetación y marca reparaciones muy reducidas como .DEGRADED.pdf. Los agentes de documentos y captura conservan archivos terminados si Windows bloquea la carpeta solicitada.', type: 'Documentos' },
-        { id: 'pdf_canvas', name: 'Lee el PDF. Incorpóralo al Contexto.', desc: 'Lee un PDF localmente sin llamar a un modelo. Use as context prepara el documento completo tras Continue; Process images añade Image-Interpreter opcional. Si falla la preparación visual, nunca la carga como contexto incompleto. Si otra cuenta inicia sesión en el mismo navegador, el rechazo explica el conflicto, marca el paso fallido y pide recargar.', type: 'Documentos' },
+        { id: 'pdf_canvas', name: 'PDFs y Markdown, Listos para el Contexto', desc: 'Lee PDFs localmente sin llamar a un modelo. Use as context prepara todo el documento tras Continue; Process images añade Image-Interpreter opcional. Si falla la preparación visual, nunca la carga como contexto incompleto. Si otra cuenta inicia sesión, el rechazo marca el paso fallido y pide recargar. Abre o arrastra archivos .md y .markdown a Preview, con Source a un clic. Choose folder conecta imágenes relativas y otros Markdown. Copy, Use as context y Save conservan el Markdown original. El render usa bibliotecas locales, no un CDN; las imágenes remotas sí pueden cargar desde la web.', type: 'Documentos' },
         { id: 'model_config', name: 'Model Brain. Elige Modelo y Observa el Ajuste.', desc: 'Config -> Models reúne 38 ajustes en seis categorías para 21 agentes con modelos. Save abre Auto-tuning en vivo y muestra el origen de cada valor. Model Brain usa perfiles del fabricante, aprende ajustes publicados de modelos nuevos o recurre a Ollama y valores propios del modelo. Tus ajustes prevalecen, el contexto respeta la capacidad y los perfiles aprendidos sobreviven a updates. Las listas usan tus servidores y token. Configure conserva costos estimados y selección de herramientas.', type: 'Configuración' },
         { id: 'browser_desktop', name: 'Automatización de Navegador y Escritorio', desc: 'Playwrighter conduce sitios; Mouser sitúa clics en coordenadas de pantalla, ventana o captura; Keyboarder verifica el destino y se detiene si pierde foco. Shoter registra geometría. La entrega de entrada se informa sin confundirla con éxito de la aplicación.', type: 'Automatización' },
         { id: 'messaging', name: 'Llega por el Canal Correcto', desc: 'Envía y recibe por Telegram, WhatsApp, email, notificaciones o mensajería unificada Zavu, con identidad explícita y decisión del operador.', type: 'Mensajería' },
         { id: 'database', name: 'Protección de Base de Datos WAL-Safe', desc: 'Respalda y prepara SQLite mediante la API de backup online, verifica integridad y trata sidecars WAL/SHM sin fingir que un archivo aislado está completo.', type: 'Datos' },
-        { id: 'windows_delivery', name: 'Una Aplicación Windows de Verdad', desc: 'Python 3.12.10 y recursos locales viajan con ella; las dependencias cubren 89 agentes y ESPHome queda aislado. Los updates verifican archivos requeridos y conservan datos. Windows abre .flw y .fpmt sin ejecutarlos; el log sigue en texto plano. El nuevo instalador aporta un desinstalador que guarda carpetas con archivos, incluidas Templates y doc_generated, conservando contenido propio y borrando Temp. Los bloqueos informan retiros incompletos. Los updates internos mantienen Uninstaller.exe.', type: 'Windows' },
+        { id: 'windows_delivery', name: 'Una Instalación que Puede Recuperarse', desc: 'Instala y desinstala con progreso claro, Retry, Change folder y un log local legible. El setup verifica una copia de recuperación antes de cambiar archivos e intenta restaurar tras una interrupción. Si falla, conserva las copias y explica lo pendiente. Los bloqueos identifican al programa cuando es posible; otras apps quedan abiertas. Python 3.12.10 viaja con ella y el log sigue en texto plano. Dependencias para 89 agentes, ESPHome aislado y updates que verifican archivos requeridos. Conserva agents y carpetas con proyectos, conservando contenido propio; borra Temp tras el éxito e informa retiros incompletos. Los updates internos mantienen Uninstaller.exe; usa el nuevo Installer para renovarlo.', type: 'Windows' },
         { id: 'self_knowledge', name: 'Su Autoconocimiento. Tu Decisión.', desc: 'Self-modify es visible al ejecutar desde código o en builds con su snapshot de automodificación, oculto en los demás. ON incluye su autoconocimiento; OFF ahorra unos 28.9K tokens por solicitud y le indica no leer, editar ni reconstruir su propio código. Un modelo sin capacidad lo bloquea en OFF sin borrar tu elección; uno mayor lo desbloquea. Los snapshots saneados opcionales siguen siendo reconstruibles.', type: 'Identidad' },
         { id: 'prompt_catalog', name: 'Tu Primer Comando de Voz, Guiado', desc: 'VOICE COMMANDS conserva su ensayo de solo lectura y SPEAK YOUR PROMPT, con lectura del transcript y confirmación escrita para trabajo irreversible. Estas rutas guiadas son distintas del botón Mic: su revisión opcional ocurre en el campo normal del chat, no en un diálogo de confirmación.', type: 'Guía' },
         { id: 'mcp_adder', name: 'Añade un MCP con una Guía Protegida', desc: 'La skill de incorporación clasifica transporte, separa secretos, diagnostica, activa sólo con intención y prueba la herramienta remota antes de usarla.', type: 'MCP' },
@@ -817,7 +817,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: 'Tlamatini controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Con v1.78.0, consulta el uso medido mientras trabaja, ajusta tu espacio de chat y dale más evidencia visual en una ejecución. Pon Model Brain, 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills detrás de tu próxima idea.',
+    ctaDesc: 'Tlamatini controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Comienza con v1.82.0: instalación con recuperación, Markdown legible y enlaces de video convertidos en conocimiento. Pon Model Brain, 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills detrás de tu próxima idea.',
     viewSource: 'Ver Código Fuente',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -840,8 +840,8 @@ const es: Translations = {
   tlamatini: {
     hero: {
       label: 'XAIHT / Proyectos',
-      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.78.0',
-      desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Tlamatini v1.78.0 suma About -> Usage, un chat más flexible y análisis de varias imágenes. Te saluda en primera persona. Pon a trabajar 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills.',
+      subtitle: 'IA Autoalojada y Capaz de Usar la Nube | v1.82.0',
+      desc: 'Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Tlamatini v1.82.0 une instalación con recuperación, Markdown Preview y análisis de enlaces de video en un entorno familiar. Te saluda en primera persona. Pon a trabajar 89 agentes, 109 herramientas Multi-Turn integradas y 29 skills.',
     },
     presence: {
       label: 'Señal Tlamatini',
@@ -876,7 +876,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Se ejecuta en tu máquina y conecta control de Unreal Engine y Blender, firmware STM32 / ESP32 / ESPHome / Arduino, habla Talker y escucha Whisperer con comprensión del código. Sus lienzos de agentes y prompts ofrecen formas complementarias de orquestarla. PDFer, PPTXer y LaTeXer crean entregables; medios, mensajería, seguridad y delegación opcional amplían tu alcance.',
-      p2: 'Nuevo en v1.78.0: About -> Usage muestra créditos reportados, recargas y actividad de 7/30 días mientras ella trabaja. Models refleja llamadas medidas del chat, no un desglose de toda la cuenta. Separa su avatar y ajusta el área de escritura para ganar espacio; vuelve a acoplarla cuando prefieras. Image-Interpreter acepta listas de imágenes sin repetir archivos. Model Brain y Prompt Flow Panel siguen bajo tu mando. Actualiza en About -> Check for updates.',
+      p2: 'Nuevo en v1.82.0: lee Markdown en Preview o Source, transcribe enlaces compatibles e instala con una copia de recuperación verificada. Chat, Prompt Flow Panel, Agentic Control Panel y visor PDF comparten controles familiares y paneles ajustables con ratón o teclado. Model Brain y About -> Usage siguen a mano: Models refleja llamadas medidas del chat, no un desglose de toda la cuenta. About -> Check for updates entrega la app publicada; usa el nuevo Installer para renovar también el desinstalador.',
       viewSource: 'Ver Código Fuente',
     },
     features: {
@@ -906,7 +906,7 @@ const es: Translations = {
         {
           id: 'voice_vision',
           title: 'Ella Ve, Habla, Escucha y Entiende',
-          description: 'Talker habla; Whisperer dicta al chat con envío automático o borradores desde Config -> Mic. Su avatar flotante libera espacio para ajustar el área de escritura mientras lee mensajes en primera persona con labios expresivos. Image-Interpreter acepta listas de rutas y contrasta evidencia visual; Video-Analyzer añade marcas de tiempo y resúmenes. Su voz de navegador no requiere GPU.',
+          description: 'Talker habla; Whisperer dicta al chat con envío automático o borradores desde Config -> Mic. Su avatar flotante libera espacio para ajustar el área de escritura mientras lee mensajes en primera persona con labios expresivos. Image-Interpreter acepta listas de rutas y contrasta evidencia visual. Video-Analyzer convierte enlaces compatibles en transcripciones y resúmenes audiovisuales con marcas de tiempo. Su voz de navegador no requiere GPU.',
         },
         {
           id: 'documents',
@@ -920,8 +920,8 @@ const es: Translations = {
         },
         {
           id: 'visual_workflows',
-          title: 'Dos Lienzos. Agentes y Conversaciones.',
-          description: 'Conecta 89 agentes en .flw o guía conversaciones mediante .fpmt. User Input pide respuestas durante la ejecución; User Commentary añade notas estáticas enriquecidas que nunca entran al contexto del modelo. Ajusta notas y Run output sin alterar el zoom. Abre ambos formatos desde Windows o chat, vuelve al editor correcto tras iniciar sesión y decide cuándo ejecutar.',
+          title: 'Dos Lienzos. Un Entorno Familiar.',
+          description: 'Conecta 89 agentes en flujos .flw o guía conversaciones mediante diagramas .fpmt. User Input pide una respuesta; User Commentary añade notas enriquecidas estáticas que nunca entran al contexto del modelo. Ajusta notas y Run output sin cambiar el zoom. Los paneles comparten controles de ratón y teclado; los diálogos ajustables se redimensionan desde cada borde y esquina. Abre ambos formatos desde Windows o chat, vuelve al editor correcto tras iniciar sesión y elige cuándo ejecutar.',
         },
         {
           id: 'external_mcps',
@@ -945,15 +945,15 @@ const es: Translations = {
         },
         {
           id: 'windows_delivery',
-          title: 'Una App Windows Real que se Conoce',
-          description: 'Tus proyectos siguen siendo tuyos. El nuevo desinstalador conserva application, applications, content_generated, context_files, doc_generated y Templates cuando tienen archivos; siempre guarda agents y borra Temp. Informa archivos bloqueados. Usa el nuevo Installer para renovar el desinstalador; los updates internos conservan el anterior. Python viaja con ella, los snapshots opcionales permiten reconstruir y las asociaciones Windows respetan tus preferencias.',
+          title: 'Instala con Recuperación. Conserva Tu Trabajo.',
+          description: 'Installer y Uninstaller comparten una ventana que verifica una copia antes de cambiar archivos, restaura interrupciones cuando es posible y conserva errores con Retry, Change folder y la ruta del log. Los archivos bloqueados identifican al programa cuando es posible; otras apps quedan abiertas. Conserva application, applications, content_generated, context_files, doc_generated y Templates cuando tienen archivos; siempre guarda agents y borra Temp tras el éxito. Usa el nuevo Installer: los updates internos conservan el anterior. Las asociaciones de flujos Windows respetan tus preferencias.',
         },
       ],
     },
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: 'Obtén Tlamatini v1.78.0 para Windows 11 x64 en Releases o ejecútala desde el código. About -> Check for updates entrega la app publicada, pero conserva tu Uninstaller.exe actual. Ejecuta el nuevo Installer para renovar también el desinstalador que guarda tus proyectos. Inicia sesión en Ollama y descarga los modelos indicados; Config -> Models abre Model Brain Auto-tuning. About -> Usage muestra saldos reportados y actividad medida. Python 3.12.10 viene incluido; LaTeXer requiere TeX.',
+      desc: 'Obtén Tlamatini v1.82.0 publicado para Windows 11 x64 en Releases o ejecútala desde el código. Extrae el ZIP completo, abre Installer.exe, elige carpeta, revisa e instala. La ventana muestra progreso y conserva Retry, Change folder y la ruta del log tras un error. About -> Check for updates entrega la app publicada, pero conserva tu Uninstaller.exe actual. Ejecuta el nuevo Installer para renovarlo. Inicia sesión en Ollama y descarga los modelos indicados. Config -> Models abre Model Brain Auto-tuning; About -> Usage muestra saldos y actividad medida. Python 3.12.10 viene incluido; LaTeXer requiere TeX.',
       steps: [
         { id: 'install_tlamatini', label: 'Instalar Tlamatini' },
         { id: 'install_ollama', label: 'Instalar Ollama' },
@@ -1031,7 +1031,7 @@ const es: Translations = {
             { name: 'File-Interpreter', desc: 'Lee e interpreta documentos de oficina comunes' },
             { name: 'File-Extractor', desc: 'Extrae texto crudo de documentos y formatos fallback' },
             { name: 'Image-Interpreter', desc: 'Acepta listas de imágenes sin duplicados; contrasta dos lecturas con síntesis de otro modelo e informa evidencia fallida' },
-            { name: 'Video-Analyzer', desc: 'Transcribe audio, sintetiza muestras visuales y voz o evalúa movimiento con dos veredictos independientes' },
+            { name: 'Video-Analyzer', desc: 'Transcribe audio, resume videos locales o enlaces compatibles con su origen, o evalúa movimiento con dos veredictos independientes' },
             { name: 'NetSpeed-Calculator', desc: 'Mide velocidad, latencia, jitter, pérdida y bufferbloat con error estadístico' },
             { name: 'J-Decompiler', desc: 'Convierte bytecode y archivos Java en código legible' },
             { name: 'De-Compresser', desc: 'Comprime o extrae archivos comunes de forma determinista' },
@@ -1105,11 +1105,11 @@ const es: Translations = {
     },
     techStack: {
       label: 'Tecnología',
-      title: 'La Tecnología Detrás de Tlamatini v1.78.0',
+      title: 'La Tecnología Detrás de Tlamatini v1.82.0',
       groups: [
         {
           category: 'Núcleo y Web en Tiempo Real',
-          items: ['Runtime integrado Python 3.12.10', 'Django 5.2.15', 'Django Channels 4.1 + Daphne ASGI', 'SQLite con backup online WAL-safe', 'WebSockets + entrega WhiteNoise', 'Recursos locales + visor PDF.js 6.3.289'],
+          items: ['Runtime integrado Python 3.12.10', 'Django 5.2.15', 'Django Channels 4.1 + Daphne ASGI', 'SQLite con backup online WAL-safe', 'WebSockets + entrega WhiteNoise', 'Recursos locales + PDF.js 6.3.289 + vista Markdown'],
         },
         {
           category: 'IA, Recuperación y Visión',
@@ -1129,7 +1129,7 @@ const es: Translations = {
         },
         {
           category: 'Entrega y Defensa en Windows',
-          items: ['Release Windows 11 x64 + integración nativa', 'Empaquetado PyInstaller 6.18 + NSIS', 'Builds públicas con privacidad probada desde clones limpios', 'Consola por gravedad + Ctrl+C protegido', 'Updates sellados con estado + puerto configurable', 'Toolkit Blue-hat de Windows'],
+          items: ['Windows 11 x64 + setup con recuperación + integración nativa', 'Empaquetado PyInstaller 6.18 + NSIS', 'Builds públicas con privacidad probada desde clones limpios', 'Consola por gravedad + Ctrl+C protegido', 'Updates sellados con estado + puerto configurable', 'Toolkit Blue-hat de Windows'],
         },
       ],
     },

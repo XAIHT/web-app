@@ -50,7 +50,7 @@ const flattenAgentNames = (lang: 'en' | 'es') =>
     group.agents.map((agent) => agent.name),
   );
 
-describe('Tlamatini v1.78.0 website truth contract', () => {
+describe('Tlamatini v1.82.0 website truth contract', () => {
   it('keeps the exact 89-agent catalog in nine authoritative families', () => {
     const english = flattenAgentNames('en');
     const spanish = flattenAgentNames('es');
@@ -85,7 +85,7 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
   it('advertises the current release and crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.78.0', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
+      'v1.82.0', '89 agents', '109 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
       'PPTXer', 'Context Governor', '256-call', 'Compact mode',
@@ -97,7 +97,7 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
   it('keeps the technology stack current and substantial in both languages', () => {
     for (const lang of ['en', 'es'] as const) {
       const stack = translations[lang].tlamatini.techStack;
-      expect(stack.title).toContain('v1.78.0');
+      expect(stack.title).toContain('v1.82.0');
       expect(stack.groups).toHaveLength(6);
       stack.groups.forEach((group) => expect(group.items.length).toBeGreaterThanOrEqual(5));
     }
@@ -124,14 +124,14 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
       expect(catalog?.desc).toMatch(/written confirmation|confirmación escrita/);
       expect(copy.tlamatini.presence.panels[0].desc).toContain('120');
       expect(copy.tlamatini.overview.p2).toContain('Prompt Flow Panel');
-      expect(copy.tlamatini.overview.p2).toContain('v1.78.0');
+      expect(copy.tlamatini.overview.p2).toContain('v1.82.0');
     }
     const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
     expect(setup).toContain('ollama pull glm-5.3:cloud');
     expect(setup).toContain('ollama pull mistral-large-3:675b-cloud');
     expect(setup).toContain('ollama pull gemma4:cloud');
     expect(setup).toContain('38 settings in six categories');
-    expect(setup).toContain('Download the v1.78.0 release ZIP');
+    expect(setup).toContain('Download the v1.82.0 release ZIP');
     expect(setup).not.toContain('ollama pull qwen3.5:cloud');
     expect(setup).not.toContain('ollama pull jcyhsiao/qwen3.5cloud:latest');
     expect(setup).not.toContain('ollama pull kimi-k2.7-code:cloud');
@@ -161,8 +161,8 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
     const home = readFileSync(resolve('src/pages/Home.tsx'), 'utf8');
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
     expect(home).toContain("value: '89'");
-    expect(home).toContain("value: 'v1.78.0'");
-    expect(launch).toContain("['89', '109', '29', 'v1.78.0']");
+    expect(home).toContain("value: 'v1.82.0'");
+    expect(launch).toContain("['89', '109', '29', 'v1.82.0']");
     expect(launch).toContain('PPTXer');
   });
 
@@ -262,10 +262,10 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
   it('keeps the published installer current without overstating the capabilities', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
-      expect(copy.tlamatini.hero.subtitle).toContain('v1.78.0');
-      expect(copy.tlamatini.installation.desc).toContain('v1.78.0');
+      expect(copy.tlamatini.hero.subtitle).toContain('v1.82.0');
+      expect(copy.tlamatini.installation.desc).toContain('v1.82.0');
       expect(copy.tlamatini.installation.desc).toContain('About -> Check for updates');
-      expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.78\.0$/);
+      expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.82\.0$/);
       const packaging = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
       expect(packaging).toContain('89');
       expect(packaging).toContain('ESPHome');
@@ -360,33 +360,34 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
     }
   });
 
-  it('uses v1.78.0 everywhere and identifies the published Windows release honestly', () => {
+  it('keeps v1.82.0 consistent across the published release and source instructions', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
       expect(copy.home.overview.stats.version).toBe(lang === 'en' ? 'Version' : 'Versión');
-      expect(copy.home.overview.desc).toContain('v1.78.0');
-      expect(copy.ascii.phrases).toContain('Tlamatini v1.78.0');
-      expect(copy.tlamatini.hero.subtitle.match(/v\d+\.\d+\.\d+/g)).toEqual(['v1.78.0']);
+      expect(copy.home.overview.desc).toContain('v1.82.0');
+      expect(copy.ascii.phrases).toContain('Tlamatini v1.82.0');
+      expect(copy.tlamatini.hero.subtitle.match(/v\d+\.\d+\.\d+/g)).toEqual(['v1.82.0']);
       expect(copy.tlamatini.hero.subtitle).not.toMatch(/Source|Installer|Código|Instalador/);
-      expect(copy.footer.ctaDesc).toContain('v1.78.0');
+      expect(copy.footer.ctaDesc).toContain('v1.82.0');
       const install = copy.tlamatini.installation.desc;
-      expect(install).toContain('v1.78.0');
+      expect(install).toContain('v1.82.0');
       expect(install).toContain('About -> Check for updates');
       expect(install).toMatch(/delivers the published app|entrega la app publicada/);
       expect(install).toMatch(/run her from source|ejecútala desde el código/);
       expect(install).toContain('Model Brain');
-      expect(new Set(JSON.stringify(copy).match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.78.0']));
+      expect(new Set(JSON.stringify(copy).match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.82.0']));
     }
     const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
-    expect(setup).toContain('Tlamatini v1.78.0 Windows installer');
-    expect(setup).toContain('Option B: run Tlamatini v1.78.0 from source');
+    expect(setup).toContain('Tlamatini v1.82.0 Windows installer');
+    expect(setup).toContain('Option B: run Tlamatini v1.82.0 from source');
+    expect(setup).toContain('Setup verifies a recovery copy before changing files');
     expect(setup).toContain('Requires Python 3.12.10 and Git');
     expect(setup).not.toMatch(/When published|earlier tag snapshot|Updates become available after publication/);
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
-    expect(launch).toContain('XAIHT presents Tlamatini v1.78.0');
-    expect(launch).toContain('XAIHT presenta Tlamatini v1.78.0');
+    expect(launch).toContain('XAIHT presents Tlamatini v1.82.0');
+    expect(launch).toContain('XAIHT presenta Tlamatini v1.82.0');
     expect(launch).not.toMatch(/Source v1\.|Codigo v1\./);
-    expect(readFileSync(resolve('src/pages/Home.tsx'), 'utf8')).toContain("value: 'v1.78.0'");
+    expect(readFileSync(resolve('src/pages/Home.tsx'), 'utf8')).toContain("value: 'v1.82.0'");
   });
 
   it('explains real Compact selections, capacity locks, and explicit restoration', () => {
@@ -607,7 +608,7 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
       expect(windows).toMatch(/agents is always kept|siempre guarda agents/);
       expect(windows).toMatch(/Temp scratch is erased|borra Temp/);
       expect(windows).toMatch(/Locked files|archivos bloqueados/);
-      expect(copy.ascii.phrases.some((phrase) => /New Installer.*Templates|Nuevo Instalador.*Templates/.test(phrase))).toBe(true);
+      expect(copy.ascii.phrases.some((phrase) => /Install, Recover, Retry.*Projects|Instala, Recupera, Reintenta.*Proyectos/.test(phrase))).toBe(true);
     }
   });
 
@@ -691,16 +692,127 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
     }
   });
 
-  it('uses the published Windows 11 x64 asset rather than the stale release-title version', () => {
+  it('uses the published Windows 11 x64 asset for installer instructions', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
       expect(copy.tlamatini.installation.desc).toContain('Windows 11 x64');
       expect(copy.tlamatini.techStack.groups.flatMap((group) => group.items).some((item) => item.includes('Windows 11 x64'))).toBe(true);
-      expect(copy.home.overview.desc).toContain('About -> Usage');
+      expect(copy.tlamatini.installation.desc).toContain('About -> Usage');
       expect(JSON.stringify(copy)).not.toMatch(/source-only Usage|Usage.*awaiting rebuild|Windows 10[|/]11/);
     }
     const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
-    expect(setup).toContain('v1.78.0 release ZIP for Windows 11 x64');
+    expect(setup).toContain('v1.82.0 release ZIP for Windows 11 x64');
+  });
+
+  it('includes video-link analysis in the release rather than retaining stale source-only labels', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const media = copy.home.tools.items.find((tool) => tool.id === 'media')?.desc ?? '';
+      expect(media).toMatch(/Included in v1\.82\.0|Incluido en v1\.82\.0/);
+      const surfaces = [
+        media, copy.home.overview.desc, copy.tlamatini.hero.desc, copy.tlamatini.overview.p2,
+        copy.footer.ctaDesc, copy.tlamatini.installation.desc,
+        copy.tlamatini.features.items.find((item) => item.id === 'voice_vision')?.description ?? '',
+        copy.tlamatini.agents.groups.flatMap((group) => group.agents).find((agent) => agent.name === 'Video-Analyzer')?.desc ?? '',
+      ];
+      for (const surface of surfaces) {
+        expect(surface).not.toMatch(/source-only|sólo en código|not yet include|aún no incluye|requires.*source for now/i);
+      }
+    }
+    const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
+    expect(launch).not.toMatch(/v1\.79\.0|New in .* source:|Nuevo en el codigo/);
+  });
+
+  it('keeps the post-tag request-validation fix separate from the published installer', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const recovery = translations[lang].home.tools.items.find((tool) => tool.id === 'analysis_recovery')?.desc ?? '';
+      expect(recovery).toMatch(/Source-only follow-up|Mejora sólo en código fuente/);
+      expect(recovery).toMatch(/not in the v1\.82\.0 installer|no en el instalador v1\.82\.0/);
+      expect(recovery).toMatch(/invalid or incomplete|inválidas o incompletas/);
+      expect(recovery).toMatch(/without a fatal alert|sin alerta fatal/);
+      expect(recovery).toMatch(/real failures still surface|fallas reales siguen visibles/);
+    }
+  });
+
+  it('promotes Markdown preview without losing source fidelity or overstating offline support', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const markdown = copy.home.tools.items.find((tool) => tool.id === 'pdf_canvas')?.desc ?? '';
+      for (const term of ['.md', '.markdown', 'Preview', 'Source', 'Choose folder', 'Copy', 'Use as context', 'Save', 'CDN']) {
+        expect(markdown).toContain(term);
+      }
+      expect(markdown).toMatch(/original Markdown|Markdown original/);
+      expect(markdown).toMatch(/relative images and linked Markdown|imágenes relativas y otros Markdown/);
+      expect(markdown).toMatch(/remote images can still load from the web|imágenes remotas sí pueden cargar desde la web/);
+      expect(markdown).not.toMatch(/Markdown editor|editor Markdown|Mermaid|never.*network|nunca.*internet/i);
+      expect(copy.ascii.phrases.some((phrase) => phrase.includes('Markdown'))).toBe(true);
+      expect(copy.tlamatini.techStack.groups.flatMap((group) => group.items).some((item) => item.includes('Markdown'))).toBe(true);
+    }
+  });
+
+  it('describes verified setup recovery with visible failure and ownership limits', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const windows = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
+      for (const term of ['Retry', 'Change folder', 'Uninstaller.exe']) expect(windows).toContain(term);
+      expect(windows).toMatch(/verifies a recovery copy before changing files|verifica una copia de recuperación antes de cambiar archivos/);
+      expect(windows).toMatch(/Failed recovery keeps its copies|Si falla, conserva las copias/);
+      expect(windows).toMatch(/when available|cuando es posible/);
+      expect(windows).toMatch(/other apps stay open|otras apps quedan abiertas/);
+      expect(windows).not.toMatch(/guaranteed rollback|zero data loss|never fails|nunca falla|garantiza.*recuperación/i);
+    }
+    const setup = readFileSync(resolve('src/pages/Tlamatini.tsx'), 'utf8');
+    for (const term of ['extract the complete ZIP', 'Keep pkg.zip beside Installer.exe', 'choose a destination, review, and click Install', 'Retry, Change folder, and a log path']) {
+      expect(setup).toContain(term);
+    }
+  });
+
+  it('describes the consistent product workspace without changing the website layout', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const overview = copy.tlamatini.overview.p2;
+      for (const term of ['Prompt Flow Panel', 'Agentic Control Panel', 'PDF']) expect(overview).toContain(term);
+      expect(overview).toMatch(/mouse or keyboard|ratón o teclado/);
+      const visual = copy.tlamatini.features.items.find((item) => item.id === 'visual_workflows')?.description ?? '';
+      expect(visual).toMatch(/every edge and corner|cada borde y esquina/);
+      expect(visual).toMatch(/without changing canvas zoom|sin cambiar el zoom/);
+    }
+  });
+
+  it('promotes supported video links with bounded downloads and traceable evidence', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const media = translations[lang].home.tools.items.find((tool) => tool.id === 'media')?.desc ?? '';
+      for (const term of ['Video-Analyzer', 'YouTube', 'Vimeo', 'ffmpeg', 'URL']) expect(media).toContain(term);
+      expect(media).toMatch(/supported|compatible/);
+      expect(media).toMatch(/one item, not a playlist|un elemento, no una playlist/);
+      expect(media).toMatch(/downloads audio only|descarga sólo audio/);
+      expect(media).toMatch(/never opens a microphone|nunca abre el micrófono/);
+      expect(media).toMatch(/transcribe an audio file|transcribe un archivo de audio/);
+      expect(media).toMatch(/two visual observers|dos observadores visuales/);
+      expect(media).toMatch(/timestamped|marcas de tiempo/);
+      expect(media).toMatch(/source title and URL|título y URL de origen/);
+      expect(media).toMatch(/Reuse downloads|Reutiliza descargas/);
+      expect(media).toMatch(/without a separate ffmpeg install|sin instalar ffmpeg aparte/);
+      expect(media).toMatch(/Coverage limits|límites de cobertura/);
+    }
+  });
+
+  it('describes downloader recovery and hardware selection without promising universal access', () => {
+    for (const lang of ['en', 'es'] as const) {
+      const copy = translations[lang];
+      const recovery = copy.home.tools.items.find((tool) => tool.id === 'analysis_recovery')?.desc ?? '';
+      for (const term of ['GPU', 'CPU', 'Python', 'v1.82.0']) expect(recovery).toContain(term);
+      expect(recovery).toMatch(/one private downloader update and retry|una actualización privada del descargador y un reintento/);
+      expect(recovery).toMatch(/without changing your Python|sin modificar tu Python/);
+      expect(recovery).toMatch(/Sign-in|Inicio de sesión/);
+      expect(recovery).toMatch(/unavailable media|medios no disponibles/);
+      expect(recovery).toMatch(/network|red/);
+      expect(recovery).toMatch(/timeout|tiempos agotados/);
+      expect(recovery).not.toMatch(/invulnerable|never fails|nunca falla|bypass|sin restricciones/i);
+      const video = copy.tlamatini.agents.groups.flatMap((group) => group.agents).find((agent) => agent.name === 'Video-Analyzer');
+      expect(video?.desc).toMatch(/two independent verdicts|dos veredictos independientes/);
+      expect(video?.desc).toMatch(/supported web links with source attribution|enlaces compatibles con su origen/);
+    }
   });
 
   it('rejects stale releases, removed guardian claims, plan copy, and positional text joins', () => {
@@ -717,7 +829,7 @@ describe('Tlamatini v1.78.0 website truth contract', () => {
       /v1\.48\.2/i,
       /v1\.51\.\d+\b/i,
       /v1\.65\.\d+\b/i,
-      /v1\.(?:70\.0|72\.\d|73\.\d|74\.\d|75\.\d|76\.\d|77\.\d)\b/i,
+      /v1\.(?:70\.0|72\.\d|73\.\d|74\.\d|75\.\d|76\.\d|77\.\d|78\.\d|79\.\d|80\.\d|81\.\d)\b/i,
       /jcyhsiao\/qwen3\.5cloud:latest/i,
       /\b(?:87|88) (?:workflow[ -]?)?agents\b/i,
       /\b108 (?:built-in )?(?:Multi-Turn )?tools\b/i,
