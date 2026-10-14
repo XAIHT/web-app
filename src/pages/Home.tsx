@@ -94,7 +94,7 @@ function OverviewSection() {
         <div className="reveal-item min-w-0">
           <div className="xaiht-card">
             <img
-              src="/images/tlamatini/torso-tlamatini.png"
+              src="/images/tlamatini/torso-tlamatini.webp"
               alt="Tlamatini"
               className="w-full rounded-lg object-cover mb-6"
               style={{ maxHeight: '300px', border: '1px solid #222' }}
@@ -480,7 +480,7 @@ function WorkflowSection() {
               {w.desc}
             </p>
             <img
-              src="/images/feature-workflow.jpg"
+              src="/images/feature-workflow.webp"
               alt="Workflow Designer"
               className="w-full rounded-lg object-cover"
               style={{ maxHeight: '280px', border: '1px solid #222' }}

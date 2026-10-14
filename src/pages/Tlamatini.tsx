@@ -34,7 +34,7 @@ function TlamatiniHero() {
       style={{ background: '#000' }}
     >
       <img
-        src="/images/tlamatini/realistic-tlamatini.png"
+        src="/images/tlamatini/realistic-tlamatini.webp"
         alt="Tlamatini"
         className="absolute inset-0 w-full h-full object-cover opacity-50"
       />
@@ -88,7 +88,7 @@ function TlamatiniPresence() {
   }, []);
 
   const panelMedia: Record<string, { type: 'image' | 'video'; src: string }> = {
-    friendly: { type: 'image', src: '/images/tlamatini/shoulders-tlamatini.png' },
+    friendly: { type: 'image', src: '/images/tlamatini/shoulders-tlamatini.webp' },
     control: { type: 'video', src: '/images/tlamatini/lets-make-magic.mp4' },
     machines: { type: 'video', src: '/images/tlamatini/tlamatini-and-kyber.mp4' },
   };
@@ -116,7 +116,7 @@ function TlamatiniPresence() {
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-8 items-stretch">
           <div className="reveal-item xaiht-card overflow-hidden min-w-0" style={{ padding: 0 }}>
             <img
-              src="/images/tlamatini/hi-i-am-tlamatini.png"
+              src="/images/tlamatini/hi-i-am-tlamatini.webp"
               alt={p.spotlight.title}
               className="w-full object-cover"
               style={{ height: 'clamp(280px, 42vw, 520px)', borderBottom: '1px solid #222' }}
@@ -244,7 +244,7 @@ function TlamatiniOverview() {
         </div>
         <div className="reveal-item">
           <img
-            src="/images/tlamatini/realistic-tlamatini.png"
+            src="/images/tlamatini/realistic-tlamatini.webp"
             alt="Tlamatini RAG System"
             className="w-full rounded-lg object-cover"
             style={{ border: '1px solid #222', maxHeight: '400px' }}
@@ -278,19 +278,19 @@ function TlamatiniFeatures() {
   }, []);
 
   const featureImages: Record<string, string> = {
-    security: '/images/tlamatini/realistic-tlamatini.png',
-    netspeed: '/images/tlamatini/tlamatini-drawings.png',
+    security: '/images/tlamatini/realistic-tlamatini.webp',
+    netspeed: '/images/tlamatini/tlamatini-drawings.webp',
     creative_engines: '/images/tlamatini/agentic-advisor.mp4',
     embedded: '/images/tlamatini/lets-make-magic.mp4',
-    voice_vision: '/images/tlamatini/torso-tlamatini.png',
+    voice_vision: '/images/tlamatini/torso-tlamatini.webp',
     documents: '/images/tlamatini/tlamatini-and-kyber.mp4',
-    multi_turn: '/images/feature-chat.jpg',
-    visual_workflows: '/images/feature-workflow.jpg',
-    external_mcps: '/images/feature-agents.jpg',
-    acpx_skills: '/images/feature-agents.jpg',
-    research_rag: '/images/artifact-rag.jpg',
-    database: '/images/feature-chat.jpg',
-    windows_delivery: '/images/feature-agents.jpg',
+    multi_turn: '/images/feature-chat.webp',
+    visual_workflows: '/images/feature-workflow.webp',
+    external_mcps: '/images/feature-agents.webp',
+    acpx_skills: '/images/feature-agents.webp',
+    research_rag: '/images/artifact-rag.webp',
+    database: '/images/feature-chat.webp',
+    windows_delivery: '/images/feature-agents.webp',
   };
   const features = f.items.map((item) => ({ ...item, image: featureImages[item.id] }));
 

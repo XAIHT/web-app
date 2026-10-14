@@ -15,26 +15,26 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/i18n/context';
 
 const gallery = [
-  ['01-command-the-whole-workspace.png', 'One command surface across code, workflows, 3D, and hardware', 'Una superficie de mando para codigo, flujos, 3D y hardware'],
-  ['02-know-the-codebase.png', 'Decisions grounded in the codebase', 'Decisiones fundamentadas en el codigo'],
-  ['03-turn-work-into-workflows.png', 'Successful work becomes a reusable flow', 'El trabajo exitoso se convierte en un flujo reutilizable'],
-  ['04-approve-observe-cancel.png', 'Inspect, approve, or stop', 'Inspecciona, aprueba o detiene'],
-  ['05-coordinate-frontier-agents.png', 'External agents remain under review', 'Los agentes externos permanecen bajo revision'],
-  ['06-unreal-engine-studio.png', 'Real-time worlds under human direction', 'Mundos en tiempo real bajo direccion humana'],
-  ['07-blender-product-studio.png', '3D design connected to physical outcomes', 'Diseno 3D conectado con resultados fisicos'],
-  ['08-small-game-team.png', 'A release room for independent teams', 'Una sala de lanzamiento para equipos independientes'],
-  ['09-stm32-robotics-bench.png', 'Firmware, instruments, and repeatable motion', 'Firmware, instrumentos y movimiento repetible'],
-  ['10-esp32-smart-agriculture.png', 'Field decisions from real sensor evidence', 'Decisiones de campo con evidencia real de sensores'],
-  ['11-esphome-building-operations.png', 'Practical building operations', 'Operacion practica de edificios'],
-  ['12-arduino-learning-lab.png', 'Learning by building and testing', 'Aprender construyendo y probando'],
-  ['13-video-analysis-robotics-loop.png', 'Recorded evidence closes the robotics loop', 'La evidencia grabada cierra el bucle robotico'],
-  ['14-voice-listening-accessibility.png', 'Voice and listening expand professional access', 'Voz y escucha amplian el acceso profesional'],
-  ['15-authorized-network-lab.png', 'Security work begins with authorization', 'El trabajo de seguridad comienza con autorizacion'],
-  ['16-mexico-small-manufacturer.png', 'Less rework, more skilled judgment', 'Menos retrabajo, mas criterio especializado'],
-  ['17-east-africa-solar-field-station.png', 'Local experts keep critical power moving', 'Expertos locales mantienen la energia critica'],
-  ['18-south-asia-maker-lab.png', 'Affordable hardware moves from test to build', 'Hardware accesible pasa de prueba a produccion'],
-  ['19-europe-industrial-maintenance.png', 'Evidence supports maintenance before failure', 'La evidencia apoya el mantenimiento antes de la falla'],
-  ['20-latin-america-creative-studio.png', 'Creative delivery with technical control', 'Entrega creativa con control tecnico'],
+  ['01-command-the-whole-workspace.webp', 'One command surface across code, workflows, 3D, and hardware', 'Una superficie de mando para codigo, flujos, 3D y hardware'],
+  ['02-know-the-codebase.webp', 'Decisions grounded in the codebase', 'Decisiones fundamentadas en el codigo'],
+  ['03-turn-work-into-workflows.webp', 'Successful work becomes a reusable flow', 'El trabajo exitoso se convierte en un flujo reutilizable'],
+  ['04-approve-observe-cancel.webp', 'Inspect, approve, or stop', 'Inspecciona, aprueba o detiene'],
+  ['05-coordinate-frontier-agents.webp', 'External agents remain under review', 'Los agentes externos permanecen bajo revision'],
+  ['06-unreal-engine-studio.webp', 'Real-time worlds under human direction', 'Mundos en tiempo real bajo direccion humana'],
+  ['07-blender-product-studio.webp', '3D design connected to physical outcomes', 'Diseno 3D conectado con resultados fisicos'],
+  ['08-small-game-team.webp', 'A release room for independent teams', 'Una sala de lanzamiento para equipos independientes'],
+  ['09-stm32-robotics-bench.webp', 'Firmware, instruments, and repeatable motion', 'Firmware, instrumentos y movimiento repetible'],
+  ['10-esp32-smart-agriculture.webp', 'Field decisions from real sensor evidence', 'Decisiones de campo con evidencia real de sensores'],
+  ['11-esphome-building-operations.webp', 'Practical building operations', 'Operacion practica de edificios'],
+  ['12-arduino-learning-lab.webp', 'Learning by building and testing', 'Aprender construyendo y probando'],
+  ['13-video-analysis-robotics-loop.webp', 'Recorded evidence closes the robotics loop', 'La evidencia grabada cierra el bucle robotico'],
+  ['14-voice-listening-accessibility.webp', 'Voice and listening expand professional access', 'Voz y escucha amplian el acceso profesional'],
+  ['15-authorized-network-lab.webp', 'Security work begins with authorization', 'El trabajo de seguridad comienza con autorizacion'],
+  ['16-mexico-small-manufacturer.webp', 'Less rework, more skilled judgment', 'Menos retrabajo, mas criterio especializado'],
+  ['17-east-africa-solar-field-station.webp', 'Local experts keep critical power moving', 'Expertos locales mantienen la energia critica'],
+  ['18-south-asia-maker-lab.webp', 'Affordable hardware moves from test to build', 'Hardware accesible pasa de prueba a produccion'],
+  ['19-europe-industrial-maintenance.webp', 'Evidence supports maintenance before failure', 'La evidencia apoya el mantenimiento antes de la falla'],
+  ['20-latin-america-creative-studio.webp', 'Creative delivery with technical control', 'Entrega creativa con control tecnico'],
 ] as const;
 
 const copy = {
@@ -133,7 +133,7 @@ export default function Launch() {
       <Navigation dark />
       <main>
         <section className="launch-hero">
-          <img src="/images/campaign/gallery/01-command-the-whole-workspace.png" alt="Tlamatini and an engineer directing a connected engineering workspace" />
+          <img src="/images/campaign/gallery/01-command-the-whole-workspace.webp" alt="Tlamatini and an engineer directing a connected engineering workspace" />
           <div className="launch-hero-scrim" />
           <div className="launch-shell launch-hero-content">
             <p className="launch-kicker">{c.eyebrow}</p>
@@ -169,7 +169,7 @@ export default function Launch() {
               <p className="launch-body">{c.shiftBody}</p>
             </div>
             <figure className="launch-media">
-              <img src="/images/campaign/gallery/02-know-the-codebase.png" alt="Tlamatini leading an evidence-based code review" />
+              <img src="/images/campaign/gallery/02-know-the-codebase.webp" alt="Tlamatini leading an evidence-based code review" />
             </figure>
           </div>
         </section>
@@ -196,7 +196,7 @@ export default function Launch() {
         <section className="launch-band launch-command">
           <div className="launch-shell launch-command-grid">
             <figure className="launch-media launch-media-tall">
-              <img src="/images/campaign/gallery/04-approve-observe-cancel.png" alt="A human operator reviewing approval and stop controls with Tlamatini" />
+              <img src="/images/campaign/gallery/04-approve-observe-cancel.webp" alt="A human operator reviewing approval and stop controls with Tlamatini" />
             </figure>
             <div>
               <p className="launch-kicker">{c.commandLabel}</p>
@@ -241,7 +241,7 @@ export default function Launch() {
         </section>
 
         <section className="launch-close">
-          <img src="/images/campaign/gallery/00-tlamatini-master-reference.png" alt="Tlamatini in a practical engineering studio" />
+          <img src="/images/campaign/gallery/00-tlamatini-master-reference.webp" alt="Tlamatini in a practical engineering studio" />
           <div className="launch-close-scrim" />
           <div className="launch-shell launch-close-content">
             <img src="/images/campaign/xaiht-tlamatini-lockup.svg" alt="XAIHT Tlamatini" className="launch-lockup" />

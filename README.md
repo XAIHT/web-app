@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/images/hero-xaiht.jpg" alt="XAIHT" width="220" />
+  <img src="public/images/hero-xaiht.webp" alt="XAIHT" width="220" />
 </p>
 
 <h1 align="center">XAIHT · xaiht.org</h1>
@@ -472,6 +472,7 @@ One-off provisioning/operations live in `scripts/` (run on the VM):
 |---|---|
 | `npm run dev` | Vite + Hono dev server on :3000. |
 | `npm run build` | Build the SPA and bundle the server into `dist/`. |
+| `npm run images:optimize` | Regenerate full-resolution WebP images and their size/hash manifest from preserved artwork. |
 | `npm start` | Run the production server (`dist/boot.js`). |
 | `npm run preview` | Preview the built SPA. |
 | `npm run check` | `tsc -b` — full type-check. |
@@ -481,6 +482,14 @@ One-off provisioning/operations live in `scripts/` (run on the VM):
 | `npm run db:push` | Push `db/schema.ts` straight to the database. |
 | `npm run db:generate` | Generate a SQL migration from schema changes. |
 | `npm run db:migrate` | Apply pending migrations. |
+
+Website raster images are served as WebP. Original PNG/JPEG artwork remains in
+`images_fro-mTlamatini/`, `campaign/assets/gallery/`, and `assets/image-sources/`,
+outside the public output. After changing artwork, run `npm run images:optimize`,
+then `npm test` and `npm run build`. Keep the generated images and
+`assets/image-manifest.json` together. Tiny SVG logos and MP4 videos retain their
+native formats. See [Image Optimization](docs/image-optimization.md) for the
+encoding policy, measured savings, and verification scope.
 
 ---
 
