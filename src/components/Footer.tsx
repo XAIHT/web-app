@@ -21,7 +21,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <a
-            href="https://github.com/XAIHT/Tlamatini"
+            href="https://github.com/XAIHT/Tlamatini/releases/download/v1.88.0/Tlamatini_Source_v1.88.0.zip"
             target="_blank"
             rel="noopener noreferrer"
             className="xaiht-btn xaiht-btn-filled"

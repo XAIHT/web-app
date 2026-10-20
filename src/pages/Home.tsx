@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import TerminaterShowcase from '@/components/TerminaterShowcase';
 import AsciiIntro from '@/components/AsciiIntro';
 import { useT } from '@/i18n/context';
 
@@ -17,6 +18,7 @@ export default function Home() {
       <Navigation />
       <AsciiIntro />
       <OverviewSection />
+      <TerminaterShowcase />
       <VisionMissionSection />
       <ArchitectureSection />
       <WorkflowSection />
@@ -101,9 +103,9 @@ function OverviewSection() {
             />
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '89' },
+                { label: o.stats.agents, value: '86' },
                 { label: o.stats.skills, value: '29' },
-                { label: o.stats.version, value: 'v1.85.0' },
+                { label: o.stats.version, value: 'v1.88.0' },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">

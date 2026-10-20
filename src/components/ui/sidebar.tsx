@@ -25,6 +25,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import {
+  type SidebarContextProps,
   useSidebar,
   SidebarContext,
   SIDEBAR_COOKIE_NAME,

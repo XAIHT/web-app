@@ -1,4 +1,5 @@
-interface RequestConfig extends RequestInit {
+interface RequestConfig extends Omit<RequestInit, "body"> {
+  body?: unknown;
   baseUrl?: string;
   params?: Record<string, string | number>;
   timeout?: number;

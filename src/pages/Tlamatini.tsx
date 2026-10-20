@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import TerminaterShowcase from '@/components/TerminaterShowcase';
 import { useT } from '@/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,6 +13,7 @@ export default function Tlamatini() {
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       <Navigation dark />
       <TlamatiniHero />
+      <TerminaterShowcase />
       <TlamatiniPresence />
       <TlamatiniOverview />
       <TlamatiniFeatures />
@@ -230,7 +232,7 @@ function TlamatiniOverview() {
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
-              href="https://github.com/XAIHT/Tlamatini"
+              href="https://github.com/XAIHT/Tlamatini/releases/download/v1.88.0/Tlamatini_Source_v1.88.0.zip"
               target="_blank"
               rel="noopener noreferrer"
               className="xaiht-btn xaiht-btn-filled"
@@ -369,7 +371,7 @@ function TlamatiniInstallation() {
   }, []);
 
   const stepCode: Record<string, string> = {
-    install_tlamatini: '# Option A: Tlamatini v1.85.0 Windows installer\nhttps://github.com/XAIHT/Tlamatini/releases\n# Download the v1.85.0 release ZIP for Windows 11 x64,\n# extract the complete ZIP, run Installer.exe,\n# choose a destination, review, and click Install.\n# Keep pkg.zip beside Installer.exe.\n# Setup verifies a recovery copy before changing files.\n# Errors stay visible with Retry, Change folder, and a log path.\n# Launch Tlamatini from the desktop shortcut:\nhttp://127.0.0.1:8000/\n# Login: user / changeme\n# If 8000 is reserved, set django_port in config.json.\n# Updating later: About -> Check for updates\n# The in-app updater keeps your existing Uninstaller.exe.\n# Run the new Installer to refresh the uninstaller too.\n# It keeps your Templates and documents, not Temp scratch.\n\n# Option B: run Tlamatini v1.85.0 from source\n# Requires Python 3.12.10 and Git.\ngit clone https://github.com/XAIHT/Tlamatini.git\ncd Tlamatini\npython -m venv venv && venv\\Scripts\\activate\npython -m pip install -r requirements.txt\npython Tlamatini/manage.py migrate\npython Tlamatini/manage.py runserver --noreload\n# --noreload is optional; an explicit port also wins:\npython Tlamatini/manage.py runserver 9100',
+    install_tlamatini: '# Option A: Tlamatini v1.88.0 Windows installer\nhttps://github.com/XAIHT/Tlamatini/releases/tag/v1.88.0\n# Download the Windows 11 x64 release asset:\n# Tlamatini_Release_v1.88.0_Win11x64.zip\n# Choose this ZIP, not GitHub\'s Source code archives.\n# Extract the complete ZIP, run Installer.exe,\n# choose a destination, review, and click Install.\n# Keep pkg.zip beside Installer.exe.\n# Setup verifies a recovery copy before changing files.\n# Errors stay visible with Retry, Change folder, and a log path.\n# Launch Tlamatini from the desktop shortcut:\nhttp://127.0.0.1:8000/\n# Login: user / changeme\n# If 8000 is reserved, set django_port in config.json.\n# Updating later: About -> Check for updates\n# The in-app updater keeps your existing Uninstaller.exe.\n# Run the new Installer to refresh the uninstaller too.\n# It keeps your Templates and documents, not Temp scratch.\n\n# Option B: run Tlamatini v1.88.0 from source\n# Requires Python 3.12.10.\n# Download and extract the matching source ZIP:\nhttps://github.com/XAIHT/Tlamatini/releases/download/v1.88.0/Tlamatini_Source_v1.88.0.zip\n# From the folder where you extracted the ZIP:\ncd Tlamatini_Source_v1.88.0\n$env:TLAMATINI_VERSION = \'1.88.0\'\npython -m venv venv\n.\\venv\\Scripts\\Activate.ps1\npython -m pip install -r requirements.txt\npython Tlamatini/manage.py migrate\npython Tlamatini/manage.py runserver --noreload\n# --noreload is optional; an explicit port also wins:\npython Tlamatini/manage.py runserver 9100',
     install_ollama: '# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves embedding, reasoning, and vision.\n# Local speech and direct cloud speech/Claude\n# use their own backends.',
     sign_in_ollama: 'ollama signin',
     download_models: '# Local embedding model\nollama pull nomic-embed-text\n\n# Current cloud reasoning and vision defaults\nollama pull glm-5.3:cloud\nollama pull mistral-large-3:675b-cloud\nollama pull gemma4:cloud',

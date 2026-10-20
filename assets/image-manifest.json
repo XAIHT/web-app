@@ -7,8 +7,8 @@
     "smartSubsample": true
   },
   "jpegQuality": 82,
-  "sourceBytes": 69253080,
-  "outputBytes": 5404932,
+  "sourceBytes": 69574373,
+  "outputBytes": 5545758,
   "assets": [
     {
       "source": "images_fro-mTlamatini/TorsoTlamatini.png",
@@ -393,6 +393,42 @@
       "outputBytes": 186338,
       "sourceSha256": "299f36efb4bf911bec93be7b578bb26e605bf690b11c313c2b2e1ef328072ac5",
       "outputSha256": "ed4fc691894d414679bce7cbd987056148aef31db20993d87c5a5ccf5607f4cf"
+    },
+    {
+      "source": "assets/image-sources/terminater/terminals.png",
+      "destination": "public/images/terminater/terminals.webp",
+      "width": 1072,
+      "height": 558,
+      "hasAlpha": false,
+      "lossless": true,
+      "sourceBytes": 72647,
+      "outputBytes": 27194,
+      "sourceSha256": "f27b7484ad19fadc51e11c00c172cd281676797df5148229c0edf80243fce814",
+      "outputSha256": "d1870db233d7ea7c1e75985951a26e8c0aba1bf81887ec1fba221dffd578e9cf"
+    },
+    {
+      "source": "assets/image-sources/terminater/handover.png",
+      "destination": "public/images/terminater/handover.webp",
+      "width": 1072,
+      "height": 558,
+      "hasAlpha": false,
+      "lossless": true,
+      "sourceBytes": 82560,
+      "outputBytes": 35968,
+      "sourceSha256": "9da629ffa9c1f120878426c87499e115d3731816ebe7683c9c8fe9906cce74ac",
+      "outputSha256": "7d9a56c8fb23d82be9dee201f5e82b5c00f616874d630ea962780c8c146a27c3"
+    },
+    {
+      "source": "assets/image-sources/terminater/workflows.png",
+      "destination": "public/images/terminater/workflows.webp",
+      "width": 1440,
+      "height": 960,
+      "hasAlpha": false,
+      "lossless": true,
+      "sourceBytes": 166086,
+      "outputBytes": 77664,
+      "sourceSha256": "f071cd74bc2982b36dca0bf71a890e32e1523ef235e8eb2da1c5cf48da1746b2",
+      "outputSha256": "fd711e61491d97755edd79a863623a1e9ec12d3b4592587503493bd88a9a1649"
     }
   ]
 }
