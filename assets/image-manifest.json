@@ -7,8 +7,8 @@
     "smartSubsample": true
   },
   "jpegQuality": 82,
-  "sourceBytes": 69574373,
-  "outputBytes": 5545758,
+  "sourceBytes": 70031101,
+  "outputBytes": 5794108,
   "assets": [
     {
       "source": "images_fro-mTlamatini/TorsoTlamatini.png",
@@ -429,6 +429,42 @@
       "outputBytes": 77664,
       "sourceSha256": "f071cd74bc2982b36dca0bf71a890e32e1523ef235e8eb2da1c5cf48da1746b2",
       "outputSha256": "fd711e61491d97755edd79a863623a1e9ec12d3b4592587503493bd88a9a1649"
+    },
+    {
+      "source": "assets/image-sources/live-editor/editing.png",
+      "destination": "public/images/live-editor/editing.webp",
+      "width": 1905,
+      "height": 1428,
+      "hasAlpha": false,
+      "quality": 92,
+      "sourceBytes": 129277,
+      "outputBytes": 92598,
+      "sourceSha256": "fdd02203efc35f0d4717aad48f4b9a993e0ce5dc48701914240fc2d117fbce69",
+      "outputSha256": "06e417fa72edb990818a0387a5a16e19a7d7c815f60e415bf4e3881e7157900f"
+    },
+    {
+      "source": "assets/image-sources/live-editor/tutoring.png",
+      "destination": "public/images/live-editor/tutoring.webp",
+      "width": 1905,
+      "height": 1428,
+      "hasAlpha": false,
+      "quality": 92,
+      "sourceBytes": 166119,
+      "outputBytes": 69088,
+      "sourceSha256": "125792c32182b036488865ddb2310d31819b9a4bdb50a8979f2980ad04f054d2",
+      "outputSha256": "97c0b1dbb90c409585cdcd41fcf0f6fe9831e1e5b1d250476b5b0faf4f8ffec0"
+    },
+    {
+      "source": "assets/image-sources/live-editor/markdown.png",
+      "destination": "public/images/live-editor/markdown.webp",
+      "width": 1905,
+      "height": 1428,
+      "hasAlpha": false,
+      "quality": 92,
+      "sourceBytes": 161332,
+      "outputBytes": 86664,
+      "sourceSha256": "83b4e6b3630ac9d2bfcb1911b43e604df7ab95a59c7509e089008282f4ba8e9d",
+      "outputSha256": "82712fba1c66144e3224a474b97f39970b8a501e61e4ff9d5579c817dbccef8e"
     }
   ]
 }

@@ -29,8 +29,8 @@ describe('WebP delivery', () => {
   it('ships every raster image as WebP, without duplicate PNG/JPEG payloads', () => {
     const publicFiles = files('public/images');
     expect(publicFiles.filter((file) => /\.(png|jpe?g|gif|bmp|tiff?)$/i.test(file))).toEqual([]);
-    expect(manifest.assets).toHaveLength(35);
-    expect(new Set(manifest.assets.map((asset) => asset.destination)).size).toBe(35);
+    expect(manifest.assets).toHaveLength(38);
+    expect(new Set(manifest.assets.map((asset) => asset.destination)).size).toBe(38);
     expect(publicFiles.filter((file) => file.endsWith('.webp')).sort())
       .toEqual(manifest.assets.map((asset) => asset.destination).sort());
     expect(manifest.outputBytes).toBeLessThan(manifest.sourceBytes * 0.5);

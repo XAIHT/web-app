@@ -15,6 +15,35 @@
 export type Lang = 'en' | 'es';
 
 const en = {
+  liveEditor: {
+    label: 'A new jewel in Tlamatini v1.90.0',
+    title: 'Live Editor',
+    headline: 'Build with her. Understand every line.',
+    intro: 'Your code, your ideas, and Tlamatini in one working canvas. Write and refine real files, learn step by step with Interactor, and save directly to your project without leaving the conversation.',
+    galleryLabel: 'Live Editor in action',
+    imageLabel: 'Inside Tlamatini',
+    enlarge: 'Enlarge Live Editor screenshot',
+    close: 'Close screenshot',
+    download: 'Download v1.90.0',
+    explore: 'Discover Terminater',
+    requirement: 'Included in v1.90.0 | Windows 11 x64',
+    views: [
+      { id: 'editing', label: 'Create and refine', title: 'From an idea to a file you can own.',
+        desc: 'Work on code, JSON, configuration, and text right beside the conversation. Undo, redo, find and replace, or share your edited work as context. Your file becomes a place to think and build, not just something to read.',
+        alt: 'Tlamatini Live Editor displaying an editable Python project file with Save, Undo, Find, and Wrap controls' },
+      { id: 'tutoring', label: 'Learn together', title: 'She starts a thought. You make the next choice.',
+        desc: 'Interactor reads your unsaved work, types a short teaching segment, and hands the next field to you. Optional suggestions respond locally without a model call for every keystroke. Ask for a hint, explore a selection, or continue the lesson in chat.',
+        alt: 'Interactor guiding a Dockerfile lesson in the real Live Editor, with a learner field and optional local completion' },
+      { id: 'markdown', label: 'Write and preview', title: 'One document. Two ways to see it.',
+        desc: 'Shape a README, a project plan, or your next explanation in Markdown Source, then see it in Preview. Both views share the same document and undo history. Bring the edited source back into the conversation whenever you choose.',
+        alt: 'A Markdown project guide rendered in the Tlamatini canvas, with Preview and Source views' },
+    ],
+    benefits: [
+      { title: 'Your work comes first', desc: 'She reads the live buffer, including unsaved edits. Outdated edits are refused instead of overwriting your latest thinking.' },
+      { title: 'Your keyboard. Your pace.', desc: 'Your typing, Esc, or Stop interrupts her. Keep the work already written and take the next step yourself. Typing never executes code.' },
+      { title: 'Save where you work', desc: 'Native Save As chooses a local project folder. Save checks disk conflicts and preserves encoding and line endings. Nothing is autosaved: save before closing.' },
+    ],
+  },
   terminater: {
     label: 'Enhanced in Tlamatini v1.90.0',
     title: 'Terminater',
@@ -577,6 +606,35 @@ const en = {
 export type Translations = typeof en;
 
 const es: Translations = {
+  liveEditor: {
+    label: 'Una nueva joya en Tlamatini v1.90.0',
+    title: 'Live Editor',
+    headline: 'Crea con ella. Comprende cada línea.',
+    intro: 'Tu código, tus ideas y Tlamatini en un mismo lienzo de trabajo. Escribe y mejora archivos reales, aprende paso a paso con Interactor y guarda directamente en tu proyecto sin salir de la conversación.',
+    galleryLabel: 'Live Editor en acción',
+    imageLabel: 'Dentro de Tlamatini',
+    enlarge: 'Ampliar captura de Live Editor',
+    close: 'Cerrar captura',
+    download: 'Descargar v1.90.0',
+    explore: 'Descubre Terminater',
+    requirement: 'Incluido en v1.90.0 | Windows 11 x64',
+    views: [
+      { id: 'editing', label: 'Crea y mejora', title: 'De una idea a un archivo que es tuyo.',
+        desc: 'Trabaja con código, JSON, configuración y texto junto a la conversación. Deshaz, rehaz, busca y reemplaza, o comparte lo editado como contexto. Tu archivo se convierte en un espacio para pensar y crear, no sólo para leer.',
+        alt: 'Live Editor de Tlamatini con un archivo Python editable y controles Save, Undo, Find y Wrap' },
+      { id: 'tutoring', label: 'Aprende con ella', title: 'Ella inicia la idea. Tú eliges el siguiente paso.',
+        desc: 'Interactor lee tu trabajo sin guardar, escribe un segmento y te cede el siguiente campo. Las sugerencias opcionales responden localmente, sin llamar al modelo por cada tecla. Pide una pista, explora una selección o continúa la lección en chat.',
+        alt: 'Interactor guía una lección de Dockerfile en Live Editor, con un campo para el alumno y completado local opcional' },
+      { id: 'markdown', label: 'Escribe y revisa', title: 'Un documento. Dos formas de verlo.',
+        desc: 'Da forma a un README, un plan de proyecto o tu próxima explicación en Markdown Source y revísalo en Preview. Ambas vistas comparten documento e historial de deshacer. Lleva el texto editado a la conversación cuando tú decidas.',
+        alt: 'Guía de proyecto Markdown en el lienzo de Tlamatini, con vistas Preview y Source' },
+    ],
+    benefits: [
+      { title: 'Tu trabajo va primero', desc: 'Ella lee el texto actual, incluso sin guardar. Rechaza ediciones desactualizadas en vez de sobrescribir tus cambios más recientes.' },
+      { title: 'Tu teclado. Tu ritmo.', desc: 'Tu escritura, Esc o Stop la interrumpen. Conserva lo escrito y toma el siguiente paso. Escribir nunca ejecuta código.' },
+      { title: 'Guarda donde trabajas', desc: 'Save As nativo permite elegir una carpeta local. Save detecta conflictos y conserva codificación y saltos de línea. No hay guardado automático: guarda antes de cerrar.' },
+    ],
+  },
   terminater: {
     label: 'Mejorado en Tlamatini v1.90.0',
     title: 'Terminater',

@@ -13,6 +13,7 @@ import {
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import TerminaterShowcase from '@/components/TerminaterShowcase';
+import LiveEditorShowcase from '@/components/LiveEditorShowcase';
 import { useLanguage } from '@/i18n/context';
 
 const gallery = [
@@ -162,6 +163,7 @@ export default function Launch() {
           </div>
         </section>
 
+        <LiveEditorShowcase />
         <TerminaterShowcase />
 
         <section className="launch-band launch-thesis">

@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import TerminaterShowcase from '@/components/TerminaterShowcase';
+import LiveEditorShowcase from '@/components/LiveEditorShowcase';
 import AsciiIntro from '@/components/AsciiIntro';
 import { useT } from '@/i18n/context';
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Navigation />
       <AsciiIntro />
       <OverviewSection />
+      <LiveEditorShowcase />
       <TerminaterShowcase />
       <VisionMissionSection />
       <ArchitectureSection />

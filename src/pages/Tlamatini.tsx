@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import TerminaterShowcase from '@/components/TerminaterShowcase';
+import LiveEditorShowcase from '@/components/LiveEditorShowcase';
 import { useT } from '@/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +14,7 @@ export default function Tlamatini() {
     <div className="min-h-screen" style={{ background: '#0a0a0a' }}>
       <Navigation dark />
       <TlamatiniHero />
+      <LiveEditorShowcase />
       <TerminaterShowcase />
       <TlamatiniPresence />
       <TlamatiniOverview />
