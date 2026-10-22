@@ -40,7 +40,7 @@ const gallery = [
 
 const copy = {
   en: {
-    eyebrow: 'XAIHT presents Tlamatini v1.88.0',
+    eyebrow: 'XAIHT presents Tlamatini v1.90.0',
     title: 'Command your work.',
     lead: 'A local-first AI operator for builders whose software touches engines, devices, media, networks, and the physical world.',
     source: 'Download Source',
@@ -48,15 +48,15 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Product version'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In v1.88.0, Terminater brings real CMD and PowerShell sessions into view. Watch her type, follow the output, and take the keyboard when needed. Faster file searches, a leaner package, and recoverable removal join 109 built-in Multi-Turn tools under your direction.',
+    shiftBody: 'Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In v1.90.0, build beside her in the Live Editor. Interactor teaches one segment at a time; you complete the next field. Edit and save to your project, then follow Terminater in real CMD and PowerShell sessions. Bring 110 built-in Multi-Turn tools to work without giving up control.',
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
-      ['Codebase intelligence', 'Globber and Grepper find mixed-language files with brace sets, pattern lists, and folder filters. Mover creates new destination folders without losing file names or unrelated content. Read Markdown in Preview or Source and Refresh without losing your view. PDFer, PPTXer, and LaTeXer turn knowledge into deliverables; the rebuildable Architecture atlas maps the project.'],
+      ['Learn and build in the Live Editor', 'Interactor reads your unsaved work, types a teaching segment, and guides your next field with local suggestions. Your typing, Esc, or Stop interrupts her. Edit code and Markdown with Undo/Redo and Find/replace; native Save As writes to your chosen project folder with conflict checks. Globber, Grepper, Editor, and Mover work across files; PDFer, PPTXer, and LaTeXer create deliverables.'],
       ['Creative engines', 'Unreal Engine and Blender workflows connect intent to editable scenes and builds.'],
       ['Embedded systems', 'STM32, ESP32, ESPHome, and Arduino join firmware to real instruments, with working ESP32 and smart-home templates to start from.'],
       ['Voice and media', 'Talker speaks; Whisperer turns host-microphone speech into direct prompts or editable drafts. Float her avatar beside the canvas or keep her docked and centered over Mic and Send as you resize. Image-Interpreter accepts multi-image lists without duplicate files. Video-Analyzer fetches supported YouTube, Vimeo, and direct media links for timestamped transcripts and summaries.'],
-      ['Human command', 'Terminater types commands key by key into visible terminals: use Esc to take the keyboard or finish a planned handover. Hung commands are flagged and can be aborted. Ask Execs, Step-by-Step, and Hard Cancel keep you in command. About -> Usage waits for real data, explains connection failures, and retries automatically; missing information is never a zero balance.'],
+      ['Human command', 'Terminater checks typed lines against the screen and flags unverified work. Use Esc to take over. In chat, say you will run commands: she leaves Enter to you and blocks other runners until you hand control back. Status notes no longer cover terminal output. Ask Execs, Step-by-Step, and Hard Cancel keep your choices explicit. About -> Usage waits for real data, never inventing a zero.'],
       ['Reusable orchestration', 'Connect 86 agents in .flw or use eight operations in .fpmt, including Terminater. Pass terminal output to the next step, collect User Input, and add static rich-text User Commentary. Open from Windows or drop into the right editor; opening never runs a flow. Terminal sessions survive page closure until Tlamatini exits; each prompt run keeps its own context.'],
     ],
     commandLabel: 'Humanly tempered',
@@ -78,7 +78,7 @@ const copy = {
     closeBody: 'Open source, local-first, and designed for inspectable action across the whole workspace.',
   },
   es: {
-    eyebrow: 'XAIHT presenta Tlamatini v1.88.0',
+    eyebrow: 'XAIHT presenta Tlamatini v1.90.0',
     title: 'Comanda tu trabajo.',
     lead: 'Una operadora de IA local-first para quienes construyen software que toca motores, dispositivos, medios, redes y el mundo fisico.',
     source: 'Descargar codigo',
@@ -86,15 +86,15 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Version actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El proximo espacio de IA debe conocer el proyecto y actuar en todo el.',
-    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En v1.88.0, Terminater pone sesiones reales CMD y PowerShell a la vista. Observa como escribe, sigue la salida y toma el teclado cuando lo necesites. Busquedas mas rapidas, un paquete ligero y desinstalacion recuperable se unen a 109 herramientas Multi-Turn bajo tu direccion.',
+    shiftBody: 'Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En v1.90.0, crea junto a ella en Live Editor. Interactor ensena un segmento a la vez y te deja completar el siguiente campo. Edita y guarda en tu proyecto; sigue a Terminater en CMD y PowerShell reales. Pon 110 herramientas Multi-Turn a trabajar sin ceder tu control.',
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [
-      ['Inteligencia del codigo', 'Globber y Grepper encuentran archivos de varios lenguajes con grupos entre llaves, listas y filtros de carpetas. Mover crea destinos nuevos sin perder nombres ni contenido ajeno. Lee Markdown en Preview o Source y usa Refresh sin perder tu vista. PDFer, PPTXer y LaTeXer crean entregables; el Architecture atlas reconstruible mapea el proyecto.'],
+      ['Aprende y crea en Live Editor', 'Interactor lee el trabajo sin guardar, escribe un segmento y guia el siguiente campo con sugerencias locales. Tu escritura, Esc o Stop la interrumpen. Edita codigo y Markdown con Undo/Redo y Find/replace; Save As nativo guarda en tu proyecto con comprobacion de conflictos. Globber, Grepper, Editor y Mover trabajan entre archivos; PDFer, PPTXer y LaTeXer crean entregables.'],
       ['Motores creativos', 'Unreal Engine y Blender conectan la intencion con escenas y builds editables.'],
       ['Sistemas embebidos', 'STM32, ESP32, ESPHome y Arduino unen firmware con instrumentos reales, partiendo de plantillas funcionales ESP32 y smart home.'],
       ['Voz y medios', 'Talker habla; Whisperer convierte la voz del microfono anfitrion en prompts o borradores editables. Separa su avatar junto al lienzo o mantenla acoplada y centrada sobre Mic y Send al ajustar el espacio. Image-Interpreter admite listas sin duplicar archivos. Video-Analyzer descarga enlaces compatibles de YouTube, Vimeo y medios directos para transcripciones y resumenes con marcas de tiempo.'],
-      ['Mando humano', 'Terminater escribe tecla a tecla en terminales visibles: pulsa Esc para tomar el teclado o completa un relevo planificado. Detecta comandos bloqueados que pueden abortarse. Ask Execs, Step-by-Step y Hard Cancel mantienen tu mando. About -> Usage espera datos reales, explica fallas de conexion y reintenta automaticamente; la informacion faltante nunca es un saldo cero.'],
+      ['Mando humano', 'Terminater comprueba las lineas en pantalla y senala trabajo no verificado. Esc toma el mando. Dile en chat que ejecutaras los comandos: deja Enter en tus manos y bloquea otros ejecutores hasta que devuelvas el control. Los avisos ya no tapan la salida. Ask Execs, Step-by-Step y Hard Cancel respetan tus decisiones. About -> Usage espera datos reales, nunca inventa un cero.'],
       ['Orquestacion reutilizable', 'Conecta 86 agentes en .flw o usa ocho operaciones en .fpmt, incluido Terminater. Pasa la salida al siguiente paso, recoge User Input y anade notas estaticas User Commentary. Abre desde Windows o suelta en el editor correcto; abrir nunca ejecuta. Las sesiones de terminal sobreviven al cierre de paginas hasta salir de Tlamatini; cada flujo de prompts conserva su contexto.'],
     ],
     commandLabel: 'Humanamente templada',
@@ -141,7 +141,7 @@ export default function Launch() {
             <h1>{c.title}</h1>
             <p className="launch-lead">{c.lead}</p>
             <div className="launch-actions">
-              <a href="https://github.com/XAIHT/Tlamatini/releases/download/v1.88.0/Tlamatini_Source_v1.88.0.zip" target="_blank" rel="noopener noreferrer" className="launch-button launch-button-primary">
+              <a href="https://github.com/XAIHT/Tlamatini/archive/refs/tags/v1.90.0.zip" target="_blank" rel="noopener noreferrer" className="launch-button launch-button-primary">
                 {c.source}<ExternalLink size={17} />
               </a>
               <Link to="/tlamatini" className="launch-button launch-button-secondary">
@@ -153,7 +153,7 @@ export default function Launch() {
 
         <section className="launch-proof" aria-label="Verified product inventory">
           <div className="launch-shell launch-proof-grid">
-            {['86', '109', '29', 'v1.88.0'].map((value, index) => (
+            {['86', '110', '29', 'v1.90.0'].map((value, index) => (
               <div key={value}>
                 <strong>{value}</strong>
                 <span>{c.proof[index]}</span>

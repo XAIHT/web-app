@@ -88,7 +88,7 @@ export default function TerminaterShowcase() {
           })}
         </div>
         <div className="terminater-actions">
-          <a className="xaiht-btn xaiht-btn-filled" href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.88.0" target="_blank" rel="noopener noreferrer">
+          <a className="xaiht-btn xaiht-btn-filled" href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.90.0" target="_blank" rel="noopener noreferrer">
             <Download size={16} aria-hidden="true" />{c.download}
           </a>
           <a className="terminater-explore" href="/tlamatini#features">
