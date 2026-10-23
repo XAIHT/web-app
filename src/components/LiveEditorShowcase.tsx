@@ -89,7 +89,7 @@ export default function LiveEditorShowcase() {
           })}
         </div>
         <div className="terminater-actions">
-          <a className="xaiht-btn xaiht-btn-filled" href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.90.0" target="_blank" rel="noopener noreferrer">
+          <a className="xaiht-btn xaiht-btn-filled" href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.91.0" target="_blank" rel="noopener noreferrer">
             <Download size={16} aria-hidden="true" />{c.download}
           </a>
           <a className="terminater-explore" href="#terminater">
