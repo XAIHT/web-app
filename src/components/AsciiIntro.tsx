@@ -1,5 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { useT } from '@/i18n/context';
+import { ArrowRight, Download } from 'lucide-react';
+import Link from '@/components/LocalizedLink';
+import { EditionLabel } from '@/components/EditionDetails';
+import { useEdition, useT } from '@/i18n/context';
 
 const STAR_COUNT = 120;
 
@@ -16,6 +19,7 @@ function createStars() {
 
 export default function AsciiIntro() {
   const t = useT();
+  const edition = useEdition();
   const phrases = t.ascii.phrases;
   const trackRef = useRef<HTMLDivElement>(null);
   const phraseIndexRef = useRef(0);
@@ -105,6 +109,18 @@ export default function AsciiIntro() {
 
       {/* Bottom fade */}
       <div className="ascii-fade-bottom" />
+      <div className="banner-edition">
+        <div>
+          <p className="banner-edition-name">Tlamatini</p>
+          <EditionLabel />
+        </div>
+        <div className="banner-edition-actions">
+          <a href={edition.installerUrl} className="xaiht-btn xaiht-btn-filled">
+            <Download size={16} aria-hidden="true" />{t.edition.download}
+          </a>
+          <Link to="/tlamatini">{t.edition.explore}<ArrowRight size={16} aria-hidden="true" /></Link>
+        </div>
+      </div>
     </section>
   );
 }

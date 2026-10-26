@@ -7,7 +7,7 @@ import {
 import {
   Dialog, DialogClose, DialogContent, DialogDescription, DialogTitle, DialogTrigger,
 } from '@/components/ui/dialog';
-import { useT } from '@/i18n/context';
+import { useEdition, useT } from '@/i18n/context';
 import './TerminaterShowcase.css';
 import './LiveEditorShowcase.css';
 
@@ -21,6 +21,8 @@ const benefitIcons = [ShieldCheck, Keyboard, Save];
 
 export default function LiveEditorShowcase() {
   const c = useT().liveEditor;
+  const edition = useEdition();
+  const t = useT();
   const [view, setView] = useState('editing');
 
   return (
@@ -67,7 +69,7 @@ export default function LiveEditorShowcase() {
                   </DialogContent>
                 </Dialog>
                 <figcaption>
-                  <span className="terminater-caption-label">{c.imageLabel}</span>
+                  <span className="terminater-caption-label">{c.imageLabel} · {t.edition.screenshot}</span>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>
                 </figcaption>
@@ -89,14 +91,14 @@ export default function LiveEditorShowcase() {
           })}
         </div>
         <div className="terminater-actions">
-          <a className="xaiht-btn xaiht-btn-filled" href="https://github.com/XAIHT/Tlamatini/releases/tag/v1.91.0" target="_blank" rel="noopener noreferrer">
+          <a className="xaiht-btn xaiht-btn-filled" href={edition.installerUrl} target="_blank" rel="noopener noreferrer">
             <Download size={16} aria-hidden="true" />{c.download}
           </a>
           <a className="terminater-explore" href="#terminater">
             {c.explore}<ArrowRight size={17} aria-hidden="true" />
           </a>
         </div>
-        <p className="terminater-requirement">{c.requirement}</p>
+        <p className="terminater-requirement">{c.requirement} · {edition.label}</p>
       </div>
     </section>
   );

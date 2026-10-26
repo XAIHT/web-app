@@ -1,0 +1,10 @@
+.edition-switch { display: flex; align-items: center; gap: 8px; flex-shrink: 0; border: 0; margin: 0; padding: 0; color: #c9a96e; }
+.edition-switch-options { display: grid; grid-template-columns: 1fr 1fr; padding: 3px; border: 1px solid #65573d; border-radius: 6px; background: #111; }
+.edition-switch-option { position: relative; display: grid; place-items: center; min-height: 36px; padding: 0 10px; border-radius: 3px; color: #b8b8b8; font-size: 12px; font-weight: 600; letter-spacing: 0; cursor: pointer; transition: color .2s, background .2s; }
+.edition-switch-option[data-active='true'] { background: #c9a96e; color: #16130d; }
+.edition-switch-option[data-active='true']:has(input[value='es']) { background: #40c4b4; color: #072722; }
+.edition-switch-option input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.edition-switch-option:has(input:focus-visible) { outline: 2px solid #f0f0f0; outline-offset: 3px; }
+.edition-switch-option:hover:not([data-active='true']) { color: #fff; background: #242424; }
+@media (max-width: 380px) { .edition-switch > svg { display: none; } .edition-switch-option { padding-inline: 7px; } }
+@media (prefers-reduced-motion: reduce) { .edition-switch-option { transition: none; } }

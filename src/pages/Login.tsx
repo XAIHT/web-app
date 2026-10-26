@@ -2,19 +2,21 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useAuth } from '@/hooks/useAuth';
 import Navigation from '@/components/Navigation';
-import { useT } from '@/i18n/context';
+import { useLanguage, useT } from '@/i18n/context';
+import { localizePath } from '@/i18n/editions';
 import { Paths } from '@contracts/constants';
 
 export default function Login() {
   const { isAuthenticated, isLoading } = useAuth();
   const navigate = useNavigate();
   const t = useT();
+  const { lang } = useLanguage();
 
   useEffect(() => {
     if (isAuthenticated && !isLoading) {
-      navigate('/');
+      navigate(localizePath('/', lang));
     }
-  }, [isAuthenticated, isLoading, navigate]);
+  }, [isAuthenticated, isLoading, navigate, lang]);
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: '#0a0a0a' }}>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from 'react';
-import { Link } from 'react-router';
+import Link from '@/components/LocalizedLink';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
@@ -7,7 +7,8 @@ import Footer from '@/components/Footer';
 import TerminaterShowcase from '@/components/TerminaterShowcase';
 import LiveEditorShowcase from '@/components/LiveEditorShowcase';
 import AsciiIntro from '@/components/AsciiIntro';
-import { useT } from '@/i18n/context';
+import { EditionLabel } from '@/components/EditionDetails';
+import { useEdition, useT } from '@/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,6 +37,7 @@ function OverviewSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const t = useT();
   const o = t.home.overview;
+  const edition = useEdition();
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -79,14 +81,15 @@ function OverviewSection() {
           <p className="reveal-item text-[#888] mb-8" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
             {o.desc}
           </p>
+          <EditionLabel />
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
-              href="https://github.com/XAIHT/Tlamatini"
+              href={edition.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="xaiht-btn xaiht-btn-outline"
             >
-              {o.viewGithub}
+              {t.edition.repository}
             </a>
             <Link to="/tlamatini" className="xaiht-btn xaiht-btn-filled">
               {o.documentation}
@@ -107,7 +110,7 @@ function OverviewSection() {
               {[
                 { label: o.stats.agents, value: '86' },
                 { label: o.stats.skills, value: '29' },
-                { label: o.stats.version, value: 'v1.91.0' },
+                { label: o.stats.version, value: edition.tag },
                 { label: o.stats.iterations, value: '4096' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -204,7 +207,7 @@ function VisionMissionSection() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card) => (
-            <div key={card.title} className="xaiht-card reveal-item">
+            <div key={card.id} className="xaiht-card reveal-item">
               <div className="mb-4">{card.icon}</div>
               <h3 className="text-lg font-semibold mb-1" style={{ color: '#f0f0f0' }}>
                 {card.title}
@@ -394,7 +397,7 @@ function ArchitectureSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
                 {a.multiTurn.items.map((item, i) => (
                   <div
-                    key={item.title}
+                    key={i}
                     className="p-5 rounded-lg min-w-0"
                     style={{
                       background: '#111',
@@ -457,6 +460,7 @@ function WorkflowSection() {
     '#c9a96e', '#c79e7a', '#b08cc7', '#c9a96e',
   ];
   const categories = t.tlamatini.agents.groups.map((group, i) => ({
+    id: i,
     name: group.category,
     agents: group.agents.map(agent => agent.name).join(', '),
     color: categoryColors[i] ?? '#9e9e9e',
@@ -494,7 +498,7 @@ function WorkflowSection() {
           <div className="space-y-3 min-w-0">
             {categories.map((cat) => (
               <div
-                key={cat.name}
+                key={cat.id}
                 className="flex items-start gap-3 p-3 rounded-lg"
                 style={{ background: 'rgba(255,255,255,0.02)' }}
               >
@@ -580,7 +584,7 @@ function ToolsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {tools.map((tool) => (
             <div
-              key={tool.name}
+              key={tool.id}
               className="reveal-item xaiht-card"
               style={{ padding: '1.5rem' }}
             >

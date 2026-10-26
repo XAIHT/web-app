@@ -5,7 +5,9 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import TerminaterShowcase from '@/components/TerminaterShowcase';
 import LiveEditorShowcase from '@/components/LiveEditorShowcase';
-import { useT } from '@/i18n/context';
+import { installationSteps } from '@/i18n/installation';
+import EditionDetails, { EditionLabel } from '@/components/EditionDetails';
+import { useEdition, useLanguage, useT } from '@/i18n/context';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,16 +54,17 @@ function TlamatiniHero() {
         <span className="section-label block mb-4" style={{ color: '#c9a96e' }}>
           {h.label}
         </span>
+        <div className="flex justify-center"><EditionLabel /></div>
         <h1
           className="font-extrabold mb-4"
           style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 0.95 }}
         >
           TLAMATINI
         </h1>
-        <p className="text-xl text-[#888] mb-2 font-light">
+        <p className="text-xl text-[#bbb] mb-2 font-light">
           {h.subtitle}
         </p>
-        <p className="text-[#555] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
+        <p className="text-[#aaa] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           {h.desc}
         </p>
       </div>
@@ -151,7 +154,7 @@ function TlamatiniPresence() {
 
           <div className="grid grid-cols-1 gap-6 min-w-0">
             {panels.map((panel) => (
-              <div key={panel.title} className="reveal-item xaiht-card overflow-hidden min-w-0" style={{ padding: 0 }}>
+              <div key={panel.id} className="reveal-item xaiht-card overflow-hidden min-w-0" style={{ padding: 0 }}>
                 {panel.type === 'image' ? (
                   <img
                     src={panel.src}
@@ -194,6 +197,7 @@ function TlamatiniOverview() {
   const sectionRef = useRef<HTMLElement>(null);
   const t = useT();
   const o = t.tlamatini.overview;
+  const edition = useEdition();
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -234,7 +238,7 @@ function TlamatiniOverview() {
           </p>
           <div className="reveal-item flex items-center gap-4 flex-wrap">
             <a
-              href="https://github.com/XAIHT/Tlamatini/archive/refs/tags/v1.91.0.zip"
+              href={edition.sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="xaiht-btn xaiht-btn-filled"
@@ -242,7 +246,7 @@ function TlamatiniOverview() {
               <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
               </svg>
-              {o.viewSource}
+              {t.edition.source}
             </a>
           </div>
         </div>
@@ -314,7 +318,7 @@ function TlamatiniFeatures() {
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {features.map((feature) => (
-            <div key={feature.title} className="reveal-item xaiht-card overflow-hidden" style={{ padding: 0 }}>
+            <div key={feature.id} className="reveal-item xaiht-card overflow-hidden" style={{ padding: 0 }}>
               {feature.image.endsWith('.mp4') ? (
                 <video
                   src={feature.image}
@@ -356,6 +360,7 @@ function TlamatiniInstallation() {
   const sectionRef = useRef<HTMLElement>(null);
   const t = useT();
   const inst = t.tlamatini.installation;
+  const { lang } = useLanguage();
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -372,13 +377,7 @@ function TlamatiniInstallation() {
     };
   }, []);
 
-  const stepCode: Record<string, string> = {
-    install_tlamatini: '# Option A: Tlamatini v1.91.0 Windows installer\nhttps://github.com/XAIHT/Tlamatini/releases/tag/v1.91.0\n# Download the Windows 11 x64 release asset:\n# Select the Windows installer ZIP under release Assets.\n# Choose this ZIP, not GitHub\'s Source code archives.\n# Extract the complete ZIP, run Installer.exe,\n# choose a destination, review, and click Install.\n# Keep pkg.zip beside Installer.exe.\n# Setup verifies a recovery copy before changing files.\n# Errors stay visible with Retry, Change folder, and a log path.\n# Launch Tlamatini from the desktop shortcut:\nhttp://127.0.0.1:8000/\n# Login: user / changeme; change the password immediately.\n# If 8000 is reserved, set django_port in config.json.\n# Updating later: About -> Check for updates\n# The in-app updater keeps your existing Uninstaller.exe.\n# Run the new Installer to refresh the uninstaller too.\n# It keeps your Templates and documents, not Temp scratch.\n\n# Option B: run Tlamatini v1.91.0 from source\n# Requires Python 3.12.10.\n# Download and extract the v1.91.0 source ZIP:\nhttps://github.com/XAIHT/Tlamatini/archive/refs/tags/v1.91.0.zip\n# From the folder where you extracted the ZIP:\ncd Tlamatini-1.91.0\n$env:TLAMATINI_VERSION = \'1.91.0\'\npython -m venv venv\n.\\venv\\Scripts\\python.exe -m pip install -r requirements.txt\n.\\venv\\Scripts\\python.exe Tlamatini/manage.py migrate\n.\\venv\\Scripts\\python.exe Tlamatini/manage.py createsuperuser\n.\\venv\\Scripts\\python.exe Tlamatini/manage.py runserver --noreload\n# --noreload is optional; an explicit port also wins:\n.\\venv\\Scripts\\python.exe Tlamatini/manage.py runserver 9100',
-    install_ollama: '# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves embedding, reasoning, and vision.\n# Local speech and direct cloud speech/Claude\n# use their own backends.',
-    sign_in_ollama: 'ollama signin',
-    download_models: '# Local embedding model\nollama pull nomic-embed-text\n\n# Current cloud reasoning and vision defaults\nollama pull glm-5.3:cloud\nollama pull mistral-large-3:675b-cloud\nollama pull gemma4:cloud',
-    configure_models: '# In the Tlamatini navbar:\nConfig -> Configure MCPs\nConfig -> Configure Agents\nConfig -> Models\n# Choose among 38 settings in six categories:\n# Core, Vision, Speech, Workflows, Documents,\n# and Monitoring & messaging.\n# Models must support their assigned role.\n# Lists models from each configured Ollama server.\n# Compact mode is a toolbar switch.\n# It clears Configure choices except live metrics,\n# file search, and time. Tick back what you need.\n# Saved Configure choices apply without a restart.\n# Each row shows its estimated token cost.\n# Small models lock Compact ON; bigger ones unlock\n# it without changing your picks. OFF enables all\n# rows and restores previously active External MCPs.\n# CONTEXT-WINDOW warns when a request was cut.\n# Self-modify includes self-knowledge\n# only when ON and the model can hold it.\n# Shown in source runs or --self-modify builds.\n# Save opens the live Model Brain Auto-tuning dialog.\n# See model-specific settings and their sources.\n# Your overrides win; learned profiles survive updates.\n# Save does not download models.\n# Then reconnect chat when prompted and\n# restart active agents to use the new models.\n# Agent fields set to "@config" inherit globals;\n# explicit model choices remain overrides.\n\nConfig -> Access Keys Wizard\n# Local Ollama: leave token blank.\n# Remote Ollama: paste the Ollama token.\n# Add any cloud-CLI keys, then click Save.\n\nConfig -> Voice\n# Optionally tune her animated browser voice,\n# answer reading, completion notice, or silence.\n\nConfig -> Mic\n# Choose Send automatically (default), or\n# Keep in the chat input to review before Send.\n# Select the HOST input, gain, gate and language.\n# Advanced: sample rate, channels, beam and VAD.\n# Preferences stay in this browser; Save applies\n# to the next recording. Reset + Save inherits.\n# Config -> Models -> Speech sets the recognizer.\n# Mic beside Send starts capture; wait for Listening.\n# A second click or Escape cancels dictation.\n# Mic preserves the draft and current chat modes.\n\nAbout -> Usage\n# Cloud credits, Chat activity, and Models.\n# Inspect reported balances and refill weeks/date.\n# Choose 7 or 30 days for recorded activity.\n# The monthly balance is separate from this range.\n# Local model totals cover recorded chat calls,\n# not earlier history, external apps, or child agents.\n# Refresh works while Tlamatini answers.\n# Missing data is explained, never assumed to be zero.\n\nPanels -> Agentic Control Panel\n# Design and save agent workflows as .flw.\nPanels -> Prompt Flow Panel\n# Design prompt conversations as .fpmt.\n# User Input asks; User Commentary is a static note.\n# Format and resize notes; resize Run output too.\n# Windows or chat opens either format in its editor.\n# Validate, then Play; opening never runs a file.\n# Keep the page and app open for scheduled steps.\n\n# Optional: LaTeXer PDF compilation needs TeX.\n# MiKTeX is recommended:\nhttps://miktex.org/download\n\n# Live Editor and guided learning:\n# Open or drop text, code, JSON, or Markdown.\n# Save As chooses a project folder on this computer.\n# Save checks disk revisions; conflicts are refused.\n# Save before closing: unsaved edits stay in memory.\n# PDF stays read-only; Save exports an original copy.\n# For tutoring, enable Multi-Turn, Interactor in\n# Config -> Configure MCPs/Tools, and Live editor.\n# Ask her to teach a file one segment at a time.\n# Continue, Another hint, and Explain selection\n# use your live buffer. Typing is not saving.\n# In a terminal lesson, say you will run commands:\n# Terminater leaves Enter to you until you hand back.\n\n# Personalize teaching, terminals, and narration:\nConfig -> Live Editor & Terminater\n# Also available from canvas/terminal Settings\n# in chat, Agentic Control Panel, and Prompt Flow Panel.\n# Tabs: Live Editor, Terminater, Voice.\n# Standard / Guided learning fill a draft.\n# Preview runs no commands, edits no files, saves nothing.\n# Save applies behavior to the next action.\n# Cancel / Escape discard unsaved settings.\n# Opening settings stops active editor teaching.\n# Behavior follows your account; appearance stays\n# with this account in the current browser.\n# Editor: 40-160 WPM, pauses 0-3 seconds, detail,\n# suggestions, ghost text/choices, cursor following.\n# Link editor and terminal speeds at 40-160 WPM.\n# Terminal: 20-160 WPM; choose an available shell,\n# advisor, command wait, silence and handoff waits.\n# I always press Enter keeps execution manual\n# across chat and both workflow panels.\n# Shell/advisor defaults affect new terminals.\n# A wait timeout does not kill the running process.\n# New flow nodes use Use my defaults; older flows\n# retain explicit values. Manual Enter and narration\n# remain account choices in either mode.\n# Voice: explanation, command/code, or both;\n# before, during, or after typing. Optionally wait\n# for before-typing narration to finish first.\n# Choose errors/input, all outcomes, or no notices.\n# Uses Config -> Voice, not the Talker agent.\n# Mute/listening override narration; Esc stops speech.\n# Secret-marked text and private input stay unspoken.\n# Missing voice offers Continue without voice or Stop.\n# Appearance: 12-24 px fonts, line numbers/wrap,\n# terminal cursor shape/blink and preferred layout.\n\n# Tick Multi-Turn and open Catalog of prompts to begin.',
-  };
+  const stepCode = installationSteps(lang);
   const steps = inst.steps.map((step) => ({ ...step, code: stepCode[step.id] }));
 
   return (
@@ -398,9 +397,10 @@ function TlamatiniInstallation() {
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
         {inst.desc}
       </p>
+      <EditionDetails />
       <div className="space-y-4">
         {steps.map((step, i) => (
-          <div key={step.label} className="reveal-item">
+          <div key={step.id} className="reveal-item">
             <div className="flex items-center gap-3 mb-2">
               <span
                 className="font-mono text-xs font-medium w-6 h-6 rounded-full flex items-center justify-center"
@@ -481,8 +481,8 @@ function TlamatiniAgents() {
           {ag.desc}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {agentGroups.map((group) => (
-            <div key={group.category} className="reveal-item xaiht-card" style={{ padding: '1.5rem' }}>
+          {agentGroups.map((group, index) => (
+            <div key={index} className="reveal-item xaiht-card" style={{ padding: '1.5rem' }}>
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-2 h-2 rounded-full" style={{ background: group.color }} />
                 <h3 className="text-sm font-semibold" style={{ color: '#f0f0f0' }}>
@@ -553,8 +553,8 @@ function TlamatiniTechStack() {
         {tech.title}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {stack.map((group) => (
-          <div key={group.category} className="reveal-item xaiht-card" style={{ padding: '1.5rem' }}>
+        {stack.map((group, index) => (
+          <div key={index} className="reveal-item xaiht-card" style={{ padding: '1.5rem' }}>
             <h3 className="text-sm font-semibold mb-3" style={{ color: '#c9a96e' }}>
               {group.category}
             </h3>

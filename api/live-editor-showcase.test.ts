@@ -28,10 +28,10 @@ describe('Live Editor showcase', () => {
     }
     expect(copy.views[1].desc).toMatch(/unsaved work|trabajo sin guardar/);
     expect(copy.views[1].desc).toMatch(/Optional suggestions|sugerencias opcionales/);
-    expect(copy.views[2].desc).toContain('Markdown Source');
-    expect(copy.views[2].desc).toContain('Preview');
+    expect(copy.views[2].desc).toContain(lang === 'es' ? 'Markdown Código' : 'Markdown Source');
+    expect(copy.views[2].desc).toContain(lang === 'es' ? 'Vista previa' : 'Preview');
     expect(copy.benefits[1].desc).toMatch(/never executes code|nunca ejecuta código/);
-    expect(copy.benefits[2].desc).toContain('Save As');
+    expect(copy.benefits[2].desc).toContain(lang === 'es' ? 'Guardar como' : 'Save As');
     expect(copy.benefits[2].desc).toMatch(/save before closing|guarda antes de cerrar/);
     expect(copy.benefits[2].desc).toMatch(/conflicts|conflictos/);
     expect(copy.download).toContain('v1.91.0');
@@ -48,7 +48,7 @@ describe('Live Editor showcase', () => {
     expect(component).toContain('loading="lazy"');
     expect(component).toContain('decoding="async"');
     expect(component).toContain('href="#terminater"');
-    expect(component).toContain('https://github.com/XAIHT/Tlamatini/releases/tag/v1.91.0');
+    expect(component).toContain('href={edition.installerUrl}');
   });
 
   it('ships real WebP assets at the declared dimensions with a small total payload', async () => {

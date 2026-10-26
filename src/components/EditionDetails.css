@@ -1,0 +1,50 @@
+.edition-label {
+  display: flex;
+  align-items: center;
+  justify-content: inherit;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: #d5b779;
+  font: 500 12px/1.6 'IBM Plex Mono', monospace;
+  letter-spacing: 0;
+}
+.edition-label > span:first-child {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  background: #40c4b4;
+  transform: rotate(45deg);
+}
+.edition-details {
+  padding: 28px 0;
+  margin-bottom: 32px;
+  border-block: 1px solid #343024;
+}
+.edition-details h3 { font-size: 22px; line-height: 1.35; margin-bottom: 12px; }
+.edition-details > p:not(.edition-label) { color: #aaa; max-width: 680px; line-height: 1.65; }
+.edition-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin: 24px 0 18px; }
+.edition-actions a { display: inline-flex; align-items: center; gap: 8px; }
+.edition-actions .xaiht-btn { font-size: 14px; }
+.edition-actions svg { flex-shrink: 0; }
+.edition-actions a:not(.xaiht-btn) { color: #a5c8bc; font-size: 14px; }
+.edition-repository { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; color: #b8b8b8; font: 12px/1.6 'IBM Plex Mono', monospace; overflow-wrap: anywhere; }
+.edition-platform { font-size: 12px; margin-top: 6px; }
+.edition-actions a:focus-visible, .edition-repository:focus-visible { outline: 2px solid #40c4b4; outline-offset: 5px; }
+.banner-edition { position: absolute; z-index: 5; bottom: 32px; left: 50%; transform: translateX(-50%); width: calc(100% - 48px); max-width: 1152px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid #65573d; }
+.banner-edition-name { color: #f0f0f0; font-size: 28px; font-weight: 600; line-height: 1.25; margin-bottom: 8px; }
+.banner-edition .edition-label { margin: 0; }
+.banner-edition-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.banner-edition-actions a { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #c9a96e; }
+.banner-edition-actions .xaiht-btn { color: #111; }
+.banner-edition-actions a:focus-visible { outline: 2px solid #40c4b4; outline-offset: 4px; }
+@media (max-width: 599px) {
+  .banner-edition { bottom: 24px; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+  .banner-edition .edition-label, .banner-edition-actions { justify-content: center; }
+  .banner-edition-actions { gap: 14px; }
+  .banner-edition-name { font-size: 24px; }
+}
+@media (max-height: 600px) and (min-width: 600px) {
+  .banner-edition { bottom: 12px; padding-top: 12px; }
+  .banner-edition-name { font-size: 22px; }
+}

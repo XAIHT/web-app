@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router';
+import { Github, Menu, X } from 'lucide-react';
+import Link from '@/components/LocalizedLink';
 import { useAuth } from '@/hooks/useAuth';
-import { useLanguage, useT } from '@/i18n/context';
+import { useEdition, useLanguage, useT } from '@/i18n/context';
 import LanguageSwitch from '@/components/LanguageSwitch';
+import './Navigation.css';
 
 interface NavigationProps {
   dark?: boolean;
@@ -10,139 +13,96 @@ interface NavigationProps {
 
 export default function Navigation({ dark = false }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButton = useRef<HTMLButtonElement>(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, isAuthenticated, logout } = useAuth();
   const t = useT();
   const { lang } = useLanguage();
-
+  const edition = useEdition();
   const isHome = location.pathname === '/';
   const isTlamatini = location.pathname === '/tlamatini';
-  const isLaunch = location.pathname === '/launch';
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const homeLinks = [
-    { label: t.nav.overview, href: '#overview' },
-    { label: t.nav.architecture, href: '#architecture' },
-    { label: t.nav.agents, href: '#agents' },
-    { label: t.nav.tools, href: '#tools' },
-  ];
-
-  const tlamatiniLinks = [
+  const links = isTlamatini ? [
     { label: t.nav.overview, href: '#overview' },
     { label: t.nav.features, href: '#features' },
     { label: t.nav.installation, href: '#installation' },
     { label: t.nav.agents, href: '#agents' },
-  ];
+  ] : isHome ? [
+    { label: t.nav.overview, href: '#overview' },
+    { label: t.nav.architecture, href: '#architecture' },
+    { label: t.nav.agents, href: '#agents' },
+    { label: t.nav.tools, href: '#tools' },
+  ] : [];
 
-  const navLinks = isTlamatini ? tlamatiniLinks : homeLinks;
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const el = document.querySelector(href);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
+  function closeMenu() { setMenuOpen(false); }
+  const pageLinks = (
+    <>
+      {!isHome && !isTlamatini && <Link to="/" onClick={closeMenu} className="nav-link">{t.nav.home}</Link>}
+      {links.map(link => <a key={link.href} href={link.href} className="nav-link" onClick={event => {
+        closeMenu();
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        navigate(`${location.pathname}${location.search}${link.href}`, { preventScrollReset: true });
+        document.querySelector(link.href)?.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+        });
+      }}>{link.label}</a>)}
+      <Link to="/launch" onClick={closeMenu} className={`nav-link ${location.pathname === '/launch' ? 'active' : ''}`}>
+        {lang === 'es' ? 'Lanzamiento' : 'Launch'}
+      </Link>
+      <Link to="/tlamatini" onClick={closeMenu} className={`nav-link ${isTlamatini ? 'active' : ''}`}>{t.nav.tlamatini}</Link>
+    </>
+  );
+  const account = isAuthenticated && user ? (
+    <button onClick={() => { closeMenu(); logout(); }} className="nav-link">{t.nav.logout}</button>
+  ) : <Link to="/login" onClick={closeMenu} className="nav-link">{t.nav.login}</Link>;
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-[1000] transition-all duration-300"
-      style={{
-        background: scrolled || dark ? 'rgba(17, 17, 17, 0.92)' : 'rgba(17, 17, 17, 0.6)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: '1px solid #222222',
-        boxShadow: scrolled ? '0 1px 0 rgba(201,169,110,0.1)' : 'none',
-      }}
-    >
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between h-14 px-6">
-        {/* Brand */}
-        <Link to="/" className="flex items-center gap-2" aria-label="XAIHT home">
-          <img src="/images/campaign/xaiht-wordmark.svg" alt="XAIHT" className="h-7 w-auto" />
+    <nav className="site-navigation" aria-label={t.edition.navigation} data-solid={scrolled || dark}
+      onKeyDown={event => {
+        if (event.key === 'Escape' && menuOpen) {
+          closeMenu();
+          menuButton.current?.focus();
+        }
+      }}>
+      <div className="site-navigation-row">
+        <Link to="/" className="site-brand" onClick={closeMenu} aria-label={`XAIHT · ${t.nav.home}`}>
+          <img src="/images/campaign/xaiht-wordmark.svg" alt="XAIHT" />
         </Link>
-
-        {/* Center Nav Links */}
-        <div className="hidden md:flex items-center gap-6">
-          {isHome && navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="nav-link"
-            >
-              {link.label}
-            </a>
-          ))}
-          {isTlamatini && navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="nav-link"
-            >
-              {link.label}
-            </a>
-          ))}
-          {!isHome && !isTlamatini && (
-            <Link to="/" className="nav-link">{t.nav.home}</Link>
-          )}
-          <Link
-            to="/launch"
-            className={`nav-link ${isLaunch ? 'active' : ''}`}
-          >
-            {lang === 'es' ? 'Lanzamiento' : 'Launch'}
-          </Link>
-          <Link
-            to="/tlamatini"
-            className={`nav-link ${isTlamatini ? 'active' : ''}`}
-          >
-            {t.nav.tlamatini}
-          </Link>
-        </div>
-
-        {/* Right Side */}
-        <div className="flex items-center gap-4">
+        <div className="site-navigation-links">{pageLinks}</div>
+        <div className="site-navigation-actions">
           <LanguageSwitch />
-          <a
-            href="https://github.com/XAIHT/Tlamatini"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-1.5 text-[1.2rem] text-[#888] hover:text-[#c9a96e] transition-colors"
-          >
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-            </svg>
-            {t.nav.github}
+          <a href={edition.repoUrl} target="_blank" rel="noopener noreferrer" className="site-github"
+            aria-label={`GitHub · ${edition.repository} · ${edition.language}`} title={`XAIHT / ${edition.repository}`}>
+            <Github size={18} aria-hidden="true" /><span>GitHub</span>
           </a>
-          {isAuthenticated && user ? (
-            <div className="flex items-center gap-3">
-              <span className="text-[1.2rem] text-[#666]">{user.name || t.nav.user}</span>
-              <button
-                onClick={logout}
-                className="text-[1.2rem] text-[#555] hover:text-[#999] transition-colors"
-              >
-                {t.nav.logout}
-              </button>
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              className="text-[1.2rem] text-[#888] hover:text-[#c9a96e] transition-colors"
-            >
-              {t.nav.login}
-            </Link>
-          )}
+          <div className="site-account">{account}</div>
+          <button ref={menuButton} className="site-menu-button" type="button" aria-expanded={menuOpen}
+            aria-controls="site-mobile-menu" aria-label={menuOpen ? t.edition.closeMenu : t.edition.openMenu}
+            onClick={() => setMenuOpen(open => !open)}>
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
+      {menuOpen && <div id="site-mobile-menu" className="site-mobile-menu">
+        <div className="site-mobile-links">{pageLinks}</div>
+        <div className="site-mobile-product">
+          <span>{edition.label} · {edition.tag}</span>
+          <a href={edition.repoUrl} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+            <Github size={17} aria-hidden="true" />{edition.repository}
+          </a>
+          {account}
+        </div>
+      </div>}
     </nav>
   );
 }

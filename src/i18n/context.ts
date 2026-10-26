@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 import { translations, type Lang, type Translations } from './translations';
+import { editions } from './editions';
 
 export interface LanguageContextValue {
   /** Active UI language. */
@@ -25,4 +26,8 @@ export function useLanguage(): LanguageContextValue {
 export function useT(): Translations {
   const { lang } = useLanguage();
   return translations[lang];
+}
+
+export function useEdition() {
+  return editions[useLanguage().lang];
 }

@@ -26,6 +26,31 @@
 >
 > This repo is the **public-facing website** that tells the world what Tlamatini is, shows the demos, and walks visitors through installation. It is a fully-fledged fullstack app in its own right: a React front end, a typed RPC backend, Google sign-in, a MySQL database, and a one-command Docker deploy to Google Cloud.
 
+### Application Editions
+
+The header selects both the website language and the application edition:
+
+| Selection | Application repository |
+| --- | --- |
+| English | [XAIHT/Tlamatini](https://github.com/XAIHT/Tlamatini) |
+| Español | [XAIHT/Tlamatini-Spanish](https://github.com/XAIHT/Tlamatini-Spanish) |
+
+`src/i18n/editions.ts` owns each edition's version, installer, source ZIP,
+repository, documentation, and issue links. Update the appropriate edition only
+after checking its release assets. Never copy an English download URL into a
+translated component. `useEdition()` selects the destinations; `useT()` selects
+the copy. Setup instructions live in `src/i18n/installation.ts`.
+
+Shareable URLs use `?lang=en` or `?lang=es`, retaining the route, other query
+parameters, and section anchor. An explicit URL choice wins over the saved choice,
+then the browser language. `LocalizedLink` keeps the selection on internal links.
+The choice still works when local storage is blocked. Screenshots that show the
+English application are labeled as such in both languages.
+
+Run `npm run check`, `npm run lint`, `npm test`, and `npm run build` after an
+edition update. Check both languages on mobile and desktop, including the actual
+header control, reload, Back/Forward, downloads, and scroll-driven sections.
+
 ---
 
 <p align="center">

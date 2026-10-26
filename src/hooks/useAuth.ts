@@ -2,6 +2,8 @@ import { trpc } from "@/lib/trpc";
 import { useCallback, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router";
 import { LOGIN_PATH } from "@/const";
+import { useLanguage } from "@/i18n/context";
+import { localizePath } from "@/i18n/editions";
 
 type UseAuthOptions = {
   redirectOnUnauthenticated?: boolean;
@@ -13,6 +15,7 @@ export function useAuth(options?: UseAuthOptions) {
     options ?? {};
 
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   const utils = trpc.useUtils();
 
@@ -29,7 +32,7 @@ export function useAuth(options?: UseAuthOptions) {
   const logoutMutation = trpc.auth.logout.useMutation({
     onSuccess: async () => {
       await utils.invalidate();
-      navigate(redirectPath);
+      navigate(localizePath(redirectPath, lang));
     },
   });
 
@@ -39,10 +42,10 @@ export function useAuth(options?: UseAuthOptions) {
     if (redirectOnUnauthenticated && !isLoading && !user) {
       const currentPath = window.location.pathname;
       if (currentPath !== redirectPath) {
-        navigate(redirectPath);
+        navigate(localizePath(redirectPath, lang));
       }
     }
-  }, [redirectOnUnauthenticated, isLoading, user, navigate, redirectPath]);
+  }, [redirectOnUnauthenticated, isLoading, user, navigate, redirectPath, lang]);
 
   // If auth.me errored (e.g. server returned 401 because the cookie expired or
   // got dropped by browser tracking protection), React Query keeps the old

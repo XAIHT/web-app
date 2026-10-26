@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import Link from '@/components/LocalizedLink';
 import Navigation from '@/components/Navigation';
 import { useT } from '@/i18n/context';
 
