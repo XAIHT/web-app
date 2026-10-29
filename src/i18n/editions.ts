@@ -21,8 +21,8 @@ function edition(repository: string, version: string, label: string, language: s
 
 // Each edition owns its release and assets, even when their version numbers match.
 export const editions = {
-  en: edition('Tlamatini', '1.91.0', 'English edition', 'English'),
-  es: edition('Tlamatini-Spanish', '1.91.0', 'Edición en español', 'Español'),
+  en: edition('Tlamatini', '1.91.1', 'English edition', 'English'),
+  es: edition('Tlamatini-Spanish', '1.91.1', 'Edición en español', 'Español'),
 } satisfies Record<Lang, ReturnType<typeof edition>>;
 
 export function localizePath(path: string, lang: Lang): string {
