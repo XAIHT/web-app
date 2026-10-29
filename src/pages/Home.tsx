@@ -278,10 +278,9 @@ function ArchitectureSection() {
     });
 
     return () => {
+      // Revert the pin before killing its timeline, including StrictMode remounts.
+      tl.scrollTrigger?.kill();
       tl.kill();
-      ScrollTrigger.getAll().forEach(t => {
-        if (t.trigger === stackEl) t.kill();
-      });
     };
   }, []);
 

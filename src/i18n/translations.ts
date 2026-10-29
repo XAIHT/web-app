@@ -107,6 +107,7 @@ const en = {
   },
 
   ascii: {
+    label: 'Tlamatini highlights. Swipe left or press Left Arrow to accelerate.',
     phrases: [
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
@@ -714,6 +715,7 @@ const es: Translations = {
   },
 
   ascii: {
+    label: 'Lo mejor de Tlamatini. Desliza a la izquierda o pulsa Flecha izquierda para acelerar.',
     phrases: [
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',

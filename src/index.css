@@ -216,7 +216,14 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  touch-action: pan-y pinch-zoom;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
+
+.nasa-banner-container[data-dragging] { cursor: grabbing; }
+.nasa-banner-container:focus-visible { outline: 2px solid #c9a96e; outline-offset: -4px; }
 
 .nasa-banner-stars {
   position: absolute;
@@ -255,13 +262,16 @@
 .nasa-banner-track {
   position: relative;
   z-index: 2;
-  width: 100%;
+  display: flex;
+  gap: 32px;
+  width: max-content;
   white-space: nowrap;
   will-change: transform;
 }
 
 .nasa-banner-text {
   display: inline-block;
+  flex-shrink: 0;
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(3.5rem, 10vw, 9rem);
   font-weight: 900;
