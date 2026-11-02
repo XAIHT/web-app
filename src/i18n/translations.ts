@@ -55,7 +55,7 @@ const en = {
     ],
     benefits: [
       { title: 'Your work comes first', desc: 'She reads the live buffer, including unsaved edits. Outdated edits are refused instead of overwriting your latest thinking.' },
-      { title: 'Set the pace. Keep control.', desc: 'Set editor typing to 40–160 WPM and pauses to 0–3 seconds. Link the terminal pace if you choose. Your typing, Esc, or Stop interrupts her; typing never executes code.' },
+      { title: 'Set the pace. Keep control.', desc: 'Set editor typing to 40–250 WPM and pauses to 0–3 seconds. Link the terminal pace if you choose. Your typing, Esc, or Stop interrupts her; typing never executes code.' },
       { title: 'Save where you work', desc: 'Native Save As chooses a local project folder. Save checks disk conflicts and preserves encoding and line endings. Nothing is autosaved: save before closing.' },
     ],
   },
@@ -63,7 +63,7 @@ const en = {
     label: `Live terminals | Tlamatini ${editions.en.tag}`,
     title: 'Terminater',
     headline: 'Her intelligence. Your terminal. Your control.',
-    intro: 'Real CMD and PowerShell, now tuned to you. Choose a 20–160 WPM typing pace, your available shell, and optional spoken explanations. Keep execution in your hands with I always press Enter, across chat and both workflow panels.',
+    intro: 'Real CMD and PowerShell, now tuned to you. Choose a 20–250 WPM typing pace, your available shell, and optional spoken explanations. Keep execution in your hands with I always press Enter, across chat and both workflow panels.',
     galleryLabel: 'Terminater in action',
     imageLabel: 'Inside Tlamatini',
     enlarge: 'Enlarge product screenshot',
@@ -112,6 +112,7 @@ const en = {
       'eXtended Artificial Intelligence Humanly Tempered',
       '( XAIHT )',
       `Tlamatini ${editions.en.tag}`,
+      'Torrenter: Your Downloads Keep Going After Chat',
       'Model Brain: Tuned to the Model You Choose',
       'Compact Mode: Your Tools, Their Token Cost',
       'Self-modify at Your Command',
@@ -137,9 +138,9 @@ const en = {
       'Terminater: Watch Every Command Take Shape',
       'About -> Usage: Credits, Tokens, and Models',
       '29 Skill Packages',
-      '86 Workflow Agents',
-      '110 Built-In Multi-Turn Tools',
-      '67 Wrapped Chat-Agent Launchers',
+      '87 Workflow Agents',
+      '111 Built-In Multi-Turn Tools',
+      '68 Wrapped Chat-Agent Launchers',
       'Ask Execs Approval Gate',
       'Windows 11 x64 Release',
       '7 or 30 Days. Measured Chat Activity.',
@@ -185,7 +186,7 @@ const en = {
       'Native Context Picker',
       'Kalier Configured Kali Bridge',
       'Playwrighter Browser Automation',
-      'Live Editor 40–160 WPM. Terminals 20–160 WPM.',
+      'Live Editor 40–250 WPM. Terminals 20–250 WPM.',
       'Commit-Aware Reviewer',
       'Reasoning That Carries Across Tool Calls',
       'Discoverer Uses ProjectDiscovery vulnx',
@@ -213,7 +214,7 @@ const en = {
     overview: {
       label: 'Overview',
       title: 'Tlamatini — The AI Agentic Knowledge of a Senior Developer',
-      desc: `Tlamatini puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. In ${editions.en.tag}, build with Interactor in Live Editor and Terminater, then connect conversations with isolated run history and clearer decisions. Create with 86 agents, 110 built-in Multi-Turn tools, and 29 skills.`,
+      desc: `Tlamatini puts Unreal Engine, Blender, STM32, and ESP32 under your direction. She speaks with Talker and listens with Whisperer. In ${editions.en.tag}, build with Interactor in Live Editor and Terminater, and let Torrenter finish your downloads while you work. Create with 87 agents, 111 built-in Multi-Turn tools, and 29 skills.`,
       viewGithub: 'View on GitHub',
       documentation: 'Documentation',
       stats: {
@@ -279,7 +280,7 @@ const en = {
       multiTurn: {
         label: 'Multi-Turn',
         title: 'Context-Aware Orchestration',
-        desc: '110 tools. Model Brain. Your control.',
+        desc: '111 tools. Model Brain. Your control.',
         items: [
           {
             title: 'Context Governor',
@@ -295,7 +296,7 @@ const en = {
           },
           {
             title: 'Create Flow',
-            desc: 'Inspect .flw plans from all 86 agents.',
+            desc: 'Inspect .flw plans from all 87 agents.',
           },
         ],
       },
@@ -303,22 +304,22 @@ const en = {
     workflow: {
       label: 'Visual Orchestration',
       title: 'Design the Work. Shape the Conversation.',
-      desc: 'Unrealer, Blenderer, STM32er, and ESP32er lead 86 agents in the Agentic Control Panel, with Talker speaking and Whisperer listening. Terminater brings visible commands and human handover to chat, .flw workflows, and .fpmt prompt diagrams. Shape conversations, decisions, and User Input; add rich-text review notes that never execute.',
+      desc: 'Unrealer, Blenderer, STM32er, and ESP32er lead 87 agents in the Agentic Control Panel, with Talker speaking and Whisperer listening. Terminater brings visible commands and human handover to chat, .flw workflows, and .fpmt prompt diagrams. Shape conversations, decisions, and User Input; add rich-text review notes that never execute.',
     },
     tools: {
       label: 'Beyond Code',
       title: 'From One Prompt to Real-World Action',
       items: [
-        { id: 'visual_workflows', name: '86 Agents. A More Capable Canvas.', desc: 'Find any of 86 agents, configure it, and duplicate selections with settings and connections. Undo/redo, Starters, zoom/Fit, and examples support .flw design. Open .flw or .fpmt from chat or Windows, or drop either file onto a signed-in page to reach the right editor. The drop preview explains the destination; login keeps imports gated. Opening never runs a flow; unsaved work requires confirmation before replacement.', type: 'Canvas' },
+        { id: 'visual_workflows', name: '87 Agents. A More Capable Canvas.', desc: 'Find any of 87 agents, configure it, and duplicate selections with settings and connections. Undo/redo, Starters, zoom/Fit, and examples support .flw design. Open .flw or .fpmt from chat or Windows, or drop either file onto a signed-in page to reach the right editor. The drop preview explains the destination; login keeps imports gated. Opening never runs a flow; unsaved work requires confirmation before replacement.', type: 'Canvas' },
         { id: 'prompt_flow', name: 'Draw a Conversation. Trust the Next Branch.', desc: 'Prompt Flow Panel brings eight executable operations: Prompt, Programmed Prompt, Decision, Feed embeddings, Flush embeddings, Clean History, User Input, and Terminater. An equals Decision now reads the opening verdict, even with Markdown or an explanation after YES/NO; the preceding Prompt asks for the verdict first. Pass terminal output forward. User Commentary notes never execute. Multi-Turn and ACPX remain optional per prompt. Validate, then Play, Pause, or Stop.', type: 'Prompt Canvas' },
         { id: 'prompt_context', name: 'Your Flow. Its Own History.', desc: 'Pass answers forward with {{last_output}}. Each run uses only its own history and reference text, never another conversation. Recorded usage belongs to the account running it. Save .fpmt files and recover drafts; unnamed flows show their filename in the browser tab. Style static notes and give Run output 5–95% of the workspace; opening never runs a flow. Scheduled steps require the page and Tlamatini to remain open.', type: 'Prompt Flows' },
-        { id: 'multi_turn', name: '110 Tools, One Multi-Turn Mind', desc: 'Coordinate 110 tools with a 4,096-iteration ceiling and a 256-call hard ceiling. Model Brain retains supported models’ reasoning between tool calls within one answer, and the context gauge counts it. Ollama confirms main-chat token use in one-shot and Multi-Turn, separately for each user; estimates stay labeled.', type: 'Orchestration' },
+        { id: 'multi_turn', name: '111 Tools, One Multi-Turn Mind', desc: 'Coordinate 111 tools with a 4,096-iteration ceiling and a 256-call hard ceiling. Model Brain retains supported models’ reasoning between tool calls within one answer, and the context gauge counts it. Ollama confirms main-chat token use in one-shot and Multi-Turn, separately for each user; estimates stay labeled.', type: 'Orchestration' },
         { id: 'context_preview', name: 'Know Where Your Next Prompt Starts', desc: 'The main-chat baseline refreshes with history, including Drop, plus context, modes, skills, reconnects, and completed or cancelled work. Your next question, plan, and question-specific context are not included yet. Optional Ollama probes consume real tokens; unchanged requests reuse cached counts. Disable probing in config.json. Side-agent and ACPX child calls are excluded from the gauge.', type: 'Context Insight' },
         { id: 'compact_mode', name: 'Compact Mode. Your Tools, Your Choice.', desc: 'The toolbar switch really unticks Configure rows, keeping System-Metrics, Files-Search, and Current-Time. Tick back only the agents, tools, and skills you need; External MCPs stay paused. Saved choices apply without a restart. A small model locks Compact ON. A larger model unlocks it but keeps your picks until you switch it OFF: this enables every row and restores previously active External MCPs. Two chat tabs on different models no longer trigger endless context rechecks.', type: 'Model Fit' },
         { id: 'human_control', name: 'You Keep the Final Say', desc: 'Ask Execs pauses before state-changing work, Step-by-Step waits for your READY, and Hard Cancel prevents a stopped run from reviving itself.', type: 'Human Control' },
         { id: 'drop_message', name: 'Drop a Message. Keep the Conversation.', desc: 'Remove one saved message, yours or hers, from chat and the history she reads next. No reconnect; surrounding messages stay. Cancel is selected first, and Drop is blocked while she answers. Deletion cannot be undone. Drop both cards to remove an exchange; completed work and separate External MCP memory remain. Unsaved notices only clear from your screen.', type: 'Chat Control' },
         { id: 'truthful_reports', name: 'Usage and Results You Can Verify', desc: 'About -> Usage stays available while she answers. Cloud credits, Chat activity, and Models separate configured Ollama balances from measured chat activity. Prompt Flow usage is now recorded for the account running it. Explore 7/30-day charts and per-model totals since recording began, not lifetime history or child-agent usage. Checking usage waits for real data; Connection details explains failures and automatic retries. Valid balances remain visible if only the account name is missing. Missing data is never zero; account snapshots are cached for one minute. Exec Report distinguishes completion from failed work; ACPX retains transcripts.', type: 'Evidence' },
-        { id: 'flowcreator', name: 'Describe It. Get a Real .flw.', desc: 'FlowCreator chooses from all 86 agents, checks branches, fields, and data mappings, and repairs invalid plans within limits before delivering a workflow for your review.', type: 'Flow' },
+        { id: 'flowcreator', name: 'Describe It. Get a Real .flw.', desc: 'FlowCreator chooses from all 87 agents, checks branches, fields, and data mappings, and repairs invalid plans within limits before delivering a workflow for your review.', type: 'Flow' },
         { id: 'acpx', name: 'Let the Best Coding Agents Collaborate', desc: 'Coordinate Claude Code, Codex, Cursor, Gemini, Qwen, and other coding agents. Optional real-prompt checks reveal readiness; blocked permissions, authentication, configuration, or usage limits get clear explanations with transcripts retained.', type: 'Delegation' },
         { id: 'external_mcps', name: 'The MCP Ecosystem, Connected', desc: 'Drop an MCP JSON from Claude Desktop, VS Code, Zed, or opencode onto a signed-in page. Review the listed servers and program-launch warning before importing into External -> MCPs; importing does not activate them. Connect up to five servers over stdio, streamable HTTP, SSE, or WebSocket.', type: 'MCP' },
         { id: 'skills', name: '29 Skills That Teach Her How', desc: 'Reusable SKILL.md packages add guided flow making, reviews, security work, MCP onboarding, integrations, and specialist operating playbooks.', type: 'Skills' },
@@ -339,14 +340,15 @@ const en = {
         { id: 'crawler', name: 'Read the Page You Actually Asked For', desc: 'Crawler reads the specified page by default, then analyzes raw source or readable text. Expand to linked pages when you choose, with page, size, and time limits. Bot walls and timeouts are reported, not analyzed as content; an empty crawl explains why. For JavaScript-driven pages, choose Playwrighter.', type: 'Web Reading' },
         { id: 'blue_hat', name: 'Blue-Hat Defense Under Your Control', desc: 'Watch ten Windows host-signal families with report-only scans by default. Blocking or stopping processes requires explicit Armed mode; aggressive response is separately opt-in. Enablement records changes and preserves global protection modes by default. Review exclusions before approval: they reduce protection, and rollback is not automatic.', type: 'Defense' },
         { id: 'security_agents', name: 'Three Paths for Authorized Recon', desc: 'Use Discoverer for ProjectDiscovery, Nmapper for local nmap, and Kalier for a configured Kali box—each with clear boundaries and honest results.', type: 'Security' },
-        { id: 'codebase', name: 'Interactor: Learn as You Build', desc: 'Build understanding, not just files. Interactor reads your live unsaved buffer, types a short segment, and hands the next field to you. Prepared suggestions match locally, with no model call per keystroke. Briefly hidden tabs pause and resume without replaying text. Continue, Another hint, and Explain selection keep learning in chat. Your typing, Esc, or Stop interrupts her; typing never saves or executes code. Enable Multi-Turn, Interactor, and Live editor. Config -> Live Editor & Terminater sets 40–160 WPM, 0–3 second pauses, teaching detail, suggestions, and cursor following. Manual scrolling pauses following for that segment. Opening settings stops active teaching. Across projects, Globber and Grepper handle brace sets, pattern lists, and folder globs; Editor edits precisely and File-Creator writes or appends. Mover creates a new folder destination; explicit file targets still rename and same-name files may be replaced.', type: 'Codebase' },
+        { id: 'codebase', name: 'Interactor: Learn as You Build', desc: 'Build understanding, not just files. Interactor reads your live unsaved buffer, types a short segment, and hands the next field to you. Prepared suggestions match locally, with no model call per keystroke. Briefly hidden tabs pause and resume without replaying text. Continue, Another hint, and Explain selection keep learning in chat. Your typing, Esc, or Stop interrupts her; typing never saves or executes code. Enable Multi-Turn, Interactor, and Live editor. Config -> Live Editor & Terminater sets 40–250 WPM, 0–3 second pauses, teaching detail, suggestions, and cursor following. Manual scrolling pauses following for that segment. Opening settings stops active teaching. Across projects, Globber and Grepper handle brace sets, pattern lists, and folder globs; Editor edits precisely and File-Creator writes or appends. Mover creates a new folder destination; explicit file targets still rename and same-name files may be replaced.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Build editable PowerPoint decks with 36 treatments and 17 font pairings. PDFer offers 24 visual styles and 20 content themes; LaTeXer adds 30 styles and powers the rebuildable Architecture atlas of every tracked project file. Real PDFs are verified before delivery, layout findings stay visible, and heavily reduced repairs receive a .DEGRADED.pdf name. Finished files survive a blocked destination, with the actual saved path reported.', type: 'Documents' },
         { id: 'pdf_canvas', name: 'Your Canvas. Now a Working Editor.', desc: 'Edit code, JSON, text, and Markdown Source with Undo/Redo, Find/replace, and Wrap. Save As opens a native Windows destination picker on local connections; Save checks disk conflicts and preserves encoding and line endings. Cancelled saves keep your edits. Markdown Preview and Source share one buffer; Copy and Use as context take edited text. Save before closing: unsaved work stays in memory. PDFs remain read-only; Save copies the original. Use as context prepares the whole PDF after Continue; Process images adds analysis, never incomplete visual context. If another account signs in, a failed step asks you to reload. Open .md or .markdown; Choose folder connects relative images and linked Markdown. Unedited files retain original Markdown bytes. No CDN; remote images can still load from the web. Refresh rereads without a picker or writing, asking before discarding edits; PDF page, zoom, rotation, and scroll mode stay. Failed reads keep the previous document; snapshot-only sources explain unavailable Refresh.', type: 'Documents' },
         { id: 'model_config', name: 'Model Brain. Choose a Model, See It Tune.', desc: 'Config -> Models brings 38 settings across six categories for 21 model-backed agents. Save opens live Auto-tuning with the source of each value. Model Brain uses vendor profiles, learns unfamiliar models from published settings, or falls back to Ollama and model defaults. Your overrides win, context respects model capacity, and learned profiles survive updates. Lists use your configured servers and token. Configure retains estimated token costs and saved tool choices.', type: 'Configuration' },
-        { id: 'browser_desktop', name: 'Terminater: Watch. Guide. Take Over.', desc: 'Watch real CMD and PowerShell sessions as she types key by key, then reads output and reports available exit codes; unknown stays unknown. Esc stops her typing and gives you the keyboard; planned handovers let you finish a command. Screen checks flag unverified typing and refuse to append onto an unfinished command. In chat tutorials, say you will execute commands: she leaves Enter to you and blocks other command runners until you hand control back. Choose I always press Enter in Config -> Live Editor & Terminater to keep execution manual in chat and both workflow panels. Set shell, advisor, 20–160 WPM, and command, silence, and handoff waits; a wait timeout returns control without killing the process. Shell and advisor defaults affect new terminals. Secret command records are masked, but echoed output can remain visible. Arrange tabs, tiles, or a grid; sessions survive page closure until Tlamatini exits. Hung commands are flagged and can be aborted. Ask Execs still applies. Playwrighter, Windower, Mouser, Keyboarder, and Shoter extend browser and desktop control; input delivery alone is not proof of success. Published for Windows 11 x64.', type: 'Live Terminals' },
+        { id: 'browser_desktop', name: 'Terminater: Watch. Guide. Take Over.', desc: 'Watch real CMD and PowerShell sessions as she types key by key, then reads output and reports available exit codes; unknown stays unknown. Esc stops her typing and gives you the keyboard; planned handovers let you finish a command. Screen checks flag unverified typing and refuse to append onto an unfinished command. In chat tutorials, say you will execute commands: she leaves Enter to you and blocks other command runners until you hand control back. Choose I always press Enter in Config -> Live Editor & Terminater to keep execution manual in chat and both workflow panels. Set shell, advisor, 20–250 WPM, and command, silence, and handoff waits; a wait timeout returns control without killing the process. Shell and advisor defaults affect new terminals. Secret command records are masked, but echoed output can remain visible. Arrange tabs, tiles, or a grid; sessions survive page closure until Tlamatini exits. Hung commands are flagged and can be aborted. Ask Execs still applies. Playwrighter, Windower, Mouser, Keyboarder, and Shoter extend browser and desktop control; input delivery alone is not proof of success. Published for Windows 11 x64.', type: 'Live Terminals' },
         { id: 'messaging', name: 'Your Message. The Identity You Choose.', desc: 'Send and receive with Telegrammer, Whatsapper, and email agents. Telegrammer recognizes "using the bot" anywhere in the request outside quoted values; an explicit provider choice still wins. Bot delivery follows Telegram permissions. Choose business or personal identity where supported. Notifier keeps alerts close, and Instant Messaging Doctor checks messaging readiness.', type: 'Messaging' },
         { id: 'database', name: 'WAL-Safe Database Protection', desc: 'Backup and stage SQLite databases through the online backup API, verify integrity, and handle WAL/SHM sidecars without pretending a bare file is complete.', type: 'Data' },
-        { id: 'windows_delivery', name: 'A Leaner Release. Recoverable Removal.', desc: 'Install with progress, Retry, Change folder, and a local log. The Uninstaller moves files into same-drive recovery instead of copying the installation, with rollback for reversible steps. Locked leftovers stay explicit with Retry cleanup. Agents and nonempty project folders are kept; other apps stay open. Python 3.12.10 covers 86 agents with ESPHome isolated, without duplicate media/browser libraries; updates verify required files. In-app updates keep Uninstaller.exe: run the new Installer to renew it. Public packages exclude private MCP catalogs and key vaults; private builds can carry your own configured servers and credentials.', type: 'Windows' },
+        { id: 'torrenter', name: 'Close the chat. Keep the download.', desc: 'Open Torrenter Sources from Panels, inspect a magnet or .torrent file, and pick just the files you need. With Tlachihuani Jobs and XT installed separately, you can pause and resume your account’s downloads. Let a workflow continue when Jobs accepts the transfer, or wait for a verified manifest. Erasing files requires your approval in XT.', type: 'Downloads' },
+        { id: 'windows_delivery', name: 'A Leaner Release. Recoverable Removal.', desc: 'Install with progress, Retry, Change folder, and a local log. The Uninstaller moves files into same-drive recovery instead of copying the installation, with rollback for reversible steps. Locked leftovers stay explicit with Retry cleanup. Agents and nonempty project folders are kept; other apps stay open. Python 3.12.10 covers 87 agents with ESPHome isolated, without duplicate media/browser libraries; updates verify required files. Updates verify and replace Uninstaller.exe while preserving your account data and existing key vault. Public packages exclude private MCP catalogs and key vaults; private builds can carry your own configured servers and credentials.', type: 'Windows' },
         { id: 'self_knowledge', name: 'Her Self-Knowledge. Your Choice.', desc: 'Self-modify is visible in source runs and builds carrying her self-modify snapshot, hidden otherwise. ON includes her self-knowledge; OFF removes the self-knowledge token cost from each request and tells her not to read, edit, or rebuild her own code. A model that cannot hold it locks the switch OFF without erasing your choice; a larger model unlocks it. Optional sanitized source snapshots remain rebuildable.', type: 'Identity' },
         { id: 'prompt_catalog', name: 'Guided First Steps: Voice, Editor, Terminals', desc: 'VOICE COMMANDS keeps its read-only rehearsal and SPEAK YOUR PROMPT workflow, with transcript read-back and written confirmation for irreversible work. These guided catalog routes are separate from direct Mic dictation: its optional review happens in the normal chat input, not a confirmation dialog. Three safe Terminater examples introduce visible commands, keyboard handover, and a guided terminal tour. Interactor adds an editor lesson. Guided account creation keeps passwords in the console, not chat; it creates an administrator account. An email field is not consent to send messages. Local Notifier checkpoints guide setup without contacting anyone.', type: 'Guidance' },
         { id: 'mcp_adder', name: 'Add an External MCP with a Guarded Guide', desc: 'The onboarding skill classifies transport, separates secrets, diagnoses readiness, activates only on operator intent, and proves the remote tool before use.', type: 'MCP' },
@@ -357,7 +359,7 @@ const en = {
 
   footer: {
     ctaTitle: 'Run Tlamatini on Your Own Machine',
-    ctaDesc: `Tlamatini controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Build at your pace in ${editions.en.tag}: tune Interactor lessons, hear optional explanations, and keep Terminater execution in your hands. Put 86 agents, 110 built-in Multi-Turn tools, and 29 skills behind your next idea.`,
+    ctaDesc: `Tlamatini controls Unreal Engine and Blender, powers critical STM32er and ESP32er workflows, speaks with Talker, and listens with Whisperer. Build at your pace in ${editions.en.tag}: tune Interactor lessons, hear optional explanations, and keep Terminater execution in your hands. Put 87 agents, 111 built-in Multi-Turn tools, and 29 skills behind your next idea.`,
     viewSource: 'Download Source',
     documentation: 'Documentation',
     github: 'GitHub',
@@ -381,7 +383,7 @@ const en = {
     hero: {
       label: 'XAIHT / Projects',
       subtitle: `Self-Hosted, Cloud-Capable AI | ${editions.en.tag}`,
-      desc: `She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. New in ${editions.en.tag}: isolated Prompt Flow history, verdict-first decisions, and reliable short agent names. Build with Interactor in Live Editor and Terminater, backed by 86 agents, 110 built-in Multi-Turn tools, and 29 skills.`,
+      desc: `She controls Unreal Engine and Blender, programs STM32 and ESP32, speaks with Talker, and listens with Whisperer. New in ${editions.en.tag}: choose files from a torrent or magnet with Torrenter and let the download continue after you close chat. Build with Interactor in Live Editor and Terminater, backed by 87 agents, 111 built-in Multi-Turn tools, and 29 skills.`,
     },
     presence: {
       label: 'Tlamatini Signal',
@@ -416,7 +418,7 @@ const en = {
       title: 'One Who Knows, One Who Can Act',
       p1Strong: 'Tlamatini',
       p1Rest: ' means "one who knows." She runs on your machine and connects Unreal Engine and Blender control, STM32 / ESP32 / ESPHome / Arduino firmware, Talker speech, and Whisperer listening with code-aware retrieval. Agent and prompt canvases offer complementary ways to orchestrate her. PDFer, PPTXer, and LaTeXer create deliverables; media, messaging, security, and opt-in delegation extend your reach.',
-      p2: `In ${editions.en.tag}, Prompt Flow keeps each run’s history separate and follows verdict-first decisions. Config -> Live Editor & Terminater puts pace, guidance, execution, and narration in your hands. Choose Standard or Guided learning, then Preview without running a command or editing a file. Save applies behavior to the next action; Cancel or Escape discards the draft. Interactor reads your unsaved work. Account behavior follows you across chat, Agentic Control Panel, and Prompt Flow Panel; appearance stays with your account in this browser. Keep PDFs, Refresh, and mouse or keyboard resizing close. About -> Check for updates delivers the published app.`,
+      p2: `In ${editions.en.tag}, start a Torrenter transfer from chat or a workflow and return to it from the XT tray. Config -> Live Editor & Terminater puts pace, guidance, execution, and narration in your hands. Choose Standard or Guided learning, then Preview without running a command or editing a file. Save applies behavior to the next action; Cancel or Escape discards the draft. Interactor reads your unsaved work. Account behavior follows you across chat, Agentic Control Panel, and Prompt Flow Panel; appearance stays with your account in this browser. Keep PDFs, Refresh, and mouse or keyboard resizing close. About -> Check for updates delivers the published app.`,
       viewSource: 'Download Source',
     },
     features: {
@@ -430,18 +432,18 @@ const en = {
         { id: 'voice_vision', title: 'She Sees, Speaks, Listens, and Understands', description: 'Talker speaks; Whisperer brings direct dictation with automatic send or editable drafts from Config -> Mic. Her avatar reads first-person messages with expressive lips and stays centered above Mic and Send when docked, even as you resize. Image-Interpreter accepts lists of image paths and cross-checks visual evidence. Video-Analyzer turns supported links into timestamped transcripts and audiovisual summaries. Her browser voice needs no GPU.' },
         { id: 'documents', title: 'Live Editor. From Lesson to Deliverable.', description: 'Build beside Interactor, at your pace. Set typing speed, teaching detail, segment pauses, suggestions, and cursor following in Config -> Live Editor & Terminater. Preview your choices before saving. Edit real files with Undo/Redo, Find/replace, and native Save As with conflict checks. PDFer, PPTXer, and LaTeXer turn the work into PDFs, editable decks, and typeset documents.' },
         { id: 'multi_turn', title: 'Know Your Context. See Your Usage.', description: 'See Ollama counts for your main chat in one-shot and Multi-Turn: est. while pending, REAL when confirmed. CONTEXT-WINDOW shows OVER and CUT; a cut answer carries a warning. About -> Usage adds reported monthly/purchased balances, refill weeks/date, and separate 7/30-day charts. Model graphs cover recorded chat and Prompt Flow calls, not other apps or child agents. Ask Execs, Step-by-Step, Hard Cancel, Compact mode, and Drop keep you in command. Save a Create Flow download before dropping its message.' },
-        { id: 'visual_workflows', title: 'Two Canvases. Clearer Decisions. Your Control.', description: 'Connect 86 agents in .flw workflows or eight operations in .fpmt diagrams. Each prompt run keeps its own history; equals Decisions recognize a leading YES/NO verdict even when an explanation follows. Recorded usage belongs to the run’s owner. Terminater passes visible command output onward; User Input asks for a reply. User Commentary stays a static note, never model context. Resize Run output without changing canvas zoom; dialogs adjust from every edge and corner. Open from Windows, chat, or a file drop. Unsaved work gets confirmation; opening never runs a flow.' },
+        { id: 'visual_workflows', title: 'Two Canvases. Clearer Decisions. Your Control.', description: 'Connect 87 agents in .flw workflows or eight operations in .fpmt diagrams. Each prompt run keeps its own history; equals Decisions recognize a leading YES/NO verdict even when an explanation follows. Recorded usage belongs to the run’s owner. Terminater passes visible command output onward; User Input asks for a reply. User Commentary stays a static note, never model context. Resize Run output without changing canvas zoom; dialogs adjust from every edge and corner. Open from Windows, chat, or a file drop. Unsaved work gets confirmation; opening never runs a flow.' },
         { id: 'external_mcps', title: 'External MCPs, MCP Doctor, and MCP Adder', description: 'Bring an MCP JSON from Claude Desktop, VS Code, Zed, or opencode: review its servers before importing, then choose which to activate. Connect up to five over stdio, streamable HTTP, SSE, or WebSocket. MCP Doctor checks readiness; MCP Adder guides transport, secrets, diagnosis, activation, and a real tool test. Simple scalar mismatches can be repaired before a call is lost.' },
         { id: 'acpx_skills', title: 'ACPX Delegation + 29 Runtime Skills', description: 'Delegate to coding CLIs and expose Tlamatini tools to MCP clients. Optional readiness checks send a real prompt and may use model quota; clear delivery verdicts explain failures. Configure peer arguments, transport, and response timing without rebuilding, alongside 29 reusable skills.' },
         { id: 'research_rag', title: 'Resilient Research, Grounded in Your Project', description: 'Googler lists returned titles and URLs before sharing room among page excerpts, labeling shortened text for deeper reading with Crawler. Both recover text from malformed HTML and report fallback extraction. Deadlines and explicit outcomes keep web research accountable; FAISS + BM25 grounds answers in your project while filtering binary noise.' },
         { id: 'database', title: 'WAL-Safe SQLite Data Handling', description: 'DB Backup and Set DB use SQLite\'s online backup API, integrity validation, clean staging, and WAL/SHM sidecar hygiene so live data can be preserved and handed off without pretending a copied main file is enough.' },
-        { id: 'windows_delivery', title: 'Less to Download. More Worth Keeping.', description: 'Media and browser libraries travel once, making the release smaller. The Uninstaller moves application files into same-drive recovery, with rollback for reversible steps; Retry cleanup handles locked leftovers without claiming a complete removal. It keeps agents plus nonempty application, applications, content_generated, context_files, doc_generated, and Templates folders. Temp scratch goes after success. Use the new Installer to renew the uninstaller; in-app updates preserve it. Windows flow associations respect your defaults.' },
+        { id: 'windows_delivery', title: 'Less to Download. More Worth Keeping.', description: 'Media and browser libraries travel once, making the release smaller. The Uninstaller moves application files into same-drive recovery, with rollback for reversible steps; Retry cleanup handles locked leftovers without claiming a complete removal. It keeps agents plus nonempty application, applications, content_generated, context_files, doc_generated, and Templates folders. Temp scratch goes after success. Updates include a verified uninstaller and preserve your existing key vault. English and Spanish builds can reuse matching Python dependencies without overwriting each other’s environments. Windows flow associations respect your defaults.' },
       ],
     },
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: `Get the published Tlamatini ${editions.en.tag} for Windows 11 x64 from Releases, or run her from source. Extract the complete ZIP, run Installer.exe, choose a folder, review, and install. The setup window shows progress and keeps Retry, Change folder, and a log path available after an error. About -> Check for updates delivers the published app but keeps your existing Uninstaller.exe. Run the new Installer to refresh it too. Sign in to Ollama and pull the models below. Config -> Models opens Model Brain Auto-tuning; About -> Usage shows balances and measured activity. Python 3.12.10 is bundled; LaTeXer PDF compilation needs TeX.`,
+      desc: `Get the published Tlamatini ${editions.en.tag} for Windows 11 x64 from Releases, or run her from source. Extract the complete ZIP, run Installer.exe, choose a folder, review, and install. The setup window shows progress and keeps Retry, Change folder, and a log path available after an error. About -> Check for updates delivers the published app and verifies Uninstaller.exe. Your account data and existing key vault stay in place. Sign in to Ollama and pull the models below. Config -> Models opens Model Brain Auto-tuning; About -> Usage shows balances and measured activity. Python 3.12.10 is bundled; LaTeXer PDF compilation needs TeX.`,
       steps: [
         { id: 'install_tlamatini', label: 'Install Tlamatini' },
         { id: 'install_ollama', label: 'Install Ollama' },
@@ -452,8 +454,8 @@ const en = {
     },
     agents: {
       label: 'Agent Ecosystem',
-      title: '86 Workflow-Agent Types',
-      desc: 'Unrealer and Blenderer command creative engines; STM32er and ESP32er reach real hardware; Talker speaks and Whisperer listens. Explore 86 agents across nine families, now with Terminater for visible, user-supervised commands. PPTXer, PDFer, LaTeXer, and visual analysis turn knowledge into deliverables. Configure Agents remembers your choices and applies them to the matching chat tools.',
+      title: '87 Workflow-Agent Types',
+      desc: 'Unrealer and Blenderer command creative engines; STM32er and ESP32er reach real hardware; Talker speaks and Whisperer listens. Explore 87 agents across nine families, including Terminater for visible commands and Torrenter for downloads that outlast the conversation. PPTXer, PDFer, LaTeXer, and visual analysis turn knowledge into deliverables. Configure Agents remembers your choices and applies them to the matching chat tools.',
       groups: [
         {
           category: 'Control Agents',
@@ -487,6 +489,7 @@ const en = {
           category: 'Action Agents',
           agents: [
             { name: 'Executer', desc: 'Runs shell commands and captures their real output' },
+            { name: 'Torrenter', desc: 'Select files from a torrent or magnet and track your account’s download through verification' },
             { name: 'Terminater', desc: 'Types into visible CMD and PowerShell at your saved pace, flags unverified work, and offers narration plus I always press Enter across chat and flows; Esc takes over' },
             { name: 'Pythonxer', desc: 'Runs Python behind compile and Ruff correctness gates' },
             { name: 'SQLer', desc: 'Executes work against Microsoft SQL Server' },
@@ -563,7 +566,7 @@ const en = {
           agents: [
             { name: 'Parametrizer', desc: 'Validates every typed data mapping before handing results to the next agent' },
             { name: 'FlowBacker', desc: 'Backs up a completed session before cleanup' },
-            { name: 'FlowCreator', desc: 'Selects from all 86 agents and validates generated connections before publishing a workflow' },
+            { name: 'FlowCreator', desc: 'Selects from all 87 agents and validates generated connections before publishing a workflow' },
           ],
         },
         {
@@ -602,7 +605,7 @@ const en = {
         },
         {
           category: 'Agent & Workflow Platform',
-          items: ['86 visual workflow-agent types', '67 wrapped chat-agent launchers', '110 built-in Multi-Turn tools', '29 reusable SKILL.md packages', 'ACPX external-agent runtime', 'Flow Compiler + Agent Contracts + Parametrizer', 'Agentic Control Panel: .flw workflows', 'Prompt Flow Panel: eight operations in .fpmt', 'Interactor + Terminater + account-wide interaction settings'],
+          items: ['87 visual workflow-agent types', '68 wrapped chat-agent launchers', '111 built-in Multi-Turn tools', '29 reusable SKILL.md packages', 'ACPX external-agent runtime', 'Flow Compiler + Agent Contracts + Parametrizer', 'Agentic Control Panel: .flw workflows', 'Prompt Flow Panel: eight operations in .fpmt', 'Interactor + Terminater + account-wide interaction settings'],
         },
         {
           category: 'Protocols & Integrations',
@@ -663,7 +666,7 @@ const es: Translations = {
     ],
     benefits: [
       { title: 'Tu trabajo va primero', desc: 'Ella lee el texto actual, incluso sin guardar. Rechaza ediciones desactualizadas en vez de sobrescribir tus cambios más recientes.' },
-      { title: 'Elige el ritmo. Conserva el mando.', desc: 'Ajusta la escritura a 40–160 WPM y las pausas a 0–3 segundos. Vincula el ritmo de terminal si quieres. Tu escritura, Esc o Detener el tutor la interrumpen; escribir nunca ejecuta código.' },
+      { title: 'Elige el ritmo. Conserva el mando.', desc: 'Ajusta la escritura a 40–250 WPM y las pausas a 0–3 segundos. Vincula el ritmo de terminal si quieres. Tu escritura, Esc o Detener el tutor la interrumpen; escribir nunca ejecuta código.' },
       { title: 'Guarda donde trabajas', desc: 'Guardar como nativo permite elegir una carpeta local. Guardar detecta conflictos y conserva codificación y saltos de línea. No hay guardado automático: guarda antes de cerrar.' },
     ],
   },
@@ -671,7 +674,7 @@ const es: Translations = {
     label: `Terminales en vivo | Tlamatini ${editions.es.tag}`,
     title: 'Terminater',
     headline: 'Su inteligencia. Tu terminal. Tu control.',
-    intro: 'CMD y PowerShell reales, ahora a tu medida. Elige un ritmo de 20–160 WPM, tu shell disponible y explicaciones habladas opcionales. Yo siempre presiono Enter mantiene la ejecución en tus manos, en chat y ambos paneles de flujos.',
+    intro: 'CMD y PowerShell reales, ahora a tu medida. Elige un ritmo de 20–250 WPM, tu shell disponible y explicaciones habladas opcionales. Yo siempre presiono Enter mantiene la ejecución en tus manos, en chat y ambos paneles de flujos.',
     galleryLabel: 'Terminater en acción',
     imageLabel: 'Dentro de Tlamatini',
     enlarge: 'Ampliar captura del producto',
@@ -720,6 +723,7 @@ const es: Translations = {
       'Inteligencia Artificial eXtendida y Humanamente Templada',
       '( XAIHT )',
       `Tlamatini ${editions.es.tag}`,
+      'Torrenter: Tus Descargas Siguen al Cerrar el Chat',
       'Model Brain: Ajustado al Modelo que Eliges',
       'Modo Compact: Tus Herramientas y sus Tokens',
       'Self-modify Bajo Tu Mando',
@@ -745,9 +749,9 @@ const es: Translations = {
       'Terminater: Observa Cada Comando Cobrar Forma',
       'Acerca de -> Uso: Créditos, Tokens y Modelos',
       '29 Paquetes de Skills',
-      '86 Agentes de Flujo',
-      '110 Herramientas Multi-Turn Integradas',
-      '67 Lanzadores de Agentes desde Chat',
+      '87 Agentes de Flujo',
+      '111 Herramientas Multi-Turn Integradas',
+      '68 Lanzadores de Agentes desde Chat',
       'Compuerta de Aprobación Ask Execs',
       'Release para Windows 11 x64',
       '7 o 30 Días. Actividad de Chat Medida.',
@@ -794,7 +798,7 @@ const es: Translations = {
       'Selector de Contexto Nativo',
       'Puente Kali Configurado Kalier',
       'Automatización de Navegador Playwrighter',
-      'Live Editor 40–160 WPM. Terminales 20–160 WPM.',
+      'Live Editor 40–250 WPM. Terminales 20–250 WPM.',
       'Reviewer Consciente del Commit',
       'Razonamiento Continuo entre Llamadas',
       'Discoverer Usa ProjectDiscovery vulnx',
@@ -822,7 +826,7 @@ const es: Translations = {
     overview: {
       label: 'Resumen',
       title: 'Tlamatini — El Conocimiento Agéntico de IA de un Desarrollador Sénior',
-      desc: `Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Tlamatini habla con Talker y escucha con Whisperer. En ${editions.es.tag}, crea con Interactor en Live Editor y Terminater, y conecta conversaciones con historial propio y decisiones más claras. Construye con 86 agentes, 110 herramientas Multi-Turn integradas y 29 skills.`,
+      desc: `Unreal Engine, Blender, STM32 y ESP32 bajo tu dirección. Tlamatini habla con Talker y escucha con Whisperer. En ${editions.es.tag}, crea con Interactor en Live Editor y Terminater, y deja que Torrenter termine tus descargas mientras trabajas. Construye con 87 agentes, 111 herramientas Multi-Turn integradas y 29 skills.`,
       viewGithub: 'Ver en GitHub',
       documentation: 'Documentación',
       stats: {
@@ -888,7 +892,7 @@ const es: Translations = {
       multiTurn: {
         label: 'Multi-Turn',
         title: 'Orquestación Consciente del Contexto',
-        desc: '110 herramientas. Model Brain. Tu mando.',
+        desc: '111 herramientas. Model Brain. Tu mando.',
         items: [
           {
             title: 'Context Governor',
@@ -904,7 +908,7 @@ const es: Translations = {
           },
           {
             title: 'Crear Flujo',
-            desc: 'Revisa planes .flw de los 86 agentes.',
+            desc: 'Revisa planes .flw de los 87 agentes.',
           },
         ],
       },
@@ -912,22 +916,22 @@ const es: Translations = {
     workflow: {
       label: 'Orquestación Visual',
       title: 'Diseña el Trabajo. Guía la Conversación.',
-      desc: 'Unrealer, Blenderer, STM32er y ESP32er encabezan 86 agentes en Agentic Control Panel; Talker habla y Whisperer escucha. Terminater lleva comandos visibles y cesión del teclado al chat, flujos .flw y diagramas .fpmt. Diseña conversaciones, decisiones y User Input; añade notas enriquecidas que nunca se ejecutan.',
+      desc: 'Unrealer, Blenderer, STM32er y ESP32er encabezan 87 agentes en Agentic Control Panel; Talker habla y Whisperer escucha. Terminater lleva comandos visibles y cesión del teclado al chat, flujos .flw y diagramas .fpmt. Diseña conversaciones, decisiones y User Input; añade notas enriquecidas que nunca se ejecutan.',
     },
     tools: {
       label: 'Más Allá del Código',
       title: 'De un Prompt a la Acción en el Mundo Real',
       items: [
-        { id: 'visual_workflows', name: '86 Agentes. Un Lienzo Más Capaz.', desc: 'Busca entre 86 agentes, configura y duplica selecciones con ajustes y conexiones. Deshacer/rehacer, Starters, zoom/Fit y ejemplos facilitan crear .flw. Abre .flw o .fpmt desde chat o Windows, o suéltalo en una página con sesión para llegar a su editor. La vista de arrastre explica el destino; iniciar sesión sigue siendo necesario. Abrir nunca ejecuta; reemplazar trabajo sin guardar requiere confirmación.', type: 'Lienzo' },
+        { id: 'visual_workflows', name: '87 Agentes. Un Lienzo Más Capaz.', desc: 'Busca entre 87 agentes, configura y duplica selecciones con ajustes y conexiones. Deshacer/rehacer, Starters, zoom/Fit y ejemplos facilitan crear .flw. Abre .flw o .fpmt desde chat o Windows, o suéltalo en una página con sesión para llegar a su editor. La vista de arrastre explica el destino; iniciar sesión sigue siendo necesario. Abrir nunca ejecuta; reemplazar trabajo sin guardar requiere confirmación.', type: 'Lienzo' },
         { id: 'prompt_flow', name: 'Dibuja la Conversación. Aclara el Siguiente Paso.', desc: 'Prompt Flow Panel reúne ocho operaciones ejecutables: Prompt, Programmed Prompt, Decision, Feed embeddings, Flush embeddings, Clean History, User Input y Terminater. Una Decision con equals reconoce el veredicto inicial, incluso con Markdown o una explicación tras YES/NO; el Prompt anterior pide primero el veredicto. Pasa la salida de terminal al siguiente paso. Las notas User Commentary nunca se ejecutan. Multi-Turn y ACPX siguen opcionales por prompt. Valida y controla con Play, Pause o Stop.', type: 'Lienzo de Prompts' },
         { id: 'prompt_context', name: 'Tu Flujo. Su Propio Historial.', desc: 'Encadena respuestas con {{last_output}}. Cada ejecución usa sólo su historial y referencias, nunca otra conversación. El uso registrado pertenece a la cuenta que la ejecuta. Guarda .fpmt y recupera borradores; los flujos sin título muestran el nombre del archivo en la pestaña. Da formato a notas y reserva 5–95% del espacio a Run output; abrir nunca ejecuta. Programa pasos manteniendo abiertos la página y Tlamatini.', type: 'Flujos de Prompts' },
-        { id: 'multi_turn', name: '110 Herramientas, una Mente Multi-Turn', desc: 'Coordina 110 herramientas con techo de 4,096 iteraciones y 256 llamadas. Model Brain conserva el razonamiento de modelos compatibles entre llamadas dentro de una respuesta, y el indicador lo cuenta. Ollama confirma tokens del chat principal en one-shot y Multi-Turn por usuario; las estimaciones siguen identificadas.', type: 'Orquestación' },
+        { id: 'multi_turn', name: '111 Herramientas, una Mente Multi-Turn', desc: 'Coordina 111 herramientas con techo de 4,096 iteraciones y 256 llamadas. Model Brain conserva el razonamiento de modelos compatibles entre llamadas dentro de una respuesta, y el indicador lo cuenta. Ollama confirma tokens del chat principal en one-shot y Multi-Turn por usuario; las estimaciones siguen identificadas.', type: 'Orquestación' },
         { id: 'context_preview', name: 'Conoce el Punto de Partida de tu Próximo Prompt', desc: 'La base del chat principal se actualiza con historial, incluido Drop, contexto, modos, skills, reconexiones y trabajo terminado o cancelado. Aún excluye tu próxima pregunta, plan y contexto específico. Las consultas opcionales a Ollama consumen tokens reales; solicitudes iguales reutilizan conteos en caché. Desactívalas en config.json. Las llamadas de agentes secundarios e hijos ACPX quedan fuera del indicador.', type: 'Contexto Visible' },
         { id: 'compact_mode', name: 'Modo Compact. Tus Herramientas, Tu Decisión.', desc: 'El interruptor desmarca realmente las filas de Configure, conservando System-Metrics, Files-Search y Current-Time. Reactiva sólo agentes, herramientas y skills necesarios; los MCPs externos siguen pausados. Aplica sin reiniciar. Un modelo pequeño bloquea Compact en ON. Uno mayor lo desbloquea y conserva tu selección hasta pasarlo a OFF: activa todas las filas y restaura los MCPs externos antes activos. Dos pestañas con modelos distintos ya no provocan mediciones interminables.', type: 'Ajuste al Modelo' },
         { id: 'human_control', name: 'Tú Conservas la Última Palabra', desc: 'Ask Execs pausa antes de cambiar estado, Step-by-Step espera tu READY y Hard Cancel impide que una ejecución detenida vuelva a levantarse.', type: 'Control Humano' },
         { id: 'drop_message', name: 'Elimina un Mensaje, Conserva la Conversación', desc: 'Elimina un mensaje guardado, tuyo o suyo, del chat y del historial que ella leerá después. Sin reconectar; los mensajes alrededor permanecen. Cancel queda seleccionado y Drop se bloquea mientras responde. No se puede deshacer. Elimina ambas tarjetas para quitar un intercambio; el trabajo realizado y la memoria MCP externa permanecen. Los avisos sin guardar sólo se quitan de pantalla.', type: 'Control del Chat' },
         { id: 'truthful_reports', name: 'Uso y Resultados que Puedes Verificar', desc: 'Acerca de -> Uso sigue disponible mientras ella responde. Cloud credits, Chat activity y Models separan saldos Ollama de actividad medida del chat. El uso de Prompt Flow se registra ahora para la cuenta que lo ejecuta. Explora gráficas de 7/30 días y totales por modelo desde el inicio del registro, no historial previo ni agentes secundarios. Checking usage espera datos reales; Connection details explica fallas y reintentos automáticos. Los saldos válidos siguen visibles si sólo falta el nombre de cuenta. Los datos faltantes no son cero; la cuenta usa caché de un minuto. Exec Report distingue éxito de fallo y ACPX conserva transcripciones.', type: 'Evidencia' },
-        { id: 'flowcreator', name: 'Descríbelo. Recibe un .flw Real.', desc: 'FlowCreator elige entre 86 agentes, comprueba ramas, campos y mapeos, y repara planes inválidos dentro de límites antes de entregarte un flujo para revisión.', type: 'Flujo' },
+        { id: 'flowcreator', name: 'Descríbelo. Recibe un .flw Real.', desc: 'FlowCreator elige entre 87 agentes, comprueba ramas, campos y mapeos, y repara planes inválidos dentro de límites antes de entregarte un flujo para revisión.', type: 'Flujo' },
         { id: 'acpx', name: 'Los Mejores Agentes Colaborando', desc: 'Coordina Claude Code, Codex, Cursor, Gemini, Qwen y otros agentes. Las pruebas opcionales con prompts reales comprueban preparación; permisos, autenticación, configuración o límites de uso se explican con transcripciones conservadas.', type: 'Delegación' },
         { id: 'external_mcps', name: 'Todo el Ecosistema MCP, Conectado', desc: 'Suelta un JSON MCP de Claude Desktop, VS Code, Zed u opencode en una página con sesión. Revisa servidores y el aviso de ejecución de programas antes de importar a External -> MCPs; importar no los activa. Conecta hasta cinco por stdio, streamable HTTP, SSE o WebSocket.', type: 'MCP' },
         { id: 'skills', name: '29 Skills que le Enseñan Cómo', desc: 'Paquetes SKILL.md reutilizables añaden creación guiada de flujos, revisiones, seguridad, incorporación de MCPs, integraciones y procedimientos especializados.', type: 'Skills' },
@@ -948,14 +952,15 @@ const es: Translations = {
         { id: 'crawler', name: 'Lee la Página que Realmente Pediste', desc: 'Crawler lee la página indicada por defecto y analiza código fuente o texto legible. Amplía a enlaces cuando lo elijas, con límites de páginas, tamaño y tiempo. Los bloqueos y tiempos agotados se informan, no se analizan como contenido; si nada pudo leerse, explica por qué. Para páginas que dependen de JavaScript, elige Playwrighter.', type: 'Lectura Web' },
         { id: 'blue_hat', name: 'Defensa Blue-Hat Bajo tu Control', desc: 'Observa diez familias de señales Windows con análisis sólo informativos por defecto. Bloquear o detener procesos exige Armed explícito; la respuesta agresiva también es opcional. La habilitación registra cambios y conserva los modos globales de protección por defecto. Revisa las exclusiones: reducen protección y no hay reversión automática.', type: 'Defensa' },
         { id: 'security_agents', name: 'Tres Caminos para Recon Autorizado', desc: 'Usa Discoverer para ProjectDiscovery, Nmapper para nmap local y Kalier para un Kali configurado, todos con límites claros y resultados honestos.', type: 'Seguridad' },
-        { id: 'codebase', name: 'Interactor: Aprende Mientras Creas', desc: 'Aprende mientras construyes. Interactor lee el texto sin guardar, escribe un segmento y te cede el siguiente campo. Las sugerencias preparadas se completan localmente, sin llamar al modelo por cada tecla. Ocultar la pestaña brevemente pausa y reanuda sin repetir texto. Continuar en el chat, Pedir una pista y Explicar la selección llevan la tutoría al chat. Tu escritura, Esc o Detener el tutor la interrumpen; escribir nunca guarda ni ejecuta código. Activa Multi-Turn, Interactor y Editor en vivo. Config -> Live Editor & Terminater ajusta 40–160 WPM, pausas de 0–3 segundos, detalle, sugerencias y seguimiento del cursor. Desplazarte manualmente pausa el seguimiento de ese segmento. Abrir ajustes detiene la tutoría activa. Globber y Grepper buscan con grupos entre llaves, listas de patrones y filtros; Editor edita y File-Creator escribe o añade. Mover crea carpetas de destino nuevas; los destinos de archivo explícitos permiten renombrar y los nombres iguales pueden reemplazarse.', type: 'Codebase' },
+        { id: 'codebase', name: 'Interactor: Aprende Mientras Creas', desc: 'Aprende mientras construyes. Interactor lee el texto sin guardar, escribe un segmento y te cede el siguiente campo. Las sugerencias preparadas se completan localmente, sin llamar al modelo por cada tecla. Ocultar la pestaña brevemente pausa y reanuda sin repetir texto. Continuar en el chat, Pedir una pista y Explicar la selección llevan la tutoría al chat. Tu escritura, Esc o Detener el tutor la interrumpen; escribir nunca guarda ni ejecuta código. Activa Multi-Turn, Interactor y Editor en vivo. Config -> Live Editor & Terminater ajusta 40–250 WPM, pausas de 0–3 segundos, detalle, sugerencias y seguimiento del cursor. Desplazarte manualmente pausa el seguimiento de ese segmento. Abrir ajustes detiene la tutoría activa. Globber y Grepper buscan con grupos entre llaves, listas de patrones y filtros; Editor edita y File-Creator escribe o añade. Mover crea carpetas de destino nuevas; los destinos de archivo explícitos permiten renombrar y los nombres iguales pueden reemplazarse.', type: 'Codebase' },
         { id: 'documents', name: 'PDFer + PPTXer + LaTeXer', desc: 'Crea PowerPoints editables con 36 tratamientos y 17 combinaciones tipográficas. PDFer ofrece 24 estilos y 20 temas; LaTeXer suma 30 estilos y genera el Architecture atlas reconstruible de cada archivo versionado del proyecto. Verifica PDFs antes de entregarlos, informa problemas de maquetación y marca reparaciones muy reducidas como .DEGRADED.pdf. Los archivos terminados sobreviven a un destino bloqueado e informan la ruta real.', type: 'Documentos' },
         { id: 'pdf_canvas', name: 'Tu Lienzo. Ahora un Editor de Trabajo.', desc: 'Edita código, JSON, texto y Markdown Código con Deshacer/Rehacer, Buscar y reemplazar y Ajustar. Guardar como abre un selector nativo Windows en conexiones locales; Guardar detecta conflictos en disco y conserva codificación y saltos de línea. Cancelar conserva tus cambios. Vista previa y Código comparten texto; Copiar y Usar como contexto toman lo editado. Guarda antes de cerrar: lo no guardado queda en memoria. Los PDFs son de solo lectura; Guardar copia el original. Usar como contexto prepara todo el PDF tras Continuar; Procesar imágenes añade análisis, nunca contexto visual incompleto. Si inicia otra cuenta, el paso fallido pide recargar. Abre .md o .markdown; Elegir carpeta conecta imágenes relativas y otros Markdown. Sin editar conserva los bytes del Markdown original. Sin CDN; las imágenes remotas sí pueden cargar desde la web. Actualizar relee sin selector ni escritura y confirma antes de descartar cambios; conserva página, zoom, rotación y modo de desplazamiento PDF. Si falla la lectura, conserva el documento anterior; las copias sin acceso al original explican el límite de Actualizar.', type: 'Documentos' },
         { id: 'model_config', name: 'Model Brain. Elige Modelo y Observa el Ajuste.', desc: 'Config -> Modelos reúne 38 ajustes en seis categorías para 21 agentes con modelos. Guardar abre Auto-tuning en vivo y muestra el origen de cada valor. Model Brain usa perfiles del fabricante, aprende ajustes publicados de modelos nuevos o recurre a Ollama y valores propios del modelo. Tus ajustes prevalecen, el contexto respeta la capacidad y los perfiles aprendidos sobreviven a updates. Las listas usan tus servidores y token. Configure conserva costos estimados y selección de herramientas.', type: 'Configuración' },
-        { id: 'browser_desktop', name: 'Terminater: Observa. Guía. Toma el Mando.', desc: 'Observa CMD y PowerShell reales mientras ella escribe tecla a tecla y lee la salida; informa el código de retorno cuando está disponible, sin inventarlo. Esc detiene su escritura y te entrega el teclado; los relevos planificados te dejan completar un comando. Verifica la línea en pantalla y no añade comandos sobre uno pendiente. En tutorías por chat, dile que tú ejecutarás: deja Enter en tus manos y bloquea otros ejecutores hasta que devuelvas el mando. Elige Yo siempre presiono Enter en Config -> Live Editor & Terminater para mantener ejecución manual en chat y ambos paneles. Ajusta shell, advisor, 20–160 WPM y esperas de comando, silencio y relevo; agotar una espera devuelve el mando sin matar el proceso. Shell y advisor rigen en terminales nuevas. Los registros secretos se ocultan, pero la salida del programa puede seguir visible. Organiza pestañas, mosaicos o cuadrícula; las sesiones sobreviven al cierre de páginas hasta salir de Tlamatini. Los comandos bloqueados se señalan y pueden abortarse. Ask Execs sigue vigente. Playwrighter, Windower, Mouser, Keyboarder y Shoter amplían el control; entregar entrada no prueba éxito. Publicado para Windows 11 x64.', type: 'Terminales Vivas' },
+        { id: 'browser_desktop', name: 'Terminater: Observa. Guía. Toma el Mando.', desc: 'Observa CMD y PowerShell reales mientras ella escribe tecla a tecla y lee la salida; informa el código de retorno cuando está disponible, sin inventarlo. Esc detiene su escritura y te entrega el teclado; los relevos planificados te dejan completar un comando. Verifica la línea en pantalla y no añade comandos sobre uno pendiente. En tutorías por chat, dile que tú ejecutarás: deja Enter en tus manos y bloquea otros ejecutores hasta que devuelvas el mando. Elige Yo siempre presiono Enter en Config -> Live Editor & Terminater para mantener ejecución manual en chat y ambos paneles. Ajusta shell, advisor, 20–250 WPM y esperas de comando, silencio y relevo; agotar una espera devuelve el mando sin matar el proceso. Shell y advisor rigen en terminales nuevas. Los registros secretos se ocultan, pero la salida del programa puede seguir visible. Organiza pestañas, mosaicos o cuadrícula; las sesiones sobreviven al cierre de páginas hasta salir de Tlamatini. Los comandos bloqueados se señalan y pueden abortarse. Ask Execs sigue vigente. Playwrighter, Windower, Mouser, Keyboarder y Shoter amplían el control; entregar entrada no prueba éxito. Publicado para Windows 11 x64.', type: 'Terminales Vivas' },
         { id: 'messaging', name: 'Tu Mensaje. La Identidad que Eliges.', desc: 'Envía y recibe con Telegrammer, Whatsapper y agentes de email. Telegrammer reconoce "using the bot" en cualquier parte de la solicitud fuera de valores entre comillas; un provider explícito sigue teniendo prioridad. El envío como bot respeta los permisos de Telegram. Elige identidad empresarial o personal donde se admita. Notifier acerca las alertas e Instant Messaging Doctor comprueba la configuración.', type: 'Mensajería' },
         { id: 'database', name: 'Protección de Base de Datos WAL-Safe', desc: 'Respalda y prepara SQLite mediante la API de backup online, verifica integridad y trata sidecars WAL/SHM sin fingir que un archivo aislado está completo.', type: 'Datos' },
-        { id: 'windows_delivery', name: 'Paquete Ligero. Retiro Recuperable.', desc: 'Instala con progreso, Retry, Change folder y un log local. Uninstaller mueve archivos a recuperación en la misma unidad en vez de copiar la instalación, con reversión de pasos reversibles si hay fallas. Los restos bloqueados siguen visibles con Retry cleanup. Conserva agentes y carpetas con proyectos; otras apps quedan abiertas. Python 3.12.10 cubre 86 agentes con ESPHome aislado, sin duplicar bibliotecas multimedia; los updates verifican archivos requeridos. Conservan Uninstaller.exe: usa el nuevo Installer para renovarlo. Los paquetes públicos excluyen catálogos MCP privados y bóvedas de llaves; los builds privados pueden llevar tus servidores y credenciales.', type: 'Windows' },
+        { id: 'torrenter', name: 'Cierra el chat. La descarga continúa.', desc: 'Abre Torrenter Sources desde Panels, revisa un magnet o archivo .torrent y elige sólo lo que necesitas. Con Tlachihuani Jobs y XT instalados por separado, puedes pausar y reanudar las descargas de tu cuenta. Un flujo puede continuar al aceptar el trabajo o esperar al manifiesto verificado. Borrar los archivos requiere tu aprobación en XT.', type: 'Descargas' },
+        { id: 'windows_delivery', name: 'Paquete Ligero. Retiro Recuperable.', desc: 'Instala con progreso, Retry, Change folder y un log local. Uninstaller mueve archivos a recuperación en la misma unidad en vez de copiar la instalación, con reversión de pasos reversibles si hay fallas. Los restos bloqueados siguen visibles con Retry cleanup. Conserva agentes y carpetas con proyectos; otras apps quedan abiertas. Python 3.12.10 cubre 87 agentes con ESPHome aislado, sin duplicar bibliotecas multimedia; los updates verifican archivos requeridos. Las actualizaciones verifican y reemplazan Uninstaller.exe sin perder los datos de tu cuenta ni tu bóveda de claves. Los paquetes públicos excluyen catálogos MCP privados y bóvedas de llaves; los builds privados pueden llevar tus servidores y credenciales.', type: 'Windows' },
         { id: 'self_knowledge', name: 'Su Autoconocimiento. Tu Decisión.', desc: 'Self-modify es visible al ejecutar desde código o en builds con su snapshot de automodificación, oculto en los demás. ON incluye su autoconocimiento; OFF elimina el costo de tokens del autoconocimiento por solicitud y le indica no leer, editar ni reconstruir su propio código. Un modelo sin capacidad lo bloquea en OFF sin borrar tu elección; uno mayor lo desbloquea. Los snapshots saneados opcionales siguen siendo reconstruibles.', type: 'Identidad' },
         { id: 'prompt_catalog', name: 'Primeros Pasos: Voz, Editor y Terminales', desc: 'VOICE COMMANDS conserva su ensayo de solo lectura y SPEAK YOUR PROMPT, con lectura del transcript y confirmación escrita para trabajo irreversible. Estas rutas guiadas son distintas del botón Mic: su revisión opcional ocurre en el campo normal del chat, no en un diálogo de confirmación. Tres ejemplos seguros de Terminater presentan comandos visibles, cesión del teclado y un recorrido guiado por las terminales. Interactor añade una lección en el editor. La creación guiada de cuentas mantiene contraseñas en la consola, no en chat; crea una cuenta administradora. Un email no autoriza envíos. Los avisos locales de Notifier guían sin contactar a nadie.', type: 'Guía' },
         { id: 'mcp_adder', name: 'Añade un MCP con una Guía Protegida', desc: 'La skill de incorporación clasifica transporte, separa secretos, diagnostica, activa sólo con intención y prueba la herramienta remota antes de usarla.', type: 'MCP' },
@@ -966,7 +971,7 @@ const es: Translations = {
 
   footer: {
     ctaTitle: 'Ejecuta Tlamatini en Tu Propia Máquina',
-    ctaDesc: `Tlamatini controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Crea a tu ritmo en ${editions.es.tag}: adapta las lecciones de Interactor, escucha explicaciones opcionales y conserva el mando de Terminater. Pon 86 agentes, 110 herramientas Multi-Turn integradas y 29 skills detrás de tu próxima idea.`,
+    ctaDesc: `Tlamatini controla Unreal Engine y Blender, impulsa flujos críticos STM32er y ESP32er, habla con Talker y escucha con Whisperer. Crea a tu ritmo en ${editions.es.tag}: adapta las lecciones de Interactor, escucha explicaciones opcionales y conserva el mando de Terminater. Pon 87 agentes, 111 herramientas Multi-Turn integradas y 29 skills detrás de tu próxima idea.`,
     viewSource: 'Descargar Código',
     documentation: 'Documentación',
     github: 'GitHub',
@@ -990,7 +995,7 @@ const es: Translations = {
     hero: {
       label: 'XAIHT / Proyectos',
       subtitle: `IA Autoalojada y Capaz de Usar la Nube | ${editions.es.tag}`,
-      desc: `Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Nuevo en ${editions.es.tag}: historial aislado por ejecución, decisiones por veredicto y nombres cortos de agentes. Crea con Interactor en Live Editor y Terminater, 86 agentes, 110 herramientas Multi-Turn integradas y 29 skills.`,
+      desc: `Ella controla Unreal Engine y Blender, programa STM32 y ESP32, habla con Talker y escucha con Whisperer. Nuevo en ${editions.es.tag}: elige con Torrenter qué archivos descargar de un torrent o enlace magnet; la descarga continúa aunque cierres el chat. Crea con Interactor en Live Editor y Terminater, 87 agentes, 111 herramientas Multi-Turn integradas y 29 skills.`,
     },
     presence: {
       label: 'Señal Tlamatini',
@@ -1025,7 +1030,7 @@ const es: Translations = {
       title: 'La Que Sabe, La Que Puede Actuar',
       p1Strong: 'Tlamatini',
       p1Rest: ' significa «la que sabe». Se ejecuta en tu máquina y conecta control de Unreal Engine y Blender, firmware STM32 / ESP32 / ESPHome / Arduino, habla Talker y escucha Whisperer con comprensión del código. Sus lienzos de agentes y prompts ofrecen formas complementarias de orquestarla. PDFer, PPTXer y LaTeXer crean entregables; medios, mensajería, seguridad y delegación opcional amplían tu alcance.',
-      p2: `En ${editions.es.tag}, Prompt Flow separa el historial de cada ejecución y reconoce decisiones por veredicto. Config -> Live Editor & Terminater pone ritmo, guía, ejecución y narración en tus manos. Elige Estándar o Aprendizaje guiado y prueba Vista previa sin ejecutar comandos ni editar archivos. Guardar aplica el comportamiento a la siguiente acción; Cancelar o Escape descarta el borrador. Interactor lee tu trabajo sin guardar. Tus preferencias te acompañan en chat, Agentic Control Panel y Prompt Flow Panel; la apariencia queda con tu cuenta en este navegador. Conserva PDFs, Actualizar y ajustes con ratón o teclado. Acerca de -> Buscar actualizaciones entrega la app publicada.`,
+      p2: `En ${editions.es.tag}, inicia una descarga con Torrenter desde el chat o un flujo y vuelve a ella desde XT en la bandeja del sistema. Config -> Live Editor & Terminater pone ritmo, guía, ejecución y narración en tus manos. Elige Estándar o Aprendizaje guiado y prueba Vista previa sin ejecutar comandos ni editar archivos. Guardar aplica el comportamiento a la siguiente acción; Cancelar o Escape descarta el borrador. Interactor lee tu trabajo sin guardar. Tus preferencias te acompañan en chat, Agentic Control Panel y Prompt Flow Panel; la apariencia queda con tu cuenta en este navegador. Conserva PDFs, Actualizar y ajustes con ratón o teclado. Acerca de -> Buscar actualizaciones entrega la app publicada.`,
       viewSource: 'Descargar Código',
     },
     features: {
@@ -1070,7 +1075,7 @@ const es: Translations = {
         {
           id: 'visual_workflows',
           title: 'Dos Lienzos. Decisiones Más Claras. Tu Control.',
-          description: 'Conecta 86 agentes en .flw u ocho operaciones en .fpmt. Cada ejecución conserva su historial; las decisiones equals reconocen un veredicto YES/NO inicial aunque siga una explicación. El uso registrado pertenece a su cuenta. Terminater pasa la salida visible al siguiente paso; User Input pide una respuesta. User Commentary sigue como nota estática, nunca contexto del modelo. Ajusta Run output sin cambiar el zoom y los diálogos desde cada borde y esquina. Abre desde Windows, chat o arrastrando archivos. Confirma antes de reemplazar trabajo sin guardar; abrir nunca ejecuta.',
+          description: 'Conecta 87 agentes en .flw u ocho operaciones en .fpmt. Cada ejecución conserva su historial; las decisiones equals reconocen un veredicto YES/NO inicial aunque siga una explicación. El uso registrado pertenece a su cuenta. Terminater pasa la salida visible al siguiente paso; User Input pide una respuesta. User Commentary sigue como nota estática, nunca contexto del modelo. Ajusta Run output sin cambiar el zoom y los diálogos desde cada borde y esquina. Abre desde Windows, chat o arrastrando archivos. Confirma antes de reemplazar trabajo sin guardar; abrir nunca ejecuta.',
         },
         {
           id: 'external_mcps',
@@ -1095,14 +1100,14 @@ const es: Translations = {
         {
           id: 'windows_delivery',
           title: 'Menos Descarga. Más Trabajo Conservado.',
-          description: 'Las bibliotecas multimedia y de navegador viajan una sola vez y reducen el paquete. Uninstaller mueve archivos a recuperación en la misma unidad, con reversión de pasos reversibles si hay fallas; Retry cleanup atiende restos bloqueados sin fingir una eliminación completa. Conserva agents y las carpetas application, applications, content_generated, context_files, doc_generated y Templates con archivos. Borra Temp tras el éxito. Usa el nuevo Installer para renovar el desinstalador; los updates internos lo conservan. Las asociaciones Windows respetan tus preferencias.',
+          description: 'Las bibliotecas multimedia y de navegador viajan una sola vez y reducen el paquete. Uninstaller mueve archivos a recuperación en la misma unidad, con reversión de pasos reversibles si hay fallas; Retry cleanup atiende restos bloqueados sin fingir una eliminación completa. Conserva agents y las carpetas application, applications, content_generated, context_files, doc_generated y Templates con archivos. Borra Temp tras el éxito. Las actualizaciones incluyen un desinstalador verificado y conservan tu bóveda de claves. Las compilaciones en inglés y español pueden reutilizar dependencias de Python compatibles sin sobrescribir sus entornos. Las asociaciones Windows respetan tus preferencias.',
         },
       ],
     },
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: `Obtén Tlamatini en español ${editions.es.tag} para Windows 11 x64 en Releases o ejecútala desde el código. Extrae el ZIP completo, abre Installer.exe, elige carpeta, revisa e instala. La ventana muestra progreso y conserva Reintentar, Cambiar carpeta y la ruta del log tras un error. Acerca de -> Buscar actualizaciones entrega la app publicada, pero conserva tu Uninstaller.exe actual. Ejecuta el nuevo Installer para renovarlo. Inicia sesión en Ollama y descarga los modelos indicados. Config -> Modelos abre Model Brain Auto-tuning; Acerca de -> Uso muestra saldos y actividad medida. Python 3.12.10 viene incluido; LaTeXer requiere TeX.`,
+      desc: `Obtén Tlamatini en español ${editions.es.tag} para Windows 11 x64 en Releases o ejecútala desde el código. Extrae el ZIP completo, abre Installer.exe, elige carpeta, revisa e instala. La ventana muestra progreso y conserva Reintentar, Cambiar carpeta y la ruta del log tras un error. Acerca de -> Buscar actualizaciones entrega la app publicada y verifica Uninstaller.exe. Conserva los datos de tu cuenta y tu bóveda de claves. Inicia sesión en Ollama y descarga los modelos indicados. Config -> Modelos abre Model Brain Auto-tuning; Acerca de -> Uso muestra saldos y actividad medida. Python 3.12.10 viene incluido; LaTeXer requiere TeX.`,
       steps: [
         { id: 'install_tlamatini', label: 'Instalar Tlamatini' },
         { id: 'install_ollama', label: 'Instalar Ollama' },
@@ -1113,8 +1118,8 @@ const es: Translations = {
     },
     agents: {
       label: 'Ecosistema de Agentes',
-      title: '86 Tipos de Agentes de Flujo',
-      desc: 'Unrealer y Blenderer controlan motores creativos; STM32er y ESP32er llegan al hardware real; Talker habla y Whisperer escucha. Explora 86 agentes de nueve familias, ahora con Terminater para comandos visibles bajo tu supervisión. PPTXer, PDFer, LaTeXer y el análisis visual crean entregables. Configurar Agents recuerda tu selección y la aplica a las herramientas de chat correspondientes.',
+      title: '87 Tipos de Agentes de Flujo',
+      desc: 'Unrealer y Blenderer controlan motores creativos; STM32er y ESP32er llegan al hardware real; Talker habla y Whisperer escucha. Explora 87 agentes de nueve familias, con Terminater para supervisar comandos en pantalla y Torrenter para descargas que continúan al cerrar el chat. PPTXer, PDFer, LaTeXer y el análisis visual crean entregables. Configurar Agents recuerda tu selección y la aplica a las herramientas de chat correspondientes.',
       groups: [
         {
           category: 'Agentes de Control',
@@ -1148,6 +1153,7 @@ const es: Translations = {
           category: 'Agentes de Acción',
           agents: [
             { name: 'Executer', desc: 'Ejecuta comandos de shell y captura su salida real' },
+            { name: 'Torrenter', desc: 'Elige archivos de un torrent o magnet y sigue la descarga de tu cuenta hasta verificar el resultado' },
             { name: 'Terminater', desc: 'Escribe en CMD y PowerShell visibles a tu ritmo guardado, señala trabajo no confirmado y ofrece narración e Yo siempre presiono Enter en chat y flujos; Esc toma el mando' },
             { name: 'Pythonxer', desc: 'Ejecuta Python detrás de compuertas compile y Ruff' },
             { name: 'SQLer', desc: 'Trabaja contra Microsoft SQL Server' },
@@ -1224,7 +1230,7 @@ const es: Translations = {
           agents: [
             { name: 'Parametrizer', desc: 'Valida cada mapeo tipado antes de transferir resultados al siguiente agente' },
             { name: 'FlowBacker', desc: 'Respalda una sesión terminada antes de limpiarla' },
-            { name: 'FlowCreator', desc: 'Elige entre 86 agentes y valida conexiones antes de publicar un flujo' },
+            { name: 'FlowCreator', desc: 'Elige entre 87 agentes y valida conexiones antes de publicar un flujo' },
           ],
         },
         {
@@ -1263,7 +1269,7 @@ const es: Translations = {
         },
         {
           category: 'Plataforma de Agentes y Flujos',
-          items: ['86 tipos visuales de agentes de flujo', '67 lanzadores de agentes envueltos para chat', '110 herramientas Multi-Turn integradas', '29 paquetes SKILL.md reutilizables', 'Runtime ACPX para agentes externos', 'Flow Compiler + Agent Contracts + Parametrizer', 'Agentic Control Panel: flujos .flw', 'Prompt Flow Panel: ocho operaciones en .fpmt', 'Interactor + Terminater + preferencias de interacción por cuenta'],
+          items: ['87 tipos visuales de agentes de flujo', '68 lanzadores de agentes envueltos para chat', '111 herramientas Multi-Turn integradas', '29 paquetes SKILL.md reutilizables', 'Runtime ACPX para agentes externos', 'Flow Compiler + Agent Contracts + Parametrizer', 'Agentic Control Panel: flujos .flw', 'Prompt Flow Panel: ocho operaciones en .fpmt', 'Interactor + Terminater + preferencias de interacción por cuenta'],
         },
         {
           category: 'Protocolos e Integraciones',

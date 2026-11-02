@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { translations } from '@/i18n/translations';
 import { installationSteps } from '@/i18n/installation';
 
-describe('v1.91.1 interaction settings marketing', () => {
+describe('v1.92.3 interaction settings marketing', () => {
   it.each(['en', 'es'] as const)('features the shared settings in the existing %s surfaces', lang => {
     const copy = translations[lang];
     for (const surface of [copy.liveEditor.intro, copy.tlamatini.overview.p2,
@@ -13,9 +13,9 @@ describe('v1.91.1 interaction settings marketing', () => {
     for (const tab of [lang === 'es' ? 'Editor en vivo' : 'Live Editor', 'Terminater', lang === 'es' ? 'Voz' : 'Voice']) {
       expect(copy.liveEditor.intro).toContain(tab);
     }
-    expect(copy.liveEditor.benefits[1].desc).toContain('40–160 WPM');
+    expect(copy.liveEditor.benefits[1].desc).toContain('40–250 WPM');
     expect(copy.liveEditor.benefits[1].desc).toContain('0–3');
-    expect(copy.terminater.intro).toContain('20–160 WPM');
+    expect(copy.terminater.intro).toContain('20–250 WPM');
     expect(copy.terminater.intro).toContain(lang === 'es' ? 'Yo siempre presiono Enter' : 'I always press Enter');
     expect(copy.ascii.phrases.some(phrase => phrase.includes('Config -> Live Editor & Terminater'))).toBe(true);
     expect(copy.liveEditor.views[1].desc).toContain(lang === 'es' ? 'Breve' : 'Brief');
@@ -56,8 +56,8 @@ describe('v1.91.1 interaction settings marketing', () => {
 
   it('keeps setup pinned to one version with explicit virtual-environment commands', () => {
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('releases/tag/v1.91.1');
-    expect(setup).toContain('archive/refs/tags/v1.91.1.zip');
+    expect(setup).toContain('releases/tag/v1.92.3');
+    expect(setup).toContain('archive/refs/tags/v1.92.3.zip');
     expect(setup).toContain('python.exe Tlamatini/manage.py createsuperuser');
     expect(setup).toContain('change the password immediately');
     expect(setup).not.toContain('Activate.ps1');
@@ -65,7 +65,7 @@ describe('v1.91.1 interaction settings marketing', () => {
       '12-24 px', 'Preview runs no commands', 'Save applies behavior to the next action']) {
       expect(setup).toContain(value);
     }
-    expect(setup).toContain('Tlamatini_Release_v1.91.1_Win11x64.zip');
+    expect(setup).toContain('Tlamatini_Release_v1.92.3_Win11x64.zip');
     for (const lang of ['en', 'es'] as const) {
       expect(JSON.stringify(translations[lang])).not.toMatch(/Ollama (Pro|Max)\b|Pro\/Max|source version|versión fuente/i);
     }

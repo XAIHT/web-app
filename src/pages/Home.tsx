@@ -108,7 +108,7 @@ function OverviewSection() {
             />
             <div className="grid grid-cols-2 gap-6">
               {[
-                { label: o.stats.agents, value: '86' },
+                { label: o.stats.agents, value: '87' },
                 { label: o.stats.skills, value: '29' },
                 { label: o.stats.version, value: edition.tag },
                 { label: o.stats.iterations, value: '4096' },
