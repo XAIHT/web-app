@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import Link from '@/components/LocalizedLink';
 import { EditionLabel } from '@/components/EditionDetails';
+import SetupVideo from '@/components/SetupVideo';
 import { useEdition, useT } from '@/i18n/context';
 import { createBannerMotion, createFlickTracker, createPhraseDeck } from '@/lib/banner-motion';
 
@@ -206,6 +207,7 @@ export default function AsciiIntro() {
           <a href={edition.installerUrl} className="xaiht-btn xaiht-btn-filled">
             <Download size={16} aria-hidden="true" />{t.edition.download}
           </a>
+          <SetupVideo />
           <Link to="/tlamatini">{t.edition.explore}<ArrowRight size={16} aria-hidden="true" /></Link>
         </div>
       </div>

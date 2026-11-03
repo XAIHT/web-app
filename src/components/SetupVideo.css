@@ -1,0 +1,20 @@
+.setup-video-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 14px; min-height: 44px; border: 1px solid #65573d; border-radius: 4px; background: #141410; color: #f0e3c7; font-size: 14px; font-weight: 600; cursor: pointer; }
+.setup-video-cta small { border-left: 1px solid #65573d; padding-left: 8px; color: #c9a96e; font: 12px 'IBM Plex Mono', monospace; }
+.setup-video-cta:hover, .setup-video-feature:hover { border-color: #c9a96e; }
+.setup-video-cta:focus-visible, .setup-video-feature:focus-visible, .setup-video-dialog :is(button,a):focus-visible { outline: 2px solid #40c4b4; outline-offset: 3px; }
+.setup-video-feature { width: 100%; display: flex; align-items: center; gap: 24px; margin-bottom: 28px; padding: 16px; text-align: left; background: #111; border: 1px solid #3c382e; border-radius: 6px; cursor: pointer; }
+.setup-video-poster { position: relative; flex: 0 0 224px; aspect-ratio: 16/9; overflow: hidden; background: #171717; }
+.setup-video-poster img { width: 100%; height: 100%; object-fit: cover; }
+.setup-video-play { position: absolute; inset: 0; margin: auto; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #0a0a0ae6; color: #e2c68d; }
+.setup-video-copy { display: grid; gap: 8px; color: #bbb; line-height: 1.5; }
+.setup-video-copy strong, .setup-video-inner h2 { font-size: 22px; color: #f0f0f0; line-height: 1.25; }
+.setup-video-dialog { margin: auto; padding: 0; width: min(896px, calc(100% - 28px)); max-height: 92dvh; overflow: auto; background: #101010; border: 1px solid #65573d; border-radius: 6px; color: #eee; text-align: left; cursor: auto; }
+.setup-video-dialog::backdrop { background: #000d; }
+.setup-video-inner header, .setup-video-inner footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 18px; }
+.setup-video-inner button { display: grid; place-items: center; min-width: 44px; height: 44px; color: #ddd; cursor: pointer; }
+.setup-video-inner iframe { display: block; width: 100%; aspect-ratio: 16/9; max-height: 65dvh; border: 0; background: black; }
+.setup-video-inner footer a { display: inline-flex; align-items: center; gap: 8px; color: #c9a96e; font-size: 14px; }
+@media (max-width: 599px) {
+  .setup-video-feature { flex-direction: column; align-items: stretch; gap: 14px; }
+  .setup-video-poster { flex: none; }
+}

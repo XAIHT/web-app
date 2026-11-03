@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
+import SetupVideo from '@/components/SetupVideo';
 import Footer from '@/components/Footer';
 import TerminaterShowcase from '@/components/TerminaterShowcase';
 import LiveEditorShowcase from '@/components/LiveEditorShowcase';
@@ -67,6 +68,7 @@ function TlamatiniHero() {
         <p className="text-[#aaa] max-w-xl mx-auto" style={{ fontSize: '0.9375rem', lineHeight: 1.6 }}>
           {h.desc}
         </p>
+        <div className="mt-5 mb-6"><SetupVideo /></div>
       </div>
     </section>
   );
@@ -397,6 +399,7 @@ function TlamatiniInstallation() {
       <p className="reveal-item text-[#888] mb-8 max-w-2xl" style={{ fontSize: '1rem', lineHeight: 1.65 }}>
         {inst.desc}
       </p>
+      <SetupVideo featured />
       <EditionDetails />
       <div className="space-y-4">
         {steps.map((step, i) => (

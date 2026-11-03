@@ -16,6 +16,11 @@ import { editions, type Lang } from './editions';
 export type { Lang } from './editions';
 
 const en = {
+  setupVideo: {
+    action: 'Watch setup guide', title: 'Getting started with Tlamatini',
+    language: 'English video', description: 'Follow Ángela López as she installs the English edition and gets it ready for first use.',
+    external: 'Watch on YouTube', close: 'Close video',
+  },
   edition: {
     selector: 'Website language and application edition',
     title: 'Tlamatini. In your language.',
@@ -627,6 +632,11 @@ const en = {
 export type Translations = typeof en;
 
 const es: Translations = {
+  setupVideo: {
+    action: 'Ver guía en inglés', title: 'Primeros pasos con Tlamatini',
+    language: 'Video en inglés', description: 'Acompaña a Ángela López mientras instala la edición en inglés y la prepara para empezar a usarla.',
+    external: 'Ver en YouTube', close: 'Cerrar video',
+  },
   edition: {
     selector: 'Idioma del sitio y edición de la aplicación',
     title: 'Tlamatini. Ahora también en español.',
