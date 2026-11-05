@@ -6,6 +6,16 @@ import { installationSteps } from '@/i18n/installation';
 import { translations } from '@/i18n/translations';
 
 describe('language selects the application edition', () => {
+  it('offers the matching setup video in each language', () => {
+    expect(translations.en.setupVideo.videoId).toBe('8bQcWyqL9kg');
+    expect(translations.en.setupVideo.duration).toBe('10:06');
+    expect(translations.es.setupVideo.videoId).toBe('RLNHQi8KBNo');
+    expect(translations.es.setupVideo.duration).toBe('10:07');
+    expect(translations.es.setupVideo.action).toBe('Ver guía en español');
+    expect(translations.es.setupVideo.language).toBe('Video en español');
+    expect(translations.es.setupVideo.description).toContain('edición en español');
+  });
+
   it.each(['en', 'es'] as const)('keeps all %s product destinations in the correct repository', lang => {
     const e = editions[lang];
     const repository = lang === 'en' ? 'Tlamatini' : 'Tlamatini-Spanish';

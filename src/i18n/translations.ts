@@ -17,6 +17,7 @@ export type { Lang } from './editions';
 
 const en = {
   setupVideo: {
+    videoId: '8bQcWyqL9kg', duration: '10:06',
     action: 'Watch setup guide', title: 'Getting started with Tlamatini',
     language: 'English video', description: 'Follow Ángela López as she installs the English edition and gets it ready for first use.',
     external: 'Watch on YouTube', close: 'Close video',
@@ -633,8 +634,9 @@ export type Translations = typeof en;
 
 const es: Translations = {
   setupVideo: {
-    action: 'Ver guía en inglés', title: 'Primeros pasos con Tlamatini',
-    language: 'Video en inglés', description: 'Acompaña a Ángela López mientras instala la edición en inglés y la prepara para empezar a usarla.',
+    videoId: 'RLNHQi8KBNo', duration: '10:07',
+    action: 'Ver guía en español', title: 'Primeros pasos con Tlamatini',
+    language: 'Video en español', description: 'Acompaña a Ángela López mientras instala la edición en español y la prepara para empezar a usarla.',
     external: 'Ver en YouTube', close: 'Cerrar video',
   },
   edition: {

@@ -3,11 +3,9 @@ import { CirclePlay, ExternalLink, Play, X } from 'lucide-react';
 import { useT } from '@/i18n/context';
 import './SetupVideo.css';
 
-const videoId = '8bQcWyqL9kg';
-const duration = '10:06';
-
 export default function SetupVideo({ featured = false }: { featured?: boolean }) {
   const copy = useT().setupVideo;
+  const { videoId, duration } = copy;
   const dialog = useRef<HTMLDialogElement>(null);
   const [playing, setPlaying] = useState(false);
   const title = `${copy.title} · ${copy.language}`;
