@@ -3,12 +3,12 @@ import { translations } from '@/i18n/translations';
 import { editions } from '@/i18n/editions';
 import { installationSteps } from '@/i18n/installation';
 
-describe('v1.92.3 release copy', () => {
+describe('v1.92.4 release copy', () => {
   it.each(['en', 'es'] as const)('presents one released version in %s', lang => {
     const copy = translations[lang];
-    expect(editions[lang].version).toBe('1.92.3');
+    expect(editions[lang].version).toBe('1.92.4');
     const content = JSON.stringify([copy, installationSteps(lang)]);
-    expect(new Set(content.match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.92.3']));
+    expect(new Set(content.match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.92.4']));
     expect(content).not.toMatch(/source[- ]only|source version|versión fuente|Ollama (?:Pro|Max)\b/i);
     expect(copy.liveEditor.intro).not.toMatch(/New in|Nuevo en/);
     expect(copy.tlamatini.agents.groups.flatMap(group => group.agents)).toHaveLength(87);

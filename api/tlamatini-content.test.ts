@@ -37,14 +37,14 @@ const expectedToolIds = [
   'blenderer', 'stm32er', 'esp_firmware', 'robotic_loop', 'image_vision', 'analysis_recovery', 'whisperer',
   'mic_preferences', 'talker', 'media', 'netspeed', 'googler', 'crawler', 'blue_hat', 'security_agents',
   'codebase', 'documents', 'pdf_canvas', 'model_config', 'browser_desktop', 'messaging', 'database',
-  'torrenter', 'windows_delivery', 'self_knowledge', 'prompt_catalog', 'mcp_adder',
+  'torrenter', 'tlachihuani', 'windows_delivery', 'self_knowledge', 'prompt_catalog', 'mcp_adder',
   'dependable_runtime',
 ] as const;
 
 const expectedFeatureIds = [
   'security', 'netspeed', 'creative_engines', 'embedded', 'voice_vision',
   'documents', 'multi_turn', 'visual_workflows', 'external_mcps', 'acpx_skills',
-  'research_rag', 'database', 'windows_delivery',
+  'research_rag', 'database', 'windows_delivery', 'torrenter',
 ] as const;
 
 const flattenAgentNames = (lang: 'en' | 'es') =>
@@ -52,7 +52,7 @@ const flattenAgentNames = (lang: 'en' | 'es') =>
     group.agents.map((agent) => agent.name),
   );
 
-describe('Tlamatini v1.92.3 website truth contract', () => {
+describe('Tlamatini v1.92.4 website truth contract', () => {
   it('promotes Interactor without inventing an additional workflow agent', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
@@ -150,7 +150,7 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
     for (const lang of ['en', 'es'] as const) {
       const showcase = translations[lang].terminater;
       expect(showcase.title).toBe('Terminater');
-      expect(showcase.label).toContain('v1.92.3');
+      expect(showcase.label).toContain('v1.92.4');
       expect(showcase.views.map(view => view.id)).toEqual(['terminals', 'handover', 'workflows']);
       expect(showcase.benefits).toHaveLength(3);
       expect(showcase.views[1].desc).toContain('Esc');
@@ -199,7 +199,7 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
   it('advertises the current release and crown jewels', () => {
     const english = JSON.stringify(translations.en);
     for (const required of [
-      'v1.92.3', '87 agents', '111 built-in Multi-Turn tools', '29 skills',
+      'v1.92.4', '87 agents', '111 built-in Multi-Turn tools', '29 skills',
       'NetSpeed-Calculator', 'Blue-hat', 'WAL-safe', 'Googler', 'MCP Adder',
       'Unreal Engine', 'Blender', 'STM32er', 'ESP32er', 'Talker', 'Whisperer',
       'PPTXer', 'Context Governor', '256-call', 'Compact mode',
@@ -211,7 +211,7 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
   it('keeps the technology stack current and substantial in both languages', () => {
     for (const lang of ['en', 'es'] as const) {
       const stack = translations[lang].tlamatini.techStack;
-      expect(stack.title).toContain('v1.92.3');
+      expect(stack.title).toContain('v1.92.4');
       expect(stack.groups).toHaveLength(6);
       stack.groups.forEach((group) => expect(group.items.length).toBeGreaterThanOrEqual(5));
     }
@@ -238,7 +238,7 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
       expect(catalog?.desc).toMatch(/written confirmation|confirmación escrita/);
       expect(copy.tlamatini.presence.panels[0].desc).toContain('120');
       expect(copy.tlamatini.overview.p2).toContain('Prompt Flow Panel');
-      expect(copy.tlamatini.overview.p2).toContain('v1.92.3');
+      expect(copy.tlamatini.overview.p2).toContain('v1.92.4');
     }
     const setup = Object.values(installationSteps('en')).join('\n');
     expect(setup).toContain('ollama pull glm-5.3:cloud');
@@ -379,10 +379,10 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
   it('keeps the published installer current without overstating the capabilities', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
-      expect(copy.tlamatini.hero.subtitle).toContain('v1.92.3');
-      expect(copy.tlamatini.installation.desc).toContain('v1.92.3');
+      expect(copy.tlamatini.hero.subtitle).toContain('v1.92.4');
+      expect(copy.tlamatini.installation.desc).toContain('v1.92.4');
       expect(copy.tlamatini.installation.desc).toContain(lang === 'es' ? 'Acerca de -> Buscar actualizaciones' : 'About -> Check for updates');
-      expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.92\.3$/);
+      expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.92\.4$/);
       const packaging = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
       expect(packaging).toContain('87');
       expect(packaging).toContain('ESPHome');
@@ -477,26 +477,26 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
     }
   });
 
-  it('keeps v1.92.3 consistent across the published release and source instructions', () => {
+  it('keeps v1.92.4 consistent across the published release and source instructions', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
       expect(copy.home.overview.stats.version).toBe(lang === 'en' ? 'Version' : 'Versión');
-      expect(copy.home.overview.desc).toContain('v1.92.3');
-      expect(copy.ascii.phrases).toContain('Tlamatini v1.92.3');
-      expect(copy.tlamatini.hero.subtitle.match(/v\d+\.\d+\.\d+/g)).toEqual(['v1.92.3']);
+      expect(copy.home.overview.desc).toContain('v1.92.4');
+      expect(copy.ascii.phrases).toContain('Tlamatini v1.92.4');
+      expect(copy.tlamatini.hero.subtitle.match(/v\d+\.\d+\.\d+/g)).toEqual(['v1.92.4']);
       expect(copy.tlamatini.hero.subtitle).not.toMatch(/Source|Installer|Código|Instalador/);
-      expect(copy.footer.ctaDesc).toContain('v1.92.3');
+      expect(copy.footer.ctaDesc).toContain('v1.92.4');
       const install = copy.tlamatini.installation.desc;
-      expect(install).toContain('v1.92.3');
+      expect(install).toContain('v1.92.4');
       expect(install).toContain(lang === 'es' ? 'Acerca de -> Buscar actualizaciones' : 'About -> Check for updates');
       expect(install).toMatch(/delivers the published app|entrega la app publicada/);
       expect(install).toMatch(/run her from source|ejecútala desde el código/);
       expect(install).toContain('Model Brain');
-      expect(new Set(JSON.stringify(copy).match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.92.3']));
+      expect(new Set(JSON.stringify(copy).match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.92.4']));
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('Tlamatini v1.92.3 Windows installer');
-    expect(setup).toContain('Option B: run Tlamatini v1.92.3 from source');
+    expect(setup).toContain('Tlamatini v1.92.4 Windows installer');
+    expect(setup).toContain('Option B: run Tlamatini v1.92.4 from source');
     expect(setup).toContain('Setup verifies a recovery copy before changing files');
     expect(setup).toContain('Requires Python 3.12.10.');
     expect(setup).not.toMatch(/When published|earlier tag snapshot|Updates become available after publication/);
@@ -723,7 +723,7 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
         expect(windows).toContain(folder);
       }
       expect(windows).toMatch(/nonempty|con archivos/);
-      expect(windows).toMatch(/keeps agents|Conserva agents/);
+      expect(windows).toMatch(/keeps agents|Conserva los agentes/);
       expect(windows).toMatch(/Temp scratch goes|Borra Temp/);
       expect(windows).toMatch(/locked leftovers|restos bloqueados/);
       expect(copy.ascii.phrases.some((phrase) => /Recoverable Removal|Desinstalación Recuperable/.test(phrase))).toBe(true);
@@ -824,7 +824,7 @@ describe('Tlamatini v1.92.3 website truth contract', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
       const media = copy.home.tools.items.find((tool) => tool.id === 'media')?.desc ?? '';
-      expect(media).toMatch(/Included in v1\.92\.3|Incluido en v1\.92\.3/);
+      expect(media).toMatch(/Included in v1\.92\.4|Incluido en v1\.92\.4/);
       const surfaces = [
         media, copy.home.overview.desc, copy.tlamatini.hero.desc, copy.tlamatini.overview.p2,
         copy.footer.ctaDesc, copy.tlamatini.installation.desc,

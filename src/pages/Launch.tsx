@@ -51,7 +51,7 @@ const copy = {
     proof: ['Workflow agents', 'Multi-Turn tools', 'Inspectable skills', 'Product version'],
     shiftLabel: 'The product thesis',
     shiftTitle: 'The next AI workspace must know the project and act across it.',
-    shiftBody: `Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In ${editions.en.tag}, choose the files you need with Torrenter, close chat, and come back to a verified manifest. Build in Live Editor with Interactor, hear optional explanations, and keep Enter in your hands with Terminater. Short agent names still reach the enabled tool. Bring 111 built-in Multi-Turn tools to work without giving up control.`,
+    shiftBody: `Tlamatini controls Unreal Engine and Blender, works with STM32 and ESP32, speaks with Talker, and listens with Whisperer. In ${editions.en.tag}, queue magnets with Torrenter, choose your files, and close chat while Tlachihuani Jobs keeps working. Verified output shows the actual saved path in Downloads or the application fallback. Build in Live Editor with Interactor, hear optional explanations, and keep Enter in your hands with Terminater. Short agent names still reach the enabled tool. Bring 111 built-in Multi-Turn tools to work without giving up control.`,
     capabilitiesLabel: 'One operator, six working surfaces',
     capabilitiesTitle: 'Built for the places where software becomes something real.',
     capabilityCopy: [
@@ -89,7 +89,7 @@ const copy = {
     proof: ['Agentes de flujo', 'Herramientas Multi-Turn', 'Skills inspeccionables', 'Versión actual'],
     shiftLabel: 'La tesis del producto',
     shiftTitle: 'El próximo espacio de IA debe conocer el proyecto y actuar en todo él.',
-    shiftBody: `Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En ${editions.es.tag}, elige tus archivos con Torrenter, cierra el chat y vuelve para consultar el manifiesto verificado. Crea en Live Editor con Interactor, escucha explicaciones opcionales y conserva Enter con Terminater. Los nombres cortos de agentes llegan a la herramienta habilitada. Pon 111 herramientas Multi-Turn a trabajar sin ceder tu control.`,
+    shiftBody: `Tlamatini controla Unreal Engine y Blender, trabaja con STM32 y ESP32, habla con Talker y escucha con Whisperer. En ${editions.es.tag}, encola magnets con Torrenter, elige archivos y cierra el chat mientras Tlachihuani Jobs sigue trabajando. Verified output muestra la ruta real en Descargas o la alternativa dentro de la aplicación. Crea en Live Editor con Interactor, escucha explicaciones opcionales y conserva Enter con Terminater. Los nombres cortos de agentes llegan a la herramienta habilitada. Pon 111 herramientas Multi-Turn a trabajar sin ceder tu control.`,
     capabilitiesLabel: 'Una operadora, seis superficies de trabajo',
     capabilitiesTitle: 'Hecha para los lugares donde el software se vuelve algo real.',
     capabilityCopy: [

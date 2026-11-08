@@ -26,6 +26,13 @@
 >
 > This repo is the **public-facing website** that tells the world what Tlamatini is, shows the demos, and walks visitors through installation. It is a fully-fledged fullstack app in its own right: a React front end, a typed RPC backend, Google sign-in, a MySQL database, and a one-command Docker deploy to Google Cloud.
 
+### Latest product release: Tlamatini 1.92.4
+
+English and Spanish now present the same released version. The refresh covers
+Torrenter queuing and verified Downloads delivery, the optional Tlachihuani XT
+companion, readable Markdown files, and clearer Windows packaging and recovery.
+See [the website release notes](docs/tlamatini-1.92.4.md) for scope and validation.
+
 ### Application Editions
 
 The header selects both the website language and the application edition:
@@ -36,8 +43,8 @@ The header selects both the website language and the application edition:
 | Español | [XAIHT/Tlamatini-Spanish](https://github.com/XAIHT/Tlamatini-Spanish) |
 
 `src/i18n/editions.ts` owns each edition's version, installer, source ZIP,
-repository, documentation, and issue links. Update the appropriate edition only
-after checking its release assets. Never copy an English download URL into a
+repository, documentation, and issue links. Keep both editions on the latest released version, **1.92.4**, and preserve each
+edition’s own repository and asset names. Never copy an English download URL into a
 translated component. `useEdition()` selects the destinations; `useT()` selects
 the copy. Setup instructions live in `src/i18n/installation.ts`.
 
@@ -80,7 +87,7 @@ header control, reload, Back/Forward, downloads, and scroll-driven sections.
 
 > Tlamatini's pitch is that **the toolbelt beats the parameter count.** The website has to make that pitch *felt*, not just read.
 >
-> So instead of a flat brochure, the front page is a scroll-driven walk through the architecture — five layers, 74 agents, 27 skills — rendered over living backgrounds. The medium is the message: a local-first tool deserves a site that does real work in your browser.
+> So instead of a flat brochure, the front page is a scroll-driven walk through the architecture — five layers, 87 agents, 29 skills — rendered over living backgrounds. The medium is the message: a local-first tool deserves a site that does real work in your browser.
 
 ### ⚡ Quickstart (local dev in 5 minutes)
 
@@ -89,8 +96,8 @@ Four steps: install deps, point at a MySQL database, drop in your env vars, run 
 **1 · Clone &amp; install** (Node 20+):
 
 ```bash
-git clone https://github.com/XAIHT/Tlamatini.git xaiht-web
-cd xaiht-web
+# Open your checkout of this website repository:
+cd web-app
 npm ci
 ```
 
@@ -326,7 +333,7 @@ Path aliases (see `vite.config.ts`): `@` → `src`, `@contracts` → `contracts`
 
 ### 4.1. Home (`/`)
 
-The landing page (`src/pages/Home.tsx`). A GSAP `ScrollTrigger` storyboard: an ASCII intro, an overview band with headline stats (74 agents, 27 skills, the current version, 4096 max iterations), a vision/mission/concept card grid, a scroll-stacked walk through the five-layer architecture, the agent-family workflow, a tools grid, and the footer — all over a live procedural background.
+The landing page (`src/pages/Home.tsx`). A GSAP `ScrollTrigger` storyboard: an ASCII intro, an overview band with headline stats (87 agents, 29 skills, the current version, 4096 max iterations), a vision/mission/concept card grid, a scroll-stacked walk through the five-layer architecture, the agent-family workflow, a tools grid, and the footer — all over a live procedural background.
 
 ### 4.2. Tlamatini (`/tlamatini`)
 

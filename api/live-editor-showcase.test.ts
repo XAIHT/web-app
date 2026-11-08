@@ -17,7 +17,7 @@ describe('Live Editor showcase', () => {
   it.each(['en', 'es'] as const)('advertises three distinct product views in %s', lang => {
     const copy = translations[lang].liveEditor;
     expect(copy.title).toBe('Live Editor');
-    expect(copy.label).toContain('v1.92.3');
+    expect(copy.label).toContain('v1.92.4');
     expect(copy.intro).toContain('Interactor');
     expect(copy.views.map(view => view.id)).toEqual(['editing', 'tutoring', 'markdown']);
     expect(copy.benefits).toHaveLength(3);
@@ -28,13 +28,13 @@ describe('Live Editor showcase', () => {
     }
     expect(copy.views[1].desc).toMatch(/unsaved work|trabajo sin guardar/);
     expect(copy.views[1].desc).toMatch(/Optional suggestions|sugerencias opcionales/);
-    expect(copy.views[2].desc).toContain(lang === 'es' ? 'Markdown Código' : 'Markdown Source');
+    expect(copy.views[2].desc).toContain(lang === 'es' ? 'Código Markdown' : 'Markdown Source');
     expect(copy.views[2].desc).toContain(lang === 'es' ? 'Vista previa' : 'Preview');
     expect(copy.benefits[1].desc).toMatch(/never executes code|nunca ejecuta código/);
     expect(copy.benefits[2].desc).toContain(lang === 'es' ? 'Guardar como' : 'Save As');
     expect(copy.benefits[2].desc).toMatch(/save before closing|guarda antes de cerrar/);
     expect(copy.benefits[2].desc).toMatch(/conflicts|conflictos/);
-    expect(copy.download).toContain('v1.92.3');
+    expect(copy.download).toContain('v1.92.4');
   });
 
   it('reuses the established gallery, accessible tabs and modal pattern', () => {

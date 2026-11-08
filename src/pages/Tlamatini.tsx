@@ -301,6 +301,7 @@ function TlamatiniFeatures() {
     research_rag: '/images/artifact-rag.webp',
     database: '/images/feature-chat.webp',
     windows_delivery: '/images/feature-agents.webp',
+    torrenter: '/images/feature-workflow.webp',
   };
   const features = f.items.map((item) => ({ ...item, image: featureImages[item.id] }));
 
