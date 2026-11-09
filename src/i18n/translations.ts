@@ -341,7 +341,7 @@ const en = {
         { id: 'stm32er', name: 'STM32er Programs Real Boards', desc: 'Scaffold, build, flash, reset, and observe STM32 firmware from Blue Pill through F7, G, L, H7, U5, and WB—with fail-safe hardware checks.', type: 'Firmware' },
         { id: 'esp_firmware', name: 'ESP32, Arduino, and ESPHome', desc: 'Start ESP32 firmware from a bundled blink-and-print project, or scaffold ESPHome light and sensor devices with optional separated secrets. Build, upload, and observe through PlatformIO, Arduino CLI, or ESPHome, with hardware preflight checks.', type: 'Embedded' },
         { id: 'robotic_loop', name: 'A Robotic Loop That Can See', desc: 'STM32er acts, Camcorder records, and Video-Analyzer checks motion before Forker chooses the next path. A robotics pass requires two explicit independent passes; missing evidence cannot pass. Recovery branches can respond to a failed analysis attempt.', type: 'Vision' },
-        { id: 'image_vision', name: 'Two Visual Readings. One Cross-Checked Report.', desc: 'Image-Interpreter uses Mistral and Gemma in parallel, then GLM synthesizes their readings. Send comma-separated image paths in one run: repeated files are analyzed once, unresolved entries are reported, and an existing filename containing a comma stays intact. Read screenshots, charts, photos, and PDF imagery with OCR and spatial detail. Visual checks still require both observers and completed synthesis.', type: 'Vision' },
+        { id: 'image_vision', name: 'Two Visual Readings. One Cross-Checked Report.', desc: 'Image-Interpreter uses Mistral and Gemma in parallel, then DeepSeek synthesizes their readings. Send comma-separated image paths in one run: repeated files are analyzed once, unresolved entries are reported, and an existing filename containing a comma stays intact. Read screenshots, charts, photos, and PDF imagery with OCR and spatial detail. Visual checks still require both observers and completed synthesis.', type: 'Vision' },
         { id: 'analysis_recovery', name: 'Visible Errors. Recovery Still Running.', desc: 'Fatal analysis errors collects image, video, and PDF failures. Dismiss hides it without erasing history or cancelling work. Existing retries keep your chosen models. Video-Analyzer checks GPU readiness and sizes CPU threads to your machine. A repairable site change can trigger one private downloader update and retry, without changing your Python. Sign-in, unavailable media, network, and timeout failures stay explicit. Invalid or incomplete image/video requests are refused for correction without a fatal alert; real failures still surface.', type: 'Recovery' },
         { id: 'whisperer', name: 'Speak a Prompt. Choose When She Acts.', desc: 'Mic beside Send starts Whisperer directly on the Tlamatini host microphone. Live levels and a silence countdown stay in chat; defaults are 3.5 seconds of silence and a 300-second cap. Send automatically or keep an editable draft without changing your chat modes. Local recognition has CPU fallback; optional cloud engines receive your audio. Standalone Whisperer also transcribes files.', type: 'Voice' },
         { id: 'mic_preferences', name: 'A Microphone Tuned to You', desc: 'Config -> Mic chooses auto-send or review, host input, gain, silence timing, recording limit, sensitivity, language, English translation, sample rate, channels, and local beam/VAD options. Preferences stay in this browser and apply to the next recording; unset fields inherit defaults. Config -> Models -> Speech selects the recognizer. Voice controls the avatar, separately.', type: 'Voice Settings' },
@@ -458,15 +458,15 @@ const en = {
     installation: {
       label: 'Quick Start',
       title: 'Installation',
-      desc: `Get the published Tlamatini ${editions.en.tag} for Windows 11 x64 from Releases, or run her from source. Extract the complete ZIP, run Installer.exe, choose a folder, review, and install. The setup window shows progress and keeps Retry, Change folder, and a log path available after an error. About -> Check for updates delivers the published app and verifies Uninstaller.exe. Your account data and existing key vault stay in place. Sign in to Ollama and pull the models below. Config -> Models opens Model Brain Auto-tuning; About -> Usage shows balances and measured activity. Python 3.12.10 is bundled; LaTeXer PDF compilation needs TeX.`,
+      desc: `Get Tlamatini ${editions.en.tag} ready on Windows 11 x64 in five steps. Her installer includes Python. For the full default cloud-model setup, have an internet connection and an active Ollama Pro subscription or higher. Tlamatini is free; Ollama bills its service separately. Follow the video or work through the guide below.`,
+      developer: 'For developers: run from source instead',
+      optionalTorrenter: 'Optional: set up Torrenter downloads',
       steps: [
         { id: 'install_tlamatini', label: 'Install Tlamatini' },
-        { id: 'install_ollama', label: 'Install Ollama' },
-        { id: 'sign_in_ollama', label: 'Sign In to Ollama' },
-        { id: 'download_models', label: 'Download the Models' },
-        { id: 'configure_models', label: 'Point Tlamatini at the Models' },
-
-        {"id":"configure_torrenter","label":"Optional: Enable Torrenter Downloads"},
+        { id: 'install_ollama', label: 'Install Ollama and activate Pro' },
+        { id: 'sign_in_ollama', label: 'Connect your Ollama account' },
+        { id: 'download_models', label: 'Prepare the four default models' },
+        { id: 'configure_models', label: 'Confirm your models and start chatting' },
       ],
     },
     agents: {
@@ -618,7 +618,7 @@ const en = {
         },
         {
           category: 'AI, Retrieval & Vision',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama endpoints + glm-5.3:cloud default', 'Anthropic Claude API + external agent CLIs', 'Mistral + Gemma vision; GLM synthesis', 'Binary-aware context + RRF fusion', '38 model settings + Model Brain auto-tuning', 'Compact switch + per-tool token estimates'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'FAISS 1.9 + rank-bm25 hybrid retrieval', 'Ollama endpoints + deepseek-v4.1-flash:cloud default', 'Anthropic Claude API + external agent CLIs', 'Mistral + Gemma vision; DeepSeek synthesis', 'Binary-aware context + RRF fusion', '38 model settings + Model Brain auto-tuning', 'Compact switch + per-tool token estimates'],
         },
         {
           category: 'Agent & Workflow Platform',
@@ -970,7 +970,7 @@ const es: Translations = {
         { id: 'stm32er', name: 'STM32er Programa Placas Reales', desc: 'Genera, compila, flashea, reinicia y observa firmware desde Blue Pill hasta F7, G, L, H7, U5 y WB con comprobaciones fail-safe.', type: 'Firmware' },
         { id: 'esp_firmware', name: 'ESP32, Arduino y ESPHome', desc: 'Inicia firmware ESP32 desde una plantilla funcional de parpadeo y salida serial, o genera dispositivos ESPHome de luz y sensores con secretos separados opcionales. Compila, carga y observa mediante PlatformIO, Arduino CLI o ESPHome, con verificaciones previas del hardware.', type: 'Embebidos' },
         { id: 'robotic_loop', name: 'Un Bucle Robótico que Puede Ver', desc: 'STM32er actúa, Camcorder graba y Video-Analyzer comprueba movimiento antes de que Forker elija la ruta. El éxito robótico exige dos aprobaciones independientes; la evidencia ausente no basta. Las ramas de recuperación pueden responder a un intento fallido.', type: 'Visión' },
-        { id: 'image_vision', name: 'Dos Lecturas Visuales. Un Reporte Contrastado.', desc: 'Image-Interpreter usa Mistral y Gemma en paralelo y GLM sintetiza sus lecturas. Envía rutas separadas por comas en una ejecución: procesa una vez cada archivo repetido, informa entradas no resueltas y respeta nombres de archivo existentes con comas. Lee capturas, gráficas, fotos e imágenes PDF con OCR y detalle espacial. La verificación sigue exigiendo ambos observadores y síntesis completa.', type: 'Visión' },
+        { id: 'image_vision', name: 'Dos Lecturas Visuales. Un Reporte Contrastado.', desc: 'Image-Interpreter usa Mistral y Gemma en paralelo y DeepSeek sintetiza sus lecturas. Envía rutas separadas por comas en una ejecución: procesa una vez cada archivo repetido, informa entradas no resueltas y respeta nombres de archivo existentes con comas. Lee capturas, gráficas, fotos e imágenes PDF con OCR y detalle espacial. La verificación sigue exigiendo ambos observadores y síntesis completa.', type: 'Visión' },
         { id: 'analysis_recovery', name: 'Errores Visibles. Recuperación Activa.', desc: 'Fatal analysis errors reúne fallas de imagen, video y PDF. Dismiss oculta sin borrar historial ni cancelar. Reintentos conservan tus modelos. Video-Analyzer comprueba la GPU y ajusta los hilos CPU al equipo. Un cambio reparable del sitio puede activar una actualización privada del descargador y un reintento, sin modificar tu Python. Inicio de sesión, medios no disponibles, fallas de red y tiempos agotados se informan. Las solicitudes inválidas o incompletas de imagen/video se rechazan para corregirlas sin alerta fatal; las fallas reales siguen visibles.', type: 'Recuperación' },
         { id: 'whisperer', name: 'Dicta un Prompt. Elige Cuándo Actúa.', desc: 'Mic junto a Enviar inicia Whisperer en el micrófono del equipo que ejecuta Tlamatini. Nivel y cuenta de silencio quedan en el chat; por defecto son 3.5 segundos de silencio y un límite de 300 segundos. Envía automáticamente o conserva un borrador sin cambiar tus modos. El reconocimiento local tiene fallback CPU; los motores cloud opcionales reciben tu audio. Whisperer también transcribe archivos.', type: 'Voz' },
         { id: 'mic_preferences', name: 'Un Micrófono a Tu Medida', desc: 'Config -> Mic elige autoenvío o revisión, entrada del equipo, ganancia, silencio, duración límite, sensibilidad, idioma, traducción al inglés, frecuencia, canales y opciones locales beam/VAD. Las preferencias quedan en este navegador y rigen desde la próxima grabación; campos sin definir heredan valores. Config -> Modelos -> Voz selecciona el reconocedor. Voz controla el avatar por separado.', type: 'Ajustes de Voz' },
@@ -1139,15 +1139,15 @@ const es: Translations = {
     installation: {
       label: 'Inicio Rápido',
       title: 'Instalación',
-      desc: `Obtén Tlamatini en español ${editions.es.tag} para Windows 11 x64 en Releases o ejecútala desde el código. Extrae el ZIP completo, abre Installer.exe, elige carpeta, revisa e instala. La ventana muestra progreso y conserva Reintentar, Cambiar carpeta y la ruta del log tras un error. Acerca de -> Buscar actualizaciones entrega la app publicada y verifica Uninstaller.exe. Conserva los datos de tu cuenta y tu bóveda de claves. Inicia sesión en Ollama y descarga los modelos indicados. Config -> Modelos abre Model Brain Auto-tuning; Acerca de -> Uso muestra saldos y actividad medida. Python 3.12.10 viene incluido; LaTeXer requiere TeX.`,
+      desc: `Prepara Tlamatini en español ${editions.es.tag} en Windows 11 x64 con cinco pasos. Su instalador incluye Python. Para la configuración completa con los modelos predeterminados en la nube, necesitas internet y una suscripción activa a Ollama Pro o superior. Tlamatini es gratuita; Ollama cobra su servicio por separado. Sigue el video o esta guía.`,
+      developer: 'Para desarrolladores: ejecutar desde el código',
+      optionalTorrenter: 'Opcional: configurar descargas con Torrenter',
       steps: [
         { id: 'install_tlamatini', label: 'Instalar Tlamatini' },
-        { id: 'install_ollama', label: 'Instalar Ollama' },
-        { id: 'sign_in_ollama', label: 'Iniciar Sesión en Ollama' },
-        { id: 'download_models', label: 'Descargar los Modelos' },
-        { id: 'configure_models', label: 'Apuntar Tlamatini a los Modelos' },
-
-        {"id":"configure_torrenter","label":"Opcional: Activa las Descargas Torrenter"},
+        { id: 'install_ollama', label: 'Instala Ollama y activa Pro' },
+        { id: 'sign_in_ollama', label: 'Conecta tu cuenta de Ollama' },
+        { id: 'download_models', label: 'Prepara los cuatro modelos predeterminados' },
+        { id: 'configure_models', label: 'Confirma tus modelos y empieza a conversar' },
       ],
     },
     agents: {
@@ -1299,7 +1299,7 @@ const es: Translations = {
         },
         {
           category: 'IA, Recuperación y Visión',
-          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama + glm-5.3:cloud predeterminado', 'API Anthropic Claude + CLIs de agentes externos', 'Visión Mistral + Gemma; síntesis GLM', 'Contexto consciente de binarios + fusión RRF', '38 ajustes de modelos + Auto-tuning Model Brain', 'Interruptor Compact + tokens por herramienta'],
+          items: ['LangChain 0.3.30 + LangGraph 0.2.74', 'Recuperación híbrida FAISS 1.9 + rank-bm25', 'Endpoints Ollama + deepseek-v4.1-flash:cloud predeterminado', 'API Anthropic Claude + CLIs de agentes externos', 'Visión Mistral + Gemma; síntesis DeepSeek', 'Contexto consciente de binarios + fusión RRF', '38 ajustes de modelos + Auto-tuning Model Brain', 'Interruptor Compact + tokens por herramienta'],
         },
         {
           category: 'Plataforma de Agentes y Flujos',

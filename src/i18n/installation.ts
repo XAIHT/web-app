@@ -1,89 +1,124 @@
 import { editions, type Lang } from './editions';
 
-// Commands and model identifiers remain literal; explanatory text follows the edition.
+// Only commands belong in code fences; the rest is readable, linked guidance.
 export function installationSteps(lang: Lang): Record<string, string> {
   const edition = editions[lang];
-  const english = {
-    install_tlamatini: `# Option A: Tlamatini ${edition.tag} Windows installer
-${edition.releaseUrl}
-# Download the Windows 11 x64 release asset:
-# ${edition.installerName}
-${edition.installerUrl}
-# Choose this ZIP, not GitHub's Source code archives.
-# Extract the complete ZIP, run Installer.exe,
-# choose a destination, review, and click Install.
-# Keep pkg.zip beside Installer.exe.
-# Setup verifies a recovery copy before changing files.
-# Errors stay visible with Retry, Change folder, and a log path.
-# Launch Tlamatini from the desktop shortcut:
-http://127.0.0.1:8000/
-# Login: user / changeme; change the password immediately.
-# If 8000 is reserved, set django_port in config.json.
-# Updating later: About -> Check for updates
-# The in-app updater verifies and installs Uninstaller.exe.
-# Updates and reinstalls preserve your existing key vault.
-# It keeps your Templates and documents, not Temp scratch.
+  if (lang === 'en') return {
+    install_tlamatini: `1. [Download Tlamatini ${edition.tag} for Windows 11 x64](${edition.installerUrl}). Choose **${edition.installerName}**, not GitHub's source-code archives. [Release page](${edition.releaseUrl}).
+2. Right-click the ZIP and choose **Extract All**. Open the extracted folder and keep **pkg.zip** beside **Installer.exe**.
+3. Open **Installer.exe**, choose your installation folder, review, and click **Install**. Python is included; you do not need to install it separately.
+4. Launch Tlamatini from her shortcut. If the browser does not open, visit [Tlamatini on this computer](http://127.0.0.1:8000/). Sign in with **user** / **changeme** and change the password immediately.
 
-# Option B: run Tlamatini ${edition.tag} from source
-# Requires Python 3.12.10.
-# Download and extract the ${edition.tag} source ZIP:
-${edition.sourceUrl}
-# From the folder where you extracted the ZIP:
-cd ${edition.sourceFolder}
-$env:TLAMATINI_VERSION = '${edition.version}'
-python -m venv venv
-.\\venv\\Scripts\\python.exe -m pip install -r requirements.txt
-.\\venv\\Scripts\\python.exe Tlamatini/manage.py migrate
-.\\venv\\Scripts\\python.exe Tlamatini/manage.py createsuperuser
-.\\venv\\Scripts\\python.exe Tlamatini/manage.py runserver --noreload
-# --noreload is optional; an explicit port also wins:
-.\\venv\\Scripts\\python.exe Tlamatini/manage.py runserver 9100`,
-    install_ollama: "# Install Ollama for Windows\nhttps://ollama.com/download\n# Ollama serves embedding, reasoning, and vision.\n# Local speech and direct cloud speech/Claude\n# use their own backends.",
-    sign_in_ollama: "ollama signin",
-    download_models: "# Local embedding model\nollama pull nomic-embed-text\n\n# Current cloud reasoning and vision defaults\nollama pull glm-5.3:cloud\nollama pull mistral-large-3:675b-cloud\nollama pull gemma4:cloud",
-    configure_torrenter: "# Optional companion: Tlachihuani for Windows 11 x64\n# Get its complete installation ZIP from your distributor.\n# Extract All, then open START-HERE.html and Installer.exe.\n# Choose whether XT appears at Windows sign-in.\n# Review the operator and destination, then approve setup.\n# Admin rights are for installation, not routine downloads.\n# Both services start Stopped / Manual.\n# XT at sign-in starts only the icon, never the services.\n# Start menu and Desktop shortcuts can reopen XT.\n\n# Right-click XT -> Start Services; wait for its color.\n# Sign in to Tlamatini with your usual account.\nPanels -> Torrenter Workspace\n# No pairing code. Your account appears above its queue.\n# If both editions run, choose the intended workspace.\n# Enable Torrenter and Chat-Agent-Torrenter in Configure.\n# In Compact mode, select those tools too.\n\n# Add torrent -> magnet or .torrent -> Inspect metadata.\n# Four lookups can run at once; extra magnets queue.\n# Metadata needs peers. Waiting is not completion.\n# Choose files, then Download selected files.\n# Watch progress, seeds, peers, and the activity log.\n# ACP Configure -> Wait for complete download: Yes / No.\n# No: continue when accepted. Yes: wait for verified output.\n\n# Completed transfer -> Verified output:\n# Actual saved path and SHA-256 for each selected file.\n# Usual location: Windows Downloads/Torrenter.\n# If refused: this edition's content_generated/Torrenter.\n# If both fail, delivery reports an error, not success.\n# Closing chat does not stop active Jobs transfers.\n# XT -> Stop Services stops the services and workers.\n# Remove record keeps files; Erase files needs XT approval.\n# Remove Tlachihuani through Windows Installed apps.\n# Its uninstaller retains delivered downloads and Jobs state.",
-    configure_models: "# In the Tlamatini navbar:\nConfig -> Configure MCPs\nConfig -> Configure Agents\nConfig -> Models\n# Choose among 38 settings in six categories:\n# Core, Vision, Speech, Workflows, Documents,\n# and Monitoring & messaging.\n# Models must support their assigned role.\n# Lists models from each configured Ollama server.\n# Compact mode is a toolbar switch.\n# It clears Configure choices except live metrics,\n# file search, and time. Tick back what you need.\n# Saved Configure choices apply without a restart.\n# Each row shows its estimated token cost.\n# Small models lock Compact ON; bigger ones unlock\n# it without changing your picks. OFF enables all\n# rows and restores previously active External MCPs.\n# CONTEXT-WINDOW warns when a request was cut.\n# Self-modify includes self-knowledge\n# only when ON and the model can hold it.\n# Shown in source runs or --self-modify builds.\n# Save opens the live Model Brain Auto-tuning dialog.\n# See model-specific settings and their sources.\n# Your overrides win; learned profiles survive updates.\n# Save does not download models.\n# Then reconnect chat when prompted and\n# restart active agents to use the new models.\n# Agent fields set to \"@config\" inherit globals;\n# explicit model choices remain overrides.\n\nConfig -> Access Keys Wizard\n# Local Ollama: leave token blank.\n# Remote Ollama: paste the Ollama token.\n# Add any cloud-CLI keys, then click Save.\n\nConfig -> Voice\n# Optionally tune her animated browser voice,\n# answer reading, completion notice, or silence.\n\nConfig -> Mic\n# Choose Send automatically (default), or\n# Keep in the chat input to review before Send.\n# Select the HOST input, gain, gate and language.\n# Advanced: sample rate, channels, beam and VAD.\n# Preferences stay in this browser; Save applies\n# to the next recording. Reset + Save inherits.\n# Config -> Models -> Speech sets the recognizer.\n# Mic beside Send starts capture; wait for Listening.\n# A second click or Escape cancels dictation.\n# Mic preserves the draft and current chat modes.\n\nAbout -> Usage\n# Cloud credits, Chat activity, and Models.\n# Inspect reported balances and refill weeks/date.\n# Choose 7 or 30 days for recorded activity.\n# The monthly balance is separate from this range.\n# Local model totals cover recorded chat calls,\n# not earlier history, external apps, or child agents.\n# Refresh works while Tlamatini answers.\n# Missing data is explained, never assumed to be zero.\n\nPanels -> Agentic Control Panel\n# Design and save agent workflows as .flw.\nPanels -> Prompt Flow Panel\n# Design prompt conversations as .fpmt.\n# User Input asks; User Commentary is a static note.\n# Format and resize notes; resize Run output too.\n# Windows or chat opens either format in its editor.\n# Validate, then Play; opening never runs a file.\n# Keep the page and app open for scheduled steps.\n\n# Optional: LaTeXer PDF compilation needs TeX.\n# MiKTeX is recommended:\nhttps://miktex.org/download\n\n# Live Editor and guided learning:\n# Open or drop text, code, JSON, or Markdown.\n# Save As chooses a project folder on this computer.\n# Save checks disk revisions; conflicts are refused.\n# Save before closing: unsaved edits stay in memory.\n# PDF stays read-only; Save exports an original copy.\n# For tutoring, enable Multi-Turn, Interactor in\n# Config -> Configure MCPs/Tools, and Live editor.\n# Ask her to teach a file one segment at a time.\n# Continue, Another hint, and Explain selection\n# use your live buffer. Typing is not saving.\n# In a terminal lesson, say you will run commands:\n# Terminater leaves Enter to you until you hand back.\n\n# Personalize teaching, terminals, and narration:\nConfig -> Live Editor & Terminater\n# Also available from canvas/terminal Settings\n# in chat, Agentic Control Panel, and Prompt Flow Panel.\n# Tabs: Live Editor, Terminater, Voice.\n# Standard / Guided learning fill a draft.\n# Preview runs no commands, edits no files, saves nothing.\n# Save applies behavior to the next action.\n# Cancel / Escape discard unsaved settings.\n# Opening settings stops active editor teaching.\n# Behavior follows your account; appearance stays\n# with this account in the current browser.\n# Editor: 40-250 WPM, pauses 0-3 seconds, detail,\n# suggestions, ghost text/choices, cursor following.\n# Link editor and terminal speeds at 40-250 WPM.\n# Terminal: 20-250 WPM; choose an available shell,\n# advisor, command wait, silence and handoff waits.\n# I always press Enter keeps execution manual\n# across chat and both workflow panels.\n# Shell/advisor defaults affect new terminals.\n# A wait timeout does not kill the running process.\n# New flow nodes use Use my defaults; older flows\n# retain explicit values. Manual Enter and narration\n# remain account choices in either mode.\n# Voice: explanation, command/code, or both;\n# before, during, or after typing. Optionally wait\n# for before-typing narration to finish first.\n# Choose errors/input, all outcomes, or no notices.\n# Uses Config -> Voice, not the Talker agent.\n# Mute/listening override narration; Esc stops speech.\n# Secret-marked text and private input stay unspoken.\n# Missing voice offers Continue without voice or Stop.\n# Appearance: 12-24 px fonts, line numbers/wrap,\n# terminal cursor shape/blink and preferred layout.\n\n# Tick Multi-Turn and open Catalog of prompts to begin.",
+Continue with Ollama below. The documented full setup uses an **active Ollama Pro subscription or higher**, paid separately to Ollama; Tlamatini herself is free and open-source.`,
+    install_ollama: `1. [Download Ollama for Windows](https://ollama.com/download/windows) and run its installer. Leave Ollama running.
+2. Create or sign in to your [Ollama account](https://ollama.com).
+3. Activate **[Ollama Pro or higher](https://ollama.com/pricing)** on that account. This is Tlamatini's documented baseline for her full cloud-model workflow, not a fee for installing Tlamatini or Ollama.
+
+The default cloud models need internet. Ollama sets model access, usage allowances, and billing; review those before subscribing. Local-only alternatives require different model choices and suitable hardware.`,
+    sign_in_ollama: `Open **Windows Terminal** or **PowerShell** from the Start menu. Run:
+
+~~~powershell
+ollama signin
+~~~
+
+Follow the browser sign-in using the **same account with Ollama Pro**. Return to the terminal when sign-in is confirmed. If Windows cannot find **ollama**, close and reopen the terminal after installation.`,
+    download_models: `In the same terminal, run these four commands **one at a time**, waiting for each to finish:
+
+~~~powershell
+ollama pull nomic-embed-text
+ollama pull deepseek-v4.1-flash:cloud
+ollama pull mistral-large-4:cloud
+ollama pull gemma4:cloud
+~~~
+
+**What you are preparing:** nomic-embed-text runs locally to index your project. DeepSeek V4.1 Flash handles chat, reasoning, and text tasks. Mistral Large 4 and Gemma 4 handle image and video analysis.
+
+The **:cloud** tags connect to models running in Ollama's cloud; their large weights are not downloaded to your PC. They use your signed-in account and its usage allowance. These are the current defaults for new installations; optional voice and specialist agents may need additional setup.`,
+    configure_models: `1. Return to Tlamatini and open **Config -> Models**. Start with **deepseek-v4.1-flash:cloud** for chat and reasoning, **mistral-large-4:cloud** and **gemma4:cloud** for vision, and **nomic-embed-text** for embeddings. Existing installations may retain your earlier choices; change them here only if you want these defaults.
+2. Click **Save**, review **Model Brain Auto-tuning**, then reconnect chat when prompted. Saving settings does not download models. For Ollama on this same computer, leave its separate token in **Config -> Access Keys Wizard** blank; cloud access uses the account you just signed in to.
+3. Enable **Multi-Turn** and open **Catalog of Prompts**. Choose a guided example and enable the tools it requests. If **Compact mode** is on, select the tools needed for that task in Configure.
+4. Send your first message: **“Help me create a project plan one step at a time. Wait for my answer before continuing.”**
+
+Use **Step-by-Step** for guided work and **About -> Usage** to check cloud credits and recorded activity. The [model configuration guide](${edition.repoUrl}/blob/main/docs/model_configuration.md) covers advanced roles, speech, and overrides.`,
+    configure_torrenter: `Torrenter is optional: **you do not need it to start chatting**. It uses the separately installed **Tlachihuani Jobs and XT** companion.
+
+1. Obtain Tlachihuani's complete Windows installation ZIP from your distributor. Extract it, read **START-HERE.html**, and run **Installer.exe**. Services start **Stopped / Manual**; starting XT at sign-in starts only the tray icon.
+2. Right-click **XT -> Start Services**, then open **Panels -> Torrenter Workspace** in Tlamatini. No pairing code is needed; use your normal account and enable Torrenter and Chat-Agent-Torrenter in Configure.
+3. Add a magnet or .torrent, inspect its metadata, choose files, and download. Extra metadata requests queue when all four slots are busy. Waiting is not completion.
+4. Check **Verified output** for the actual saved path and SHA-256. Files normally go to Windows Downloads/Torrenter, with this edition's content_generated/Torrenter as fallback. If both fail, delivery reports an error.
+
+Closing chat does not stop active downloads. **Remove record keeps files**; **Erase files** needs approval in XT. [Full Torrenter guide](${edition.repoUrl}/blob/main/docs/torrenter.md).`,
   };
-  if (lang === 'en') return english;
   return {
-    install_tlamatini: `# Opción A: instalador de Tlamatini en español ${edition.tag}
-${edition.releaseUrl}
-# Descarga el ZIP de Windows 11 x64:
-# ${edition.installerName}
-${edition.installerUrl}
-# Este es el instalador, no el archivo de código fuente.
-# Extrae el ZIP completo; conserva pkg.zip junto a Installer.exe.
-# Abre Installer.exe, elige la carpeta, revisa y pulsa Instalar.
-# La instalación verifica una copia de recuperación antes de cambiar archivos.
-# Si falla, muestra Reintentar, Cambiar carpeta y la ruta del registro.
-# Abre la aplicación desde su acceso directo.
-# El navegador abre la dirección local configurada.
-# Usuario inicial: user / changeme; cambia la contraseña de inmediato.
-# Actualizaciones: Acerca de -> Buscar actualizaciones.
-# El actualizador verifica e instala Uninstaller.exe.
-# Las actualizaciones y reinstalaciones conservan tu bóveda de claves.
-# Conserva Templates y documentos, no los temporales de Temp.
+    install_tlamatini: `1. [Descarga Tlamatini en español ${edition.tag} para Windows 11 x64](${edition.installerUrl}). Elige **${edition.installerName}**, no los archivos de código fuente de GitHub. [Página de la versión](${edition.releaseUrl}).
+2. Haz clic derecho en el ZIP y elige **Extraer todo**. Abre la carpeta extraída y conserva **pkg.zip** junto a **Installer.exe**.
+3. Abre **Installer.exe**, elige la carpeta de instalación, revisa y pulsa **Instalar**. Python viene incluido; no necesitas instalarlo por separado.
+4. Inicia Tlamatini desde su acceso directo. Si el navegador no se abre, visita [Tlamatini en este equipo](http://127.0.0.1:8000/). Entra con **user** / **changeme** y cambia la contraseña de inmediato.
 
-# Opción B: ejecutar Tlamatini en español ${edition.tag} desde el código fuente
-# Requiere Python 3.12.10.
-# Descarga y extrae el ZIP de código de esta edición:
-${edition.sourceUrl}
-# Desde la carpeta donde extrajiste el ZIP:
-cd ${edition.sourceFolder}
+Continúa con Ollama abajo. La configuración completa documentada requiere una **suscripción activa a Ollama Pro o superior**, que se paga por separado a Ollama; Tlamatini es gratuita y de código abierto.`,
+    install_ollama: `1. [Descarga Ollama para Windows](https://ollama.com/download/windows) y ejecuta su instalador. Deja Ollama abierto.
+2. Crea tu cuenta o inicia sesión en [Ollama](https://ollama.com).
+3. Activa **[Ollama Pro o superior](https://ollama.com/pricing)** en esa cuenta. Es la base documentada para el flujo completo de Tlamatini con modelos en la nube, no un cobro por instalar Tlamatini u Ollama.
+
+Los modelos predeterminados en la nube necesitan internet. Ollama determina el acceso a modelos, los límites de uso y la facturación; revísalos antes de suscribirte. Usar sólo modelos locales requiere elegir otros modelos y contar con hardware adecuado.`,
+    sign_in_ollama: `Abre **Terminal de Windows** o **PowerShell** desde Inicio. Ejecuta:
+
+~~~powershell
+ollama signin
+~~~
+
+Completa el inicio de sesión en el navegador con **la misma cuenta que tiene Ollama Pro**. Regresa a la terminal cuando se confirme. Si Windows no reconoce **ollama**, cierra y vuelve a abrir la terminal después de instalarlo.`,
+    download_models: `En la misma terminal, ejecuta estos cuatro comandos **uno por uno**, esperando a que termine cada uno:
+
+~~~powershell
+ollama pull nomic-embed-text
+ollama pull deepseek-v4.1-flash:cloud
+ollama pull mistral-large-4:cloud
+ollama pull gemma4:cloud
+~~~
+
+**Qué estás preparando:** nomic-embed-text indexa tu proyecto localmente. DeepSeek V4.1 Flash se ocupa del chat, razonamiento y tareas de texto. Mistral Large 4 y Gemma 4 analizan imágenes y videos.
+
+Las etiquetas **:cloud** conectan con modelos que se ejecutan en la nube de Ollama; sus grandes pesos no se descargan a tu PC. Usan tu cuenta y su cuota disponible. Son los valores actuales de una instalación nueva; la voz y otros agentes especializados pueden necesitar configuración adicional.`,
+    configure_models: `1. Vuelve a Tlamatini y abre **Config -> Modelos**. Empieza con **deepseek-v4.1-flash:cloud** para chat y razonamiento, **mistral-large-4:cloud** y **gemma4:cloud** para visión y **nomic-embed-text** para embeddings. Una instalación existente puede conservar tus elecciones anteriores; cámbialas aquí sólo si quieres estos valores.
+2. Pulsa **Guardar**, revisa **Model Brain Auto-tuning** y reconecta el chat cuando se solicite. Guardar no descarga modelos. Si Ollama está en este mismo equipo, deja vacío su token independiente en **Config -> Access Keys Wizard**; el acceso a la nube usa la cuenta con la que acabas de iniciar sesión.
+3. Activa **Multi-Turn** y abre el **Catálogo de prompts**. Elige un ejemplo guiado y activa las herramientas que indique. Si usas **Compact mode**, selecciona en Configurar las herramientas que necesita la tarea.
+4. Envía tu primer mensaje: **«Ayúdame a crear un plan de proyecto paso a paso. Espera mi respuesta antes de continuar».**
+
+Usa **Step-by-Step** para avanzar con guía y **Acerca de -> Uso** para consultar créditos de nube y actividad registrada. La [guía de modelos](${edition.repoUrl}/blob/main/docs/model_configuration.md) explica los roles avanzados, la voz y los ajustes personalizados.`,
+    configure_torrenter: `Torrenter es opcional: **no lo necesitas para empezar a conversar**. Utiliza **Tlachihuani Jobs y XT**, un complemento que se instala por separado.
+
+1. Obtén el ZIP completo de Tlachihuani para Windows de tu distribuidor. Extrae todo, lee **START-HERE.html** y abre **Installer.exe**. Los servicios quedan **Detenidos / Manual**; iniciar XT con Windows sólo abre el icono de la bandeja.
+2. Haz clic derecho en **XT -> Start Services** y abre **Panels -> Torrenter Workspace** en Tlamatini. Sin código de vinculación: usa tu cuenta habitual y activa Torrenter y Chat-Agent-Torrenter en Configurar.
+3. Agrega un magnet o .torrent, revisa sus metadatos, elige archivos y descarga. Si las cuatro búsquedas están ocupadas, las demás esperan en cola. Esperar no es completar.
+4. Revisa **Verified output** para conocer la ruta real y SHA-256. El destino habitual es Descargas de Windows/Torrenter, con content_generated/Torrenter de esta edición como alternativa. Si ambos destinos fallan, se informa del error.
+
+Cerrar el chat no detiene descargas activas. **Remove record conserva archivos**; **Erase files** necesita aprobación en XT. [Guía completa de Torrenter](${edition.repoUrl}/blob/main/docs/torrenter.md).`,
+  };
+}
+
+export function developerInstallation(lang: Lang): string {
+  const edition = editions[lang];
+  const commands = `cd ${edition.sourceFolder}
 $env:TLAMATINI_VERSION = '${edition.version}'
 python -m venv venv
 .\\venv\\Scripts\\python.exe -m pip install -r requirements.txt
 .\\venv\\Scripts\\python.exe Tlamatini/manage.py migrate
 .\\venv\\Scripts\\python.exe Tlamatini/manage.py createsuperuser
-.\\venv\\Scripts\\python.exe Tlamatini/manage.py runserver --noreload
-# Inicia sesión con la cuenta que acabas de crear.
-# --noreload es opcional; puedes indicar un puerto libre:
-.\\venv\\Scripts\\python.exe Tlamatini/manage.py runserver 9100
-# django_port en config.json configura el puerto predeterminado.`,
-    install_ollama: '# Instala Ollama para Windows\nhttps://ollama.com/download\n# Sirve modelos de embeddings, razonamiento y visión.\n# La voz local y los servicios directos de nube usan sus propios motores.',
-    sign_in_ollama: 'ollama signin',
-    download_models: '# Modelo local de embeddings\nollama pull nomic-embed-text\n\n# Modelos predeterminados de razonamiento y visión en la nube\nollama pull glm-5.3:cloud\nollama pull mistral-large-3:675b-cloud\nollama pull gemma4:cloud',
-    configure_torrenter: "# Complemento opcional: Tlachihuani para Windows 11 x64\n# Obtén el ZIP de instalación completo de tu distribuidor.\n# Extrae todo y abre START-HERE.html e Installer.exe.\n# Elige si XT aparece al iniciar sesión en Windows.\n# Revisa operador y destino; autoriza la instalación.\n# Se requiere administrador al instalar, no al descargar.\n# Ambos servicios quedan Detenidos / Manual.\n# Al iniciar sesión sólo aparece XT, nunca los servicios.\n# Los accesos de Inicio y Escritorio permiten reabrir XT.\n\n# Clic derecho en XT -> Start Services; espera su color.\n# Inicia sesión en Tlamatini con tu cuenta habitual.\nPanels -> Torrenter Workspace\n# Sin código de vinculación. Tu cuenta encabeza su cola.\n# Si usas ambas ediciones, elige el espacio correspondiente.\n# Activa Torrenter y Chat-Agent-Torrenter en Configurar.\n# En modo Compacto, selecciona también esas herramientas.\n\n# Add torrent -> magnet o .torrent -> Inspect metadata.\n# Hasta cuatro búsquedas a la vez; las demás van a la cola.\n# Los metadatos necesitan pares. Esperar no es completar.\n# Elige archivos y pulsa Download selected files.\n# Revisa progreso, semillas, pares y log de actividad.\n# Configurar en ACP -> Esperar descarga completa: Sí / No.\n# No: continúa al aceptar. Sí: espera el resultado verificado.\n\n# Descarga completa -> Verified output:\n# Ruta real y SHA-256 de cada archivo seleccionado.\n# Destino habitual: Descargas de Windows/Torrenter.\n# Si se rechaza: content_generated/Torrenter de esta edición.\n# Si ambos destinos fallan, se informa del error de entrega.\n# Cerrar chat no detiene las transferencias activas de Jobs.\n# XT -> Stop Services detiene servicios y procesos de trabajo.\n# Remove record conserva archivos; Erase files exige XT.\n# Desinstala Tlachihuani desde Apps instaladas de Windows.\n# Conserva las descargas entregadas y el estado de Jobs.",
-    configure_models: "# En el menú de Tlamatini en español:\nConfig -> Configurar MCPs\nConfig -> Configurar Agents\nConfig -> Modelos\n# Elige modelos para razonamiento, visión, voz, flujos y documentos.\n# Deben admitir la función asignada; los nombres de modelo no se traducen.\n# Config muestra los modelos de cada servidor Ollama configurado.\n# Compact mode permite elegir las herramientas que recibe el modelo.\n# Cada fila indica su costo estimado en tokens.\n# Los modelos pequeños requieren Compact; los grandes permiten desactivarlo.\n# Tus elecciones se conservan. Revisa los avisos de CONTEXT-WINDOW.\n# Self-modify agrega autoconocimiento cuando está activo y cabe en el contexto.\n# Guardar abre el ajuste del Model Brain; no descarga los modelos.\n# Tus ajustes tienen prioridad; los perfiles aprendidos sobreviven a las actualizaciones.\n# Reconecta el chat cuando se solicite y reinicia los agentes activos.\n# Los campos @config heredan valores globales; las elecciones explícitas prevalecen.\n\nConfig -> Access Keys Wizard\n# Ollama local: deja el token vacío.\n# Ollama remoto: introduce su token.\n# Agrega las claves de los servicios externos que usarás y guarda.\n\nConfig -> Voz\n# Ajusta la voz del navegador, la lectura de respuestas y los avisos.\n# Talker genera voz por separado: su modelo se configura en Modelos.\n\nConfig -> Mic\n# Elige Enviar automáticamente o Dejar en el input del chat.\n# Selecciona el micrófono del anfitrión, ganancia, umbral e idioma.\n# Los ajustes avanzados incluyen frecuencia, canales, beam y VAD.\n# Guarda para aplicar a la siguiente grabación.\n# Mic inicia la captura; espera el indicador de escucha.\n# Otro clic o Escape cancela sin perder el borrador ni los modos del chat.\n\nAcerca de -> Uso\n# Consulta saldos y actividad registrada de chat y modelos.\n# Elige 7 o 30 días; el saldo mensual es independiente.\n# Los totales locales no incluyen llamadas ajenas a Tlamatini.\n# Los datos ausentes se explican: no se presentan como cero.\n\nPaneles\n# Agentic Control Panel: diseña flujos de agentes .flw.\n# Prompt Flow Panel: diseña conversaciones .fpmt.\n# User Input solicita datos; User Commentary agrega una nota.\n# Abre desde Windows o suelta el archivo en el editor correspondiente.\n# Valida antes de ejecutar: abrir nunca pone un flujo en marcha.\n# Mantén la aplicación y la página abiertas para pasos programados.\n\n# LaTeXer necesita TeX para compilar PDFs. Se recomienda MiKTeX:\nhttps://miktex.org/download\n\n# Edita código y Markdown junto al chat.\n# Guardar como permite elegir una carpeta local de proyecto.\n# Guarda antes de cerrar: las ediciones pendientes viven en memoria.\n# Los conflictos con cambios en disco se rechazan; los PDFs son de lectura.\n# Activa Multi-Turn, Interactor y Editor en vivo para aprender paso a paso.\n# Interactor lee el texto sin guardar; escribir no guarda ni ejecuta.\n# En una lección de terminal, dile que tú ejecutarás los comandos.\n\nConfig -> Live Editor & Terminater\n# Personaliza editor, terminales y voz desde las tres pestañas.\n# Prueba las preferencias sin ejecutar comandos ni editar archivos.\n# Guardar aplica a la siguiente acción; Cancelar o Escape descarta el borrador.\n# Abrir ajustes detiene una lección activa.\n# El comportamiento sigue a tu cuenta; la apariencia queda en este navegador.\n# Editor: 40-250 palabras/min, pausas de 0-3 s, detalle y sugerencias.\n# Terminal: 20-250 palabras/min, shell disponible, asesor y tiempos de espera.\n# Puedes vincular ambas velocidades entre 40 y 250 palabras/min.\n# Mantén Enter manual para controlar la ejecución en chat y ambos paneles.\n# Agotar una espera no termina el proceso.\n# Los nodos nuevos heredan tus preferencias; los antiguos conservan valores explícitos.\n# La narración puede explicar, leer código/comandos o hacer ambas cosas.\n# Elige antes, durante o después de escribir, con espera opcional a la voz.\n# El silencio global y la escucha del micrófono tienen prioridad.\n# Las entradas privadas y marcadas como secretas no se narran.\n# Si falta voz, puedes continuar sin ella o detenerte.\n# Ajusta fuente de 12-24 px, líneas, envoltura, cursor y distribución.\n\n# Activa Multi-Turn y abre el Catálogo de prompts para comenzar.",
-  };
+.\\venv\\Scripts\\python.exe Tlamatini/manage.py runserver --noreload`;
+  return lang === 'en'
+    ? `This is an alternative for developers, not an extra installation step. Requires Python 3.12.10. [Download the ${edition.tag} source ZIP](${edition.sourceUrl}), extract it, then open PowerShell in its parent folder:
+
+~~~powershell
+${commands}
+~~~
+
+Open [Tlamatini](http://127.0.0.1:8000/) and sign in with the account you just created. Keep the terminal open. Continue with the same Ollama setup above. [Full installation and troubleshooting guide](${edition.docsUrl}#installation).`
+    : `Es una alternativa para desarrolladores, no un paso adicional. Requiere Python 3.12.10. [Descarga el ZIP de código ${edition.tag}](${edition.sourceUrl}), extráelo y abre PowerShell en la carpeta que lo contiene:
+
+~~~powershell
+${commands}
+~~~
+
+Abre [Tlamatini](http://127.0.0.1:8000/) e inicia sesión con la cuenta que acabas de crear. Mantén la terminal abierta y sigue la misma configuración de Ollama indicada arriba. [Guía completa de instalación](${edition.docsUrl}).`;
 }

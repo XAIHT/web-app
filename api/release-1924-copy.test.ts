@@ -8,7 +8,7 @@ describe('1.92.4 download and companion guidance', () => {
     const steps = installationSteps(lang);
     const ids = translations[lang].tlamatini.installation.steps.map(step => step.id);
     expect(new Set(ids).size).toBe(ids.length);
-    expect([...ids].sort()).toEqual(Object.keys(steps).sort());
+    expect([...ids, 'configure_torrenter'].sort()).toEqual(Object.keys(steps).sort());
     for (const id of ids) expect(steps[id].trim().length).toBeGreaterThan(10);
     expect(steps.install_tlamatini).toContain(editions[lang].installerUrl);
     expect(steps.configure_torrenter).toContain('Panels -> Torrenter Workspace');

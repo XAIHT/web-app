@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { translations } from '@/i18n/translations';
 import { editions } from '@/i18n/editions';
-import { installationSteps } from '@/i18n/installation';
+import { developerInstallation, installationSteps } from '@/i18n/installation';
 
 const expectedAgentGroups = [
   ['Starter', 'Ender', 'Stopper', 'Cleaner', 'Sleeper', 'Croner'],
@@ -130,7 +130,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
     }
     for (const lang of ['en', 'es'] as const) {
       const edition = editions[lang];
-      const installation = installationSteps(lang).install_tlamatini;
+      const installation = installationSteps(lang).install_tlamatini + developerInstallation(lang);
       expect(installation).toContain(edition.sourceUrl);
       expect(installation).toContain(edition.installerUrl);
       expect(installation).toContain(`cd ${edition.sourceFolder}`);
@@ -241,10 +241,10 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(copy.tlamatini.overview.p2).toContain('v1.92.4');
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('ollama pull glm-5.3:cloud');
-    expect(setup).toContain('ollama pull mistral-large-3:675b-cloud');
+    expect(setup).toContain('ollama pull deepseek-v4.1-flash:cloud');
+    expect(setup).toContain('ollama pull mistral-large-4:cloud');
     expect(setup).toContain('ollama pull gemma4:cloud');
-    expect(setup).toContain('38 settings in six categories');
+    expect(setup).toContain('docs/model_configuration.md');
     expect(setup).toContain(editions.en.installerName);
     expect(setup).not.toContain('ollama pull qwen3.5:cloud');
     expect(setup).not.toContain('ollama pull jcyhsiao/qwen3.5cloud:latest');
@@ -313,7 +313,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       const copy = translations[lang];
       const findTool = (id: string) => copy.home.tools.items.find((tool) => tool.id === id);
       const vision = findTool('image_vision')?.desc ?? '';
-      for (const model of ['Mistral', 'Gemma', 'GLM']) expect(vision).toContain(model);
+      for (const model of ['Mistral', 'Gemma', 'DeepSeek']) expect(vision).toContain(model);
       const recovery = findTool('analysis_recovery')?.desc ?? '';
       expect(recovery).toContain('Fatal analysis errors');
       expect(recovery).toContain('Dismiss');
@@ -334,13 +334,12 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
         expect(copy.tlamatini.overview.p2).toContain(label);
       }
       expect(copy.tlamatini.overview.p2).toContain(lang === 'es' ? 'Acerca de -> Buscar actualizaciones' : 'About -> Check for updates');
-      expect(copy.tlamatini.installation.desc).toMatch(/delivers the published app|entrega la app publicada/);
+      expect(copy.tlamatini.installation.desc).toContain('Ollama Pro');
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('Config -> Configure MCPs');
-    expect(setup).toContain('Config -> Configure Agents');
-    expect(setup).toContain('Panels -> Agentic Control Panel');
-    expect(setup).toContain('Panels -> Prompt Flow Panel');
+    expect(setup).toContain('Config -> Models');
+    expect(setup).toContain('Catalog of Prompts');
+    expect(setup).toContain('Multi-Turn');
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
     expect(launch).toContain('Product version');
     expect(launch).not.toContain('Source version');
@@ -370,10 +369,8 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(copy.ascii.phrases.some((phrase) => phrase.includes('Config -> Mic'))).toBe(true);
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('Config -> Mic');
-    expect(setup).toContain('Send automatically (default)');
-    expect(setup).toContain('Keep in the chat input');
-    expect(setup).toContain('python.exe -m pip install -r requirements.txt');
+    expect(setup).toContain('optional voice and specialist agents');
+    expect(developerInstallation('en')).toContain('python.exe -m pip install -r requirements.txt');
   });
 
   it('keeps the published installer current without overstating the capabilities', () => {
@@ -381,7 +378,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       const copy = translations[lang];
       expect(copy.tlamatini.hero.subtitle).toContain('v1.92.4');
       expect(copy.tlamatini.installation.desc).toContain('v1.92.4');
-      expect(copy.tlamatini.installation.desc).toContain(lang === 'es' ? 'Acerca de -> Buscar actualizaciones' : 'About -> Check for updates');
+      expect(copy.tlamatini.installation.desc).toContain('Windows 11 x64');
       expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.92\.4$/);
       const packaging = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
       expect(packaging).toContain('87');
@@ -488,17 +485,15 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(copy.footer.ctaDesc).toContain('v1.92.4');
       const install = copy.tlamatini.installation.desc;
       expect(install).toContain('v1.92.4');
-      expect(install).toContain(lang === 'es' ? 'Acerca de -> Buscar actualizaciones' : 'About -> Check for updates');
-      expect(install).toMatch(/delivers the published app|entrega la app publicada/);
-      expect(install).toMatch(/run her from source|ejecútala desde el código/);
-      expect(install).toContain('Model Brain');
+      expect(install).toContain('Ollama Pro');
+      expect(installationSteps(lang).configure_models).toContain('Model Brain');
+      expect(developerInstallation(lang)).toContain(editions[lang].sourceUrl);
       expect(new Set(JSON.stringify(copy).match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.92.4']));
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('Tlamatini v1.92.4 Windows installer');
-    expect(setup).toContain('Option B: run Tlamatini v1.92.4 from source');
-    expect(setup).toContain('Setup verifies a recovery copy before changing files');
-    expect(setup).toContain('Requires Python 3.12.10.');
+    expect(setup).toContain('Tlamatini v1.92.4 for Windows 11 x64');
+    expect(setup).not.toContain('python -m venv');
+    expect(developerInstallation('en')).toContain('Requires Python 3.12.10.');
     expect(setup).not.toMatch(/When published|earlier tag snapshot|Updates become available after publication/);
     const launch = readFileSync(resolve('src/pages/Launch.tsx'), 'utf8');
     expect(launch).toContain('XAIHT presents Tlamatini ${editions.en.tag}');
@@ -526,8 +521,8 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(JSON.stringify(copy)).not.toMatch(/dialog and badge|diálogo y una insignia|restore Full mode and your enabled tools|recuperar Full y tus herramientas habilitadas/);
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('Compact mode is a toolbar switch');
-    expect(setup).toContain('Saved Configure choices apply without a restart');
+    expect(setup).toContain('Compact mode');
+    expect(setup).toContain('select the tools needed for that task');
   });
 
   it('shows estimated row costs separately from real counts and warns about cuts', () => {
@@ -594,9 +589,9 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(copy.ascii.phrases.some((phrase) => phrase.includes('Model Brain'))).toBe(true);
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('Save opens the live Model Brain Auto-tuning dialog');
-    expect(setup).toContain('Then reconnect chat when prompted');
-    expect(setup).toContain('Save does not download models');
+    expect(setup).toContain('Model Brain Auto-tuning');
+    expect(setup).toContain('then reconnect chat when prompted');
+    expect(setup).toContain('Saving settings does not download models');
   });
 
   it('describes Drop as selective chat-history control, not an undo or a memory wipe', () => {
@@ -733,16 +728,12 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
   it('advertises the verified uninstaller and preservation of existing keys', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
-      expect(copy.tlamatini.installation.desc).toMatch(/verifies Uninstaller\.exe|verifica Uninstaller\.exe/);
-      expect(copy.tlamatini.installation.desc).toMatch(/existing key vault|bóveda de claves/);
+      expect(copy.tlamatini.features.items.find((item) => item.id === 'windows_delivery')?.description).toMatch(/key vault|bóveda de claves/);
       expect(copy.tlamatini.features.items.find((item) => item.id === 'windows_delivery')?.description).toMatch(/verified uninstaller|desinstalador verificado/);
       const windows = copy.home.tools.items.find((item) => item.id === 'windows_delivery')?.desc ?? '';
       expect(windows).toMatch(/verify and replace Uninstaller\.exe|verifican y reemplazan Uninstaller\.exe/);
     }
-    const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('The in-app updater verifies and installs Uninstaller.exe');
-    expect(setup).toContain('Updates and reinstalls preserve your existing key vault');
-    expect(setup).toContain('not Temp scratch');
+    expect(translations.en.home.tools.items.find(item => item.id === 'windows_delivery')?.desc).toContain('existing key vault');
   });
 
 
@@ -770,13 +761,9 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
 
   it('makes Usage discoverable from setup without promising historical reconstruction', () => {
     const setup = Object.values(installationSteps('en')).join('\n');
-    for (const required of [
-      'About -> Usage', 'Cloud credits, Chat activity, and Models',
-      'monthly balance is separate', 'not earlier history, external apps, or child agents',
-      'Refresh works while Tlamatini answers', 'never assumed to be zero',
-    ]) expect(setup).toContain(required);
+    for (const required of ['About -> Usage', 'cloud credits and recorded activity']) expect(setup).toContain(required);
     for (const lang of ['en', 'es'] as const) {
-      expect(translations[lang].tlamatini.installation.desc).toContain(lang === 'es' ? 'Acerca de -> Uso' : 'About -> Usage');
+      expect(installationSteps(lang).configure_models).toContain(lang === 'es' ? 'Acerca de -> Uso' : 'About -> Usage');
     }
   });
 
@@ -801,7 +788,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(vision).toMatch(/repeated files are analyzed once|una vez cada archivo repetido/);
       expect(vision).toMatch(/unresolved entries are reported|informa entradas no resueltas/);
       expect(vision).toMatch(/existing filename containing a comma stays intact|respeta nombres de archivo existentes con comas/);
-      for (const model of ['Mistral', 'Gemma', 'GLM']) expect(vision).toContain(model);
+      for (const model of ['Mistral', 'Gemma', 'DeepSeek']) expect(vision).toContain(model);
       const agents = copy.tlamatini.agents.groups.flatMap((group) => group.agents);
       expect(agents).toHaveLength(87);
       expect(agents.find((agent) => agent.name === 'Image-Interpreter')?.desc).toMatch(/without duplicates|sin duplicados/);
@@ -813,11 +800,11 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       const copy = translations[lang];
       expect(copy.tlamatini.installation.desc).toContain('Windows 11 x64');
       expect(copy.tlamatini.techStack.groups.flatMap((group) => group.items).some((item) => item.includes('Windows 11 x64'))).toBe(true);
-      expect(copy.tlamatini.installation.desc).toContain(lang === 'es' ? 'Acerca de -> Uso' : 'About -> Usage');
+      expect(installationSteps(lang).configure_models).toContain(lang === 'es' ? 'Acerca de -> Uso' : 'About -> Usage');
       expect(JSON.stringify(copy)).not.toMatch(/source-only Usage|Usage.*awaiting rebuild|Windows 10[|/]11/);
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('Download the Windows 11 x64 release asset');
+    expect(setup).toContain(editions.en.installerUrl);
   });
 
   it('includes video-link analysis in the release rather than retaining stale source-only labels', () => {
@@ -878,7 +865,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(windows).not.toMatch(/guaranteed rollback|zero data loss|never fails|nunca falla|garantiza.*recuperación/i);
     }
     const setup = Object.values(installationSteps('en')).join('\n');
-    for (const term of ['Extract the complete ZIP', 'Keep pkg.zip beside Installer.exe', 'choose a destination, review, and click Install', 'Retry, Change folder, and a log path']) {
+    for (const term of ['Extract All', 'pkg.zip', 'Installer.exe', 'installation folder', 'Install']) {
       expect(setup).toContain(term);
     }
   });
@@ -1055,7 +1042,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
     }
   });
 
-  it('rejects stale releases, removed guardian claims, plan copy, and positional text joins', () => {
+  it('rejects stale releases, removed guardian claims and positional text joins', () => {
     const visibleSource = [
       'src/i18n/translations.ts',
       'src/pages/Home.tsx',
@@ -1085,8 +1072,6 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       /startup (?:database )?guardian/i,
       /protected database startup/i,
       /guardi[aá]n (?:de base de datos|de arranque)/i,
-      /Ollama\s+(?:Pro|Max)\b/i,
-      /(?:Pro|Max)[ -]?plan/i,
     ]) {
       expect(visibleSource).not.toMatch(forbidden);
     }

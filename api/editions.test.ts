@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { editions, isLang, localizePath } from '@/i18n/editions';
-import { installationSteps } from '@/i18n/installation';
+import { developerInstallation, installationSteps } from '@/i18n/installation';
 import { translations } from '@/i18n/translations';
 
 describe('language selects the application edition', () => {
@@ -29,22 +29,23 @@ describe('language selects the application edition', () => {
     expect(e.issuesUrl).toBe(`${base}/issues`);
     const steps = installationSteps(lang);
     expect(steps.install_tlamatini).toContain(e.installerUrl);
-    expect(steps.install_tlamatini).toContain(e.sourceUrl);
-    expect(steps.install_tlamatini).toContain(`cd ${e.sourceFolder}`);
-    expect(steps.install_tlamatini).toContain('python.exe Tlamatini/manage.py createsuperuser');
-    expect(steps.install_tlamatini).not.toContain('Activate.ps1');
+    expect(steps.install_tlamatini).not.toContain(e.sourceUrl);
+    expect(developerInstallation(lang)).toContain(e.sourceUrl);
+    expect(developerInstallation(lang)).toContain(`cd ${e.sourceFolder}`);
+    expect(developerInstallation(lang)).toContain('python.exe Tlamatini/manage.py createsuperuser');
+    expect(developerInstallation(lang)).not.toContain('Activate.ps1');
     expect(translations[lang].edition.download).toContain(lang.toUpperCase());
     expect(translations[lang].edition.source).toContain(lang.toUpperCase());
   });
 
   it('translates instructions without translating commands, models, or filenames', () => {
     const es = installationSteps('es');
-    expect(es.install_tlamatini).toContain('Opción A');
+    expect(es.install_tlamatini).toContain('Descarga Tlamatini en español');
     expect(es.install_tlamatini).not.toContain('Option A');
     expect(es.install_tlamatini).toContain('Installer.exe');
     expect(es.configure_models).toContain('Acerca de -> Uso');
     expect(es.configure_models).toContain('Config -> Modelos');
-    expect(es.sign_in_ollama).toBe('ollama signin');
+    expect(es.sign_in_ollama).toContain('ollama signin');
     expect(es.download_models).toContain('ollama pull nomic-embed-text');
     expect(JSON.stringify(es)).not.toMatch(/github\.com\/XAIHT\/Tlamatini\//);
   });

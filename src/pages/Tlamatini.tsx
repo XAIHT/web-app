@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import ReactMarkdown from 'react-markdown';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from '@/components/Navigation';
@@ -6,7 +7,7 @@ import SetupVideo from '@/components/SetupVideo';
 import Footer from '@/components/Footer';
 import TerminaterShowcase from '@/components/TerminaterShowcase';
 import LiveEditorShowcase from '@/components/LiveEditorShowcase';
-import { installationSteps } from '@/i18n/installation';
+import { developerInstallation, installationSteps } from '@/i18n/installation';
 import EditionDetails, { EditionLabel } from '@/components/EditionDetails';
 import { useEdition, useLanguage, useT } from '@/i18n/context';
 
@@ -359,6 +360,21 @@ function TlamatiniFeatures() {
 
 /* ─────────────────── Installation ─────────────────── */
 
+function InstallationText({ children }: { children: string }) {
+  return (
+    <div className="min-w-0 text-sm leading-relaxed text-[#aaa] [overflow-wrap:anywhere]">
+      <ReactMarkdown components={{
+        p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
+        ol: ({ children }) => <ol className="list-decimal pl-5 space-y-3 mb-4">{children}</ol>,
+        strong: ({ children }) => <strong className="font-medium text-[#f0f0f0]">{children}</strong>,
+        a: ({ children, href }) => <a href={href} target="_blank" rel="noopener noreferrer" className="text-[#c9a96e] underline underline-offset-4 hover:text-[#e0c998] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#40c4b4]">{children}</a>,
+        pre: ({ children }) => <pre className="my-4 p-4 rounded-lg overflow-x-auto border border-[#222] bg-[#0d0d0d] text-[#c9a96e] text-xs sm:text-sm leading-relaxed">{children}</pre>,
+        code: ({ children }) => <code className="font-mono">{children}</code>,
+      }}>{children}</ReactMarkdown>
+    </div>
+  );
+}
+
 function TlamatiniInstallation() {
   const sectionRef = useRef<HTMLElement>(null);
   const t = useT();
@@ -402,7 +418,7 @@ function TlamatiniInstallation() {
       </p>
       <SetupVideo featured />
       <EditionDetails />
-      <div className="space-y-4">
+      <div className="space-y-8">
         {steps.map((step, i) => (
           <div key={step.id} className="reveal-item">
             <div className="flex items-center gap-3 mb-2">
@@ -416,21 +432,19 @@ function TlamatiniInstallation() {
                 {step.label}
               </span>
             </div>
-            <pre
-              className="p-4 rounded-lg overflow-x-auto ml-9"
-              style={{
-                background: '#0d0d0d',
-                border: '1px solid #222',
-                fontFamily: "'IBM Plex Mono', monospace",
-                fontSize: '0.8125rem',
-                lineHeight: 1.7,
-                color: '#c9a96e',
-              }}
-            >
-              <code>{step.code}</code>
-            </pre>
+            <div className="ml-9 min-w-0"><InstallationText>{step.code}</InstallationText></div>
           </div>
         ))}
+      </div>
+      <div className="mt-8 space-y-4">
+        <details className="border-t border-[#222] pt-4">
+          <summary className="cursor-pointer text-sm text-[#c9a96e] py-2">{inst.developer}</summary>
+          <div className="mt-3"><InstallationText>{developerInstallation(lang)}</InstallationText></div>
+        </details>
+        <details className="border-t border-[#222] pt-4">
+          <summary className="cursor-pointer text-sm text-[#c9a96e] py-2">{inst.optionalTorrenter}</summary>
+          <div className="mt-3"><InstallationText>{stepCode.configure_torrenter}</InstallationText></div>
+        </details>
       </div>
     </section>
   );
