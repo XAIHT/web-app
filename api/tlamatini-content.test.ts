@@ -334,7 +334,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
         expect(copy.tlamatini.overview.p2).toContain(label);
       }
       expect(copy.tlamatini.overview.p2).toContain(lang === 'es' ? 'Acerca de -> Buscar actualizaciones' : 'About -> Check for updates');
-      expect(copy.tlamatini.installation.desc).toContain('Ollama Pro');
+      expect(copy.tlamatini.installation.desc).toContain('Ollama');
     }
     const setup = Object.values(installationSteps('en')).join('\n');
     expect(setup).toContain('Config -> Models');
@@ -485,7 +485,7 @@ describe('Tlamatini v1.92.4 website truth contract', () => {
       expect(copy.footer.ctaDesc).toContain('v1.92.4');
       const install = copy.tlamatini.installation.desc;
       expect(install).toContain('v1.92.4');
-      expect(install).toContain('Ollama Pro');
+      expect(install).toContain('Ollama');
       expect(installationSteps(lang).configure_models).toContain('Model Brain');
       expect(developerInstallation(lang)).toContain(editions[lang].sourceUrl);
       expect(new Set(JSON.stringify(copy).match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.92.4']));

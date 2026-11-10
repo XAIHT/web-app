@@ -9,19 +9,19 @@ export function installationSteps(lang: Lang): Record<string, string> {
 3. Open **Installer.exe**, choose your installation folder, review, and click **Install**. Python is included; you do not need to install it separately.
 4. Launch Tlamatini from her shortcut. If the browser does not open, visit [Tlamatini on this computer](http://127.0.0.1:8000/). Sign in with **user** / **changeme** and change the password immediately.
 
-Continue with Ollama below. The documented full setup uses an **active Ollama Pro subscription or higher**, paid separately to Ollama; Tlamatini herself is free and open-source.`,
+Continue with Ollama below to connect your models. Tlamatini is free and open-source.`,
     install_ollama: `1. [Download Ollama for Windows](https://ollama.com/download/windows) and run its installer. Leave Ollama running.
 2. Create or sign in to your [Ollama account](https://ollama.com).
-3. Activate **[Ollama Pro or higher](https://ollama.com/pricing)** on that account. This is Tlamatini's documented baseline for her full cloud-model workflow, not a fee for installing Tlamatini or Ollama.
+3. Connect that account from the terminal in the next step.
 
-The default cloud models need internet. Ollama sets model access, usage allowances, and billing; review those before subscribing. Local-only alternatives require different model choices and suitable hardware.`,
+The default cloud models need internet and access through your Ollama account. Local models require suitable hardware and different model choices.`,
     sign_in_ollama: `Open **Windows Terminal** or **PowerShell** from the Start menu. Run:
 
 ~~~powershell
 ollama signin
 ~~~
 
-Follow the browser sign-in using the **same account with Ollama Pro**. Return to the terminal when sign-in is confirmed. If Windows cannot find **ollama**, close and reopen the terminal after installation.`,
+Follow the browser sign-in using **your Ollama account**. Return to the terminal when sign-in is confirmed. If Windows cannot find **ollama**, close and reopen the terminal after installation.`,
     download_models: `In the same terminal, run these four commands **one at a time**, waiting for each to finish:
 
 ~~~powershell
@@ -55,19 +55,19 @@ Closing chat does not stop active downloads. **Remove record keeps files**; **Er
 3. Abre **Installer.exe**, elige la carpeta de instalación, revisa y pulsa **Instalar**. Python viene incluido; no necesitas instalarlo por separado.
 4. Inicia Tlamatini desde su acceso directo. Si el navegador no se abre, visita [Tlamatini en este equipo](http://127.0.0.1:8000/). Entra con **user** / **changeme** y cambia la contraseña de inmediato.
 
-Continúa con Ollama abajo. La configuración completa documentada requiere una **suscripción activa a Ollama Pro o superior**, que se paga por separado a Ollama; Tlamatini es gratuita y de código abierto.`,
+Continúa con Ollama abajo para conectar tus modelos. Tlamatini es gratuita y de código abierto.`,
     install_ollama: `1. [Descarga Ollama para Windows](https://ollama.com/download/windows) y ejecuta su instalador. Deja Ollama abierto.
 2. Crea tu cuenta o inicia sesión en [Ollama](https://ollama.com).
-3. Activa **[Ollama Pro o superior](https://ollama.com/pricing)** en esa cuenta. Es la base documentada para el flujo completo de Tlamatini con modelos en la nube, no un cobro por instalar Tlamatini u Ollama.
+3. Conecta esa cuenta desde la terminal en el siguiente paso.
 
-Los modelos predeterminados en la nube necesitan internet. Ollama determina el acceso a modelos, los límites de uso y la facturación; revísalos antes de suscribirte. Usar sólo modelos locales requiere elegir otros modelos y contar con hardware adecuado.`,
+Los modelos predeterminados en la nube necesitan internet y acceso mediante tu cuenta de Ollama. Los modelos locales requieren hardware adecuado y una selección de modelos distinta.`,
     sign_in_ollama: `Abre **Terminal de Windows** o **PowerShell** desde Inicio. Ejecuta:
 
 ~~~powershell
 ollama signin
 ~~~
 
-Completa el inicio de sesión en el navegador con **la misma cuenta que tiene Ollama Pro**. Regresa a la terminal cuando se confirme. Si Windows no reconoce **ollama**, cierra y vuelve a abrir la terminal después de instalarlo.`,
+Completa el inicio de sesión en el navegador con **tu cuenta de Ollama**. Regresa a la terminal cuando se confirme. Si Windows no reconoce **ollama**, cierra y vuelve a abrir la terminal después de instalarlo.`,
     download_models: `En la misma terminal, ejecuta estos cuatro comandos **uno por uno**, esperando a que termine cada uno:
 
 ~~~powershell

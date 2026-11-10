@@ -33,6 +33,11 @@ Torrenter queuing and verified Downloads delivery, the optional Tlachihuani XT
 companion, readable Markdown files, and clearer Windows packaging and recovery.
 See [the website release notes](docs/tlamatini-1.92.4.md) for scope and validation.
 
+The English and Spanish download controls use their respective **v1.92.4**
+Windows release assets. The installation section links directly to each
+edition's release notes, installer, tagged source ZIP, and guide. Changing the
+website language changes these destinations together.
+
 ### Application Editions
 
 The header selects both the website language and the application edition:

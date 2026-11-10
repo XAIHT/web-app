@@ -21,16 +21,13 @@ describe('first-time installation guide', () => {
     expect(steps.configure_models).toContain('Step-by-Step');
   });
 
-  it.each(['en', 'es'] as const)('states the Ollama Pro baseline and separate billing in %s', lang => {
+  it.each(['en', 'es'] as const)('explains model setup without plan or pricing copy in %s', lang => {
     const steps = installationSteps(lang);
-    for (const key of ['install_tlamatini', 'install_ollama', 'sign_in_ollama']) {
-      expect(steps[key]).toContain('Ollama Pro');
-    }
-    expect(steps.install_ollama).toContain('https://ollama.com/pricing');
+    expect(JSON.stringify([steps, translations[lang]]))
+      .not.toMatch(/\bOllama (?:Pro|Max)\b|ollama\.com\/pricing|subscription|suscripci[oó]n/i);
     expect(steps.install_ollama).toContain('https://ollama.com/download/windows');
-    expect(steps.install_ollama).toMatch(/documented baseline|base documentada/);
-    expect(steps.install_tlamatini).toMatch(/paid separately|paga por separado/);
-    expect(steps.install_ollama).toMatch(/usage allowances|límites de uso/);
+    expect(steps.install_ollama).toContain('internet');
+    expect(steps.sign_in_ollama).toMatch(/your Ollama account|tu cuenta de Ollama/);
     expect(steps.install_ollama).not.toMatch(/unlimited|ilimitad/i);
     expect(steps.sign_in_ollama).toContain('~~~powershell\nollama signin\n~~~');
   });

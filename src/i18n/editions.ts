@@ -19,10 +19,12 @@ function edition(repository: string, version: string, label: string, language: s
   };
 }
 
-// Each edition owns its release and assets, even when their version numbers match.
+// Both editions share one published version; each owns its release and ZIP.
+// Asset names checked against both GitHub v1.92.4 release responses on 2026-11-09.
+export const LATEST_RELEASE = '1.92.4';
 export const editions = {
-  en: edition('Tlamatini', '1.92.4', 'English edition', 'English'),
-  es: edition('Tlamatini-Spanish', '1.92.4', 'Edición en español', 'Español'),
+  en: edition('Tlamatini', LATEST_RELEASE, 'English edition', 'English'),
+  es: edition('Tlamatini-Spanish', LATEST_RELEASE, 'Edición en español', 'Español'),
 } satisfies Record<Lang, ReturnType<typeof edition>>;
 
 export function localizePath(path: string, lang: Lang): string {

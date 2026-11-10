@@ -25,6 +25,9 @@ export default function EditionDetails() {
         <a href={edition.docsUrl} target="_blank" rel="noopener noreferrer">
           <BookOpen size={17} aria-hidden="true" />{c.guide}
         </a>
+        <a href={edition.releaseUrl} target="_blank" rel="noopener noreferrer">
+          <ExternalLink size={17} aria-hidden="true" />{c.release} · {edition.tag}
+        </a>
       </div>
       <a className="edition-repository" href={edition.repoUrl} target="_blank" rel="noopener noreferrer">
         XAIHT / {edition.repository}<ExternalLink size={13} aria-hidden="true" />

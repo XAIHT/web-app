@@ -67,7 +67,7 @@ describe('v1.92.4 interaction settings marketing', () => {
     expect(setup).toContain('Tlamatini_Release_v1.92.4_Win11x64.zip');
     for (const lang of ['en', 'es'] as const) {
       expect(JSON.stringify(translations[lang])).not.toMatch(/source version|versión fuente/i);
-      expect(translations[lang].tlamatini.installation.desc).toContain('Ollama Pro');
+      expect(translations[lang].tlamatini.installation.desc).toContain('Ollama');
     }
   });
 });
