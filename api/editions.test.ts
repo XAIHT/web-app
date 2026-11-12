@@ -21,7 +21,7 @@ describe('language selects the application edition', () => {
     const repository = lang === 'en' ? 'Tlamatini' : 'Tlamatini-Spanish';
     const base = `https://github.com/XAIHT/${repository}`;
     expect(e.repoUrl).toBe(base);
-    expect(e.tag).toBe('v1.92.4');
+    expect(e.tag).toBe('v1.93.5');
     expect(e.releaseUrl).toBe(`${base}/releases/tag/${e.tag}`);
     expect(e.installerUrl).toBe(`${base}/releases/download/${e.tag}/${repository}_Release_${e.tag}_Win11x64.zip`);
     expect(e.sourceUrl).toBe(`${base}/archive/refs/tags/${e.tag}.zip`);

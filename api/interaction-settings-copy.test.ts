@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { translations } from '@/i18n/translations';
 import { developerInstallation, installationSteps } from '@/i18n/installation';
 
-describe('v1.92.4 interaction settings marketing', () => {
+describe('v1.93.5 interaction settings marketing', () => {
   it.each(['en', 'es'] as const)('features the shared settings in the existing %s surfaces', lang => {
     const copy = translations[lang];
     for (const surface of [copy.liveEditor.intro, copy.tlamatini.overview.p2,
@@ -56,15 +56,15 @@ describe('v1.92.4 interaction settings marketing', () => {
 
   it('keeps setup pinned to one version with explicit virtual-environment commands', () => {
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('releases/tag/v1.92.4');
+    expect(setup).toContain('releases/tag/v1.93.5');
     const developer = developerInstallation('en');
-    expect(developer).toContain('archive/refs/tags/v1.92.4.zip');
+    expect(developer).toContain('archive/refs/tags/v1.93.5.zip');
     expect(developer).toContain('python.exe Tlamatini/manage.py createsuperuser');
     expect(setup).toContain('change the password immediately');
     expect(developer).not.toContain('Activate.ps1');
     expect(setup).toContain('docs/model_configuration.md');
     expect(setup).toContain('Catalog of Prompts');
-    expect(setup).toContain('Tlamatini_Release_v1.92.4_Win11x64.zip');
+    expect(setup).toContain('Tlamatini_Release_v1.93.5_Win11x64.zip');
     for (const lang of ['en', 'es'] as const) {
       expect(JSON.stringify(translations[lang])).not.toMatch(/source version|versión fuente/i);
       expect(translations[lang].tlamatini.installation.desc).toContain('Ollama');
