@@ -30,3 +30,16 @@ client/server build, and visible desktop/mobile views of the three public
 routes in both languages. Download links are checked for the selected edition
 and v1.93.5. Installer execution, Google sign-in, and remote asset availability
 are outside this website-copy task.
+
+## Verification — 12 November 2026
+
+- TypeScript and ESLint passed.
+- All 162 tests passed across 10 test files.
+- The production client/server build passed. Vite retains its non-blocking large-chunk warning: the main client bundle is 901.50 kB minified (293.08 kB gzip).
+- Visible Chrome checks covered Home, Tlamatini, and Launch in English and Spanish at 1440, 390, and 320 CSS pixels: 18 route/language/viewport combinations, with additional Live Editor, feature, edition-detail, and agent-table views. Selected-edition release links point to v1.93.5.
+- Language switching preserves query parameters and the section anchor; reload and browser history restore the selected language.
+- Layout assertions found no horizontal page overflow or clipped card/table text. The review captured 43 desktop screenshots through Shoter.
+- The final source sweep found no stale current-version labels or prohibited subscription copy; git diff --check passed.
+
+Validation artifacts are stored outside user profiles in
+`C:/Development/XAIHT/scratch/web-release-20261112/`.

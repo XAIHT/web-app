@@ -117,7 +117,9 @@ describe('Tlamatini v1.93.5 website truth contract', () => {
       expect(guide).toMatch(/passwords in the console, not chat|contraseñas en la consola, no en chat/);
       expect(guide).toMatch(/administrator account|cuenta administradora/);
       expect(guide).toMatch(/email field is not consent|email no autoriza/);
-      expect(guide).toMatch(/Local Notifier|locales de Notifier/);
+      expect(guide).toMatch(/Tlamatini.{0,15}console|consola propia de Tlamatini/);
+      expect(guide).toMatch(/verif(?:ies|ica).*(?:administrator account|cuenta administradora).*(?:before confirming|antes de confirmar)/);
+      expect(guide).not.toContain('Notifier');
     }
   });
 
@@ -379,7 +381,7 @@ describe('Tlamatini v1.93.5 website truth contract', () => {
       expect(copy.tlamatini.hero.subtitle).toContain('v1.93.5');
       expect(copy.tlamatini.installation.desc).toContain('v1.93.5');
       expect(copy.tlamatini.installation.desc).toContain('Windows 11 x64');
-      expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.92\.4$/);
+      expect(copy.tlamatini.hero.subtitle).toMatch(/\| v1\.93\.5$/);
       const packaging = copy.home.tools.items.find((tool) => tool.id === 'windows_delivery')?.desc ?? '';
       expect(packaging).toContain('87');
       expect(packaging).toContain('ESPHome');
@@ -811,7 +813,7 @@ describe('Tlamatini v1.93.5 website truth contract', () => {
     for (const lang of ['en', 'es'] as const) {
       const copy = translations[lang];
       const media = copy.home.tools.items.find((tool) => tool.id === 'media')?.desc ?? '';
-      expect(media).toMatch(/Included in v1\.92\.4|Incluido en v1\.92\.4/);
+      expect(media).toMatch(/Included in v1\.93\.5|Incluido en v1\.93\.5/);
       const surfaces = [
         media, copy.home.overview.desc, copy.tlamatini.hero.desc, copy.tlamatini.overview.p2,
         copy.footer.ctaDesc, copy.tlamatini.installation.desc,
