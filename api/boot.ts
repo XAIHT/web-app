@@ -10,6 +10,7 @@ import {
   createOAuthStartHandler,
 } from "./kimi/auth";
 import { Paths } from "@contracts/constants";
+import { registerRcRoutes } from "./rc/http";
 
 const app = new Hono<{ Bindings: HttpBindings }>();
 
@@ -24,6 +25,8 @@ app.use("/api/trpc/*", async (c) => {
     createContext,
   });
 });
+// Tlamatini-RC: Tlachihuani on a computer asks here for its messages.
+registerRcRoutes(app);
 app.all("/api/*", (c) => c.json({ error: "Not Found" }, 404));
 
 export default app;

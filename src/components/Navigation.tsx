@@ -60,6 +60,8 @@ export default function Navigation({ dark = false }: NavigationProps) {
         {lang === 'es' ? 'Lanzamiento' : 'Launch'}
       </Link>
       <Link to="/tlamatini" onClick={closeMenu} className={`nav-link ${isTlamatini ? 'active' : ''}`}>{t.nav.tlamatini}</Link>
+      {isAuthenticated && <Link to="/tlamatini-rc" onClick={closeMenu}
+        className={`nav-link ${location.pathname === '/tlamatini-rc' ? 'active' : ''}`}>{t.nav.remote}</Link>}
     </>
   );
   const account = isAuthenticated && user ? (

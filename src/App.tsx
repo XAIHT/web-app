@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Tlamatini from './pages/Tlamatini';
 import Launch from './pages/Launch';
 import Login from './pages/Login';
+import TlamatiniRC from './pages/TlamatiniRC';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <Route path="/tlamatini" element={<Tlamatini />} />
       <Route path="/launch" element={<Launch />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/tlamatini-rc" element={<TlamatiniRC />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
