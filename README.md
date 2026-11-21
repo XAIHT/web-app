@@ -485,10 +485,16 @@ The container image is pulled from **Artifact Registry** (`us-central1-docker.pk
 `Jenkinsfile` defines the pipeline (project `xaiht-492820`, region `us-central1`):
 
 1. **Checkout** — resolve the short SHA.
-2. **Build image** — `docker build` tagged `:<sha>` and `:latest`.
-3. **Push** — authenticate with the `gcp-jenkins-deployer-sa` key and push both tags to Artifact Registry.
-4. **Deploy** — SSH to the VM as `jenkins-deployer`, `systemctl restart xaiht-app`, and poll `is-active` for up to 3 minutes.
-5. **Smoke test** — curl `https://xaiht.org/` until it returns `200/302/304`.
+2. **Validate Google credential** — validate `gcp-jenkins-deployer-sa` as a service-account JSON key and authenticate with Google before spending time on the build. A UTF-8 BOM is removed from a private copy; malformed JSON, wrong credential types and invalid private keys fail with a specific diagnostic.
+3. **Sync lockfile** — reconcile `package-lock.json` with `package.json` in the Node 20 helper.
+4. **Build image** — `docker build` tagged `:<sha>` and `:latest`.
+5. **Push** — authenticate again and push both tags to Artifact Registry. Authentication and Docker login use private directories under Jenkins' `pwd(tmp: true)`, outside the Docker build context; credentials and tokens are removed when the stage exits.
+6. **Deploy** — SSH to the VM as `jenkins-deployer`, `systemctl restart xaiht-app`, and poll `is-active` for up to 3 minutes.
+7. **Smoke test** — require both a `200/302/304` homepage and HTTP `401` with the Tlamatini-RC authentication challenge from `/api/rc/poll?wait=0`. The latter sends no messages and requires no computer key.
+
+Jenkins credential **`gcp-jenkins-deployer-sa`** must have **Kind: Secret file** and contain the original Google service-account **JSON** key, not a filename, quoted/escaped JSON string, OAuth client file, or legacy `.p12` key. The `.p12`/`ACCOUNT` error in build #53 occurred at authentication after a successful image build. Do not work around it by adding an account argument to an invalid JSON credential. Replace the uploaded Secret file if validation fails; never paste its contents into build logs or chat. No new Jenkins plugin or agent runtime is required: validation uses the same `node:20-alpine` image as the build, with stdin instead of a host bind mount.
+
+Deployment helper regression tests use Node's built-in runner: set `TEST_TMP_ROOT` to an application-owned scratch directory outside user profiles, then run `node --test scripts/jenkins-gcp-auth.test.mjs` on Linux (a container is supported). They use generated test keys and stub Google/Docker commands; production credentials are never needed.
 
 ### 7.5. VM helper scripts
 

@@ -27,6 +27,18 @@ pipeline {
       }
     }
 
+    stage('Validate Google credential') {
+      steps {
+        script {
+          withEnv(["DEPLOY_AUTH_TMP_ROOT=${pwd(tmp: true)}"]) {
+            withCredentials([file(credentialsId: 'gcp-jenkins-deployer-sa', variable: 'GCLOUD_KEY')]) {
+              sh 'sh scripts/jenkins-gcp-auth.sh check'
+            }
+          }
+        }
+      }
+    }
+
     stage('Sync lockfile with package.json') {
       steps {
         sh '''
@@ -133,15 +145,12 @@ pipeline {
 
     stage('Push to Artifact Registry') {
       steps {
-        withCredentials([file(credentialsId: 'gcp-jenkins-deployer-sa', variable: 'GCLOUD_KEY')]) {
-          sh '''
-            set -eu
-            gcloud auth activate-service-account --key-file="$GCLOUD_KEY"
-            gcloud auth print-access-token \
-              | docker login -u oauth2accesstoken --password-stdin https://us-central1-docker.pkg.dev
-            docker push "${IMAGE_REPO}:${SHORT_SHA}"
-            docker push "${IMAGE_REPO}:latest"
-          '''
+        script {
+          withEnv(["DEPLOY_AUTH_TMP_ROOT=${pwd(tmp: true)}"]) {
+            withCredentials([file(credentialsId: 'gcp-jenkins-deployer-sa', variable: 'GCLOUD_KEY')]) {
+              sh 'sh scripts/jenkins-gcp-auth.sh push'
+            }
+          }
         }
       }
     }
@@ -185,12 +194,23 @@ pipeline {
         sh '''
           set -eu
           for i in 1 2 3 4 5 6 7 8 9 10; do
-            code=$(curl -s -o /dev/null -w "%{http_code}" https://xaiht.org/ || echo 000)
+            code=$(curl -sS --max-time 20 -o /dev/null -w "%{http_code}" https://xaiht.org/ || echo 000)
             echo "attempt $i: HTTP $code"
-            if [ "$code" = "200" ] || [ "$code" = "302" ] || [ "$code" = "304" ]; then exit 0; fi
+            if [ "$code" = "200" ] || [ "$code" = "302" ] || [ "$code" = "304" ]; then
+              # This read-only unauthenticated request must reach the new RC
+              # route. An old image serving the homepage alone is not success.
+              if headers=$(curl -sS --max-time 20 -D - -o /dev/null 'https://xaiht.org/api/rc/poll?wait=0'); then
+                if printf '%s' "$headers" | grep -Eq '^HTTP/[^ ]+ 401' &&
+                   printf '%s' "$headers" | grep -Fiq 'WWW-Authenticate: Bearer realm="xaiht.org Tlamatini-RC"'; then
+                  echo 'Homepage and Tlamatini-RC endpoint smoke checks passed.'
+                  exit 0
+                fi
+              fi
+              echo 'RC endpoint did not return the expected HTTP 401 and Tlamatini-RC authentication challenge.'
+            fi
             sleep 3
           done
-          echo "site did not return 2xx/3xx after 10 attempts"
+          echo "Homepage or Tlamatini-RC endpoint failed its smoke check after 10 attempts"
           exit 1
         '''
       }
