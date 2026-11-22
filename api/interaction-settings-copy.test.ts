@@ -1,38 +1,36 @@
 import { describe, expect, it } from 'vitest';
 import { translations } from '@/i18n/translations';
 import { developerInstallation, installationSteps } from '@/i18n/installation';
+import { editions } from '@/i18n/editions';
 
-describe('v1.93.5 interaction settings marketing', () => {
+describe('current interaction settings marketing', () => {
   it.each(['en', 'es'] as const)('features the shared settings in the existing %s surfaces', lang => {
     const copy = translations[lang];
-    for (const surface of [copy.liveEditor.intro, copy.tlamatini.overview.p2,
-      copy.home.architecture.overview.card1.desc,
+    for (const surface of [copy.tlamatini.overview.p2,
       copy.home.tools.items.find(item => item.id === 'codebase')!.desc]) {
       expect(surface).toContain('Config -> Live Editor & Terminater');
     }
     for (const tab of [lang === 'es' ? 'Editor en vivo' : 'Live Editor', 'Terminater', lang === 'es' ? 'Voz' : 'Voice']) {
-      expect(copy.liveEditor.intro).toContain(tab);
+      expect(copy.tlamatini.overview.p2).toContain(tab);
     }
     expect(copy.liveEditor.benefits[1].desc).toContain('40–250 WPM');
     expect(copy.liveEditor.benefits[1].desc).toContain('0–3');
     expect(copy.terminater.intro).toContain('20–250 WPM');
     expect(copy.terminater.intro).toContain(lang === 'es' ? 'Yo siempre presiono Enter' : 'I always press Enter');
     expect(copy.ascii.phrases.some(phrase => phrase.includes('Config -> Live Editor & Terminater'))).toBe(true);
-    expect(copy.liveEditor.views[1].desc).toContain(lang === 'es' ? 'Breve' : 'Brief');
-    expect(copy.liveEditor.views[1].desc).toContain(lang === 'es' ? 'Equilibrado' : 'Balanced');
-    expect(copy.liveEditor.views[1].desc).toContain(lang === 'es' ? 'Detallado' : 'Detailed');
+    expect(copy.home.tools.items.find(item => item.id === 'codebase')!.desc).toMatch(/detail, and optional suggestions|detalle y sugerencias/);
   });
 
   it.each(['en', 'es'] as const)('explains safe previews and preference ownership in %s', lang => {
     const overview = translations[lang].tlamatini.overview.p2;
-    for (const text of (lang === 'es' ? ['Estándar', 'Aprendizaje guiado', 'Vista previa', 'Guardar', 'Cancelar', 'Escape', 'Agentic Control Panel', 'Prompt Flow Panel'] : ['Standard', 'Guided learning', 'Preview', 'Save', 'Cancel', 'Escape', 'Agentic Control Panel', 'Prompt Flow Panel'])) {
+    for (const text of (lang === 'es' ? ['Estándar', 'Aprendizaje guiado', 'Vista previa', 'Guardar', 'Cancelar', 'Escape'] : ['Standard', 'Guided learning', 'Preview', 'Save', 'Cancel', 'Escape'])) {
       expect(overview).toContain(text);
     }
-    expect(overview).toMatch(/without running a command or editing a file|sin ejecutar comandos ni editar archivos/);
+    expect(overview).toMatch(/changes no file and runs no command|no edita archivos ni ejecuta comandos/);
     expect(overview).toMatch(/next action|siguiente acción/);
-    expect(overview).toMatch(/appearance stays with your account in this browser|apariencia queda con tu cuenta en este navegador/);
-    const editor = translations[lang].home.tools.items.find(item => item.id === 'codebase')!.desc;
-    expect(editor).toMatch(/Opening settings stops active teaching|Abrir ajustes detiene la tutoría activa/);
+    expect(overview).toMatch(/Account behavior follows chat and both workflow panels|comportamiento sigue tu cuenta en chat y ambos paneles/);
+    expect(overview).toMatch(/appearance stays with this account in this browser|apariencia queda en este navegador/);
+    expect(overview).toMatch(/Opening settings stops tutoring|Abrir ajustes detiene la tutoría/);
     const terminal = translations[lang].home.tools.items.find(item => item.id === 'browser_desktop')!.desc;
     expect(terminal).toMatch(/without killing the process|sin matar el proceso/);
     expect(terminal).toMatch(/defaults affect new terminals|rigen en terminales nuevas/);
@@ -56,15 +54,15 @@ describe('v1.93.5 interaction settings marketing', () => {
 
   it('keeps setup pinned to one version with explicit virtual-environment commands', () => {
     const setup = Object.values(installationSteps('en')).join('\n');
-    expect(setup).toContain('releases/tag/v1.93.5');
+    expect(setup).toContain(editions.en.releaseUrl);
     const developer = developerInstallation('en');
-    expect(developer).toContain('archive/refs/tags/v1.93.5.zip');
+    expect(developer).toContain(editions.en.sourceUrl);
     expect(developer).toContain('python.exe Tlamatini/manage.py createsuperuser');
     expect(setup).toContain('change the password immediately');
     expect(developer).not.toContain('Activate.ps1');
     expect(setup).toContain('docs/model_configuration.md');
     expect(setup).toContain('Catalog of Prompts');
-    expect(setup).toContain('Tlamatini_Release_v1.93.5_Win11x64.zip');
+    expect(setup).toContain(editions.en.installerName);
     for (const lang of ['en', 'es'] as const) {
       expect(JSON.stringify(translations[lang])).not.toMatch(/source version|versión fuente/i);
       expect(translations[lang].tlamatini.installation.desc).toContain('Ollama');

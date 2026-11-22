@@ -1,11 +1,17 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { editions, isLang, localizePath } from '@/i18n/editions';
+import { editions, isLang, LATEST_RELEASE, localizePath } from '@/i18n/editions';
 import { developerInstallation, installationSteps } from '@/i18n/installation';
 import { translations } from '@/i18n/translations';
 
 describe('language selects the application edition', () => {
+  it('advertises 1.97.0 as the one latest release for both editions', () => {
+    expect(LATEST_RELEASE).toBe('1.97.0');
+    expect(editions.en.version).toBe(LATEST_RELEASE);
+    expect(editions.es.version).toBe(LATEST_RELEASE);
+  });
+
   it('offers the matching setup video in each language', () => {
     expect(translations.en.setupVideo.videoId).toBe('8bQcWyqL9kg');
     expect(translations.en.setupVideo.duration).toBe('10:06');
@@ -21,7 +27,7 @@ describe('language selects the application edition', () => {
     const repository = lang === 'en' ? 'Tlamatini' : 'Tlamatini-Spanish';
     const base = `https://github.com/XAIHT/${repository}`;
     expect(e.repoUrl).toBe(base);
-    expect(e.tag).toBe('v1.93.5');
+    expect(e.tag).toBe(`v${LATEST_RELEASE}`);
     expect(e.releaseUrl).toBe(`${base}/releases/tag/${e.tag}`);
     expect(e.installerUrl).toBe(`${base}/releases/download/${e.tag}/${repository}_Release_${e.tag}_Win11x64.zip`);
     expect(e.sourceUrl).toBe(`${base}/archive/refs/tags/${e.tag}.zip`);

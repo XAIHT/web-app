@@ -1,6 +1,7 @@
 # Website refresh — Tlamatini 1.92.4
 
-Tlamatini **1.92.4** is the latest released version in both English and Spanish.
+Historical record: the latest released version is now [Tlamatini 1.97.0](tlamatini-1.97.0.md).
+This refresh presented **1.92.4** in both English and Spanish.
 This refresh updates the existing website's content and preserves its layouts,
 styles, animations, components, and edition-specific destinations.
 

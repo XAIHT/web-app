@@ -21,7 +21,7 @@ function edition(repository: string, version: string, label: string, language: s
 
 // Both editions share one published version; each owns its release and ZIP.
 // Each edition retains its own repository and Windows release asset naming contract.
-export const LATEST_RELEASE = '1.93.5';
+export const LATEST_RELEASE = '1.97.0';
 export const editions = {
   en: edition('Tlamatini', LATEST_RELEASE, 'English edition', 'English'),
   es: edition('Tlamatini-Spanish', LATEST_RELEASE, 'Edición en español', 'Español'),

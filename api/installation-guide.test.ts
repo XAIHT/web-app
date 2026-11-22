@@ -55,4 +55,18 @@ describe('first-time installation guide', () => {
     expect(developer).toContain(`$env:TLAMATINI_VERSION = '${editions[lang].version}'`);
     expect(installationSteps(lang).configure_torrenter).toMatch(/do not need it to start chatting|no lo necesitas para empezar a conversar/);
   });
+
+  it.each(['en', 'es'] as const)('introduces direct dictation and deliberate document context in %s', lang => {
+    const setup = installationSteps(lang).configure_models;
+    expect(setup).toContain(lang === 'es' ? 'Primeros pasos' : 'Getting Started');
+    expect(setup).toContain('Config -> Mic');
+    expect(setup).toMatch(/beside Send|junto a Enviar/);
+    expect(setup).toContain('32');
+    for (const label of (lang === 'es'
+      ? ['Usar como contexto', 'Contexto del chat', 'Actualizar contexto']
+      : ['Use as context', 'Chat context', 'Update context'])) {
+      expect(setup).toContain(label);
+    }
+    expect(setup).toMatch(/Saving and updating context are separate|Guardar y actualizar contexto son acciones independientes/);
+  });
 });

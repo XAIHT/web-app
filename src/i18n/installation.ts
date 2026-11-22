@@ -34,12 +34,16 @@ ollama pull gemma4:cloud
 **What you are preparing:** nomic-embed-text runs locally to index your project. DeepSeek V4.1 Flash handles chat, reasoning, and text tasks. Mistral Large 4 and Gemma 4 handle image and video analysis.
 
 The **:cloud** tags connect to models running in Ollama's cloud; their large weights are not downloaded to your PC. They use your signed-in account and its usage allowance. These are the current defaults for new installations; optional voice and specialist agents may need additional setup.`,
-    configure_models: `1. Return to Tlamatini and open **Config -> Models**. Start with **deepseek-v4.1-flash:cloud** for chat and reasoning, **mistral-large-4:cloud** and **gemma4:cloud** for vision, and **nomic-embed-text** for embeddings. Existing installations may retain your earlier choices; change them here only if you want these defaults.
-2. Click **Save**, review **Model Brain Auto-tuning**, then reconnect chat when prompted. Saving settings does not download models. For Ollama on this same computer, leave its separate token in **Config -> Access Keys Wizard** blank; cloud access uses the account you just signed in to.
-3. Enable **Multi-Turn** and open **Catalog of Prompts**. Choose a guided example and enable the tools it requests. If **Compact mode** is on, select the tools needed for that task in Configure.
-4. Send your first message: **“Help me create a project plan one step at a time. Wait for my answer before continuing.”**
+    configure_models: `1. Open **Config -> Models**: **deepseek-v4.1-flash:cloud** for chat, **mistral-large-4:cloud** and **gemma4:cloud** for vision, **nomic-embed-text** for embeddings. Existing installations may retain earlier choices.
+2. Click **Save**, review **Model Brain Auto-tuning**, and reconnect chat. Saving does not download models. For local Ollama, leave its **Access Keys Wizard** token blank.
+3. Enable **Multi-Turn**. In **Catalog of Prompts -> Getting Started**, choose an example and enable its tools in Configure, including when using **Compact mode**.
+4. Send: **“Plan a project step by step. Wait for my answer.”**
 
-Use **Step-by-Step** for guided work and **About -> Usage** to check cloud credits and recorded activity. The [model configuration guide](${edition.repoUrl}/blob/main/docs/model_configuration.md) covers advanced roles, speech, and overrides.`,
+Use **Step-by-Step** for guided work. The **microphone beside Send** dictates prompts or editable drafts; choose in **Config -> Mic**. Check **About -> Usage** for cloud credits and recorded activity.
+
+**Try the Canvas:** open up to 32 documents in tabs. **Use as context** selects snapshots; **Chat context** confirms them. After edits, click **Update context**. Saving and updating context are separate. An asterisk marks unsaved work; save every document before closing.
+
+[Model guide](${edition.repoUrl}/blob/main/docs/model_configuration.md) · [Canvas guide](${edition.repoUrl}/blob/main/docs/canvas-editing.md).`,
     configure_torrenter: `Torrenter is optional: **you do not need it to start chatting**. It uses the separately installed **Tlachihuani Jobs and XT** companion.
 
 1. Obtain Tlachihuani's complete Windows installation ZIP from your distributor. Extract it, read **START-HERE.html**, and run **Installer.exe**. Services start **Stopped / Manual**; starting XT at sign-in starts only the tray icon.
@@ -80,17 +84,21 @@ ollama pull gemma4:cloud
 **Qué estás preparando:** nomic-embed-text indexa tu proyecto localmente. DeepSeek V4.1 Flash se ocupa del chat, razonamiento y tareas de texto. Mistral Large 4 y Gemma 4 analizan imágenes y videos.
 
 Las etiquetas **:cloud** conectan con modelos que se ejecutan en la nube de Ollama; sus grandes pesos no se descargan a tu PC. Usan tu cuenta y su cuota disponible. Son los valores actuales de una instalación nueva; la voz y otros agentes especializados pueden necesitar configuración adicional.`,
-    configure_models: `1. Vuelve a Tlamatini y abre **Config -> Modelos**. Empieza con **deepseek-v4.1-flash:cloud** para chat y razonamiento, **mistral-large-4:cloud** y **gemma4:cloud** para visión y **nomic-embed-text** para embeddings. Una instalación existente puede conservar tus elecciones anteriores; cámbialas aquí sólo si quieres estos valores.
-2. Pulsa **Guardar**, revisa **Model Brain Auto-tuning** y reconecta el chat cuando se solicite. Guardar no descarga modelos. Si Ollama está en este mismo equipo, deja vacío su token independiente en **Config -> Access Keys Wizard**; el acceso a la nube usa la cuenta con la que acabas de iniciar sesión.
-3. Activa **Multi-Turn** y abre el **Catálogo de prompts**. Elige un ejemplo guiado y activa las herramientas que indique. Si usas **Compact mode**, selecciona en Configurar las herramientas que necesita la tarea.
-4. Envía tu primer mensaje: **«Ayúdame a crear un plan de proyecto paso a paso. Espera mi respuesta antes de continuar».**
+    configure_models: `1. Abre **Config -> Modelos**: **deepseek-v4.1-flash:cloud** para chat, **mistral-large-4:cloud** y **gemma4:cloud** para visión, **nomic-embed-text** para embeddings. Una instalación existente puede conservar tus elecciones anteriores.
+2. Pulsa **Guardar**, revisa **Model Brain Auto-tuning** y reconecta el chat. Guardar no descarga modelos. Con Ollama local, deja vacío su token de **Access Keys Wizard**.
+3. Activa **Multi-Turn**. En **Catálogo de prompts -> Primeros pasos**, elige un ejemplo y activa sus herramientas en Configurar, también si usas **Compact mode**.
+4. Envía: **«Planea un proyecto paso a paso. Espera mi respuesta».**
 
-Usa **Step-by-Step** para avanzar con guía y **Acerca de -> Uso** para consultar créditos de nube y actividad registrada. La [guía de modelos](${edition.repoUrl}/blob/main/docs/model_configuration.md) explica los roles avanzados, la voz y los ajustes personalizados.`,
+Usa **Step-by-Step** para avanzar con guía. El **micrófono junto a Enviar** dicta prompts o borradores editables; elige en **Config -> Mic**. Consulta créditos de nube y actividad registrada en **Acerca de -> Uso**.
+
+**Prueba el Canvas:** abre hasta 32 documentos en pestañas. **Usar como contexto** elige copias; **Contexto del chat** confirma su aceptación. Tras editar, pulsa **Actualizar contexto**. Guardar y actualizar contexto son acciones independientes. Un asterisco marca cambios sin guardar; guarda todo antes de cerrar.
+
+[Guía de modelos](${edition.repoUrl}/blob/main/docs/model_configuration.md) · [Guía del Canvas](${edition.repoUrl}/blob/main/docs/canvas-editing.md).`,
     configure_torrenter: `Torrenter es opcional: **no lo necesitas para empezar a conversar**. Utiliza **Tlachihuani Jobs y XT**, un complemento que se instala por separado.
 
 1. Obtén el ZIP completo de Tlachihuani para Windows de tu distribuidor. Extrae todo, lee **START-HERE.html** y abre **Installer.exe**. Los servicios quedan **Detenidos / Manual**; iniciar XT con Windows sólo abre el icono de la bandeja.
-2. Haz clic derecho en **XT -> Start Services** y abre **Panels -> Torrenter Workspace** en Tlamatini. Sin código de vinculación: usa tu cuenta habitual y activa Torrenter y Chat-Agent-Torrenter en Configurar.
-3. Agrega un magnet o .torrent, revisa sus metadatos, elige archivos y descarga. Si las cuatro búsquedas están ocupadas, las demás esperan en cola. Esperar no es completar.
+2. Haz clic derecho en **XT -> Start Services** y abre **Paneles -> Descargas de Torrenter** en Tlamatini. Sin código de vinculación: usa tu cuenta habitual y activa Torrenter y Chat-Agent-Torrenter en Configurar.
+3. Agrega un magnet o .torrent, revisa sus metadatos, elige archivos y descarga. Si las cuatro solicitudes de metadatos están ocupadas, las demás esperan en cola. Esperar no es completar.
 4. Revisa **Verified output** para conocer la ruta real y SHA-256. El destino habitual es Descargas de Windows/Torrenter, con content_generated/Torrenter de esta edición como alternativa. Si ambos destinos fallan, se informa del error.
 
 Cerrar el chat no detiene descargas activas. **Remove record conserva archivos**; **Erase files** necesita aprobación en XT. [Guía completa de Torrenter](${edition.repoUrl}/blob/main/docs/torrenter.md).`,

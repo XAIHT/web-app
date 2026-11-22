@@ -26,8 +26,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang;
     document.title = `XAIHT | Tlamatini | ${editions[lang].label}`;
     document.querySelector('meta[name="description"]')?.setAttribute('content', lang === 'es'
-      ? `Tlamatini ${editions.es.tag} en español: controla Unreal Engine y Blender, programa STM32 y ESP32, habla, escucha y conserva descargas verificadas con Torrenter.`
-      : `Tlamatini ${editions.en.tag} in English: control Unreal Engine and Blender, program STM32 and ESP32, speak, listen, and keep verified downloads with Torrenter.`);
+      ? `Tlamatini ${editions.es.tag} en español: trabaja con documentos en pestañas, elige el contexto del chat y aprende con Live Editor. Controla Unreal Engine y Blender, programa STM32 y ESP32, habla y escucha.`
+      : `Tlamatini ${editions.en.tag} in English: work across document tabs, choose chat context, and learn with Live Editor. Control Unreal Engine and Blender, program STM32 and ESP32, speak and listen.`);
     try { window.localStorage.setItem(STORAGE_KEY, lang); } catch { /* Optional persistence. */ }
   }, [lang]);
 

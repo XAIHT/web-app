@@ -1,14 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { translations } from '@/i18n/translations';
-import { editions } from '@/i18n/editions';
+import { editions, LATEST_RELEASE } from '@/i18n/editions';
 import { installationSteps } from '@/i18n/installation';
 
-describe('v1.93.5 release copy', () => {
+describe('current release copy and retained Prompt Flow contracts', () => {
   it.each(['en', 'es'] as const)('presents one released version in %s', lang => {
     const copy = translations[lang];
-    expect(editions[lang].version).toBe('1.93.5');
+    expect(editions[lang].version).toBe(LATEST_RELEASE);
     const content = JSON.stringify([copy, installationSteps(lang)]);
-    expect(new Set(content.match(/v1\.\d+\.\d+/g))).toEqual(new Set(['v1.93.5']));
+    expect(new Set(content.match(/v1\.\d+\.\d+/g))).toEqual(new Set([editions[lang].tag]));
     expect(content).not.toMatch(/source[- ]only|source version|versión fuente/i);
     expect(copy.liveEditor.intro).not.toMatch(/New in|Nuevo en/);
     expect(copy.tlamatini.agents.groups.flatMap(group => group.agents)).toHaveLength(87);

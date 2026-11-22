@@ -3,7 +3,7 @@ import { translations } from '@/i18n/translations';
 import { editions } from '@/i18n/editions';
 import { installationSteps } from '@/i18n/installation';
 
-describe('1.92.4 download and companion guidance', () => {
+describe('current download and companion guidance', () => {
   it.each(['en', 'es'] as const)('connects every %s setup step to instructions', lang => {
     const steps = installationSteps(lang);
     const ids = translations[lang].tlamatini.installation.steps.map(step => step.id);
@@ -11,13 +11,13 @@ describe('1.92.4 download and companion guidance', () => {
     expect([...ids, 'configure_torrenter'].sort()).toEqual(Object.keys(steps).sort());
     for (const id of ids) expect(steps[id].trim().length).toBeGreaterThan(10);
     expect(steps.install_tlamatini).toContain(editions[lang].installerUrl);
-    expect(steps.configure_torrenter).toContain('Panels -> Torrenter Workspace');
+    expect(steps.configure_torrenter).toContain(lang === 'es' ? 'Paneles -> Descargas de Torrenter' : 'Panels -> Torrenter Workspace');
   });
 
   it.each(['en', 'es'] as const)('distinguishes accepting work from delivering files in %s', lang => {
     const tools = translations[lang].home.tools.items;
     const torrent = tools.find(tool => tool.id === 'torrenter')!.desc;
-    expect(torrent).toMatch(/four metadata slots|cuatro búsquedas de metadatos/);
+    expect(torrent).toMatch(/four metadata slots|cuatro (?:solicitudes|búsquedas) de metadatos/);
     expect(torrent).toMatch(/wait in the queue|esperan en cola/);
     expect(torrent).toMatch(/signed-in account|tu cuenta/);
     for (const term of ['Verified output', 'SHA-256', 'content_generated/Torrenter']) expect(torrent).toContain(term);
@@ -47,9 +47,11 @@ describe('1.92.4 download and companion guidance', () => {
   });
 
   it.each(['en', 'es'] as const)('describes the readable README fix without allowing arbitrary binary files in %s', lang => {
-    const editor = translations[lang].home.tools.items.find(tool => tool.id === 'pdf_canvas')!.desc;
+    const copy = translations[lang];
+    const editor = [copy.home.tools.items.find(tool => tool.id === 'pdf_canvas')!.desc,
+      ...copy.liveEditor.views.map(view => view.desc)].join('\n');
     expect(editor).toContain('README');
-    expect(editor).toMatch(/isolated control characters|caracteres de control aislados/);
-    expect(editor).toMatch(/binary or malformed|binarios o mal codificados/);
+    expect(editor).toMatch(/(?:stray|isolated) control characters|controles aislados/);
+    expect(editor).toMatch(/binary or malformed|binarios o archivos mal codificados/);
   });
 });
