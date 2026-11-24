@@ -5,16 +5,43 @@ export function object(value: unknown): JsonObject {
   return value !== null && typeof value === 'object' && !Array.isArray(value) ? value as JsonObject : {};
 }
 export function text(value: unknown): string { return typeof value === 'string' ? value : ''; }
+/** The parsed-node shape inertText reads: a template's inert content, or plain objects in tests. */
+export type InertNode = { nodeType: number; nodeName: string; nodeValue: string | null; childNodes: ArrayLike<InertNode> };
+const BLOCK_TAGS = new Set(['ADDRESS', 'ARTICLE', 'ASIDE', 'BLOCKQUOTE', 'CAPTION', 'DD', 'DIV', 'DL', 'DT', 'FIELDSET',
+  'FIGCAPTION', 'FIGURE', 'FOOTER', 'FORM', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'HEADER', 'LI', 'MAIN', 'NAV', 'OL', 'P',
+  'PRE', 'SECTION', 'TABLE', 'TBODY', 'TFOOT', 'THEAD', 'TR', 'UL']);
+/**
+ * Plain text with the layout rules of Tlamatini's own text fallback: each block
+ * on its own line and table cells separated by a tab, so a table such as the
+ * execution report never reads as glued words ("CommandStatus", "CPU45%").
+ */
+export function inertText(root: InertNode): string {
+  const parts: string[] = [];
+  const last = () => parts[parts.length - 1] ?? '';
+  const separate = () => { if (parts.length && !last().endsWith('\n')) parts.push('\n'); };
+  const walk = (node: InertNode): void => {
+    if (node.nodeType === 3) { parts.push(node.nodeValue ?? ''); return; }
+    if (node.nodeType !== 1 && node.nodeType !== 11) return;
+    const tag = node.nodeName.toUpperCase();
+    if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'TEMPLATE') return;
+    if (tag === 'BR') { parts.push('\n'); return; }
+    if (tag === 'HR') { separate(); return; }
+    const block = BLOCK_TAGS.has(tag);
+    if (block) separate();
+    else if ((tag === 'TD' || tag === 'TH') && parts.length && !/[\n\t]$/.test(last())) parts.push('\t');
+    Array.from(node.childNodes).forEach(child => walk(child));
+    if (block) separate();
+  };
+  walk(root);
+  return parts.join('').trim();
+}
 export function answerText(value: unknown): string {
   const answer = object(value);
   if (typeof answer.html === 'string' && answer.html) {
     // Parsing is inert. Only text reaches React; images, scripts and links never mount.
     const template = document.createElement('template');
     template.innerHTML = answer.html;
-    template.content.querySelectorAll('script,style,template').forEach(node => node.remove());
-    template.content.querySelectorAll('br').forEach(node => node.replaceWith('\n'));
-    template.content.querySelectorAll('p,div,li,h1,h2,h3,h4,pre,tr').forEach(node => node.append('\n'));
-    return template.content.textContent?.trim() || text(answer.text);
+    return inertText(template.content as unknown as InertNode) || text(answer.text);
   }
   return text(answer.text);
 }
