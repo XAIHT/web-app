@@ -3,6 +3,7 @@
 // A memory copy of the database store, for vitest and the local check harness
 // only. Production code never imports this file.
 import type { RcComputer, RcMessage, RcStore } from "./store";
+import { RC_LIMITS } from "@contracts/rc";
 
 export function createMemoryRcStore(): RcStore {
   const computers: RcComputer[] = [];
@@ -59,7 +60,7 @@ export function createMemoryRcStore(): RcStore {
         if (m.computerId !== computerId) continue;
         if (m.status === "queued" && m.expiresAt < now) { m.status = "expired"; continue; }
         const due = m.status === "queued" || (m.status === "delivered" && m.deliveredAt !== null && m.deliveredAt < redeliverBefore);
-        if (!due || out.length >= 50) continue;
+        if (!due || out.length >= RC_LIMITS.deliveryBatchSize) continue;
         m.status = "delivered";
         m.deliveredAt = now;
         out.push({ ...m });

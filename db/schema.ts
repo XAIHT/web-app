@@ -8,6 +8,9 @@ import {
   bigint,
   json,
   index,
+  uniqueIndex,
+  int,
+  mediumtext,
 } from "drizzle-orm/mysql-core";
 
 export const users = mysqlTable("users", {
@@ -88,6 +91,32 @@ export const rcMessages = mysqlTable(
 );
 
 export type RcMessage = typeof rcMessages.$inferSelect;
+
+// Durable executable requests use separate rows and state from inert log messages.
+export const rcCommands = mysqlTable("rc_commands", {
+  id: serial("id").primaryKey(),
+  computerId: bigint("computerId", { mode: "number", unsigned: true }).notNull()
+    .references(() => rcComputers.id, { onDelete: "cascade" }),
+  userId: bigint("userId", { mode: "number", unsigned: true }).notNull(),
+  requestId: varchar("requestId", { length: 32 }).notNull(),
+  requestHash: varchar("requestHash", { length: 64 }).notNull(),
+  operation: varchar("operation", { length: 40 }).notNull(),
+  bindingId: varchar("bindingId", { length: 32 }),
+  payload: text("payload").notNull(),
+  status: mysqlEnum("status", ["queued", "delivered", "running", "completed", "expired"]).default("queued").notNull(),
+  deliveryId: varchar("deliveryId", { length: 32 }),
+  sequence: int("sequence", { unsigned: true }).notNull().default(0),
+  response: mediumtext("response"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().notNull(),
+  expiresAt: timestamp("expiresAt").notNull(),
+  leaseUntil: timestamp("leaseUntil"),
+}, table => [
+  uniqueIndex("rc_commands_request_unique").on(table.computerId, table.requestId),
+  index("rc_commands_delivery_idx").on(table.computerId, table.status, table.leaseUntil),
+  index("rc_commands_owner_idx").on(table.userId, table.computerId, table.createdAt),
+]);
+export type RcCommand = typeof rcCommands.$inferSelect;
 //
 // Example:
 // export const posts = mysqlTable("posts", {

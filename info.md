@@ -12,6 +12,15 @@ This template is well suited for:
 - Wiki-style documentation sites for a small team or single author
 - "Reflect-style" private notebooks
 
+## Scope of this template reference
+
+This file describes the inherited note-app template, not the complete current
+XAIHT product. Current routes also include the bilingual product pages and
+`/tlamatini-rc`, with approved-account prompts and persistent command receipts.
+Use [README](README.md), [architecture](web-app-diagrams.md) and
+[remote prompts](docs/remote-prompts.md) for the implemented website. Preserve
+the note-template instructions below only for that subsystem.
+
 ## Language
 If the user has not specified a language of the website, then the language of the website (the content you insert into the template) must match the language of the user's query.
 If the user has specified a language of the website, then the language of the website must match the user's requirement.

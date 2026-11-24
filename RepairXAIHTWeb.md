@@ -13,6 +13,23 @@ This runbook was written **2026-08-26** after Gordon (Docker Desktop's AI assist
 
 ---
 
+## Current website and remote prompts · 23 November
+
+The signed-in `/tlamatini-rc` page sends typed prompts to a ready local Tlamatini
+account explicitly approved in XT. The existing outgoing HTTPS poll carries real
+commands/results separately from inert diagnostics. The server exposes `rc` and
+`rcCommands` alongside `auth`, `notes` and `ping`; persistent RC tables include
+`rc_computers`, `rc_messages` and `rc_commands`. English and Spanish page copy
+describes the same behavior.
+
+Ask Execs follows Tlamatini's selective policy, so Monitor Netstat can run without
+asking. The corrected source label is **Ask before protected actions**. Its
+candidate built but was not promoted. Phone prompt/answer, reload and approval
+display passed for installed English; actual denial/no-execution and cancellation
+remain pending after testing was stopped. HTTPS is not end-to-end/PQ encryption.
+See [the complete guide](docs/remote-prompts.md) and its evidence/rollout section. Current release
+numbers and application code are unchanged by this documentation pass.
+
 ## Prerequisites (one-time on the machine)
 
 1. **Docker Desktop for Windows** running with Linux containers (WSL2 backend).

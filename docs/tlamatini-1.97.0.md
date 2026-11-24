@@ -34,14 +34,13 @@ Ctrl+Tab is not delivered to the page.
 
 ## Remote-control scope
 
-The existing website's signed-in **Tlamatini-RC** page registers computers,
-shows connection state and queues messages for acknowledgement by Tlachihuani.
-That page is not advertised as a full remote desktop or as a post-quantum channel.
-The separate Tlamatini account/device integration follows the edition's
-Remote-Controller guide, with explicit access and execution approvals. Product
-release notes and the current integration guide differ in their description of
-transport availability; the public copy does not promise Internet or phone
-microphone access on the basis of a release heading alone.
+The signed-in **Tlamatini-RC** page registers computers and preserves the original
+diagnostic-message test. Its prompt interface uses the upgraded XT website bridge
+to reach explicitly approved local accounts, show execution progress, handle
+approvals/cancellation and retrieve answers. See [phone prompt setup](remote-prompts.md)
+for the matching website/XT deployment requirements. This HTTPS relay is neither a
+full remote desktop nor a post-quantum channel; phone microphone transport is not
+included in this integration.
 
 ## Source references
 
@@ -107,3 +106,7 @@ The site was not silently redirected to an older version. See
 
 These changes were verified locally. No commit, push or production deployment
 was performed.
+
+## Remote documentation clarification · 23 November
+
+This documentation review retains the existing 1.97.0 release designation. The physical English-account phone prompt/answer, reload and approval display passed; denial/no-execution and cancellation remain unfinished. Ask Execs means selected protected actions, with Netstat exempt. The clearer source label was built as a candidate but not deployed. See [current evidence](remote-prompts.md#recorded-rollout-and-acceptance--23-november).

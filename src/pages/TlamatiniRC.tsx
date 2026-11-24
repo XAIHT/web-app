@@ -7,7 +7,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import Navigation from '@/components/Navigation';
 import { useAuth } from '@/hooks/useAuth';
-import { useT } from '@/i18n/context';
+import { useT, useLanguage } from '@/i18n/context';
+import RemoteChat from '@/components/RemoteChat';
 import { trpc } from '@/lib/trpc';
 import {
   RC_LEVELS, RC_LIMITS, RC_TARGETS, RC_TTL_MINUTES, RC_TYPES, buildRcPayload,
@@ -26,6 +27,7 @@ function time(value: Date | string | null | undefined): string {
 export default function TlamatiniRC() {
   const { user, isAuthenticated, isLoading } = useAuth({ redirectOnUnauthenticated: true });
   const t = useT();
+  const { lang } = useLanguage();
   const r = t.rc;
   const utils = trpc.useUtils();
   const computers = trpc.rc.computers.useQuery(undefined, { enabled: isAuthenticated, refetchInterval: 3000 });
@@ -38,6 +40,7 @@ export default function TlamatiniRC() {
   }, []);
 
   const [computerId, setComputerId] = useState<number | null>(null);
+  const [chatPending, setChatPending] = useState(false);
   const [target, setTarget] = useState<RcTarget>('tlachihuani');
   const [type, setType] = useState<RcType>('text');
   const [level, setLevel] = useState<RcLevel>('info');
@@ -50,14 +53,14 @@ export default function TlamatiniRC() {
   const [notice, setNotice] = useState<string | null>(null);
 
   const list = useMemo(() => computers.data ?? [], [computers.data]);
-  // The chosen computer, or else the first online one, or else the first one.
-  const chosen = list.find((c) => c.id === computerId) ?? list.find((c) => c.online) ?? list[0] ?? null;
+  // Connectivity changes must never switch the computer behind an unsent draft.
+  const chosen = computerId === null ? list[0] ?? null : list.find((c) => c.id === computerId) ?? null;
 
   const add = trpc.rc.addComputer.useMutation({
     onSuccess: async (data) => {
       setNewKey(data.key); setCopied(false); setNewName('');
       await utils.rc.computers.invalidate();
-      setComputerId(data.computer.id);
+      setComputerId(current => current ?? data.computer.id);
     },
     onError: (error) => setNotice(error.message),
   });
@@ -95,7 +98,9 @@ export default function TlamatiniRC() {
       <main className="mx-auto max-w-6xl px-6 pb-16 pt-28" data-testid="rc-page">
         <span className="font-mono text-xs uppercase tracking-[0.15em]" style={{ color: '#c9a96e' }}>Tlamatini-RC</span>
         <h1 className="mb-3 mt-2 text-3xl font-bold">{r.title}</h1>
-        <p className="mb-8 max-w-3xl text-[#999]">{r.intro}</p>
+        <p className="mb-8 max-w-3xl text-[#999]">{lang === 'es'
+          ? 'Envía instrucciones a Tlamatini en tu computadora y recibe sus respuestas aquí. Elige una cuenta autorizada y conserva el control de las acciones que requieren tu permiso.'
+          : 'Send prompts to Tlamatini on your computer and receive her answers here. Choose an approved account and stay in control of actions that need your permission.'}</p>
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <section className="flex flex-col gap-6">
@@ -126,6 +131,7 @@ export default function TlamatiniRC() {
                         <dt>{r.key}</dt><dd className="font-mono">…{c.keyHint}</dd>
                       </dl>
                       <button type="button" className="mt-2 text-xs text-[#c97a6e] hover:underline"
+                        disabled={chatPending && c.id === chosen?.id}
                         onClick={() => { if (window.confirm(r.removeConfirm)) remove.mutate({ id: c.id }); }}>{r.remove}</button>
                     </li>
                   );
@@ -141,9 +147,10 @@ export default function TlamatiniRC() {
               }}>
                 <label className={label} htmlFor="rc-new-name">{r.addName}</label>
                 <input id="rc-new-name" className={field} value={newName} maxLength={RC_LIMITS.computerName}
+                  disabled={chatPending}
                   placeholder={r.addPlaceholder} onChange={(event) => setNewName(event.target.value)} />
                 <button type="submit" className="xaiht-btn xaiht-btn-outline self-start" style={{ fontSize: '1rem' }}
-                  disabled={!newName.trim() || add.isPending}>{r.addButton}</button>
+                  disabled={!newName.trim() || add.isPending || chatPending}>{r.addButton}</button>
               </form>
               {newKey && (
                 <div className="mt-4 rounded-md border border-[#c9a96e] p-3" data-testid="rc-new-key">
@@ -161,7 +168,11 @@ export default function TlamatiniRC() {
             </div>
           </section>
 
-          <section className={card}>
+          <div className="min-w-0 space-y-6">
+          {chosen && <RemoteChat key={chosen.id} computer={chosen} computers={list} onComputerChange={setComputerId} onPendingChange={setChatPending} />}
+          <details className={card}>
+            <summary className="cursor-pointer font-semibold">{lang === 'es' ? 'Diagnóstico de conexión: mensajes de prueba' : 'Connection diagnostics: test messages'}</summary>
+          <section className="mt-5">
             <h2 className="mb-4 text-lg font-semibold">{r.formTitle}</h2>
             <form className="grid gap-4 sm:grid-cols-2" data-testid="rc-form" onSubmit={(event) => {
               event.preventDefault();
@@ -171,7 +182,7 @@ export default function TlamatiniRC() {
             }}>
               <div>
                 <label className={label} htmlFor="rc-computer">{r.computer}</label>
-                <select id="rc-computer" className={field} value={chosen?.id ?? ''} disabled={list.length === 0}
+                <select id="rc-computer" className={field} value={chosen?.id ?? ''} disabled={list.length === 0 || chatPending}
                   onChange={(event) => setComputerId(Number(event.target.value))}>
                   {list.length === 0 && <option value="">{r.chooseComputer}</option>}
                   {list.map((c) => <option key={c.id} value={c.id}>{c.name} · {c.online ? r.online : r.offline}</option>)}
@@ -225,6 +236,8 @@ export default function TlamatiniRC() {
               </div>
             </form>
           </section>
+          </details>
+          </div>
         </div>
 
         <section className={`${card} mt-6`} data-testid="rc-history">

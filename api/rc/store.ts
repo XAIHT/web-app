@@ -2,6 +2,7 @@
 import { and, desc, eq, inArray, lt, or, sql } from "drizzle-orm";
 import { getDb } from "../queries/connection";
 import { rcComputers, rcMessages, type RcComputer, type RcMessage } from "../../db/schema";
+import { RC_LIMITS } from "@contracts/rc";
 
 export type { RcComputer, RcMessage };
 
@@ -60,7 +61,7 @@ const CREATE_TABLES = [
 
 let tablesReady: Promise<void> | null = null;
 
-function ensureTables(): Promise<void> {
+export function ensureTables(): Promise<void> {
   tablesReady ??= (async () => {
     const db = getDb();
     for (const statement of CREATE_TABLES) await db.execute(sql.raw(statement));
@@ -133,7 +134,7 @@ export function createMysqlRcStore(): RcStore {
           eq(rcMessages.status, "queued"),
           and(eq(rcMessages.status, "delivered"), lt(rcMessages.deliveredAt, redeliverBefore)),
         ),
-      )).orderBy(rcMessages.id).limit(50);
+      )).orderBy(rcMessages.id).limit(RC_LIMITS.deliveryBatchSize);
       if (rows.length === 0) return [];
       await d.update(rcMessages).set({ status: "delivered", deliveredAt: now })
         .where(inArray(rcMessages.id, rows.map((row) => row.id)));

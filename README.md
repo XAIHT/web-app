@@ -46,6 +46,15 @@ Windows release assets. The installation section links directly to each
 edition's release notes, installer, tagged source ZIP, and guide. Changing the
 website language changes these destinations together.
 
+### Phone prompts with Tlamatini-RC
+
+The signed-in Tlamatini-RC page now includes an account-scoped prompt and answer
+interface through XT's outgoing website connection. It shows execution progress,
+approval requests, cancellation and complete-answer retrieval. Approve the intended
+local accounts in XT before using them from the website. This is an HTTPS relay,
+not the planned post-quantum transport. See the [setup and integration guide](docs/remote-prompts.md),
+including deployment requirements and the Spanish quick start.
+
 ### Application Editions
 
 The header selects both the website language and the application edition:
@@ -155,6 +164,23 @@ Prefer the production path? Jump to [§7 Build &amp; Deploy](#7-build--deploy).
 </p>
 
 ---
+
+## Current website and remote prompts · 23 November
+
+The signed-in `/tlamatini-rc` page sends typed prompts to a ready local Tlamatini
+account explicitly approved in XT. The existing outgoing HTTPS poll carries real
+commands/results separately from inert diagnostics. The server exposes `rc` and
+`rcCommands` alongside `auth`, `notes` and `ping`; persistent RC tables include
+`rc_computers`, `rc_messages` and `rc_commands`. English and Spanish page copy
+describes the same behavior.
+
+Ask Execs follows Tlamatini's selective policy, so Monitor Netstat can run without
+asking. The corrected source label is **Ask before protected actions**. Its
+candidate built but was not promoted. Phone prompt/answer, reload and approval
+display passed for installed English; actual denial/no-execution and cancellation
+remain pending after testing was stopped. HTTPS is not end-to-end/PQ encryption.
+See [the complete guide](docs/remote-prompts.md) and its evidence/rollout section. Current release
+numbers and application code are unchanged by this documentation pass.
 
 ## Table of Contents
 
@@ -554,11 +580,11 @@ encoding policy, measured savings, and verification scope.
 │            ▼  @trpc/react-query                        ▼                        │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │  HONO SERVER  (api/boot.ts)                                                    │
-│   /api/trpc/*  ─► appRouter { ping · auth · notes }   /api/oauth/{start,cb}     │
+│   /api/trpc/*  ─► appRouter { ping · auth · notes · rc · rcCommands }   /api/oauth/{start,cb}     │
 │   middleware → context (session user + DB)            Google OAuth · jose JWT   │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │  DATA                                                                          │
-│   Drizzle ORM ─► MySQL  (users · notes)                                        │
+│   Drizzle ORM ─► MySQL  (users · notes · RC computers/messages/commands)                                        │
 └──────────────────────────────────────────────────────────────────────────────┘
             built into one Docker image ─► GCP VM (NGINX/HTTPS + systemd)
 ```

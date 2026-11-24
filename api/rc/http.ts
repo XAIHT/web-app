@@ -12,6 +12,8 @@ import { RC_LIMITS } from "@contracts/rc";
 import { beginPoll, endPoll, waitForComputer } from "./hub";
 import { hashComputerKey, keyFromAuthorization } from "./keys";
 import { getRcStore, type RcComputer } from "./store";
+import { getRcCommandStore } from "./command-store";
+import { RC_COMMAND_LIMITS, rcCommandResultInput } from "@contracts/rc-command";
 
 type NodeBindings = { incoming?: { socket?: { remoteAddress?: string } } };
 
@@ -58,16 +60,25 @@ export function registerRcRoutes<E extends Env>(app: Hono<E>, options: { checkEv
     beginPoll(computer.id);
     try {
       for (;;) {
+        // A removed computer must lose even an already waiting long poll.
+        if ((await computerFor(c))?.id !== computer.id) return unauthorized(c);
         const now = new Date();
         const ready = await store.takeDeliverable(computer.id, now, new Date(now.getTime() - RC_LIMITS.redeliverAfterMs));
+        // Old clients know only inert log messages. They must not lease executable
+        // work that they cannot handle, leaving it stuck in a delivered state.
+        const commands = c.req.header("x-tlachihuani-command-protocol") === "1"
+          ? await getRcCommandStore().takeDeliverable(computer.id, now) : [];
         const remaining = deadline - Date.now();
-        if (ready.length > 0 || remaining <= 0 || signal?.aborted) {
+        if (ready.length > 0 || commands.length > 0 || remaining <= 0 || signal?.aborted) {
+          if ((await computerFor(c))?.id !== computer.id) return unauthorized(c);
           await store.touchComputer(computer.id, seen(c), new Date());
           c.header("Cache-Control", "no-store");
           return c.json({
-            computer: { id: computer.id, name: computer.name },
+            computer: { id: computer.id, name: computer.name, user_id: computer.userId },
             server_time: new Date().toISOString(),
             messages: ready.map((m) => ({ id: m.id, payload: JSON.parse(m.payload) as unknown })),
+            commands: commands.map(command => ({ id: command.id, delivery_id: command.deliveryId,
+              payload: JSON.parse(command.payload) as unknown })),
           });
         }
         await waitForComputer(computer.id, Math.min(checkEveryMs, remaining), signal);
@@ -93,5 +104,44 @@ export function registerRcRoutes<E extends Env>(app: Hono<E>, options: { checkEv
     await getRcStore().touchComputer(computer.id, seen(c), new Date());
     c.header("Cache-Control", "no-store");
     return c.json({ acknowledged });
+  });
+
+  app.post("/api/rc/result", async (c) => {
+    c.header("Cache-Control", "no-store");
+    const computer = await computerFor(c);
+    if (!computer) return unauthorized(c);
+    // Bound actual bytes, not just an optional or attacker-controlled Content-Length.
+    const reader = c.req.raw.body?.getReader();
+    if (!reader) return c.json({ error: "A JSON result is required." }, 400);
+    const chunks: Uint8Array[] = [];
+    let length = 0;
+    try {
+      for (;;) {
+        const chunk = await reader.read();
+        if (chunk.done) break;
+        length += chunk.value.byteLength;
+        if (length > RC_COMMAND_LIMITS.responseBodyBytes) {
+          await reader.cancel();
+          return c.json({ error: "The result exceeds the response limit." }, 413);
+        }
+        chunks.push(chunk.value);
+      }
+    } finally { reader.releaseLock(); }
+    const bytes = new Uint8Array(length);
+    let offset = 0;
+    for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
+    let raw: unknown;
+    try { raw = JSON.parse(new TextDecoder("utf-8", { fatal: true }).decode(bytes)); }
+    catch { return c.json({ error: "Send a valid UTF-8 JSON result." }, 400); }
+    const parsed = rcCommandResultInput.safeParse(raw);
+    if (!parsed.success) return c.json({ error: "Invalid result identity, sequence, status or error." }, 400);
+    const input = parsed.data;
+    const resultLength = new TextEncoder().encode(JSON.stringify({ ok: input.ok, result: input.result, error: input.error })).length;
+    if (resultLength > RC_COMMAND_LIMITS.resultBytes) return c.json({ error: "The result exceeds the response limit. Use response.content for large answers." }, 413);
+    if ((await computerFor(c))?.id !== computer.id) return unauthorized(c);
+    const accepted = await getRcCommandStore().saveResult(computer.id, input, new Date());
+    if (!accepted) return c.json({ error: "The operation lease is stale, revoked, expired or already completed." }, 409);
+    await getRcStore().touchComputer(computer.id, seen(c), new Date());
+    return c.json({ accepted: true, id: input.id, sequence: input.sequence });
   });
 }

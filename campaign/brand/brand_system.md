@@ -177,3 +177,10 @@ Investor proof:
 
 > XAIHT is building the human-commanded operations layer between frontier models and the tools, engines, and machines where work actually happens.
 
+## Current product alignment · 23 November 2026
+
+Product documentation reconciled on **23 November 2026** from the English and Spanish development sources and the matching Tlachihuani/website evidence. **Tlamatini 1.97.0 remains the latest released version.** The documentation refresh does not change runtime code or version metadata. The existing website design is unchanged.
+
+Multi-document Canvas supports explicit per-document context; merely opening a tab does not include it in a prompt. The signed-in website can send real prompts to a ready, locally approved account through XT and Remote-Controller. Phone prompt/answer, reload and approval display were confirmed for English. Denial/no-execution, cancellation, reconnect and other-edition phone acceptance remain unfinished. Ask Execs is selective; Netstat is exempt. The HTTPS website relay is not end-to-end or post-quantum encrypted and does not capture phone audio. See [remote behavior and evidence](../../docs/remote-prompts.md).
+
+Tlamatini controls Unreal Engine and Blender; STM32er and ESP32er connect firmware work to real hardware. She speaks with Talker and listens with Whisperer. Keep those capabilities prominent without implying that desktop voice controls provide a phone microphone transport.

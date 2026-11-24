@@ -23,7 +23,7 @@ This position creates a credible wedge between coding agents, automation platfor
 - **Category:** Human-commanded AI operations.
 - **Company promise:** Intelligence under human command.
 - **Product promise:** Your machine. Your agents. Your command.
-- **Proof line:** 85 agents, 94 Multi-Turn tools, 27 skills, visual workflows, local-first context, and direct engine/hardware bridges.
+- **Proof line:** 87 agents, 111 built-in Multi-Turn tools, 29 skills, visual workflows, local-first context, and direct engine/hardware bridges.
 
 ## Priority audiences
 
@@ -80,8 +80,8 @@ Local-first AI operations for software, creative engines, embedded hardware, and
 - Do not say Tlamatini is autonomous without stating operator controls and authorization.
 - Do not claim enterprise certifications, revenue, customers, market share, or benchmark leadership.
 - Do not claim all processing is local. The application and retrieval stack are local-first, while configured LLMs or connectors may be cloud services.
-- Do not claim the newest release is `v1.40.1`; the live release resolves to `v1.41.3`.
-- Do not repeat the stale `75 tools` total; the current inventory is 94 Multi-Turn tools.
+- Do not claim the newest release is `v1.40.1`; the latest released version remains `1.97.0`.
+- Do not repeat the stale `75 tools` total; the current inventory is 111 built-in Multi-Turn tools.
 - Do not repeat old 82-agent copy; the live inventory is 85.
 - Do not use changing third-party subscription prices as the core value proposition.
 
@@ -125,7 +125,7 @@ The minimum 20-image gallery will use four images per chapter. Each image must b
 
 ### Phase 0 - Proof before promotion, days 0-14
 
-- Align website and campaign on `v1.41.3`, 85 agents, 94 Multi-Turn tools, and 27 skills.
+- Align website and campaign on `1.97.0`, 87 agents, 111 built-in Multi-Turn tools, and 29 skills.
 - Publish the claims ledger and security/responsibility boundary.
 - Package three reproducible hero demos: Unreal/Blender, embedded robotic loop, and project-to-workflow automation.
 - Capture proof artifacts: screen recordings, workflow files, build logs, and final outputs.
@@ -210,3 +210,10 @@ The investable thesis is not that XAIHT has already won a horizontal market. It 
 - A disciplined plan to discover the highest-value vertical rather than fabricated traction.
 - A scenario-based capital plan clearly labeled as an assumption.
 
+## Current product alignment · 23 November 2026
+
+Product documentation reconciled on **23 November 2026** from the English and Spanish development sources and the matching Tlachihuani/website evidence. **Tlamatini 1.97.0 remains the latest released version.** The documentation refresh does not change runtime code or version metadata. The existing website design is unchanged.
+
+Multi-document Canvas supports explicit per-document context; merely opening a tab does not include it in a prompt. The signed-in website can send real prompts to a ready, locally approved account through XT and Remote-Controller. Phone prompt/answer, reload and approval display were confirmed for English. Denial/no-execution, cancellation, reconnect and other-edition phone acceptance remain unfinished. Ask Execs is selective; Netstat is exempt. The HTTPS website relay is not end-to-end or post-quantum encrypted and does not capture phone audio. See [remote behavior and evidence](../../docs/remote-prompts.md).
+
+Tlamatini controls Unreal Engine and Blender; STM32er and ESP32er connect firmware work to real hardware. She speaks with Talker and listens with Whisperer. Keep those capabilities prominent without implying that desktop voice controls provide a phone microphone transport.

@@ -12,6 +12,27 @@
 
 ---
 
+## Repository scope
+
+This checkout is the **XAIHT website**, built with React 19, Hono, tRPC and MySQL. Use [README.md](README.md) for its file layout and commands, and [the remote-prompt guide](docs/remote-prompts.md) for its integration contract. The desktop Django architecture, file paths, commands and inventories retained below are inherited **Tlamatini product reference**, not the website repository layout. Dated desktop descriptions are historical; the current English product inventory is recorded in [the campaign ledger](campaign/research/product_claims_ledger.md). Private-data, author-attribution and development-execution rules still apply.
+
+## Current website and remote prompts · 23 November
+
+The signed-in `/tlamatini-rc` page sends typed prompts to a ready local Tlamatini
+account explicitly approved in XT. The existing outgoing HTTPS poll carries real
+commands/results separately from inert diagnostics. The server exposes `rc` and
+`rcCommands` alongside `auth`, `notes` and `ping`; persistent RC tables include
+`rc_computers`, `rc_messages` and `rc_commands`. English and Spanish page copy
+describes the same behavior.
+
+Ask Execs follows Tlamatini's selective policy, so Monitor Netstat can run without
+asking. The corrected source label is **Ask before protected actions**. Its
+candidate built but was not promoted. Phone prompt/answer, reload and approval
+display passed for installed English; actual denial/no-execution and cancellation
+remain pending after testing was stopped. HTTPS is not end-to-end/PQ encryption.
+See [the complete guide](docs/remote-prompts.md) and its evidence/rollout section. Current release
+numbers and application code are unchanged by this documentation pass.
+
 ## 1. Project Identity
 
 **Name**: Tlamatini (Nahuatl for "one who knows")
@@ -24,7 +45,7 @@
 **What it is**: A locally-deployed AI developer assistant built with Django, featuring:
 - Advanced RAG system (FAISS + BM25 hybrid, metadata extraction, context budgeting, fallback mode)
 - Request-scoped Multi-Turn orchestration with dynamic tool binding and global execution planning
-- **Ask Execs** — optional human-in-the-loop gate that BLOCKS before every Multi-Turn tool execution on a browser Proceed/Deny prompt (bridged by `agent/exec_permission.py`); Deny halts the chain and shows a red "Execution interrupted" banner
+- **Ask Execs** — optional human-in-the-loop gate that BLOCKS before protected Multi-Turn tool executions covered by the current selective policy on a browser Proceed/Deny prompt (bridged by `agent/exec_permission.py`); Deny halts the chain and shows a red "Execution interrupted" banner
 - **ACPX** — Agent Communication Protocol eXtension: spawn external coding-agent CLIs (Claude Code, Cursor, Codex, Gemini, Kimi, etc.) as child processes with permission gating, NDJSON transcripts, and skill invocation
 - **External MCPs** — a config-driven **universal MCP client** (`agent/external_mcp_manager.py`, catalog `agent/external_mcps.json`) that connects to ANY external MCP server declared in a `.mcp.json`-style JSON file over FOUR transports (`stdio` local command / `streamable-http` / legacy `sse` / `websocket`), binds the remote tools to the LLM as `ext__<server>__<tool>`, and exposes eight LLM supervisor tools. Bulletproof: connects run OFF the chat path, a bad/unreachable/unsupported server is catalogued-with-reason (never crashes or hangs), ≤5 active at once. **Distinct** from the two built-in `Mcp`-model context providers (System-Metrics / Files-Search), from ACPX, and from the per-agent inline MCP clients (STM32er / Kalier). See Section 9b
 - **Skills** — Markdown-driven, budgeted, auditable capability packages (`SKILL.md` frontmatter) with OpenClaw-compatible surface
@@ -92,7 +113,7 @@ Layer 7: Flow Compiler (Backend)
 5. Chain selection (RAG / Basic / Unified Agent)
 6. Multi-Turn gate: checked = planner/dynamic binding; unchecked = legacy one-shot
 7. ACPX gate: when checked, ACPX/Skill tools are added to planner surface; when unchecked, they are stripped
-7b. Ask-Execs gate (Multi-Turn-only): when `ask_execs_enabled`, the executor BLOCKS before every state-changing tool on a browser Proceed/Deny prompt (`agent/exec_permission.py::ExecPermissionBroker`); Deny halts the chain and appends a red "Execution interrupted" banner
+7b. Ask-Execs gate (Multi-Turn-only): when `ask_execs_enabled`, the executor BLOCKS before tools classified as requiring approval by the current selective policy on a browser Proceed/Deny prompt (`agent/exec_permission.py::ExecPermissionBroker`); Deny halts the chain and appends a red "Execution interrupted" banner
 8. Context prefetch (system/file MCP)
 9. Execution loop (tool calls, wrapped agent monitoring, ACPX session management)
 10. Streaming response via WebSocket
@@ -415,7 +436,7 @@ Binding every enabled tool every turn would balloon the prompt, so two cost trim
 
 ### Ask-Execs Gating (per-tool Proceed/Deny — Multi-Turn-only)
 - Fourth toolbar checkbox **Ask Execs** (between ACPX and internet), enabled only while Multi-Turn is on; sent as `ask_execs_enabled` and re-gated on `multi_turn_enabled` everywhere
-- The synchronous executor (worker thread) BLOCKS before every state-changing tool on a browser Proceed/Deny dialog, bridged by `agent/exec_permission.py::ExecPermissionBroker` (consumer registers a per-request broker keyed by user id; executor emits `exec_permission_request` onto the consumer loop via `asyncio.run_coroutine_threadsafe` and waits on a `threading.Event`; browser `exec-permission-response` → `resolve_permission` unblocks it)
+- The synchronous executor (worker thread) BLOCKS before tools classified as requiring approval by the current selective policy on a browser Proceed/Deny dialog, bridged by `agent/exec_permission.py::ExecPermissionBroker` (consumer registers a per-request broker keyed by user id; executor emits `exec_permission_request` onto the consumer loop via `asyncio.run_coroutine_threadsafe` and waits on a `threading.Event`; browser `exec-permission-response` → `resolve_permission` unblocks it)
 - Gate runs **after** dedup + quota, **before** `tool.invoke`; `_requires_exec_permission` exempts `_MANAGEMENT_TOOLS` ∪ `_TOOL_QUOTA_EXEMPT` (read-only/polling tools are never prompted)
 - **Deny halts the whole chain**: `_exec_denied` recorded → `exec_report_denied` flows executor → both chains → `interface.ask_rag` (`last_exec_report_denied`) → consumer → `response_parser` appends the red "Execution interrupted" banner (after exec-report tables, before save_message; independent of `exec_report_enabled`)
 - Fail-safe: emit failure / Cancel / broker `close()` all resolve to `deny`; only "no broker registered" fails open. `ask_execs_enabled` + `conversation_user_id` MUST stay in `UnifiedAgentChain.invoke`'s payload whitelist

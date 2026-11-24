@@ -11,6 +11,23 @@
 
 ---
 
+## Current website and remote prompts · 23 November
+
+The signed-in `/tlamatini-rc` page sends typed prompts to a ready local Tlamatini
+account explicitly approved in XT. The existing outgoing HTTPS poll carries real
+commands/results separately from inert diagnostics. The server exposes `rc` and
+`rcCommands` alongside `auth`, `notes` and `ping`; persistent RC tables include
+`rc_computers`, `rc_messages` and `rc_commands`. English and Spanish page copy
+describes the same behavior.
+
+Ask Execs follows Tlamatini's selective policy, so Monitor Netstat can run without
+asking. The corrected source label is **Ask before protected actions**. Its
+candidate built but was not promoted. Phone prompt/answer, reload and approval
+display passed for installed English; actual denial/no-execution and cancellation
+remain pending after testing was stopped. HTTPS is not end-to-end/PQ encryption.
+See [the complete guide](docs/remote-prompts.md) and its evidence/rollout section. Current release
+numbers and application code are unchanged by this documentation pass.
+
 ## Table of contents
 
 - **Part I — The 10,000-foot view**
@@ -1155,3 +1172,26 @@ monospace font and the boxes will snap back into shape.
 Now you can read the codebase the way you'd read a map — go to whichever
 diagram answers the question you have, then follow its arrows back into
 the source.
+
+## Hosted prompt lifecycle
+
+```mermaid
+sequenceDiagram
+    participant P as Signed-in phone
+    participant W as Website / MySQL
+    participant X as XT outgoing poll
+    participant R as Local Remote-Controller
+    participant T as Approved Tlamatini account
+    P->>W: rcCommands submit (ID + prompt + options)
+    X->>W: Poll with computer credentials
+    W-->>X: Typed command and delivery lease
+    X->>R: Account-bound dispatch
+    R->>T: Execute through existing engine
+    T-->>R: Status / selective approval / answer
+    R-->>X: Operation receipt and result
+    X->>W: Ordered snapshots / verified full-answer chunks
+    P->>W: Refresh existing request; approve/deny/cancel when applicable
+    W-->>P: Persisted status and answer
+```
+
+The original diagnostic-message route remains inert. HTTPS terminates at the website, which sees and stores prompt/answer content. This diagram does not imply E2E/PQ encryption, inbound PC ports, a remote desktop or phone microphone transport. The `rc` and `rcCommands` routers accompany `auth`, `notes` and `ping`; MySQL includes `rc_computers`, `rc_messages` and `rc_commands`.

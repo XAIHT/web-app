@@ -22,6 +22,9 @@ export const RC_LIMITS = {
   message: 4000,
   computersPerUser: 10,
   queuedPerComputer: 100,
+  // Eight legacy messages plus eight executable commands stay below XT's
+  // 512 KiB poll-body limit, even with maximum JSON control-character escaping.
+  deliveryBatchSize: 8,
   // The computer counts as online while it is asking, or if it asked this recently.
   onlineWindowMs: 40_000,
   // Longest single wait of one request from Tlachihuani (nginx allows 60 s).

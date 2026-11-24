@@ -1,15 +1,15 @@
 # XAIHT / Tlamatini Product Claims Ledger
 
-Snapshot date: 2026-07-15
+Product documentation review: 2026-11-23; cited external research retains its original dates.
 
-Authoritative product root: `C:\Development\Tlamatini`
+Authoritative product root: `C:\Development\XAIHT\Tlamatini`
 
 Website root: `C:\Development\XAIHT\web-app`
 
 ## Authority order
 
 1. Live source and executable inventory.
-2. Current Git tag and history.
+2. Angela’s declared released version and matching current manifests; Git history remains provenance.
 3. Current generated project dossier.
 4. README and Book for stable operator narrative.
 5. Website copy only after reconciliation with the sources above.
@@ -18,13 +18,13 @@ Website root: `C:\Development\XAIHT\web-app`
 
 | Claim | Evidence | Qualification |
 | --- | --- | --- |
-| Current resolved release is `v1.41.3` | `git describe --tags` and `agent/version.py` | HEAD is one documentation commit after the tag |
-| 85 workflow agents | 85 directories under `Tlamatini/agent/agents/` containing `config.yaml`; generator `collect_context()` | Agent count is separate from tools and skills |
-| 94 Multi-Turn tools | 62 wrapped chat-agent tools + 20 core Python tools + 12 ACPX/Skill tools from the live generator | Say `Multi-Turn tools`, not generic integrations |
-| 27 skills | 27 directories under `Tlamatini/agent/skills_pkg/` containing `SKILL.md` | Skills are playbooks, not workflow agents |
+| Latest released version is `1.97.0` | Existing product release documentation and manifests | No version bump in this review |
+| 87 workflow agents | Current `collect_facts()` inventory | Separate from tools and skills |
+| 111 built-in Multi-Turn tools | 68 wrapped + 21 core + 12 ACPX/Skill + 10 MCP supervisors | External MCP tools are additional |
+| 29 skills | Current package inventory | Playbooks, not workflow agents |
 | Local-first application and retrieval | Django/Channels app, SQLite, FAISS/BM25 stack in source and architecture docs | Configured model inference and external connectors may be remote |
 | Visual workflow designer | ACP templates, JavaScript modules, flow compiler, `.flw` schema | Saved flows still depend on configured local tools and credentials |
-| Human-gated execution | Ask Execs permission broker, Step-by-Step mode, hard-cancel run epoch | Gates work only when enabled and cannot replace user judgment |
+| Human-gated execution | Ask Execs permission broker, Step-by-Step mode, hard-cancel run epoch | Selective policy; Netstat and other documented exemptions do not ask. Cannot replace user judgment |
 | Direct Unreal Engine control | Unrealer plus XAIHT Unreal MCP fork and documented 53-command surface | Unreal Editor/plugin must be installed and reachable |
 | One-prompt Unreal Engine 5.8 C++ scaffold | Unreal scaffold implementation and docs | Depends on local engine/toolchain availability |
 | Direct Blender control | Blenderer and Blender MCP integration | Blender and its add-on/listener must be available |
@@ -40,24 +40,26 @@ Website root: `C:\Development\XAIHT\web-app`
 
 ## Current quantitative snapshot
 
-Collected through `Tlamatini/agent/doc_generation/complete_project_docs.py::collect_context()`:
+Source: `complete_project_docs.py::collect_facts()`, 23 November 2026. Counts include the current working tree; tracked-file totals remain explicitly tracked. Effective authored lines exclude vendored frontend code, comments, blanks and docstrings.
 
 | Metric | Current value |
 | --- | ---: |
-| Tracked files | 839 |
-| Effective authored lines | 176,259 |
-| Physical text lines | 248,443 |
-| Workflow agents | 85 |
-| Wrapped chat-agent tools | 62 |
-| Core Python tools | 20 |
+| Release | 1.97.0 |
+| Tracked files | 1,920 |
+| Effective authored lines | 385,010 |
+| Physical text lines | 634,736 |
+| Workflow agents | 87 |
+| Wrapped chat-agent tools | 68 |
+| Core Python tools | 21 |
 | ACPX/Skill tools | 12 |
-| Total Multi-Turn tools | 94 |
-| Skills | 27 |
-| Requirements | 79 |
-| Frontend JavaScript modules | 32 |
-| Frontend CSS files | 9 |
-| Frontend HTML templates | 4 |
-| Django migrations | 176 |
+| MCP supervisor tools | 10 |
+| Total built-in Multi-Turn tools | 111 |
+| Skills | 29 |
+| Requirements | 264 |
+| Frontend JavaScript modules | 65 |
+| Frontend CSS files | 31 |
+| Frontend HTML templates | 10 |
+| Django migrations | 226 |
 
 ## Stale claims to remove from new campaign surfaces
 
@@ -112,3 +114,8 @@ These are contextual evidence, not measured Tlamatini outcomes.
 - Dify: https://dify.ai/
 - LangGraph: https://www.langchain.com/langgraph
 
+## Canvas and hosted remote claims
+
+Product documentation reconciled on **23 November 2026** from the English and Spanish development sources and the matching Tlachihuani/website evidence. **Tlamatini 1.97.0 remains the latest released version.** The documentation refresh does not change runtime code or version metadata. The existing website design is unchanged.
+
+Multi-document Canvas supports explicit per-document context; merely opening a tab does not include it in a prompt. The signed-in website can send real prompts to a ready, locally approved account through XT and Remote-Controller. Phone prompt/answer, reload and approval display were confirmed for English. Denial/no-execution, cancellation, reconnect and other-edition phone acceptance remain unfinished. Ask Execs is selective; Netstat is exempt. The HTTPS website relay is not end-to-end or post-quantum encrypted and does not capture phone audio. See [remote behavior and evidence](../../docs/remote-prompts.md).

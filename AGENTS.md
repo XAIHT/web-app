@@ -29,9 +29,30 @@ Enforced by: `test_private_data_guard.py` (automated tests) + a global CAPS Sess
 
 # Tlamatini - AGENTS.md
 
-This is the authoritative onboarding document for any AI assistant (Codex, Cursor, Gemini CLI, Antigravity IDE, etc.) working on the Tlamatini project. Read this file in full before making any changes, then follow the `@docs/Codex/*.md` imports below — each specialized file is automatically included in your context.
+This is the authoritative onboarding document for any AI assistant (Codex, Cursor, Gemini CLI, Antigravity IDE, etc.) working on this XAIHT website checkout. Read the repository scope below and this file in full before making any changes, then follow the `@docs/Codex/*.md` imports below — each specialized file is automatically included in your context.
 
 ---
+
+## Repository scope
+
+This checkout is the **XAIHT website**, built with React 19, Hono, tRPC and MySQL. Use [README.md](README.md) for its file layout and commands, and [the remote-prompt guide](docs/remote-prompts.md) for its integration contract. The desktop Django architecture, file paths, commands and inventories retained below are inherited **Tlamatini product reference**, not the website repository layout. Dated desktop descriptions are historical; the current English product inventory is recorded in [the campaign ledger](campaign/research/product_claims_ledger.md). Private-data, author-attribution and development-execution rules still apply.
+
+## Current website and remote prompts · 23 November
+
+The signed-in `/tlamatini-rc` page sends typed prompts to a ready local Tlamatini
+account explicitly approved in XT. The existing outgoing HTTPS poll carries real
+commands/results separately from inert diagnostics. The server exposes `rc` and
+`rcCommands` alongside `auth`, `notes` and `ping`; persistent RC tables include
+`rc_computers`, `rc_messages` and `rc_commands`. English and Spanish page copy
+describes the same behavior.
+
+Ask Execs follows Tlamatini's selective policy, so Monitor Netstat can run without
+asking. The corrected source label is **Ask before protected actions**. Its
+candidate built but was not promoted. Phone prompt/answer, reload and approval
+display passed for installed English; actual denial/no-execution and cancellation
+remain pending after testing was stopped. HTTPS is not end-to-end/PQ encryption.
+See [the complete guide](docs/remote-prompts.md) and its evidence/rollout section. Current release
+numbers and application code are unchanged by this documentation pass.
 
 ## Project Identity
 
@@ -265,7 +286,7 @@ LLM Backends: Ollama (local) | Anthropic Codex (cloud) | Qwen (vision)
 5. Chain selection (RAG / Basic / Unified Agent)
 6. Multi-Turn gate: checked = planner/dynamic binding; unchecked = legacy one-shot
 7. ACPX gate: when `acpx_enabled=False`, `agent.acpx.filter_acpx_tools()` strips every ACPX/Skill tool name from the bound tool list before the planner / executor see them, forcing the system back onto its legacy Multi-Turn / one-shot behavior
-7b. Ask-Execs gate (Multi-Turn-only): when `ask_execs_enabled=True`, the executor BLOCKS before every state-changing tool on a browser Proceed/Deny prompt, bridged by `agent/exec_permission.py::ExecPermissionBroker` (consumer registers a per-request broker keyed by user id; executor thread emits `exec_permission_request` onto the consumer loop via `run_coroutine_threadsafe` and waits on a `threading.Event`; the browser's `exec-permission-response` → `resolve_permission` unblocks it). **Deny halts the whole chain** and surfaces a red "Execution interrupted" banner; the round-trip is fail-safe (emit failure / Cancel / `close()` all resolve to *deny*). The flag must stay in `UnifiedAgentChain.invoke`'s payload-rebuild whitelist alongside `conversation_user_id` (same drop-on-rebuild bug class as `exec_report_enabled`). See `docs/Codex/multi-turn.md` → *Ask Execs* and `docs/Codex/recent-fixes.md` (2026-05-29)
+7b. Ask-Execs gate (Multi-Turn-only): when `ask_execs_enabled=True`, the executor BLOCKS before tools classified as requiring approval by the current selective policy on a browser Proceed/Deny prompt, bridged by `agent/exec_permission.py::ExecPermissionBroker` (consumer registers a per-request broker keyed by user id; executor thread emits `exec_permission_request` onto the consumer loop via `run_coroutine_threadsafe` and waits on a `threading.Event`; the browser's `exec-permission-response` → `resolve_permission` unblocks it). **Deny halts the whole chain** and surfaces a red "Execution interrupted" banner; the round-trip is fail-safe (emit failure / Cancel / `close()` all resolve to *deny*). The flag must stay in `UnifiedAgentChain.invoke`'s payload-rebuild whitelist alongside `conversation_user_id` (same drop-on-rebuild bug class as `exec_report_enabled`). See `docs/Codex/multi-turn.md` → *Ask Execs* and `docs/Codex/recent-fixes.md` (2026-05-29)
 8. Context prefetch (system/file MCP)
 9. Execution loop (tool calls, wrapped agent monitoring, ACPX child-process drain); **every model step is wrapped by a per-request self-healing invoker** (`agent/self_healing.py::SelfHealingInvoker`, 2026-07-06) that retries distinct recovery tactics under a per-attempt watchdog (`unified_agent_llm_step_timeout_seconds`, 80 s) up to `unified_agent_llm_step_max_tactics` (4096) — so a transient model failure **never hangs, never discards work already done** (it degrades gracefully from the agents that already ran, preserving the Create-Flow button + Exec report), and **never yields a silent/untruthful answer** (a `recovery_preamble` always tells the user what happened, and live retry status is streamed to the chat via `register_status_broadcaster`). Only the user's Cancel or an exhausted tactic ladder stops it (`ModelStepUnrecoverable`). See `docs/Codex/multi-turn.md` → *Self-healing model steps* and `docs/Codex/recent-fixes.md` (2026-07-06)
 10. Streaming response via WebSocket; whenever Multi-Turn ran with **≥1 successfully-executed agent**, the chat header renders a **Create Flow** button that converts **only the successfully-executed** tool calls into a downloadable `.flw` (the browser POSTs the successful-only draft to `/agent/flow_from_tool_calls/`, which normalizes it through `FlowSpec` and redacts known secret fields before download). There is no whole-answer SUCCESS/FAILURE classifier (removed 2026-07-06)

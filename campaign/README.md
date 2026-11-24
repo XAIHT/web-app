@@ -10,20 +10,30 @@ This directory is the source of truth for the commercial launch of XAIHT and its
 
 Primary launch line: **Your machine. Your agents. Your command.**
 
-## Live product snapshot
+## Current product snapshot
 
-Snapshot taken 2026-07-15 from `C:\Development\Tlamatini`:
+Product documentation reconciled on **23 November 2026** from the English and Spanish development sources and the matching Tlachihuani/website evidence. **Tlamatini 1.97.0 remains the latest released version.** The documentation refresh does not change runtime code or version metadata. The existing website design is unchanged.
 
-- Resolved release: `v1.41.3`.
-- Current repository HEAD: `c7c3fa10b2d51f4d40797b644d5e0f40cff4eaa5`, one documentation commit after the release tag.
-- 85 workflow-agent templates with `config.yaml`.
-- 94 Multi-Turn tools: 62 wrapped chat-agent tools, 20 core Python tools, and 12 ACPX/Skill tools.
-- 27 `SKILL.md` packages.
-- 176 Django migrations.
-- 839 tracked files and 176,259 effective authored lines in the live dossier inventory.
-- MIT-licensed application with a Windows-first installed path and source mode.
+Multi-document Canvas supports explicit per-document context; merely opening a tab does not include it in a prompt. The signed-in website can send real prompts to a ready, locally approved account through XT and Remote-Controller. Phone prompt/answer, reload and approval display were confirmed for English. Denial/no-execution, cancellation, reconnect and other-edition phone acceptance remain unfinished. Ask Execs is selective; Netstat is exempt. The HTTPS website relay is not end-to-end or post-quantum encrypted and does not capture phone audio. See [remote behavior and evidence](../docs/remote-prompts.md).
 
-The campaign implementation corrected the former public-site `v1.40.1` and `75 tools` copy. Those figures remain documented here only as prohibited stale claims.
+| Metric | Current value |
+| --- | ---: |
+| Release | 1.97.0 |
+| Tracked files | 1,920 |
+| Effective authored lines | 385,010 |
+| Physical text lines | 634,736 |
+| Workflow agents | 87 |
+| Wrapped chat-agent tools | 68 |
+| Core Python tools | 21 |
+| ACPX/Skill tools | 12 |
+| MCP supervisor tools | 10 |
+| Total built-in Multi-Turn tools | 111 |
+| Skills | 29 |
+| Requirements | 264 |
+| Frontend JavaScript modules | 65 |
+| Frontend CSS files | 31 |
+| Frontend HTML templates | 10 |
+| Django migrations | 226 |
 
 ## Deliverables
 
@@ -49,3 +59,22 @@ The campaign implementation corrected the former public-site `v1.40.1` and `75 t
 4. Plain-Python agents are user-controlled operating code. The user owns authorization, credential scope, target selection, and operational jurisdiction.
 5. The launch presents Tlamatini as an operator layer, not as a magical replacement for engineering judgment.
 6. Regional impact estimates are scenarios, not forecasts, and must not be presented as measured Tlamatini outcomes.
+
+## Regenerating the reviewed documents
+
+The 23 November documentation pass preserves generator code. The existing paper
+generator still contains July product-snapshot constants; this review supplied
+the current version, inventory and cover metadata in memory. Future regeneration
+must take the product values from the current ledger above, while retaining the
+15 July dates of external research. The reviewed cover preserves the photograph's
+aspect ratio and wraps the full title at word boundaries. Keep the Markdown
+paper, extracted TXT, PDF and editable deck claims consistent, then render every
+page and slide again.
+
+The English and Spanish desktop guides at
+`docs/changes/2026-11-23-hosted-remote-prompts.md` in their respective repositories
+contain the shared PDF/PPTX chapter data and regeneration instructions. Those
+instructions extend the existing architecture chapter rather than adding a tenth
+contents entry. Preserve the dated atlas inventory when regenerating its current
+remote-control supplement. A documentation regeneration does not change release
+numbers or establish new runtime test results.

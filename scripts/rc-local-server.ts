@@ -20,6 +20,10 @@ import { rcRouter } from "../api/rc-router";
 import { registerRcRoutes } from "../api/rc/http";
 import { createMemoryRcStore } from "../api/rc/memory-store";
 import { setRcStore } from "../api/rc/store";
+import { rcCommandRouter } from "../api/rc-command-router";
+import { createMemoryRcCommandStore } from "../api/rc/memory-command-store";
+import { setRcCommandStore } from "../api/rc/command-store";
+import { env } from "../api/lib/env";
 
 const port = Number.parseInt(process.argv[2] ?? "8095", 10);
 if (!Number.isInteger(port) || [8000, 8052, 12064, 3000].includes(port)) {
@@ -39,11 +43,15 @@ const testUser: User = {
   role: "user", createdAt: now, updatedAt: now, lastSignInAt: now,
 };
 setRcStore(createMemoryRcStore());
+setRcCommandStore(createMemoryRcCommandStore());
+// Isolated local harness only: production keeps its configured public origin.
+env.publicBaseUrl = `http://127.0.0.1:${port}`;
 
 const router = createRouter({
   ping: publicQuery.query(() => ({ ok: true, ts: Date.now() })),
   auth: authRouter,
   rc: rcRouter,
+  rcCommands: rcCommandRouter,
 });
 
 const app = new Hono();

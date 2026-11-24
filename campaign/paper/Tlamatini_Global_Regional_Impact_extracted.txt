@@ -1,29 +1,28 @@
-
---- PAGE 1 ---
+PAGE 1
 XAIHT RESEARCH / PROSPECTIVE ASSESSMENT
-Human-Comma
-nded Agentic
-Operations and
-the Diffusion of
-Applied AI
+Human-Commanded
+Agentic Operations
+and the Diffusion
+of Applied AI
 A prospective global and regional impact
 assessment of XAIHT Tlamatini
-Evidence snapshot: 15 July 2026
-Product snapshot: Tlamatini v1.41.3
+External research: 15 July 2026
+Product review: Tlamatini 1.97.0, 23 November 2026
 Status: scenarios and research hypotheses, not measured
 population-level outcomes
 
---- PAGE 2 ---
+
+PAGE 2
 XAIHT / TLAMATINI
 PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
+External research: 15 July 2026
 2
 A prospective global and regional impact
 assessment of XAIHT Tlamatini
 Research paper and policy brief
-Evidence snapshot: 15 July 2026 Product snapshot: Tlamatini v1.41.3; 85 workflow agents; 94 Multi-Turn tools;
-27 skills Status: Prospective analysis. Tlamatini has not yet produced measured population-level economic or social
-outcomes.
+External research snapshot: 15 July 2026; product documentation refreshed 23 November 2026 Product
+snapshot: Tlamatini 1.97.0; 87 workflow agents; 111 built-in Multi-Turn tools; 29 skills Status: Prospective analysis.
+Tlamatini has not yet produced measured population-level economic or social outcomes.
 Abstract
 Agentic artificial intelligence is shifting the unit of value from generated content to bounded action
 across software, tools, and physical systems. This paper examines the possible global and regional
@@ -62,15 +61,16 @@ This shift matters because the bottleneck in applied AI is rarely model output a
 to the right files, credentials, software versions, devices, project state, network boundaries, and human authority. A
 capable model can still fail when the environment is not configured, the relevant context is absent, the requested
 
---- PAGE 3 ---
+
+PAGE 3
 XAIHT / TLAMATINI
 PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
+External research: 15 July 2026
 3
 action is unsafe, or the operator cannot inspect and stop the process. Conversely, a modest model can create value
 when paired with reliable tools, constrained workflows, domain knowledge, and clear responsibility.
-Tlamatini represents a broad implementation of this operating-layer thesis. The current v1.41.3 source inventory
-includes 85 workflow agents, 94 Multi-Turn tools, and 27 skills. It combines hybrid project retrieval, file and
+Tlamatini represents a broad implementation of this operating-layer thesis. The current 1.97.0 source inventory
+includes 87 workflow agents, 111 built-in Multi-Turn tools, and 29 skills. It combines hybrid project retrieval, file and
 development tools, visual workflows, explicit approval modes, hard cancellation, external Model Context Protocol
 (MCP) connectivity, delegation to external coding-agent command-line interfaces, direct Unreal Engine and Blender
 paths, STM32 and ESP32 toolchains, ESPHome and Arduino support, voice and audio, image and video
@@ -101,32 +101,48 @@ Verified product snapshot
 Value
 Meaning
 Release
-v1.41.3
-Live source/tag resolution
+1.97.0
+Existing released version
 Workflow agents
-85
+87
 Plain-Python agent programs
 Multi-Turn tools
-94
-62 wrapped + 20 core + 12 ACPX/skill
+111
+68 wrapped + 21 core + 12 ACPX + 10 MCP
 Skills
-27
+29
 Inspectable SKILL.md playbooks
 Effective authored lines
-176,259
+385,010
 Generator-derived source inventory
 Table 1. Product counts describe the current technical surface, not adoption or impact.
 Product claims are taken from the live Tlamatini repository and its documentation generator, with source code and
-executable inventories ranked above carried website copy. At the evidence snapshot, the live generator reports 839
-tracked files, 176,259 effective authored lines, 85 workflow agents, 62 wrapped chat-agent tools, 20 core Python
+executable inventories ranked above carried website copy. At the 23 November product review, the source inventory
+reports 1,920 tracked files, 385,010 effective authored lines, 87 workflow agents, 68 wrapped chat-agent tools, 21
 
---- PAGE 4 ---
+
+PAGE 4
 XAIHT / TLAMATINI
 PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
+External research: 15 July 2026
 4
-tools, 12 ACPX/skill tools, and 27 skills. The resulting 94-tool total describes the Multi-Turn surface; it is not a count of
-customers, integrations, deployments, or validated business processes.
+core Python tools, 12 ACPX/skill tools, 10 MCP supervisor tools and 29 skills. The 111-tool built-in total is not a count
+of customers, deployments or validated business processes. These working-tree counts are dated inventory, not
+outcome measurements.
+3.1.1 Current interaction and remote scope
+Multi-document Canvas keeps independent document buffers and explicitly selected context snapshots. Opening a
+document does not silently include it in a model request. Talker provides speech and Whisperer listening on the host;
+creative-engine control and STM32/ESP32 workflows retain their external toolchain requirements.
+The xaiht.org website now sends prompts and retrieves answers for approved, running local accounts through XT
+and Remote-Controller. A physical English-account phone session confirmed a prompt/answer, reload persistence
+and an Executer approval display. Real isolated MySQL passed seven transaction checks; other source checks used
+a mixture of real model answers and labelled deterministic cases. None of these tests measures population-level
+impact. Phone denial/no-execution, cancellation, reconnect and other-edition acceptance were not completed before
+tests stopped.
+Ask Execs covers selected protected actions, not every tool: Netstat is an intended read-only exception. The website
+processes and persists content over HTTPS; this is not end-to-end or post-quantum encryption. The current site
+integration does not start Tlamatini or stream phone microphone audio. These boundaries qualify remote-access
+scenarios in this paper.
 3.2 External evidence
 The external evidence base contains three distinct types of information:
 - Task-level causal or quasi-causal evidence. Brynjolfsson, Li, and Raymond report that an AI assistant increased
@@ -147,6 +163,13 @@ Regional sections use structured scenarios rather than point estimates. Each reg
 variables: connectivity, compute availability and cost, local data and language context, technical competency,
 institutional trust and regulation, and the fit between Tlamatini's current tool surfaces and local sector needs. The
 scenarios do not assign GDP effects or job counts. There is no credible empirical basis for doing so.
+
+
+PAGE 5
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+5
 3.4 Limits of inference
 EVIDENCE CALIBRATION
 Bounded task productivity
@@ -164,12 +187,6 @@ unchanged because integration, verification, or rework increases. Early adopters
 Demonstrations may exclude failed setup and maintenance. External model and connector behavior may change.
 Regional descriptions necessarily aggregate diverse countries and institutions. All Tlamatini-specific impact
 statements below are hypotheses until evaluated with real operators and counterfactuals.
-
---- PAGE 5 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-5
 4. Conceptual framework: from capability to impact
 CONTEXT
 BOUNDED
@@ -194,6 +211,13 @@ scales mistakes as readily as expertise.
 Approval gates, Step-by-Step execution, reports, and hard cancellation can make authority visible. They do not
 guarantee correctness or safety. The relevant outcome is risk-adjusted performance: quality and speed after counting
 review time, denied actions, reversals, incidents, and recovery.
+
+
+PAGE 6
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+6
 4.4 Workflow capture
 A successful Multi-Turn sequence can become a reusable .flw workflow. If the workflow remains editable and
 reliable, it can convert tacit individual procedure into an organizational asset. If dependencies or assumptions are
@@ -211,12 +235,6 @@ advice to instrumented action: a less-experienced operator might follow a valida
 project-review workflow with contextual guidance.
 However, this is a hypothesis with important boundary conditions. Embedded and industrial tasks have physical
 failure modes. Creative work has subjective quality criteria. Security actions require authorization. Complex software
-
---- PAGE 6 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-6
 projects have long feedback loops. A reasonable initial expectation is not universal acceleration but lower setup and
 coordination cost on selected, repeatable procedures.
 5.2 Skills, learning, and the distribution of expertise
@@ -242,6 +260,13 @@ Direct Unreal Engine and Blender paths, image interpretation, video analysis, au
 small studios coordinate technical art and production. Lower coordination cost may broaden participation in games,
 animation, simulation, visualization, and cultural media. Local creators could adapt open workflows to their languages
 and aesthetics.
+
+
+PAGE 7
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+7
 This opportunity must be separated from claims about creative quality or cultural representation. Models and assets
 may reproduce dominant-market styles, licensing conflicts, or stereotypes. Human authorship, provenance, and
 consent remain essential.
@@ -251,12 +276,6 @@ STM32, ESP32, ESPHome, and Arduino toolchains connect AI assistance to sensing, 
 education, and small-scale manufacturing. Video-Analyzer and Camcorder suggest a closed evidence loop in which
 physical motion is recorded and judged before another iteration. Such loops could make prototyping and
 maintenance more accessible.
-
---- PAGE 7 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-7
 Physical systems also raise the risk ceiling. Model output is probabilistic and cannot be treated as a safety
 certification. Hardware selection, power, mechanical limits, fail-safe design, test coverage, and legal responsibility
 remain with qualified humans. High-risk deployments require independent engineering controls that do not depend on
@@ -270,6 +289,13 @@ The plain-Python agent model creates a clear responsibility boundary. Users can 
 but readability is not a guarantee of safety. When users configure or run agents against files, systems, networks, or
 devices, the targets, credentials, authorization, and consequences remain under their jurisdiction and responsibility.
 6. Regional opportunity and constraint assessment
+
+
+PAGE 8
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+8
 Region
 High-fit opportunity
 Principal binding constraints
@@ -319,12 +345,6 @@ The principal constraints are competition, security expectations, enterprise pro
 may require signed releases, identity management, audit controls, vendor risk processes, and support commitments
 that are roadmap items rather than current features. Initial impact should therefore be tested in bounded technical
 teams rather than claimed across large enterprises.
-
---- PAGE 8 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-8
 6.2 Latin America and the Caribbean
 Latin America and the Caribbean contain dynamic software, creative, manufacturing, agricultural, and maker
 communities alongside substantial differences in broadband quality, compute cost, firm productivity, and access to
@@ -341,6 +361,13 @@ Europe combines advanced industrial and creative sectors with strong privacy, sa
 expectations. Human-commanded operation, local-first context, explicit authorization, and inspectable workflows can
 align with demand for accountable systems. Relevant use cases include industrial maintenance support, simulation,
 creative production, research infrastructure, and small and medium-sized enterprise automation.
+
+
+PAGE 9
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+9
 The challenge is compliance maturity. A product principle is not a conformity assessment. Deployments may require
 data-protection analysis, risk classification, documentation, logging, accessibility, cybersecurity controls, and
 sector-specific obligations. The near-term opportunity is therefore in assistive, reversible workflows with qualified
@@ -365,16 +392,17 @@ between formal firms and informal workshops. Impact studies should not treat Eng
 representative. Low-cost deployment, multilingual guidance, practical repairability, and local instructors or integrators
 are central complementary assets.
 6.6 Sub-Saharan Africa
-
---- PAGE 9 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-9
 Figure 4. Campaign scenario: locally led microgrid maintenance. The image is illustrative, not evidence of a deployment.
 Sub-Saharan Africa's opportunity lies in locally led adaptation for energy, agriculture, health logistics, education,
 environmental sensing, and small enterprise. The ITU connectivity gap and World Bank 4C framework warn against
 assuming that a downloadable open-source system is automatically accessible. Compute cost, intermittent networks,
+
+
+PAGE 10
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+10
 power, device availability, language context, and maintenance capacity can dominate model capability.
 Tlamatini's local-first architecture and embedded-tool coverage could be useful in a solar field station, makerspace,
 university lab, or technical service firm when local engineers own the workflow. Deployment should avoid a savior
@@ -394,12 +422,6 @@ and sector-specific. Cross-border messaging, security, and network tools require
 SMEs may benefit from reducing the fixed cost of integrating code, automation, documentation, and equipment. Paid
 installation, readiness reviews, and validated workflow packs are plausible delivery mechanisms. Evaluation should
 count total implementation and support hours, not only execution time after setup.
-
---- PAGE 10 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-10
 7.2 Education, research, and innovation hubs
 Visible workflows and readable agents could support project-based learning. The appropriate model is supervised
 capability building: instructors define scope, learners inspect steps, and assessment includes reasoning and
@@ -421,6 +443,13 @@ Administrative and logistics workflows may be candidates for bounded assistance,
 create pressure. This paper does not support diagnostic, treatment, eligibility, or other high-stakes autonomous
 decisions. Any health or public-sector use requires domain validation, privacy protection, accessibility, appeal, and
 independent accountability.
+
+
+PAGE 11
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+11
 8. Distribution, labor, and inclusion
 The ILO finding that transformation is more likely than full automation should shape both product design and
 evaluation. A system that makes an experienced worker faster may increase output without broadening opportunity.
@@ -433,12 +462,6 @@ design-partner agreements and impact studies.
 Accessibility deserves separate measurement. Voice and listening tools may help some users and exclude others
 through recognition errors, noisy environments, accent bias, or privacy concerns. A useful accessibility claim requires
 testing with affected professionals and multiple input modes, not a feature list.
-
---- PAGE 11 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-11
 9. Energy, infrastructure, and environmental
 constraints
 ACCESS AND ENERGY CONSTRAINTS
@@ -462,6 +485,13 @@ useful, verified work per unit of total compute, operator time, and external ser
 Infrastructure constraints also affect reliability. A workflow that assumes continuous broadband, a particular board,
 proprietary software version, or cloud credential may fail outside the demonstration environment. Supported
 configurations and degraded modes should be documented.
+
+
+PAGE 12
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+12
 10. Risk and governance framework
 10.1 Security and privacy
 The broad tool surface can touch source code, credentials, messages, browsers, databases, networks, cameras,
@@ -476,12 +506,6 @@ screenshots, recorded motion, checksums, or human inspection. A model's own conf
 Approval fatigue can turn a nominal safeguard into routine clicking. Step-by-Step modes can increase understanding
 or simply increase friction. Interfaces should prioritize meaningful decision points and expose consequences.
 Intervention and denial rates should be analyzed, not treated as failures to automate.
-
---- PAGE 12 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-12
 10.4 Legal responsibility and agent jurisdiction
 Tlamatini's workflow agents are plain-Python programs intentionally placed under user control. Users who enable,
 configure, modify, chain, or run them remain responsible for targets, prompts, credentials, files, systems, networks,
@@ -506,6 +530,13 @@ Where feasible, studies should compare:
 - local and remote model configurations with the same task and quality gate.
 Randomized order or crossover designs can reduce operator differences. Longer observational studies are needed
 for retention, maintenance, incidents, and organizational change. Any public case study should report failed attempts
+
+
+PAGE 13
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+13
 and setup time.
 11.3 Core outcomes
 Product outcomes
@@ -520,12 +551,6 @@ Commercial outcomes
 - Qualified requests and activated design partners.
 - Paid conversion and revenue by offer.
 - Delivery hours, support hours, gross margin, and time to second use case.
-
---- PAGE 13 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-13
 - Weekly retained operators.
 Trust and inclusion outcomes
 - Security and privacy findings by severity.
@@ -545,6 +570,13 @@ Conservative scenario: useful specialist toolkit
 Tlamatini remains a technically broad open-source toolkit used by expert enthusiasts and a small number of
 integration clients. Demonstrations are compelling, but setup and support costs limit repeatability. Impact is local:
 selected teams save time on specific procedures, while no population-level effect is measurable.
+
+
+PAGE 14
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+14
 Reference scenario: repeatable vertical operator
 Three supported stacks become reliable, ten or more design partners generate comparable evidence, and one
 vertical converts to retained paid use. Validated workflow packs reduce setup cost, local partners extend delivery,
@@ -565,12 +597,6 @@ gain tool access, society needs operating layers that show context, authority, e
 Tlamatini's architecture makes those concerns concrete. Its local-first context, readable agents, and workflow capture
 offer one possible design. Its broad integrations reveal the practical difficulty: every new surface adds dependencies,
 permissions, failure modes, and maintenance.
-
---- PAGE 14 ---
-XAIHT / TLAMATINI
-PROSPECTIVE IMPACT ASSESSMENT
-Evidence snapshot: 15 July 2026
-14
 The empirical literature supports cautious optimism about augmentation, especially for less-experienced workers on
 bounded tasks. It does not justify a claim that a broad agentic platform will automatically democratize expertise or
 increase regional productivity. Complementary investment remains decisive. The World Bank's connectivity,
@@ -594,6 +620,13 @@ expose dependencies and authority, verify outcomes independently, publish limita
 use and local maintenance. If those conditions hold, human-commanded agentic operations may become an
 important complement to workers and institutions adapting to generative AI. If they do not, breadth will remain a
 demonstration rather than a development strategy.
+
+
+PAGE 15
+XAIHT / TLAMATINI
+PROSPECTIVE IMPACT ASSESSMENT
+External research: 15 July 2026
+15
 References
 Brynjolfsson, E., Li, D., and Raymond, L. R. (2023). Generative AI at Work. NBER Working Paper 31161.
 https://www.nber.org/papers/w31161
@@ -613,5 +646,5 @@ United Nations Conference on Trade and Development. (2025). Technology and Innov
 Intelligence for Development. https://unctad.org/system/files/official-document/tir2025overview_en.pdf
 World Bank. (2025). Digital Progress and Trends Report 2025: Strengthening AI Foundations.
 https://www.worldbank.org/en/publication/dptr2025-ai-foundations/report
-XAIHT. (2026). Tlamatini v1.41.3 source repository and generated project dossier. Product inventory snapshot, 15 July 2026.
+XAIHT. (2026). Tlamatini 1.97.0 source repository and generated project dossier. Product inventory review, 23 November 2026.
 https://github.com/XAIHT/Tlamatini

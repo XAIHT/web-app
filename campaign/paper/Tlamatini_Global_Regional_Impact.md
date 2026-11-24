@@ -3,8 +3,8 @@
 ## A prospective global and regional impact assessment of XAIHT Tlamatini
 
 **Research paper and policy brief**  
-**Evidence snapshot:** 15 July 2026  
-**Product snapshot:** Tlamatini v1.41.3; 85 workflow agents; 94 Multi-Turn tools; 27 skills  
+**External research snapshot:** 15 July 2026; product documentation refreshed 23 November 2026  
+**Product snapshot:** Tlamatini 1.97.0; 87 workflow agents; 111 built-in Multi-Turn tools; 29 skills  
 **Status:** Prospective analysis. Tlamatini has not yet produced measured population-level economic or social outcomes.
 
 ## Abstract
@@ -23,7 +23,7 @@ The public debate about generative artificial intelligence often alternates betw
 
 This shift matters because the bottleneck in applied AI is rarely model output alone. Useful action depends on access to the right files, credentials, software versions, devices, project state, network boundaries, and human authority. A capable model can still fail when the environment is not configured, the relevant context is absent, the requested action is unsafe, or the operator cannot inspect and stop the process. Conversely, a modest model can create value when paired with reliable tools, constrained workflows, domain knowledge, and clear responsibility.
 
-Tlamatini represents a broad implementation of this operating-layer thesis. The current v1.41.3 source inventory includes 85 workflow agents, 94 Multi-Turn tools, and 27 skills. It combines hybrid project retrieval, file and development tools, visual workflows, explicit approval modes, hard cancellation, external Model Context Protocol (MCP) connectivity, delegation to external coding-agent command-line interfaces, direct Unreal Engine and Blender paths, STM32 and ESP32 toolchains, ESPHome and Arduino support, voice and audio, image and video interpretation, browser and desktop control, messaging, and security-oriented tools. Its workflow agents are intentionally plain Python so users can inspect and modify their operating logic.
+Tlamatini represents a broad implementation of this operating-layer thesis. The current 1.97.0 source inventory includes 87 workflow agents, 111 built-in Multi-Turn tools, and 29 skills. It combines hybrid project retrieval, file and development tools, visual workflows, explicit approval modes, hard cancellation, external Model Context Protocol (MCP) connectivity, delegation to external coding-agent command-line interfaces, direct Unreal Engine and Blender paths, STM32 and ESP32 toolchains, ESPHome and Arduino support, voice and audio, image and video interpretation, browser and desktop control, messaging, and security-oriented tools. Its workflow agents are intentionally plain Python so users can inspect and modify their operating logic.
 
 That breadth makes Tlamatini analytically interesting, but breadth is not impact. The central question is not whether the software contains many tools. It is whether people and organizations can use a bounded subset to achieve better outcomes at acceptable cost and risk. This paper therefore asks what would have to be true for human-commanded agentic operations to matter economically and socially, how those conditions differ across regions, what harms could offset the gains, and how the hypotheses can be tested.
 
@@ -43,7 +43,15 @@ The contribution is not a macroeconomic forecast. It is a disciplined bridge bet
 
 ### 3.1 Product evidence
 
-Product claims are taken from the live Tlamatini repository and its documentation generator, with source code and executable inventories ranked above carried website copy. At the evidence snapshot, the live generator reports 839 tracked files, 176,259 effective authored lines, 85 workflow agents, 62 wrapped chat-agent tools, 20 core Python tools, 12 ACPX/skill tools, and 27 skills. The resulting 94-tool total describes the Multi-Turn surface; it is not a count of customers, integrations, deployments, or validated business processes.
+Product claims are taken from the live Tlamatini repository and its documentation generator, with source code and executable inventories ranked above carried website copy. At the 23 November product review, the source inventory reports 1,920 tracked files, 385,010 effective authored lines, 87 workflow agents, 68 wrapped chat-agent tools, 21 core Python tools, 12 ACPX/skill tools, 10 MCP supervisor tools and 29 skills. The 111-tool built-in total is not a count of customers, deployments or validated business processes. These working-tree counts are dated inventory, not outcome measurements.
+
+### 3.1.1 Current interaction and remote scope
+
+Multi-document Canvas keeps independent document buffers and explicitly selected context snapshots. Opening a document does not silently include it in a model request. Talker provides speech and Whisperer listening on the host; creative-engine control and STM32/ESP32 workflows retain their external toolchain requirements.
+
+The xaiht.org website now sends prompts and retrieves answers for approved, running local accounts through XT and Remote-Controller. A physical English-account phone session confirmed a prompt/answer, reload persistence and an Executer approval display. Real isolated MySQL passed seven transaction checks; other source checks used a mixture of real model answers and labelled deterministic cases. None of these tests measures population-level impact. Phone denial/no-execution, cancellation, reconnect and other-edition acceptance were not completed before tests stopped.
+
+Ask Execs covers selected protected actions, not every tool: Netstat is an intended read-only exception. The website processes and persists content over HTTPS; this is not end-to-end or post-quantum encryption. The current site integration does not start Tlamatini or stream phone microphone audio. These boundaries qualify remote-access scenarios in this paper.
 
 ### 3.2 External evidence
 
@@ -338,5 +346,5 @@ United Nations Conference on Trade and Development. (2025). *Technology and Inno
 
 World Bank. (2025). *Digital Progress and Trends Report 2025: Strengthening AI Foundations*. https://www.worldbank.org/en/publication/dptr2025-ai-foundations/report
 
-XAIHT. (2026). *Tlamatini v1.41.3 source repository and generated project dossier*. Product inventory snapshot, 15 July 2026. https://github.com/XAIHT/Tlamatini
+XAIHT. (2026). *Tlamatini 1.97.0 source repository and generated project dossier*. Product inventory review, 23 November 2026. https://github.com/XAIHT/Tlamatini
 
